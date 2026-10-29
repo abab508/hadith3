@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { corpus, transmetteurParId, ouvrageParId, hadithParId, texteDans } from "@/donnees/corpus";
-import { Terme } from "@/composants/Terme";
+import { corpus, ouvrageParId, hadithParId, bibliothequeParId, texteDans } from "@/donnees/corpus";
+import { entree } from "@/donnees/catalogue";
+import type { Bibliotheque } from "@/donnees/schemas/corpus";
+import Terme from "@/composants/Terme";
+import ChaineRapport from "@/composants/ChaineRapport";
+import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
 import styles from "./Rapport.module.css";
 
-export async function generateStaticParams({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  return corpus.hadiths.map((h) => ({ locale, id: h.id }));
+const acces = {
+  "licence-ouverte": "acces.licence-ouverte",
+  "api-accord": "acces.api-accord",
+  "a-valider": "acces.a-valider",
+  "a-verifier": "acces.a-verifier",
+} as const satisfies Record<Bibliotheque["acces"], string>;
+
+export function generateStaticParams() {
+  return corpus.hadiths.map((h) => ({ id: h.id }));
 }
 
 export async function generateMetadata({
@@ -28,209 +38,112 @@ export default async function Rapport({
   const { locale, id } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("rapport");
-  const tTermes = await getTranslations("termes");
+  const tRecherche = await getTranslations("recherche");
+  const tAccueil = await getTranslations("accueil");
 
   const hadith = hadithParId(id);
   if (!hadith) {
     return (
-      <main className={ui.page}>
+      <main id="contenu" tabIndex={-1} className={ui.page}>
         <h1>{t("titreNotFound")}</h1>
         <p>{t("hadithNotFound")}</p>
       </main>
     );
   }
 
-  const traduction = hadith.traductions.find((x) => x.langue === locale);
-  const { tag: tagParticularite, texte: texteParticularite } = hadith.particularite
-    ? texteDans(hadith.particularite, locale)
-    : { tag: "ar", texte: "" };
+  // Un bloc rédigé : sa propre langue et sa direction, même quand il vient d'une langue de repli.
+  const bloc = (texte: Record<string, string>) => {
+    const { tag, texte: contenu } = texteDans(texte, locale);
+    return { lang: tag, dir: entree(tag)?.direction, children: contenu };
+  };
 
-  const ouvragesAffichees = [...new Set(hadith.occurrences.map((o) => o.ouvrage))]
-    .map((id) => ouvrageParId(id))
-    .filter((o): o is Exclude<typeof o, undefined> => o !== undefined);
-
-  const transmetteurIdsArrondis = new Set([
-    ...hadith.chaine.tronc,
-    ...hadith.chaine.voies.flatMap((v) => v.transmetteurs),
-  ]);
-
-  const transmetteurs = Array.from(transmetteurIdsArrondis)
-    .map((id) => transmetteurParId(id))
-    .filter((t): t is Exclude<typeof t, undefined> => t !== undefined);
+  const traduction = locale === "ar" ? undefined : hadith.traductions.find((x) => x.langue === locale);
+  const principale = hadith.occurrences.find((o) => o.correspondance === "original") ?? hadith.occurrences[0]!;
+  const reference = tRecherche("numero", {
+    ouvrage: ouvrageParId(principale.ouvrage)?.nom ?? principale.ouvrage,
+    numero: principale.numero,
+  });
 
   return (
-    <main className={ui.page}>
-      <div className={styles.entete}>
-        <h1 className={ui.arabeTresGrand} lang="ar" dir="rtl">
-          <bdi className="texte-arabe">{hadith.texteAr}</bdi>
-        </h1>
+    <main id="contenu" tabIndex={-1} className={ui.page}>
+      <p>
+        <Link href={{ pathname: "/chaine", query: { hadith: hadith.id } }}>{t("autreHadith")}</Link>
+      </p>
 
-        <div className={styles.statut}>
-          <span className={ui.badge} data-ton="accent">
-            <Terme id={hadith.statutTerme} />
-          </span>
-          {texteParticularite && (
-            <span className={ui.badge} data-ton="ocre">
-              {texteParticularite}
-            </span>
-          )}
-        </div>
-
-        {traduction && (
-          <div className={`${ui.traduction} ${styles.traduction}`} data-origine={traduction.origine}>
-            <p>{traduction.texte}</p>
-            <p className={ui.mention}>
-              {traduction.source ? `📖 ${traduction.source}` : `🤖 ${t("traductionIa")}`}
-            </p>
-          </div>
+      <div className={styles.titres}>
+        <p className={ui.surtitre}>{t("surtitre")}</p>
+        {traduction ? (
+          <h1 lang={traduction.langue} className={styles.titre}>{traduction.texte}</h1>
+        ) : (
+          <h1 lang="ar" dir="rtl" className={`texte-arabe ${styles.titre}`}>{hadith.requeteAr}</h1>
         )}
       </div>
 
-      <section className={styles.chaine} aria-labelledby="titre-chaine">
-        <h2 id="titre-chaine">{t("chaineTitle")}</h2>
-
-        <div className={styles.arbre}>
-          <div className={styles.tronc}>
-            <p className={ui.surtitre}>{t("tronc")}</p>
-            <ul className={styles.transmetteurs}>
-              {hadith.chaine.tronc.map((id) => {
-                const transmetteur = transmetteurParId(id);
-                return (
-                  <li key={id} className={styles.transmetteur}>
-                    <div className={styles.noeud}>
-                      <span className={ui.arabeGrand} lang="ar" dir="rtl">
-                        <bdi className="texte-arabe">{transmetteur?.nomAr}</bdi>
-                      </span>
-                      <span className={ui.discret}>
-                        <bdi lang="ar-Latn" dir="ltr">{transmetteur?.nomTranslittere}</bdi>
-                      </span>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className={styles.voiesSection}>
-            <p className={ui.surtitre}>{t("voies")}</p>
-            {hadith.chaine.voies.map((voie) => {
-              const ouvrage = ouvrageParId(voie.ouvrage);
-              return (
-                <details key={voie.id} className={styles.voie}>
-                  <summary>
-                    <span className={ui.arabeGrand}>{ouvrage?.nom}</span>
-                  </summary>
-                  <ul className={styles.transmetteurs}>
-                    {voie.transmetteurs.map((id) => {
-                      const transmetteur = transmetteurParId(id);
-                      return (
-                        <li key={id} className={styles.transmetteur}>
-                          <div className={styles.noeud}>
-                            <span className={ui.arabeGrand} lang="ar" dir="rtl">
-                              <bdi className="texte-arabe">{transmetteur?.nomAr}</bdi>
-                            </span>
-                            <span className={ui.discret}>
-                              <bdi lang="ar-Latn" dir="ltr">{transmetteur?.nomTranslittere}</bdi>
-                            </span>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </details>
-              );
-            })}
-          </div>
+      <section className={ui.carte} aria-labelledby="titre-original">
+        <div className={styles.ligne}>
+          <h2 id="titre-original" className={ui.badge} data-ton="accent">
+            {t("texteOriginal", { reference })}
+          </h2>
+          <p className={ui.discret}>{t("nonRemplace")}</p>
         </div>
+        <p lang="ar" dir="rtl" className={`texte-arabe ${styles.original}`}>{hadith.texteAr}</p>
+        {locale !== "ar" && (
+          traduction ? (
+            <div className={ui.traduction} data-origine={traduction.origine}>
+              <p lang={traduction.langue}>{traduction.texte}</p>
+              <p className={ui.mention}>
+                {traduction.origine === "publiee" || traduction.origine === "validee"
+                  ? tRecherche("traduction.publiee", { source: traduction.source ?? "" })
+                  : tRecherche("traduction.ia")}
+              </p>
+            </div>
+          ) : (
+            <p className={`${ui.traduction} ${ui.discret}`}>{tRecherche("aucuneTraduction")}</p>
+          )
+        )}
       </section>
 
-      <section className={styles.transmetteurs} aria-labelledby="titre-transmetteurs">
-        <h2 id="titre-transmetteurs">{t("transmetteurs")}</h2>
-        <div className={styles.grille}>
-          {transmetteurs.map((transmetteur) => {
-            const { tag: tagBio, texte: biographie } = texteDans(
-              transmetteur.biographie,
-              locale
-            );
-            const jugement = transmetteur.jugements[0];
-            return (
-              <article key={transmetteur.id} className={`${ui.carte} ${styles.fiche}`}>
-                <div className={styles.enteteTransmetteur}>
-                  <h3 lang="ar" dir="rtl">
-                    <bdi className={ui.arabeGrand}>{transmetteur.nomAr}</bdi>
-                  </h3>
-                  <p className={ui.discret}>
-                    <bdi lang="ar-Latn" dir="ltr">{transmetteur.nomTranslittere}</bdi>
-                  </p>
-                </div>
+      <div className={styles.duo}>
+        <section className={`${ui.carte} ${styles.statut}`} aria-labelledby="titre-statut">
+          <h2 id="titre-statut" className={styles.etiquette}>{t("statut")}</h2>
+          <p className={styles.verdict}><Terme id={hadith.statutTerme} /></p>
+          <p {...bloc(hadith.statut)} />
+          <p className={styles.note}>{t("avertissement")}</p>
+        </section>
+        <section className={ui.carte} aria-labelledby="titre-particularite">
+          <h2 id="titre-particularite" className={styles.sousTitre}>{t("particularite")}</h2>
+          <p {...bloc(hadith.particularite)} />
+          <p><Link href="/glossaire">{tAccueil("glossaire")}</Link></p>
+        </section>
+      </div>
 
-                {transmetteur.deces && (
-                  <p className={styles.deces}>
-                    {t("deces", { deces: transmetteur.deces })}
-                  </p>
-                )}
+      <ChaineRapport hadithId={hadith.id} />
 
-                {jugement && (
-                  <div className={styles.jugement}>
-                    <p className={ui.surtitre}>{t("jugement")}</p>
-                    <p lang="ar" dir="rtl" className="texte-arabe">
-                      <bdi>{jugement.critiqueAr}</bdi>
-                    </p>
-                    {jugement.reserve && (
-                      <p className={`${ui.badge} ${styles.reserve}`} data-ton="alerte">
-                        {jugement.reserve}
-                      </p>
-                    )}
-                    {jugement.explication && (
-                      <div className={styles.explication}>
-                        <p className={ui.discret}>
-                          {jugement.explication[locale as keyof typeof jugement.explication]}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {biographie && (
-                  <div className={styles.biographie}>
-                    <p className={ui.surtitre}>{t("biographie")}</p>
-                    <p>{biographie}</p>
-                  </div>
-                )}
-
-                <button className={ui.boutonSecondaire} disabled>
-                  {t("verrouille")}
-                </button>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className={styles.sources} aria-labelledby="titre-sources">
-        <h2 id="titre-sources">{t("sources")}</h2>
-        <div className={styles.tableau}>
+      <section className={ui.carte} aria-labelledby="titre-sources">
+        <h2 id="titre-sources" className={styles.sousTitre}>{t("sources")}</h2>
+        <div className={styles.tableau} tabIndex={0} role="region" aria-labelledby="titre-sources">
           <table>
             <thead>
               <tr>
-                <th>{t("ouvrage")}</th>
-                <th>{t("reference")}</th>
-                <th>{t("bibliotheque")}</th>
-                <th>{t("acces")}</th>
+                <th scope="col">{t("ouvrage")}</th>
+                <th scope="col">{t("reference")}</th>
+                <th scope="col">{t("bibliotheque")}</th>
+                <th scope="col">{t("colonneAcces")}</th>
               </tr>
             </thead>
             <tbody>
               {hadith.occurrences.map((occurrence) => {
                 const ouvrage = ouvrageParId(occurrence.ouvrage);
-                const bibliotheque = corpus.bibliotheques.find((b) => b.id === occurrence.bibliotheque);
+                const bibliotheque = bibliothequeParId(occurrence.bibliotheque);
                 return (
                   <tr key={occurrence.id}>
-                    <td>{ouvrage?.nom}</td>
-                    <td>{occurrence.numero}</td>
-                    <td lang="ar" dir="rtl">
-                      <bdi className="texte-arabe">{bibliotheque?.nomAr}</bdi>
+                    <td>
+                      <bdi lang="ar-Latn">{ouvrage?.nom}</bdi>{" "}
+                      <bdi lang="ar" dir="rtl" className={`texte-arabe ${ui.discret}`}>{ouvrage?.nomAr}</bdi>
                     </td>
-                    <td>{t(`acces.${occurrence.bibliotheque}`)}</td>
+                    <td>{occurrence.numero}</td>
+                    <td><bdi>{bibliotheque?.nom}</bdi></td>
+                    <td>{bibliotheque ? t(acces[bibliotheque.acces]) : t("fiche.aucun")}</td>
                   </tr>
                 );
               })}
@@ -239,9 +152,14 @@ export default async function Rapport({
         </div>
       </section>
 
-      <div className={ui.avertissement}>
-        <p>{t("avertissementData")}</p>
+      <div className={ui.actions}>
+        <button type="button" className={ui.boutonSecondaire} disabled aria-describedby="bientot">
+          {t("actions.validation")}
+        </button>
+        <span id="bientot" className={ui.discret}>{t("actions.bientot")}</span>
       </div>
+
+      <p className={ui.avertissement}>{t("avertissementData")}</p>
     </main>
   );
 }

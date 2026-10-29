@@ -29,3 +29,8 @@
 - Fait : 4 fichiers dans docs/conception/donnees/ (langue, terme, texte/traduction, translittération provisoire ALA-LC à soumettre à un spécialiste) ; 11 décisions notées.
 - Reste : toutes les tâches de code marquées [!], elles attendent le choix de la stack.
 - Prochaine étape : le patron choisit la stack.
+
+## 2026-10-29 — Écrans « Recherche par chaîne » et « Rapport » d'après la maquette
+- Fait : branche feat/maquette-parcours ; chaîne cliquable + fiche du transmetteur, formulaire en 3 étapes ; 2 erreurs TypeScript corrigées (le build passait pas) ; 3 tests navigateur ajoutés (52/52 OK).
+- Reste : clé rapport.colonneAcces en es/id/ms/tr/ur/en/ar = traduction automatique à relire ; filtres de la page Résultats encore inactifs.
+- Prochaine étape : le patron relit la branche, puis décide du push / de la fusion.

@@ -1,0 +1,261 @@
+/* Chaîne cliquable et fiche du transmetteur. Propriétés logiques uniquement. */
+
+.disposition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.arbre {
+  flex: 999 1 36rem;
+  gap: 1.25rem;
+}
+
+.fiche {
+  flex: 1 1 22rem;
+  border: 2px solid var(--couleur, var(--bordure));
+  position: sticky;
+  inset-block-start: 1rem;
+}
+
+.entete {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.entete > :is(h2, p) {
+  margin: 0;
+}
+
+.legende {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.legende > li {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* .porteur : tout élément qui reçoit data-categorie. */
+/* Couleurs par catégorie : la forme du bord (pointillés) distingue aussi « faible », pas la couleur seule. */
+.porteur[data-categorie="source"] { --couleur: var(--ocre); --fond-noeud: var(--surface); }
+.porteur[data-categorie="compagnon"] { --couleur: var(--ocre); --fond-noeud: var(--ocre-doux); }
+.porteur[data-categorie="thiqa"] { --couleur: var(--accent); --fond-noeud: var(--accent-doux); }
+.porteur[data-categorie="saduq"] { --couleur: var(--info); --fond-noeud: var(--info-doux); }
+.porteur[data-categorie="daif"] { --couleur: var(--alerte); --fond-noeud: var(--alerte-doux); --style-bord: dashed; }
+.porteur[data-categorie="compilateur"] { --couleur: var(--discret); --fond-noeud: var(--neutre-doux); }
+
+.echantillon {
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+  border-radius: 0.25rem;
+  background: var(--fond-noeud);
+  border: 2px var(--style-bord, solid) var(--couleur);
+  flex: none;
+}
+
+.groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.groupe > :is(p, h3) {
+  margin: 0;
+}
+
+.voies {
+  border-inline-start: 3px solid var(--bordure);
+  padding-inline-start: 1.125rem;
+  margin-inline-start: 0.5rem;
+  gap: 1rem;
+}
+
+.sousTitre {
+  font-size: 0.875rem;
+  color: var(--discret);
+}
+
+.libelleVoie {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.suite {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.maillon {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.noeud {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+  min-inline-size: 9rem;
+  min-block-size: 2.75rem;
+  padding-block: 0.5rem;
+  padding-inline: 0.875rem;
+  border-radius: 0.75rem;
+  border: 2px var(--style-bord, solid) var(--couleur);
+  background: var(--fond-noeud);
+  color: var(--texte);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.noeud[aria-pressed="true"] {
+  box-shadow: 0 0 0 4px var(--accent-doux), 0 0 0 6px var(--accent);
+}
+
+.nomAr {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.nomLatin {
+  font-size: 0.8125rem;
+}
+
+.categorie {
+  font-size: 0.75rem;
+  color: var(--discret);
+}
+
+/* La flèche suit le sens de lecture : elle se retourne en arabe et en ourdou. */
+.fleche {
+  color: var(--discret);
+  flex: none;
+}
+
+.fleche:dir(rtl) {
+  transform: scaleX(-1);
+}
+
+.autres {
+  padding: 0.875rem;
+  border: 1.5px dashed var(--bordure);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.identite > p {
+  margin: 0;
+}
+
+.ficheNomAr {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ficheNomLatin {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.badgeCategorie {
+  background: var(--fond-noeud);
+  border: 1px var(--style-bord, solid) var(--couleur);
+}
+
+.verdict {
+  background: var(--fond);
+  border-radius: 0.75rem;
+  padding: 0.875rem;
+}
+
+.verdict > p,
+.jugement > p {
+  margin: 0;
+}
+
+.verdictAr {
+  font-size: 1.125rem;
+}
+
+.etiquette {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--discret);
+}
+
+.titreBloc {
+  font-size: 0.9375rem;
+}
+
+.jugement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-block: 0.625rem;
+  padding-inline: 0.75rem;
+  border-radius: 0.625rem;
+  background: var(--fond);
+  border-inline-start: 4px solid var(--accent);
+  font-size: 0.875rem;
+}
+
+.jugement[data-reserve] {
+  background: var(--alerte-doux);
+  border-inline-start-color: var(--alerte);
+}
+
+.critique {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.relations {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.relations dt {
+  font-weight: 700;
+  color: var(--discret);
+}
+
+.relations dd {
+  margin: 0;
+}
+
+.sources {
+  border-block-start: 1px solid var(--bordure);
+  padding-block-start: 0.75rem;
+}
+
+.sources ul {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  font-size: 0.875rem;
+}

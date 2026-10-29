@@ -1,0 +1,204 @@
+/* Formulaire de recherche par chaîne, en trois étapes. Propriétés logiques uniquement. */
+
+.etape {
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+}
+
+.etape > p {
+  margin: 0;
+}
+
+.titreEtape {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.hadiths,
+.pastilles,
+.maillons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hadiths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 0.75rem;
+}
+
+.hadith {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.875rem;
+  border: 1px solid var(--bordure);
+  background: var(--surface);
+  color: var(--texte);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.hadith[aria-pressed="true"] {
+  border: 2px solid var(--accent);
+  background: var(--accent-doux);
+}
+
+.reference {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.texteHadith {
+  font-size: 1.375rem;
+  line-height: 1.7;
+}
+
+.chaine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.maillons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.maillon {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.75rem 0.25rem;
+  border-radius: 0.625rem;
+  border: 1.5px solid var(--accent);
+  background: var(--accent-doux);
+}
+
+.retirer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--texte);
+  cursor: pointer;
+}
+
+.ajout {
+  flex: 1 1 16rem;
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-block-size: 2.75rem;
+}
+
+.case input,
+.bibliotheque input {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  flex: none;
+}
+
+.bibliotheques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.75rem;
+}
+
+.bibliotheque {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.875rem;
+  border: 1px solid var(--bordure);
+  cursor: pointer;
+}
+
+.bibliotheque:has(input:checked) {
+  border: 2px solid var(--accent);
+  background: var(--accent-doux);
+}
+
+.descriptif {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.nomBibliotheque {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.groupe > :is(h3, p) {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pastille {
+  min-block-size: 2.75rem;
+  padding-inline: 0.875rem;
+  border-radius: 999px;
+  border: 1px solid var(--bordure);
+  background: var(--surface);
+  color: var(--texte);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.pastille[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--sur-accent);
+}
+
+.envoi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.envoi > p {
+  margin: 0;
+}
+
+.generer {
+  min-block-size: 3.5rem;
+  padding-inline: 1.75rem;
+  font-size: 1.125rem;
+}
+
+.fleche:dir(rtl) {
+  transform: scaleX(-1);
+}
