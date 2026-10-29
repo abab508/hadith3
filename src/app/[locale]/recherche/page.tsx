@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, bibliothequeParId, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
-import type { Occurrence } from "@/donnees/schemas/corpus";
+import { chercher, estArabe } from "@/donnees/recherche";
+import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
 import styles from "@/app/[locale]/recherche/Recherche.module.css";
@@ -32,11 +33,9 @@ export default async function Recherche({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("recherche");
-  const tAccueil = await getTranslations("accueil");
   const parametres = await searchParams;
   const brut = parametres.q;
-  const saisie = (Array.isArray(brut) ? brut[0] : brut)?.trim();
-  const requete = saisie || tAccueil("recherche.exemple");
+  const saisie = (Array.isArray(brut) ? brut[0] : brut)?.trim() || undefined;
 
   // Filtres envoyés par le formulaire (GET) : sans « filtre », tout est coché.
   const filtre = parametres.filtre !== undefined;
@@ -48,21 +47,23 @@ export default async function Recherche({
   };
   const garde = (groupe: keyof typeof choix, valeur: string) => !filtre || choix[groupe].has(valeur);
 
-  // Version de démonstration : le corpus d'exemple contient un seul hadith.
-  const hadith = corpus.hadiths[0]!;
-  const traduction = hadith.traductions.find((x) => x.langue === locale);
-  const premier = transmetteurParId(hadith.chaine.tronc[1] ?? hadith.chaine.tronc[0]!);
-  const collections = [...new Set(hadith.occurrences.map((o) => o.ouvrage))].flatMap((id) => {
+  const trouves = chercher(saisie ?? "");
+  const collections = [...new Set(trouves.flatMap((h) => h.occurrences.map((o) => o.ouvrage)))].flatMap((id) => {
     const o = ouvrageParId(id);
     return o ? [o] : [];
   });
-  const occurrences = hadith.occurrences.filter((o) =>
-    garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque)
-  );
-  // L'exemple incertain vient d'un ouvrage peu connu d'OpenITI.
-  const incertainVisible = garde("correspondance", "similarite") && garde("ouvrage", PEU_CONNUS) && garde("bibliotheque", "openiti");
+  const occurrences = trouves.flatMap((hadith) => hadith.occurrences
+    .filter((o) => garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque))
+    .map((occurrence) => ({ occurrence, hadith })));
+  // Une requête hors arabe qui mène à un seul hadith : on montre le texte arabe auquel elle a été rapprochée.
+  const rapproche = saisie && !estArabe(saisie) && trouves.length === 1 ? trouves[0] : undefined;
+  // L'exemple incertain (ouvrage peu connu d'OpenITI) illustre le hadith des intentions.
+  const incertainVisible = trouves.some((h) => h.id === "niyyat")
+    && garde("correspondance", "similarite") && garde("ouvrage", PEU_CONNUS) && garde("bibliotheque", "openiti");
 
-  function carte(occurrence: Occurrence) {
+  function carte({ occurrence, hadith }: { occurrence: Occurrence; hadith: Hadith }) {
+    const traduction = hadith.traductions.find((x) => x.langue === locale);
+    const premier = transmetteurParId(hadith.chaine.tronc[1] ?? hadith.chaine.tronc[0]!);
     const ouvrage = ouvrageParId(occurrence.ouvrage);
     const bibliotheque = bibliothequeParId(occurrence.bibliotheque);
     const correspondance = correspondances[occurrence.correspondance];
@@ -120,11 +121,13 @@ export default async function Recherche({
     <main id="contenu" tabIndex={-1} className={ui.page}>
       <div className={styles.requete}>
         <h1 id="titre-resultats" className={styles.titre}>{t("titre")}</h1>
-        <p><bdi dir="auto">{t("requete", { requete })}</bdi></p>
-        <p className={styles.rapprochee}>
-          {t("rapprochee")}{" "}
-          <bdi lang="ar" dir="rtl" className={`texte-arabe ${styles.requeteArabe}`}>{hadith.requeteAr}</bdi>
-        </p>
+        {saisie && <p><bdi dir="auto">{t("requete", { requete: saisie })}</bdi></p>}
+        {rapproche && (
+          <p className={styles.rapprochee}>
+            {t("rapprochee")}{" "}
+            <bdi lang="ar" dir="rtl" className={`texte-arabe ${styles.requeteArabe}`}>{rapproche.requeteAr}</bdi>
+          </p>
+        )}
         <p className={`${ui.badge} ${styles.exemple}`} data-ton="ocre">{t("exemple")}</p>
       </div>
 

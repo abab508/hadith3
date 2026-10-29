@@ -39,3 +39,8 @@
 - Fait : al-Bukhārī n° 2, 8, 10, 13, 16 (chaîne unique, texte complet) ; n° 3, 5, 6 écartés car l'extraction automatique y mélange plusieurs chaînes ; aucun jugement ni date inventés (catégorie « non-evalue »).
 - Reste : identification et jugements des 25 transmetteurs importés par un spécialiste ; numérotation à vérifier.
 - Prochaine étape : validation du patron pour la mise en ligne.
+
+## 2026-10-29 — Vraie recherche dans le corpus
+- Fait : la page Résultats cherche dans les 6 hadiths (texte arabe sans voyelles, traductions, références « Bukhari 13 », noms des transmetteurs) ; avant, elle montrait toujours le même exemple.
+- Reste : recherche floue (fautes de frappe) et modes de recherche (exacte, fragment…) pas encore distincts.
+- Prochaine étape : validation du patron pour la mise en ligne.
