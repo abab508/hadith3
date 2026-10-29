@@ -10,6 +10,26 @@ describe("corpus d'exemple", () => {
     expect(verifierReferences(corpus)).toEqual([]);
   });
 
+  it("n'attribue aucun jugement ni aucune donnée inventée aux transmetteurs non évalués", () => {
+    const nonEvalues = corpus.transmetteurs.filter((t) => t.categorie === "non-evalue");
+    expect(nonEvalues.length).toBeGreaterThan(0);
+    for (const t of nonEvalues) {
+      expect(t.jugements).toEqual([]);
+      expect([t.verdictAr, t.deces, t.ville, t.generation]).toEqual([null, null, null, null]);
+    }
+  });
+
+  it("cite Sanadset 650K et sa licence pour chaque hadith importé", () => {
+    const sanadset = corpus.bibliotheques.find((b) => b.id === "sanadset");
+    expect(sanadset?.description.fr).toContain("CC BY 4.0");
+    const importes = corpus.hadiths.filter((h) => h.occurrences.some((o) => o.bibliotheque === "sanadset"));
+    expect(importes.length).toBe(5);
+    for (const h of importes) {
+      expect(h.statutTerme).toBe("ghayr-muhaddad");
+      expect(h.particularite.fr).toContain("Sanadset 650K");
+    }
+  });
+
   it("contient al-Maktaba al-Shāmila avec des recueils de hadith et des ouvrages sur les transmetteurs", () => {
     const shamila = corpus.bibliotheques.find((b) => b.id === "shamila");
     expect(shamila?.nomAr).toBe("المكتبة الشاملة");

@@ -34,16 +34,18 @@ export const fichierBibliotheques = z.strictObject({
   bibliotheques: z.array(bibliotheque).min(1),
 });
 
-export const categorieTransmetteur = z.enum(["source", "compagnon", "thiqa", "saduq", "daif", "compilateur"]);
+// « non-evalue » : transmetteur importé sans jugement ; jamais de catégorie devinée.
+export const categorieTransmetteur = z.enum(["source", "compagnon", "thiqa", "saduq", "daif", "compilateur", "non-evalue"]);
 
 export const transmetteur = z.strictObject({
   id,
   nomAr: nfc,
   nomTranslittere: nfc,
   categorie: categorieTransmetteur,
-  deces: z.string().regex(/^~?\d+(-\d+)?$/),
-  ville: z.strictObject({ ar: nfc, translitteration: nfc }),
-  generation: z.enum(["source", "compagnon", "tabiiAine", "tabii", "tabiiCadet", "atbaTabiin", "maitreCompilateur", "compilateur"]),
+  // null : donnée inconnue de la source, à compléter par un spécialiste.
+  deces: z.string().regex(/^~?\d+(-\d+)?$/).nullable(),
+  ville: z.strictObject({ ar: nfc, translitteration: nfc }).nullable(),
+  generation: z.enum(["source", "compagnon", "tabiiAine", "tabii", "tabiiCadet", "atbaTabiin", "maitreCompilateur", "compilateur"]).nullable(),
   verdictAr: nfc.nullable(),
   jugements: z.array(z.strictObject({
     critiqueAr: nfc,

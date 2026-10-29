@@ -232,7 +232,8 @@
       "thiqa": "Güvenilir",
       "saduq": "Doğru sözlü",
       "daif": "Zayıf",
-      "compilateur": "Derleyici"
+      "compilateur": "Derleyici",
+      "nonEvalue": "Değerlendirilmedi"
     },
     "tronc": "Ortak gövde",
     "voies": "Yollar",

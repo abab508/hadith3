@@ -232,7 +232,8 @@
       "thiqa": "Fiable",
       "saduq": "Véridique",
       "daif": "Faible",
-      "compilateur": "Compilateur"
+      "compilateur": "Compilateur",
+      "nonEvalue": "Non évalué"
     },
     "tronc": "Tronc commun",
     "voies": "Voies",

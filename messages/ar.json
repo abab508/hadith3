@@ -232,7 +232,8 @@
       "thiqa": "ثقة",
       "saduq": "صدوق",
       "daif": "ضعيف",
-      "compilateur": "مصنِّف"
+      "compilateur": "مصنِّف",
+      "nonEvalue": "لم يُقيَّم بعد"
     },
     "tronc": "الإسناد المشترك",
     "voies": "الطرق",
