@@ -34,3 +34,8 @@
 - Fait : branche feat/maquette-parcours ; chaîne cliquable + fiche du transmetteur, formulaire en 3 étapes ; 2 erreurs TypeScript corrigées (le build passait pas) ; 3 tests navigateur ajoutés (52/52 OK).
 - Reste : clé rapport.colonneAcces en es/id/ms/tr/ur/en/ar = traduction automatique à relire ; filtres de la page Résultats encore inactifs.
 - Prochaine étape : le patron relit la branche, puis décide du push / de la fusion.
+
+## 2026-10-29 — 5 hadiths importés de Sanadset 650K
+- Fait : al-Bukhārī n° 2, 8, 10, 13, 16 (chaîne unique, texte complet) ; n° 3, 5, 6 écartés car l'extraction automatique y mélange plusieurs chaînes ; aucun jugement ni date inventés (catégorie « non-evalue »).
+- Reste : identification et jugements des 25 transmetteurs importés par un spécialiste ; numérotation à vérifier.
+- Prochaine étape : validation du patron pour la mise en ligne.

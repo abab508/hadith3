@@ -232,7 +232,8 @@
       "thiqa": "Reliable",
       "saduq": "Truthful",
       "daif": "Weak",
-      "compilateur": "Compiler"
+      "compilateur": "Compiler",
+      "nonEvalue": "Not assessed"
     },
     "tronc": "Common trunk",
     "voies": "Paths",

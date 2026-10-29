@@ -54,6 +54,7 @@
 .porteur[data-categorie="thiqa"] { --couleur: var(--accent); --fond-noeud: var(--accent-doux); }
 .porteur[data-categorie="saduq"] { --couleur: var(--info); --fond-noeud: var(--info-doux); }
 .porteur[data-categorie="daif"] { --couleur: var(--alerte); --fond-noeud: var(--alerte-doux); --style-bord: dashed; }
+.porteur[data-categorie="non-evalue"] { --couleur: var(--discret); --fond-noeud: var(--surface); --style-bord: dotted; }
 .porteur[data-categorie="compilateur"] { --couleur: var(--discret); --fond-noeud: var(--neutre-doux); }
 
 .echantillon {

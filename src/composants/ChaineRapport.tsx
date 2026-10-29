@@ -15,6 +15,7 @@ const categories = {
   saduq: "legende.saduq",
   daif: "legende.daif",
   compilateur: "legende.compilateur",
+  "non-evalue": "legende.nonEvalue",
 } as const satisfies Record<CategorieTransmetteur, string>;
 
 const generations = {
@@ -26,7 +27,7 @@ const generations = {
   atbaTabiin: "generation.atbaTabiin",
   maitreCompilateur: "generation.maitreCompilateur",
   compilateur: "generation.compilateur",
-} as const satisfies Record<Transmetteur["generation"], string>;
+} as const satisfies Record<NonNullable<Transmetteur["generation"]>, string>;
 
 // Chaîne cliquable (tronc commun puis voies) et fiche du transmetteur choisi.
 export default function ChaineRapport({ hadithId }: { hadithId: string }) {
@@ -49,7 +50,8 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
   ].flatMap((v) => transmetteurParId(v)?.nomTranslittere ?? []);
 
   const ids = [...tronc, ...voies.flatMap((v) => v.transmetteurs)];
-  const aucunFaible = ids.every((id) => transmetteurParId(id)?.categorie !== "daif");
+  // Un transmetteur non évalué interdit d'affirmer qu'aucun n'est faible.
+  const aucunFaible = ids.every((id) => !["daif", "non-evalue"].includes(transmetteurParId(id)?.categorie ?? "non-evalue"));
   const choisi = transmetteurParId(selection);
   const pivot = transmetteurParId(tronc[tronc.length - 1] ?? "");
 
@@ -148,12 +150,14 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
           </div>
           <div className={ui.badges}>
             <span className={`${ui.badge} ${styles.badgeCategorie} ${styles.porteur}`} data-categorie={choisi.categorie}>{t(categories[choisi.categorie])}</span>
-            <span className={ui.badge}>{t(generations[choisi.generation])}</span>
-            <span className={ui.badge}>{deces(choisi.deces)}</span>
-            <span className={ui.badge}>
-              <bdi lang="ar" dir="rtl" className="texte-arabe">{choisi.ville.ar}</bdi>{" "}
-              <bdi lang="ar-Latn" dir="ltr">({choisi.ville.translitteration})</bdi>
-            </span>
+            {choisi.generation && <span className={ui.badge}>{t(generations[choisi.generation])}</span>}
+            {choisi.deces && <span className={ui.badge}>{deces(choisi.deces)}</span>}
+            {choisi.ville && (
+              <span className={ui.badge}>
+                <bdi lang="ar" dir="rtl" className="texte-arabe">{choisi.ville.ar}</bdi>{" "}
+                <bdi lang="ar-Latn" dir="ltr">({choisi.ville.translitteration})</bdi>
+              </span>
+            )}
           </div>
 
           {choisi.verdictAr && (

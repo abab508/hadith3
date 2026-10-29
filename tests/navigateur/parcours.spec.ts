@@ -18,6 +18,16 @@ test("rapport fr : un clic sur un transmetteur ouvre sa fiche", async ({ page })
   await expect(fiche.getByText("ʿAlqama ibn Waqqāṣ al-Laythī")).toBeVisible();
 });
 
+test("rapport d'un hadith importé : transmetteurs non évalués, sans conclusion rassurante", async ({ page }) => {
+  await page.goto("/fr/rapport/bukhari-8");
+  await expect(page.locator('p[lang="ar"][dir="rtl"]').first()).toContainText("الْإِيمَانُ بِضْعٌ");
+  await expect(page.getByText(fr.rapport.legende.nonEvalue).first()).toBeVisible();
+  await expect(page.getByText(fr.rapport.aucunFaible)).toHaveCount(0);
+  await page.getByRole("button", { name: /Abū Hurayra/ }).click();
+  await expect(page.locator("#fiche-transmetteur")).toContainText(fr.rapport.fiche.aucunJugement);
+  await expect(page.getByText("Sanadset 650K").first()).toBeVisible();
+});
+
 test("rapport ar : page en RTL, sans traduction ni texte de repli vide", async ({ page }) => {
   await page.goto("/ar/rapport/niyyat");
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");

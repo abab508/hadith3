@@ -14,29 +14,144 @@
         "en": "Hadith collections, commentaries, narrator biographies and criticism. Terms of use must be checked for each book."
       },
       "ouvrages": [
-        { "id": "sahih-bukhari", "categorie": "hadith", "nom": "Ṣaḥīḥ al-Bukhārī", "nomAr": "صحيح البخاري" },
-        { "id": "sahih-muslim", "categorie": "hadith", "nom": "Ṣaḥīḥ Muslim", "nomAr": "صحيح مسلم" },
-        { "id": "sunan-abi-dawud", "categorie": "hadith", "nom": "Sunan Abī Dāwūd", "nomAr": "سنن أبي داود" },
-        { "id": "jami-tirmidhi", "categorie": "hadith", "nom": "Jāmiʿ al-Tirmidhī", "nomAr": "جامع الترمذي" },
-        { "id": "sunan-nasai", "categorie": "hadith", "nom": "Sunan al-Nasāʾī", "nomAr": "سنن النسائي" },
-        { "id": "sunan-ibn-majah", "categorie": "hadith", "nom": "Sunan Ibn Mājah", "nomAr": "سنن ابن ماجه" },
-        { "id": "musnad-ahmad", "categorie": "hadith", "nom": "Musnad Aḥmad", "nomAr": "مسند أحمد" },
-        { "id": "muwatta", "categorie": "hadith", "nom": "al-Muwaṭṭaʾ", "nomAr": "الموطأ" },
-        { "id": "sunan-darimi", "categorie": "hadith", "nom": "Sunan al-Dārimī", "nomAr": "سنن الدارمي" },
-        { "id": "sahih-ibn-khuzayma", "categorie": "hadith", "nom": "Ṣaḥīḥ Ibn Khuzayma", "nomAr": "صحيح ابن خزيمة" },
-        { "id": "sahih-ibn-hibban", "categorie": "hadith", "nom": "Ṣaḥīḥ Ibn Ḥibbān", "nomAr": "صحيح ابن حبان" },
-        { "id": "mustadrak", "categorie": "hadith", "nom": "al-Mustadrak", "nomAr": "المستدرك على الصحيحين" },
-        { "id": "sunan-kubra-bayhaqi", "categorie": "hadith", "nom": "al-Sunan al-Kubrā (al-Bayhaqī)", "nomAr": "السنن الكبرى للبيهقي" },
-        { "id": "musannaf-abd-al-razzaq", "categorie": "hadith", "nom": "Muṣannaf ʿAbd al-Razzāq", "nomAr": "مصنف عبد الرزاق" },
-        { "id": "musannaf-ibn-abi-shayba", "categorie": "hadith", "nom": "Muṣannaf Ibn Abī Shayba", "nomAr": "مصنف ابن أبي شيبة" },
-        { "id": "mujam-kabir", "categorie": "hadith", "nom": "al-Muʿjam al-Kabīr (al-Ṭabarānī)", "nomAr": "المعجم الكبير للطبراني" },
-        { "id": "tahdhib-al-kamal", "categorie": "rijal", "nom": "Tahdhīb al-Kamāl (al-Mizzī)", "nomAr": "تهذيب الكمال" },
-        { "id": "taqrib", "categorie": "rijal", "nom": "Taqrīb al-Tahdhīb (Ibn Ḥajar)", "nomAr": "تقريب التهذيب" },
-        { "id": "jarh-tadil", "categorie": "rijal", "nom": "al-Jarḥ wa-l-Taʿdīl (Ibn Abī Ḥātim)", "nomAr": "الجرح والتعديل" },
-        { "id": "tarikh-kabir", "categorie": "rijal", "nom": "al-Tārīkh al-Kabīr (al-Bukhārī)", "nomAr": "التاريخ الكبير" },
-        { "id": "mizan", "categorie": "rijal", "nom": "Mīzān al-Iʿtidāl (al-Dhahabī)", "nomAr": "ميزان الاعتدال" },
-        { "id": "lisan", "categorie": "rijal", "nom": "Lisān al-Mīzān (Ibn Ḥajar)", "nomAr": "لسان الميزان" },
-        { "id": "siyar", "categorie": "rijal", "nom": "Siyar aʿlām al-nubalāʾ (al-Dhahabī)", "nomAr": "سير أعلام النبلاء" }
+        {
+          "id": "sahih-bukhari",
+          "categorie": "hadith",
+          "nom": "Ṣaḥīḥ al-Bukhārī",
+          "nomAr": "صحيح البخاري"
+        },
+        {
+          "id": "sahih-muslim",
+          "categorie": "hadith",
+          "nom": "Ṣaḥīḥ Muslim",
+          "nomAr": "صحيح مسلم"
+        },
+        {
+          "id": "sunan-abi-dawud",
+          "categorie": "hadith",
+          "nom": "Sunan Abī Dāwūd",
+          "nomAr": "سنن أبي داود"
+        },
+        {
+          "id": "jami-tirmidhi",
+          "categorie": "hadith",
+          "nom": "Jāmiʿ al-Tirmidhī",
+          "nomAr": "جامع الترمذي"
+        },
+        {
+          "id": "sunan-nasai",
+          "categorie": "hadith",
+          "nom": "Sunan al-Nasāʾī",
+          "nomAr": "سنن النسائي"
+        },
+        {
+          "id": "sunan-ibn-majah",
+          "categorie": "hadith",
+          "nom": "Sunan Ibn Mājah",
+          "nomAr": "سنن ابن ماجه"
+        },
+        {
+          "id": "musnad-ahmad",
+          "categorie": "hadith",
+          "nom": "Musnad Aḥmad",
+          "nomAr": "مسند أحمد"
+        },
+        {
+          "id": "muwatta",
+          "categorie": "hadith",
+          "nom": "al-Muwaṭṭaʾ",
+          "nomAr": "الموطأ"
+        },
+        {
+          "id": "sunan-darimi",
+          "categorie": "hadith",
+          "nom": "Sunan al-Dārimī",
+          "nomAr": "سنن الدارمي"
+        },
+        {
+          "id": "sahih-ibn-khuzayma",
+          "categorie": "hadith",
+          "nom": "Ṣaḥīḥ Ibn Khuzayma",
+          "nomAr": "صحيح ابن خزيمة"
+        },
+        {
+          "id": "sahih-ibn-hibban",
+          "categorie": "hadith",
+          "nom": "Ṣaḥīḥ Ibn Ḥibbān",
+          "nomAr": "صحيح ابن حبان"
+        },
+        {
+          "id": "mustadrak",
+          "categorie": "hadith",
+          "nom": "al-Mustadrak",
+          "nomAr": "المستدرك على الصحيحين"
+        },
+        {
+          "id": "sunan-kubra-bayhaqi",
+          "categorie": "hadith",
+          "nom": "al-Sunan al-Kubrā (al-Bayhaqī)",
+          "nomAr": "السنن الكبرى للبيهقي"
+        },
+        {
+          "id": "musannaf-abd-al-razzaq",
+          "categorie": "hadith",
+          "nom": "Muṣannaf ʿAbd al-Razzāq",
+          "nomAr": "مصنف عبد الرزاق"
+        },
+        {
+          "id": "musannaf-ibn-abi-shayba",
+          "categorie": "hadith",
+          "nom": "Muṣannaf Ibn Abī Shayba",
+          "nomAr": "مصنف ابن أبي شيبة"
+        },
+        {
+          "id": "mujam-kabir",
+          "categorie": "hadith",
+          "nom": "al-Muʿjam al-Kabīr (al-Ṭabarānī)",
+          "nomAr": "المعجم الكبير للطبراني"
+        },
+        {
+          "id": "tahdhib-al-kamal",
+          "categorie": "rijal",
+          "nom": "Tahdhīb al-Kamāl (al-Mizzī)",
+          "nomAr": "تهذيب الكمال"
+        },
+        {
+          "id": "taqrib",
+          "categorie": "rijal",
+          "nom": "Taqrīb al-Tahdhīb (Ibn Ḥajar)",
+          "nomAr": "تقريب التهذيب"
+        },
+        {
+          "id": "jarh-tadil",
+          "categorie": "rijal",
+          "nom": "al-Jarḥ wa-l-Taʿdīl (Ibn Abī Ḥātim)",
+          "nomAr": "الجرح والتعديل"
+        },
+        {
+          "id": "tarikh-kabir",
+          "categorie": "rijal",
+          "nom": "al-Tārīkh al-Kabīr (al-Bukhārī)",
+          "nomAr": "التاريخ الكبير"
+        },
+        {
+          "id": "mizan",
+          "categorie": "rijal",
+          "nom": "Mīzān al-Iʿtidāl (al-Dhahabī)",
+          "nomAr": "ميزان الاعتدال"
+        },
+        {
+          "id": "lisan",
+          "categorie": "rijal",
+          "nom": "Lisān al-Mīzān (Ibn Ḥajar)",
+          "nomAr": "لسان الميزان"
+        },
+        {
+          "id": "siyar",
+          "categorie": "rijal",
+          "nom": "Siyar aʿlām al-nubalāʾ (al-Dhahabī)",
+          "nomAr": "سير أعلام النبلاء"
+        }
       ]
     },
     {
@@ -75,6 +190,19 @@
         "ar": "نص مستخرج آليًا: النتائج موسومة «للتحقق».",
         "fr": "Texte reconnu automatiquement : les résultats sont marqués « à vérifier ».",
         "en": "Automatically recognised text: results are marked “to be checked”."
+      },
+      "ouvrages": []
+    },
+    {
+      "id": "sanadset",
+      "nom": "Sanadset 650K",
+      "nomAr": "Sanadset 650K",
+      "acces": "licence-ouverte",
+      "parDefaut": true,
+      "description": {
+        "ar": "مجموعة بيانات مفتوحة (CC BY 4.0) لأسانيد الحديث مستخرجة آليًا من 926 كتابًا. DOI: 10.17632/5xth87zwb5",
+        "fr": "Jeu de données ouvert (CC BY 4.0) de chaînes de transmission extraites automatiquement de 926 ouvrages. DOI : 10.17632/5xth87zwb5",
+        "en": "Open dataset (CC BY 4.0) of transmission chains automatically extracted from 926 books. DOI: 10.17632/5xth87zwb5"
       },
       "ouvrages": []
     }

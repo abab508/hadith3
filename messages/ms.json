@@ -232,7 +232,8 @@
       "thiqa": "Dipercayai",
       "saduq": "Benar",
       "daif": "Lemah",
-      "compilateur": "Penyusun"
+      "compilateur": "Penyusun",
+      "nonEvalue": "Belum dinilai"
     },
     "tronc": "Inti bersama",
     "voies": "Laluan",

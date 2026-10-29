@@ -68,10 +68,284 @@
         }
       ],
       "chaine": {
-        "tronc": ["prophete", "umar", "alqama", "taymi", "yahya"],
+        "tronc": [
+          "prophete",
+          "umar",
+          "alqama",
+          "taymi",
+          "yahya"
+        ],
         "voies": [
-          { "id": "bukhari", "ouvrage": "sahih-bukhari", "numero": "1", "transmetteurs": ["sufyan", "humaydi", "bukhari"] },
-          { "id": "muslim", "ouvrage": "sahih-muslim", "numero": "1907", "transmetteurs": ["malik", "qanabi", "muslim"] }
+          {
+            "id": "bukhari",
+            "ouvrage": "sahih-bukhari",
+            "numero": "1",
+            "transmetteurs": [
+              "sufyan",
+              "humaydi",
+              "bukhari"
+            ]
+          },
+          {
+            "id": "muslim",
+            "ouvrage": "sahih-muslim",
+            "numero": "1907",
+            "transmetteurs": [
+              "malik",
+              "qanabi",
+              "muslim"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bukhari-2",
+      "texteAr": "أُمِّ الْمُؤْمِنِينَ رَضِيَ اللَّهُ عَنْهَا ، أَنَّ الْحَارِثَ بْنَ هِشَامٍ رَضِيَ اللَّهُ عَنْهُ سَأَل رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، فَقَالَ : يَا رَسُولَ اللَّهِ ، كَيْفَ يَأْتِيكَ الْوَحْيُ ؟ فَقَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ : \" أَحْيَانًا يَأْتِينِي مِثْلَ صَلْصَلَةِ الْجَرَسِ ، وَهُوَ أَشَدُّهُ عَلَيَّ فَيُفْصَمُ عَنِّي ، وَقَدْ وَعَيْتُ عَنْهُ مَا قَالَ ، وَأَحْيَانًا يَتَمَثَّلُ لِي الْمَلَكُ رَجُلًا فَيُكَلِّمُنِي فَأَعِي مَا يَقُولُ \"  ، قَالَتْ عَائِشَةُ رَضِيَ اللَّهُ عَنْهَا : وَلَقَدْ رَأَيْتُهُ يَنْزِلُ عَلَيْهِ الْوَحْيُ فِي الْيَوْمِ الشَّدِيدِ الْبَرْدِ فَيَفْصِمُ عَنْهُ ، وَإِنَّ جَبِينَهُ لَيَتَفَصَّدُ عَرَقًا .",
+      "requeteAr": "أَحْيَانًا يَأْتِينِي مِثْلَ صَلْصَلَةِ الْجَرَسِ ، وَهُوَ أَشَدُّهُ عَلَيَّ فَيُفْصَمُ عَنِّي ، وَقَدْ وَعَيْتُ عَنْهُ مَا قَالَ ، وَأَحْيَانًا يَتَمَثَّلُ لِي الْمَلَكُ رَجُلًا فَيُكَلِّمُنِي فَأَعِي مَا يَقُولُ",
+      "traductions": [],
+      "statutTerme": "ghayr-muhaddad",
+      "statut": {
+        "ar": "أخرجه البخاري في صحيحه، رقم 2 بحسب ترقيم Sanadset 650K.",
+        "fr": "Rapporté par al-Bukhārī dans son Ṣaḥīḥ, n° 2 selon la numérotation de Sanadset 650K.",
+        "en": "Reported by al-Bukhārī in his Ṣaḥīḥ, no. 2 in the Sanadset 650K numbering."
+      },
+      "particularite": {
+        "ar": "سند مستخرج آليًا من Sanadset 650K (CC BY 4.0) ولم يُراجَع بعد. قد يختلف الرقم عن الترقيم المشهور.",
+        "fr": "Chaîne extraite automatiquement de Sanadset 650K (CC BY 4.0), pas encore vérifiée. Le numéro peut différer de la numérotation courante.",
+        "en": "Chain automatically extracted from Sanadset 650K (CC BY 4.0), not yet checked. The number may differ from the usual numbering."
+      },
+      "occurrences": [
+        {
+          "id": "bukhari-2",
+          "ouvrage": "sahih-bukhari",
+          "numero": "2",
+          "livreAr": "[الكتاب غير محدد]",
+          "livre": "[livre à préciser]",
+          "correspondance": "original",
+          "bibliotheque": "sanadset",
+          "texteAr": "أُمِّ الْمُؤْمِنِينَ رَضِيَ اللَّهُ عَنْهَا ، أَنَّ الْحَارِثَ بْنَ هِشَامٍ رَضِيَ اللَّهُ عَنْهُ سَأَل رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، فَقَالَ : يَا رَسُولَ اللَّهِ ، كَيْفَ يَأْتِيكَ الْوَحْيُ ؟ فَقَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ : \" أَحْيَانًا يَأْتِينِي مِثْلَ صَلْصَلَةِ الْجَرَسِ ، وَهُوَ أَشَدُّهُ عَلَيَّ فَيُفْصَمُ عَنِّي ، وَقَدْ وَعَيْتُ عَنْهُ مَا قَالَ ، وَأَحْيَانًا يَتَمَثَّلُ لِي الْمَلَكُ رَجُلًا فَيُكَلِّمُنِي فَأَعِي مَا يَقُولُ \"  ، قَالَتْ عَائِشَةُ رَضِيَ اللَّهُ عَنْهَا : وَلَقَدْ رَأَيْتُهُ يَنْزِلُ عَلَيْهِ الْوَحْيُ فِي الْيَوْمِ الشَّدِيدِ الْبَرْدِ فَيَفْصِمُ عَنْهُ ، وَإِنَّ جَبِينَهُ لَيَتَفَصَّدُ عَرَقًا .",
+          "voie": "bukhari"
+        }
+      ],
+      "chaine": {
+        "tronc": [
+          "prophete",
+          "b2-5",
+          "b2-4",
+          "b2-3",
+          "b2-2",
+          "b2-1"
+        ],
+        "voies": [
+          {
+            "id": "bukhari",
+            "ouvrage": "sahih-bukhari",
+            "numero": "2",
+            "transmetteurs": [
+              "bukhari"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bukhari-8",
+      "texteAr": "رَضِيَ اللَّهُ عَنْه ، عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" الْإِيمَانُ بِضْعٌ وَسِتُّونَ شُعْبَةً ، وَالْحَيَاءُ شُعْبَةٌ مِنَ الْإِيمَانِ \"  .",
+      "requeteAr": "الْإِيمَانُ بِضْعٌ وَسِتُّونَ شُعْبَةً ، وَالْحَيَاءُ شُعْبَةٌ مِنَ الْإِيمَانِ",
+      "traductions": [],
+      "statutTerme": "ghayr-muhaddad",
+      "statut": {
+        "ar": "أخرجه البخاري في صحيحه، رقم 8 بحسب ترقيم Sanadset 650K.",
+        "fr": "Rapporté par al-Bukhārī dans son Ṣaḥīḥ, n° 8 selon la numérotation de Sanadset 650K.",
+        "en": "Reported by al-Bukhārī in his Ṣaḥīḥ, no. 8 in the Sanadset 650K numbering."
+      },
+      "particularite": {
+        "ar": "سند مستخرج آليًا من Sanadset 650K (CC BY 4.0) ولم يُراجَع بعد. قد يختلف الرقم عن الترقيم المشهور.",
+        "fr": "Chaîne extraite automatiquement de Sanadset 650K (CC BY 4.0), pas encore vérifiée. Le numéro peut différer de la numérotation courante.",
+        "en": "Chain automatically extracted from Sanadset 650K (CC BY 4.0), not yet checked. The number may differ from the usual numbering."
+      },
+      "occurrences": [
+        {
+          "id": "bukhari-8",
+          "ouvrage": "sahih-bukhari",
+          "numero": "8",
+          "livreAr": "[الكتاب غير محدد]",
+          "livre": "[livre à préciser]",
+          "correspondance": "original",
+          "bibliotheque": "sanadset",
+          "texteAr": "رَضِيَ اللَّهُ عَنْه ، عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" الْإِيمَانُ بِضْعٌ وَسِتُّونَ شُعْبَةً ، وَالْحَيَاءُ شُعْبَةٌ مِنَ الْإِيمَانِ \"  .",
+          "voie": "bukhari"
+        }
+      ],
+      "chaine": {
+        "tronc": [
+          "prophete",
+          "b8-6",
+          "b8-5",
+          "b8-4",
+          "b8-3",
+          "b8-2",
+          "b8-1"
+        ],
+        "voies": [
+          {
+            "id": "bukhari",
+            "ouvrage": "sahih-bukhari",
+            "numero": "8",
+            "transmetteurs": [
+              "bukhari"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bukhari-10",
+      "texteAr": "رَضِيَ اللَّهُ عَنْهُ ، قَالَ : قَالُوا : يَا رَسُولَ اللَّهِ ، أَيُّ الْإِسْلَامِ أَفْضَلُ ؟ قَالَ : \" مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ \"  .",
+      "requeteAr": "مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+      "traductions": [],
+      "statutTerme": "ghayr-muhaddad",
+      "statut": {
+        "ar": "أخرجه البخاري في صحيحه، رقم 10 بحسب ترقيم Sanadset 650K.",
+        "fr": "Rapporté par al-Bukhārī dans son Ṣaḥīḥ, n° 10 selon la numérotation de Sanadset 650K.",
+        "en": "Reported by al-Bukhārī in his Ṣaḥīḥ, no. 10 in the Sanadset 650K numbering."
+      },
+      "particularite": {
+        "ar": "سند مستخرج آليًا من Sanadset 650K (CC BY 4.0) ولم يُراجَع بعد. قد يختلف الرقم عن الترقيم المشهور.",
+        "fr": "Chaîne extraite automatiquement de Sanadset 650K (CC BY 4.0), pas encore vérifiée. Le numéro peut différer de la numérotation courante.",
+        "en": "Chain automatically extracted from Sanadset 650K (CC BY 4.0), not yet checked. The number may differ from the usual numbering."
+      },
+      "occurrences": [
+        {
+          "id": "bukhari-10",
+          "ouvrage": "sahih-bukhari",
+          "numero": "10",
+          "livreAr": "[الكتاب غير محدد]",
+          "livre": "[livre à préciser]",
+          "correspondance": "original",
+          "bibliotheque": "sanadset",
+          "texteAr": "رَضِيَ اللَّهُ عَنْهُ ، قَالَ : قَالُوا : يَا رَسُولَ اللَّهِ ، أَيُّ الْإِسْلَامِ أَفْضَلُ ؟ قَالَ : \" مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ \"  .",
+          "voie": "bukhari"
+        }
+      ],
+      "chaine": {
+        "tronc": [
+          "prophete",
+          "b10-5",
+          "b10-4",
+          "b10-3",
+          "b10-2",
+          "b10-1"
+        ],
+        "voies": [
+          {
+            "id": "bukhari",
+            "ouvrage": "sahih-bukhari",
+            "numero": "10",
+            "transmetteurs": [
+              "bukhari"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bukhari-13",
+      "texteAr": "رَضِيَ اللَّهُ عَنْهُ ، أَن رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" فَوَالَّذِي نَفْسِي بِيَدِهِ ، لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ \"  .",
+      "requeteAr": "فَوَالَّذِي نَفْسِي بِيَدِهِ ، لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ",
+      "traductions": [],
+      "statutTerme": "ghayr-muhaddad",
+      "statut": {
+        "ar": "أخرجه البخاري في صحيحه، رقم 13 بحسب ترقيم Sanadset 650K.",
+        "fr": "Rapporté par al-Bukhārī dans son Ṣaḥīḥ, n° 13 selon la numérotation de Sanadset 650K.",
+        "en": "Reported by al-Bukhārī in his Ṣaḥīḥ, no. 13 in the Sanadset 650K numbering."
+      },
+      "particularite": {
+        "ar": "سند مستخرج آليًا من Sanadset 650K (CC BY 4.0) ولم يُراجَع بعد. قد يختلف الرقم عن الترقيم المشهور.",
+        "fr": "Chaîne extraite automatiquement de Sanadset 650K (CC BY 4.0), pas encore vérifiée. Le numéro peut différer de la numérotation courante.",
+        "en": "Chain automatically extracted from Sanadset 650K (CC BY 4.0), not yet checked. The number may differ from the usual numbering."
+      },
+      "occurrences": [
+        {
+          "id": "bukhari-13",
+          "ouvrage": "sahih-bukhari",
+          "numero": "13",
+          "livreAr": "[الكتاب غير محدد]",
+          "livre": "[livre à préciser]",
+          "correspondance": "original",
+          "bibliotheque": "sanadset",
+          "texteAr": "رَضِيَ اللَّهُ عَنْهُ ، أَن رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" فَوَالَّذِي نَفْسِي بِيَدِهِ ، لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ \"  .",
+          "voie": "bukhari"
+        }
+      ],
+      "chaine": {
+        "tronc": [
+          "prophete",
+          "b13-5",
+          "b13-4",
+          "b13-3",
+          "b13-2",
+          "b13-1"
+        ],
+        "voies": [
+          {
+            "id": "bukhari",
+            "ouvrage": "sahih-bukhari",
+            "numero": "13",
+            "transmetteurs": [
+              "bukhari"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bukhari-16",
+      "texteAr": "، عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" آيَةُ الْإِيمَانِ حُبُّ الْأَنْصَارِ ، وَآيَةُ النِّفَاقِ بُغْضُ الْأَنْصَارِ \"  .",
+      "requeteAr": "آيَةُ الْإِيمَانِ حُبُّ الْأَنْصَارِ ، وَآيَةُ النِّفَاقِ بُغْضُ الْأَنْصَارِ",
+      "traductions": [],
+      "statutTerme": "ghayr-muhaddad",
+      "statut": {
+        "ar": "أخرجه البخاري في صحيحه، رقم 16 بحسب ترقيم Sanadset 650K.",
+        "fr": "Rapporté par al-Bukhārī dans son Ṣaḥīḥ, n° 16 selon la numérotation de Sanadset 650K.",
+        "en": "Reported by al-Bukhārī in his Ṣaḥīḥ, no. 16 in the Sanadset 650K numbering."
+      },
+      "particularite": {
+        "ar": "سند مستخرج آليًا من Sanadset 650K (CC BY 4.0) ولم يُراجَع بعد. قد يختلف الرقم عن الترقيم المشهور.",
+        "fr": "Chaîne extraite automatiquement de Sanadset 650K (CC BY 4.0), pas encore vérifiée. Le numéro peut différer de la numérotation courante.",
+        "en": "Chain automatically extracted from Sanadset 650K (CC BY 4.0), not yet checked. The number may differ from the usual numbering."
+      },
+      "occurrences": [
+        {
+          "id": "bukhari-16",
+          "ouvrage": "sahih-bukhari",
+          "numero": "16",
+          "livreAr": "[الكتاب غير محدد]",
+          "livre": "[livre à préciser]",
+          "correspondance": "original",
+          "bibliotheque": "sanadset",
+          "texteAr": "، عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" آيَةُ الْإِيمَانِ حُبُّ الْأَنْصَارِ ، وَآيَةُ النِّفَاقِ بُغْضُ الْأَنْصَارِ \"  .",
+          "voie": "bukhari"
+        }
+      ],
+      "chaine": {
+        "tronc": [
+          "prophete",
+          "b16-4",
+          "b16-3",
+          "b16-2",
+          "b16-1"
+        ],
+        "voies": [
+          {
+            "id": "bukhari",
+            "ouvrage": "sahih-bukhari",
+            "numero": "16",
+            "transmetteurs": [
+              "bukhari"
+            ]
+          }
         ]
       }
     }
