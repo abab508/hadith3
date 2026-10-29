@@ -169,7 +169,8 @@
     "livre": {
       "titre": "{livre} میں مذکور راوی",
       "reference": "اس کتاب میں حوالہ: {reference}",
-      "apparait": "ان میں آتا ہے:"
+      "apparait": "ان میں آتا ہے:",
+      "referenceACompleter": "جلد اور صفحہ ابھی درج ہونا باقی ہے"
     },
     "correspondance": {
       "original": "ہوبہو مطابقت · اصل عربی متن",
@@ -184,7 +185,7 @@
     "aucuneTraduction": "اس متن کا آپ کی زبان میں کوئی مصدقہ ترجمہ نہیں۔",
     "aucunResultat": "ان فلٹرز کے ساتھ کوئی نتیجہ نہیں۔",
     "aucunResultatAide": "نمونے کے ذخیرے میں فی الحال صرف {nombre} احادیث ہیں۔ کوئی عربی لفظ (مثلاً الإيمان)، حدیث نمبر یا کسی راوی کا نام آزمائیں۔",
-    "referenceSeulement": "اس اشاعت کا متن نقل نہیں کیا گیا۔ حوالہ: [اشاعت، جلد، صفحہ]۔",
+    "referenceSeulement": "اس اشاعت کا متن نقل نہیں کیا گیا، صرف اس کا حوالہ دیا گیا ہے۔",
     "premierTransmetteur": "پہلا راوی: {nom}",
     "bibliotheque": "کتب خانہ: {nom}",
     "numero": "{ouvrage}، نمبر {numero}",
@@ -270,7 +271,8 @@
       "deces": "وفات {annee} ھ",
       "decesVers": "وفات تقریباً {annee} ھ",
       "decesEntre": "وفات {debut} اور {fin} ھ کے درمیان",
-      "aucun": "—"
+      "aucun": "—",
+      "referenceACompleter": "جلد اور صفحہ ابھی درج ہونا باقی ہے"
     },
     "generation": {
       "source": "حدیث کا ماخذ",

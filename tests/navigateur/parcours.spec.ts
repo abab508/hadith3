@@ -4,6 +4,7 @@ import fr from "../../messages/fr.json" with { type: "json" };
 
 test("rapport fr : un clic sur un transmetteur ouvre sa fiche", async ({ page }) => {
   await page.goto("/fr/rapport/niyyat");
+  await expect(page).toHaveTitle("Rapport : Ṣaḥīḥ al-Bukhārī, n° 1");
   await expect(page.locator('p[lang="ar"][dir="rtl"]').first()).toContainText("إِنَّمَا الأَعْمَالُ");
   const fiche = page.locator("#fiche-transmetteur");
   // Le dernier maillon du tronc commun est choisi d'office.

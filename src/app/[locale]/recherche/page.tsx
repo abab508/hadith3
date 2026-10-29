@@ -195,7 +195,7 @@ export default async function Recherche({
                 <bdi lang="ar-Latn" dir="ltr">{transmetteur.nomTranslittere}</bdi>
               </h3>
               {transmetteur.verdictAr && <p lang="ar" dir="rtl" className="texte-arabe">{transmetteur.verdictAr}</p>}
-              <p className={styles.meta}><span>{t("livre.reference", { reference })}</span></p>
+              <p className={styles.meta}><span>{t("livre.reference", { reference: reference ?? t("livre.referenceACompleter") })}</span></p>
               <p className={styles.meta}>
                 <span>{t("livre.apparait")}</span>
                 {hadithsDuTransmetteur(transmetteur.id).map((h) => {

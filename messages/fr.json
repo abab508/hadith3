@@ -169,7 +169,8 @@
     "livre": {
       "titre": "Transmetteurs cités dans {livre}",
       "reference": "Référence dans ce livre : {reference}",
-      "apparait": "Apparaît dans :"
+      "apparait": "Apparaît dans :",
+      "referenceACompleter": "tome et page à compléter"
     },
     "correspondance": {
       "original": "Correspondance exacte · texte arabe original",
@@ -184,7 +185,7 @@
     "aucuneTraduction": "Aucune traduction vérifiée dans votre langue pour ce texte.",
     "aucunResultat": "Aucun résultat avec ces filtres.",
     "aucunResultatAide": "Le corpus d’exemple ne contient pour l’instant que {nombre} hadiths. Essayez un mot arabe (par ex. الإيمان), un numéro de hadith ou le nom d’un transmetteur.",
-    "referenceSeulement": "Le texte de cette édition n’est pas reproduit. Référence : [édition, tome, page].",
+    "referenceSeulement": "Le texte de cette édition n’est pas reproduit : seule sa référence est indiquée.",
     "premierTransmetteur": "Premier transmetteur : {nom}",
     "bibliotheque": "Bibliothèque : {nom}",
     "numero": "{ouvrage}, n° {numero}",
@@ -270,7 +271,8 @@
       "deces": "m. {annee} H",
       "decesVers": "m. vers {annee} H",
       "decesEntre": "m. entre {debut} et {fin} H",
-      "aucun": "—"
+      "aucun": "—",
+      "referenceACompleter": "tome et page à compléter"
     },
     "generation": {
       "source": "Source du hadith",

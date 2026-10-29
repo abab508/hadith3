@@ -169,7 +169,8 @@
     "livre": {
       "titre": "{livre} içinde geçen râvîler",
       "reference": "Bu kitaptaki yeri: {reference}",
-      "apparait": "Geçtiği yerler:"
+      "apparait": "Geçtiği yerler:",
+      "referenceACompleter": "cilt ve sayfa eklenecek"
     },
     "correspondance": {
       "original": "Tam eşleşme · özgün Arapça metin",
@@ -184,7 +185,7 @@
     "aucuneTraduction": "Bu metin için dilinizde doğrulanmış çeviri yok.",
     "aucunResultat": "Bu filtrelerle sonuç yok.",
     "aucunResultatAide": "Örnek derlem şu an yalnızca {nombre} hadis içeriyor. Arapça bir kelime (ör. الإيمان), bir hadis numarası veya bir râvî adı deneyin.",
-    "referenceSeulement": "Bu baskının metni aktarılmaz. Atıf: [baskı, cilt, sayfa].",
+    "referenceSeulement": "Bu baskının metni aktarılmaz; yalnızca atfı verilir.",
     "premierTransmetteur": "İlk ravi: {nom}",
     "bibliotheque": "Kütüphane: {nom}",
     "numero": "{ouvrage}, no. {numero}",
@@ -270,7 +271,8 @@
       "deces": "ö. {annee} H",
       "decesVers": "ö. yaklaşık {annee} H",
       "decesEntre": "ö. {debut} ile {fin} H arası",
-      "aucun": "—"
+      "aucun": "—",
+      "referenceACompleter": "cilt ve sayfa eklenecek"
     },
     "generation": {
       "source": "Hadisin kaynağı",

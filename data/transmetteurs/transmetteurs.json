@@ -44,7 +44,7 @@
       "sources": [
         {
           "ouvrage": "siyar",
-          "reference": "[tome, page]"
+          "reference": null
         }
       ]
     },
@@ -81,7 +81,7 @@
       "sources": [
         {
           "ouvrage": "tahdhib-al-kamal",
-          "reference": "[tome, page]"
+          "reference": null
         },
         {
           "ouvrage": "taqrib",
@@ -144,7 +144,7 @@
       "sources": [
         {
           "ouvrage": "tahdhib-al-kamal",
-          "reference": "[tome, page]"
+          "reference": null
         },
         {
           "ouvrage": "taqrib",
@@ -152,7 +152,7 @@
         },
         {
           "ouvrage": "jarh-tadil",
-          "reference": "[tome, page]"
+          "reference": null
         }
       ]
     },
@@ -189,7 +189,7 @@
       "sources": [
         {
           "ouvrage": "tahdhib-al-kamal",
-          "reference": "[tome, page]"
+          "reference": null
         },
         {
           "ouvrage": "taqrib",
@@ -241,7 +241,7 @@
       "sources": [
         {
           "ouvrage": "tahdhib-al-kamal",
-          "reference": "[tome, page]"
+          "reference": null
         },
         {
           "ouvrage": "taqrib",
@@ -249,7 +249,7 @@
         },
         {
           "ouvrage": "siyar",
-          "reference": "[tome, page]"
+          "reference": null
         }
       ]
     },
@@ -347,7 +347,7 @@
         },
         {
           "ouvrage": "siyar",
-          "reference": "[tome, page]"
+          "reference": null
         }
       ]
     },

@@ -144,14 +144,14 @@ export function estLivreAutreCategorie(id: string | undefined): boolean {
 }
 
 // Transmetteurs cités dans un livre : par nom (arabe ou translittéré) ou par numéro de notice.
-export function chercherDansLivre(livre: string, requete: string): { transmetteur: Transmetteur; reference: string }[] {
+export function chercherDansLivre(livre: string, requete: string): { transmetteur: Transmetteur; reference: string | null }[] {
   const numero = numeroDemande(requete);
   const demandes = mots(requete);
   return corpus.transmetteurs.flatMap((transmetteur) => {
     const source = transmetteur.sources.find((s) => s.ouvrage === livre);
     if (!source) return [];
     // « n° 2451 (…) » : le numéro de notice est un mot de la référence.
-    if (numero) return mots(source.reference).includes(numero) ? [{ transmetteur, reference: source.reference }] : [];
+    if (numero) return mots(source.reference ?? "").includes(numero) ? [{ transmetteur, reference: source.reference }] : [];
     const disponibles = avecSansArticle(mots(`${transmetteur.nomAr} ${transmetteur.nomTranslittere}`));
     const trouve = demandes.every((d) => trouveMot(d, disponibles));
     return trouve ? [{ transmetteur, reference: source.reference }] : [];

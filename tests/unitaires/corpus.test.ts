@@ -30,6 +30,22 @@ describe("corpus d'exemple", () => {
     }
   });
 
+  it("ne commence aucun texte par un reste de chaîne (« رضي الله عنه ، » ou une virgule)", () => {
+    const textes = corpus.hadiths.flatMap((h) => [h.texteAr, ...h.occurrences.map((o) => o.texteAr)]);
+    for (const texte of textes) {
+      if (texte === null) continue;
+      expect(texte, texte.slice(0, 40)).not.toMatch(/^\s*،/);
+      expect(texte, texte.slice(0, 40)).not.toMatch(/^[^،]{0,40}رَضِيَ اللَّهُ عَنْ\S*\s*،/);
+    }
+  });
+
+  it("n'affiche aucun texte provisoire entre crochets dans les noms de bibliothèque ni les références", () => {
+    for (const b of corpus.bibliotheques) expect([b.nom, b.nomAr].join(" "), b.id).not.toMatch(/\[.*\]/);
+    for (const t of corpus.transmetteurs) {
+      for (const s of t.sources) expect(s.reference ?? "", `${t.id} · ${s.ouvrage}`).not.toMatch(/^\[.*\]$/);
+    }
+  });
+
   it("contient al-Maktaba al-Shāmila avec des recueils de hadith et des ouvrages sur les transmetteurs", () => {
     const shamila = corpus.bibliotheques.find((b) => b.id === "shamila");
     expect(shamila?.nomAr).toBe("المكتبة الشاملة");

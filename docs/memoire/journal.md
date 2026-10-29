@@ -59,3 +59,8 @@
 - Fait : particules arabes (ب و ف ل ك + ال) détachées des mots (« النيات » trouve « بالنيات ») ; traductions fr/en marquées IA pour les 5 hadiths importés ; message d'aide quand rien n'est trouvé.
 - Reste : le corpus n'a que 6 hadiths, la plupart des recherches restent vides ; import en nombre à décider ; traductions IA à relire.
 - Prochaine étape : validation du patron pour la mise en ligne.
+
+## 2026-10-29 — Textes coupés et textes provisoires
+- Fait : début des textes arabes Bukhārī n° 2, 8, 10, 13, 16 nettoyé ; plus de « [tome, page] » ni de « [Bibliothèque partenaire] » ; titre du rapport lisible ; « français — français » supprimé du menu.
+- Vérifié : typecheck, 102 tests unitaires, contrôle, build, 61 tests navigateur.
+- Prochaine étape : validation du patron pour fusion dans main (= mise en ligne).

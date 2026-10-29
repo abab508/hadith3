@@ -55,7 +55,7 @@ export const transmetteur = z.strictObject({
     explication: texteMultilingue,
   })),
   biographie: texteMultilingue,
-  sources: z.array(z.strictObject({ ouvrage: id, reference: z.string().min(1) })),
+  sources: z.array(z.strictObject({ ouvrage: id, reference: z.string().min(1).nullable() })),
 });
 
 export const fichierTransmetteurs = z.strictObject({
