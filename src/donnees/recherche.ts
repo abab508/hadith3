@@ -31,8 +31,25 @@ function mots(texte: string): string[] {
 }
 
 // « الاعمال » donne aussi « اعمال » : l'article est facultatif dans la requête.
+// Particules arabes collées au début du mot : و ف (et), ب (par), ك (comme), ل (pour), puis l'article ال.
+// « بالنيات » donne aussi « النيات » et « نيات ». On ajoute des formes, on n'en retire jamais.
+const PREFIXES = ["وبال", "فبال", "وال", "فال", "بال", "كال", "لل", "ال", "و", "ف", "ب", "ك", "ل"];
+
+function formes(mot: string): string[] {
+  const resultat = new Set([mot]);
+  for (const p of PREFIXES) {
+    if (mot.startsWith(p) && mot.length - p.length >= 3) resultat.add(mot.slice(p.length));
+  }
+  return [...resultat];
+}
+
 function avecSansArticle(liste: string[]): string[] {
-  return [...new Set(liste.flatMap((m) => (m.startsWith("ال") && m.length > 4 ? [m, m.slice(2)] : [m])))];
+  return [...new Set(liste.flatMap(formes))];
+}
+
+// Un mot demandé correspond si l'une de ses formes est un mot disponible, ou son début (dès 3 lettres).
+function trouveMot(demande: string, disponibles: string[]): boolean {
+  return formes(demande).some((d) => disponibles.some((m) => m === d || (d.length >= 3 && m.startsWith(d))));
 }
 
 type Champs = Record<"arabe" | "traductions" | "references" | "transmetteurs" | "translitteres" | "recueils", string[]>;
@@ -74,7 +91,7 @@ function correspond(hadith: Hadith, requete: string, mode: Mode): boolean {
   if (mode === "fragment") return textes.some((t) => t.includes(demande));
   // Chaque mot de la requête doit figurer : mot entier, ou début de mot dès 3 lettres.
   const disponibles = avecSansArticle(textes.flatMap((t) => t.split(" ").filter(Boolean)));
-  return mots(requete).every((d) => disponibles.some((m) => m === d || (d.length >= 3 && m.startsWith(d))));
+  return mots(requete).every((d) => trouveMot(d, disponibles));
 }
 
 // Une requête faite seulement d'un nombre (chiffres latins ou arabes) est un numéro de hadith.
@@ -136,7 +153,7 @@ export function chercherDansLivre(livre: string, requete: string): { transmetteu
     // « n° 2451 (…) » : le numéro de notice est un mot de la référence.
     if (numero) return mots(source.reference).includes(numero) ? [{ transmetteur, reference: source.reference }] : [];
     const disponibles = avecSansArticle(mots(`${transmetteur.nomAr} ${transmetteur.nomTranslittere}`));
-    const trouve = demandes.every((d) => disponibles.some((m) => m === d || (d.length >= 3 && m.startsWith(d))));
+    const trouve = demandes.every((d) => trouveMot(d, disponibles));
     return trouve ? [{ transmetteur, reference: source.reference }] : [];
   });
 }

@@ -273,7 +273,10 @@ export default async function Recherche({
           </article>
           )}
           {occurrences.length === 0 && !incertainVisible && (
-            <p className={ui.carte} role="status">{t("aucunResultat")}</p>
+            <div className={ui.carte} role="status">
+              <p>{t("aucunResultat")}</p>
+              <p className={ui.discret}>{t("aucunResultatAide", { nombre: corpus.hadiths.length })}</p>
+            </div>
           )}
         </section>
       </div>

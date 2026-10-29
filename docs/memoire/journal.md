@@ -54,3 +54,8 @@
 - Fait : sélecteur « Livre » = ouvrages hors hadith (rijāl), recherche des transmetteurs par nom ou numéro ; 7 numéros de notice du Taqrīb al-Tahdhīb vérifiés mot pour mot sur ar.wikisource.org (al-Taymī 5691, Yaḥyā ibn Saʿīd 7559, Sufyān 2451, ʿAlqama 4685, al-Ḥumaydī 3320, Mālik 6425, al-Qaʿnabī 3620).
 - Reste : Tahdhīb al-Kamāl, Siyar, al-Jarḥ wa-l-taʿdīl : tome/page dépendent de l'édition, non remplis ; numérotation Wikisource à rapprocher d'une édition imprimée.
 - Prochaine étape : validation du patron pour la mise en ligne.
+
+## 2026-10-29 — Recherches sans résultat
+- Fait : particules arabes (ب و ف ل ك + ال) détachées des mots (« النيات » trouve « بالنيات ») ; traductions fr/en marquées IA pour les 5 hadiths importés ; message d'aide quand rien n'est trouvé.
+- Reste : le corpus n'a que 6 hadiths, la plupart des recherches restent vides ; import en nombre à décider ; traductions IA à relire.
+- Prochaine étape : validation du patron pour la mise en ligne.

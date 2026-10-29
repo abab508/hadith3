@@ -183,6 +183,7 @@
     },
     "aucuneTraduction": "Tiada terjemahan disahkan dalam bahasa anda bagi teks ini.",
     "aucunResultat": "Tiada hasil untuk penapis ini.",
+    "aucunResultatAide": "Korpus contoh kini hanya mengandungi {nombre} hadis. Cuba perkataan Arab (cth. الإيمان), nombor hadis atau nama perawi.",
     "referenceSeulement": "Teks edisi ini tidak dipaparkan. Rujukan: [edisi, jilid, halaman].",
     "premierTransmetteur": "Perawi pertama: {nom}",
     "bibliotheque": "Perpustakaan: {nom}",

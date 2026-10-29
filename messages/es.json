@@ -183,6 +183,7 @@
     },
     "aucuneTraduction": "No hay traducción verificada en su idioma para este texto.",
     "aucunResultat": "Ningún resultado coincide con estos filtros.",
+    "aucunResultatAide": "Por ahora el corpus de ejemplo solo contiene {nombre} hadices. Pruebe una palabra árabe (p. ej. الإيمان), un número de hadiz o el nombre de un transmisor.",
     "referenceSeulement": "El texto de esta edición no se reproduce. Referencia: [edición, tomo, página].",
     "premierTransmetteur": "Primer transmisor: {nom}",
     "bibliotheque": "Biblioteca: {nom}",

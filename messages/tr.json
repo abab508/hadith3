@@ -183,6 +183,7 @@
     },
     "aucuneTraduction": "Bu metin için dilinizde doğrulanmış çeviri yok.",
     "aucunResultat": "Bu filtrelerle sonuç yok.",
+    "aucunResultatAide": "Örnek derlem şu an yalnızca {nombre} hadis içeriyor. Arapça bir kelime (ör. الإيمان), bir hadis numarası veya bir râvî adı deneyin.",
     "referenceSeulement": "Bu baskının metni aktarılmaz. Atıf: [baskı, cilt, sayfa].",
     "premierTransmetteur": "İlk ravi: {nom}",
     "bibliotheque": "Kütüphane: {nom}",

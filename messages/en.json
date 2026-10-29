@@ -183,6 +183,7 @@
     },
     "aucuneTraduction": "No checked translation in your language for this text.",
     "aucunResultat": "No results match these filters.",
+    "aucunResultatAide": "The sample corpus currently holds only {nombre} hadiths. Try an Arabic word (e.g. الإيمان), a hadith number or a narrator’s name.",
     "referenceSeulement": "The text of this edition is not reproduced. Reference: [edition, volume, page].",
     "premierTransmetteur": "First narrator: {nom}",
     "bibliotheque": "Library: {nom}",

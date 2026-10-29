@@ -183,6 +183,7 @@
     },
     "aucuneTraduction": "Aucune traduction vérifiée dans votre langue pour ce texte.",
     "aucunResultat": "Aucun résultat avec ces filtres.",
+    "aucunResultatAide": "Le corpus d’exemple ne contient pour l’instant que {nombre} hadiths. Essayez un mot arabe (par ex. الإيمان), un numéro de hadith ou le nom d’un transmetteur.",
     "referenceSeulement": "Le texte de cette édition n’est pas reproduit. Référence : [édition, tome, page].",
     "premierTransmetteur": "Premier transmetteur : {nom}",
     "bibliotheque": "Bibliothèque : {nom}",
