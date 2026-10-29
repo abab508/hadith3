@@ -103,7 +103,20 @@
       "id": "bukhari-2",
       "texteAr": "أُمِّ الْمُؤْمِنِينَ رَضِيَ اللَّهُ عَنْهَا ، أَنَّ الْحَارِثَ بْنَ هِشَامٍ رَضِيَ اللَّهُ عَنْهُ سَأَل رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، فَقَالَ : يَا رَسُولَ اللَّهِ ، كَيْفَ يَأْتِيكَ الْوَحْيُ ؟ فَقَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ : \" أَحْيَانًا يَأْتِينِي مِثْلَ صَلْصَلَةِ الْجَرَسِ ، وَهُوَ أَشَدُّهُ عَلَيَّ فَيُفْصَمُ عَنِّي ، وَقَدْ وَعَيْتُ عَنْهُ مَا قَالَ ، وَأَحْيَانًا يَتَمَثَّلُ لِي الْمَلَكُ رَجُلًا فَيُكَلِّمُنِي فَأَعِي مَا يَقُولُ \"  ، قَالَتْ عَائِشَةُ رَضِيَ اللَّهُ عَنْهَا : وَلَقَدْ رَأَيْتُهُ يَنْزِلُ عَلَيْهِ الْوَحْيُ فِي الْيَوْمِ الشَّدِيدِ الْبَرْدِ فَيَفْصِمُ عَنْهُ ، وَإِنَّ جَبِينَهُ لَيَتَفَصَّدُ عَرَقًا .",
       "requeteAr": "أَحْيَانًا يَأْتِينِي مِثْلَ صَلْصَلَةِ الْجَرَسِ ، وَهُوَ أَشَدُّهُ عَلَيَّ فَيُفْصَمُ عَنِّي ، وَقَدْ وَعَيْتُ عَنْهُ مَا قَالَ ، وَأَحْيَانًا يَتَمَثَّلُ لِي الْمَلَكُ رَجُلًا فَيُكَلِّمُنِي فَأَعِي مَا يَقُولُ",
-      "traductions": [],
+      "traductions": [
+        {
+          "langue": "fr",
+          "texte": "[La Mère des croyants], qu’Allah l’agrée : al-Ḥārith ibn Hishām interrogea le Messager d’Allah ﷺ : « Ô Messager d’Allah, comment la Révélation te parvient-elle ? » Il répondit : « Parfois elle me vient comme le tintement d’une cloche, et c’est la plus pénible pour moi ; puis elle me quitte alors que j’ai retenu ce qui a été dit. Parfois l’ange prend pour moi l’apparence d’un homme, il me parle et je retiens ce qu’il dit. » ʿĀʾisha dit : « Je l’ai vu recevoir la Révélation par un jour de grand froid ; quand elle le quittait, son front ruisselait de sueur. »",
+          "origine": "ia",
+          "source": null
+        },
+        {
+          "langue": "en",
+          "texte": "[The Mother of the Believers], may Allah be pleased with her: al-Ḥārith ibn Hishām asked the Messenger of Allah ﷺ: “O Messenger of Allah, how does the revelation come to you?” He said: “Sometimes it comes to me like the ringing of a bell, and that is the hardest on me; then it leaves me, and I have retained what was said. Sometimes the angel takes the form of a man for me, speaks to me, and I retain what he says.” ʿĀʾisha said: “I saw him receiving revelation on a very cold day; when it left him, his forehead was streaming with sweat.”",
+          "origine": "ia",
+          "source": null
+        }
+      ],
       "statutTerme": "ghayr-muhaddad",
       "statut": {
         "ar": "أخرجه البخاري في صحيحه، رقم 2 بحسب ترقيم Sanadset 650K.",
@@ -153,7 +166,20 @@
       "id": "bukhari-8",
       "texteAr": "رَضِيَ اللَّهُ عَنْه ، عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" الْإِيمَانُ بِضْعٌ وَسِتُّونَ شُعْبَةً ، وَالْحَيَاءُ شُعْبَةٌ مِنَ الْإِيمَانِ \"  .",
       "requeteAr": "الْإِيمَانُ بِضْعٌ وَسِتُّونَ شُعْبَةً ، وَالْحَيَاءُ شُعْبَةٌ مِنَ الْإِيمَانِ",
-      "traductions": [],
+      "traductions": [
+        {
+          "langue": "fr",
+          "texte": "Le Prophète ﷺ a dit : « La foi comporte soixante et quelques branches, et la pudeur est une branche de la foi. »",
+          "origine": "ia",
+          "source": null
+        },
+        {
+          "langue": "en",
+          "texte": "The Prophet ﷺ said: “Faith has sixty-odd branches, and modesty is a branch of faith.”",
+          "origine": "ia",
+          "source": null
+        }
+      ],
       "statutTerme": "ghayr-muhaddad",
       "statut": {
         "ar": "أخرجه البخاري في صحيحه، رقم 8 بحسب ترقيم Sanadset 650K.",
@@ -204,7 +230,20 @@
       "id": "bukhari-10",
       "texteAr": "رَضِيَ اللَّهُ عَنْهُ ، قَالَ : قَالُوا : يَا رَسُولَ اللَّهِ ، أَيُّ الْإِسْلَامِ أَفْضَلُ ؟ قَالَ : \" مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ \"  .",
       "requeteAr": "مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
-      "traductions": [],
+      "traductions": [
+        {
+          "langue": "fr",
+          "texte": "Ils dirent : « Ô Messager d’Allah, quel islam est le meilleur ? » Il répondit : « Celui dont les musulmans sont à l’abri de la langue et de la main. »",
+          "origine": "ia",
+          "source": null
+        },
+        {
+          "langue": "en",
+          "texte": "They said: “O Messenger of Allah, whose Islam is best?” He said: “The one from whose tongue and hand the Muslims are safe.”",
+          "origine": "ia",
+          "source": null
+        }
+      ],
       "statutTerme": "ghayr-muhaddad",
       "statut": {
         "ar": "أخرجه البخاري في صحيحه، رقم 10 بحسب ترقيم Sanadset 650K.",
@@ -254,7 +293,20 @@
       "id": "bukhari-13",
       "texteAr": "رَضِيَ اللَّهُ عَنْهُ ، أَن رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" فَوَالَّذِي نَفْسِي بِيَدِهِ ، لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ \"  .",
       "requeteAr": "فَوَالَّذِي نَفْسِي بِيَدِهِ ، لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ",
-      "traductions": [],
+      "traductions": [
+        {
+          "langue": "fr",
+          "texte": "Le Messager d’Allah ﷺ a dit : « Par Celui qui tient mon âme en Sa main, aucun de vous n’a vraiment la foi tant que je ne lui suis pas plus cher que son père et son enfant. »",
+          "origine": "ia",
+          "source": null
+        },
+        {
+          "langue": "en",
+          "texte": "The Messenger of Allah ﷺ said: “By the One in whose hand is my soul, none of you truly believes until I am dearer to him than his father and his child.”",
+          "origine": "ia",
+          "source": null
+        }
+      ],
       "statutTerme": "ghayr-muhaddad",
       "statut": {
         "ar": "أخرجه البخاري في صحيحه، رقم 13 بحسب ترقيم Sanadset 650K.",
@@ -304,7 +356,20 @@
       "id": "bukhari-16",
       "texteAr": "، عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، قَالَ : \" آيَةُ الْإِيمَانِ حُبُّ الْأَنْصَارِ ، وَآيَةُ النِّفَاقِ بُغْضُ الْأَنْصَارِ \"  .",
       "requeteAr": "آيَةُ الْإِيمَانِ حُبُّ الْأَنْصَارِ ، وَآيَةُ النِّفَاقِ بُغْضُ الْأَنْصَارِ",
-      "traductions": [],
+      "traductions": [
+        {
+          "langue": "fr",
+          "texte": "Le Prophète ﷺ a dit : « Le signe de la foi est l’amour des Anṣār, et le signe de l’hypocrisie est la haine des Anṣār. »",
+          "origine": "ia",
+          "source": null
+        },
+        {
+          "langue": "en",
+          "texte": "The Prophet ﷺ said: “The sign of faith is love of the Anṣār, and the sign of hypocrisy is hatred of the Anṣār.”",
+          "origine": "ia",
+          "source": null
+        }
+      ],
       "statutTerme": "ghayr-muhaddad",
       "statut": {
         "ar": "أخرجه البخاري في صحيحه، رقم 16 بحسب ترقيم Sanadset 650K.",

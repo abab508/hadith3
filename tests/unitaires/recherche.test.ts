@@ -26,6 +26,20 @@ describe("recherche dans le corpus", () => {
     expect(ids("عائشة")).toEqual(["bukhari-2"]);
   });
 
+  it("détache les particules arabes collées au mot (ب و ف ل ك + ال)", () => {
+    expect(ids("النيات")).toEqual(["niyyat"]);
+    expect(ids("نيات")).toEqual(["niyyat"]);
+    expect(ids("والحياء")).toEqual(["bukhari-8"]);
+    expect(ids("الحياء")).toEqual(["bukhari-8"]);
+    expect(ids("لسانه")).toEqual(["bukhari-10"]);
+  });
+
+  it("trouve les hadiths importés par leur traduction (marquée IA)", () => {
+    expect(ids("pudeur")).toEqual(["bukhari-8"]);
+    expect(ids("foi")).toEqual(["bukhari-8", "bukhari-13", "bukhari-16"]);
+    expect(ids("revelation")).toContain("bukhari-2");
+  });
+
   it("ne confond pas un numéro avec un autre qui le contient", () => {
     expect(ids("Bukhari 1")).toEqual(["niyyat"]);
   });
