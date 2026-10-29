@@ -156,6 +156,13 @@
       "peuConnus": "Ouvrages peu connus",
       "appliquer": "Appliquer les filtres"
     },
+    "selection": {
+      "recueil": "Recueil",
+      "tousRecueils": "Tous les recueils",
+      "livre": "Livre",
+      "tousLivres": "Tous les livres",
+      "aide": "Après avoir choisi un recueil, tapez un mot ou un numéro de hadith."
+    },
     "correspondance": {
       "original": "Correspondance exacte · texte arabe original",
       "variante": "Variante · texte arabe original",

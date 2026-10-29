@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, bibliothequeParId, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
-import { chercher, estArabe } from "@/donnees/recherche";
+import { chercher, estArabe, estMode, modes, numeroDemande, recueilsEtLivres, type Mode } from "@/donnees/recherche";
+import SelecteurRecueil from "@/composants/SelecteurRecueil";
 import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -20,6 +21,17 @@ const correspondances = {
   similarite: { libelle: "correspondance.similarite", ton: "pointilles" },
 } as const;
 
+const libellesModes = {
+  approximative: "modes.approximative",
+  exacte: "modes.exacte",
+  fragment: "modes.fragment",
+  traduction: "modes.traduction",
+  translitteration: "modes.translitteration",
+  reference: "modes.reference",
+  transmetteur: "modes.transmetteur",
+  collection: "modes.collection",
+} as const satisfies Record<Mode, string>;
+
 // Valeur du filtre « ouvrages peu connus » (pas un identifiant d'ouvrage du corpus).
 const PEU_CONNUS = "peu-connus";
 
@@ -28,14 +40,22 @@ export default async function Recherche({
   searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<Record<"q" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque", string | string[] | undefined>>;
+  searchParams: Promise<Record<
+    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque",
+    string | string[] | undefined
+  >>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("recherche");
   const parametres = await searchParams;
-  const brut = parametres.q;
-  const saisie = (Array.isArray(brut) ? brut[0] : brut)?.trim() || undefined;
+  const tAccueil = await getTranslations("accueil");
+  const premier1 = (valeur: string | string[] | undefined) => (Array.isArray(valeur) ? valeur[0] : valeur)?.trim() || undefined;
+  const saisie = premier1(parametres.q);
+  const brutMode = premier1(parametres.mode);
+  const mode: Mode = estMode(brutMode) ? brutMode : "approximative";
+  const recueil = premier1(parametres.recueil);
+  const livre = premier1(parametres.livre);
 
   // Filtres envoyés par le formulaire (GET) : sans « filtre », tout est coché.
   const filtre = parametres.filtre !== undefined;
@@ -46,19 +66,25 @@ export default async function Recherche({
     bibliotheque: coches(parametres.bibliotheque),
   };
   const garde = (groupe: keyof typeof choix, valeur: string) => !filtre || choix[groupe].has(valeur);
+  // Recueil et livre choisis dans le formulaire de recherche.
+  // Un numéro seul vise le numéro du hadith dans le recueil, pas un numéro d'un autre recueil.
+  const numero = saisie ? numeroDemande(saisie) : undefined;
+  const dansSelection = (o: Occurrence) => (!recueil || o.ouvrage === recueil) && (!livre || o.livre === livre)
+    && (!numero || o.numero === numero);
 
-  const trouves = chercher(saisie ?? "");
+  const trouves = chercher(saisie ?? "", mode).filter((h) => h.occurrences.some(dansSelection));
   const collections = [...new Set(trouves.flatMap((h) => h.occurrences.map((o) => o.ouvrage)))].flatMap((id) => {
     const o = ouvrageParId(id);
     return o ? [o] : [];
   });
   const occurrences = trouves.flatMap((hadith) => hadith.occurrences
-    .filter((o) => garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque))
+    .filter((o) => dansSelection(o)
+      && garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque))
     .map((occurrence) => ({ occurrence, hadith })));
   // Une requête hors arabe qui mène à un seul hadith : on montre le texte arabe auquel elle a été rapprochée.
   const rapproche = saisie && !estArabe(saisie) && trouves.length === 1 ? trouves[0] : undefined;
   // L'exemple incertain (ouvrage peu connu d'OpenITI) illustre le hadith des intentions.
-  const incertainVisible = trouves.some((h) => h.id === "niyyat")
+  const incertainVisible = trouves.some((h) => h.id === "niyyat") && !recueil && !livre && !numero
     && garde("correspondance", "similarite") && garde("ouvrage", PEU_CONNUS) && garde("bibliotheque", "openiti");
 
   function carte({ occurrence, hadith }: { occurrence: Occurrence; hadith: Hadith }) {
@@ -121,6 +147,22 @@ export default async function Recherche({
     <main id="contenu" tabIndex={-1} className={ui.page}>
       <div className={styles.requete}>
         <h1 id="titre-resultats" className={styles.titre}>{t("titre")}</h1>
+        <form role="search" method="get" className={`${ui.carte} ${styles.nouvelleRecherche}`}>
+          <div className={styles.ligneRecherche}>
+            <label className={styles.champ}>
+              <span>{tAccueil("recherche.etiquette")}</span>
+              <input name="q" type="search" dir="auto" defaultValue={saisie} />
+            </label>
+            <label className={styles.champ}>
+              <span>{tAccueil("recherche.mode")}</span>
+              <select name="mode" defaultValue={mode}>
+                {modes.map((m) => <option key={m} value={m}>{tAccueil(libellesModes[m])}</option>)}
+              </select>
+            </label>
+          </div>
+          <SelecteurRecueil recueils={recueilsEtLivres()} recueilInitial={recueil} livreInitial={livre} />
+          <button type="submit" className={ui.bouton}>{tAccueil("recherche.bouton")}</button>
+        </form>
         {saisie && <p><bdi dir="auto">{t("requete", { requete: saisie })}</bdi></p>}
         {rapproche && (
           <p className={styles.rapprochee}>
@@ -135,6 +177,9 @@ export default async function Recherche({
         <form method="get" className={`${ui.carte} ${styles.filtres}`} aria-labelledby="titre-filtres">
           <h2 id="titre-filtres" className={styles.titreFiltres}>{t("filtres.titre")}</h2>
           {saisie && <input type="hidden" name="q" value={saisie} />}
+          {mode !== "approximative" && <input type="hidden" name="mode" value={mode} />}
+          {recueil && <input type="hidden" name="recueil" value={recueil} />}
+          {livre && <input type="hidden" name="livre" value={livre} />}
           <input type="hidden" name="filtre" value="1" />
           <fieldset className={styles.groupe}>
             <legend>{t("filtres.correspondance")}</legend>

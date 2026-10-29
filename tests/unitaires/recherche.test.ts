@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chercher, normaliser } from "@/donnees/recherche";
+import { chercher, normaliser, numeroDemande, recueilsEtLivres, type Mode } from "@/donnees/recherche";
 
 const ids = (requete: string) => chercher(requete).map((h) => h.id);
 
@@ -26,6 +26,33 @@ describe("recherche dans le corpus", () => {
 
   it("ne confond pas un numéro avec un autre qui le contient", () => {
     expect(ids("Bukhari 1")).toEqual(["niyyat"]);
+  });
+
+  it("reconnaît un numéro seul, en chiffres latins ou arabes", () => {
+    expect(numeroDemande("13")).toBe("13");
+    expect(numeroDemande("١٣")).toBe("13");
+    expect(numeroDemande("Bukhari 13")).toBeUndefined();
+    expect(ids("1907")).toEqual(["niyyat"]);
+    expect(ids("١٦")).toEqual(["bukhari-16"]);
+  });
+
+  it("limite chaque mode à son champ", () => {
+    const parMode = (requete: string, mode: Mode) => chercher(requete, mode).map((h) => h.id);
+    expect(parMode("Abu Hurayra", "transmetteur")).toEqual(["bukhari-8", "bukhari-13"]);
+    expect(parMode("Abu Hurayra", "traduction")).toEqual([]);
+    expect(parMode("intentions", "traduction")).toEqual(["niyyat"]);
+    expect(parMode("الإيمان بضع وستون", "exacte")).toEqual(["bukhari-8"]);
+    expect(parMode("الإيمان وستون", "exacte")).toEqual([]);
+    expect(parMode("يمان", "fragment")).toContain("bukhari-8");
+    expect(parMode("Imane", "collection")).toEqual([]);
+    expect(parMode("Iman", "collection")).toEqual(["bukhari-8", "bukhari-10", "bukhari-13", "bukhari-16"]);
+  });
+
+  it("liste les recueils avec leurs propres livres", () => {
+    const bukhari = recueilsEtLivres().find((r) => r.id === "sahih-bukhari");
+    expect(bukhari?.livres.map((l) => l.valeur)).toEqual(["Badʾ al-waḥy", "al-Īmān"]);
+    const muslim = recueilsEtLivres().find((r) => r.id === "sahih-muslim");
+    expect(muslim?.livres.map((l) => l.valeur)).toEqual(["al-Imāra"]);
   });
 
   it("rend tout le corpus sans requête et rien pour un mot absent", () => {

@@ -156,6 +156,13 @@
       "peuConnus": "Karya kurang dikenal",
       "appliquer": "Terapkan filter"
     },
+    "selection": {
+      "recueil": "Kitab hadis",
+      "tousRecueils": "Semua kitab hadis",
+      "livre": "Bab kitab",
+      "tousLivres": "Semua bab",
+      "aide": "Setelah memilih kitab hadis, ketik kata atau nomor hadis."
+    },
     "correspondance": {
       "original": "Cocok persis · teks Arab asli",
       "variante": "Varian · teks Arab asli",

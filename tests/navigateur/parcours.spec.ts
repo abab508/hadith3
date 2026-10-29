@@ -55,6 +55,32 @@ test("recherche réelle : le texte arabe sans voyelles trouve le bon hadith, et 
   await expect(page).toHaveURL(/\/fr\/rapport\/bukhari-8$/);
 });
 
+test("recueil choisi : un numéro vise le numéro de ce recueil, pas d'un autre", async ({ page }) => {
+  const resultats = page.locator('section[aria-labelledby="titre-resultats"] > article');
+  await page.goto("/fr/recherche?q=1907&recueil=sahih-muslim");
+  await expect(resultats).toHaveCount(1);
+  await expect(resultats.first()).toContainText("Ṣaḥīḥ Muslim, n° 1907");
+  // Le hadith des intentions porte le n° 1 chez al-Bukhārī, pas chez Muslim.
+  await page.goto("/fr/recherche?q=1&recueil=sahih-muslim");
+  await expect(resultats).toHaveCount(0);
+  await page.goto("/fr/recherche?q=" + encodeURIComponent("١٣") + "&recueil=sahih-bukhari");
+  await expect(resultats).toHaveCount(1);
+  await expect(resultats.first()).toContainText("n° 13");
+});
+
+test("sélecteurs liés : le livre ne propose que ceux du recueil choisi, puis filtre", async ({ page }) => {
+  await page.goto("/fr");
+  const recueil = page.getByRole("combobox", { name: fr.recherche.selection.recueil, exact: true });
+  const livre = page.getByRole("combobox", { name: fr.recherche.selection.livre, exact: true });
+  await recueil.selectOption("sahih-muslim");
+  await expect(livre.locator("option")).toHaveCount(2);
+  await recueil.selectOption("sahih-bukhari");
+  await livre.selectOption("al-Īmān");
+  await page.getByLabel(fr.accueil.recherche.etiquette).press("Enter");
+  await expect(page).toHaveURL(/recueil=sahih-bukhari/);
+  await expect(page.locator('section[aria-labelledby="titre-resultats"] > article')).toHaveCount(4);
+});
+
 test("recherche réelle : un mot absent donne « aucun résultat »", async ({ page }) => {
   await page.goto("/fr/recherche?q=zzzz");
   await expect(page.getByRole("status").filter({ hasText: fr.recherche.aucunResultat })).toBeVisible();

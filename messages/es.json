@@ -156,6 +156,13 @@
       "peuConnus": "Obras poco conocidas",
       "appliquer": "Aplicar filtros"
     },
+    "selection": {
+      "recueil": "Colección",
+      "tousRecueils": "Todas las colecciones",
+      "livre": "Libro",
+      "tousLivres": "Todos los libros",
+      "aide": "Tras elegir una colección, escriba una palabra o un número de hadiz."
+    },
     "correspondance": {
       "original": "Coincidencia exacta · texto árabe original",
       "variante": "Variante · texto árabe original",
