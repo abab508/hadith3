@@ -159,9 +159,17 @@
     "selection": {
       "recueil": "Hadis kitabı",
       "tousRecueils": "Tüm hadis kitapları",
-      "livre": "Bölüm (kitâb)",
-      "tousLivres": "Tüm bölümler",
-      "aide": "Bir hadis kitabı seçtikten sonra bir kelime veya hadis numarası yazın."
+      "livre": "Başka kategoriden kitap",
+      "tousLivres": "Hiçbiri — hadislerde ara",
+      "aide": "Bir hadis kitabı veya başka kategoriden bir kitap seçin, sonra bir kelime ya da numara yazın.",
+      "categories": {
+        "rijal": "Râvî biyografileri (ricâl)"
+      }
+    },
+    "livre": {
+      "titre": "{livre} içinde geçen râvîler",
+      "reference": "Bu kitaptaki yeri: {reference}",
+      "apparait": "Geçtiği yerler:"
     },
     "correspondance": {
       "original": "Tam eşleşme · özgün Arapça metin",

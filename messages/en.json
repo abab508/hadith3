@@ -157,11 +157,19 @@
       "appliquer": "Apply filters"
     },
     "selection": {
-      "recueil": "Collection",
+      "recueil": "Hadith collection",
       "tousRecueils": "All collections",
-      "livre": "Book",
-      "tousLivres": "All books",
-      "aide": "After choosing a collection, type a word or a hadith number."
+      "livre": "Book from another category",
+      "tousLivres": "None — search the hadiths",
+      "aide": "Choose a hadith collection or a book from another category, then type a word or a number.",
+      "categories": {
+        "rijal": "Narrator biographies (rijāl)"
+      }
+    },
+    "livre": {
+      "titre": "Narrators cited in {livre}",
+      "reference": "Reference in this book: {reference}",
+      "apparait": "Appears in:"
     },
     "correspondance": {
       "original": "Exact match · original Arabic text",

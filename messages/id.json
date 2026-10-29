@@ -159,9 +159,17 @@
     "selection": {
       "recueil": "Kitab hadis",
       "tousRecueils": "Semua kitab hadis",
-      "livre": "Bab kitab",
-      "tousLivres": "Semua bab",
-      "aide": "Setelah memilih kitab hadis, ketik kata atau nomor hadis."
+      "livre": "Buku kategori lain",
+      "tousLivres": "Tidak ada — cari dalam hadis",
+      "aide": "Pilih kitab hadis atau buku kategori lain, lalu ketik kata atau nomor.",
+      "categories": {
+        "rijal": "Biografi perawi (rijāl)"
+      }
+    },
+    "livre": {
+      "titre": "Perawi yang disebut dalam {livre}",
+      "reference": "Rujukan dalam buku ini: {reference}",
+      "apparait": "Muncul dalam:"
     },
     "correspondance": {
       "original": "Cocok persis · teks Arab asli",

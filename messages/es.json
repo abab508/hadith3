@@ -157,11 +157,19 @@
       "appliquer": "Aplicar filtros"
     },
     "selection": {
-      "recueil": "Colección",
+      "recueil": "Colección de hadices",
       "tousRecueils": "Todas las colecciones",
-      "livre": "Libro",
-      "tousLivres": "Todos los libros",
-      "aide": "Tras elegir una colección, escriba una palabra o un número de hadiz."
+      "livre": "Libro de otra categoría",
+      "tousLivres": "Ninguno — buscar en los hadices",
+      "aide": "Elija una colección de hadices o un libro de otra categoría y escriba una palabra o un número.",
+      "categories": {
+        "rijal": "Biografías de transmisores (rijāl)"
+      }
+    },
+    "livre": {
+      "titre": "Transmisores citados en {livre}",
+      "reference": "Referencia en este libro: {reference}",
+      "apparait": "Aparece en:"
     },
     "correspondance": {
       "original": "Coincidencia exacta · texto árabe original",

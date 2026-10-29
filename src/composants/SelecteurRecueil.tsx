@@ -2,28 +2,29 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import type { Recueil } from "@/donnees/recherche";
+import type { Categorie, Ouvrage } from "@/donnees/recherche";
 import styles from "@/composants/SelecteurRecueil.module.css";
 
-// Deux listes liées : le recueil, puis un livre (kitāb) de ce recueil.
-// Sans recueil choisi, les livres sont groupés par recueil, ce qui reste utilisable sans JavaScript.
+const libellesCategories = {
+  rijal: "categories.rijal",
+} as const satisfies Record<Categorie["categorie"], string>;
+
+// Deux choix exclusifs : un recueil de hadith, ou un livre d'une autre catégorie (biographies…).
+// Choisir l'un vide l'autre ; sans JavaScript, le livre l'emporte côté serveur.
 export default function SelecteurRecueil({
   recueils,
+  categories,
   recueilInitial = "",
   livreInitial = "",
 }: {
-  recueils: Recueil[];
+  recueils: Ouvrage[];
+  categories: Categorie[];
   recueilInitial?: string;
   livreInitial?: string;
 }) {
   const t = useTranslations("recherche.selection");
-  const [recueil, setRecueil] = useState(recueilInitial);
+  const [recueil, setRecueil] = useState(livreInitial ? "" : recueilInitial);
   const [livre, setLivre] = useState(livreInitial);
-  const choisi = recueils.find((r) => r.id === recueil);
-
-  const option = (l: Recueil["livres"][number]) => (
-    <option key={l.valeur} value={l.valeur}>{l.nomAr} — {l.nom}</option>
-  );
 
   return (
     <div className={styles.selection}>
@@ -34,10 +35,8 @@ export default function SelecteurRecueil({
           aria-describedby="aide-recueil"
           value={recueil}
           onChange={(e) => {
-            const id = e.currentTarget.value;
-            setRecueil(id);
-            const suivant = recueils.find((r) => r.id === id);
-            if (suivant && !suivant.livres.some((l) => l.valeur === livre)) setLivre("");
+            setRecueil(e.currentTarget.value);
+            if (e.currentTarget.value) setLivre("");
           }}
         >
           <option value="">{t("tousRecueils")}</option>
@@ -48,13 +47,23 @@ export default function SelecteurRecueil({
       </label>
       <label className={styles.champ}>
         <span>{t("livre")}</span>
-        <select name="livre" value={livre} onChange={(e) => setLivre(e.currentTarget.value)}>
+        <select
+          name="livre"
+          aria-describedby="aide-recueil"
+          value={livre}
+          onChange={(e) => {
+            setLivre(e.currentTarget.value);
+            if (e.currentTarget.value) setRecueil("");
+          }}
+        >
           <option value="">{t("tousLivres")}</option>
-          {choisi
-            ? choisi.livres.map(option)
-            : recueils.map((r) => (
-              <optgroup key={r.id} label={`${r.nomAr} — ${r.nom}`}>{r.livres.map(option)}</optgroup>
-            ))}
+          {categories.map((c) => (
+            <optgroup key={c.categorie} label={t(libellesCategories[c.categorie])}>
+              {c.livres.map((l) => (
+                <option key={l.id} value={l.id}>{l.nomAr} — {l.nom}</option>
+              ))}
+            </optgroup>
+          ))}
         </select>
       </label>
       <p id="aide-recueil" className={styles.aide}>{t("aide")}</p>

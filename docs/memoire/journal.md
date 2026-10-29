@@ -49,3 +49,8 @@
 - Fait : sélecteurs liés recueil → livre (accueil et Résultats) ; un numéro seul (chiffres latins ou arabes) vise le numéro dans le recueil choisi ; les 8 modes de recherche agissent ; livres des 5 hadiths importés renseignés (badʾ al-waḥy, al-Īmān).
 - Reste : livres déduits du contenu des hadiths, à confirmer par le spécialiste avec la numérotation.
 - Prochaine étape : validation du patron pour la mise en ligne.
+
+## 2026-10-29 — Livres par catégorie et numéros du Taqrīb
+- Fait : sélecteur « Livre » = ouvrages hors hadith (rijāl), recherche des transmetteurs par nom ou numéro ; 7 numéros de notice du Taqrīb al-Tahdhīb vérifiés mot pour mot sur ar.wikisource.org (al-Taymī 5691, Yaḥyā ibn Saʿīd 7559, Sufyān 2451, ʿAlqama 4685, al-Ḥumaydī 3320, Mālik 6425, al-Qaʿnabī 3620).
+- Reste : Tahdhīb al-Kamāl, Siyar, al-Jarḥ wa-l-taʿdīl : tome/page dépendent de l'édition, non remplis ; numérotation Wikisource à rapprocher d'une édition imprimée.
+- Prochaine étape : validation du patron pour la mise en ligne.

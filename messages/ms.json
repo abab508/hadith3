@@ -157,11 +157,19 @@
       "appliquer": "Guna penapis"
     },
     "selection": {
-      "recueil": "Koleksi",
+      "recueil": "Koleksi hadis",
       "tousRecueils": "Semua koleksi",
-      "livre": "Kitab",
-      "tousLivres": "Semua kitab",
-      "aide": "Selepas memilih koleksi, taip perkataan atau nombor hadis."
+      "livre": "Buku kategori lain",
+      "tousLivres": "Tiada — cari dalam hadis",
+      "aide": "Pilih koleksi hadis atau buku kategori lain, kemudian taip perkataan atau nombor.",
+      "categories": {
+        "rijal": "Biografi perawi (rijāl)"
+      }
+    },
+    "livre": {
+      "titre": "Perawi yang disebut dalam {livre}",
+      "reference": "Rujukan dalam buku ini: {reference}",
+      "apparait": "Muncul dalam:"
     },
     "correspondance": {
       "original": "Padanan tepat · teks Arab asal",

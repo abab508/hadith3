@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import Terme from "@/composants/Terme";
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
-import { recueilsEtLivres } from "@/donnees/recherche";
+import { livresParCategorie, recueils } from "@/donnees/recherche";
 import { bibliothequeParId } from "@/donnees/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -66,7 +66,7 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
               </label>
             ))}
           </fieldset>
-          <SelecteurRecueil recueils={recueilsEtLivres()} />
+          <SelecteurRecueil recueils={recueils()} categories={livresParCategorie()} />
         </form>
       </section>
 
