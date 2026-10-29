@@ -169,7 +169,8 @@
     "livre": {
       "titre": "Perawi yang disebut dalam {livre}",
       "reference": "Rujukan dalam buku ini: {reference}",
-      "apparait": "Muncul dalam:"
+      "apparait": "Muncul dalam:",
+      "referenceACompleter": "jilid dan halaman belum dilengkapi"
     },
     "correspondance": {
       "original": "Cocok persis · teks Arab asli",
@@ -184,7 +185,7 @@
     "aucuneTraduction": "Belum ada terjemahan terverifikasi dalam bahasa Anda untuk teks ini.",
     "aucunResultat": "Tidak ada hasil untuk filter ini.",
     "aucunResultatAide": "Korpus contoh saat ini hanya berisi {nombre} hadis. Coba kata Arab (mis. الإيمان), nomor hadis, atau nama perawi.",
-    "referenceSeulement": "Teks edisi ini tidak ditampilkan. Rujukan: [edisi, jilid, halaman].",
+    "referenceSeulement": "Teks edisi ini tidak ditampilkan; hanya rujukannya yang dicantumkan.",
     "premierTransmetteur": "Perawi pertama: {nom}",
     "bibliotheque": "Perpustakaan: {nom}",
     "numero": "{ouvrage}, no. {numero}",
@@ -270,7 +271,8 @@
       "deces": "w. {annee} H",
       "decesVers": "w. sekitar {annee} H",
       "decesEntre": "w. antara {debut} dan {fin} H",
-      "aucun": "—"
+      "aucun": "—",
+      "referenceACompleter": "jilid dan halaman belum dilengkapi"
     },
     "generation": {
       "source": "Sumber hadis",

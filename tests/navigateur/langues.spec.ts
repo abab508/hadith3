@@ -25,6 +25,12 @@ test("passage ar → fr → ur depuis le sélecteur", async ({ page }) => {
   await expect(page.locator('header a[hreflang="ur"]')).toHaveAttribute("aria-current", "page");
 });
 
+test("la langue en cours n'est pas écrite deux fois (« français — français »)", async ({ page }) => {
+  await page.goto("/fr");
+  await expect(page.locator('header a[hreflang="fr"]')).toHaveText("français");
+  await expect(page.locator('header a[hreflang="en"]')).toHaveText("English — anglais");
+});
+
 test("le sélecteur conserve le chemin et tous les paramètres de recherche", async ({ page }) => {
   await page.goto("/fr/glossaire?q=test&filtre=a&filtre=b");
   const selecteur = page.locator("header nav");

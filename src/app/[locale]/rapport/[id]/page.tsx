@@ -27,7 +27,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, id } = await params;
   const t = await getTranslations({ locale, namespace: "rapport" });
-  return { title: t("titre", { hadith: id }) };
+  const tRecherche = await getTranslations({ locale, namespace: "recherche" });
+  // Titre lisible (« Ṣaḥīḥ al-Bukhārī, n° 1 ») plutôt que l'identifiant technique.
+  const principale = hadithParId(id)?.occurrences[0];
+  const hadith = principale
+    ? tRecherche("numero", { ouvrage: ouvrageParId(principale.ouvrage)?.nom ?? principale.ouvrage, numero: principale.numero })
+    : id;
+  return { title: t("titre", { hadith }) };
 }
 
 export default async function Rapport({

@@ -28,13 +28,19 @@ export default function SelecteurLangue() {
       <p className={styles.titre}>{t("titre")}</p>
       <ul className={styles.langues}>
         {languesDuSelecteur().map((langue) => {
+          // Pas de « français — français » : le nom traduit n'apparaît que s'il diffère du nom natif.
+          const traduit = nomLangueTraduit(langue, locale);
           const nom = (
             <>
               <bdi lang={langue.tag} dir={langue.direction} style={{ fontFamily: `"${langue.police.famille}"` }}>
                 {langue.nomNatif}
               </bdi>
-              {" — "}
-              <bdi>{nomLangueTraduit(langue, locale)}</bdi>
+              {traduit !== langue.nomNatif && (
+                <>
+                  {" — "}
+                  <bdi>{traduit}</bdi>
+                </>
+              )}
             </>
           );
           return (

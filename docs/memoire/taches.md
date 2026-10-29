@@ -60,3 +60,4 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [x] Filtres actifs sur la page Résultats (PR #2)
 - [x] Menu : page en cours signalée (aria-current)
 - [!] Ajouter d'autres hadiths au corpus d'exemple : texte, chaînes et jugements à fournir depuis une source vérifiée (spécialiste), rien ne doit être inventé
+- [x] Textes arabes tronqués (reste de chaîne), textes provisoires entre crochets, titre du rapport, « français — français » (branche fix/textes-et-libelles)

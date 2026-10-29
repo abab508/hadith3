@@ -169,7 +169,8 @@
     "livre": {
       "titre": "Transmisores citados en {livre}",
       "reference": "Referencia en este libro: {reference}",
-      "apparait": "Aparece en:"
+      "apparait": "Aparece en:",
+      "referenceACompleter": "tomo y página por completar"
     },
     "correspondance": {
       "original": "Coincidencia exacta · texto árabe original",
@@ -184,7 +185,7 @@
     "aucuneTraduction": "No hay traducción verificada en su idioma para este texto.",
     "aucunResultat": "Ningún resultado coincide con estos filtros.",
     "aucunResultatAide": "Por ahora el corpus de ejemplo solo contiene {nombre} hadices. Pruebe una palabra árabe (p. ej. الإيمان), un número de hadiz o el nombre de un transmisor.",
-    "referenceSeulement": "El texto de esta edición no se reproduce. Referencia: [edición, tomo, página].",
+    "referenceSeulement": "El texto de esta edición no se reproduce: solo se indica su referencia.",
     "premierTransmetteur": "Primer transmisor: {nom}",
     "bibliotheque": "Biblioteca: {nom}",
     "numero": "{ouvrage}, n.º {numero}",
@@ -270,7 +271,8 @@
       "deces": "m. {annee} H",
       "decesVers": "m. hacia {annee} H",
       "decesEntre": "m. entre {debut} y {fin} H",
-      "aucun": "—"
+      "aucun": "—",
+      "referenceACompleter": "tomo y página por completar"
     },
     "generation": {
       "source": "Fuente del hadiz",

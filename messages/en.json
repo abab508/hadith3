@@ -169,7 +169,8 @@
     "livre": {
       "titre": "Narrators cited in {livre}",
       "reference": "Reference in this book: {reference}",
-      "apparait": "Appears in:"
+      "apparait": "Appears in:",
+      "referenceACompleter": "volume and page to be added"
     },
     "correspondance": {
       "original": "Exact match · original Arabic text",
@@ -184,7 +185,7 @@
     "aucuneTraduction": "No checked translation in your language for this text.",
     "aucunResultat": "No results match these filters.",
     "aucunResultatAide": "The sample corpus currently holds only {nombre} hadiths. Try an Arabic word (e.g. الإيمان), a hadith number or a narrator’s name.",
-    "referenceSeulement": "The text of this edition is not reproduced. Reference: [edition, volume, page].",
+    "referenceSeulement": "The text of this edition is not reproduced: only its reference is given.",
     "premierTransmetteur": "First narrator: {nom}",
     "bibliotheque": "Library: {nom}",
     "numero": "{ouvrage}, no. {numero}",
@@ -270,7 +271,8 @@
       "deces": "d. {annee} AH",
       "decesVers": "d. c. {annee} AH",
       "decesEntre": "d. between {debut} and {fin} AH",
-      "aucun": "—"
+      "aucun": "—",
+      "referenceACompleter": "volume and page to be added"
     },
     "generation": {
       "source": "Source of the hadith",

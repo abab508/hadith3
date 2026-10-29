@@ -169,8 +169,8 @@
     },
     {
       "id": "partenaire",
-      "nom": "[Bibliothèque partenaire]",
-      "nomAr": "[مكتبة شريكة]",
+      "nom": "Bibliothèque partenaire (à venir)",
+      "nomAr": "مكتبة شريكة (قريبًا)",
       "acces": "api-accord",
       "parDefaut": false,
       "description": {

@@ -208,7 +208,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
               <h3 className={styles.etiquette}>{t("fiche.sources")}</h3>
               <ul>
                 {choisi.sources.map((s) => (
-                  <li key={s.ouvrage}><bdi>{ouvrageParId(s.ouvrage)?.nom ?? s.ouvrage}</bdi> · {s.reference}</li>
+                  <li key={s.ouvrage}><bdi>{ouvrageParId(s.ouvrage)?.nom ?? s.ouvrage}</bdi> · {s.reference ?? t("fiche.referenceACompleter")}</li>
                 ))}
               </ul>
             </div>
