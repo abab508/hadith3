@@ -26,6 +26,13 @@ test("rapport ar : page en RTL, sans traduction ni texte de repli vide", async (
   await expect(page.getByRole("columnheader", { name: ar.rapport.colonneAcces })).toBeVisible();
 });
 
+test("le menu signale la page en cours", async ({ page }) => {
+  await page.goto("/fr/chaine");
+  const menu = page.getByRole("list", { name: fr.navigation.titre });
+  await expect(menu.getByRole("link", { name: fr.navigation.chaine, exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(menu.getByRole("link", { name: fr.navigation.recherche, exact: true })).not.toHaveAttribute("aria-current", "page");
+});
+
 test("résultats : les filtres retirent et rendent les résultats", async ({ page }) => {
   await page.goto("/fr/recherche?q=intentions");
   const resultats = page.locator('section[aria-labelledby="titre-resultats"] > article');

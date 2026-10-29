@@ -7,6 +7,14 @@ import { memoriserInterface } from "@/donnees/preferences-visiteur";
 import { Link, usePathname } from "@/i18n/navigation";
 import styles from "@/composants/SelecteurLangue.module.css";
 
+const liens = [
+  { href: "/recherche", cle: "recherche" },
+  { href: "/chaine", cle: "chaine" },
+  { href: "/glossaire", cle: "glossaire" },
+  { href: "/parametres", cle: "parametres" },
+  { href: "/langues", cle: "langues" },
+] as const;
+
 export default function SelecteurLangue() {
   const locale = useLocale();
   const t = useTranslations("selecteurLangue");
@@ -47,11 +55,11 @@ export default function SelecteurLangue() {
         })}
       </ul>
       <ul className={styles.liens} aria-label={navigation("titre")}>
-        <li><Link href="/recherche">{navigation("recherche")}</Link></li>
-        <li><Link href="/chaine">{navigation("chaine")}</Link></li>
-        <li><Link href="/glossaire">{navigation("glossaire")}</Link></li>
-        <li><Link href="/parametres">{navigation("parametres")}</Link></li>
-        <li><Link href="/langues">{navigation("langues")}</Link></li>
+        {liens.map(({ href, cle }) => (
+          <li key={href}>
+            <Link href={href} aria-current={chemin === href ? "page" : undefined}>{navigation(cle)}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
