@@ -153,7 +153,8 @@
       "correspondance": "نوع المطابقة",
       "collections": "المصنَّفات",
       "bibliotheques": "المكتبات",
-      "peuConnus": "كتب غير مشهورة"
+      "peuConnus": "كتب غير مشهورة",
+      "appliquer": "تطبيق عوامل التصفية"
     },
     "correspondance": {
       "original": "مطابقة · نص عربي أصلي",
@@ -166,6 +167,7 @@
       "ia": "ترجمة آلية بالذكاء الاصطناعي · غير رسمية وغير مراجعة"
     },
     "aucuneTraduction": "لا توجد ترجمة موثّقة بلغتك لهذا النص.",
+    "aucunResultat": "لا توجد نتائج مطابقة لهذه الفلاتر.",
     "referenceSeulement": "لا يُعرض نص هذه الطبعة. المرجع: [الطبعة، الجزء، الصفحة].",
     "premierTransmetteur": "الراوي الأول: {nom}",
     "bibliotheque": "المكتبة: {nom}",

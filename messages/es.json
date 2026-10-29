@@ -153,7 +153,8 @@
       "correspondance": "Tipo de coincidencia",
       "collections": "Colecciones",
       "bibliotheques": "Bibliotecas",
-      "peuConnus": "Obras poco conocidas"
+      "peuConnus": "Obras poco conocidas",
+      "appliquer": "Aplicar filtros"
     },
     "correspondance": {
       "original": "Coincidencia exacta · texto árabe original",
@@ -166,6 +167,7 @@
       "ia": "Traducción generada por IA · no oficial, no verificada"
     },
     "aucuneTraduction": "No hay traducción verificada en su idioma para este texto.",
+    "aucunResultat": "Ningún resultado coincide con estos filtros.",
     "referenceSeulement": "El texto de esta edición no se reproduce. Referencia: [edición, tomo, página].",
     "premierTransmetteur": "Primer transmisor: {nom}",
     "bibliotheque": "Biblioteca: {nom}",

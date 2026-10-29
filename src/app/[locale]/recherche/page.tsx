@@ -19,19 +19,34 @@ const correspondances = {
   similarite: { libelle: "correspondance.similarite", ton: "pointilles" },
 } as const;
 
+// Valeur du filtre « ouvrages peu connus » (pas un identifiant d'ouvrage du corpus).
+const PEU_CONNUS = "peu-connus";
+
 export default async function Recherche({
   params,
   searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ q?: string | string[] }>;
+  searchParams: Promise<Record<"q" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque", string | string[] | undefined>>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("recherche");
   const tAccueil = await getTranslations("accueil");
-  const brut = (await searchParams).q;
-  const requete = (Array.isArray(brut) ? brut[0] : brut)?.trim() || tAccueil("recherche.exemple");
+  const parametres = await searchParams;
+  const brut = parametres.q;
+  const saisie = (Array.isArray(brut) ? brut[0] : brut)?.trim();
+  const requete = saisie || tAccueil("recherche.exemple");
+
+  // Filtres envoyés par le formulaire (GET) : sans « filtre », tout est coché.
+  const filtre = parametres.filtre !== undefined;
+  const coches = (valeur: string | string[] | undefined) => new Set(valeur === undefined ? [] : [valeur].flat());
+  const choix = {
+    correspondance: coches(parametres.correspondance),
+    ouvrage: coches(parametres.ouvrage),
+    bibliotheque: coches(parametres.bibliotheque),
+  };
+  const garde = (groupe: keyof typeof choix, valeur: string) => !filtre || choix[groupe].has(valeur);
 
   // Version de démonstration : le corpus d'exemple contient un seul hadith.
   const hadith = corpus.hadiths[0]!;
@@ -41,6 +56,11 @@ export default async function Recherche({
     const o = ouvrageParId(id);
     return o ? [o] : [];
   });
+  const occurrences = hadith.occurrences.filter((o) =>
+    garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque)
+  );
+  // L'exemple incertain vient d'un ouvrage peu connu d'OpenITI.
+  const incertainVisible = garde("correspondance", "similarite") && garde("ouvrage", PEU_CONNUS) && garde("bibliotheque", "openiti");
 
   function carte(occurrence: Occurrence) {
     const ouvrage = ouvrageParId(occurrence.ouvrage);
@@ -109,37 +129,49 @@ export default async function Recherche({
       </div>
 
       <div className={styles.colonnes}>
-        <aside className={`${ui.carte} ${styles.filtres}`} aria-labelledby="titre-filtres">
+        <form method="get" className={`${ui.carte} ${styles.filtres}`} aria-labelledby="titre-filtres">
           <h2 id="titre-filtres" className={styles.titreFiltres}>{t("filtres.titre")}</h2>
-          <fieldset disabled className={styles.groupe}>
+          {saisie && <input type="hidden" name="q" value={saisie} />}
+          <input type="hidden" name="filtre" value="1" />
+          <fieldset className={styles.groupe}>
             <legend>{t("filtres.correspondance")}</legend>
             {(["original", "variante", "reference", "similarite"] as const).map((cle) => (
-              <label key={cle}><input type="checkbox" defaultChecked /> {t(correspondances[cle].libelle)}</label>
+              <label key={cle}>
+                <input type="checkbox" name="correspondance" value={cle} defaultChecked={garde("correspondance", cle)} />{" "}
+                {t(correspondances[cle].libelle)}
+              </label>
             ))}
           </fieldset>
-          <fieldset disabled className={styles.groupe}>
+          <fieldset className={styles.groupe}>
             <legend>{t("filtres.collections")}</legend>
             {collections.map((o) => (
               <label key={o.id}>
-                <input type="checkbox" defaultChecked /> <bdi lang="ar-Latn">{o.nom}</bdi>{" "}
+                <input type="checkbox" name="ouvrage" value={o.id} defaultChecked={garde("ouvrage", o.id)} />{" "}
+                <bdi lang="ar-Latn">{o.nom}</bdi>{" "}
                 <bdi lang="ar" dir="rtl" className={`texte-arabe ${ui.discret}`}>{o.nomAr}</bdi>
               </label>
             ))}
-            <label><input type="checkbox" defaultChecked /> {t("filtres.peuConnus")}</label>
+            <label>
+              <input type="checkbox" name="ouvrage" value={PEU_CONNUS} defaultChecked={garde("ouvrage", PEU_CONNUS)} />{" "}
+              {t("filtres.peuConnus")}
+            </label>
           </fieldset>
-          <fieldset disabled className={styles.groupe}>
+          <fieldset className={styles.groupe}>
             <legend>{t("filtres.bibliotheques")}</legend>
             {corpus.bibliotheques.map((b) => (
               <label key={b.id}>
-                <input type="checkbox" defaultChecked={b.parDefaut} /> <bdi>{b.nom}</bdi>{" "}
+                <input type="checkbox" name="bibliotheque" value={b.id} defaultChecked={garde("bibliotheque", b.id)} />{" "}
+                <bdi>{b.nom}</bdi>{" "}
                 <bdi lang="ar" dir="rtl" className={`texte-arabe ${ui.discret}`}>{b.nomAr}</bdi>
               </label>
             ))}
           </fieldset>
-        </aside>
+          <button type="submit" className={ui.bouton}>{t("filtres.appliquer")}</button>
+        </form>
 
         <section className={styles.resultats} aria-labelledby="titre-resultats">
-          {hadith.occurrences.map(carte)}
+          {occurrences.map(carte)}
+          {incertainVisible && (
           <article className={`${ui.carte} ${styles.incertain}`} aria-labelledby="resultat-incertain">
             <div className={styles.entete}>
               <h2 id="resultat-incertain" className={styles.titreResultat}>{t("incertain.titre")}</h2>
@@ -152,6 +184,10 @@ export default async function Recherche({
               </div>
             )}
           </article>
+          )}
+          {occurrences.length === 0 && !incertainVisible && (
+            <p className={ui.carte} role="status">{t("aucunResultat")}</p>
+          )}
         </section>
       </div>
     </main>

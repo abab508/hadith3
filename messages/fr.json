@@ -153,7 +153,8 @@
       "correspondance": "Type de correspondance",
       "collections": "Recueils",
       "bibliotheques": "Bibliothèques",
-      "peuConnus": "Ouvrages peu connus"
+      "peuConnus": "Ouvrages peu connus",
+      "appliquer": "Appliquer les filtres"
     },
     "correspondance": {
       "original": "Correspondance exacte · texte arabe original",
@@ -166,6 +167,7 @@
       "ia": "Traduction générée par IA · non officielle, non vérifiée"
     },
     "aucuneTraduction": "Aucune traduction vérifiée dans votre langue pour ce texte.",
+    "aucunResultat": "Aucun résultat avec ces filtres.",
     "referenceSeulement": "Le texte de cette édition n’est pas reproduit. Référence : [édition, tome, page].",
     "premierTransmetteur": "Premier transmetteur : {nom}",
     "bibliotheque": "Bibliothèque : {nom}",

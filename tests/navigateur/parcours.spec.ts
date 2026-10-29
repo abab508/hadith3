@@ -26,6 +26,27 @@ test("rapport ar : page en RTL, sans traduction ni texte de repli vide", async (
   await expect(page.getByRole("columnheader", { name: ar.rapport.colonneAcces })).toBeVisible();
 });
 
+test("résultats : les filtres retirent et rendent les résultats", async ({ page }) => {
+  await page.goto("/fr/recherche?q=intentions");
+  const resultats = page.locator('section[aria-labelledby="titre-resultats"] > article');
+  await expect(resultats).toHaveCount(4);
+
+  await page.getByLabel(fr.recherche.correspondance.reference).uncheck();
+  await page.getByLabel(fr.recherche.correspondance.similarite).uncheck();
+  await page.getByRole("button", { name: fr.recherche.filtres.appliquer }).click();
+  await expect(page).toHaveURL(/filtre=1/);
+  await expect(page).toHaveURL(/q=intentions/);
+  await expect(resultats).toHaveCount(2);
+  await expect(page.getByLabel(fr.recherche.correspondance.reference)).not.toBeChecked();
+
+  for (const cle of ["original", "variante"] as const) {
+    await page.getByLabel(fr.recherche.correspondance[cle]).uncheck();
+  }
+  await page.getByRole("button", { name: fr.recherche.filtres.appliquer }).click();
+  await expect(resultats).toHaveCount(0);
+  await expect(page.getByRole("status").filter({ hasText: fr.recherche.aucunResultat })).toBeVisible();
+});
+
 test("recherche par chaîne : ajouter, retirer un transmetteur puis générer le rapport", async ({ page }) => {
   await page.goto("/fr/chaine?hadith=niyyat");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(fr.chaine.titre);

@@ -153,7 +153,8 @@
       "correspondance": "Eşleşme türü",
       "collections": "Eserler",
       "bibliotheques": "Kütüphaneler",
-      "peuConnus": "Az bilinen eserler"
+      "peuConnus": "Az bilinen eserler",
+      "appliquer": "Filtreleri uygula"
     },
     "correspondance": {
       "original": "Tam eşleşme · özgün Arapça metin",
@@ -166,6 +167,7 @@
       "ia": "Yapay zekâ çevirisi · resmî değil, kontrol edilmedi"
     },
     "aucuneTraduction": "Bu metin için dilinizde doğrulanmış çeviri yok.",
+    "aucunResultat": "Bu filtrelerle sonuç yok.",
     "referenceSeulement": "Bu baskının metni aktarılmaz. Atıf: [baskı, cilt, sayfa].",
     "premierTransmetteur": "İlk ravi: {nom}",
     "bibliotheque": "Kütüphane: {nom}",
