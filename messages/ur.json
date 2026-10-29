@@ -153,7 +153,8 @@
       "correspondance": "مطابقت کی قسم",
       "collections": "مجموعے",
       "bibliotheques": "کتب خانے",
-      "peuConnus": "کم معروف کتابیں"
+      "peuConnus": "کم معروف کتابیں",
+      "appliquer": "فلٹر لاگو کریں"
     },
     "correspondance": {
       "original": "ہوبہو مطابقت · اصل عربی متن",
@@ -166,6 +167,7 @@
       "ia": "مصنوعی ذہانت سے بنا ترجمہ · غیر سرکاری، غیر مصدقہ"
     },
     "aucuneTraduction": "اس متن کا آپ کی زبان میں کوئی مصدقہ ترجمہ نہیں۔",
+    "aucunResultat": "ان فلٹرز کے ساتھ کوئی نتیجہ نہیں۔",
     "referenceSeulement": "اس اشاعت کا متن نقل نہیں کیا گیا۔ حوالہ: [اشاعت، جلد، صفحہ]۔",
     "premierTransmetteur": "پہلا راوی: {nom}",
     "bibliotheque": "کتب خانہ: {nom}",

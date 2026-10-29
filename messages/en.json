@@ -153,7 +153,8 @@
       "correspondance": "Match type",
       "collections": "Collections",
       "bibliotheques": "Libraries",
-      "peuConnus": "Little-known works"
+      "peuConnus": "Little-known works",
+      "appliquer": "Apply filters"
     },
     "correspondance": {
       "original": "Exact match · original Arabic text",
@@ -166,6 +167,7 @@
       "ia": "AI-generated translation · unofficial, not checked"
     },
     "aucuneTraduction": "No checked translation in your language for this text.",
+    "aucunResultat": "No results match these filters.",
     "referenceSeulement": "The text of this edition is not reproduced. Reference: [edition, volume, page].",
     "premierTransmetteur": "First narrator: {nom}",
     "bibliotheque": "Library: {nom}",

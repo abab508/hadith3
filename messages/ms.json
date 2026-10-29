@@ -153,7 +153,8 @@
       "correspondance": "Jenis padanan",
       "collections": "Kitab",
       "bibliotheques": "Perpustakaan",
-      "peuConnus": "Karya kurang dikenali"
+      "peuConnus": "Karya kurang dikenali",
+      "appliquer": "Guna penapis"
     },
     "correspondance": {
       "original": "Padanan tepat · teks Arab asal",
@@ -166,6 +167,7 @@
       "ia": "Terjemahan janaan AI · tidak rasmi, belum disemak"
     },
     "aucuneTraduction": "Tiada terjemahan disahkan dalam bahasa anda bagi teks ini.",
+    "aucunResultat": "Tiada hasil untuk penapis ini.",
     "referenceSeulement": "Teks edisi ini tidak dipaparkan. Rujukan: [edisi, jilid, halaman].",
     "premierTransmetteur": "Perawi pertama: {nom}",
     "bibliotheque": "Perpustakaan: {nom}",
