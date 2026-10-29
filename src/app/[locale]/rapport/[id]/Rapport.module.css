@@ -1,264 +1,99 @@
-/* Page de rapport détaillé. Propriétés logiques uniquement. */
+/* Page de rapport documentaire. Propriétés logiques uniquement. */
 
-.entete {
+.titres {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  background: var(--surface);
-  border-radius: 1rem;
+  gap: 0.5rem;
 }
 
-.entete > h1 {
+.titre {
   margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  line-height: 1.35;
 }
 
-.statut {
+.ligne {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.traduction {
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  border-radius: 0.5rem;
-}
-
-.chaine {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.chaine > h2 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-.arbre {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.tronc,
-.voiesSection {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.transmetteurs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.transmetteur {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding-block: 0.5rem;
-  padding-inline: 0.75rem;
-  border-inline-start: 3px solid var(--bordure);
-}
-
-.noeud {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.voie {
-  border: 1px solid var(--bordure);
-  border-radius: 0.75rem;
-  padding-inline: 1rem;
-  padding-block: 0.75rem;
-}
-
-.voie > summary {
-  cursor: pointer;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  min-block-size: 2rem;
-  font-weight: 700;
 }
 
-.voie > summary:hover {
-  color: var(--accent);
+.ligne > :is(h2, p) {
+  margin: 0;
 }
 
-.voie[open] > summary {
-  padding-block-end: 0.75rem;
+.original {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  line-height: 1.9;
 }
 
-.transmetteurs {
+.duo {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding-block-start: 0.75rem;
-  border-block-start: 1px solid var(--bordure);
-}
-
-.transmetteurs > .transmetteur:first-child {
-  padding-block-start: 0.75rem;
-}
-
-.transmetteurs > .transmetteur:last-child {
-  padding-block-end: 0;
-}
-
-/* Section fiches des transmetteurs */
-.transmetteurs {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-}
-
-.transmetteurs > h2 {
-  margin: 0 -1rem;
-  padding: 0 1rem;
-  font-size: 1.25rem;
-}
-
-.grille {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  flex-wrap: wrap;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
-@media (max-width: 40rem) {
-  .grille {
-    grid-template-columns: 1fr;
-  }
+.duo > * {
+  flex: 1 1 22rem;
 }
 
-.fiche {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Sélecteur renforcé : passe devant le fond de .carte quel que soit l'ordre des feuilles. */
+.duo > .statut {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--sur-accent);
 }
 
-.enteteTransmetteur {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.duo > .statut a {
+  color: inherit;
 }
 
-.enteteTransmetteur > h3 {
+.etiquette {
   margin: 0;
+  font-size: 0.9375rem;
 }
 
-.enteteTransmetteur > p {
-  margin: 0;
+.verdict {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
-.deces {
-  margin: 0;
-  font-size: 0.875rem;
-  color: var(--discret);
-}
-
-.jugement {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.jugement > p {
-  margin: 0;
-}
-
-.reserve {
-  margin: 0;
-  padding-block: 0.25rem;
-  padding-inline: 0.5rem;
-}
-
-.explication {
-  padding: 0.5rem;
-  background: var(--ocre-doux);
-  border-radius: 0.375rem;
-}
-
-.explication > p {
-  margin: 0;
+.note {
   font-size: 0.875rem;
 }
 
-.biographie {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.biographie > p {
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-/* Section sources */
-.sources {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-}
-
-.sources > h2 {
+.sousTitre {
   margin: 0;
   font-size: 1.25rem;
 }
 
 .tableau {
   overflow-x: auto;
-  border: 1px solid var(--bordure);
-  border-radius: 0.75rem;
 }
 
-.tableau > table {
+.tableau table {
   inline-size: 100%;
+  min-inline-size: 40rem;
   border-collapse: collapse;
-  font: inherit;
 }
 
-.tableau > table > thead > tr {
-  background: var(--surface);
-  border-block-end: 2px solid var(--bordure);
-}
-
-.tableau > table > thead > tr > th {
-  padding-block: 0.75rem;
-  padding-inline: 1rem;
+.tableau th {
   text-align: start;
-  font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--discret);
 }
 
-.tableau > table > tbody > tr {
+.tableau :is(th, td) {
+  padding-block: 0.75rem;
+  padding-inline: 0.75rem;
   border-block-end: 1px solid var(--bordure);
 }
 
-.tableau > table > tbody > tr:hover {
-  background: var(--accent-doux);
-}
-
-.tableau > table > tbody > tr > td {
-  padding-block: 0.75rem;
-  padding-inline: 1rem;
-  font-size: 0.875rem;
-}
-
-.tableau > table > tbody > tr:last-child {
+.tableau tr:last-child td {
   border-block-end: none;
 }

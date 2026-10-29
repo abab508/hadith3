@@ -282,6 +282,7 @@
     "ouvrage": "Work",
     "reference": "Reference",
     "bibliotheque": "Library",
+    "colonneAcces": "Access",
     "acces": {
       "shamila": "al-Maktaba al-Shāmila",
       "ouverts": "Open resource",
