@@ -157,11 +157,19 @@
       "appliquer": "Appliquer les filtres"
     },
     "selection": {
-      "recueil": "Recueil",
+      "recueil": "Recueil de hadith",
       "tousRecueils": "Tous les recueils",
-      "livre": "Livre",
-      "tousLivres": "Tous les livres",
-      "aide": "Après avoir choisi un recueil, tapez un mot ou un numéro de hadith."
+      "livre": "Livre d’une autre catégorie",
+      "tousLivres": "Aucun — chercher dans les hadiths",
+      "aide": "Choisissez un recueil de hadith ou un livre d’une autre catégorie, puis tapez un mot ou un numéro.",
+      "categories": {
+        "rijal": "Biographies des transmetteurs (rijāl)"
+      }
+    },
+    "livre": {
+      "titre": "Transmetteurs cités dans {livre}",
+      "reference": "Référence dans ce livre : {reference}",
+      "apparait": "Apparaît dans :"
     },
     "correspondance": {
       "original": "Correspondance exacte · texte arabe original",

@@ -1,5 +1,5 @@
 import { corpus, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
-import type { Hadith } from "@/donnees/schemas/corpus";
+import type { Hadith, Ouvrage as OuvrageCorpus, Transmetteur } from "@/donnees/schemas/corpus";
 
 export const modes = [
   "approximative", "exacte", "fragment", "traduction", "translitteration", "reference", "transmetteur", "collection",
@@ -97,18 +97,50 @@ export function estArabe(texte: string): boolean {
   return /\p{Script=Arabic}/u.test(texte);
 }
 
-export type Livre = { valeur: string; nom: string; nomAr: string };
-export type Recueil = { id: string; nom: string; nomAr: string; livres: Livre[] };
+export type Ouvrage = { id: string; nom: string; nomAr: string };
+export type Categorie = { categorie: Exclude<OuvrageCorpus["categorie"], "hadith">; livres: Ouvrage[] };
 
-// Recueils présents dans le corpus, chacun avec ses livres (kutub) connus, dans l'ordre d'apparition.
-export function recueilsEtLivres(): Recueil[] {
-  const recueils = new Map<string, Recueil>();
-  for (const o of corpus.hadiths.flatMap((h) => h.occurrences)) {
-    const ouvrage = ouvrageParId(o.ouvrage);
-    if (!ouvrage) continue;
-    const r = recueils.get(o.ouvrage) ?? { id: o.ouvrage, nom: ouvrage.nom, nomAr: ouvrage.nomAr, livres: [] };
-    if (!r.livres.some((l) => l.valeur === o.livre)) r.livres.push({ valeur: o.livre, nom: o.livre, nomAr: o.livreAr });
-    recueils.set(o.ouvrage, r);
+const resume = (o: OuvrageCorpus): Ouvrage => ({ id: o.id, nom: o.nom, nomAr: o.nomAr });
+const tousLesOuvrages = () => corpus.bibliotheques.flatMap((b) => b.ouvrages);
+
+// Recueils de hadith présents dans le corpus, dans l'ordre d'apparition.
+export function recueils(): Ouvrage[] {
+  const ids = [...new Set(corpus.hadiths.flatMap((h) => h.occurrences.map((o) => o.ouvrage)))];
+  return ids.flatMap((id) => {
+    const o = ouvrageParId(id);
+    return o && o.categorie === "hadith" ? [resume(o)] : [];
+  });
+}
+
+// Livres des autres catégories (pas les recueils de hadith), groupés par catégorie.
+export function livresParCategorie(): Categorie[] {
+  const groupes = new Map<Categorie["categorie"], Ouvrage[]>();
+  for (const o of tousLesOuvrages()) {
+    if (o.categorie === "hadith") continue;
+    groupes.set(o.categorie, [...(groupes.get(o.categorie) ?? []), resume(o)]);
   }
-  return [...recueils.values()];
+  return [...groupes].map(([categorie, livres]) => ({ categorie, livres }));
+}
+
+export function estLivreAutreCategorie(id: string | undefined): boolean {
+  return tousLesOuvrages().some((o) => o.id === id && o.categorie !== "hadith");
+}
+
+// Transmetteurs cités dans un livre : par nom (arabe ou translittéré) ou par numéro de notice.
+export function chercherDansLivre(livre: string, requete: string): { transmetteur: Transmetteur; reference: string }[] {
+  const numero = numeroDemande(requete);
+  const demandes = mots(requete);
+  return corpus.transmetteurs.flatMap((transmetteur) => {
+    const source = transmetteur.sources.find((s) => s.ouvrage === livre);
+    if (!source) return [];
+    if (numero) return numeroDemande(source.reference) === numero ? [{ transmetteur, reference: source.reference }] : [];
+    const disponibles = avecSansArticle(mots(`${transmetteur.nomAr} ${transmetteur.nomTranslittere}`));
+    const trouve = demandes.every((d) => disponibles.some((m) => m === d || (d.length >= 3 && m.startsWith(d))));
+    return trouve ? [{ transmetteur, reference: source.reference }] : [];
+  });
+}
+
+// Hadiths du corpus dont la chaîne passe par ce transmetteur.
+export function hadithsDuTransmetteur(id: string): Hadith[] {
+  return corpus.hadiths.filter((h) => [...h.chaine.tronc, ...h.chaine.voies.flatMap((v) => v.transmetteurs)].includes(id));
 }

@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { chercher, normaliser, numeroDemande, recueilsEtLivres, type Mode } from "@/donnees/recherche";
+import {
+  chercher, chercherDansLivre, livresParCategorie, normaliser, numeroDemande, recueils, type Mode,
+} from "@/donnees/recherche";
 
 const ids = (requete: string) => chercher(requete).map((h) => h.id);
 
@@ -48,11 +50,20 @@ describe("recherche dans le corpus", () => {
     expect(parMode("Iman", "collection")).toEqual(["bukhari-8", "bukhari-10", "bukhari-13", "bukhari-16"]);
   });
 
-  it("liste les recueils avec leurs propres livres", () => {
-    const bukhari = recueilsEtLivres().find((r) => r.id === "sahih-bukhari");
-    expect(bukhari?.livres.map((l) => l.valeur)).toEqual(["Badʾ al-waḥy", "al-Īmān"]);
-    const muslim = recueilsEtLivres().find((r) => r.id === "sahih-muslim");
-    expect(muslim?.livres.map((l) => l.valeur)).toEqual(["al-Imāra"]);
+  it("sépare les recueils de hadith des livres des autres catégories", () => {
+    expect(recueils().map((r) => r.id)).toEqual(["sahih-bukhari", "sahih-muslim", "sunan-abi-dawud"]);
+    const categories = livresParCategorie();
+    expect(categories.map((c) => c.categorie)).toEqual(["rijal"]);
+    expect(categories[0]?.livres.map((l) => l.id)).toContain("taqrib");
+    expect(categories.flatMap((c) => c.livres).some((l) => l.id === "sahih-bukhari")).toBe(false);
+  });
+
+  it("cherche les transmetteurs d'un livre par nom", () => {
+    const noms = (livre: string, requete: string) => chercherDansLivre(livre, requete).map((r) => r.transmetteur.id);
+    expect(noms("taqrib", "")).toEqual(["alqama", "taymi", "yahya", "sufyan", "humaydi", "malik", "qanabi"]);
+    expect(noms("taqrib", "Sufyan")).toEqual(["sufyan"]);
+    expect(noms("siyar", "مالك")).toEqual(["malik"]);
+    expect(noms("taqrib", "Abu Hurayra")).toEqual([]);
   });
 
   it("rend tout le corpus sans requête et rien pour un mot absent", () => {

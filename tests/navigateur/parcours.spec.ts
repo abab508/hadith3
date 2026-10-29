@@ -68,17 +68,23 @@ test("recueil choisi : un numéro vise le numéro de ce recueil, pas d'un autre"
   await expect(resultats.first()).toContainText("n° 13");
 });
 
-test("sélecteurs liés : le livre ne propose que ceux du recueil choisi, puis filtre", async ({ page }) => {
+test("livre d'une autre catégorie : exclusif du recueil, cherche les transmetteurs par nom", async ({ page }) => {
   await page.goto("/fr");
   const recueil = page.getByRole("combobox", { name: fr.recherche.selection.recueil, exact: true });
   const livre = page.getByRole("combobox", { name: fr.recherche.selection.livre, exact: true });
+  // Le sélecteur de livre ne contient aucun recueil de hadith.
+  await expect(livre.locator('option[value="sahih-bukhari"]')).toHaveCount(0);
   await recueil.selectOption("sahih-muslim");
-  await expect(livre.locator("option")).toHaveCount(2);
-  await recueil.selectOption("sahih-bukhari");
-  await livre.selectOption("al-Īmān");
+  await livre.selectOption("taqrib");
+  await expect(recueil).toHaveValue("");
+  await page.getByLabel(fr.accueil.recherche.etiquette).fill("Sufyan");
   await page.getByLabel(fr.accueil.recherche.etiquette).press("Enter");
-  await expect(page).toHaveURL(/recueil=sahih-bukhari/);
-  await expect(page.locator('section[aria-labelledby="titre-resultats"] > article')).toHaveCount(4);
+  await expect(page).toHaveURL(/livre=taqrib/);
+  const fiches = page.locator('section[aria-labelledby="titre-livre"] > article');
+  await expect(fiches).toHaveCount(1);
+  await expect(fiches.first()).toContainText("Sufyān ibn ʿUyayna");
+  await fiches.first().getByRole("link").first().click();
+  await expect(page).toHaveURL(/\/fr\/rapport\/niyyat$/);
 });
 
 test("recherche réelle : un mot absent donne « aucun résultat »", async ({ page }) => {

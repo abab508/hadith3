@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, bibliothequeParId, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
-import { chercher, estArabe, estMode, modes, numeroDemande, recueilsEtLivres, type Mode } from "@/donnees/recherche";
+import {
+  chercher, chercherDansLivre, estArabe, estLivreAutreCategorie, estMode, hadithsDuTransmetteur,
+  livresParCategorie, modes, numeroDemande, recueils, type Mode,
+} from "@/donnees/recherche";
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
 import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
@@ -54,8 +57,11 @@ export default async function Recherche({
   const saisie = premier1(parametres.q);
   const brutMode = premier1(parametres.mode);
   const mode: Mode = estMode(brutMode) ? brutMode : "approximative";
-  const recueil = premier1(parametres.recueil);
   const livre = premier1(parametres.livre);
+  // Un livre d'une autre catégorie (biographies…) remplace la recherche dans les recueils.
+  const livreChoisi = livre && estLivreAutreCategorie(livre) ? ouvrageParId(livre) : undefined;
+  const recueil = livreChoisi ? undefined : premier1(parametres.recueil);
+  const dansLeLivre = livreChoisi ? chercherDansLivre(livreChoisi.id, saisie ?? "") : [];
 
   // Filtres envoyés par le formulaire (GET) : sans « filtre », tout est coché.
   const filtre = parametres.filtre !== undefined;
@@ -66,11 +72,9 @@ export default async function Recherche({
     bibliotheque: coches(parametres.bibliotheque),
   };
   const garde = (groupe: keyof typeof choix, valeur: string) => !filtre || choix[groupe].has(valeur);
-  // Recueil et livre choisis dans le formulaire de recherche.
-  // Un numéro seul vise le numéro du hadith dans le recueil, pas un numéro d'un autre recueil.
+  // Recueil choisi ; un numéro seul vise le numéro du hadith dans ce recueil, pas dans un autre.
   const numero = saisie ? numeroDemande(saisie) : undefined;
-  const dansSelection = (o: Occurrence) => (!recueil || o.ouvrage === recueil) && (!livre || o.livre === livre)
-    && (!numero || o.numero === numero);
+  const dansSelection = (o: Occurrence) => (!recueil || o.ouvrage === recueil) && (!numero || o.numero === numero);
 
   const trouves = chercher(saisie ?? "", mode).filter((h) => h.occurrences.some(dansSelection));
   const collections = [...new Set(trouves.flatMap((h) => h.occurrences.map((o) => o.ouvrage)))].flatMap((id) => {
@@ -84,7 +88,7 @@ export default async function Recherche({
   // Une requête hors arabe qui mène à un seul hadith : on montre le texte arabe auquel elle a été rapprochée.
   const rapproche = saisie && !estArabe(saisie) && trouves.length === 1 ? trouves[0] : undefined;
   // L'exemple incertain (ouvrage peu connu d'OpenITI) illustre le hadith des intentions.
-  const incertainVisible = trouves.some((h) => h.id === "niyyat") && !recueil && !livre && !numero
+  const incertainVisible = trouves.some((h) => h.id === "niyyat") && !recueil && !numero
     && garde("correspondance", "similarite") && garde("ouvrage", PEU_CONNUS) && garde("bibliotheque", "openiti");
 
   function carte({ occurrence, hadith }: { occurrence: Occurrence; hadith: Hadith }) {
@@ -160,7 +164,12 @@ export default async function Recherche({
               </select>
             </label>
           </div>
-          <SelecteurRecueil recueils={recueilsEtLivres()} recueilInitial={recueil} livreInitial={livre} />
+          <SelecteurRecueil
+            recueils={recueils()}
+            categories={livresParCategorie()}
+            recueilInitial={recueil}
+            livreInitial={livreChoisi?.id}
+          />
           <button type="submit" className={ui.bouton}>{tAccueil("recherche.bouton")}</button>
         </form>
         {saisie && <p><bdi dir="auto">{t("requete", { requete: saisie })}</bdi></p>}
@@ -173,6 +182,36 @@ export default async function Recherche({
         <p className={`${ui.badge} ${styles.exemple}`} data-ton="ocre">{t("exemple")}</p>
       </div>
 
+      {livreChoisi ? (
+        <section className={styles.resultats} aria-labelledby="titre-livre">
+          <h2 id="titre-livre" className={styles.titreResultat}>
+            {t("livre.titre", { livre: livreChoisi.nom })}{" "}
+            <bdi lang="ar" dir="rtl" className={`texte-arabe ${ui.discret}`}>{livreChoisi.nomAr}</bdi>
+          </h2>
+          {dansLeLivre.map(({ transmetteur, reference }) => (
+            <article key={transmetteur.id} className={ui.carte} aria-labelledby={`transmetteur-${transmetteur.id}`}>
+              <h3 id={`transmetteur-${transmetteur.id}`} className={styles.titreResultat}>
+                <bdi lang="ar" dir="rtl" className="texte-arabe">{transmetteur.nomAr}</bdi>{" "}
+                <bdi lang="ar-Latn" dir="ltr">{transmetteur.nomTranslittere}</bdi>
+              </h3>
+              {transmetteur.verdictAr && <p lang="ar" dir="rtl" className="texte-arabe">{transmetteur.verdictAr}</p>}
+              <p className={styles.meta}><span>{t("livre.reference", { reference })}</span></p>
+              <p className={styles.meta}>
+                <span>{t("livre.apparait")}</span>
+                {hadithsDuTransmetteur(transmetteur.id).map((h) => {
+                  const o = h.occurrences[0]!;
+                  return (
+                    <Link key={h.id} href={`/rapport/${h.id}`}>
+                      <bdi>{t("numero", { ouvrage: ouvrageParId(o.ouvrage)?.nom ?? o.ouvrage, numero: o.numero })}</bdi>
+                    </Link>
+                  );
+                })}
+              </p>
+            </article>
+          ))}
+          {dansLeLivre.length === 0 && <p className={ui.carte} role="status">{t("aucunResultat")}</p>}
+        </section>
+      ) : (
       <div className={styles.colonnes}>
         <form method="get" className={`${ui.carte} ${styles.filtres}`} aria-labelledby="titre-filtres">
           <h2 id="titre-filtres" className={styles.titreFiltres}>{t("filtres.titre")}</h2>
@@ -238,6 +277,7 @@ export default async function Recherche({
           )}
         </section>
       </div>
+      )}
     </main>
   );
 }
