@@ -156,6 +156,13 @@
       "peuConnus": "Karya kurang dikenali",
       "appliquer": "Guna penapis"
     },
+    "selection": {
+      "recueil": "Koleksi",
+      "tousRecueils": "Semua koleksi",
+      "livre": "Kitab",
+      "tousLivres": "Semua kitab",
+      "aide": "Selepas memilih koleksi, taip perkataan atau nombor hadis."
+    },
     "correspondance": {
       "original": "Padanan tepat · teks Arab asal",
       "variante": "Varian · teks Arab asal",

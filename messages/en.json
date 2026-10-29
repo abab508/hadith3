@@ -156,6 +156,13 @@
       "peuConnus": "Little-known works",
       "appliquer": "Apply filters"
     },
+    "selection": {
+      "recueil": "Collection",
+      "tousRecueils": "All collections",
+      "livre": "Book",
+      "tousLivres": "All books",
+      "aide": "After choosing a collection, type a word or a hadith number."
+    },
     "correspondance": {
       "original": "Exact match · original Arabic text",
       "variante": "Variant · original Arabic text",

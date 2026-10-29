@@ -156,6 +156,13 @@
       "peuConnus": "Az bilinen eserler",
       "appliquer": "Filtreleri uygula"
     },
+    "selection": {
+      "recueil": "Hadis kitabı",
+      "tousRecueils": "Tüm hadis kitapları",
+      "livre": "Bölüm (kitâb)",
+      "tousLivres": "Tüm bölümler",
+      "aide": "Bir hadis kitabı seçtikten sonra bir kelime veya hadis numarası yazın."
+    },
     "correspondance": {
       "original": "Tam eşleşme · özgün Arapça metin",
       "variante": "Varyant · özgün Arapça metin",
