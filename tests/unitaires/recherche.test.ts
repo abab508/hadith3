@@ -66,6 +66,15 @@ describe("recherche dans le corpus", () => {
     expect(noms("taqrib", "Abu Hurayra")).toEqual([]);
   });
 
+  it("cherche un transmetteur par son numéro de notice dans le livre", () => {
+    const noms = (livre: string, requete: string) => chercherDansLivre(livre, requete).map((r) => r.transmetteur.id);
+    expect(noms("taqrib", "2451")).toEqual(["sufyan"]);
+    expect(noms("taqrib", "٦٤٢٥")).toEqual(["malik"]);
+    expect(noms("taqrib", "245")).toEqual([]);
+    // Pas de numéro vérifié dans Siyar : rien plutôt qu'un faux résultat.
+    expect(noms("siyar", "2451")).toEqual([]);
+  });
+
   it("rend tout le corpus sans requête et rien pour un mot absent", () => {
     expect(ids("")).toHaveLength(6);
     expect(ids("zzzz")).toEqual([]);

@@ -133,7 +133,8 @@ export function chercherDansLivre(livre: string, requete: string): { transmetteu
   return corpus.transmetteurs.flatMap((transmetteur) => {
     const source = transmetteur.sources.find((s) => s.ouvrage === livre);
     if (!source) return [];
-    if (numero) return numeroDemande(source.reference) === numero ? [{ transmetteur, reference: source.reference }] : [];
+    // « n° 2451 (…) » : le numéro de notice est un mot de la référence.
+    if (numero) return mots(source.reference).includes(numero) ? [{ transmetteur, reference: source.reference }] : [];
     const disponibles = avecSansArticle(mots(`${transmetteur.nomAr} ${transmetteur.nomTranslittere}`));
     const trouve = demandes.every((d) => disponibles.some((m) => m === d || (d.length >= 3 && m.startsWith(d))));
     return trouve ? [{ transmetteur, reference: source.reference }] : [];

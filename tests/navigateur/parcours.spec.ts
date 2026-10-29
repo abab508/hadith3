@@ -87,6 +87,13 @@ test("livre d'une autre catégorie : exclusif du recueil, cherche les transmette
   await expect(page).toHaveURL(/\/fr\/rapport\/niyyat$/);
 });
 
+test("livre d'une autre catégorie : recherche par numéro de notice", async ({ page }) => {
+  await page.goto("/fr/recherche?livre=taqrib&q=" + encodeURIComponent("٢٤٥١"));
+  const fiches = page.locator('section[aria-labelledby="titre-livre"] > article');
+  await expect(fiches).toHaveCount(1);
+  await expect(fiches.first()).toContainText("n° 2451");
+});
+
 test("recherche réelle : un mot absent donne « aucun résultat »", async ({ page }) => {
   await page.goto("/fr/recherche?q=zzzz");
   await expect(page.getByRole("status").filter({ hasText: fr.recherche.aucunResultat })).toBeVisible();
