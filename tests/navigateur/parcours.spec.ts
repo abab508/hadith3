@@ -43,6 +43,23 @@ test("le menu signale la page en cours", async ({ page }) => {
   await expect(menu.getByRole("link", { name: fr.navigation.recherche, exact: true })).not.toHaveAttribute("aria-current", "page");
 });
 
+test("recherche réelle : le texte arabe sans voyelles trouve le bon hadith, et seulement lui", async ({ page }) => {
+  await page.goto("/fr");
+  await page.getByLabel(fr.accueil.recherche.etiquette).fill("الإيمان بضع وستون");
+  await page.getByLabel(fr.accueil.recherche.etiquette).press("Enter");
+  await expect(page).toHaveURL(/\/fr\/recherche\?q=/);
+  const resultats = page.locator('section[aria-labelledby="titre-resultats"] > article');
+  await expect(resultats).toHaveCount(1);
+  await expect(resultats.first()).toContainText("الْإِيمَانُ بِضْعٌ");
+  await resultats.first().getByRole("link", { name: fr.recherche.voirRapport }).click();
+  await expect(page).toHaveURL(/\/fr\/rapport\/bukhari-8$/);
+});
+
+test("recherche réelle : un mot absent donne « aucun résultat »", async ({ page }) => {
+  await page.goto("/fr/recherche?q=zzzz");
+  await expect(page.getByRole("status").filter({ hasText: fr.recherche.aucunResultat })).toBeVisible();
+});
+
 test("résultats : les filtres retirent et rendent les résultats", async ({ page }) => {
   await page.goto("/fr/recherche?q=intentions");
   const resultats = page.locator('section[aria-labelledby="titre-resultats"] > article');
