@@ -29,6 +29,8 @@ function nomPropre(segment:string){
  s=s.replace(/(?:[,،:]\s*)?قال\s*$/u,"").replace(/^\s*(?:قال|فقال)\s*[:،]?\s*/u,"");
  s=s.replace(/(?:\s+|[-ـ])رض(?:ي|ى)\s+الله\s+عنه(?:ا|م)?\s*[-ـ]?/gu,"");
  s=s.replace(/\s+/gu," ").replace(/[\s،,.:؛]+$/gu,"").trim();
+ // Un segment qui a déjà basculé dans le récit ne doit pas devenir un nom propre.
+ s=s.split(/(?:\s+|[,،؛]\s*)(?:ف?قال|يقول|ذكر)\s*[:،]?\s*/u,1)[0]?.trim()??"";
  if(s.length<2||s.length>110||/\b(?:بهذا|الاسناد|مثله|نحوه|الحديث)\b/u.test(s))return "";
  if(/^(?:النبي|رسول|الله|هو|هي|قال)$/u.test(s))return "";
  return s;
