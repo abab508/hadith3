@@ -256,7 +256,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
               <section className={styles.groupe}>
                 <h3 className={styles.titreBloc}>{t("fiche.classementTransmetteur")}</h3>
                 <p className={styles.classement}>
-                  <span className={\`\${ui.badge} \${styles.badgeCategorie} \${styles.porteur}\`}
+                  <span className={`${ui.badge} ${styles.badgeCategorie} ${styles.porteur}`}
                     data-categorie={choisi.categorie}>{t(categories[choisi.categorie])}</span>
                 </p>
                 {choisi.categorie === "non-evalue" ? (
@@ -267,7 +267,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
                 {choisi.verdictAr && (
                   <div className={styles.verdict}>
                     <p className={styles.etiquette}>{t("fiche.verdict")}</p>
-                    <p lang="ar" dir="rtl" className={\`texte-arabe \${styles.verdictAr}\`}>{choisi.verdictAr}</p>
+                    <p lang="ar" dir="rtl" className={`texte-arabe ${styles.verdictAr}`}>{choisi.verdictAr}</p>
                   </div>
                 )}
               </section>
@@ -288,7 +288,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
                   ))
                 )}
               </section>
-              <section className={\`\${styles.groupe} \${styles.sources}\`}>
+              <section className={`${styles.groupe} ${styles.sources}`}>
                 <h3 className={styles.titreBloc}>{t("fiche.sources")}</h3>
                 {choisi.sources.length === 0 ? (
                   <p className={styles.jugement}>{t("fiche.aucuneSource")}</p>
