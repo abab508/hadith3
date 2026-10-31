@@ -136,7 +136,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
        </div>
        <p className={styles.bubbleCaution}>{locale==="fr"?"Cette chaîne est extraite automatiquement : les relations nécessitent une vérification dans les sources.":locale==="ar"?"السند مستخرج آلياً وتحتاج العلاقات إلى التوثيق من المصادر.":"This chain is extracted automatically; relationships require source verification."}</p>
        {actuel.bio&&<p>{text(actuel.bio)}</p>}
-       {actuel.referenceUrl&&<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Source biographique":locale==="ar"?"المصدر":"Biographical source"} ↗</a>}
+       {actuel.referenceUrl?<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Source biographique":locale==="ar"?"المصدر":"Biographical source"} ↗</a>:actuel.reference?<p><strong>{locale==="fr"?"Référence locale à vérifier : ":locale==="ar"?"مرجع محلي يحتاج مراجعة: ":"Local reference pending verification: "}</strong>{actuel.reference}</p>:null}
        <div className={styles.bubbleActions}>
         <button type="button" onClick={()=>{setOnglet("bio");setBulleOuverte(false);}}>{locale==="fr"?"Voir la biographie":locale==="ar"?"عرض الترجمة":"View biography"}</button>
         <button type="button" onClick={()=>{setOnglet("fiabilite");setBulleOuverte(false);}}>{locale==="fr"?"Voir le rapport de fiabilité":locale==="ar"?"عرض الجرح والتعديل":"View reliability report"}</button>
