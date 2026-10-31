@@ -79,3 +79,11 @@
 .assessments p{line-height:1.7;}
 .assessments a{font-size:.82rem;line-height:1.7;display:block;}
 @media print{.related,.assessments li,.otherRelated{background:white!important;color:#111!important;break-inside:avoid;}.related small,.assessments p,.limitation{color:#111!important;}}
+
+
+.documentarySources{margin-top:1rem;padding:.85rem;background:#10263e;border:1px solid #648a9e;border-radius:.85rem;color:#f1f7ff;}
+.documentarySources summary{cursor:pointer;font-weight:750;color:#ffe0a6;}
+.documentarySources ul{padding-inline-start:1.1rem;line-height:1.7;}
+.documentarySources li{margin:.55rem 0;}
+.documentarySources a{color:#a6ffe5;}
+@media print{.documentarySources{background:white!important;color:#111!important;}.documentarySources summary,.documentarySources a{color:#111!important;}}
