@@ -4,6 +4,7 @@
  * ni fiabilité. On n'ajoute aucun jugement sans référence biographique.
  */
 import { noticeHadith79, type CritiqueRijal } from "@/donnees/rijal-hadith-79";
+import { noticeLocaleExacte } from "@/donnees/registre-rijal";
 export type MaillonExterne={
   id:string;nomAr:string;fragment:string;rang:number;
   verdict:"non-evalue"|"compagnon"|"source"|"compilateur"|"thiqa"|"divergent";
@@ -121,7 +122,8 @@ export function extraireChaineArabe(texte:string,recueil:string,numero:number,so
  // L'ordre du fichier est du compilateur vers le dernier rapporteur ;
  // l'interface présente la source en premier comme dans le rapport existant.
  const maillons=noms.reverse().map((nom,i):MaillonExterne=>{
-   const fiche=remarqueSpecialisee(recueil,numero,nom);
+   const ficheSpecialisee=remarqueSpecialisee(recueil,numero,nom);
+   const fiche=ficheSpecialisee.verdict!=="non-evalue"?ficheSpecialisee:(noticeLocaleExacte(nom)??ficheSpecialisee);
    return {id:"externe-"+i,nomAr:nom,fragment:nom,rang:i+1,...fiche};
  });
  if(limite>=0){
