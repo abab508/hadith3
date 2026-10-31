@@ -6,7 +6,7 @@
  * Les maîtres et élèves listés sont des EXEMPLES, jamais un inventaire complet.
  */
 export type TraductionRijal={fr:string;ar:string;en:string};
-export type CritiqueRijal={auteur:string;appreciation:TraductionRijal;ouvrage:string;url:string};
+export type CritiqueRijal={auteur:string;appreciation:TraductionRijal;ouvrage:string;url?:string};
 export type NoticeRijalExterne={
  verdict:"thiqa"|"compagnon"|"divergent";
  nomCompletAr:string;nomLatin:string;
