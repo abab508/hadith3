@@ -1,0 +1,12 @@
+# Mina Gaiba 2 — Netlify / Next.js 16
+# La branche de production doit être sélectionnée dans l'interface Netlify : mina-gaiba-2.
+# Netlify installe et configure automatiquement le runtime Next.js moderne.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Aucune redirection SPA ni export statique : le site utilise Next.js SSR,
+# next-intl, les routes API et les sessions côté serveur.
