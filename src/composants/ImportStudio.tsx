@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import { useCallback, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { IMPORT_COLUMNS, parseCsv, validateRows, summaryRows, type CsvRow, type ImportedNotice } from "@/donnees/import-csv";
 import styles from "./ImportStudio.module.css";
 
@@ -87,7 +87,7 @@ export default function ImportStudio({lang}:{lang:string}){
   },[]);
   useEffect(()=>{void refresh();},[refresh]);
 
-  async function login(e:React.FormEvent<HTMLFormElement>){
+  async function login(e:FormEvent<HTMLFormElement>){
     e.preventDefault();setBusy(true);setError("");
     try{
       await jsonApi("/api/admin/import/login",{
@@ -130,7 +130,7 @@ export default function ImportStudio({lang}:{lang:string}){
         body:JSON.stringify({rows})
       }) as {added:number;total:number;commit:string};
       setSaved(result);setRows([]);setFileName("");setFileErrors([]);await refresh();
-    }catch(e){setError(e instanceof Error?e.message:t.saveError);await refresh();}
+    }catch(e){await refresh();setError(e instanceof Error?e.message:t.saveError);}
     finally{setBusy(false);}
   }
   const downloadReport=()=>download("milaghaiba-import-verification.json",JSON.stringify({
