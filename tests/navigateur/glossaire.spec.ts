@@ -15,7 +15,7 @@ for (const { locale, direction, titre, domaine } of [
     await expect(page.getByRole("heading", { level: 2, name: domaine, exact: true })).toBeVisible();
     const fiche = page.locator('article[data-terme="al-illa"]');
     await expect(fiche.locator('p[lang="ar"]')).toHaveText("العلة");
-    await expect(fiche.locator('p[lang="ar"]')).toHaveAttribute("dir", "rtl");
+    await expect(fiche.locator('p[lang="ar"]').last()).toHaveAttribute("dir", "rtl");
     await expect(fiche.locator('[lang="ar-Latn"]')).toHaveText("al-ʿilla");
     await expect(fiche.locator('[lang="ar-Latn"]')).toHaveAttribute("dir", "ltr");
     await expect(page.locator("header nav")).toBeVisible();
