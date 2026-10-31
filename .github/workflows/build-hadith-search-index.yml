@@ -1,0 +1,46 @@
+name: Mina Gaiba 2 - index léger des hadiths
+
+on:
+  push:
+    branches: [mina-gaiba-2]
+    paths:
+      - scripts/build-hadith-search-index.mjs
+      - .github/workflows/build-hadith-search-index.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-indexes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: minagaiba-index-building
+      cancel-in-progress: false
+    steps:
+      - name: Checkout Mina Gaiba 2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: mina-gaiba-2
+          persist-credentials: true
+      - name: Setup Node.js 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24"
+      - name: Generate index without full hadith text
+        run: node scripts/build-hadith-search-index.mjs
+      - name: Check sizes and indexed collections
+        run: |
+          node -e "const fs=require('fs'); const p='data/search-index/manifest.json'; const m=JSON.parse(fs.readFileSync(p)); if (m.entries.length!==13)process.exit(1);const files=m.entries.map(e=>fs.statSync('data/search-index/'+e.file).size);const total=files.reduce((a,b)=>a+b,0);console.log('13 indexes:', (total/1048576).toFixed(2),'MiB');if(total>65*1048576)process.exit(1);"
+      - name: Commit compact index to dedicated branch
+        run: |
+          git config user.name "Mina Gaiba Index Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/search-index/
+          if git diff --cached --quiet; then
+            echo "Index unchanged"
+            exit 0
+          fi
+          git commit -m "data(search): refreshed lightweight index at hadith-api@1 [skip ci]"
+          git push origin HEAD:mina-gaiba-2
