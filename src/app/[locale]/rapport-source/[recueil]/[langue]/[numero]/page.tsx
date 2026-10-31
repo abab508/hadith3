@@ -88,7 +88,9 @@ export default async function RapportSource({params}:Props){
    }catch{/* Ne jamais construire une chaîne à partir d'une autre édition non vérifiée. */}
  }
  const sourceArabe=editionReferenceUrl(collection.key,"ara",number);
- const chaine=rapportKgBukhariUn(recueil,number,texteArabe,sourceArabe)??extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
+ const chaineKg=rapportKgBukhariUn(recueil,number,texteArabe,sourceArabe);
+ const chaine=chaineKg??extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
+ const kgNumeroPresent=recueil==="sahih-bukhari"&&(number===1||number===22);
  const corpusKg=await kgConnection();
  const texteNormalise=normaliser(texteArabe??"");
  // Recoupement strict : même recueil, même numéro et un fragment du matn arabe
@@ -124,10 +126,14 @@ export default async function RapportSource({params}:Props){
     <p>{locale==="fr"?"Un dossier local correspondant à cette référence et à ce texte arabe contient des voies et fiches documentaires supplémentaires.":locale==="ar"?"توجد لهذا المرجع ونصه العربي دراسة محلية تتضمن طرقاً وتراجم إضافية.":"A matching local dossier contains additional transmission routes and narrator records."}</p>
     <Link href={`/rapport/${rapportLocal.id}`} className={styles.source}>{locale==="fr"?"Ouvrir le rapport détaillé avec biographies et voies":locale==="ar"?"فتح التقرير المفصل":"Open detailed narrator report"} ↗</Link>
   </section>}
+  {kgNumeroPresent&&!chaineKg&&<section className={styles.documentationState} aria-label="Concordance des éditions KG">
+   <strong>{locale==="fr"?"Numérotation différente : dossier KG non associé":locale==="ar"?"اختلاف في ترقيم الطبعات: لم يُربط ملف KG":"Different edition numbering: KG report not linked"}</strong>
+   <p>{locale==="fr"?"La base KG contient un hadith portant ce numéro, mais le début de son texte arabe ne concorde pas avec celui de cette édition. Les biographies KG ne sont pas appliquées à cette chaîne pour éviter toute identification erronée.":locale==="ar"?"يوجد حديث بهذا الرقم في قاعدة KG، لكن نصه العربي لا يطابق هذا النص. لن ننسب التراجم إلى سند آخر.":"KG contains the same number, but the Arabic text does not match this edition. Narrator records are not assigned to a different chain."}</p>
+  </section>}
   <section className={styles.documentationState} aria-label="État de la base historique">
     <strong>{locale==="fr"?"Base biographique historique":locale==="ar"?"قاعدة بيانات الرجال":"Historical narrator database"}</strong>
     <span>{corpusKg.status==="online"?(locale==="fr"?"Service connecté":locale==="ar"?"متصل":"Connected"):corpusKg.status==="not-configured"?(locale==="fr"?"Non connectée":locale==="ar"?"غير متصل":"Not connected"):(locale==="fr"?"Service indisponible":locale==="ar"?"الخدمة غير متاحة":"Service unavailable")}</span>
-    <p>{locale==="fr"?"Les biographies complètes du corpus externe ne sont pas encore associées automatiquement à ce rapport. Seules les fiches locales identifiées sont utilisées.":locale==="ar"?"لم تربط تراجم قاعدة البيانات الخارجية بهذا التقرير تلقائيا بعد؛ تعرض البطاقات المحلية المحددة فقط.":"External corpus narrator dossiers are not yet automatically linked to this report; only resolved local records are used."}</p>
+    <p>{locale==="fr"?"Les dossiers KG importés sont utilisés uniquement lorsque le texte arabe correspond. Le service complet de la base historique reste indépendant.":locale==="ar"?"لم تربط تراجم قاعدة البيانات الخارجية بهذا التقرير تلقائيا بعد؛ تعرض البطاقات المحلية المحددة فقط.":"External corpus narrator dossiers are not yet automatically linked to this report; only resolved local records are used."}</p>
   </section>
   <section className={styles.documentationState} aria-label={locale==="fr"?"Couverture documentaire":locale==="ar"?"التوثيق":"Documentation coverage"}>
    <strong>{locale==="fr"?"Couverture des biographies et références":locale==="ar"?"تغطية التراجم والمراجع":"Narrator documentation coverage"}</strong>
