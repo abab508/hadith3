@@ -17,7 +17,10 @@ const dictionnaire={
   noVerdict:"Aucun jugement individuel sourcé n'est encore rattaché à ce nom pour cette chaîne. Cela ne signifie ni qu'il est fiable, ni qu'il est faible.",
   statusSource:"Source du hadith — hors jugement des transmetteurs",
   statusCompanion:"Compagnon — selon les sources indiquées",
-  statusUnknown:"Non évalué",statusThiqa:"Fiable (thiqa), avec référence",
+  statusUnknown:"Non évalué",statusThiqa:"Fiable (thiqa), avec référence",statusDiv:"Avis divergents — voir les sources",
+  completeName:"Identité documentée",related:"Relations dans ce hadith",master:"Maître de cette chaîne",student:"Élève de cette chaîne",
+  masters:"Autres maîtres mentionnés dans les sources",students:"Autres élèves mentionnés dans les sources",
+  assessments:"Avis des critiques",limited:"Exemples documentés, liste non exhaustive.",
   statusCompiler:"Compilateur (hors chaîne)",
   verdict:"Fiabilité et appréciations",critic:"Auteur de l'appréciation",reference:"Référence bibliographique",position:"Position dans ce parcours",
   prev:"Précédent",next:"Suivant",proof:"Mention du nom dans l'isnād arabe",
@@ -37,7 +40,10 @@ const dictionnaire={
   noBio:"لا توجد ترجمة موثقة تربط هذا الاسم بهذا الشخص على وجه اليقين في البيانات الحالية.",
   noVerdict:"لا يوجد حكم فردي مسند إلى مرجع لهذا الاسم في هذا الطريق. وليس معنى ذلك التضعيف أو التوثيق.",
   statusSource:"مصدر الحديث وليس حكمًا على راوٍ",statusCompanion:"صحابي وفق المصادر المرفقة",
-  statusUnknown:"غير مقيّم",statusThiqa:"ثقة، مع المصدر",statusCompiler:"المصنّف (خارج السند)",
+  statusUnknown:"غير مقيّم",statusThiqa:"ثقة، مع المصدر",statusDiv:"مختلف فيه — راجع أقوال النقاد",
+  completeName:"الاسم المعين",related:"العلاقات في هذا السند",master:"شيخه في هذا السند",student:"تلميذه في هذا السند",
+  masters:"شيوخ آخرون مذكورون في المصادر",students:"تلاميذ آخرون مذكورون في المصادر",
+  assessments:"أقوال النقاد",limited:"أمثلة موثقة وليست قائمة شاملة.",statusCompiler:"المصنّف (خارج السند)",
   verdict:"أقوال النقاد",critic:"صاحب القول",reference:"المصدر",position:"موضعه في هذه السلسلة",
   prev:"السابق",next:"التالي",proof:"الاسم كما التقط من السند",
   incomplete:"قد تُحيل النسخة إلى إسناد سابق بلفظ «بهذا الإسناد» أو «مثله»، ولا تُختلق الأسماء الناقصة.",
@@ -55,7 +61,10 @@ const dictionnaire={
   noBio:"No independently verified biographical identity is linked to this name in the local data.",
   noVerdict:"No sourced individual judgment is linked to this name in this chain. It is not a claim that the narrator was either weak or trustworthy.",
   statusSource:"Hadith source; not a narrator grading",statusCompanion:"Companion according to cited scholarship",
-  statusUnknown:"Not assessed",statusThiqa:"Trustworthy (thiqa), with source",statusCompiler:"Compiler (outside chain)",
+  statusUnknown:"Not assessed",statusThiqa:"Trustworthy (thiqa), with source",statusDiv:"Disputed — see critic statements",
+  completeName:"Documented identity",related:"Relations in this chain",master:"Teacher in this chain",student:"Student in this chain",
+  masters:"Other teachers mentioned in sources",students:"Other students mentioned in sources",
+  assessments:"Critic statements",limited:"Documented examples, not a complete list.",statusCompiler:"Compiler (outside chain)",
   verdict:"Reliability assessments",critic:"Author of judgment",reference:"Bibliographic reference",position:"Place in this chain",
   prev:"Previous",next:"Next",proof:"Name as extracted from the Arabic isnad",
   incomplete:"The edition may refer back to another route ('same chain'). Missing links are not invented.",
@@ -74,8 +83,8 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
  const [selected,setSelected]=useState(Math.min(maillons.length-1,maillons.findIndex(x=>x.verdict!=="source")>=0?maillons.findIndex(x=>x.verdict!=="source"):0));
  const actuel=maillons[selected];
  const text=(v:{fr:string;ar:string;en:string})=>locale==="ar"?v.ar:locale==="fr"?v.fr:v.en;
- const statut=(m:MaillonExterne)=>m.verdict==="source"?t.statusSource:m.verdict==="compagnon"?t.statusCompanion:m.verdict==="compilateur"?t.statusCompiler:m.verdict==="thiqa"?t.statusThiqa:t.statusUnknown;
- const category=(m:MaillonExterne)=>m.verdict==="compagnon"?"compagnon":m.verdict==="source"?"source":m.verdict==="compilateur"?"compilateur":m.verdict==="thiqa"?"thiqa":"non-evalue";
+ const statut=(m:MaillonExterne)=>m.verdict==="source"?t.statusSource:m.verdict==="compagnon"?t.statusCompanion:m.verdict==="compilateur"?t.statusCompiler:m.verdict==="thiqa"?t.statusThiqa:m.verdict==="divergent"?t.statusDiv:t.statusUnknown;
+ const category=(m:MaillonExterne)=>m.verdict==="compagnon"?"compagnon":m.verdict==="source"?"source":m.verdict==="compilateur"?"compilateur":m.verdict==="thiqa"?"thiqa":m.verdict==="divergent"?"divergent":"non-evalue";
  return <section className={styles.root} aria-labelledby="chaine-externe-titre">
   <header className={styles.header}>
    <div><span className={styles.kicker}>◈ ISNĀD</span><h2 id="chaine-externe-titre">{t.title}</h2>
@@ -94,7 +103,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
        <button type="button" onClick={()=>setSelected(i)} aria-pressed={selected===i}
         aria-controls="fiche-rapport-externe" className={styles.node} data-role={category(m)}
         aria-label={t.open+" : "+m.nomAr}>
-        <span className={styles.nodeName} dir="rtl" lang="ar">{m.nomAr}</span>
+        <span className={styles.nodeName} dir="rtl" lang="ar">{m.nomCompletAr??m.nomAr}</span>
         <span className={styles.nodeStatus}>{statut(m)}</span>
        </button>
        {i<maillons.length-1&&<span className={styles.arrow} aria-hidden="true">→</span>}
@@ -103,13 +112,38 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
     </div>
     <aside id="fiche-rapport-externe" className={styles.profile} aria-live="polite">
      <h3>{t.fiche}</h3>
-     <strong lang="ar" dir="rtl" className={styles.profileName}>{actuel?.nomAr}</strong>
+     <strong lang="ar" dir="rtl" className={styles.profileName}>{actuel?.nomCompletAr??actuel?.nomAr}</strong>
+     {actuel?.nomLatin&&<span className={styles.profileLatin} lang="ar-Latn" dir="ltr">{actuel.nomLatin}</span>}
      <span className={styles.category} data-role={actuel?category(actuel):undefined}>{actuel?statut(actuel):""}</span>
      <h4>{t.bio}</h4><p>{actuel?.bio?text(actuel.bio):t.noBio}</p>
-     <h4>{t.verdict}</h4><p className={styles.verdict}>
+     {actuel&&maillons.length>0&&<section className={styles.relations}>
+      <h4>{t.related}</h4>
+      {selected>0&&<button type="button" onClick={()=>setSelected(selected-1)} className={styles.related}>
+       <small>{t.master}</small> <bdi lang="ar" dir="rtl">{maillons[selected-1]?.nomCompletAr??maillons[selected-1]?.nomAr}</bdi> ↗
+      </button>}
+      {selected<maillons.length-1&&<button type="button" onClick={()=>setSelected(selected+1)} className={styles.related}>
+       <small>{t.student}</small> <bdi lang="ar" dir="rtl">{maillons[selected+1]?.nomCompletAr??maillons[selected+1]?.nomAr}</bdi> ↗
+      </button>}
+      {actuel.maitres&&actuel.maitres.length>0&&<div className={styles.otherRelated}>
+       <strong>{t.masters}</strong><ul>{actuel.maitres.map(n=><li key={n}>{n}</li>)}</ul>
+      </div>}
+      {actuel.eleves&&actuel.eleves.length>0&&<div className={styles.otherRelated}>
+       <strong>{t.students}</strong><ul>{actuel.eleves.map(n=><li key={n}>{n}</li>)}</ul>
+      </div>}
+      {(actuel.maitres||actuel.eleves)&&<p className={styles.limitation}>{t.limited}</p>}
+     </section>}
+          <h4>{t.verdict}</h4><p className={styles.verdict}>
       {actuel?.qualification?text(actuel.qualification):actuel?.verdict==="source"||actuel?.verdict==="compilateur"?statut(actuel):t.noVerdict}
      </p>
-     {actuel?.critique&&<p><strong>{t.critic} :</strong> {actuel.critique}</p>}
+     {actuel?.jugements&&actuel.jugements.length>0&&<section className={styles.assessments}>
+      <h4>{t.assessments}</h4>
+      <ul>{actuel.jugements.map((j,i)=><li key={i}>
+       <strong>{j.auteur}</strong>
+       <p>{text(j.appreciation)}</p>
+       <a href={j.url} target="_blank" rel="noopener noreferrer">{j.ouvrage} ↗</a>
+      </li>)}</ul>
+     </section>}
+          {actuel?.critique&&<p><strong>{t.critic} :</strong> {actuel.critique}</p>}
      {actuel?.referenceUrl&&<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">
       {t.reference} : {actuel.reference} ↗</a>}
      <p className={styles.position}>{t.position} : {selected+1} / {maillons.length}</p>
@@ -127,7 +161,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       {maillons.map((m,i)=><tr key={m.id} data-active={selected===i}>
        <td>{i+1}</td>
        <td><button type="button" onClick={()=>setSelected(i)} className={styles.tableButton} aria-label={t.open+" : "+m.nomAr}>
-        <bdi lang="ar" dir="rtl">{m.nomAr}</bdi> ↗
+        <bdi lang="ar" dir="rtl">{m.nomCompletAr??m.nomAr}</bdi> ↗
        </button></td>
        <td><span className={styles.category} data-role={category(m)}>{statut(m)}</span></td>
        <td>{m.referenceUrl?<a href={m.referenceUrl} target="_blank" rel="noopener noreferrer">{m.reference} ↗</a>

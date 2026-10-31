@@ -1,10 +1,28 @@
 import { describe,expect,it } from "vitest";
 import { extraireChaineArabe } from "@/donnees/chaine-distante";
 
+const bukhari79="حَدَّثَنَا مُحَمَّدُ بْنُ الْعَلاَءِ، قَالَ حَدَّثَنَا حَمَّادُ بْنُ أُسَامَةَ، عَنْ بُرَيْدِ بْنِ عَبْدِ اللَّهِ، عَنْ أَبِي بُرْدَةَ، عَنْ أَبِي مُوسَى، عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ مَثَلُ مَا بَعَثَنِي اللَّهُ";
 const bukhari1961="حَدَّثَنَا مُسَدَّدٌ، قَالَ حَدَّثَنِي يَحْيَى، عَنْ شُعْبَةَ، قَالَ حَدَّثَنِي قَتَادَةُ، عَنْ أَنَسٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ ‏ لاَ تُوَاصِلُوا";
 const bukhari1804="حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مَسْلَمَةَ، حَدَّثَنَا مَالِكٌ، عَنْ سُمَىٍّ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ السَّفَرُ قِطْعَةٌ";
 const bukhari1="حَدَّثَنَا الْحُمَيْدِيُّ عَبْدُ اللَّهِ بْنُ الزُّبَيْرِ ، قَالَ : حَدَّثَنَا سُفْيَانُ ، قَالَ : حَدَّثَنَا يَحْيَى بْنُ سَعِيدٍ الْأَنْصَارِيُّ ، قَالَ : أَخْبَرَنِي مُحَمَّدُ بْنُ إِبْرَاهِيمَ التَّيْمِيُّ ، أَنَّهُ سَمِعَ عَلْقَمَةَ بْنَ وَقَّاصٍ اللَّيْثِيَّ ، يَقُولُ : سَمِعْتُ عُمَرَ بْنَ الْخَطَّابِ رَضِيَ اللَّهُ عَنْهُ عَلَى الْمِنْبَرِ، قَالَ : سَمِعْتُ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ";
 describe("Extraction prudente des noms depuis la source arabe du hadith",()=>{
+ it("79 : identifie les cinq rapporteurs, biographies, maîtres, élèves et avis divergents",()=>{
+  const r=extraireChaineArabe(bukhari79,"sahih-bukhari",79,"source");
+  expect(r.maillons).toHaveLength(6);
+  expect(r.maillons.map(x=>x.nomAr)).toEqual(["النبي ﷺ","ابي موسي","ابي بردة","بريد بن عبد الله","حماد بن اسامة","محمد بن العلاء"]);
+  for(const m of r.maillons.slice(1)){
+    expect(m.bio?.fr).toBeTruthy();
+    expect(m.nomCompletAr).toBeTruthy();
+    expect(m.jugements?.length).toBeGreaterThan(0);
+    expect(m.maitres?.length).toBeGreaterThan(0);
+    expect(m.eleves?.length).toBeGreaterThan(0);
+    expect(m.referenceUrl).toMatch(/^https:\/\//);
+  }
+  const burayd=r.maillons.find(x=>x.nomAr==="بريد بن عبد الله");
+  expect(burayd?.verdict).toBe("divergent");
+  expect(burayd?.jugements).toHaveLength(3);
+  expect(extraireChaineArabe(bukhari79,"sahih-bukhari",80,"source").maillons.filter(m=>m.jugements?.length)).toHaveLength(0);
+ });
  it("1961 : retrouve les cinq noms cités et la source, sans note inventée",()=>{
   const r=extraireChaineArabe(bukhari1961,"sahih-bukhari",1961,"test");
   expect(r.etat).toBe("complete-apparente");
