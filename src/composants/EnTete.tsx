@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import SelecteurLangue from "@/composants/SelecteurLangue";
+import ThemeSwitch from "@/composants/ThemeSwitch";
 import styles from "@/composants/EnTete.module.css";
 
 // Bannière du site : marque, puis le sélecteur de langue et les liens (une seule navigation).
@@ -20,6 +21,7 @@ export default async function EnTete() {
           <span className={styles.nom}>{accueil("titre")}</span>
         </Link>
         <span className={styles.slogan}>{t("slogan")}</span>
+        <ThemeSwitch />
       </div>
       <Suspense fallback={null}>
         <SelecteurLangue />

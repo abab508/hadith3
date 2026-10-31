@@ -13,6 +13,7 @@ const liens = [
   { href: "/glossaire", cle: "glossaire" },
   { href: "/parametres", cle: "parametres" },
   { href: "/langues", cle: "langues" },
+  { href: "/memorisation", cle: "memorisation" },
 ] as const;
 
 export default function SelecteurLangue() {
@@ -63,7 +64,7 @@ export default function SelecteurLangue() {
       <ul className={styles.liens} aria-label={navigation("titre")}>
         {liens.map(({ href, cle }) => (
           <li key={href}>
-            <Link href={href} aria-current={chemin === href ? "page" : undefined}>{navigation(cle)}</Link>
+            <Link href={href} aria-current={chemin === href ? "page" : undefined}>{cle === "memorisation" ? "✧ " : ""}{navigation(cle)}</Link>
           </li>
         ))}
       </ul>

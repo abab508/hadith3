@@ -40,7 +40,7 @@ export default async function Layout({
   const polices = [langue.police.famille, ...(langue.police.secours ?? []), "Noto Sans"].map((p) => `"${p}"`);
 
   return (
-    <html lang={locale} dir={langue.direction}>
+    <html lang={locale} dir={langue.direction} data-theme="auto" data-motion="on">
       <body style={{ "--police": [...new Set(polices), "system-ui", "sans-serif"].join(", ") } as CSSProperties}>
         <a className="evitement" href="#contenu">{t("allerAuContenu")}</a>
         {repli && (

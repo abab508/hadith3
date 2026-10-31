@@ -1,39 +1,8 @@
-.entete {
-  background: var(--surface);
-  border-block-end: 1px solid var(--bordure);
-}
-
-.marque {
-  max-inline-size: 70rem;
-  margin-inline: auto;
-  padding-block: 1rem 0;
-  padding-inline: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 1rem;
-}
-
-.lienMarque {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-block-size: 2.75rem;
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.logo {
-  flex: none;
-}
-
-.nom {
-  color: var(--texte);
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.slogan {
-  color: var(--discret);
-  font-size: 0.9375rem;
-}
+.entete{position:relative;background:var(--surface);border-block-end:1px solid var(--bordure);box-shadow:0 10px 32px #060e2210;z-index:5;}
+.entete::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;block-size:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--ocre),transparent);pointer-events:none;}
+.marque{max-inline-size:78rem;margin-inline:auto;padding-block:1.1rem .8rem;padding-inline:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.7rem 1.4rem;}
+.lienMarque{display:inline-flex;align-items:center;gap:.75rem;min-block-size:3.25rem;color:var(--accent);text-decoration:none;}
+.logo{flex:none;filter:drop-shadow(0 4px 10px #74c8ad3f);}
+.nom{color:var(--texte);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:900;letter-spacing:-.02em;}
+.slogan{color:var(--discret);font-size:.92rem;flex:1 1 15rem;max-inline-size:27rem;}
+@media(max-width:630px){.marque{padding-inline:.85rem;}.slogan{order:3;flex-basis:100%;font-size:.8rem;}}
