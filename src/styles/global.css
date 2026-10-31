@@ -158,7 +158,7 @@ html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="of
 
 
 /* Identité typographique : édition patrimoniale, titres et lecture arabe distincts. */
-:root{--police-titre-latine:Georgia,"Palatino Linotype",Cambria,serif;}
+html{--police-titre-latine:Georgia,"Palatino Linotype",Cambria,serif;}
 html:lang(ar){--police-titre-arabe:"Noto Naskh Arabic",serif;}
 :where(h1,h2,h3){text-wrap:balance;line-height:1.4;text-align:start;}
 :where(h1,h2){font-family:var(--police-titre-latine);font-weight:700;letter-spacing:-.022em;}
