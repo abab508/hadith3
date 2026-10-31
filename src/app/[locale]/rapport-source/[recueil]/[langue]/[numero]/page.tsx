@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { loadDetail, validDetailParams } from "@/donnees/fiche-distante";
+import { fetchRemoteEdition, editionReferenceUrl } from "@/donnees/recherche-distante";
+import { extraireChaineArabe } from "@/donnees/chaine-distante";
+import TableauIsnadExterne from "@/composants/TableauIsnadExterne";
 import ActionsRapport from "@/composants/ActionsRapport";
 import styles from "./RapportExterne.module.css";
 
@@ -64,6 +67,23 @@ export default async function RapportSource({params}:Props){
  let detail:Awaited<ReturnType<typeof loadDetail>>=null;
  try{detail=await loadDetail(recueil,langue,numero);}catch{/* Rapport de référence accessible même sans source distante. */}
  const originalUrl=detail?.sourceUrl??"https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/"+langue+"-"+collection.key+"/"+number+".min.json";
+ // Le rapport doit lire le texte de l'édition ARABE, même si la fiche consultée est en français.
+ // Refus de relier deux numéros tant que livre et rang ne concordent pas.
+ let texteArabe: string | null = null;
+ if(detail){
+   if(langue==="ara")texteArabe=detail.hadith.text;
+   else if(detail.other?.language==="ara")texteArabe=detail.other.hadith.text;
+   else try{
+     const editionAr=await fetchRemoteEdition(collection,"ara",number);
+     const candidat=editionAr.hadiths?.find(h=>h.hadithnumber===number);
+     const refCourante=detail.hadith.reference;
+     if(candidat?.reference&&refCourante &&
+       candidat.reference.book===refCourante.book &&
+       candidat.reference.hadith===refCourante.hadith)texteArabe=candidat.text;
+   }catch{/* Ne jamais construire une chaîne à partir d'une autre édition non vérifiée. */}
+ }
+ const sourceArabe=editionReferenceUrl(collection.key,"ara",number);
+ const chaine=extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
  const ref=detail?.hadith.reference;
  const grades=detail?.hadith.grades?.filter(g=>g&&typeof g.name==="string"&&typeof g.grade==="string")??[];
  const texts=detail?[
@@ -81,8 +101,9 @@ export default async function RapportSource({params}:Props){
    <div><span>{t.number}</span><strong><bdi dir="ltr">{number}</bdi></strong></div>
    <div><span>{t.location}</span><strong><bdi dir="ltr">{ref?.book??"—"} / {ref?.hadith??"—"}</bdi></strong></div>
    <div><span>{t.edition}</span><strong><bdi dir="ltr">{langue+"-"+collection.key}</bdi></strong></div>
-   <div><span>{t.status}</span><strong className={styles.status}>{t.notVerified}</strong></div>
+   <div><span>{t.status}</span><strong className={styles.status}>{chaine.maillons.length>0?chaine.etat==="partielle"?t.notVerified:t.chain:t.notVerified}</strong></div>
   </section>
+  <TableauIsnadExterne chaine={chaine} locale={locale} recueil={recueil}/>
   <div className={styles.layout}>
    <div className={styles.left}>
     <section className={styles.panel}>
@@ -104,8 +125,8 @@ export default async function RapportSource({params}:Props){
    <aside className={styles.right}>
     <section className={styles.panel}>
      <h2>♧ {t.chain}</h2>
-     <p className={styles.notice}>{t.chainMissing}</p>
-     <p>{t.chainNote}</p>
+     <p className={styles.notice}>{chaine.maillons.length===0?t.chainMissing:chaine.etat==="partielle"?t.chainNote:t.caution}</p>
+     <p><a className={styles.source} href={sourceArabe} target="_blank" rel="noopener noreferrer">{t.sourceLink} · العربية ↗</a></p>
     </section>
     <section className={styles.panel}>
      <h2>◈ {t.source}</h2>
