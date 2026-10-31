@@ -23,7 +23,7 @@ export function rapportKgBukhariUn(recueil:string,numero:number,texteArabe:strin
  if(recueil!=="sahih-bukhari"||numero!==1||!texteArabe)return null;
  const a=normaliser(texteArabe),sample=normaliser(dossier.hadith.taraf_nass);
  if(!a.includes(sample.slice(0,25)))return null;
- const members=dossier.chains[0].members;
+ const members=dossier.chains[0]!.members;
  const m:MaillonExterne[]=members.filter(r=>r.pos!==0).slice().reverse().map((r,i)=>{
   const opinions=dossier.judgments_by_rawi_id[String(r.rawi_id) as keyof typeof dossier.judgments_by_rawi_id]??[];
   const verdict:MaillonExterne["verdict"]=r.rank==="صحابي"?"compagnon":opinions.length&&r.rank?.includes("ثقة")?"thiqa":"non-evalue";
