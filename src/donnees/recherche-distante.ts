@@ -111,7 +111,7 @@ export function compareEditionReferences(
  language:"ara"|"fra",key:string
 ):NonNullable<RemoteHit["concordance"]>{
  if(!other)return {status:"unavailable",language};
- if(current.section===other.section&&current.dansSection===other.dansSection){
+ if(current.numero===other.numero&&current.section===other.section&&current.dansSection===other.dansSection){
   return {status:"reference-confirmed",language,url:editionReferenceUrl(key,language,other.numero)};
  }
  return {status:"number-only",language,url:editionReferenceUrl(key,language,other.numero)};

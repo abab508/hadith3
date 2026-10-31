@@ -20,6 +20,7 @@ describe("index compact hadith-api@1",()=>{
   const fr={numero:9,section:2,dansSection:2};
   expect(compareEditionReferences(fr,{...fr},"ara","bukhari").status).toBe("reference-confirmed");
   expect(compareEditionReferences(fr,{...fr,section:3},"ara","bukhari").status).toBe("number-only");
+  expect(compareEditionReferences(fr,{...fr,numero:10},"ara","bukhari").status).toBe("number-only");
   expect(compareEditionReferences(fr,undefined,"ara","bukhari").status).toBe("unavailable");
   expect(editionReferenceUrl("bukhari","ara",9)).toContain("/ara-bukhari/9.min.json");
  });

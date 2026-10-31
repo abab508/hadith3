@@ -47,7 +47,7 @@ export function readIndex(language:string,book:string):Promise<SearchIndex|null>
  return memo.get(key)!;
 }
 function prefixPostings(index:SearchIndex,word:string):number[]{
- const direct=index.terms[word];
+ const direct=Object.hasOwn(index.terms,word)?index.terms[word]:undefined;
  if(direct!==undefined)return decodePostings(direct);
  if(word.length<3)return [];
  // Autorise le début d'un mot, comme le moteur local.
