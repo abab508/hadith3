@@ -20,3 +20,12 @@
 .slogan{color:#d9e7f7;max-inline-size:33rem;font-size:.94rem;font-weight:550;text-align:center;}
 @media(max-width:850px){.marque{gap:.35rem 1rem;}.slogan{order:3;flex-basis:100%;max-inline-size:none;text-align:start;}}
 @media(prefers-reduced-motion:reduce){.lienMarque{transition:none;transform:none!important;}}
+
+
+/* Nom complet et translittération, accessibles sur toutes les pages. */
+.marqueTexte{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-inline-size:0;}
+.marqueSousTitre{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;line-height:1.5;
+ font-size:clamp(.72rem,1vw,.87rem);color:#f9d9a2;font-weight:650;}
+.marqueArabe{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:1.12em;line-height:1.6;}
+.marqueLatin{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.01em;font-size:1.1em;unicode-bidi:isolate;}
+@media(max-width:580px){.marqueSousTitre{font-size:.72rem;}.marqueTexte{max-inline-size:min(70vw,20rem);}}

@@ -35,6 +35,10 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
     <main id="contenu" tabIndex={-1} className={styles.accueil}>
       <section className={styles.hero} aria-labelledby="titre-accueil">
         <h1 id="titre-accueil" className={styles.titre}>{t("accueil.titre")}</h1>
+        <p className={styles.titreComplet}>
+          {locale !== "ar" && <bdi lang="ar" dir="rtl" className={styles.nomArabe}>الملة الغائبة</bdi>}
+          <bdi lang="ar-Latn" dir="ltr" className={styles.nomPhonetique}>Al-milla al-gha'iba</bdi>
+        </p>
         <p className={styles.sousTitre}>{t("accueil.sousTitre")}</p>
         <span className={styles.heroDivider} aria-hidden="true" />
         <p className={`${ui.badge} ${styles.etat}`} data-ton="ocre">{t("accueil.etat")}</p>
