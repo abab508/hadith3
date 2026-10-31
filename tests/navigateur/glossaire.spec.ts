@@ -28,9 +28,10 @@ test("l'accueil donne accès au glossaire", async ({ page }) => {
   await expect(page).toHaveURL(/\/fr\/glossaire$/);
 });
 
-test("le glossaire signale une traduction de repli avec sa propre direction", async ({ page }) => {
+test("le glossaire explique les termes sans afficher de badge de validation", async ({ page }) => {
   await page.goto("/ar/glossaire");
   const fiche = page.locator('article[data-terme="al-illa"]');
-  await expect(fiche.locator('p[lang="en"]')).toHaveCount(0);
-  await expect(fiche.locator('p[lang="fr"]')).toHaveAttribute("dir", "ltr");
+  await expect(fiche.locator('p[lang="ar"]')).toHaveCount(2);
+  await expect(fiche.locator('p[lang="ar"]')).toHaveAttribute("dir", "rtl");
+  await expect(page.getByText("بانتظار تحقق متخصص")).toHaveCount(0);
 });

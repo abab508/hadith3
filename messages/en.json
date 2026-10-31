@@ -62,7 +62,7 @@
   },
   "glossaire": {
     "titre": "Glossary",
-    "introduction": "Reference terminology: terms and translations await specialist validation.",
+    "introduction": "Plain-language definitions of hadith terminology, with the original Arabic and transliteration.",
     "domaines": {
       "authenticite": "Authenticity",
       "chaine": "Chain of transmission",
