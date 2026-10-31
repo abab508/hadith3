@@ -124,7 +124,7 @@ export function extraireChaineArabe(texte:string,recueil:string,numero:number,so
  const maillons=noms.reverse().map((nom,i):MaillonExterne=>{
    const ficheSpecialisee=remarqueSpecialisee(recueil,numero,nom);
    const fiche=ficheSpecialisee.verdict!=="non-evalue"?ficheSpecialisee:(noticeLocaleExacte(nom)??ficheSpecialisee);
-   return {id:"externe-"+i,nomAr:nom,fragment:nom,rang:i+1,...fiche};
+   return {id:"externe-"+i,nomAr:nom,fragment:nom,rang:i+1,verdict:"non-evalue",...fiche} as MaillonExterne;
  });
  if(limite>=0){
    maillons.unshift({id:"source-prophete",nomAr:"النبي ﷺ",fragment:"النبي",rang:0,verdict:"source"});
