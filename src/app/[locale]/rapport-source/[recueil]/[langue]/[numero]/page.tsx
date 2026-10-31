@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { corpus } from "@/donnees/corpus";
+import { normaliser } from "@/donnees/recherche";
+
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -84,6 +87,13 @@ export default async function RapportSource({params}:Props){
  }
  const sourceArabe=editionReferenceUrl(collection.key,"ara",number);
  const chaine=extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
+ const texteNormalise=normaliser(texteArabe??"");
+ // Recoupement strict : même recueil, même numéro et un fragment du matn arabe
+ // suffisamment long. N'assimile jamais deux hadiths sur leur seul numéro.
+ const rapportLocal=texteNormalise.length>=35?corpus.hadiths.find(h=>
+   h.occurrences.some(o=>o.ouvrage===recueil&&o.numero===String(number))&&
+   (()=>{const original=normaliser(h.texteAr);const a=original.slice(0,Math.min(50,original.length));return a.length>=35&&(texteNormalise.includes(a)||original.includes(texteNormalise.slice(0,50)));})()
+ ):undefined;
  const ref=detail?.hadith.reference;
  const grades=detail?.hadith.grades?.filter(g=>g&&typeof g.name==="string"&&typeof g.grade==="string")??[];
  const texts=detail?[
@@ -103,6 +113,11 @@ export default async function RapportSource({params}:Props){
    <div><span>{t.edition}</span><strong><bdi dir="ltr">{langue+"-"+collection.key}</bdi></strong></div>
    <div><span>{t.status}</span><strong className={styles.status}>{chaine.maillons.length>0?chaine.etat==="partielle"?t.notVerified:t.chain:t.notVerified}</strong></div>
   </section>
+  {rapportLocal&&<section className={styles.panel} aria-label="Rapport enrichi du corpus">
+    <h2>{locale==="ar"?"تقرير الإسناد المفصّل":locale==="fr"?"Rapport enrichi disponible":"Enriched chain report available"}</h2>
+    <p>{locale==="fr"?"Un dossier local correspondant à cette référence et à ce texte arabe contient des voies et fiches documentaires supplémentaires.":locale==="ar"?"توجد لهذا المرجع ونصه العربي دراسة محلية تتضمن طرقاً وتراجم إضافية.":"A matching local dossier contains additional transmission routes and narrator records."}</p>
+    <Link href={`/rapport/${rapportLocal.id}`} className={styles.source}>{locale==="fr"?"Ouvrir le rapport détaillé avec biographies et voies":locale==="ar"?"فتح التقرير المفصل":"Open detailed narrator report"} ↗</Link>
+  </section>}
   <TableauIsnadExterne chaine={chaine} locale={locale} recueil={recueil}/>
   <div className={styles.layout}>
    <div className={styles.left}>
