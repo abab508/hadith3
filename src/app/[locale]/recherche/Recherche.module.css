@@ -140,3 +140,29 @@
 .incertain {
   border-style: dashed;
 }
+
+/* Recherche éditoriale : une narration regroupée et ses attestations. */
+.carteHadith{position:relative;overflow:hidden;border:1px solid var(--bordure);padding:clamp(1.2rem,2.5vw,2rem);box-shadow:0 18px 48px #06182b18;}
+.carteHadith::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;inline-size:4px;background:linear-gradient(180deg,var(--accent),var(--ocre));}
+.carteHadith>p[lang="ar"]{font-size:clamp(1.25rem,2vw,1.7rem);line-height:2.1;max-block-size:18rem;overflow:auto;overscroll-behavior:contain;}
+.entete{align-items:flex-start;gap:1rem;}
+.titreResultat{font-size:clamp(1.12rem,1.7vw,1.45rem);line-height:1.8;letter-spacing:normal;}
+.sourcesDetail{margin-block:.7rem;border:1px solid var(--bordure);background:var(--fond);border-radius:1rem;padding:.3rem 1rem;}
+.sourcesDetail summary{cursor:pointer;min-block-size:2.9rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;color:var(--accent);font-weight:800;}
+.sourcesDetail[open]{border-color:var(--accent);box-shadow:0 12px 30px #07172e10;}
+.listeSources{list-style:none;display:grid;gap:.6rem;margin:.5rem 0;padding:0;}
+.listeSources li{border-block-start:1px solid var(--bordure);padding-block:.65rem;}
+.listeSources li>div{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;}
+.numeroRef{font-weight:700;direction:ltr;white-space:nowrap;color:var(--ocre);}
+.sourceNote{margin:.1rem 0;font-size:.85rem;color:var(--discret);}
+.resumeResultats{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 1rem;align-items:center;background:var(--accent-doux);border:1px solid var(--bordure);padding:1.1rem;border-radius:1.15rem;}
+.resumeResultats strong{font-size:1.1rem;color:var(--texte);}
+.resumeResultats span{font-size:.85rem;color:var(--discret);}
+.sourceGuide{margin:0;padding:1rem 1.2rem;border-inline-start:3px solid var(--ocre);background:var(--ocre-doux);color:var(--texte);border-radius:.65rem;font-size:.94rem;line-height:1.8;}
+.pagination{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.2rem 0;}
+.pagination a{padding:.65rem 1.25rem;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:800;text-decoration:none;}
+.pagination span{font-weight:700;color:var(--discret);}
+.requete>h1,.titre{text-align:start;font-size:clamp(1.8rem,4vw,3.3rem);letter-spacing:-.035em;}
+.filtres{flex-basis:17rem;max-inline-size:21rem;position:sticky;inset-block-start:1rem;max-block-size:calc(100vh - 2rem);overflow:auto;}
+@media(max-width:820px){.filtres{position:static;max-inline-size:none;max-block-size:none;}.colonnes{display:flex;flex-direction:column;}.resultats{inline-size:100%;}}
+@media(prefers-reduced-motion:reduce){.carteHadith{animation:none;transition:none;}}

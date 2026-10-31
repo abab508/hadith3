@@ -260,3 +260,21 @@
   padding-inline-start: 1.25rem;
   font-size: 0.875rem;
 }
+
+/* La chaîne apparaît comme un parcours documentaire, pas un simple tableau. */
+.arbre{border-radius:1.6rem;background:radial-gradient(ellipse at 80% 0%,#8868d719,transparent 45%),var(--surface);box-shadow:0 24px 58px #06182b1b;}
+.guide{margin:0;padding:1rem 1.2rem;border-radius:.95rem;background:var(--accent-doux);border-inline-start:4px solid var(--accent);font-size:.96rem;line-height:1.8;}
+.stats{display:flex;flex-wrap:wrap;gap:.75rem;}
+.stats span{display:flex;align-items:center;gap:.55rem;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--bordure);background:var(--fond);font-size:.87rem;color:var(--discret);}
+.stats strong{font-size:1.25rem;color:var(--accent);}
+.groupe>h3.sousTitre{color:var(--texte);font-size:1.08rem;font-weight:800;padding-block-end:.55rem;border-block-end:1px solid var(--bordure);}
+.suite{gap:1rem;}
+.maillon{gap:.85rem;}
+.noeud{min-inline-size:10rem;max-inline-size:18rem;min-block-size:5.3rem;padding:.7rem 1rem;border-radius:1.1rem;box-shadow:0 9px 24px #06182b1d;transition:transform .25s,border-color .25s,box-shadow .25s;}
+.noeud:hover{transform:translateY(-4px);box-shadow:0 16px 35px #06182b30;}
+.nomAr{font-size:1.3rem;font-weight:700;line-height:1.9;}
+.voies{border-inline-start:3px solid var(--accent);border-radius:.3rem;}
+.fiche{border-radius:1.6rem;box-shadow:0 20px 55px #06182b1a;overflow:auto;max-block-size:calc(100vh - 2rem);}
+.ficheNomAr{font-size:2rem;line-height:2;}
+@media(max-width:850px){.fiche{position:static;max-block-size:none;}.arbre{flex-basis:100%;}.suite{gap:.65rem;}.noeud{min-inline-size:8rem;}.fleche{inline-size:14px;}}
+@media(prefers-reduced-motion:reduce){.noeud{transition:none;transform:none!important;}}

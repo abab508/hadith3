@@ -155,3 +155,17 @@ a {
 body{background-image:radial-gradient(ellipse 640px 440px at 8% 2%,#14a8ad0e,transparent 70%),radial-gradient(ellipse 650px 360px at 90% 28%,#876ac70d,transparent 70%);background-attachment:fixed;}
 html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+
+
+/* Identité typographique : édition patrimoniale, titres et lecture arabe distincts. */
+:root{--police-titre-latine:Georgia,"Palatino Linotype",Cambria,serif;}
+html:lang(ar){--police-titre-arabe:"Noto Naskh Arabic",serif;}
+:where(h1,h2,h3){text-wrap:balance;line-height:1.4;text-align:start;}
+:where(h1,h2){font-family:var(--police-titre-latine);font-weight:700;letter-spacing:-.022em;}
+html:lang(ar) :where(h1,h2,h3){font-family:"Noto Naskh Arabic",serif;font-weight:700;letter-spacing:normal;line-height:1.6;}
+html:lang(ur) :where(h1,h2,h3){font-family:"Noto Nastaliq Urdu",serif;letter-spacing:normal;line-height:2.1;}
+:where(main) > :where(h1,h2),:where(main section) > :where(h1,h2){position:relative;}
+:where(main section) > h2:not(.visuellement-cache)::after{content:"";display:block;inline-size:min(5rem,30%);block-size:2px;margin-block-start:.6rem;background:linear-gradient(90deg,var(--ocre),var(--accent),transparent);}
+:where(main) :where(p,li){overflow-wrap:anywhere;}
+:where(.texte-arabe){font-family:"Noto Naskh Arabic",serif;font-optical-sizing:auto;font-feature-settings:"kern" 1;}
+:where(blockquote){border-inline-start:3px solid var(--ocre);padding-inline-start:1.4rem;margin-inline:0;}

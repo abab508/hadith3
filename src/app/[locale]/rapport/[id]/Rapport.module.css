@@ -97,3 +97,9 @@
 .tableau tr:last-child td {
   border-block-end: none;
 }
+
+.titres{border-inline-start:4px solid var(--ocre);padding-inline-start:1.35rem;}
+.titre{font-size:clamp(1.6rem,3.4vw,2.65rem);line-height:1.75;text-align:start;}
+.original{font-size:clamp(1.65rem,3.1vw,2.45rem);line-height:2.2;background:var(--fond);border-radius:1.2rem;padding:clamp(1rem,3vw,2rem);text-align:start;}
+.sousTitre{font-size:clamp(1.15rem,2vw,1.5rem);}
+.duo> *{border-radius:1.5rem;}

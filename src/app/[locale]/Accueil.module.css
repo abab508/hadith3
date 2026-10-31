@@ -43,3 +43,10 @@
 @media(max-width:720px){.accueil{padding-inline:.85rem;}.hero{padding:2.6rem 1rem;}.memoireFeature{grid-template-columns:auto 1fr;}.memoireFeature>a{grid-column:1/-1;justify-content:center;}.memoireEmbleme{inline-size:3.6rem;block-size:3.6rem;font-size:2.6rem;}}
 @media(prefers-reduced-motion:reduce){.hero,.hero *,.grille article,.grille article::after,.barre,.mode span,.heroActions a{animation:none!important;transition:none!important;transform:none!important;}}
 html[data-motion="off"] .hero *,html[data-motion="off"] .hero::after,html[data-motion="off"] .grille article,html[data-motion="off"] .grille article::after{animation:none!important;transition:none!important;transform:none!important;}
+/* Éditorial plutôt que titre systématiquement centré. */
+.hero{align-items:flex-start;text-align:start;}
+.heroActions{justify-content:flex-start;}
+.titre{text-align:start;max-inline-size:18ch;}
+.sousTitre{text-align:start;margin-inline:0;}
+.terme{text-align:start;}
+@media(max-width:720px){.titre{font-size:clamp(2.35rem,8vw,3.5rem);}}

@@ -102,6 +102,11 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
           <p className={ui.discret}>{t("cliquer")}</p>
         </div>
 
+        <p className={styles.guide}>{t("isnadGuide")}</p>
+        <div className={styles.stats} aria-label={t("isnad")}>
+          <span><strong>{tronc.length}</strong> · {t("tronc")}</span>
+          <span><strong>{voies.length}</strong> · {t("voies")}</span>
+        </div>
         <ul className={styles.legende} aria-label={t("legende.titre")}>
           {(Object.keys(categories) as CategorieTransmetteur[]).map((c) => (
             <li key={c}><span className={`${styles.echantillon} ${styles.porteur}`} data-categorie={c} aria-hidden="true" />{t(categories[c])}</li>
