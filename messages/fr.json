@@ -195,7 +195,16 @@
     "incertain": {
       "titre": "Exemple de résultat incertain",
       "texte": "Passage d’un ouvrage peu connu qui ressemble au texte cherché. Une ressemblance ou une traduction proche ne suffit pas à établir qu’il s’agit du même hadith."
-    }
+    },
+    "nombreResultats": "{nombre} hadith(s) · {sources} référence(s)",
+    "sourcesAssociees": "Sources et variantes ({nombre})",
+    "sourceNote": "Une référence bibliographique n'est pas un jugement d'authenticité : consultez l'isnād et l'édition imprimée.",
+    "corpusLimite": "Corpus actuel : {nombre} hadiths d'exemple seulement.",
+    "pagination": "Pages des résultats",
+    "precedent": "Précédent",
+    "suivant": "Suivant",
+    "pageCompte": "Page {page} sur {total}",
+    "sourceGuide": "Référence : où le hadith est rapporté dans un recueil. Isnād : succession des personnes qui l'ont transmis. Les formulations et chaînes peuvent varier selon les voies."
   },
   "chaine": {
     "titre": "Recherche par chaîne de transmission",
@@ -256,7 +265,7 @@
     "tronc": "Tronc commun",
     "voies": "Voies",
     "voie": "Voie de {reference}",
-    "autresVoies": "Autres voies depuis ce transmetteur : chargées depuis al-Maktaba al-Shāmila et les autres bibliothèques.",
+    "autresVoies": "Seules les voies présentes dans le corpus local sont affichées : aucune autre chaîne n'est actuellement chargée automatiquement.",
     "aucunFaible": "Aucun transmetteur faible dans les voies affichées. Un transmetteur faible apparaîtrait en orange, avec la raison dans sa fiche.",
     "fiche": {
       "titre": "Fiche du transmetteur",
@@ -314,7 +323,8 @@
       "api-accord": "Via API",
       "a-verifier": "À vérifier"
     },
-    "avertissementData": "Ceci est une version d'exemple avec des données limitées."
+    "avertissementData": "Ceci est une version d'exemple avec des données limitées.",
+    "isnadGuide": "Lisez les noms dans l'ordre indiqué, puis ouvrez la fiche d'un transmetteur en cliquant dessus. Ces données de démonstration ne constituent pas une certification religieuse."
   },
   "memorisation": {
     "titre": "Atelier de mémorisation des hadiths",

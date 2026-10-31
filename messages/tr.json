@@ -195,7 +195,16 @@
     "incertain": {
       "titre": "Belirsiz sonuç örneği",
       "texte": "Aranan metne benzeyen az bilinen bir eserden bir bölüm. Benzerlik ya da yakın bir çeviri, aynı hadis olduğunu kanıtlamaya yetmez."
-    }
+    },
+    "nombreResultats": "{nombre} hadis · {sources} kaynak",
+    "sourcesAssociees": "Kaynaklar ve varyantlar ({nombre})",
+    "sourceNote": "Kaynak numarası sahihlik hükmü değildir. İsnadı ve basılı nüshayı inceleyin.",
+    "corpusLimite": "Mevcut veri: yalnızca {nombre} örnek hadis.",
+    "pagination": "Sonuç sayfaları",
+    "precedent": "Önceki",
+    "suivant": "Sonraki",
+    "pageCompte": "Sayfa {page} / {total}",
+    "sourceGuide": "Kaynak: hadisin bulunduğu eser ve numara. İsnad: rivayeti aktaran kişilerin zinciri. Rivayet yolları farklı olabilir."
   },
   "chaine": {
     "titre": "Hadis zinciri ile arama yapın",
@@ -256,7 +265,7 @@
     "tronc": "Ortak gövde",
     "voies": "Yollar",
     "voie": "{reference} tariki",
-    "autresVoies": "Bu raviden diğer tarikler: el-Mektebetü'ş-Şâmile ve diğer kütüphanelerden yüklenir.",
+    "autresVoies": "Yalnızca yerel örnek verideki rivayet zincirleri gösterilir; başka zincirler otomatik yüklenmez.",
     "aucunFaible": "Gösterilen tariklerde zayıf ravi yok. Zayıf bir ravi turuncu görünür ve nedeni kartında yer alırdı.",
     "fiche": {
       "titre": "Ravi kartı",
@@ -314,7 +323,8 @@
       "api-accord": "API aracılığıyla",
       "a-verifier": "Doğrulanacak"
     },
-    "avertissementData": "Bu, sınırlı verilerle örnek bir sürümdür."
+    "avertissementData": "Bu, sınırlı verilerle örnek bir sürümdür.",
+    "isnadGuide": "İsimleri gösterilen sırayla okuyun; bir kişiye tıklayarak kaydını açın. Örnek veri ilmî tasdik değildir."
   },
   "memorisation": {
     "titre": "Hadis ezberleme atölyesi",

@@ -195,7 +195,16 @@
     "incertain": {
       "titre": "Example of an uncertain result",
       "texte": "A passage from a little-known work that resembles the searched text. A resemblance or a close translation is not enough to establish that it is the same hadith."
-    }
+    },
+    "nombreResultats": "{nombre} hadith(s) · {sources} reference(s)",
+    "sourcesAssociees": "Sources and variants ({nombre})",
+    "sourceNote": "A bibliographic reference is not an authenticity grade. Review the isnad and the source edition.",
+    "corpusLimite": "Current corpus: only {nombre} sample hadiths.",
+    "pagination": "Result pages",
+    "precedent": "Previous",
+    "suivant": "Next",
+    "pageCompte": "Page {page} of {total}",
+    "sourceGuide": "Reference: where a narration appears in a collection. Isnad: the chain of people who passed it on. Wording and chains can vary across routes."
   },
   "chaine": {
     "titre": "Search by transmission chain",
@@ -256,7 +265,7 @@
     "tronc": "Common trunk",
     "voies": "Paths",
     "voie": "Route of {reference}",
-    "autresVoies": "Other routes from this narrator: loaded from al-Maktaba al-Shāmila and the other libraries.",
+    "autresVoies": "Only chains in the local sample corpus are displayed. No additional chains are loaded automatically.",
     "aucunFaible": "No weak narrator in the routes shown. A weak narrator would appear in orange, with the reason in their card.",
     "fiche": {
       "titre": "Narrator card",
@@ -314,7 +323,8 @@
       "api-accord": "Via API",
       "a-verifier": "To verify"
     },
-    "avertissementData": "This is an example version with limited data."
+    "avertissementData": "This is an example version with limited data.",
+    "isnadGuide": "Read the names in the shown order and select a transmitter to see their record. Sample data is not a scholarly authentication."
   },
   "memorisation": {
     "titre": "Hadith memorization studio",

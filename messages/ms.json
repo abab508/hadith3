@@ -195,7 +195,16 @@
     "incertain": {
       "titre": "Contoh hasil yang tidak pasti",
       "texte": "Petikan daripada karya kurang dikenali yang menyerupai teks yang dicari. Persamaan atau terjemahan yang hampir tidak cukup untuk memastikan ia hadis yang sama."
-    }
+    },
+    "nombreResultats": "{nombre} hadis · {sources} rujukan",
+    "sourcesAssociees": "Sumber dan variasi ({nombre})",
+    "sourceNote": "Rujukan bukan penilaian kesahihan. Semak isnad dan kitab asal.",
+    "corpusLimite": "Korpus semasa: hanya {nombre} contoh hadis.",
+    "pagination": "Halaman keputusan",
+    "precedent": "Sebelumnya",
+    "suivant": "Seterusnya",
+    "pageCompte": "Halaman {page} daripada {total}",
+    "sourceGuide": "Rujukan menunjukkan kedudukan hadis dalam kitab. Isnad ialah rangkaian perawi. Lafaz boleh berbeza mengikut jalur."
   },
   "chaine": {
     "titre": "Cari mengikut rantai periwayatan",
@@ -256,7 +265,7 @@
     "tronc": "Inti bersama",
     "voies": "Laluan",
     "voie": "Jalur {reference}",
-    "autresVoies": "Jalur lain daripada perawi ini: dimuatkan dari al-Maktaba al-Shāmila dan perpustakaan lain.",
+    "autresVoies": "Hanya sanad dalam korpus setempat dipaparkan; sanad lain tidak dimuat secara automatik.",
     "aucunFaible": "Tiada perawi lemah dalam jalur yang dipaparkan. Perawi lemah akan dipaparkan berwarna jingga, dengan sebabnya dalam profilnya.",
     "fiche": {
       "titre": "Profil perawi",
@@ -314,7 +323,8 @@
       "api-accord": "Melalui API",
       "a-verifier": "Untuk disemak"
     },
-    "avertissementData": "Ini adalah versi contoh dengan data terbatas."
+    "avertissementData": "Ini adalah versi contoh dengan data terbatas.",
+    "isnadGuide": "Baca nama mengikut tertib kemudian pilih perawi untuk melihat maklumat. Data contoh bukan pengesahan ilmiah."
   },
   "memorisation": {
     "titre": "Studio hafazan hadis",

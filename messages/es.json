@@ -195,7 +195,16 @@
     "incertain": {
       "titre": "Ejemplo de resultado incierto",
       "texte": "Pasaje de una obra poco conocida que se parece al texto buscado. Un parecido o una traducción cercana no basta para establecer que es el mismo hadiz."
-    }
+    },
+    "nombreResultats": "{nombre} hadices · {sources} referencias",
+    "sourcesAssociees": "Fuentes y variantes ({nombre})",
+    "sourceNote": "La referencia bibliográfica no indica autenticidad. Consulte el isnad y la edición.",
+    "corpusLimite": "Corpus actual: solo {nombre} hadices de ejemplo.",
+    "pagination": "Páginas de resultados",
+    "precedent": "Anterior",
+    "suivant": "Siguiente",
+    "pageCompte": "Página {page} de {total}",
+    "sourceGuide": "Referencia: dónde aparece el hadiz en la colección. Isnad: cadena de transmisores. Puede haber variantes."
   },
   "chaine": {
     "titre": "Buscar por cadena de transmisión",
@@ -256,7 +265,7 @@
     "tronc": "Tronco común",
     "voies": "Vías",
     "voie": "Vía de {reference}",
-    "autresVoies": "Otras vías desde este transmisor: cargadas desde al-Maktaba al-Shāmila y las demás bibliotecas.",
+    "autresVoies": "Solo se muestran las cadenas del corpus local; no se cargan automáticamente otras.",
     "aucunFaible": "Ningún transmisor débil en las vías mostradas. Un transmisor débil aparecería en naranja, con el motivo en su ficha.",
     "fiche": {
       "titre": "Ficha del transmisor",
@@ -314,7 +323,8 @@
       "api-accord": "Vía API",
       "a-verifier": "Por verificar"
     },
-    "avertissementData": "Esta es una versión de ejemplo con datos limitados."
+    "avertissementData": "Esta es una versión de ejemplo con datos limitados.",
+    "isnadGuide": "Sigue los nombres indicados y pulsa uno para abrir su ficha. Los datos de ejemplo no son una certificación religiosa."
   },
   "memorisation": {
     "titre": "Taller de memorización de hadices",
