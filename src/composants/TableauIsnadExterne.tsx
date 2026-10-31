@@ -149,6 +149,18 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
           {actuel?.critique&&<p><strong>{t.critic} :</strong> {actuel.critique}</p>}
      {actuel?.referenceUrl&&<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">
       {t.reference} : {actuel.reference} ↗</a>}
+     <details className={styles.documentarySources}>
+      <summary>{locale==="fr"?"Références et preuves documentaires":locale==="ar"?"المراجع والأدلة":"Documentary sources and evidence"}</summary>
+      <ul>
+       {actuel?.jugements?.map((j,i)=><li key={i}>
+        <strong>{j.auteur} — {j.ouvrage}</strong>{" "}
+        <a href={j.url} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Consulter la référence":locale==="ar"?"عرض المرجع":"Read source"} ↗</a>
+       </li>)}
+       {actuel?.referenceUrl&&<li><strong>{actuel.reference}</strong>{" "}<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Voir la notice":locale==="ar"?"عرض الترجمة":"Read record"} ↗</a></li>}
+       <li><a href={chaine.sourceArabe} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Texte arabe original du hadith (preuve du nom, pas de sa fiabilité)":locale==="ar"?"متن الحديث العربي (دليل الاسم لا التوثيق)":"Original Arabic narration (name evidence, not reliability)"} ↗</a></li>
+      </ul>
+      {!actuel?.referenceUrl&&!actuel?.jugements?.length&&<p>{locale==="fr"?"Aucune référence biographique vérifiée pour cette identité dans les données actuelles.":locale==="ar"?"لا يوجد مرجع ترجمة موثق لهذه الهوية في البيانات الحالية.":"No verified biographical reference for this identity in current data."}</p>}
+     </details>
      <p className={styles.position}>{t.position} : {selected+1} / {maillons.length}</p>
      <div className={styles.buttons}>
       <button disabled={selected===0} type="button" onClick={()=>setSelected(selected-1)}>{t.prev}</button>
