@@ -82,6 +82,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
   [...chaine.maillons,{id:"compiler",rang:chaine.maillons.length+1,nomAr:compiler,fragment:compiler,verdict:"compilateur"}]:chaine.maillons;
  const [selected,setSelected]=useState(Math.min(maillons.length-1,maillons.findIndex(x=>x.verdict!=="source")>=0?maillons.findIndex(x=>x.verdict!=="source"):0));
  const [voirTableau,setVoirTableau]=useState(false);
+ const [onglet,setOnglet]=useState<"bio"|"fiabilite">("bio");
  const documentes=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur"&&(m.jugements?.length||m.referenceUrl)).length;
  const aVerifier=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur").length-documentes;
  const actuel=maillons[selected];
@@ -118,7 +119,11 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
      <strong lang="ar" dir="rtl" className={styles.profileName}>{actuel?.nomCompletAr??actuel?.nomAr}</strong>
      {actuel?.nomLatin&&<span className={styles.profileLatin} lang="ar-Latn" dir="ltr">{actuel.nomLatin}</span>}
      <span className={styles.category} data-role={actuel?category(actuel):undefined}>{actuel?statut(actuel):""}</span>
-     <h4>{t.bio}</h4><p>{actuel?.bio?text(actuel.bio):t.noBio}</p>
+     <div className={styles.tabs} role="tablist" aria-label={t.fiche}>
+      <button type="button" role="tab" aria-selected={onglet==="bio"} onClick={()=>setOnglet("bio")}>{locale==="fr"?"Biographie":locale==="ar"?"الترجمة":"Biography"}</button>
+      <button type="button" role="tab" aria-selected={onglet==="fiabilite"} onClick={()=>setOnglet("fiabilite")}>{locale==="fr"?"Fiabilité":locale==="ar"?"الجرح والتعديل":"Reliability"}</button>
+     </div>
+     {onglet==="bio"&&<div role="tabpanel"><h4>{t.bio}</h4><p>{actuel?.bio?text(actuel.bio):t.noBio}</p>
      {actuel&&maillons.length>0&&<section className={styles.relations}>
       <h4>{t.related}</h4>
       {selected>0&&<button type="button" onClick={()=>setSelected(selected-1)} className={styles.related}>
@@ -135,6 +140,8 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       </div>}
       {(actuel.maitres||actuel.eleves)&&<p className={styles.limitation}>{t.limited}</p>}
      </section>}
+     </div>}
+     {onglet==="fiabilite"&&<div role="tabpanel">
           <h4>{t.verdict}</h4><p className={styles.verdict}>
       {actuel?.qualification?text(actuel.qualification):actuel?.verdict==="source"||actuel?.verdict==="compilateur"?statut(actuel):t.noVerdict}
      </p>
@@ -149,6 +156,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
           {actuel?.critique&&<p><strong>{t.critic} :</strong> {actuel.critique}</p>}
      {actuel?.referenceUrl&&<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">
       {t.reference} : {actuel.reference} ↗</a>}
+     </div>}
      <details className={styles.documentarySources}>
       <summary>{locale==="fr"?"Références et preuves documentaires":locale==="ar"?"المراجع والأدلة":"Documentary sources and evidence"}</summary>
       <ul>
