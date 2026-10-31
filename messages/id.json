@@ -79,7 +79,8 @@
     "accueil": "Beranda",
     "recherche": "Pencarian",
     "chaine": "Pencarian lewat sanad",
-    "glossaire": "Glosarium"
+    "glossaire": "Glosarium",
+    "memorisation": "Hafalan"
   },
   "ouverture": {
     "titre": "Buka bahasa tersimpan",
@@ -314,5 +315,31 @@
       "a-verifier": "Untuk diverifikasi"
     },
     "avertissementData": "Ini adalah versi contoh dengan data terbatas."
+  },
+  "memorisation": {
+    "titre": "Studio hafalan hadis",
+    "intro": "Baca kutipan Arab, sembunyikan, lalu ingat kata yang hilang.",
+    "avertissement": "Korpus contoh belum ditinjau ahli. Latihan tidak menentukan kesahihan hadis; periksa sumbernya.",
+    "choisir": "Pilih hadis",
+    "lecture": "Baca",
+    "quiz": "Kata hilang",
+    "carte": "Kartu ulang",
+    "reference": "Rujukan",
+    "texte": "Kutipan Arab",
+    "masquer": "Sembunyikan teks",
+    "montrer": "Tampilkan teks",
+    "question": "Pilih kata yang hilang",
+    "verifier": "Periksa hafalan",
+    "correct": "Bagus! Kata benar.",
+    "incorrect": "Coba lagi lalu baca teks asli.",
+    "reponse": "Kata tepat",
+    "suivant": "Hadis berikutnya",
+    "marquer": "Sudah hafal",
+    "revoir": "Ulangi",
+    "progression": "Hafalan di perangkat ini",
+    "etat": "Contoh belum diverifikasi",
+    "source": "Lihat sumber dan rincian",
+    "aide": "Baca dahulu, lalu tutup teks atau cari kata. Soal rumpang bukan kutipan baru.",
+    "aucun": "Belum ada kutipan"
   }
 }

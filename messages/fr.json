@@ -79,7 +79,8 @@
     "accueil": "Accueil",
     "recherche": "Recherche",
     "chaine": "Recherche par chaîne",
-    "glossaire": "Glossaire"
+    "glossaire": "Glossaire",
+    "memorisation": "Mémoriser"
   },
   "ouverture": {
     "titre": "Choisir la langue mémorisée",
@@ -314,5 +315,31 @@
       "a-verifier": "À vérifier"
     },
     "avertissementData": "Ceci est une version d'exemple avec des données limitées."
+  },
+  "memorisation": {
+    "titre": "Atelier de mémorisation des hadiths",
+    "intro": "Lis un extrait arabe, cache-le, puis retrouve un mot manquant : avance à ton rythme.",
+    "avertissement": "Corpus de démonstration non encore validé par un spécialiste. Ces exercices ne jugent pas l’authenticité des hadiths : consulte toujours les sources.",
+    "choisir": "Choisir un hadith à réviser",
+    "lecture": "Lecture",
+    "quiz": "Mot manquant",
+    "carte": "Carte de révision",
+    "reference": "Référence",
+    "texte": "Extrait du texte arabe",
+    "masquer": "Masquer le texte",
+    "montrer": "Afficher le texte",
+    "question": "Choisis le mot manquant dans cet extrait",
+    "verifier": "Vérifier ma mémoire",
+    "correct": "Bravo ! Le mot est correct.",
+    "incorrect": "Essaie encore, puis relis le texte original.",
+    "reponse": "Mot attendu",
+    "suivant": "Hadith suivant",
+    "marquer": "Je l’ai mémorisé",
+    "revoir": "À revoir",
+    "progression": "Extraits mémorisés sur cet appareil",
+    "etat": "Données non vérifiées",
+    "source": "Voir la source et la fiche",
+    "aide": "Commence par lire, puis masque le texte ou retrouve un mot. La phrase à trou n’est qu’un exercice, pas une nouvelle citation.",
+    "aucun": "Aucun extrait disponible"
   }
 }

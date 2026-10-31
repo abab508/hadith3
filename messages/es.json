@@ -79,7 +79,8 @@
     "accueil": "Inicio",
     "recherche": "Búsqueda",
     "chaine": "Búsqueda por cadena",
-    "glossaire": "Glosario"
+    "glossaire": "Glosario",
+    "memorisation": "Memorizar"
   },
   "ouverture": {
     "titre": "Abrir el idioma guardado",
@@ -314,5 +315,31 @@
       "a-verifier": "Por verificar"
     },
     "avertissementData": "Esta es una versión de ejemplo con datos limitados."
+  },
+  "memorisation": {
+    "titre": "Taller de memorización de hadices",
+    "intro": "Lee un fragmento árabe, ocúltalo y recuerda la palabra que falta.",
+    "avertissement": "Corpus de demostración sin revisar. Los ejercicios no determinan la autenticidad de los hadices. Consulta las fuentes.",
+    "choisir": "Elegir un hadiz",
+    "lecture": "Lectura",
+    "quiz": "Palabra ausente",
+    "carte": "Tarjeta",
+    "reference": "Referencia",
+    "texte": "Fragmento árabe",
+    "masquer": "Ocultar texto",
+    "montrer": "Mostrar texto",
+    "question": "Elige la palabra que falta",
+    "verifier": "Comprobar",
+    "correct": "¡Bien! Palabra correcta.",
+    "incorrect": "Inténtalo de nuevo y relee el original.",
+    "reponse": "Palabra correcta",
+    "suivant": "Siguiente hadiz",
+    "marquer": "Lo memoricé",
+    "revoir": "Repasar",
+    "progression": "Memorizados en este dispositivo",
+    "etat": "Ejemplo no verificado",
+    "source": "Ver fuente y detalles",
+    "aide": "Lee primero y luego oculta o recupera una palabra. El ejercicio no es una cita nueva.",
+    "aucun": "No hay fragmentos"
   }
 }

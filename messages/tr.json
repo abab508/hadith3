@@ -79,7 +79,8 @@
     "accueil": "Ana sayfa",
     "recherche": "Arama",
     "chaine": "Senetle arama",
-    "glossaire": "Sözlük"
+    "glossaire": "Sözlük",
+    "memorisation": "Ezberle"
   },
   "ouverture": {
     "titre": "Kaydedilen dili aç",
@@ -314,5 +315,31 @@
       "a-verifier": "Doğrulanacak"
     },
     "avertissementData": "Bu, sınırlı verilerle örnek bir sürümdür."
+  },
+  "memorisation": {
+    "titre": "Hadis ezberleme atölyesi",
+    "intro": "Arapça metni oku, gizle ve eksik kelimeyi hatırla.",
+    "avertissement": "Henüz uzman onayı almamış örnek veriler. Alıştırmalar hadislerin sıhhatini belirlemez; kaynağa başvurun.",
+    "choisir": "Hadis seç",
+    "lecture": "Oku",
+    "quiz": "Eksik kelime",
+    "carte": "Tekrar kartı",
+    "reference": "Kaynak",
+    "texte": "Arapça alıntı",
+    "masquer": "Metni gizle",
+    "montrer": "Metni göster",
+    "question": "Eksik kelimeyi seç",
+    "verifier": "Kontrol et",
+    "correct": "Harika! Doğru kelime.",
+    "incorrect": "Tekrar dene ve asıl metni oku.",
+    "reponse": "Doğru kelime",
+    "suivant": "Sonraki hadis",
+    "marquer": "Ezberledim",
+    "revoir": "Tekrar et",
+    "progression": "Bu cihazda ezberlenenler",
+    "etat": "Doğrulanmamış örnek",
+    "source": "Kaynak ve ayrıntılar",
+    "aide": "Önce oku, sonra kelimeyi hatırla. Boşluklu metin yeni bir hadis alıntısı değildir.",
+    "aucun": "Alıntı bulunamadı"
   }
 }

@@ -79,7 +79,8 @@
     "accueil": "Home",
     "recherche": "Search",
     "chaine": "Search by chain",
-    "glossaire": "Glossary"
+    "glossaire": "Glossary",
+    "memorisation": "Memorize"
   },
   "ouverture": {
     "titre": "Open the saved language",
@@ -314,5 +315,31 @@
       "a-verifier": "To verify"
     },
     "avertissementData": "This is an example version with limited data."
+  },
+  "memorisation": {
+    "titre": "Hadith memorization studio",
+    "intro": "Read an Arabic excerpt, hide it, then recall a missing word at your own pace.",
+    "avertissement": "Unreviewed demonstration corpus. Exercises do not establish hadith authenticity. Always consult the documented sources.",
+    "choisir": "Choose an excerpt",
+    "lecture": "Read",
+    "quiz": "Missing word",
+    "carte": "Review card",
+    "reference": "Reference",
+    "texte": "Arabic excerpt",
+    "masquer": "Hide text",
+    "montrer": "Show text",
+    "question": "Choose the missing word",
+    "verifier": "Check my memory",
+    "correct": "Well done! Correct word.",
+    "incorrect": "Try again, then reread the original.",
+    "reponse": "Expected word",
+    "suivant": "Next hadith",
+    "marquer": "I memorized this",
+    "revoir": "Review again",
+    "progression": "Memorized on this device",
+    "etat": "Unverified sample",
+    "source": "View source and details",
+    "aide": "Read first, then hide or recall a word. A gap exercise is not a new hadith quotation.",
+    "aucun": "No excerpts available"
   }
 }
