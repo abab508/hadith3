@@ -186,3 +186,10 @@
   color: var(--texte);
   font: inherit;
 }
+
+/* Cartes lisibles sur recherche, rapports, glossaire et pages d'étude. */
+.carte{box-shadow:0 14px 38px #050d2215;transition:box-shadow .25s,border-color .25s,transform .25s;}
+.carte:hover{border-color:color-mix(in srgb,var(--accent) 54%,var(--bordure));box-shadow:0 22px 55px #050d2229;}
+.bouton,.boutonSecondaire{border-radius:999px;transition:transform .2s,box-shadow .2s;}
+.bouton:hover:not(:disabled),.boutonSecondaire:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px #050d2221;}
+@media(prefers-reduced-motion:reduce){.carte,.bouton,.boutonSecondaire{transition:none!important;transform:none!important;}}
