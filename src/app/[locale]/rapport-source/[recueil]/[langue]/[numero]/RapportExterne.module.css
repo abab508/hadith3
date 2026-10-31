@@ -33,3 +33,14 @@
  .layout{grid-template-columns:1.5fr 1fr;}
  .panel,.passage{break-inside:avoid-page;}
 }
+
+
+/* Rapport documentaire harmonisé avec la capture fournie. */
+.hero{background:radial-gradient(ellipse at 79% 18%,#26614b80,transparent 66%),linear-gradient(125deg,#232820,#171a16);border-color:#6b826d;}
+.hero h1,.panel h2{color:#eac686;}
+.stats div{background:#222d25;border-color:#4c705b;}
+.panel{background:linear-gradient(135deg,#242b23,#1a241e);border-color:#607564;}
+.notice{background:#433521;color:#f7e1b9;}
+.source,.footer a{color:#8ae6c5;}
+.grades li{border-color:#627765;}
+.warning{background:#433521;}
