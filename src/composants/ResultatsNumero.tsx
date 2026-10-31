@@ -2,7 +2,7 @@ import { readIndex } from "@/donnees/index-leger";
 import { EXTERNAL_COLLECTIONS } from "@/donnees/recherche-distante";
 import { numeroDemande } from "@/donnees/recherche";
 import { Link } from "@/i18n/navigation";
-import { libellesRapport } from "@/composants/ActionsRapport";
+import { libellesRapport } from "@/donnees/libelles-rapport";
 import styles from "./ResultatsNumero.module.css";
 
 /** Recherche par numéro : toujours traiter les références AVANT le corpus de démonstration.

@@ -2,15 +2,8 @@
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import styles from "./ActionsRapport.module.css";
+import {libellesRapport} from "@/donnees/libelles-rapport";
 
-const translations = {
- fr:{home:"Accueil",search:"Recherche",print:"Imprimer / enregistrer en PDF",report:"Voir le rapport",back:"Retour au hadith"},
- ar:{home:"الرئيسية",search:"البحث",print:"طباعة / حفظ PDF",report:"عرض التقرير",back:"العودة إلى الحديث"},
- en:{home:"Home",search:"Search",print:"Print / save as PDF",report:"Open the report",back:"Back to hadith"}
-} as const;
-export function libellesRapport(locale:string){
- return locale==="ar"?translations.ar:locale==="fr"?translations.fr:translations.en;
-}
 /** Navigation partageable et sortie papier sans exposer les données à un service tiers. */
 export default function ActionsRapport({reportHref,returnHref,print=false}:{
  reportHref?:string;returnHref?:string;print?:boolean;

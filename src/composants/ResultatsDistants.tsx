@@ -1,6 +1,6 @@
 import { remoteLanguage,remoteSearch, EXTERNAL_COLLECTIONS } from "@/donnees/recherche-distante";
 import { Link } from "@/i18n/navigation";
-import { libellesRapport } from "@/composants/ActionsRapport";
+import { libellesRapport } from "@/donnees/libelles-rapport";
 import styles from "./ResultatsDistants.module.css";
 
 const fr={
