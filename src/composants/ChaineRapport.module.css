@@ -306,3 +306,17 @@
 .classement{margin:0;}
 @media(max-width:680px){.fiche{max-block-size:none;}.ficheOnglet{font-size:.85rem;}.voisinsContextuels{flex-direction:column;}}
 @media(prefers-reduced-motion:reduce){.lienVoisin,.ficheOnglet,.fiabiliteRaccourci{transition:none;}}
+
+/* Sources biographiques attribuées et contextualisées pour une voie documentée. */
+.sourceLien{color:#aaf7e6;font-weight:700;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere;}
+.sourceLien:hover{color:#fff1c7;}
+.noteSource{font-size:.83rem;color:var(--discret);line-height:1.7;}
+.sourceAnalyse{display:flex;flex-direction:column;gap:.65rem;padding:.9rem 1rem;border:1px solid #4d8d89;border-radius:1rem;background:linear-gradient(140deg,#17484677,#122c41);}
+.sourceAnalyse>p{margin:0;line-height:1.8;}
+.sourceCritiques{display:grid;gap:.55rem;margin:.2rem 0 0;padding:0;list-style:none;}
+.sourceCritiques>li{border:1px solid #51748f;border-radius:.7rem;padding:.65rem .85rem;background:#0e2640;}
+.sourceCritiques strong{color:#fce3ac;}
+.sourceCritiques p{margin:.25rem 0 0;line-height:1.7;}
+.referenceExterne{border:1px solid #a8804a;background:#3f311d78;border-radius:.8rem;padding:.8rem;}
+.referenceExterne p{color:#ffe7bf;font-size:.82rem;margin:.5rem 0 0;line-height:1.6;}
+.conclusionSource{font-weight:800;color:#baffea;line-height:1.7;}

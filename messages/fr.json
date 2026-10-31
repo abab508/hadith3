@@ -313,7 +313,14 @@
       "nonEvalueExplication": "Aucune évaluation de la fiabilité personnelle de ce maillon n'est enregistrée. « Non évalué » ne veut pas dire « faible ».",
       "categorieNotice": "Il s'agit d'une catégorie générale de la notice du transmetteur, pas d'un verdict sur ce hadith ou sur cette voie précise.",
       "aucuneSource": "Aucune référence biographique individuelle n'est renseignée pour ce transmetteur.",
-      "distinctionHadith": "La fiabilité d'un transmetteur ne suffit pas à déterminer l'authenticité de ce hadith. L'étude complète de la chaîne, des variantes et d'éventuelles anomalies reste nécessaire."
+      "distinctionHadith": "La fiabilité d'un transmetteur ne suffit pas à déterminer l'authenticité de ce hadith. L'étude complète de la chaîne, des variantes et d'éventuelles anomalies reste nécessaire.",
+      "rechercheDisponible": "Évaluation citée dans les ouvrages",
+      "biographieDocumentee": "Biographie tirée d'un ouvrage de rijāl ; les détails sont attribués à la source indiquée.",
+      "appreciationsSources": "Appréciations des critiques, avec références",
+      "referenceExterne": "Référence publiée du hadith",
+      "numeroPublie": "n° {num}",
+      "numeroCorpus": "Attention : la référence locale de l'import est n° {num}. Les numérotations des éditions peuvent différer.",
+      "limiteSource": "Les avis présentés sont attribués à des ouvrages identifiés. Ils concernent la biographie et la fiabilité du rapporteur ; ils ne constituent pas à eux seuls un jugement sur l'authenticité de toute la chaîne."
     },
     "generation": {
       "source": "Source du hadith",

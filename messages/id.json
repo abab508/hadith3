@@ -313,7 +313,14 @@
       "nonEvalueExplication": "Tidak ada penilaian pribadi yang tercatat. 'Belum dinilai' tidak berarti 'lemah'.",
       "categorieNotice": "Ini kategori umum profil perawi, bukan penilaian hadis ini atau jalur tertentu.",
       "aucuneSource": "Tidak ada rujukan biografi perawi yang dicatat.",
-      "distinctionHadith": "Keandalan satu perawi saja tidak menetapkan kesahihan hadis. Sanad, jalur lain, dan kemungkinan cacat perlu ditelaah."
+      "distinctionHadith": "Keandalan satu perawi saja tidak menetapkan kesahihan hadis. Sanad, jalur lain, dan kemungkinan cacat perlu ditelaah.",
+      "rechercheDisponible": "Penilaian dari kitab biografi perawi",
+      "biographieDocumentee": "Biografi bersumber dari kitab rijal yang disebutkan.",
+      "appreciationsSources": "Penilaian ahli hadis beserta rujukan",
+      "referenceExterne": "Rujukan hadis yang diterbitkan",
+      "numeroPublie": "no. {num}",
+      "numeroCorpus": "Catatan: data impor memakai nomor {num}; penomoran dapat berbeda menurut edisi.",
+      "limiteSource": "Penilaian ini bersumber dari kitab yang disebutkan dan tidak dengan sendirinya menetapkan keaslian seluruh sanad."
     },
     "generation": {
       "source": "Sumber hadis",

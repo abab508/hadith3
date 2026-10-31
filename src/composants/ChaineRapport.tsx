@@ -6,6 +6,7 @@ import { entree } from "@/donnees/catalogue";
 import { hadithParId, ouvrageParId, texteDans, transmetteurParId } from "@/donnees/corpus";
 import type { CategorieTransmetteur, Transmetteur } from "@/donnees/schemas/corpus";
 import { presenceDansHadith } from "@/donnees/presence-transmetteur";
+import { noticeRijal, referenceHadithRijal, traduireNotice } from "@/donnees/recherches-rijal";
 import ui from "@/composants/Interface.module.css";
 import styles from "@/composants/ChaineRapport.module.css";
 
@@ -60,6 +61,8 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
   const aucunFaible = ids.every((id) => !["daif", "non-evalue"].includes(transmetteurParId(id)?.categorie ?? "non-evalue"));
   const choisi = transmetteurParId(selection);
   const presences = presenceDansHadith(hadith, selection);
+  const recherche = noticeRijal(hadithId, selection);
+  const refVerifiee = referenceHadithRijal(hadithId);
   const pivot = transmetteurParId(tronc[tronc.length - 1] ?? "");
 
   const deces = (valeur: string) => {
@@ -76,12 +79,13 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
   const noeud = (id: string, dernier: boolean) => {
     const tr = transmetteurParId(id);
     if (!tr) return null;
+    const documentation = noticeRijal(hadithId, id);
     return (
       <li key={id} className={styles.maillon}>
         <button
           type="button"
           className={`${styles.noeud} ${styles.porteur}`}
-          data-categorie={tr.categorie}
+          data-categorie={documentation?.classification ?? tr.categorie}
           aria-pressed={selection === id}
           aria-controls="fiche-transmetteur"
           onClick={() => choisir(id)}
@@ -89,7 +93,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
         >
           <bdi lang="ar" dir="rtl" className={`texte-arabe ${styles.nomAr}`}>{tr.nomAr}</bdi>
           <bdi lang="ar-Latn" dir="ltr" className={styles.nomLatin}>{tr.nomTranslittere}</bdi>
-          <span className={styles.categorie}>{t(categories[tr.categorie])} <span aria-hidden="true">↗</span></span>
+          <span className={styles.categorie}>{documentation ? t(categories[documentation.classification]) : t(categories[tr.categorie])} <span aria-hidden="true">↗</span></span>
         </button>
         {!dernier && (
           <svg className={styles.fleche} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -152,7 +156,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
         <aside
           id="fiche-transmetteur"
           className={`${ui.carte} ${styles.fiche} ${styles.porteur}`}
-          data-categorie={choisi.categorie}
+          data-categorie={recherche?.classification ?? choisi.categorie}
           aria-labelledby="titre-fiche"
           aria-live="polite"
         >
@@ -166,9 +170,10 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
           </div>
           <div className={ui.badges}>
             <button type="button" className={`${ui.badge} ${styles.badgeCategorie} ${styles.porteur} ${styles.fiabiliteRaccourci}`}
-              data-categorie={choisi.categorie} onClick={() => setVue("fiabilite")}
+              data-categorie={recherche?.classification ?? choisi.categorie} onClick={() => setVue("fiabilite")}
+              title={recherche ? t("fiche.rechercheDisponible") : undefined}
               aria-label={t("fiche.ouvrirFiabilite", { nom: choisi.nomTranslittere })}>
-              {t(categories[choisi.categorie])} <span aria-hidden="true">↗</span>
+              {t(categories[recherche?.classification ?? choisi.categorie])} <span aria-hidden="true">↗</span>
             </button>
             {choisi.generation && <span className={ui.badge}>{t(generations[choisi.generation])}</span>}
             {choisi.deces && <span className={ui.badge}>{deces(choisi.deces)}</span>}
@@ -192,7 +197,17 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
             <div className={styles.ficheContenu} aria-live="polite">
               <section className={styles.groupe}>
                 <h3 className={styles.titreBloc}>{t("fiche.biographie")}</h3>
-                <p {...bloc(choisi.biographie)} />
+                {recherche ? (
+                  <>
+                    <p lang={traduireNotice(recherche.identity, locale).lang}
+                      dir={traduireNotice(recherche.identity, locale).dir}>
+                      {traduireNotice(recherche.identity, locale).text}
+                    </p>
+                    <a href={recherche.source.url} target="_blank" rel="noopener noreferrer"
+                      className={styles.sourceLien}>{recherche.source.book} · {recherche.source.locator} ↗</a>
+                    <p className={styles.noteSource}>{t("fiche.biographieDocumentee")}</p>
+                  </>
+                ) : <p {...bloc(choisi.biographie)} />}
               </section>
               <div className={styles.groupe}>
                 <h3 className={styles.titreBloc}>{t("fiche.relations")}</h3>
@@ -257,9 +272,11 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
                 <h3 className={styles.titreBloc}>{t("fiche.classementTransmetteur")}</h3>
                 <p className={styles.classement}>
                   <span className={`${ui.badge} ${styles.badgeCategorie} ${styles.porteur}`}
-                    data-categorie={choisi.categorie}>{t(categories[choisi.categorie])}</span>
+                    data-categorie={recherche?.classification ?? choisi.categorie}>{t(categories[recherche?.classification ?? choisi.categorie])}</span>
                 </p>
-                {choisi.categorie === "non-evalue" ? (
+                {recherche ? (
+                  <p lang={traduireNotice(recherche.qualification,locale).lang} dir={traduireNotice(recherche.qualification,locale).dir} className={styles.conclusionSource}>{traduireNotice(recherche.qualification,locale).text}</p>
+                ) : choisi.categorie === "non-evalue" ? (
                   <p className={styles.jugement}>{t("fiche.nonEvalueExplication")}</p>
                 ) : (
                   <p className={styles.contextNote}>{t("fiche.categorieNotice")}</p>
@@ -271,6 +288,35 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
                   </div>
                 )}
               </section>
+              {recherche && (
+                <section className={styles.sourceAnalyse}>
+                  <h3 className={styles.titreBloc}>{t("fiche.appreciationsSources")}</h3>
+                  <p lang={traduireNotice(recherche.assessment,locale).lang}
+                    dir={traduireNotice(recherche.assessment,locale).dir}>
+                    {traduireNotice(recherche.assessment,locale).text}
+                  </p>
+                  <ul className={styles.sourceCritiques}>
+                    {recherche.critics.map((j, i) => (
+                      <li key={i}>
+                        <strong><bdi dir="auto">{j.name}</bdi></strong>
+                        <p lang={traduireNotice(j.statement,locale).lang}
+                          dir={traduireNotice(j.statement,locale).dir}>
+                          {traduireNotice(j.statement,locale).text}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+              {refVerifiee && (
+                <section className={styles.referenceExterne}>
+                  <h3 className={styles.titreBloc}>{t("fiche.referenceExterne")}</h3>
+                  <a href={refVerifiee.url} target="_blank" rel="noopener noreferrer" className={styles.sourceLien}>
+                    {refVerifiee.ouvrage} · {t("fiche.numeroPublie",{num:refVerifiee.numeroExterne})} ↗
+                  </a>
+                  <p>{t("fiche.numeroCorpus",{num:refVerifiee.numeroCorpus})}</p>
+                </section>
+              )}
               <section className={styles.groupe}>
                 <h3 className={styles.titreBloc}>{t("fiche.jugements")}</h3>
                 {choisi.jugements.length === 0 ? (
@@ -290,7 +336,12 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
               </section>
               <section className={`${styles.groupe} ${styles.sources}`}>
                 <h3 className={styles.titreBloc}>{t("fiche.sources")}</h3>
-                {choisi.sources.length === 0 ? (
+                {recherche ? (
+                  <ul>{[recherche.source,...(recherche.otherSources??[])].map((doc,i)=>(
+                    <li key={i}><a href={doc.url} target="_blank" rel="noopener noreferrer" className={styles.sourceLien}>
+                      {doc.book} · {doc.locator} ↗</a></li>
+                  ))}</ul>
+                ) : choisi.sources.length === 0 ? (
                   <p className={styles.jugement}>{t("fiche.aucuneSource")}</p>
                 ) : (
                   <ul>
@@ -307,7 +358,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
             </div>
           )}
 
-          <p className={ui.avertissement}>{t("fiche.exemple")}</p>
+          <p className={ui.avertissement}>{recherche ? t("fiche.limiteSource") : t("fiche.exemple")}</p>
         </aside>
       )}
     </div>

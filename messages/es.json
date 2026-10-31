@@ -313,7 +313,14 @@
       "nonEvalueExplication": "No hay evaluación individual registrada. «Sin evaluar» no significa «débil».",
       "categorieNotice": "Es una categoría general del transmisor, no una calificación de este hadiz o de esta vía.",
       "aucuneSource": "No se ha registrado una referencia biográfica individual.",
-      "distinctionHadith": "La fiabilidad de un transmisor por sí sola no determina la autenticidad del hadiz. Deben examinarse la cadena, las variantes y los posibles defectos."
+      "distinctionHadith": "La fiabilidad de un transmisor por sí sola no determina la autenticidad del hadiz. Deben examinarse la cadena, las variantes y los posibles defectos.",
+      "rechercheDisponible": "Opiniones citadas en obras biográficas",
+      "biographieDocumentee": "Biografía documentada con referencia a una obra de rijal.",
+      "appreciationsSources": "Valoraciones de los críticos y fuentes",
+      "referenceExterne": "Referencia publicada del hadiz",
+      "numeroPublie": "n.º {num}",
+      "numeroCorpus": "Nota: el corpus importado utiliza el n.º {num}; la numeración puede variar según la edición.",
+      "limiteSource": "Las valoraciones se atribuyen a obras identificadas y no determinan por sí solas la autenticidad de toda la cadena."
     },
     "generation": {
       "source": "Fuente del hadiz",

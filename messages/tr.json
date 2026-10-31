@@ -313,7 +313,14 @@
       "nonEvalueExplication": "Bu ravi için bireysel değerlendirme kaydı yok. Değerlendirilmemiş olması zayıf olduğu anlamına gelmez.",
       "categorieNotice": "Bu, ravinin genel kaydındaki sınıftır; söz konusu hadisin veya özel yolun hükmü değildir.",
       "aucuneSource": "Bu ravi için bireysel biyografik kaynak belirtilmemiş.",
-      "distinctionHadith": "Ravinin güvenilirliği tek başına hadisin sahih olduğunu göstermez. Senedin, farklı yolların ve olası kusurların incelenmesi gerekir."
+      "distinctionHadith": "Ravinin güvenilirliği tek başına hadisin sahih olduğunu göstermez. Senedin, farklı yolların ve olası kusurların incelenmesi gerekir.",
+      "rechercheDisponible": "Kaynaklarda belirtilen güvenilirlik değerlendirmesi",
+      "biographieDocumentee": "Biyografi adı verilen rical kaynağına dayanmaktadır.",
+      "appreciationsSources": "Münekkitlerin kaynaklı değerlendirmeleri",
+      "referenceExterne": "Hadisin yayımlanmış kaynağı",
+      "numeroPublie": "no. {num}",
+      "numeroCorpus": "Not: içe aktarılan veride numara {num}; baskılar arasında numaralar değişebilir.",
+      "limiteSource": "Bu görüşler belirli eserlerdeki ravi değerlendirmeleridir; tek başlarına bütün senedin sıhhatini göstermez."
     },
     "generation": {
       "source": "Hadisin kaynağı",

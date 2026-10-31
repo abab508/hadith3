@@ -313,7 +313,14 @@
       "nonEvalueExplication": "No individual reliability assessment is recorded for this link. 'Not assessed' does not mean 'weak'.",
       "categorieNotice": "This is a general classification on the narrator's record, not a grading of this hadith or its specific route.",
       "aucuneSource": "No individual biographical reference is recorded for this narrator.",
-      "distinctionHadith": "A narrator's reliability alone cannot establish this hadith's authenticity. The chain, variant routes and possible defects still need to be examined."
+      "distinctionHadith": "A narrator's reliability alone cannot establish this hadith's authenticity. The chain, variant routes and possible defects still need to be examined.",
+      "rechercheDisponible": "Scholarly judgments cited from biographical works",
+      "biographieDocumentee": "Biography attributed to a named rijal source.",
+      "appreciationsSources": "Critics' assessments with references",
+      "referenceExterne": "Published hadith reference",
+      "numeroPublie": "no. {num}",
+      "numeroCorpus": "Note: the imported dataset uses no. {num}. Edition numbering can differ.",
+      "limiteSource": "These assessments are attributed to named works and concern narrator reliability. They do not, on their own, establish the authenticity of the entire chain."
     },
     "generation": {
       "source": "Source of the hadith",
