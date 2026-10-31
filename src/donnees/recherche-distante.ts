@@ -4,6 +4,7 @@
  * ne constitue ni authentification du hadith ni examen individuel du sanad.
  */
 import { normaliser, numeroDemande } from "@/donnees/recherche";
+import { readIndex, searchIndex, type SearchCandidate, type SearchIndex } from "@/donnees/index-leger";
 
 export const EXTERNAL_COLLECTIONS = [
   {id:"sahih-bukhari",key:"bukhari",nom:"Ṣaḥīḥ al-Bukhārī",fr:true},
@@ -24,8 +25,12 @@ export type RemoteEdition = {
   metadata?: {name?:string;section?:Record<string,string>;section_detail?:Record<string,unknown>};
   hadiths?:RemoteRow[];
 };
-export type RemoteHit = {id:string;recueil:string;nom:string;numero:number;section?:number;texte:string;langue:string;sourceUrl:string;grades:{name:string;grade:string}[]};
-export type RemoteSearchResult = {items:RemoteHit[];total:number;page:number;pageTotal:number;checked:number;unavailable:string[];searchedLanguages:string[]};
+export type RemoteHit = {
+ id:string;recueil:string;nom:string;numero:number;section?:number;texte:string;langue:string;sourceUrl:string;
+ grades:{name:string;grade:string}[];
+ concordance?: {status:"reference-confirmed"|"number-only"|"unavailable";language:"ara"|"fra";url?:string};
+};
+export type RemoteSearchResult = {items:RemoteHit[];total:number;page:number;pageTotal:number;checked:number;unavailable:string[];searchedLanguages:string[];indexed?:boolean};
 const PREFIX="https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/";
 const FALLBACK="https://raw.githubusercontent.com/fawazahmed0/hadith-api/1/editions/";
 const remoteRevision="fawazahmed0/hadith-api@1";
@@ -95,9 +100,80 @@ export async function fetchRemoteEdition(collection:ExternalCollection,lang:stri
   }
   throw new Error("Remote source temporarily unavailable", {cause:lastError});
 }
+
+/**
+ * La correspondance est admise uniquement si les deux éditions présentent
+ * le même numéro global, le même livre ET le même rang dans le livre.
+ * Il s'agit d'un alignement de références, pas de validation du matn ni du sanad.
+ */
+export function compareEditionReferences(
+ current:SearchCandidate,other:SearchCandidate|undefined,
+ language:"ara"|"fra",key:string
+):NonNullable<RemoteHit["concordance"]>{
+ if(!other)return {status:"unavailable",language};
+ if(current.section===other.section&&current.dansSection===other.dansSection){
+  return {status:"reference-confirmed",language,url:editionReferenceUrl(key,language,other.numero)};
+ }
+ return {status:"number-only",language,url:editionReferenceUrl(key,language,other.numero)};
+}
+
+async function indexedRemoteSearch(
+ query:string,selected:string|undefined,language:string,pageRequested:number,pageSize:number
+):Promise<RemoteSearchResult|null>{
+ // Les index sont construits pour les éditions arabes et françaises.
+ if(!["fra","ara"].includes(language))return null;
+ const chosen=EXTERNAL_COLLECTIONS.filter(c=>!selected||c.id===selected);
+ const supported=chosen.filter(c=>canUseRemote(c,language));
+ if(!supported.length)return {items:[],total:0,page:1,pageTotal:1,checked:0,
+   unavailable:chosen.map(c=>c.nom),searchedLanguages:[language],indexed:true};
+ const indexes=await Promise.all(supported.map(c=>readIndex(language,c.key)));
+ if(indexes.some(i=>i===null))return null; // repli vers le moteur historique si l'index n'est pas encore installé
+ const documents:{collection:ExternalCollection;ref:SearchCandidate}[]=[];
+ for(let i=0;i<supported.length;i++){
+  const index=indexes[i]!;
+  for(const ref of searchIndex(index,query))documents.push({collection:supported[i]!,ref});
+ }
+ // Conserve l'ordre des recueils puis des références publiées.
+ documents.sort((a,b)=>EXTERNAL_COLLECTIONS.findIndex(c=>c.id===a.collection.id)-
+  EXTERNAL_COLLECTIONS.findIndex(c=>c.id===b.collection.id)||a.ref.numero-b.ref.numero);
+ const total=documents.length,pageTotal=Math.max(1,Math.ceil(total/pageSize));
+ const page=Number.isSafeInteger(pageRequested)?Math.min(Math.max(pageRequested,1),pageTotal):1;
+ const current=documents.slice((page-1)*pageSize,page*pageSize);
+ const items=await Promise.all(current.map(async ({collection,ref}):Promise<RemoteHit>=>{
+  let texte="",grades:RemoteHit["grades"]=[];
+  try{
+   // Télécharge seulement le hadith visible, PAS son recueil complet.
+   const edition=await fetchRemoteEdition(collection,language,ref.numero);
+   const h=edition.hadiths?.find(row=>row.hadithnumber===ref.numero);
+   if(h&&typeof h.text==="string"){
+    texte=h.text;
+    grades=Array.isArray(h.grades)?h.grades.filter(g=>typeof g.name==="string"&&typeof g.grade==="string")
+      .slice(0,4).map(g=>({name:g.name!,grade:g.grade!})):[];
+   }
+  }catch{ /* la référence reste consultable même lorsque le texte est momentanément indisponible */ }
+  const otherLanguage: "ara"|"fra"=language==="fra"?"ara":"fra";
+  const otherIndex=await readIndex(otherLanguage,collection.key);
+  const other=otherIndex?.docs.find(d=>d[0]===ref.numero);
+  const counterpart=other?{numero:other[0],section:other[1],dansSection:other[2]}:undefined;
+  return {
+   id:collection.key+"-"+language+"-"+ref.numero,
+   recueil:collection.id,nom:collection.nom,numero:ref.numero,section:ref.section,texte,langue:language,
+   sourceUrl:editionReferenceUrl(collection.key,language,ref.numero),grades,
+   concordance:compareEditionReferences(ref,counterpart,otherLanguage,collection.key)
+  };
+ }));
+ return {
+  items,total,page,pageTotal,checked:supported.length,
+  unavailable:chosen.filter(c=>!canUseRemote(c,language)).map(c=>c.nom),
+  searchedLanguages:[language],indexed:true
+ };
+}
+
 export async function remoteSearch(q:string,selected:string|undefined,lang:string,pageRequested:number,pageSize=10):Promise<RemoteSearchResult>{
   const query=q.trim().slice(0,90),chosen=EXTERNAL_COLLECTIONS.filter(c=>!selected||c.id===selected);
   if(!query||chosen.length===0)return {items:[],total:0,page:1,pageTotal:1,checked:0,unavailable:[],searchedLanguages:[lang]};
+  const indexed=await indexedRemoteSearch(query,selected,lang,pageRequested,pageSize);
+  if(indexed)return indexed;
   const searchKey=JSON.stringify([query,selected??"",lang]);
   const old=cache.get(searchKey);
   let record=old&&old.expires>Date.now()?old:undefined;
