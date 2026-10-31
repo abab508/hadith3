@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import {
-  questionMemoire,
-  type ExtraitMemorisation,
-} from "@/donnees/memorisation";
+import { questionMemoire } from "@/donnees/question-memoire";
+import type { ExtraitMemorisation } from "@/donnees/memorisation";
 import styles from "./AtelierMemoire.module.css";
 
 type Mode = "lecture" | "quiz";
@@ -44,7 +42,7 @@ export default function AtelierMemoire({extraits}: {extraits: ExtraitMemorisatio
     <div className={styles.page}>
       <div className={styles.aura} aria-hidden="true" />
       <section className={styles.intro}>
-        <p className={styles.surtitre}><span aria-hidden="true">✧</span> MILAGHAIBA · {t("nav")}</p>
+        <p className={styles.surtitre}><span aria-hidden="true">✧</span> MILAGHAIBA · {t("titre")}</p>
         <h1>{t("titre")}</h1>
         <p className={styles.accroche}>{t("intro")}</p>
         <p className={styles.aide}>{t("aide")}</p>
