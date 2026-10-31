@@ -44,7 +44,7 @@ export default async function Recherche({
 }: {
   params: Promise<{ locale: string }>;
   searchParams: Promise<Record<
-    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque",
+    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page",
     string | string[] | undefined
   >>;
 }) {
@@ -81,17 +81,36 @@ export default async function Recherche({
     const o = ouvrageParId(id);
     return o ? [o] : [];
   });
-  const occurrences = trouves.flatMap((hadith) => hadith.occurrences
-    .filter((o) => dansSelection(o)
-      && garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque))
-    .map((occurrence) => ({ occurrence, hadith })));
+  // Un hadith par carte, avec tous ses témoins bibliographiques.
+  const groupes = trouves.map((hadith) => ({
+    hadith,
+    occurrences: hadith.occurrences.filter((o) => dansSelection(o)
+      && garde("correspondance", o.correspondance) && garde("ouvrage", o.ouvrage) && garde("bibliotheque", o.bibliotheque)),
+  })).filter((g) => g.occurrences.length > 0);
+  const nombreSources = groupes.reduce((s,g) => s+g.occurrences.length,0);
+  const TAILLE_PAGE = 10;
+  const paramPage = Number(premier1(parametres.page) ?? "1");
+  const nbPages = Math.max(1, Math.ceil(groupes.length / TAILLE_PAGE));
+  const page = Number.isSafeInteger(paramPage) && paramPage > 0 ? Math.min(nbPages, paramPage) : 1;
+  const cartesPage = groupes.slice((page - 1) * TAILLE_PAGE, page * TAILLE_PAGE);
+  const urlPage = (num: number) => {
+    const p = new URLSearchParams();
+    for (const [cle,valeur] of Object.entries(parametres)) {
+      if (cle === "page") continue;
+      if (Array.isArray(valeur)) valeur.forEach((v) => p.append(cle, v));
+      else if (typeof valeur === "string") p.append(cle, valeur);
+    }
+    p.set("page", String(num));
+    return "/recherche?" + p.toString();
+  };
   // Une requête hors arabe qui mène à un seul hadith : on montre le texte arabe auquel elle a été rapprochée.
   const rapproche = saisie && !estArabe(saisie) && trouves.length === 1 ? trouves[0] : undefined;
   // L'exemple incertain (ouvrage peu connu d'OpenITI) illustre le hadith des intentions.
   const incertainVisible = trouves.some((h) => h.id === "niyyat") && !recueil && !numero
     && garde("correspondance", "similarite") && garde("ouvrage", PEU_CONNUS) && garde("bibliotheque", "openiti");
 
-  function carte({ occurrence, hadith }: { occurrence: Occurrence; hadith: Hadith }) {
+  function carte({ hadith, occurrences }: { hadith: Hadith; occurrences: Occurrence[] }) {
+    const occurrence = occurrences[0]!;
     const traduction = hadith.traductions.find((x) => x.langue === locale);
     const premier = transmetteurParId(hadith.chaine.tronc[1] ?? hadith.chaine.tronc[0]!);
     const ouvrage = ouvrageParId(occurrence.ouvrage);
@@ -99,9 +118,9 @@ export default async function Recherche({
     const correspondance = correspondances[occurrence.correspondance];
     const reference = t("numero", { ouvrage: ouvrage?.nom ?? occurrence.ouvrage, numero: occurrence.numero });
     return (
-      <article key={occurrence.id} className={ui.carte} aria-labelledby={`resultat-${occurrence.id}`}>
+      <article key={hadith.id} className={`${ui.carte} ${styles.carteHadith}`} aria-labelledby={`resultat-${hadith.id}`}>
         <div className={styles.entete}>
-          <h2 id={`resultat-${occurrence.id}`} className={styles.titreResultat}>
+          <h2 id={`resultat-${hadith.id}`} className={styles.titreResultat}>
             <bdi>{reference}</bdi>{" "}
             <span className={ui.discret}>
               · <bdi lang="ar" dir="rtl" className="texte-arabe">{occurrence.livreAr}</bdi> (<bdi lang="ar-Latn" dir="ltr">{occurrence.livre}</bdi>)
@@ -137,6 +156,24 @@ export default async function Recherche({
           )}
           {bibliotheque && <span>{t("bibliotheque", { nom: bibliotheque.nom })}</span>}
         </p>
+        <details className={styles.sourcesDetail}>
+          <summary>{t("sourcesAssociees", { nombre: occurrences.length })} <span aria-hidden="true">⌄</span></summary>
+          <ol className={styles.listeSources}>
+            {occurrences.map((o) => {
+              const source = ouvrageParId(o.ouvrage);
+              const bibli = bibliothequeParId(o.bibliotheque);
+              return (
+                <li key={o.id}>
+                  <div><bdi lang="ar" dir="rtl" className="texte-arabe">{source?.nomAr ?? o.ouvrage}</bdi>
+                    <span className={styles.numeroRef}>№ <bdi dir="ltr">{o.numero}</bdi></span>
+                  </div>
+                  <p className={styles.sourceNote}>{t(correspondances[o.correspondance].libelle)} · {bibli?.nom ?? o.bibliotheque}</p>
+                </li>
+              );
+            })}
+          </ol>
+          <p className={styles.sourceNote}>{t("sourceNote")}</p>
+        </details>
         {occurrence.voie && (
           <div className={ui.actions}>
             <Link href={`/rapport/${hadith.id}`} className={ui.bouton}>{t("voirRapport")}</Link>
@@ -257,7 +294,12 @@ export default async function Recherche({
         </form>
 
         <section className={styles.resultats} aria-labelledby="titre-resultats">
-          {occurrences.map(carte)}
+          <div className={styles.resumeResultats} role="status">
+            <strong>{t("nombreResultats", {nombre:groupes.length, sources:nombreSources})}</strong>
+            <span>{t("corpusLimite", {nombre:corpus.hadiths.length})}</span>
+          </div>
+          <p className={styles.sourceGuide}>{t("sourceGuide")}</p>
+          {cartesPage.map(carte)}
           {incertainVisible && (
           <article className={`${ui.carte} ${styles.incertain}`} aria-labelledby="resultat-incertain">
             <div className={styles.entete}>
@@ -272,11 +314,18 @@ export default async function Recherche({
             )}
           </article>
           )}
-          {occurrences.length === 0 && !incertainVisible && (
+          {groupes.length === 0 && !incertainVisible && (
             <div className={ui.carte} role="status">
               <p>{t("aucunResultat")}</p>
               <p className={ui.discret}>{t("aucunResultatAide", { nombre: corpus.hadiths.length })}</p>
             </div>
+          )}
+          {nbPages > 1 && (
+            <nav className={styles.pagination} aria-label={t("pagination")}>
+              {page > 1 && <Link href={urlPage(page-1)}>{t("precedent")}</Link>}
+              <span>{t("pageCompte", {page, total:nbPages})}</span>
+              {page < nbPages && <Link href={urlPage(page+1)}>{t("suivant")}</Link>}
+            </nav>
           )}
         </section>
       </div>
