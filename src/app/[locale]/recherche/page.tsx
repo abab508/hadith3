@@ -9,6 +9,7 @@ import {
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
 import ResultatsImportes from "@/composants/ResultatsImportes";
 import ResultatsDistants, { RechercheDistanteLoading } from "@/composants/ResultatsDistants";
+import ResultatsNumero from "@/composants/ResultatsNumero";
 import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -227,7 +228,13 @@ export default async function Recherche({
         <p className={`${ui.badge} ${styles.exemple}`} data-ton="ocre">{t("exemple")}</p>
       </div>
 
-      {!livreChoisi && saisie && (
+      {!livreChoisi && saisie && numero && (
+        <Suspense key={"numero:"+numero+":"+(recueil??"tous")} fallback={<p role="status">{locale==="ar"?"جارٍ البحث برقم الحديث…":"Recherche du numéro dans les recueils indexés…"}</p>}>
+          <ResultatsNumero locale={locale} saisie={saisie} recueil={recueil} />
+        </Suspense>
+      )}
+
+      {!livreChoisi && saisie && !numero && (
         <Suspense key={[saisie,recueil,parametres.pageExterne,locale].join(":")} fallback={<RechercheDistanteLoading locale={locale} />}>
           <ResultatsDistants
             locale={locale}
@@ -268,7 +275,7 @@ export default async function Recherche({
           ))}
           {dansLeLivre.length === 0 && <p className={ui.carte} role="status">{t("aucunResultat")}</p>}
         </section>
-      ) : (
+      ) : (numero && groupes.length===0 ? null : (
       <div className={styles.colonnes}>
         <form method="get" className={`${ui.carte} ${styles.filtres}`} aria-labelledby="titre-filtres">
           <h2 id="titre-filtres" className={styles.titreFiltres}>{t("filtres.titre")}</h2>
@@ -349,7 +356,7 @@ export default async function Recherche({
           )}
         </section>
       </div>
-      )}
+      ))}
       {!livreChoisi && (
         <ResultatsImportes
           locale={locale}
