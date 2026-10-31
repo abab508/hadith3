@@ -25,7 +25,7 @@ function nomPropre(segment:string){
  let s=segment.replace(/^[\s،,.:؛"«»]+|[\s،,.:؛"«»]+$/gu,"").trim();
  // "قال حدثني" est un séparateur, "قال" seul n'est pas un narrateur.
  s=s.replace(/(?:[,،:]\s*)?قال\s*$/u,"").replace(/^\s*(?:قال|فقال)\s*[:،]?\s*/u,"");
- s=s.replace(/[-ـ]\s*رض(?:ي|ى)\s+الله\s+عنه(?:ا|م)?\s*[-ـ]?/gu,"");
+ s=s.replace(/(?:\s+|[-ـ])رض(?:ي|ى)\s+الله\s+عنه(?:ا|م)?\s*[-ـ]?/gu,"");
  s=s.replace(/\s+/gu," ").replace(/[\s،,.:؛]+$/gu,"").trim();
  if(s.length<2||s.length>110||/\b(?:بهذا|الاسناد|مثله|نحوه|الحديث)\b/u.test(s))return "";
  if(/^(?:النبي|رسول|الله|هو|هي|قال)$/u.test(s))return "";
@@ -33,7 +33,7 @@ function nomPropre(segment:string){
 }
 function remarqueSpecialisee(recueil:string,numero:number,nomAr:string){
  // Lien MANUEL et limité à cette notice. Ne jamais assimiler deux homonymes automatiquement.
- if(recueil==="sahih-bukhari"&&numero===1804&&nomAr==="ابي هريره"){
+ if(recueil==="sahih-bukhari"&&numero===1804&&nomAr==="ابي هريرة"){
    return {
      verdict:"compagnon" as const,
      qualification:{fr:"Compagnon : probité présumée selon la méthode sunnite",ar:"صحابي، تقرر عدالته في منهج أهل السنة",en:"Companion: presumed upright in Sunni hadith methodology"},
