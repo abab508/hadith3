@@ -25,3 +25,11 @@
 .concordance{border:1px solid #5ad8bc;background:#174b46;color:#d4fff3;}
 .concordance a{color:#f8f0c8;}
 .unconfirmed{border:1px solid #987952;background:#45341d;color:#ffe4b3;}
+
+/* Premier lien : fiche lisible intégrée, pas fichier JSON brut. */
+.detailLink{display:inline-flex;align-items:center;justify-content:center;min-block-size:2.8rem;padding:.58rem 1rem;
+ border:1px solid #74eed8;border-radius:.8rem;color:#07313b!important;
+ background:linear-gradient(125deg,#a5ffea,#6ce6d4);font-weight:850;text-decoration:none!important;
+ box-shadow:0 0 19px #44ecd34d;transition:transform .15s,box-shadow .15s;}
+.detailLink:hover{transform:translateY(-2px);box-shadow:0 0 26px #5ef8d66b;}
+@media(prefers-reduced-motion:reduce){.detailLink{transition:none;transform:none!important;}}
