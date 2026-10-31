@@ -65,7 +65,10 @@ describe("recherche dans le corpus", () => {
   });
 
   it("sépare les recueils de hadith des livres des autres catégories", () => {
-    expect(recueils().map((r) => r.id)).toEqual(["sahih-bukhari", "sahih-muslim", "sunan-abi-dawud"]);
+    expect(recueils().map((r) => r.id)).toEqual([
+      "sahih-bukhari", "sahih-muslim", "sunan-abi-dawud",
+      "jami-tirmidhi", "sunan-nasai", "sunan-ibn-majah", "muwatta",
+    ]);
     const categories = livresParCategorie();
     expect(categories.map((c) => c.categorie)).toEqual(["rijal"]);
     expect(categories[0]?.livres.map((l) => l.id)).toContain("taqrib");
