@@ -23,8 +23,8 @@ export async function readGithubIndex(){
   if(!Array.isArray(data.hadiths)||typeof data.version!=="string")throw Error("Malformed index.");
   return {sha:body.sha,index:data};
 }
-export async function appendToGithub(notices:ImportedNotice[]){
-  const {sha,index}=await readGithubIndex();
+export async function appendToGithub(notices:ImportedNotice[],snapshot?:Awaited<ReturnType<typeof readGithubIndex>>){
+  const {sha,index}=snapshot??await readGithubIndex();
   if(index.hadiths.length+notices.length>30000)throw Error("Index file size limit exceeded.");
   const all=[...index.hadiths,...notices];
   const payload={...index,hadiths:all};
