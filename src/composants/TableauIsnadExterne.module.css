@@ -79,27 +79,3 @@
 .assessments p{line-height:1.7;}
 .assessments a{font-size:.82rem;line-height:1.7;display:block;}
 @media print{.related,.assessments li,.otherRelated{background:white!important;color:#111!important;break-inside:avoid;}.related small,.assessments p,.limitation{color:#111!important;}}
-
-
-/* Rapport compact — palette ardoise, émeraude et or. */
-.root{background:linear-gradient(140deg,#20231d,#14271f);border-color:#657c65;box-shadow:0 15px 42px #080e0b80;}
-.header{border-color:#485e4e;}
-.header h2,.profile h3,.tableTitle,.assessments strong{color:#e9c486;}
-.header p,.profile p{color:#e7e9df;}
-.node{background:#222c25;border-color:#677b6b;color:#f7f5e9;}
-.node:hover,.node[aria-pressed="true"]{border-color:#75d2b1;box-shadow:0 0 0 3px #69c6a52b;}
-.node[data-role="thiqa"]{background:#1c4537;border-color:#70c3a4;}
-.node[data-role="divergent"]{background:#3d3423;border-color:#d7b775;}
-.profile{background:linear-gradient(145deg,#26372d,#1a2821);border-color:#809b89;}
-.profileName{color:#ffe5b1;}
-.notice{background:#233d33;border-color:#69c7a6;}
-.verdict{background:#17291f;border-color:#69c7a6;}
-.assessments li,.related{background:#20352b;border-color:#577968;}
-.tableTitle{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;border-color:#607866;}
-.tableTitle h3{margin:0;font-size:1.08rem;}
-.tableTitle p{font-size:.82rem;font-weight:500;margin:0;color:#c9e3d5;}
-.tableTitle button{border:1px solid #79c3a6;border-radius:999px;background:#285d48;color:#f3fff7;padding:.55rem .9rem;font:inherit;font-size:.88rem;cursor:pointer;}
-.tableTitle button:hover{background:#32745a;}
-.tableWrap th,.tableWrap td{border-color:#4e6755;}
-.footer{border-color:#496650;}
-@media print{.tableTitle button{display:none!important;}}
