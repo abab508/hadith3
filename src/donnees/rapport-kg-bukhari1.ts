@@ -1,5 +1,6 @@
 /** Premier dossier KG importé depuis l'export SQLite fourni.
- * Lie les dossiers KG importés par une concordance stricte du matn arabe,\n * indépendamment du numéro qui peut varier selon les éditions.
+ * Lie les dossiers KG importés par une concordance stricte du matn arabe,
+ * indépendamment du numéro qui peut varier selon les éditions.
  * Les avis aqwal n'indiquent pas toujours le volume et la page d'origine.
  */
 import dossier1 from "../../data/hadiths/kg-bukhari-1.json";
@@ -26,7 +27,16 @@ const bio=(r:KgRawi)=>{
 export function rapportKgBukhariUn(recueil:string,_numero:number,texteArabe:string|null,sourceArabe:string):ChaineExterneResult|null{
  if(recueil!=="sahih-bukhari"||!texteArabe)return null;
  const a=normaliser(texteArabe);
- // La correspondance exige une longue séquence du MATN, pas seulement le numéro\n // ou une coïncidence entre chaînes qui peuvent être partagées par plusieurs récits.\n const correspond=(report:KgReport)=>{\n  const sample=normaliser(report.hadith.taraf_nass);\n  return sample.length>=85 && a.includes(sample.slice(0,65)) &&\n   a.includes(sample.slice(-45));\n };\n const matches=([dossier1,dossier22] as KgReport[]).filter(correspond);\n if(matches.length!==1)return null; // zéro ou ambiguïté : conserver le repli prudent\n const dossier=matches[0]!;
+ // La correspondance exige une longue séquence du MATN, pas seulement le numéro
+ // ou une coïncidence entre chaînes qui peuvent être partagées par plusieurs récits.
+ const correspond=(report:KgReport)=>{
+  const sample=normaliser(report.hadith.taraf_nass);
+  return sample.length>=85 && a.includes(sample.slice(0,65)) &&
+   a.includes(sample.slice(-45));
+ };
+ const matches=([dossier1,dossier22] as KgReport[]).filter(correspond);
+ if(matches.length!==1)return null; // zéro ou ambiguïté : conserver le repli prudent
+ const dossier=matches[0]!;
  const members=dossier.chains[0]!.members;
  const m:MaillonExterne[]=members.filter(r=>r.pos!==0).slice().reverse().map((r,i)=>{
   const opinions=dossier.judgments_by_rawi_id[String(r.rawi_id)]??[];
