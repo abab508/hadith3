@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { loadDetail,validDetailParams } from "@/donnees/fiche-distante";
+import ActionsRapport from "@/composants/ActionsRapport";
 import styles from "./FicheDistante.module.css";
 
 type Parameters={locale:string;recueil:string;langue:string;numero:string};
@@ -75,6 +76,7 @@ export default async function FicheDistante({params}:Props){
  ]:[];
  const labelFor=(language:string)=>language==="ara"?t.arabic:language==="fra"?t.french:language==="eng"?t.english:t.text;
  return <main className={styles.root} id="contenu" tabIndex={-1}>
+  <ActionsRapport reportHref={`/rapport-source/${recueil}/${langue}/${numero}`} />
   <div className={styles.breadcrumb}>
    <Link href="/recherche">← {t.back}</Link><span aria-hidden="true">✦</span>
    <Link href="/sources">{t.sources}</Link>
@@ -122,6 +124,7 @@ export default async function FicheDistante({params}:Props){
     <p className={styles.disclaimer}>{t.caution} {langue==="ara"&&t.arabicNote}</p>
    </>
   )}
+  <ActionsRapport reportHref={`/rapport-source/${recueil}/${langue}/${numero}`} />
   <footer className={styles.footer}>
    <div><h2>{t.provenance}</h2><p>{t.originNote}</p></div>
    <a href={source} target="_blank" rel="noopener noreferrer">{t.origin} ↗</a>

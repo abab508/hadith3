@@ -1,5 +1,6 @@
 import { remoteLanguage,remoteSearch, EXTERNAL_COLLECTIONS } from "@/donnees/recherche-distante";
 import { Link } from "@/i18n/navigation";
+import { libellesRapport } from "@/composants/ActionsRapport";
 import styles from "./ResultatsDistants.module.css";
 
 const fr={
@@ -59,7 +60,10 @@ export default async function ResultatsDistants({locale,saisie,recueil,page,rech
        {h.concordance?.status==="number-only"&&<p className={styles.unconfirmed}>{t.onlyNumber}</p>}
        {h.concordance?.status==="unavailable"&&<p className={styles.unconfirmed}>{t.noMatch}</p>}
        {h.grades.length>0&&<p className={styles.grade}>{t.grade}: {h.grades.map(g=>g.name+" : "+g.grade).join(" · ")}</p>}
-       <Link href={"/source/"+h.recueil+"/"+h.langue+"/"+h.numero} className={styles.detailLink}>{t.open} ↗</Link>
+       <div className={styles.cardActions}>
+         <Link href={"/source/"+h.recueil+"/"+h.langue+"/"+h.numero} className={styles.detailLink}>{t.open} ↗</Link>
+         <Link href={"/rapport-source/"+h.recueil+"/"+h.langue+"/"+h.numero} className={styles.reportLink}>▤ {libellesRapport(locale).report} ↗</Link>
+       </div>
      </li>)}
    </ol>
    {result.pageTotal>1&&<nav className={styles.pagination}>

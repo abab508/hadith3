@@ -5,6 +5,7 @@ import { entree } from "@/donnees/catalogue";
 import type { Bibliotheque } from "@/donnees/schemas/corpus";
 import Terme from "@/composants/Terme";
 import ChaineRapport from "@/composants/ChaineRapport";
+import ActionsRapport from "@/composants/ActionsRapport";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
 import styles from "./Rapport.module.css";
@@ -51,6 +52,7 @@ export default async function Rapport({
   if (!hadith) {
     return (
       <main id="contenu" tabIndex={-1} className={ui.page}>
+        <ActionsRapport />
         <h1>{t("titreNotFound")}</h1>
         <p>{t("hadithNotFound")}</p>
       </main>
@@ -72,6 +74,7 @@ export default async function Rapport({
 
   return (
     <main id="contenu" tabIndex={-1} className={ui.page}>
+      <ActionsRapport print />
       <p>
         <Link href={{ pathname: "/chaine", query: { hadith: hadith.id } }}>{t("autreHadith")}</Link>
       </p>
@@ -166,6 +169,7 @@ export default async function Rapport({
       </div>
 
       <p className={ui.avertissement}>{t("avertissementData")}</p>
+      <ActionsRapport print />
     </main>
   );
 }

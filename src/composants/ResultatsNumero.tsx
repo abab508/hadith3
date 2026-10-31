@@ -2,6 +2,7 @@ import { readIndex } from "@/donnees/index-leger";
 import { EXTERNAL_COLLECTIONS } from "@/donnees/recherche-distante";
 import { numeroDemande } from "@/donnees/recherche";
 import { Link } from "@/i18n/navigation";
+import { libellesRapport } from "@/composants/ActionsRapport";
 import styles from "./ResultatsNumero.module.css";
 
 /** Recherche par numéro : toujours traiter les références AVANT le corpus de démonstration.
@@ -62,6 +63,7 @@ export default async function ResultatsNumero({locale,saisie,recueil}:{locale:st
      <div className={styles.links}>
       {r.fr&&<Link className={styles.primary} href={"/source/"+r.collection.id+"/fra/"+r.numero}>{t.readFr} ↗</Link>}
       {r.ar&&<Link className={styles.secondary} href={"/source/"+r.collection.id+"/ara/"+r.numero}>{t.readAr} ↗</Link>}
+      <Link className={styles.secondary} href={"/rapport-source/"+r.collection.id+"/"+(locale==="ar"||!r.fr?"ara":"fra")+"/"+r.numero}>▤ {libellesRapport(locale).report} ↗</Link>
      </div>
      {r.fr&&r.ar&&<p className={r.aligned?styles.match:styles.unconfirmed}>{r.aligned?"✓ "+t.aligned:t.notAligned}</p>}
     </article>

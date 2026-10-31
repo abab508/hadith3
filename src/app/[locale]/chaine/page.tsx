@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, hadithParId } from "@/donnees/corpus";
 import RechercheChaine from "@/composants/RechercheChaine";
+import ActionsRapport from "@/composants/ActionsRapport";
 import ui from "@/composants/Interface.module.css";
 import styles from "./Chaine.module.css";
 
@@ -27,6 +28,7 @@ export default async function Chaine({
 
   return (
     <main id="contenu" tabIndex={-1} className={ui.page}>
+      <ActionsRapport reportHref={hadith ? `/rapport/${hadith.id}` : undefined} />
       <div className={styles.intro}>
         <h1 className={styles.titre}>{t("titre")}</h1>
         <p>{t("intro")}</p>
