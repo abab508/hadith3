@@ -341,5 +341,14 @@
     "source": "Kaynak ve ayrıntılar",
     "aide": "Önce oku, sonra kelimeyi hatırla. Boşluklu metin yeni bir hadis alıntısı değildir.",
     "aucun": "Alıntı bulunamadı"
+  },
+  "apparence": {
+    "titre": "Görünüm",
+    "auto": "Otomatik",
+    "clair": "Açık",
+    "sombre": "Koyu",
+    "animations": "Animasyonlar",
+    "activer": "Hareketi aç",
+    "reduire": "Hareketi azalt"
   }
 }

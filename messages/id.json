@@ -341,5 +341,14 @@
     "source": "Lihat sumber dan rincian",
     "aide": "Baca dahulu, lalu tutup teks atau cari kata. Soal rumpang bukan kutipan baru.",
     "aucun": "Belum ada kutipan"
+  },
+  "apparence": {
+    "titre": "Tampilan",
+    "auto": "Otomatis",
+    "clair": "Terang",
+    "sombre": "Gelap",
+    "animations": "Animasi",
+    "activer": "Aktifkan animasi",
+    "reduire": "Kurangi animasi"
   }
 }

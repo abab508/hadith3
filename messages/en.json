@@ -341,5 +341,14 @@
     "source": "View source and details",
     "aide": "Read first, then hide or recall a word. A gap exercise is not a new hadith quotation.",
     "aucun": "No excerpts available"
+  },
+  "apparence": {
+    "titre": "Appearance",
+    "auto": "Auto",
+    "clair": "Light",
+    "sombre": "Dark",
+    "animations": "Animations",
+    "activer": "Enable motion",
+    "reduire": "Reduce motion"
   }
 }

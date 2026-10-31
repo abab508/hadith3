@@ -341,5 +341,14 @@
     "source": "Lihat sumber dan butiran",
     "aide": "Baca dahulu dan kemudian ingat perkataan. Latihan tempat kosong bukan petikan hadis baharu.",
     "aucun": "Tiada petikan"
+  },
+  "apparence": {
+    "titre": "Paparan",
+    "auto": "Auto",
+    "clair": "Cerah",
+    "sombre": "Gelap",
+    "animations": "Animasi",
+    "activer": "Hidupkan animasi",
+    "reduire": "Kurangkan animasi"
   }
 }

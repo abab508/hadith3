@@ -341,5 +341,14 @@
     "source": "Voir la source et la fiche",
     "aide": "Commence par lire, puis masque le texte ou retrouve un mot. La phrase à trou n’est qu’un exercice, pas une nouvelle citation.",
     "aucun": "Aucun extrait disponible"
+  },
+  "apparence": {
+    "titre": "Apparence",
+    "auto": "Auto",
+    "clair": "Clair",
+    "sombre": "Sombre",
+    "animations": "Animations",
+    "activer": "Activer les animations",
+    "reduire": "Réduire les animations"
   }
 }

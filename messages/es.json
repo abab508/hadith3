@@ -341,5 +341,14 @@
     "source": "Ver fuente y detalles",
     "aide": "Lee primero y luego oculta o recupera una palabra. El ejercicio no es una cita nueva.",
     "aucun": "No hay fragmentos"
+  },
+  "apparence": {
+    "titre": "Apariencia",
+    "auto": "Auto",
+    "clair": "Claro",
+    "sombre": "Oscuro",
+    "animations": "Animaciones",
+    "activer": "Activar animaciones",
+    "reduire": "Reducir animaciones"
   }
 }
