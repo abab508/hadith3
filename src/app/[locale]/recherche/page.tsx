@@ -6,6 +6,7 @@ import {
   livresParCategorie, modes, numeroDemande, recueils, type Mode,
 } from "@/donnees/recherche";
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
+import ResultatsImportes from "@/composants/ResultatsImportes";
 import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -44,7 +45,7 @@ export default async function Recherche({
 }: {
   params: Promise<{ locale: string }>;
   searchParams: Promise<Record<
-    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page",
+    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page" | "pageImport",
     string | string[] | undefined
   >>;
 }) {
@@ -329,6 +330,15 @@ export default async function Recherche({
           )}
         </section>
       </div>
+      )}
+      {!livreChoisi && (
+        <ResultatsImportes
+          locale={locale}
+          saisie={saisie ?? ""}
+          recueil={recueil}
+          page={Number(premier1(parametres.pageImport) ?? "1")}
+          recherche={urlPage(page).split("?")[1] ?? ""}
+        />
       )}
     </main>
   );

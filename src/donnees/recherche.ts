@@ -1,4 +1,5 @@
 import { corpus, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
+import indexBrut from "../../data/hadiths/index-imports.json" with { type: "json" };
 import type { Hadith, Ouvrage as OuvrageCorpus, Transmetteur } from "@/donnees/schemas/corpus";
 
 export const modes = [
@@ -122,7 +123,10 @@ const tousLesOuvrages = () => corpus.bibliotheques.flatMap((b) => b.ouvrages);
 
 // Recueils de hadith présents dans le corpus, dans l'ordre d'apparition.
 export function recueils(): Ouvrage[] {
-  const ids = [...new Set(corpus.hadiths.flatMap((h) => h.occurrences.map((o) => o.ouvrage)))];
+  const ids = [...new Set([
+    ...corpus.hadiths.flatMap((h) => h.occurrences.map((o) => o.ouvrage)),
+    ...indexBrut.hadiths.map((h) => h.recueil),
+  ])];
   return ids.flatMap((id) => {
     const o = ouvrageParId(id);
     return o && o.categorie === "hadith" ? [resume(o)] : [];
