@@ -1,8 +1,8 @@
-name: Milaghaiba - quality checks
+name: Mina Gaiba 2 - quality checks
 
 on:
   push:
-    branches: [main]
+    branches: [main, mina-gaiba-2]
   workflow_dispatch:
 
 permissions:
