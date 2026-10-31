@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Mina Gaiba 2",
+    "titre": "Milaghaiba",
     "sousTitre": "Teks Arab asal dahulu, bersama sumber, rujukan dan terjemahan yang dinyatakan asalnya.",
     "etat": "Versi demonstrasi: data yang dipaparkan ialah contoh yang menunggu pengesahan pakar.",
     "exempleTerme": "Contoh istilah:",
@@ -43,7 +43,7 @@
         "texte": "Edisi kritis dan terjemahan baharu: rujukan dan halaman dinyatakan tanpa menyalin teks."
       }
     },
-    "avertissement": "Mina Gaiba 2 ialah alat carian dan dokumentasi. Ia tidak mengeluarkan fatwa dan tidak menggantikan pakar."
+    "avertissement": "Milaghaiba ialah alat carian dan dokumentasi. Ia tidak mengeluarkan fatwa dan tidak menggantikan pakar."
   },
   "selecteurLangue": {
     "titre": "Bahasa",
@@ -142,7 +142,7 @@
   },
   "entete": {
     "slogan": "Carian dan pengesahan dokumentari hadis",
-    "accueil": "Laman utama Mina Gaiba 2"
+    "accueil": "Laman utama Milaghaiba"
   },
   "recherche": {
     "titre": "Hasil",

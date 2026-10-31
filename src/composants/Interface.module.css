@@ -193,3 +193,13 @@
 .bouton,.boutonSecondaire{border-radius:999px;transition:transform .2s,box-shadow .2s;}
 .bouton:hover:not(:disabled),.boutonSecondaire:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px #050d2221;}
 @media(prefers-reduced-motion:reduce){.carte,.bouton,.boutonSecondaire{transition:none!important;transform:none!important;}}
+
+
+/* Panneaux secondaires du même univers graphique */
+.carte{border-color:#476b8d;background:linear-gradient(140deg,#17314f,#0f243d);box-shadow:inset 0 1px #c5eeff18,0 15px 39px #030e285c;}
+.carte:hover{border-color:#7be9d6;box-shadow:0 0 22px #52e7d335,0 21px 55px #020d2a80;}
+.bouton{background:linear-gradient(150deg,#9bf8e3,#60dfd0);border-color:#9bfff0;color:#0b2a35;font-weight:800;box-shadow:0 0 20px #4aebd144;}
+.boutonSecondaire{background:linear-gradient(140deg,#173858,#0a203c);border-color:#65acd4;color:#effbff;}
+.badge[data-ton="ocre"]{border:1px solid #aa8446;background:#47341e;color:#fff0cb;}
+.badge[data-ton="accent"]{border:1px solid #428d87;background:#144b48;color:#d9fff4;}
+.champ input[type="search"],.champ input[type="text"]{background:#102640;color:#f6fbff;border-color:#527998;}

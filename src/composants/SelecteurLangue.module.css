@@ -12,3 +12,33 @@
 .liens a[aria-current="page"]{border-color:var(--accent);background:var(--accent-doux);color:var(--accent);text-decoration:none;}
 @media(max-width:680px){.selecteur{padding-inline:.85rem;}.langues{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-block-end:.4rem;}.langues li{flex:none;}.liens{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;}.liens li{flex:none;}}
 @media(prefers-reduced-motion:reduce){.langues a,.liens a{transition:none;}}
+
+/* Navigation en capsules de verre, liseré cyan et menus calligraphiques. */
+.selecteur{max-inline-size:94rem;padding-inline:clamp(.8rem,3.5vw,2.8rem);padding-block:0 1rem;}
+.titre{color:#d9e9f8;font-size:.8rem;margin-block:.15rem .45rem;}
+.langues{gap:.45rem .65rem;}
+.langues a,.langues .indisponible{
+ min-block-size:2.85rem;padding:.38rem 1rem;
+ border:1px solid #507d9c;border-radius:999px;
+ background:linear-gradient(160deg,#142f4d,#0b1c35);
+ color:#f2f6fd;font-family:"Cormorant Garamond","Noto Naskh Arabic",Georgia,serif;
+ font-size:clamp(.9rem,1.25vw,1.1rem);font-weight:700;
+ box-shadow:inset 0 1px #ffffff19,0 5px 18px #020e2633;
+ transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;
+}
+.langues a:hover{border-color:#7cfff0;box-shadow:0 0 20px #43eed95b;transform:translateY(-2px);}
+.langues a[aria-current="page"]{color:#c4fff1;background:linear-gradient(150deg,#0b3e4e,#0d263c);border:1.5px solid #69fbe0;box-shadow:0 0 0 2px #77ffe51b,0 0 18px #45fddd83,inset 0 0 13px #26f6e32a;}
+.langues .indisponible{opacity:.67;}
+.langues bdi[dir="rtl"]{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:1.04rem;line-height:1.7;}
+.liens{border-block-start:1px solid #406588;padding-block-start:1.05rem;margin-block-start:.65rem;gap:.5rem 1rem;}
+.liens a{
+ min-block-size:3.15rem;padding:.48rem 1.05rem;border-radius:.8rem;
+ color:#fff0d5;font-family:"Cormorant Garamond","Noto Naskh Arabic",Georgia,serif;
+ font-size:clamp(1.03rem,1.7vw,1.26rem);font-weight:700;text-shadow:0 0 10px #ffd49a24;
+ transition:transform .2s,color .2s,background .2s,box-shadow .2s;
+}
+:global(html[lang="ar"]) .liens a{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.7;}
+.liens a:hover{color:#b5ffef;background:#0b444e6b;box-shadow:0 0 14px #46efdf30;}
+.liens a[aria-current="page"]{color:#baffef;border-color:#6cfce15f;background:#174852;}
+@media(max-width:680px){.selecteur{padding-inline:.85rem;}.langues{gap:.5rem;}.langues a{white-space:nowrap;}.liens{gap:.3rem;}}
+@media(prefers-reduced-motion:reduce){.langues a,.liens a{transition:none;transform:none!important;}}

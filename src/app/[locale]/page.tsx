@@ -36,6 +36,7 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
       <section className={styles.hero} aria-labelledby="titre-accueil">
         <h1 id="titre-accueil" className={styles.titre}>{t("accueil.titre")}</h1>
         <p className={styles.sousTitre}>{t("accueil.sousTitre")}</p>
+        <span className={styles.heroDivider} aria-hidden="true" />
         <p className={`${ui.badge} ${styles.etat}`} data-ton="ocre">{t("accueil.etat")}</p>
         <p className={styles.terme}>
           {t("accueil.exempleTerme")} <Terme id="hasan" />

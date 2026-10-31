@@ -65,3 +65,131 @@ font-weight:700;letter-spacing:0;line-height:1.6;}
 .heroCTA{box-shadow:0 16px 42px #41cbb34c;transition:transform .25s,box-shadow .25s;}
 .heroCTA:hover{box-shadow:0 24px 52px #41cbb373;}
 @media(prefers-reduced-motion:reduce){.heroCTA{transition:none;}}
+
+
+/* Panneau d'accueil fidèle à la maquette : vitrail bleu, grille, or et turquoise. */
+.accueil{max-inline-size:94rem;padding-inline:clamp(.7rem,3vw,2.7rem);padding-block:2rem 5rem;gap:2.7rem;}
+.hero{
+ min-block-size:clamp(32rem,48vw,40rem);
+ padding:clamp(2rem,5vw,4rem) clamp(.9rem,4vw,4rem);
+ gap:1.05rem;align-items:center;text-align:center;
+ border:1px solid #5c89a8;border-radius:2.65rem;
+ background:
+ radial-gradient(ellipse 48% 68% at 82% 75%,#087e8955,transparent 85%),
+ radial-gradient(ellipse 58% 72% at 13% 15%,#566ea85c,transparent 78%),
+ linear-gradient(130deg,#152d50,#102947 55%,#0a2942);
+ box-shadow:inset 0 1px #c0d8ff50,inset 0 -30px 55px #00142733,0 28px 95px #020b229c;
+}
+.hero::before{
+ background-image:linear-gradient(#6ba3d523 1px,transparent 1px),linear-gradient(90deg,#6ba3d523 1px,transparent 1px);
+ background-size:62px 62px;opacity:1;mask-image:linear-gradient(90deg,transparent,#000c 11%,#000c 89%,transparent);
+}
+.hero::after{
+ content:"✦";font-size:clamp(2rem,4vw,3.65rem);
+ inset-inline-end:auto;inset-inline-start:8%;inset-block-start:11%;
+ color:#ffe8ae;opacity:1;
+ text-shadow:0 0 7px #ffd18b,0 0 21px #ffd383,0 0 39px #dea650;
+ animation:hadithFloat 6s ease-in-out infinite;
+}
+.titre{
+ position:relative;isolation:isolate;margin:0;
+ inline-size:fit-content;max-inline-size:100%;
+ font-family:"Berkshire Swash","Cormorant Garamond",Georgia,serif;
+ font-size:clamp(3.6rem,8vw,8.3rem);font-weight:400;
+ line-height:1.24;letter-spacing:-.055em;text-align:center;
+ background:linear-gradient(180deg,#fff8e4 0%,#fff0c8 24%,#ffe3a5 42%,#d3984c 73%,#fff4d3 100%);
+ -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+ filter:drop-shadow(0 3px 1px #744319) drop-shadow(0 0 12px #f9bf7399) drop-shadow(0 12px 27px #050b1b);
+ animation:hadithRise .75s both;
+}
+.titre::after{
+ content:"";display:block;position:absolute;inline-size:83%;block-size:1px;
+ inset-inline-start:8%;inset-block-end:.11em;
+ background:linear-gradient(90deg,transparent,#f8be69,#ffedba,#eaa855,transparent);
+ box-shadow:0 1px 13px #ffa957;transform:rotate(-1deg);
+}
+:global(html[lang="ar"]) .titre{
+ font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;
+ font-size:clamp(3.7rem,9vw,9rem);
+ font-weight:700;line-height:1.53;letter-spacing:normal;
+}
+:global(html[lang="ur"]) .titre{
+ font-family:"Noto Nastaliq Urdu",serif;
+ font-size:clamp(2.75rem,6vw,5.7rem);
+ line-height:2;letter-spacing:normal;
+}
+.sousTitre{
+ max-inline-size:65rem;font-size:clamp(1.08rem,2.3vw,1.64rem);
+ color:#e7f0fd;line-height:1.9;text-align:center;margin-inline:auto;
+ text-shadow:0 1px 9px #020c2b;
+}
+:global(html[lang="ar"]) .sousTitre{font-family:"Noto Naskh Arabic",serif;font-size:clamp(1.1rem,2.2vw,1.6rem);line-height:2;}
+.heroDivider{
+ display:block;inline-size:min(15rem,60%);block-size:1px;margin-block:.04rem;
+ position:relative;background:linear-gradient(90deg,transparent,#ffe1a1,#dc9e50,transparent);
+ box-shadow:0 0 10px #e8b0688a;
+}
+.heroDivider::after{
+ content:"✧";position:absolute;inset-inline-start:50%;inset-block-start:-.94rem;
+ transform:translateX(-50%);font-size:1.15rem;color:#ffd795;
+}
+.etat{
+ background:linear-gradient(180deg,#574326,#221a11)!important;
+ border:1px solid #d8a758!important;color:#fff0cb!important;
+ border-radius:999px;padding:.43rem 1.45rem!important;
+ box-shadow:0 0 18px #d7a05b3c,inset 0 1px #fff2b447;
+ text-align:center;line-height:1.85;font-size:.9rem!important;font-weight:750;
+}
+.terme{color:#d0e3f8;text-align:center;font-size:clamp(.92rem,1.45vw,1.1rem);}
+.heroActions{justify-content:center;margin-block-start:1.25rem;gap:1.35rem;}
+.heroCTA,.heroSecondary{
+ min-block-size:4.4rem;padding:1rem 2rem;
+ border-radius:1.45rem;gap:.75rem;
+ font-family:"Cormorant Garamond","Noto Naskh Arabic",Georgia,serif;
+ font-size:clamp(1.13rem,1.85vw,1.5rem);font-weight:700;
+ transition:transform .25s,box-shadow .25s,filter .25s;
+}
+:global(html[lang="ar"]) .heroCTA,:global(html[lang="ar"]) .heroSecondary{
+ font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;
+ font-size:clamp(1.25rem,2.2vw,1.6rem);
+}
+.heroCTA{
+ color:#062734;background:linear-gradient(155deg,#b0ffe9,#65e8d6 68%,#8efbe9);
+ border:2px solid #a6fbea;
+ box-shadow:inset 0 2px #f4fffa9f,0 0 0 4px #1c9d8f55,0 0 26px #24ffe26a,0 17px 45px #01adba48;
+}
+.heroSecondary{
+ color:#fff;background:linear-gradient(155deg,#153252,#06162e);
+ border:2px solid #70c6ff;
+ box-shadow:inset 0 2px #b7ddff49,0 0 0 4px #174366,0 0 20px #4dc7ff68;
+}
+.heroCTA:hover,.heroSecondary:hover{
+ filter:brightness(1.07);transform:translateY(-3px);
+ box-shadow:inset 0 2px #f5fff87c,0 0 0 4px #3bdfcf50,0 0 34px #39ffe19c,0 20px 46px #031129b8;
+}
+.barre{border-color:#527f9e;border-radius:1.5rem;background:linear-gradient(150deg,#1b3b57,#0f283f);box-shadow:0 16px 46px #0210246f;}
+.barre:focus-within{border-color:#7af8e0;box-shadow:0 0 25px #5af0d24f;}
+.saisie{color:#f5fcff;}
+.saisie::placeholder{color:#b5c9d9;}
+.mode span{background:#152c47;border-color:#4d7695;color:#e5f1fa;}
+.mode input:checked+span{background:linear-gradient(125deg,#7befd9,#b6fff0);color:#082c35;box-shadow:0 0 17px #40e6d56a;}
+.memoireFeature{
+ border-color:#498baa;
+ background:radial-gradient(ellipse at 80% 25%,#1798976d,transparent 60%),linear-gradient(120deg,#193554,#11374a);
+ box-shadow:0 22px 55px #030e285e;
+}
+.memoireFeature a{box-shadow:0 0 21px #42dccc65;}
+.grille article{border-color:#456f92;background:linear-gradient(150deg,#19354f,#0c2138);}
+.grille article:hover{box-shadow:0 0 23px #58f7dd3a,0 22px 52px #020e2b;}
+@media(max-width:750px){
+ .hero{min-block-size:auto;border-radius:1.8rem;padding:2.8rem .9rem;}
+ .titre{font-size:clamp(2.9rem,11vw,5.2rem);}
+ :global(html[lang="ar"]) .titre{font-size:clamp(3rem,12vw,5.8rem);}
+ .heroActions{gap:.9rem;}
+ .heroCTA,.heroSecondary{min-block-size:3.6rem;padding:.75rem 1.15rem;border-radius:1.1rem;}
+}
+@media(max-width:450px){
+ .heroActions{flex-direction:column;align-items:stretch;inline-size:min(100%,19rem);}
+ .heroActions a{justify-content:center;}
+}
+@media(prefers-reduced-motion:reduce){.hero::after{animation:none;}}

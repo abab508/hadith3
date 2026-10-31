@@ -6,3 +6,17 @@
 .nom{color:var(--texte);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:900;letter-spacing:-.02em;}
 .slogan{color:var(--discret);font-size:.92rem;flex:1 1 15rem;max-inline-size:27rem;}
 @media(max-width:630px){.marque{padding-inline:.85rem;}.slogan{order:3;flex-basis:100%;font-size:.8rem;}}
+
+/* En-tête majestueux de la maquette : verre bleu nuit et signature dorée. */
+.entete{background:radial-gradient(ellipse at 16% 0%,#244f7970,transparent 65%),linear-gradient(120deg,#0b213c,#0c1930 62%,#091d35);border-block-end:1px solid #335b7c;box-shadow:0 18px 43px #020d2255;}
+.entete::before{block-size:1px;background:linear-gradient(90deg,transparent,#88d3eaa0,#f9ca86ac,transparent);}
+.marque{max-inline-size:94rem;min-block-size:5.2rem;padding-inline:clamp(.8rem,3.5vw,2.8rem);padding-block:.8rem .6rem;gap:.6rem 2rem;}
+.lienMarque{color:#abf9ed;transition:transform .25s,filter .25s;}
+.lienMarque:hover{transform:translateY(-1px);filter:drop-shadow(0 0 11px #8decdb75);}
+.logo{inline-size:2.7rem;block-size:2.7rem;filter:drop-shadow(0 0 12px #80fff0aa);}
+.nom{font-family:"Berkshire Swash","Cormorant Garamond",Georgia,serif;font-size:clamp(1.65rem,3.2vw,2.7rem);font-weight:400;letter-spacing:-.01em;line-height:1.4;background:linear-gradient(165deg,#fff7df,#ffe7ae 40%,#da9f50 78%,#fff0c1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 4px #a05b2e88);}
+:global(html[lang="ar"]) .nom{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:clamp(1.6rem,3vw,2.8rem);font-weight:700;line-height:1.8;letter-spacing:normal;}
+:global(html[lang="ur"]) .nom{font-family:"Noto Nastaliq Urdu",serif;letter-spacing:normal;}
+.slogan{color:#d9e7f7;max-inline-size:33rem;font-size:.94rem;font-weight:550;text-align:center;}
+@media(max-width:850px){.marque{gap:.35rem 1rem;}.slogan{order:3;flex-basis:100%;max-inline-size:none;text-align:start;}}
+@media(prefers-reduced-motion:reduce){.lienMarque{transition:none;transform:none!important;}}

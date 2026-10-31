@@ -169,3 +169,42 @@ html:lang(ur) :where(h1,h2,h3){font-family:"Noto Nastaliq Urdu",serif;letter-spa
 :where(main) :where(p,li){overflow-wrap:anywhere;}
 :where(.texte-arabe){font-family:"Noto Naskh Arabic",serif;font-optical-sizing:auto;font-feature-settings:"kern" 1;}
 :where(blockquote){border-inline-start:3px solid var(--ocre);padding-inline-start:1.4rem;margin-inline:0;}
+
+
+/* Milaghaiba Prestige — palette bleu nuit, or calligraphique, turquoise.
+   La lecture de l'arabe et le mode clair manuel restent disponibles. */
+:root,:root[data-theme="auto"],:root[data-theme="dark"]{
+ color-scheme:dark;
+ --fond:#071529;--texte:#f5f7ff;--discret:#c4d4e6;
+ --accent:#72f1df;--surface:#132a47;--bordure:#426582;
+ --sur-accent:#06293a;--accent-doux:#174b50;
+ --ocre:#f6cc83;--ocre-doux:#45351e;
+ --info:#a9cafa;--info-doux:#233b5d;
+ --alerte:#ffb5a8;--alerte-doux:#503039;--neutre-doux:#263d55;
+}
+:root[data-theme="light"]{
+ color-scheme:light;
+ --fond:#edf5fa;--texte:#142d42;--discret:#4b6479;
+ --accent:#087f72;--surface:#fff;--bordure:#aec6d8;
+ --sur-accent:#fff;--accent-doux:#d9f3eb;
+ --ocre:#875a22;--ocre-doux:#fbefda;--info:#295fa2;--info-doux:#e6effc;
+ --alerte:#aa4331;--alerte-doux:#fbe5e0;--neutre-doux:#e6eef5;
+}
+body{
+ background-color:var(--fond);
+ background-image:
+ radial-gradient(ellipse 780px 520px at 8% 4%,#254c8355,transparent 78%),
+ radial-gradient(ellipse 850px 560px at 91% 20%,#098c9833,transparent 73%),
+ linear-gradient(135deg,#09192f,#071426 60%,#081e34);
+ background-attachment:fixed;
+}
+html[data-theme="light"] body{
+ background-image:radial-gradient(ellipse 790px 530px at 8% 4%,#d5e4f9,transparent 78%),
+ radial-gradient(ellipse 790px 550px at 94% 24%,#b1f2e378,transparent 75%);
+}
+html{--police-titre-latine:"Cormorant Garamond",Georgia,"Palatino Linotype",serif;}
+html:lang(ar){--police-titre-arabe:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;}
+:where(h1,h2,h3){text-wrap:balance;}
+:where(h1,h2){font-family:var(--police-titre-latine);}
+html:lang(ar) :where(h1,h2,h3){font-family:var(--police-titre-arabe);line-height:1.8;}
+::selection{background:#67e9d3;color:#071a2b;}

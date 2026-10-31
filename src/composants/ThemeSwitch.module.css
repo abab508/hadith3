@@ -8,3 +8,14 @@
 .motion:hover{background:var(--accent-doux);}
 @media(max-width:540px){.label{display:none;}.choice{padding:.4rem .55rem;}.controls{gap:.3rem;}}
 @media(prefers-reduced-motion:reduce){.choice,.motion{transition:none!important;}}
+
+
+/* Sélecteur d'apparence premium */
+.controls{color:#f7f0e4;gap:.65rem;}
+.label{color:#cfdeec;font-size:.82rem;}
+.segment{padding:.2rem;border:1px solid #5982a1;border-radius:999px;background:#07162c;box-shadow:inset 0 2px 7px #0009;}
+.choice{font-family:"Cormorant Garamond","Noto Naskh Arabic",serif;font-size:1rem;font-weight:700;color:#e2eafa;min-block-size:2.7rem;}
+.choice:hover{color:#76f9e8;}
+.choice[data-selected="true"],.choice[data-selected="true"]:hover{color:#072537;background:linear-gradient(120deg,#8df8e1,#58e4d0);box-shadow:0 0 18px #65f6e089;}
+.motion{inline-size:3rem;block-size:3rem;color:#b7fff1;border-color:#60a2cf;background:radial-gradient(circle,#17425e,#0b1d36);box-shadow:0 0 16px #41d9e44d;}
+.motion:hover{background:#215a70;}
