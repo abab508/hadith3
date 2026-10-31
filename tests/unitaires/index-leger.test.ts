@@ -14,6 +14,12 @@ describe("index compact hadith-api@1",()=>{
   expect(results.every(x=>x.numero>0&&x.section>0&&x.dansSection>0)).toBe(true);
   const n=searchIndex(index!,"1");
   expect(n.every(x=>x.numero===1)).toBe(true);
+  // Régression : un numéro seul doit correspondre au hadith de cette édition, pas au seul corpus local.
+  const ref1804=searchIndex(index!,"1804");
+  expect(ref1804).toHaveLength(1);
+  expect(ref1804[0]?.numero).toBe(1804);
+  expect(searchIndex(index!,"١٨٠٤")).toEqual(ref1804);
+  expect(searchIndex(index!,"۱۸۰۴")).toEqual(ref1804);
   expect(searchIndex(index!,"motabsentabcdxyz")).toHaveLength(0);
  });
  it("exige numéro ET livre ET rang pour relier les éditions",()=>{
