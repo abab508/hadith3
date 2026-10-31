@@ -94,6 +94,9 @@ export default async function RapportSource({params}:Props){
    h.occurrences.some(o=>o.ouvrage===recueil&&o.numero===String(number))&&
    (()=>{const original=normaliser(h.texteAr);const a=original.slice(0,Math.min(50,original.length));return a.length>=35&&(texteNormalise.includes(a)||original.includes(texteNormalise.slice(0,50)));})()
  ):undefined;
+ const personnes=chaine.maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur");
+ const referencesIndividuelles=personnes.filter(m=>Boolean(m.referenceUrl||m.jugements?.length));
+ const pourcentageDocumentation=personnes.length?Math.round(100*referencesIndividuelles.length/personnes.length):0;
  const ref=detail?.hadith.reference;
  const grades=detail?.hadith.grades?.filter(g=>g&&typeof g.name==="string"&&typeof g.grade==="string")??[];
  const texts=detail?[
@@ -118,6 +121,11 @@ export default async function RapportSource({params}:Props){
     <p>{locale==="fr"?"Un dossier local correspondant à cette référence et à ce texte arabe contient des voies et fiches documentaires supplémentaires.":locale==="ar"?"توجد لهذا المرجع ونصه العربي دراسة محلية تتضمن طرقاً وتراجم إضافية.":"A matching local dossier contains additional transmission routes and narrator records."}</p>
     <Link href={`/rapport/${rapportLocal.id}`} className={styles.source}>{locale==="fr"?"Ouvrir le rapport détaillé avec biographies et voies":locale==="ar"?"فتح التقرير المفصل":"Open detailed narrator report"} ↗</Link>
   </section>}
+  <section className={styles.documentationState} aria-label={locale==="fr"?"Couverture documentaire":locale==="ar"?"التوثيق":"Documentation coverage"}>
+   <strong>{locale==="fr"?"Couverture des biographies et références":locale==="ar"?"تغطية التراجم والمراجع":"Narrator documentation coverage"}</strong>
+   <span>{referencesIndividuelles.length} / {personnes.length} · {pourcentageDocumentation}%</span>
+   <p>{locale==="fr"?"Cet indicateur mesure les liens individuels disponibles dans ce rapport, pas la fiabilité du hadith. L'absence de fiche ne signifie pas qu'un transmetteur est faible.":locale==="ar"?"يقيس هذا الرقم المراجع المربوطة بالرواة في هذا التقرير، ولا يدل على صحة الحديث أو ضعف رواته.":"This indicates narrator records linked in this report, not the hadith's authenticity or any narrator's weakness."}</p>
+  </section>
   <TableauIsnadExterne chaine={chaine} locale={locale} recueil={recueil}/>
   <div className={styles.layout}>
    <div className={styles.left}>
