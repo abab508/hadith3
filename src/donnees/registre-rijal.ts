@@ -23,17 +23,16 @@ export function noticeLocaleExacte(nomAr:string):Partial<MaillonExterne>|null{
  if(matches.length!==1)return null;
  const found=matches[0]!;
  const source=found.sources.find(s=>s.reference&&ouvrageParId(s.ouvrage));
- if(!source)return null;
- const ouvrage=ouvrageParId(source.ouvrage);
+ const ouvrage=source?ouvrageParId(source.ouvrage):undefined;
  const bio=found.biographie;
  const classification=found.categorie;
  // Le classement local sans critique précisément citée ne vaut pas preuve.
  const verdict=classification==="compagnon"?"compagnon" as const:
-    classification==="thiqa"&&found.jugements.length>0?"thiqa" as const:"non-evalue" as const;
+    classification==="thiqa"&&found.jugements.length>0&&Boolean(source)?"thiqa" as const:"non-evalue" as const;
  return {
    verdict,nomCompletAr:found.nomAr,nomLatin:found.nomTranslittere,
    bio:{fr:bio.fr??bio.ar??"",en:bio.en??bio.ar??"",ar:bio.ar??""},
-   reference:(ouvrage?.nom??source.ouvrage)+" — "+source.reference,
+   ...(source?{reference:(ouvrage?.nom??source.ouvrage)+" — "+source.reference}:{ }),
    // Pas de lien inventé lorsque le corpus ne fournit pas d'URL.
  };
 }
