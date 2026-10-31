@@ -40,7 +40,12 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
         <p className={styles.terme}>
           {t("accueil.exempleTerme")} <Terme id="hasan" />
         </p>
-        <p><Link href="/glossaire">{t("accueil.glossaire")}</Link></p>
+        <div className={styles.heroActions}>
+          <Link href="/memorisation" className={styles.heroCTA}>
+            <span aria-hidden="true">✧</span> {t("navigation.memorisation")} <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="/glossaire" className={styles.heroSecondary}>{t("accueil.glossaire")} <span aria-hidden="true">↗</span></Link>
+        </div>
       </section>
 
       <section className={styles.recherche} aria-labelledby="titre-recherche">
@@ -68,6 +73,15 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
           </fieldset>
           <SelecteurRecueil recueils={recueils()} categories={livresParCategorie()} />
         </form>
+      </section>
+
+      <section className={styles.memoireFeature}>
+        <div className={styles.memoireEmbleme} aria-hidden="true">۞</div>
+        <div>
+          <h2>{t("memorisation.titre")}</h2>
+          <p>{t("memorisation.intro")}</p>
+        </div>
+        <Link href="/memorisation">{t("navigation.memorisation")} <span aria-hidden="true">↗</span></Link>
       </section>
 
       <section className={styles.sources} aria-labelledby="titre-sources">
