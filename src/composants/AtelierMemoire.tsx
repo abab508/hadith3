@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { questionMemoire } from "@/donnees/question-memoire";
 import type { ExtraitMemorisation } from "@/donnees/memorisation";
@@ -12,6 +12,8 @@ const CLE_PROGRESS = "milaghaiba.memorisation.progress.v1";
 
 export default function AtelierMemoire({extraits}: {extraits: ExtraitMemorisation[]}) {
   const t=useTranslations("memorisation");
+  const navigation=useTranslations("navigation");
+  const locale=useLocale();
   const [index,setIndex]=useState(0);
   const [mode,setMode]=useState<Mode>("lecture");
   const [visible,setVisible]=useState(true);
@@ -41,8 +43,11 @@ export default function AtelierMemoire({extraits}: {extraits: ExtraitMemorisatio
   return (
     <div className={styles.page}>
       <div className={styles.aura} aria-hidden="true" />
+      <nav aria-label={navigation("titre")}>
+        <Link href="/" className={styles.source}>↩ {navigation("accueil")}</Link>
+      </nav>
       <section className={styles.intro}>
-        <p className={styles.surtitre}><span aria-hidden="true">✧</span> MILAGHAIBA · {t("titre")}</p>
+        <p className={styles.surtitre}><span aria-hidden="true">✧</span> {locale==="ar"?"ميلاغايبا":"Milaghaiba"} · {t("titre")}</p>
         <h1>{t("titre")}</h1>
         <p className={styles.accroche}>{t("intro")}</p>
         <p className={styles.aide}>{t("aide")}</p>
