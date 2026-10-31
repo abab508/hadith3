@@ -1,0 +1,43 @@
+.root{max-width:77rem;margin:0 auto;padding:clamp(1rem,3.6vw,3.4rem);color:var(--texte);min-height:65vh;}
+.breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;color:#a9f8e9;font-size:.87rem;font-weight:750;margin-bottom:1.8rem;}
+.breadcrumb a{color:#b3f7e9;text-decoration:underline;text-underline-offset:.2em;}
+.breadcrumb span{color:#f4d093;}
+.hero{text-align:center;position:relative;overflow:hidden;padding:clamp(2rem,5vw,4rem) 1rem;border:1px solid #568bad;border-radius:2rem;
+background:radial-gradient(ellipse at 20% 5%,#535d9a50,transparent 60%),radial-gradient(ellipse at 88% 83%,#168b8e40,transparent 62%),linear-gradient(130deg,#162f52,#0c2643 74%);box-shadow:0 24px 60px #010c2491,inset 0 1px #bed9f73f;}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#9bd8fa0c 1px,transparent 1px),linear-gradient(90deg,#9bd8fa0c 1px,transparent 1px);background-size:64px 64px;}
+.kicker{position:relative;font-size:.8rem;letter-spacing:.08em;color:#a1f3df;font-weight:850;}
+.hero h1{position:relative;font-family:"Cormorant Garamond","Noto Naskh Arabic",Georgia,serif;font-size:clamp(2.6rem,5.6vw,4.7rem);font-weight:700;margin:.4rem 0 1.1rem;line-height:1.4;
+color:#ffe4ae;text-shadow:0 0 18px #ca905a55;}
+.badges{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:.65rem;}
+.badges span{font-size:.89rem;padding:.5rem .95rem;border-radius:999px;border:1px solid #527d9d;background:#0b213a;color:#dff1ff;}
+.badges .number{color:#fff0bb;border-color:#d0a367;background:#40311f;}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.25rem 0 1.8rem;}
+.summary>div{display:flex;flex-direction:column;gap:.45rem;border:1px solid #496e8c;border-radius:.85rem;padding:1rem;background:#142d49;}
+.summary span{color:#b5c9dc;font-size:.78rem;}
+.summary strong{font-size:1rem;overflow-wrap:anywhere;color:#f0f9ff;}
+.reading{display:flex;flex-direction:column;gap:1.25rem;}
+.primary,.secondary{border:1px solid #527f9e;border-radius:1.4rem;padding:clamp(1.2rem,3.5vw,2.8rem);box-shadow:0 18px 50px #010b2475;
+background:linear-gradient(135deg,#192e4a,#0d2844);}
+.secondary{border-color:#518a7e;background:linear-gradient(140deg,#123d47,#102c43);}
+.articleHeader{display:flex;align-items:center;gap:.7rem;color:#f4d398;border-bottom:1px solid #527794;padding-bottom:.9rem;}
+.articleHeader>span{font-size:1.5rem;}
+.articleHeader h2{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:750;margin:0;color:#f7e0a5;}
+.prose{color:#f0f6ff;font-size:clamp(1.02rem,1.65vw,1.2rem);line-height:2;white-space:pre-wrap;overflow-wrap:anywhere;margin:1.3rem 0;}
+.arabic{color:#fff9eb;font-family:"Noto Naskh Arabic","Aref Ruqaa Ink",serif;font-size:clamp(1.3rem,2.6vw,2rem);line-height:2.45;white-space:pre-wrap;overflow-wrap:anywhere;margin:1.3rem 0;text-align:start;}
+.match{display:inline-block;padding:.55rem 1rem;border:1px solid #5eddc7;background:#17554d;color:#caffed;border-radius:999px;font-size:.85rem;line-height:1.7;}
+.caution,.disclaimer{padding:1rem 1.2rem;border-radius:.9rem;border:1px solid #b68d51;background:#44361f;color:#ffe7c1;font-size:.88rem;line-height:1.9;margin:1.3rem 0;}
+.disclaimer{border-inline-start:4px solid #e2ba6a;}
+.error{border:1px solid #b78b53;border-radius:1rem;padding:1.4rem;background:#3b3027;color:#fce8c8;line-height:1.8;}
+.error h2{font-size:1.1rem;}
+.error a,.footer a{color:#a2ffdf;text-decoration:underline;overflow-wrap:anywhere;}
+.grades{border:1px solid #537d98;border-radius:1.2rem;padding:1.5rem;margin-top:1.5rem;background:#152d47;}
+.grades h2{color:#f9ddae;font-size:1.25rem;}
+.grades ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem;}
+.grades li{display:flex;gap:.6rem;align-items:center;padding:.7rem;border:1px solid #54778d;border-radius:.65rem;background:#0c233d;}
+.grades li strong{color:#b0f7dd;}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.6rem 0;border-top:1px solid #416987;margin-top:2rem;}
+.footer h2{font-size:1.05rem;color:#f7ddac;margin:0;}
+.footer p{font-size:.85rem;color:var(--discret);line-height:1.7;max-width:40rem;}
+.footer a{font-size:.88rem;}
+@media(max-width:640px){.summary{grid-template-columns:1fr;}.hero{border-radius:1.2rem;}.match{border-radius:.8rem;}}
+@media(prefers-reduced-motion:reduce){.hero *, .primary *, .secondary *{animation:none!important;transition:none!important;}}
