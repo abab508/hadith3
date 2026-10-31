@@ -8,6 +8,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import styles from "@/composants/SelecteurLangue.module.css";
 
 const liens = [
+  { href: "/", cle: "accueil" },
   { href: "/recherche", cle: "recherche" },
   { href: "/chaine", cle: "chaine" },
   { href: "/glossaire", cle: "glossaire" },

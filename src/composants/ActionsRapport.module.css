@@ -1,0 +1,12 @@
+.actions{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center;margin:1.25rem 0 1.55rem;}
+.actions a,.actions button{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:2.95rem;
+ padding:.66rem 1rem;border-radius:.82rem;font:inherit;font-size:.9rem;font-weight:820;text-decoration:none;cursor:pointer;
+ transition:box-shadow .2s,transform .2s,border-color .2s;}
+.accueil,.rapport{border:1px solid #9cffe7;background:linear-gradient(125deg,#a8ffe9,#68e2d0);color:#092c3b!important;
+ box-shadow:0 0 17px #40e4d459;}
+.secondary,.print{border:1px solid #6ba7c8;background:#112b49;color:#edfbff!important;}
+.actions a:hover,.actions button:hover{transform:translateY(-2px);box-shadow:0 0 25px #55eddb69;}
+.actions :is(a,button):focus-visible{outline:3px solid #f7d39a;outline-offset:3px;}
+@media(max-width:580px){.actions{gap:.45rem;}.actions a,.actions button{flex:1 1 auto;padding:.65rem .75rem;}}
+@media(prefers-reduced-motion:reduce){.actions a,.actions button{transition:none;transform:none!important;}}
+@media print{.actions{display:none!important;}}
