@@ -203,3 +203,14 @@ font-weight:700;letter-spacing:0;line-height:1.6;}
 .nomPhonetique{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.25rem,2.5vw,2rem);font-weight:700;letter-spacing:.02em;}
 :global(html[lang="ar"]) .titreComplet{margin-top:-.4rem!important;}
 @media(max-width:600px){.titreComplet{flex-direction:column;gap:.1rem;}}
+
+
+/* Palette émeraude/or : accueil, bandeau, recherche et cartes. */
+.accueil .hero{border-color:#617c65;background:radial-gradient(ellipse 48% 68% at 82% 75%,#215d435c,transparent 85%),radial-gradient(ellipse 58% 72% at 13% 15%,#344c354d,transparent 78%),linear-gradient(130deg,#242a20,#19251d 55%,#151d17);box-shadow:inset 0 1px #a8d7a440,0 25px 75px #070d098c;}
+.accueil .hero::before{background-image:linear-gradient(#6e9a7224 1px,transparent 1px),linear-gradient(90deg,#6e9a7224 1px,transparent 1px);}
+.accueil .titre{background:linear-gradient(180deg,#fff8e8 0%,#f5e5bc 30%,#d3a765 75%,#f7e9c5 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.accueil .barre{background:#20231d;border-color:#53594a;}
+.accueil .mode span{background:#21241e;border-color:#4e5848;color:#e5e0d2;}
+.accueil .mode input:checked+span{background:#6dc9ad;color:#102920;border-color:#6dc9ad;}
+.accueil .memoireFeature{background:linear-gradient(115deg,#1d3d2f,#20231d);border-color:#58715d;}
+.accueil .grille article{border-color:#596e5b;}
