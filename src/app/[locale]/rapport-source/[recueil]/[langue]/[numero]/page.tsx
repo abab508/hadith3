@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { loadDetail, validDetailParams } from "@/donnees/fiche-distante";
 import { fetchRemoteEdition, editionReferenceUrl } from "@/donnees/recherche-distante";
 import { extraireChaineArabe } from "@/donnees/chaine-distante";
+import { kgConnection } from "@/donnees/hadith-kg-client";
 import TableauIsnadExterne from "@/composants/TableauIsnadExterne";
 import ActionsRapport from "@/composants/ActionsRapport";
 import styles from "./RapportExterne.module.css";
@@ -87,6 +88,7 @@ export default async function RapportSource({params}:Props){
  }
  const sourceArabe=editionReferenceUrl(collection.key,"ara",number);
  const chaine=extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
+ const corpusKg=await kgConnection();
  const texteNormalise=normaliser(texteArabe??"");
  // Recoupement strict : même recueil, même numéro et un fragment du matn arabe
  // suffisamment long. N'assimile jamais deux hadiths sur leur seul numéro.
@@ -121,6 +123,11 @@ export default async function RapportSource({params}:Props){
     <p>{locale==="fr"?"Un dossier local correspondant à cette référence et à ce texte arabe contient des voies et fiches documentaires supplémentaires.":locale==="ar"?"توجد لهذا المرجع ونصه العربي دراسة محلية تتضمن طرقاً وتراجم إضافية.":"A matching local dossier contains additional transmission routes and narrator records."}</p>
     <Link href={`/rapport/${rapportLocal.id}`} className={styles.source}>{locale==="fr"?"Ouvrir le rapport détaillé avec biographies et voies":locale==="ar"?"فتح التقرير المفصل":"Open detailed narrator report"} ↗</Link>
   </section>}
+  <section className={styles.documentationState} aria-label="État de la base historique">
+    <strong>{locale==="fr"?"Base biographique historique":locale==="ar"?"قاعدة بيانات الرجال":"Historical narrator database"}</strong>
+    <span>{corpusKg.status==="online"?(locale==="fr"?"Service connecté":locale==="ar"?"متصل":"Connected"):corpusKg.status==="not-configured"?(locale==="fr"?"Non connectée":locale==="ar"?"غير متصل":"Not connected"):(locale==="fr"?"Service indisponible":locale==="ar"?"الخدمة غير متاحة":"Service unavailable")}</span>
+    <p>{locale==="fr"?"Les biographies complètes du corpus externe ne sont pas encore associées automatiquement à ce rapport. Seules les fiches locales identifiées sont utilisées.":locale==="ar"?"لم تربط تراجم قاعدة البيانات الخارجية بهذا التقرير تلقائيا بعد؛ تعرض البطاقات المحلية المحددة فقط.":"External corpus narrator dossiers are not yet automatically linked to this report; only resolved local records are used."}</p>
+  </section>
   <section className={styles.documentationState} aria-label={locale==="fr"?"Couverture documentaire":locale==="ar"?"التوثيق":"Documentation coverage"}>
    <strong>{locale==="fr"?"Couverture des biographies et références":locale==="ar"?"تغطية التراجم والمراجع":"Narrator documentation coverage"}</strong>
    <span>{referencesIndividuelles.length} / {personnes.length} · {pourcentageDocumentation}%</span>
