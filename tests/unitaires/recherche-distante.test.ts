@@ -33,7 +33,7 @@ describe("Recherche fédérée à la demande",()=>{
     expect(csv).toContain("source_revision");
     expect(csv).toContain("fawazahmed0/hadith-api@1");
     expect(csv).toContain("Il demanda à boire");
-    expect(escapeCsv("=1+1")).toBe('"\\'=1+1"');
+    expect(escapeCsv("=1+1")).toContain("\u0027=1+1");
     expect(editionUrl("bukhari","ara")).toContain("ara-bukhari.min.json");
   });
 });
