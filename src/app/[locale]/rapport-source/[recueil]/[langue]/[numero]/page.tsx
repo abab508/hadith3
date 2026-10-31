@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { loadDetail, validDetailParams } from "@/donnees/fiche-distante";
 import { fetchRemoteEdition, editionReferenceUrl } from "@/donnees/recherche-distante";
 import { extraireChaineArabe } from "@/donnees/chaine-distante";
+import { rapportKgBukhariUn } from "@/donnees/rapport-kg-bukhari1";
 import { kgConnection } from "@/donnees/hadith-kg-client";
 import TableauIsnadExterne from "@/composants/TableauIsnadExterne";
 import ActionsRapport from "@/composants/ActionsRapport";
@@ -87,7 +88,7 @@ export default async function RapportSource({params}:Props){
    }catch{/* Ne jamais construire une chaîne à partir d'une autre édition non vérifiée. */}
  }
  const sourceArabe=editionReferenceUrl(collection.key,"ara",number);
- const chaine=extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
+ const chaine=rapportKgBukhariUn(recueil,number,texteArabe,sourceArabe)??extraireChaineArabe(texteArabe??"",recueil,number,sourceArabe);
  const corpusKg=await kgConnection();
  const texteNormalise=normaliser(texteArabe??"");
  // Recoupement strict : même recueil, même numéro et un fragment du matn arabe
@@ -97,7 +98,7 @@ export default async function RapportSource({params}:Props){
    (()=>{const original=normaliser(h.texteAr);const a=original.slice(0,Math.min(50,original.length));return a.length>=35&&(texteNormalise.includes(a)||original.includes(texteNormalise.slice(0,50)));})()
  ):undefined;
  const personnes=chaine.maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur");
- const referencesIndividuelles=personnes.filter(m=>Boolean(m.referenceUrl||m.jugements?.length));
+ const referencesIndividuelles=personnes.filter(m=>Boolean(m.referenceUrl||m.reference||m.jugements?.length));
  const pourcentageDocumentation=personnes.length?Math.round(100*referencesIndividuelles.length/personnes.length):0;
  const ref=detail?.hadith.reference;
  const grades=detail?.hadith.grades?.filter(g=>g&&typeof g.name==="string"&&typeof g.grade==="string")??[];
