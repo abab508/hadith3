@@ -3,12 +3,14 @@
  * La segmentation est mécanique : elle ne démontre ni identité, ni continuité,
  * ni fiabilité. On n'ajoute aucun jugement sans référence biographique.
  */
+import { noticeHadith79, type CritiqueRijal } from "@/donnees/rijal-hadith-79";
 export type MaillonExterne={
   id:string;nomAr:string;fragment:string;rang:number;
-  verdict:"non-evalue"|"compagnon"|"source"|"compilateur"|"thiqa";
+  verdict:"non-evalue"|"compagnon"|"source"|"compilateur"|"thiqa"|"divergent";
   qualification?:{fr:string;ar:string;en:string};
   bio?:{fr:string;ar:string;en:string};
   critique?:string;reference?:string;referenceUrl?:string;
+  nomCompletAr?:string;nomLatin?:string;maitres?:string[];eleves?:string[];jugements?:CritiqueRijal[];
 };
 export type ChaineExterneResult={
   etat:"complete-apparente"|"partielle"|"indisponible";
@@ -33,6 +35,8 @@ function nomPropre(segment:string){
 }
 function remarqueSpecialisee(recueil:string,numero:number,nomAr:string){
  // Lien MANUEL et limité à cette notice. Ne jamais assimiler deux homonymes automatiquement.
+ const documente79=noticeHadith79(recueil,numero,nomAr);
+ if(documente79)return documente79;
 
  // Dossier éditorial ciblé : l'identification des noms abrégés pour ce récit
  // est corroborée par https://hadith-web-production.up.railway.app/hadith/3189.
