@@ -84,7 +84,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
  const [voirTableau,setVoirTableau]=useState(false);
  const [onglet,setOnglet]=useState<"bio"|"fiabilite">("bio");
  const [bulleOuverte,setBulleOuverte]=useState(false);
- const documentes=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur"&&(m.jugements?.length||m.referenceUrl)).length;
+ const documentes=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur"&&(m.jugements?.length||m.referenceUrl||m.reference)).length;
  const aVerifier=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur").length-documentes;
  const actuel=maillons[selected];
  const text=(v:{fr:string;ar:string;en:string})=>locale==="ar"?v.ar:locale==="fr"?v.fr:v.en;
@@ -183,8 +183,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       </li>)}</ul>
      </section>}
           {actuel?.critique&&<p><strong>{t.critic} :</strong> {actuel.critique}</p>}
-     {actuel?.referenceUrl&&<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">
-      {t.reference} : {actuel.reference} ↗</a>}
+     {actuel?.referenceUrl?<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{t.reference} : {actuel.reference} ↗</a>:actuel?.reference?<p><strong>{t.reference} :</strong> {actuel.reference}</p>:null}
      </div>}
      <details className={styles.documentarySources}>
       <summary>{locale==="fr"?"Références et preuves documentaires":locale==="ar"?"المراجع والأدلة":"Documentary sources and evidence"}</summary>
@@ -193,10 +192,10 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
         <strong>{j.auteur} — {j.ouvrage}</strong>{" "}
         <a href={j.url} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Consulter la référence":locale==="ar"?"عرض المرجع":"Read source"} ↗</a>
        </li>)}
-       {actuel?.referenceUrl&&<li><strong>{actuel.reference}</strong>{" "}<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Voir la notice":locale==="ar"?"عرض الترجمة":"Read record"} ↗</a></li>}
+       {actuel?.referenceUrl?<li><strong>{actuel.reference}</strong>{" "}<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Voir la notice":locale==="ar"?"عرض الترجمة":"Read record"} ↗</a></li>:actuel?.reference?<li><strong>{actuel.reference}</strong> — {locale==="fr"?"Référence locale à vérifier":locale==="ar"?"مرجع محلي يحتاج مراجعة":"Local reference pending verification"}</li>:null}
        <li><a href={chaine.sourceArabe} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Texte arabe original du hadith (preuve du nom, pas de sa fiabilité)":locale==="ar"?"متن الحديث العربي (دليل الاسم لا التوثيق)":"Original Arabic narration (name evidence, not reliability)"} ↗</a></li>
       </ul>
-      {!actuel?.referenceUrl&&!actuel?.jugements?.length&&<p>{locale==="fr"?"Aucune référence biographique vérifiée pour cette identité dans les données actuelles.":locale==="ar"?"لا يوجد مرجع ترجمة موثق لهذه الهوية في البيانات الحالية.":"No verified biographical reference for this identity in current data."}</p>}
+      {!actuel?.reference&&!actuel?.referenceUrl&&!actuel?.jugements?.length&&<p>{locale==="fr"?"Aucune référence biographique vérifiée pour cette identité dans les données actuelles.":locale==="ar"?"لا يوجد مرجع ترجمة موثق لهذه الهوية في البيانات الحالية.":"No verified biographical reference for this identity in current data."}</p>}
      </details>
      <p className={styles.position}>{t.position} : {selected+1} / {maillons.length}</p>
      <div className={styles.buttons}>
@@ -222,7 +221,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
         <bdi lang="ar" dir="rtl">{m.nomCompletAr??m.nomAr}</bdi> ↗
        </button></td>
        <td><span className={styles.category} data-role={category(m)}>{statut(m)}</span></td>
-       <td>{m.referenceUrl?<a href={m.referenceUrl} target="_blank" rel="noopener noreferrer">{m.reference} ↗</a>
+       <td>{m.referenceUrl?<a href={m.referenceUrl} target="_blank" rel="noopener noreferrer">{m.reference} ↗</a>:m.reference?<span>{m.reference}</span>
         :<a href={chaine.sourceArabe} target="_blank" rel="noopener noreferrer">{t.proof} ↗</a>}</td>
       </tr>)}
      </tbody>
