@@ -61,9 +61,8 @@ function prefixPostings(index:SearchIndex,word:string):number[]{
  * Une recherche exacte par numéro conserve son comportement initial.
  */
 const THEMES_FR:Record<string,string[]>={
- manger:["mang","nourrit","repas","aliment","mange","jeune","boire"],
+ manger:["mang","nourrit","repas","aliment"],
  nourriture:["nourrit","aliment","repas","mang"],
- nourritureS:["nourrit","aliment","repas","mang"],
  boire:["boi","buv","breuvage","eau","boisson"],
  priere:["prier","prie","salat","priere"],
 };
