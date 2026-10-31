@@ -56,13 +56,36 @@ function prefixPostings(index:SearchIndex,word:string):number[]{
  for(const term of matched)for(const i of decodePostings(index.terms[term]!))all.add(i);
  return [...all].sort((a,b)=>a-b);
 }
+/** Recherche thématique française : variantes d'un mot réunies par OU, pas par ET.
+ * Les termes provenant de l'index restent ceux des éditions (aucun jugement déduit).
+ * Une recherche exacte par numéro conserve son comportement initial.
+ */
+const THEMES_FR:Record<string,string[]>={
+ manger:["mang","nourrit","repas","aliment","mange","jeune","boire"],
+ nourriture:["nourrit","aliment","repas","mang"],
+ nourritureS:["nourrit","aliment","repas","mang"],
+ boire:["boi","buv","breuvage","eau","boisson"],
+ priere:["prier","prie","salat","priere"],
+};
+function variantesDeRecherche(index:SearchIndex,mot:string):string[]{
+ if(index.language!=="fra")return [mot];
+ const variantes=THEMES_FR[mot];
+ return variantes?[mot,...variantes]:[mot];
+}
+function postingsPourMot(index:SearchIndex,mot:string):number[]{
+ const ids=new Set<number>();
+ for(const terme of variantesDeRecherche(index,mot)){
+  for(const id of prefixPostings(index,terme))ids.add(id);
+ }
+ return [...ids].sort((a,b)=>a-b);
+}
 export function searchIndex(index:SearchIndex,query:string):SearchCandidate[]{
  const number=numeroDemande(query);
  if(number)return index.docs.filter(d=>String(d[0])===number)
      .map(d=>({numero:d[0],section:d[1],dansSection:d[2]}));
  const words=[...new Set(normaliser(query).split(" ").filter(Boolean))];
  if(words.length===0||words.length>8||words.some(x=>x.length>55))return [];
- const postings=words.map(x=>prefixPostings(index,x)).sort((a,b)=>a.length-b.length);
+ const postings=words.map(x=>postingsPourMot(index,x)).sort((a,b)=>a.length-b.length);
  if(!postings[0]?.length)return [];
  const remaining=postings.slice(1).map(p=>new Set(p));
  const out:SearchCandidate[]=[];
