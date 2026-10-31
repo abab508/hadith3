@@ -179,7 +179,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       <ul>{actuel.jugements.map((j,i)=><li key={i}>
        <strong>{j.auteur}</strong>
        <p>{text(j.appreciation)}</p>
-       <a href={j.url} target="_blank" rel="noopener noreferrer">{j.ouvrage} ↗</a>
+       {j.url?<a href={j.url} target="_blank" rel="noopener noreferrer">{j.ouvrage} ↗</a>:<span>{j.ouvrage}</span>}
       </li>)}</ul>
      </section>}
           {actuel?.critique&&<p><strong>{t.critic} :</strong> {actuel.critique}</p>}
@@ -190,7 +190,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       <ul>
        {actuel?.jugements?.map((j,i)=><li key={i}>
         <strong>{j.auteur} — {j.ouvrage}</strong>{" "}
-        <a href={j.url} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Consulter la référence":locale==="ar"?"عرض المرجع":"Read source"} ↗</a>
+        {j.url?<a href={j.url} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Consulter la référence":locale==="ar"?"عرض المرجع":"Read source"} ↗</a>:<span>{locale==="fr"?"Source KG : citation originale à vérifier":locale==="ar"?"مرجع قاعدة البيانات يحتاج تحقيقا":"KG source, original citation to verify"}</span>}
        </li>)}
        {actuel?.referenceUrl?<li><strong>{actuel.reference}</strong>{" "}<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Voir la notice":locale==="ar"?"عرض الترجمة":"Read record"} ↗</a></li>:actuel?.reference?<li><strong>{actuel.reference}</strong> — {locale==="fr"?"Référence locale à vérifier":locale==="ar"?"مرجع محلي يحتاج مراجعة":"Local reference pending verification"}</li>:null}
        <li><a href={chaine.sourceArabe} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Texte arabe original du hadith (preuve du nom, pas de sa fiabilité)":locale==="ar"?"متن الحديث العربي (دليل الاسم لا التوثيق)":"Original Arabic narration (name evidence, not reliability)"} ↗</a></li>
