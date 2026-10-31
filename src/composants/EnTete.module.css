@@ -29,3 +29,13 @@
 .marqueArabe{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:1.12em;line-height:1.6;}
 .marqueLatin{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.01em;font-size:1.1em;unicode-bidi:isolate;}
 @media(max-width:580px){.marqueSousTitre{font-size:.72rem;}.marqueTexte{max-inline-size:min(70vw,20rem);}}
+
+
+/* Cohérence avec la palette émeraude/or sur toute la barre supérieure. */
+.entete{background:radial-gradient(ellipse at 16% 0%,#315f4755,transparent 65%),linear-gradient(120deg,#242820,#171e19 62%,#151915);border-block-end-color:#61735b;box-shadow:0 14px 38px #080d0970;}
+.entete::before{background:linear-gradient(90deg,transparent,#7fd4aa99,#e1ba7299,transparent);}
+.lienMarque{color:#89dfb7;}
+.logo{filter:drop-shadow(0 0 10px #83ce9a66);}
+.nom{background:linear-gradient(165deg,#fff8e9,#efdbac 42%,#c99e50 80%,#f6e7c5);-webkit-background-clip:text;background-clip:text;}
+.slogan{color:#d3dbce;}
+.marqueSousTitre{color:#e3c58c;}
