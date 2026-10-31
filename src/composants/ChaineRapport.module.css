@@ -278,3 +278,31 @@
 .ficheNomAr{font-size:2rem;line-height:2;}
 @media(max-width:850px){.fiche{position:static;max-block-size:none;}.arbre{flex-basis:100%;}.suite{gap:.65rem;}.noeud{min-inline-size:8rem;}.fleche{inline-size:14px;}}
 @media(prefers-reduced-motion:reduce){.noeud{transition:none;transform:none!important;}}
+
+
+/* Dossier de transmetteur : onglets biographie / fiabilité pour le hadith affiché. */
+.noeud:hover,.noeud:focus-visible{border-color:#7af3df;box-shadow:0 0 22px #55ecd56e,0 18px 38px #031127;}
+.fiche{border-color:#89bfe0;box-shadow:inset 0 1px #d6f2ff2f,0 24px 58px #020d2ba1;background:linear-gradient(155deg,#1b3755,#102640);}
+.ficheNomLatin{display:inline-flex;gap:.45rem;align-items:center;padding:.25rem .1rem;background:transparent;border:0;color:var(--texte);font:inherit;font-size:1.13rem;font-weight:700;text-align:start;cursor:pointer;}
+.ficheNomLatin:hover{color:#8ffff1;text-decoration:underline;text-underline-offset:.2em;}
+.fiabiliteRaccourci{font:inherit;cursor:pointer;gap:.4rem;border-radius:999px;}
+.fiabiliteRaccourci:hover{box-shadow:0 0 15px #65d7cc7d;}
+.ficheOnglets{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;padding:.35rem;border:1px solid #527695;background:#091b31;border-radius:.85rem;}
+.ficheOnglet{font:inherit;min-block-size:2.75rem;padding:.45rem .55rem;color:#d6e7f7;background:transparent;border:1px solid transparent;border-radius:.6rem;cursor:pointer;font-weight:750;}
+.ficheOnglet[aria-pressed="true"]{background:linear-gradient(130deg,#7aefd9,#afffec);color:#062736;border-color:#baffed;box-shadow:0 0 12px #4df2dc50;}
+.ficheContenu{display:flex;flex-direction:column;gap:1.1rem;min-inline-size:0;}
+.ficheContenu :is(h3,p){margin-block:.2rem;}
+.listeVoisins,.voisinsContextuels{display:flex;flex-wrap:wrap;gap:.45rem;}
+.lienVoisin,.versFiabilite{font:inherit;font-weight:700;color:#b8fbf3;background:#0d3147;border:1px solid #547f9c;border-radius:.7rem;padding:.55rem .75rem;cursor:pointer;text-align:start;}
+.lienVoisin:hover,.versFiabilite:hover{border-color:#79e9db;color:#f9fffe;box-shadow:0 0 12px #4af5d44d;}
+.versFiabilite{align-self:stretch;min-block-size:3rem;}
+.contexteHadith{display:flex;flex-direction:column;gap:.65rem;border:1px solid #547c9b;background:linear-gradient(135deg,#142d4c,#0c2341);border-radius:1rem;padding:1rem;}
+.contextNote,.distinction{font-size:.9rem;color:#d4e1f1;line-height:1.7;}
+.distinction{border-inline-start:4px solid #ffd284;background:#42351f;padding:.75rem 1rem;border-radius:.6rem;color:#ffeac5;}
+.listeVoies{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin:0;padding:0;}
+.listeVoies>li{display:flex;flex-direction:column;gap:.4rem;padding:.85rem;border:1px solid #517a99;border-radius:.85rem;background:#0c213b;}
+.listeVoies strong{color:#f9e1ac;font-size:1rem;}
+.tagCommun{font-size:.78rem;width:fit-content;border-radius:999px;padding:.2rem .65rem;border:1px solid #6df4d2;color:#baffea;}
+.classement{margin:0;}
+@media(max-width:680px){.fiche{max-block-size:none;}.ficheOnglet{font-size:.85rem;}.voisinsContextuels{flex-direction:column;}}
+@media(prefers-reduced-motion:reduce){.lienVoisin,.ficheOnglet,.fiabiliteRaccourci{transition:none;}}
