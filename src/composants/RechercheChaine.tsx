@@ -101,6 +101,12 @@ export default function RechercheChaine({ hadithInitial }: { hadithInitial: stri
         </form>
       </section>
 
+      <div className={styles.rapportRapide}>
+        <Link href={"/rapport/"+hadithId} className={ui.bouton}>
+          <span aria-hidden="true">▤</span> {t("generer")} ↗
+        </Link>
+      </div>
+
       <section className={`${ui.carte} ${styles.etape}`} aria-labelledby="etape-2">
         <h2 id="etape-2" className={styles.titreEtape}>{t("etape2")}</h2>
         <p>{t("etape2Aide")}</p>

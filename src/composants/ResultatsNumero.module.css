@@ -18,3 +18,5 @@
 .empty,.warning{border-radius:.9rem;padding:.8rem 1rem;line-height:1.7;}
 .empty{background:#112945;border:1px solid #557998;}
 .warning{background:#493924;border:1px solid #aa8b58;color:#fbe4bc;}
+
+.links a:focus-visible{outline:3px solid #ffe3a5;outline-offset:3px;}

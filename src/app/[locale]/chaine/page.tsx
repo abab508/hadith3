@@ -28,7 +28,7 @@ export default async function Chaine({
 
   return (
     <main id="contenu" tabIndex={-1} className={ui.page}>
-      <ActionsRapport reportHref={hadith ? `/rapport/${hadith.id}` : undefined} />
+      <ActionsRapport />
       <div className={styles.intro}>
         <h1 className={styles.titre}>{t("titre")}</h1>
         <p>{t("intro")}</p>

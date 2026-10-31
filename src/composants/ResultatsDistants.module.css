@@ -33,3 +33,11 @@
  box-shadow:0 0 19px #44ecd34d;transition:transform .15s,box-shadow .15s;}
 .detailLink:hover{transform:translateY(-2px);box-shadow:0 0 26px #5ef8d66b;}
 @media(prefers-reduced-motion:reduce){.detailLink{transition:none;transform:none!important;}}
+
+/* Actions explicites : lecture ou ouverture du rapport, visibles sur mobile. */
+.cardActions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem;align-items:center;}
+.reportLink{display:inline-flex;align-items:center;justify-content:center;min-block-size:2.8rem;
+ border:1px solid #76c8e8;border-radius:.8rem;padding:.58rem 1rem;background:#103251;
+ color:#e9f8ff!important;text-decoration:none!important;font-weight:850;}
+.reportLink:hover{box-shadow:0 0 20px #75ddf469;border-color:#a4e2fa;}
+@media(max-width:550px){.cardActions>a{flex:1 1 100%;}}
