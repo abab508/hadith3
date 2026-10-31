@@ -204,7 +204,18 @@
     "precedent": "Sebelumnya",
     "suivant": "Berikutnya",
     "pageCompte": "Halaman {page} dari {total}",
-    "sourceGuide": "Rujukan adalah lokasi hadis dalam kitab. Isnad adalah rantai periwayat. Redaksi dan jalur dapat berbeda."
+    "sourceGuide": "Rujukan adalah lokasi hadis dalam kitab. Isnad adalah rantai periwayat. Redaksi dan jalur dapat berbeda.",
+    "indexBadge": "INDEKS SUMBER IMPOR",
+    "indexTitre": "Jelajahi lebih banyak kitab",
+    "indexIntro": "Teks Arab tambahan dapat dicari berdasarkan kata, kitab dan nomor; terpisah dari kartu isnad.",
+    "indexNombre": "{nombre} teks impor",
+    "indexLivre": "Kitab / bagian {numero}",
+    "indexOuvrir": "Baca teks Arab lengkap",
+    "indexSansIsnad": "Rantai periwayatan belum distruktur atau diverifikasi secara mandiri.",
+    "indexSource": "Sumber data",
+    "indexVoirSource": "Lihat berkas sumber",
+    "indexVide": "Tidak ada teks impor yang cocok.",
+    "indexAvertissement": "Data Arab hasil ekstraksi otomatis. Nomor dan redaksi bisa berbeda. Tidak ada isnad atau penilaian kesahihan yang dibuat-buat; periksa edisi sumber."
   },
   "chaine": {
     "titre": "Cari berdasarkan rantai periwayatan",

@@ -204,7 +204,18 @@
     "precedent": "Previous",
     "suivant": "Next",
     "pageCompte": "Page {page} of {total}",
-    "sourceGuide": "Reference: where a narration appears in a collection. Isnad: the chain of people who passed it on. Wording and chains can vary across routes."
+    "sourceGuide": "Reference: where a narration appears in a collection. Isnad: the chain of people who passed it on. Wording and chains can vary across routes.",
+    "indexBadge": "IMPORTED SOURCE INDEX",
+    "indexTitre": "Explore more collections",
+    "indexIntro": "Additional Arabic texts searchable by keywords, collection and number; separate from reviewed isnad cards.",
+    "indexNombre": "{nombre} imported texts",
+    "indexLivre": "Book / section {numero}",
+    "indexOuvrir": "Read full Arabic text",
+    "indexSansIsnad": "This entry has no independently verified or structured chain of transmission.",
+    "indexSource": "Data origin",
+    "indexVoirSource": "View source file",
+    "indexVide": "No imported records match this search.",
+    "indexAvertissement": "External automatically extracted Arabic texts. Numbering or wording may vary. No fabricated isnad or authenticity grade. Verify against the source edition."
   },
   "chaine": {
     "titre": "Search by transmission chain",

@@ -204,7 +204,18 @@
     "precedent": "Önceki",
     "suivant": "Sonraki",
     "pageCompte": "Sayfa {page} / {total}",
-    "sourceGuide": "Kaynak: hadisin bulunduğu eser ve numara. İsnad: rivayeti aktaran kişilerin zinciri. Rivayet yolları farklı olabilir."
+    "sourceGuide": "Kaynak: hadisin bulunduğu eser ve numara. İsnad: rivayeti aktaran kişilerin zinciri. Rivayet yolları farklı olabilir.",
+    "indexBadge": "AKTARILAN KAYNAK DİZİNİ",
+    "indexTitre": "Diğer hadis derlemeleri",
+    "indexIntro": "Arapça metinleri anahtar kelime, eser veya numarayla arayın; isnad fişlerinden ayrı tutulur.",
+    "indexNombre": "{nombre} metin",
+    "indexLivre": "Kitap / bölüm {numero}",
+    "indexOuvrir": "Arapça metnin tümünü oku",
+    "indexSansIsnad": "Bu kaydın isnadı henüz yapılandırılmadı veya doğrulanmadı.",
+    "indexSource": "Veri kaynağı",
+    "indexVoirSource": "Kaynak dosya",
+    "indexVide": "Aktarılan metinlerde sonuç bulunamadı.",
+    "indexAvertissement": "Metinler otomatik aktarılmıştır. Metin ve numara farklılık gösterebilir. Uydurma isnad veya sıhhat hükmü verilmez; asıl kaynağa bakın."
   },
   "chaine": {
     "titre": "Hadis zinciri ile arama yapın",

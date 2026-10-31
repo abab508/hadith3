@@ -204,7 +204,18 @@
     "precedent": "Anterior",
     "suivant": "Siguiente",
     "pageCompte": "Página {page} de {total}",
-    "sourceGuide": "Referencia: dónde aparece el hadiz en la colección. Isnad: cadena de transmisores. Puede haber variantes."
+    "sourceGuide": "Referencia: dónde aparece el hadiz en la colección. Isnad: cadena de transmisores. Puede haber variantes.",
+    "indexBadge": "ÍNDICE DE FUENTES IMPORTADAS",
+    "indexTitre": "Más colecciones",
+    "indexIntro": "Textos árabes adicionales por palabra clave, colección o número; separados de las fichas documentadas.",
+    "indexNombre": "{nombre} textos importados",
+    "indexLivre": "Libro / sección {numero}",
+    "indexOuvrir": "Leer el texto árabe completo",
+    "indexSansIsnad": "Cadena no estructurada ni verificada para esta entrada.",
+    "indexSource": "Origen de datos",
+    "indexVoirSource": "Ver archivo fuente",
+    "indexVide": "Sin resultados en el índice importado.",
+    "indexAvertissement": "Textos árabes extraídos automáticamente. La numeración y los textos pueden variar. Sin isnad inventado ni dictamen de autenticidad; compruebe la edición."
   },
   "chaine": {
     "titre": "Buscar por cadena de transmisión",

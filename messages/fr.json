@@ -204,7 +204,18 @@
     "precedent": "Précédent",
     "suivant": "Suivant",
     "pageCompte": "Page {page} sur {total}",
-    "sourceGuide": "Référence : où le hadith est rapporté dans un recueil. Isnād : succession des personnes qui l'ont transmis. Les formulations et chaînes peuvent varier selon les voies."
+    "sourceGuide": "Référence : où le hadith est rapporté dans un recueil. Isnād : succession des personnes qui l'ont transmis. Les formulations et chaînes peuvent varier selon les voies.",
+    "indexBadge": "INDEX DOCUMENTAIRE IMPORTÉ",
+    "indexTitre": "Explorer davantage de recueils",
+    "indexIntro": "Textes arabes supplémentaires, retrouvables par mot-clé, recueil ou numéro. Ils restent séparés des fiches d'isnād documentées.",
+    "indexNombre": "{nombre} textes importés",
+    "indexLivre": "Livre / section n° {numero}",
+    "indexOuvrir": "Lire le texte arabe intégral",
+    "indexSansIsnad": "Chaîne de transmission non encore structurée ni vérifiée pour cette entrée.",
+    "indexSource": "Origine des données",
+    "indexVoirSource": "Consulter le fichier source",
+    "indexVide": "Aucun résultat dans les textes importés pour cette recherche.",
+    "indexAvertissement": "Textes provenant d'une extraction automatique externe. Les numéros et formulations peuvent varier. Aucun verdict d'authenticité ni chaîne inventée ; consultez l'édition de référence."
   },
   "chaine": {
     "titre": "Recherche par chaîne de transmission",

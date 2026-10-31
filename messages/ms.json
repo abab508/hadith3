@@ -204,7 +204,18 @@
     "precedent": "Sebelumnya",
     "suivant": "Seterusnya",
     "pageCompte": "Halaman {page} daripada {total}",
-    "sourceGuide": "Rujukan menunjukkan kedudukan hadis dalam kitab. Isnad ialah rangkaian perawi. Lafaz boleh berbeza mengikut jalur."
+    "sourceGuide": "Rujukan menunjukkan kedudukan hadis dalam kitab. Isnad ialah rangkaian perawi. Lafaz boleh berbeza mengikut jalur.",
+    "indexBadge": "INDEKS SUMBER IMPORT",
+    "indexTitre": "Terokai lebih banyak kitab",
+    "indexIntro": "Teks Arab tambahan boleh dicari melalui kata kunci, kitab dan nombor; berasingan daripada kad isnad.",
+    "indexNombre": "{nombre} teks import",
+    "indexLivre": "Kitab / bahagian {numero}",
+    "indexOuvrir": "Baca teks Arab penuh",
+    "indexSansIsnad": "Rantaian sanad belum disusun atau disahkan untuk rekod ini.",
+    "indexSource": "Sumber data",
+    "indexVoirSource": "Lihat fail sumber",
+    "indexVide": "Tiada rekod import yang sepadan.",
+    "indexAvertissement": "Teks Arab diekstrak secara automatik. Nombor dan lafaz mungkin berbeza. Tiada sanad rekaan atau hukum kesahihan; semak kitab asal."
   },
   "chaine": {
     "titre": "Cari mengikut rantai periwayatan",
