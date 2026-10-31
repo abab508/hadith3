@@ -105,6 +105,7 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
   };
 
   return (
+    <>
     <div className={styles.disposition}>
       <section className={`${ui.carte} ${styles.arbre}`} aria-labelledby="titre-isnad">
         <div className={styles.entete}>
@@ -362,5 +363,48 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
         </aside>
       )}
     </div>
+
+    <section className={styles.tableauFiabilite} aria-labelledby="tableau-fiabilite-titre">
+      <h2 id="tableau-fiabilite-titre">{locale==="ar"?"جدول الرواة وحالة توثيقهم":locale==="fr"?"Tableau de fiabilité des transmetteurs":"Narrator reliability table"}</h2>
+      <p>{locale==="ar"?"اضغط على اسم الراوي لعرض بطاقة الجرح والتعديل، مع بيان المصادر المتاحة.":locale==="fr"?"Cliquez sur un nom pour consulter sa fiche, les jugements et leurs références.":"Select a narrator to read their biographical record and cited reliability judgments."}</p>
+      <div className={styles.tableauFiabiliteScroll} tabIndex={0} role="region" aria-label={t("isnad")}>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">{locale==="ar"?"الترتيب":locale==="fr"?"Rang":"Order"}</th>
+              <th scope="col">{locale==="ar"?"الراوي":locale==="fr"?"Transmetteur":"Narrator"}</th>
+              <th scope="col">{locale==="ar"?"الحكم الموثق":locale==="fr"?"Fiabilité documentée":"Documented reliability"}</th>
+              <th scope="col">{locale==="ar"?"المصدر":locale==="fr"?"Source et référence":"Evidence and reference"}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...new Set(ids)].map((id,i)=>{
+              const tr=transmetteurParId(id);
+              if(!tr)return null;
+              const notice=noticeRijal(hadithId,id);
+              const status=notice?.classification??tr.categorie;
+              return <tr key={id} data-selected={selection===id}>
+                <td>{i+1}</td>
+                <td>
+                  <button type="button" onClick={()=>choisir(id,"fiabilite")} className={styles.tableauNom}
+                    aria-label={t("fiche.ouvrirFiabilite",{nom:tr.nomTranslittere})}>
+                    <bdi lang="ar" dir="rtl">{tr.nomAr}</bdi> · <bdi dir="ltr">{tr.nomTranslittere}</bdi> ↗
+                  </button>
+                </td>
+                <td><span className={styles.tableauCategorie}>{t(categories[status])}</span></td>
+                <td>{notice?
+                  <a href={notice.source.url} target="_blank" rel="noopener noreferrer">
+                    {notice.source.book} · {notice.source.locator} ↗
+                  </a>:
+                  <span className={styles.tableauSansSource}>{locale==="ar"?"لا يوجد حكم موثق لهذا الموضع":locale==="fr"?"Aucun jugement individuel sourcé pour cette notice":"No sourced individual assessment"}</span>
+                }</td>
+              </tr>;
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p className={styles.tableauAvertissement}>{t("fiche.distinctionHadith")}</p>
+    </section>
+    </>
   );
 }

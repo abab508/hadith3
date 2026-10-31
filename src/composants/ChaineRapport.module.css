@@ -320,3 +320,21 @@
 .referenceExterne{border:1px solid #a8804a;background:#3f311d78;border-radius:.8rem;padding:.8rem;}
 .referenceExterne p{color:#ffe7bf;font-size:.82rem;margin:.5rem 0 0;line-height:1.6;}
 .conclusionSource{font-weight:800;color:#baffea;line-height:1.7;}
+
+/* Tableau de fiabilité partagé avec le rapport externe. */
+.tableauFiabilite{border:1px solid #5489aa;background:linear-gradient(140deg,#162f4d,#0c253e);
+ border-radius:1.2rem;padding:clamp(1.1rem,2.6vw,2rem);margin:1.2rem 0 1.6rem;}
+.tableauFiabilite h2{font-family:"Cormorant Garamond","Noto Naskh Arabic",serif;font-size:clamp(1.4rem,2.5vw,1.9rem);color:#ffe0ad;margin:0 0 .5rem;}
+.tableauFiabilite p{line-height:1.8;}
+.tableauFiabiliteScroll{overflow-x:auto;}
+.tableauFiabilite table{border-collapse:collapse;width:100%;min-width:40rem;text-align:start;}
+.tableauFiabilite :is(th,td){padding:.8rem .75rem;border-bottom:1px solid #507993;text-align:start;vertical-align:middle;}
+.tableauFiabilite th{font-size:.85rem;color:#c5dced;}
+.tableauFiabilite tr[data-selected="true"]{background:#175e5845;}
+.tableauNom{color:#f7ebd0;background:none;border:none;cursor:pointer;font:inherit;font-weight:750;text-decoration:underline;text-underline-offset:.24em;}
+.tableauNom:hover{color:#9efae3;}
+.tableauCategorie{border:1px dotted #92afc4;border-radius:999px;padding:.32rem .65rem;white-space:nowrap;}
+.tableauFiabilite a{color:#a2ffe6;text-decoration:underline;overflow-wrap:anywhere;}
+.tableauSansSource{font-size:.85rem;color:#cbd7e5;}
+.tableauAvertissement{border-inline-start:4px solid #e9b967;background:#44351c;color:#ffe5b6;border-radius:.65rem;padding:.7rem 1rem;}
+@media print{.tableauFiabilite{background:#fff!important;color:#111!important;}.tableauFiabiliteScroll{overflow:visible;}.tableauFiabilite table{min-width:0;}.tableauFiabilite tr{break-inside:avoid;}}
