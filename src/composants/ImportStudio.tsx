@@ -133,7 +133,7 @@ export default function ImportStudio({lang}:{lang:string}){
     }catch(e){await refresh();setError(e instanceof Error?e.message:t.saveError);}
     finally{setBusy(false);}
   }
-  const downloadReport=()=>download("milaghaiba-import-verification.json",JSON.stringify({
+  const downloadReport=()=>download("mina-gaiba-2-import-verification.json",JSON.stringify({
     file:fileName,generatedAt:new Date().toISOString(),summary,
     globalErrors:fileErrors,items:checked.map(x=>({line:x.line,id:x.notice?.id,errors:x.errors}))
   },null,2),"application/json");

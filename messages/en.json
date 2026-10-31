@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "Mina Gaiba 2",
     "sousTitre": "The original Arabic text first, with its sources, references and translations whose origin is stated.",
     "etat": "Demonstration version: the data shown are examples awaiting a specialist’s review.",
     "exempleTerme": "Example term:",
@@ -43,7 +43,7 @@
         "texte": "Critical editions and recent translations: the reference and page are given, without copying the text."
       }
     },
-    "avertissement": "Milaghaiba is a research and documentation tool. It does not issue religious rulings and does not replace a specialist."
+    "avertissement": "Mina Gaiba 2 is a research and documentation tool. It does not issue religious rulings and does not replace a specialist."
   },
   "selecteurLangue": {
     "titre": "Language",
@@ -142,7 +142,7 @@
   },
   "entete": {
     "slogan": "Hadith research and documentary verification",
-    "accueil": "Milaghaiba home"
+    "accueil": "Mina Gaiba 2 home"
   },
   "recherche": {
     "titre": "Results",

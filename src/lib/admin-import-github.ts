@@ -2,14 +2,14 @@ import "server-only";
 import type { ImportedNotice } from "@/donnees/import-csv";
 
 const REPO="abab508/hadith3";
-const BRANCH="main";
+const BRANCH="mina-gaiba-2";
 const FILE="data/hadiths/index-imports.json";
 const URL="https://api.github.com/repos/"+REPO+"/contents/"+FILE;
 function authHeaders(){return {
   Authorization:"Bearer "+process.env.HADITH_IMPORT_GITHUB_TOKEN,
   Accept:"application/vnd.github+json",
   "X-GitHub-Api-Version":"2022-11-28",
-  "User-Agent":"Milaghaiba-Hadith-Import",
+  "User-Agent":"Mina-Gaiba-2-Hadith-Import",
 };}
 type GithubContent={sha:string;content:string;encoding:string;};
 type Index={version:string;statut:string;source:string;revision:string;license:string;hadiths:ImportedNotice[]};

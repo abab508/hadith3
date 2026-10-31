@@ -33,7 +33,7 @@ describe("atelier de mémorisation documentaire", () => {
 
   it("emploie l'arabe dans la navigation et rappelle le statut non validé", () => {
     expect(ar.navigation.memorisation).toMatch(/[\u0600-\u06FF]/u);
-    expect(ar.accueil.titre).toMatch(/^[\u0600-\u06FF]+$/u);
+    expect(ar.accueil.titre).toMatch(/^[\u0600-\u06FF\s]+$/u);
     expect(ar.memorisation.avertissement).toContain("لم تُراجع");
   });
 });

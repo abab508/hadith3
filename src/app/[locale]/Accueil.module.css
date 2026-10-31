@@ -50,3 +50,18 @@ html[data-motion="off"] .hero *,html[data-motion="off"] .hero::after,html[data-m
 .sousTitre{text-align:start;margin-inline:0;}
 .terme{text-align:start;}
 @media(max-width:720px){.titre{font-size:clamp(2.35rem,8vw,3.5rem);}}
+
+
+/* Mina Gaiba 2 — identité visuelle isolée sur branche dédiée. */
+.hero{background:radial-gradient(ellipse at 15% 5%,#8a67d839,transparent 45%),
+radial-gradient(ellipse at 85% 65%,#19b9af2d,transparent 46%),var(--surface);
+border:1px solid color-mix(in srgb,var(--accent) 44%,var(--bordure));}
+.titre{font-size:clamp(2.65rem,7.5vw,6rem);letter-spacing:-.055em;
+text-shadow:0 13px 38px #4c7f911c;
+background:linear-gradient(125deg,var(--texte),var(--accent),var(--ocre));
+-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+:global(html[lang="ar"]) .titre{font-family:"Noto Naskh Arabic",serif;font-size:clamp(2.7rem,7vw,6.3rem);
+font-weight:700;letter-spacing:0;line-height:1.6;}
+.heroCTA{box-shadow:0 16px 42px #41cbb34c;transition:transform .25s,box-shadow .25s;}
+.heroCTA:hover{box-shadow:0 24px 52px #41cbb373;}
+@media(prefers-reduced-motion:reduce){.heroCTA{transition:none;}}

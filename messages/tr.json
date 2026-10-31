@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "Mina Gaiba 2",
     "sousTitre": "Önce özgün Arapça metin; kaynakları, atıfları ve kökeni belirtilmiş çevirileriyle.",
     "etat": "Tanıtım sürümü: gösterilen veriler bir uzmanın doğrulamasını bekleyen örneklerdir.",
     "exempleTerme": "Terim örneği:",
@@ -43,7 +43,7 @@
         "texte": "Tahkikli baskılar ve yeni çeviriler: metin kopyalanmadan atıf ve sayfa verilir."
       }
     },
-    "avertissement": "Milaghaiba bir arama ve belgeleme aracıdır. Dini hüküm vermez ve bir uzmanın yerini tutmaz."
+    "avertissement": "Mina Gaiba 2 bir arama ve belgeleme aracıdır. Dini hüküm vermez ve bir uzmanın yerini tutmaz."
   },
   "selecteurLangue": {
     "titre": "Dil",
@@ -142,7 +142,7 @@
   },
   "entete": {
     "slogan": "Hadis arama ve belgesel doğrulama",
-    "accueil": "Milaghaiba ana sayfası"
+    "accueil": "Mina Gaiba 2 ana sayfası"
   },
   "recherche": {
     "titre": "Sonuçlar",

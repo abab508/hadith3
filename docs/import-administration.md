@@ -1,4 +1,4 @@
-# Milaghaiba — import CSV sécurisé
+# Mina Gaiba 2 — import CSV sécurisé
 
 ## Fonctionnement
 Route privée par authentification : \`/<langue>/admin/import\` (fr et ar).
@@ -16,7 +16,7 @@ des hadiths et ne créent aucune chaîne de transmission.
 ## Activer la sauvegarde : variables Vercel (Production)
 
 Définir **trois secrets**, côté serveur uniquement, dans :
-Vercel → projet Milaghaiba → Settings → Environment Variables.
+Vercel → projet mina-gaiba-2 → Settings → Environment Variables.
 
 - \`HADITH_ADMIN_PASSWORD\` : mot de passe long (au moins 16 caractères).
 - \`HADITH_IMPORT_SESSION_SECRET\` : secret aléatoire de 32 caractères minimum
@@ -55,7 +55,7 @@ exactement la narration. La relecture humaine est nécessaire.
 - Limitation d'essais de connexion basique *en mémoire*, non globale sur
   plusieurs instances serverless. Pour la production à fort trafic,
   configurer une protection supplémentaire Vercel (WAF/rate limiting).
-- Un ajout provoque un commit GitHub ; le site public ne montre les nouveaux
+- La V2 sauvegarde uniquement sur la branche mina-gaiba-2, indépendamment de main. Un ajout provoque un commit GitHub ; le site public ne montre les nouveaux
   textes qu'après un déploiement Vercel réussi. Le quota de déploiement peut
   différer cette mise en ligne.
 - L'import actuel couvre **l'index des textes arabes**, pas les dossiers

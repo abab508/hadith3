@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "Mina Gaiba 2",
     "sousTitre": "Le texte arabe original d’abord, avec ses sources, ses références et des traductions dont l’origine est indiquée.",
     "etat": "Version de démonstration : les données affichées sont des exemples à valider par un spécialiste.",
     "exempleTerme": "Exemple de terme :",
@@ -43,7 +43,7 @@
         "texte": "Éditions critiques et traductions récentes : la référence et la page sont indiquées, sans copier le texte."
       }
     },
-    "avertissement": "Milaghaiba est un outil de recherche et de documentation. Il ne donne pas d’avis religieux et ne remplace pas un spécialiste."
+    "avertissement": "Mina Gaiba 2 est un outil de recherche et de documentation. Il ne donne pas d’avis religieux et ne remplace pas un spécialiste."
   },
   "selecteurLangue": {
     "titre": "Langue",
@@ -142,7 +142,7 @@
   },
   "entete": {
     "slogan": "Recherche et vérification documentaire des hadiths",
-    "accueil": "Accueil de Milaghaiba"
+    "accueil": "Accueil de Mina Gaiba 2"
   },
   "recherche": {
     "titre": "Résultats",

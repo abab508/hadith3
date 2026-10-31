@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "Mina Gaiba 2",
     "sousTitre": "Primero el texto árabe original, con sus fuentes, referencias y traducciones de origen indicado.",
     "etat": "Versión de demostración: los datos mostrados son ejemplos pendientes de validación por un especialista.",
     "exempleTerme": "Ejemplo de término:",
@@ -43,7 +43,7 @@
         "texte": "Ediciones críticas y traducciones recientes: se indica la referencia y la página, sin copiar el texto."
       }
     },
-    "avertissement": "Milaghaiba es una herramienta de búsqueda y documentación. No emite dictámenes religiosos ni sustituye a un especialista."
+    "avertissement": "Mina Gaiba 2 es una herramienta de búsqueda y documentación. No emite dictámenes religiosos ni sustituye a un especialista."
   },
   "selecteurLangue": {
     "titre": "Idioma",
@@ -142,7 +142,7 @@
   },
   "entete": {
     "slogan": "Búsqueda y verificación documental de hadices",
-    "accueil": "Inicio de Milaghaiba"
+    "accueil": "Inicio de Mina Gaiba 2"
   },
   "recherche": {
     "titre": "Resultados",

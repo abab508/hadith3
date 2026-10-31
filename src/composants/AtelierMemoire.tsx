@@ -8,7 +8,7 @@ import type { ExtraitMemorisation } from "@/donnees/memorisation";
 import styles from "./AtelierMemoire.module.css";
 
 type Mode = "lecture" | "quiz";
-const CLE_PROGRESS = "milaghaiba.memorisation.progress.v1";
+const CLE_PROGRESS = "mina-gaiba-2.memorisation.progress.v1";
 
 export default function AtelierMemoire({extraits}: {extraits: ExtraitMemorisation[]}) {
   const t=useTranslations("memorisation");
@@ -47,7 +47,7 @@ export default function AtelierMemoire({extraits}: {extraits: ExtraitMemorisatio
         <Link href="/" className={styles.source}>↩ {navigation("accueil")}</Link>
       </nav>
       <section className={styles.intro}>
-        <p className={styles.surtitre}><span aria-hidden="true">✧</span> {locale==="ar"?"ميلاغايبا":"Milaghaiba"} · {t("titre")}</p>
+        <p className={styles.surtitre}><span aria-hidden="true">✧</span> {locale==="ar"?"مينا غايبا ٢":"Mina Gaiba 2"} · {t("titre")}</p>
         <h1>{t("titre")}</h1>
         <p className={styles.accroche}>{t("intro")}</p>
         <p className={styles.aide}>{t("aide")}</p>
