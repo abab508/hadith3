@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, bibliothequeParId, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
 import {
@@ -7,6 +8,7 @@ import {
 } from "@/donnees/recherche";
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
 import ResultatsImportes from "@/composants/ResultatsImportes";
+import ResultatsDistants, { RechercheDistanteLoading } from "@/composants/ResultatsDistants";
 import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -45,7 +47,7 @@ export default async function Recherche({
 }: {
   params: Promise<{ locale: string }>;
   searchParams: Promise<Record<
-    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page" | "pageImport",
+    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page" | "pageImport" | "pageExterne",
     string | string[] | undefined
   >>;
 }) {
@@ -217,8 +219,25 @@ export default async function Recherche({
             <bdi lang="ar" dir="rtl" className={`texte-arabe ${styles.requeteArabe}`}>{rapproche.requeteAr}</bdi>
           </p>
         )}
+        <div className={styles.catalogueLink}>
+          <Link href="/sources" className={ui.boutonSecondaire}>
+            {locale === "ar" ? "↓ تنزيل كتب الحديث CSV ومراجعة المصادر" : locale === "en" ? "↓ Download hadith collections (CSV) and sources" : "↓ Télécharger les recueils CSV et consulter les sources"}
+          </Link>
+        </div>
         <p className={`${ui.badge} ${styles.exemple}`} data-ton="ocre">{t("exemple")}</p>
       </div>
+
+      {!livreChoisi && saisie && (
+        <Suspense key={[saisie,recueil,parametres.pageExterne,locale].join(":")} fallback={<RechercheDistanteLoading locale={locale} />}>
+          <ResultatsDistants
+            locale={locale}
+            saisie={saisie}
+            recueil={recueil}
+            page={Number(premier1(parametres.pageExterne) ?? "1")}
+            recherche={urlPage(page).split("?")[1] ?? ""}
+          />
+        </Suspense>
+      )}
 
       {livreChoisi ? (
         <section className={styles.resultats} aria-labelledby="titre-livre">
