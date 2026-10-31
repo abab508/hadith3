@@ -208,3 +208,19 @@ html:lang(ar){--police-titre-arabe:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;}
 :where(h1,h2){font-family:var(--police-titre-latine);}
 html:lang(ar) :where(h1,h2,h3){font-family:var(--police-titre-arabe);line-height:1.8;}
 ::selection{background:#67e9d3;color:#071a2b;}
+
+
+/* Thème émeraude et or, demandé le 31 octobre 2026. */
+:root,:root[data-theme="auto"],:root[data-theme="dark"]{
+ color-scheme:dark;
+ --fond:#151511;--texte:#f7f0df;--discret:#bbbaae;
+ --accent:#6dc9ad;--surface:#20211b;--bordure:#45463a;
+ --sur-accent:#102921;--accent-doux:#203f35;
+ --ocre:#d9ae60;--ocre-doux:#39301e;
+ --info:#a0d6c2;--info-doux:#233a32;
+ --alerte:#e9a68c;--alerte-doux:#402820;--neutre-doux:#2b2d26;
+}
+:root:not([data-theme="light"]) body{
+ background-color:#151511;
+ background-image:radial-gradient(ellipse 780px 420px at 80% 1%,#194f4052,transparent 76%),linear-gradient(160deg,#191914,#11120f);
+}
