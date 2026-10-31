@@ -94,3 +94,22 @@
 .tabs button[aria-selected="true"]{background:#86efdf;color:#102c3c;box-shadow:0 2px 12px #59d4c650;}
 .tabs button:focus-visible{outline:2px solid #fff;outline-offset:2px;}
 @media print{.tabs{display:none}.profile [role="tabpanel"]{display:block!important;}}
+
+
+/* Fiche contextuelle d'identification, accessible au clic sur un maillon. */
+.identityOverlay{position:fixed;inset:0;z-index:1000;background:#020a13ba;display:flex;align-items:center;justify-content:center;padding:1rem;}
+.identityBubble{width:min(100%,38rem);max-height:90vh;overflow-y:auto;background:linear-gradient(145deg,#1b3a58,#102740);border:2px solid #87d8d0;border-radius:1.2rem;padding:1.2rem;box-shadow:0 25px 90px #000b1bd9;color:#f4f9ff;}
+.bubbleHead{display:flex;justify-content:space-between;align-items:center;gap:1rem;color:#ffdfa3;}
+.bubbleHead button{border:1px solid #72b8b7;background:#15384b;color:#fff;border-radius:.55rem;cursor:pointer;font-size:1.4rem;min-width:2.5rem;min-height:2.5rem;}
+.bubbleName{font-family:"Noto Naskh Arabic",serif;font-size:1.7rem;line-height:1.9;color:#ffe2ae;}
+.identityBubble h4{margin:1rem 0 .5rem;color:#ffe2ae;}
+.identityBubble p{line-height:1.7;}
+.bubbleTree{display:grid;gap:.5rem;margin:.8rem 0;}
+.bubbleTree>div{background:#123c4b;border:1px solid #649ca2;border-radius:.75rem;padding:.7rem;display:flex;flex-direction:column;gap:.35rem;}
+.bubbleTree small{color:#a8e6dc;font-weight:700;}
+.bubbleTree span{font-family:"Noto Naskh Arabic",serif;font-size:1.15rem;}
+.bubbleTree .bubblePerson{background:#1d645a;border-color:#86e9d5;font-family:"Noto Naskh Arabic",serif;font-size:1.4rem;text-align:center;}
+.bubbleCaution{color:#d3e2ef;font-size:.85rem;}
+.bubbleActions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;}
+.bubbleActions button{background:#6fdfd0;border:1px solid #90f4e6;color:#0b2c3a;font:inherit;font-weight:750;padding:.75rem 1rem;border-radius:.7rem;cursor:pointer;}
+@media print{.identityOverlay{display:none!important;}}
