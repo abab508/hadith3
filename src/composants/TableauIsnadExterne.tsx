@@ -83,6 +83,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
  const [selected,setSelected]=useState(Math.min(maillons.length-1,maillons.findIndex(x=>x.verdict!=="source")>=0?maillons.findIndex(x=>x.verdict!=="source"):0));
  const [voirTableau,setVoirTableau]=useState(false);
  const [onglet,setOnglet]=useState<"bio"|"fiabilite">("bio");
+ const [bulleOuverte,setBulleOuverte]=useState(false);
  const documentes=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur"&&(m.jugements?.length||m.referenceUrl)).length;
  const aVerifier=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur").length-documentes;
  const actuel=maillons[selected];
@@ -104,7 +105,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
     <div className={styles.left}>
      <ol className={styles.chain}>
       {maillons.map((m,i)=><li key={m.id} className={styles.chainItem}>
-       <button type="button" onClick={()=>setSelected(i)} aria-pressed={selected===i}
+       <button type="button" onClick={()=>{setSelected(i);setBulleOuverte(true);}} aria-pressed={selected===i}
         aria-controls="fiche-rapport-externe" className={styles.node} data-role={category(m)}
         aria-label={t.open+" : "+m.nomAr}>
         <span className={styles.nodeName} dir="rtl" lang="ar">{m.nomCompletAr??m.nomAr}</span>
@@ -114,6 +115,34 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       </li>)}
      </ol>
     </div>
+    {bulleOuverte&&actuel&&<div className={styles.identityOverlay} role="presentation" onClick={()=>setBulleOuverte(false)}>
+      <section className={styles.identityBubble} role="dialog" aria-modal="true" aria-label={locale==="fr"?"Identité du transmetteur":locale==="ar"?"هوية الراوي":"Narrator identity"} onClick={e=>e.stopPropagation()}>
+       <div className={styles.bubbleHead}>
+        <strong>{locale==="fr"?"Fiche d'identification":locale==="ar"?"بطاقة التعريف":"Identity record"}</strong>
+        <button type="button" onClick={()=>setBulleOuverte(false)} aria-label={locale==="fr"?"Fermer":locale==="ar"?"إغلاق":"Close"}>×</button>
+       </div>
+       <h3 lang="ar" dir="rtl" className={styles.bubbleName}>{actuel.nomCompletAr??actuel.nomAr}</h3>
+       {actuel.nomLatin&&<p>{actuel.nomLatin}</p>}
+       <span className={styles.category} data-role={category(actuel)}>{statut(actuel)}</span>
+       <h4>{locale==="fr"?"Filiation et identité":locale==="ar"?"النسب والهوية":"Lineage and identity"}</h4>
+       <p>{actuel.nomCompletAr?
+         (locale==="fr"?"Nom complet documenté ci-dessus. Les liens familiaux ne sont pas déduits automatiquement du nom.":locale==="ar"?"الاسم الكامل موثق أعلاه، ولا تستنتج القرابة تلقائياً من تشابه الأسماء.":"Full documented name above. Family relations are not inferred from names."):
+         (locale==="fr"?"Identité complète non confirmée : ne pas inventer d'arbre familial.":locale==="ar"?"لم تثبت الهوية الكاملة؛ لا تنشأ شجرة نسب مفترضة.":"Full identity unconfirmed; no family tree is invented.")}</p>
+       <h4>{locale==="fr"?"Arbre de transmission (maîtres et élèves)":locale==="ar"?"شجرة الرواية (الشيوخ والتلاميذ)":"Transmission network (teachers and students)"}</h4>
+       <div className={styles.bubbleTree}>
+        <div><small>{locale==="fr"?"Maître dans cette chaîne":locale==="ar"?"شيخه في هذا السند":"Teacher in this chain"}</small><span>{selected>0?(maillons[selected-1]?.nomCompletAr??maillons[selected-1]?.nomAr):"—"}</span></div>
+        <div className={styles.bubblePerson} lang="ar" dir="rtl">{actuel.nomCompletAr??actuel.nomAr}</div>
+        <div><small>{locale==="fr"?"Élève dans cette chaîne":locale==="ar"?"تلميذه في هذا السند":"Student in this chain"}</small><span>{selected<maillons.length-1?(maillons[selected+1]?.nomCompletAr??maillons[selected+1]?.nomAr):"—"}</span></div>
+       </div>
+       <p className={styles.bubbleCaution}>{locale==="fr"?"Cette chaîne est extraite automatiquement : les relations nécessitent une vérification dans les sources.":locale==="ar"?"السند مستخرج آلياً وتحتاج العلاقات إلى التوثيق من المصادر.":"This chain is extracted automatically; relationships require source verification."}</p>
+       {actuel.bio&&<p>{text(actuel.bio)}</p>}
+       {actuel.referenceUrl&&<a href={actuel.referenceUrl} target="_blank" rel="noopener noreferrer">{locale==="fr"?"Source biographique":locale==="ar"?"المصدر":"Biographical source"} ↗</a>}
+       <div className={styles.bubbleActions}>
+        <button type="button" onClick={()=>{setOnglet("bio");setBulleOuverte(false);}}>{locale==="fr"?"Voir la biographie":locale==="ar"?"عرض الترجمة":"View biography"}</button>
+        <button type="button" onClick={()=>{setOnglet("fiabilite");setBulleOuverte(false);}}>{locale==="fr"?"Voir le rapport de fiabilité":locale==="ar"?"عرض الجرح والتعديل":"View reliability report"}</button>
+       </div>
+      </section>
+     </div>}
     <aside id="fiche-rapport-externe" className={styles.profile} aria-live="polite">
      <h3>{t.fiche}</h3>
      <strong lang="ar" dir="rtl" className={styles.profileName}>{actuel?.nomCompletAr??actuel?.nomAr}</strong>
