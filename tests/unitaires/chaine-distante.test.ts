@@ -9,7 +9,9 @@ describe("Extraction prudente des noms depuis la source arabe du hadith",()=>{
   const r=extraireChaineArabe(bukhari1961,"sahih-bukhari",1961,"test");
   expect(r.etat).toBe("complete-apparente");
   expect(r.maillons.map(x=>x.nomAr)).toEqual(["النبي ﷺ","انس","قتادة","شعبة","يحيي","مسدد"]);
-  expect(r.maillons.filter(x=>x.verdict==="non-evalue")).toHaveLength(5);
+  expect(r.maillons.filter(x=>x.verdict==="thiqa")).toHaveLength(4);
+  expect(r.maillons.find(x=>x.nomAr==="انس")?.verdict).toBe("compagnon");
+  expect(r.maillons.find(x=>x.nomAr==="يحيي")?.referenceUrl).toContain("القطان");
  });
  it("1804 : n'invente pas de fiabilité pour les homonymes",()=>{
   const r=extraireChaineArabe(bukhari1804,"sahih-bukhari",1804,"test");
@@ -29,6 +31,7 @@ describe("Extraction prudente des noms depuis la source arabe du hadith",()=>{
  it("ne déduit aucun jugement des données d'une autre narration",()=>{
   const r=extraireChaineArabe(bukhari1804,"sahih-bukhari",1805,"test");
   expect(r.maillons.find(x=>x.nomAr==="ابي هريرة")?.verdict).toBe("non-evalue");
+  expect(extraireChaineArabe(bukhari1961,"sahih-bukhari",1962,"test").maillons.filter(x=>x.verdict==="thiqa")).toHaveLength(0);
  });
  it("reconnaît la source dans le hadith des intentions",()=>{
   const r=extraireChaineArabe(bukhari1,"sahih-bukhari",1,"test");

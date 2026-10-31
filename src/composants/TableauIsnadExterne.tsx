@@ -17,7 +17,7 @@ const dictionnaire={
   noVerdict:"Aucun jugement individuel sourcé n'est encore rattaché à ce nom pour cette chaîne. Cela ne signifie ni qu'il est fiable, ni qu'il est faible.",
   statusSource:"Source du hadith — hors jugement des transmetteurs",
   statusCompanion:"Compagnon — selon les sources indiquées",
-  statusUnknown:"Non évalué",
+  statusUnknown:"Non évalué",statusThiqa:"Fiable (thiqa), avec référence",
   statusCompiler:"Compilateur (hors chaîne)",
   verdict:"Fiabilité et appréciations",critic:"Auteur de l'appréciation",reference:"Référence bibliographique",position:"Position dans ce parcours",
   prev:"Précédent",next:"Suivant",proof:"Mention du nom dans l'isnād arabe",
@@ -37,7 +37,7 @@ const dictionnaire={
   noBio:"لا توجد ترجمة موثقة تربط هذا الاسم بهذا الشخص على وجه اليقين في البيانات الحالية.",
   noVerdict:"لا يوجد حكم فردي مسند إلى مرجع لهذا الاسم في هذا الطريق. وليس معنى ذلك التضعيف أو التوثيق.",
   statusSource:"مصدر الحديث وليس حكمًا على راوٍ",statusCompanion:"صحابي وفق المصادر المرفقة",
-  statusUnknown:"غير مقيّم",statusCompiler:"المصنّف (خارج السند)",
+  statusUnknown:"غير مقيّم",statusThiqa:"ثقة، مع المصدر",statusCompiler:"المصنّف (خارج السند)",
   verdict:"أقوال النقاد",critic:"صاحب القول",reference:"المصدر",position:"موضعه في هذه السلسلة",
   prev:"السابق",next:"التالي",proof:"الاسم كما التقط من السند",
   incomplete:"قد تُحيل النسخة إلى إسناد سابق بلفظ «بهذا الإسناد» أو «مثله»، ولا تُختلق الأسماء الناقصة.",
@@ -55,7 +55,7 @@ const dictionnaire={
   noBio:"No independently verified biographical identity is linked to this name in the local data.",
   noVerdict:"No sourced individual judgment is linked to this name in this chain. It is not a claim that the narrator was either weak or trustworthy.",
   statusSource:"Hadith source; not a narrator grading",statusCompanion:"Companion according to cited scholarship",
-  statusUnknown:"Not assessed",statusCompiler:"Compiler (outside chain)",
+  statusUnknown:"Not assessed",statusThiqa:"Trustworthy (thiqa), with source",statusCompiler:"Compiler (outside chain)",
   verdict:"Reliability assessments",critic:"Author of judgment",reference:"Bibliographic reference",position:"Place in this chain",
   prev:"Previous",next:"Next",proof:"Name as extracted from the Arabic isnad",
   incomplete:"The edition may refer back to another route ('same chain'). Missing links are not invented.",
@@ -74,8 +74,8 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
  const [selected,setSelected]=useState(Math.min(maillons.length-1,maillons.findIndex(x=>x.verdict!=="source")>=0?maillons.findIndex(x=>x.verdict!=="source"):0));
  const actuel=maillons[selected];
  const text=(v:{fr:string;ar:string;en:string})=>locale==="ar"?v.ar:locale==="fr"?v.fr:v.en;
- const statut=(m:MaillonExterne)=>m.verdict==="source"?t.statusSource:m.verdict==="compagnon"?t.statusCompanion:m.verdict==="compilateur"?t.statusCompiler:t.statusUnknown;
- const category=(m:MaillonExterne)=>m.verdict==="compagnon"?"compagnon":m.verdict==="source"?"source":m.verdict==="compilateur"?"compilateur":"non-evalue";
+ const statut=(m:MaillonExterne)=>m.verdict==="source"?t.statusSource:m.verdict==="compagnon"?t.statusCompanion:m.verdict==="compilateur"?t.statusCompiler:m.verdict==="thiqa"?t.statusThiqa:t.statusUnknown;
+ const category=(m:MaillonExterne)=>m.verdict==="compagnon"?"compagnon":m.verdict==="source"?"source":m.verdict==="compilateur"?"compilateur":m.verdict==="thiqa"?"thiqa":"non-evalue";
  return <section className={styles.root} aria-labelledby="chaine-externe-titre">
   <header className={styles.header}>
    <div><span className={styles.kicker}>◈ ISNĀD</span><h2 id="chaine-externe-titre">{t.title}</h2>

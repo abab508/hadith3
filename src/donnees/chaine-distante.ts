@@ -5,7 +5,7 @@
  */
 export type MaillonExterne={
   id:string;nomAr:string;fragment:string;rang:number;
-  verdict:"non-evalue"|"compagnon"|"source"|"compilateur";
+  verdict:"non-evalue"|"compagnon"|"source"|"compilateur"|"thiqa";
   qualification?:{fr:string;ar:string;en:string};
   bio?:{fr:string;ar:string;en:string};
   critique?:string;reference?:string;referenceUrl?:string;
@@ -33,6 +33,56 @@ function nomPropre(segment:string){
 }
 function remarqueSpecialisee(recueil:string,numero:number,nomAr:string){
  // Lien MANUEL et limité à cette notice. Ne jamais assimiler deux homonymes automatiquement.
+
+ // Dossier éditorial ciblé : l'identification des noms abrégés pour ce récit
+ // est corroborée par https://hadith-web-production.up.railway.app/hadith/3189.
+ // La qualification concerne la PERSONNE citée, jamais la validité totale du hadith.
+ if(recueil==="sahih-bukhari"&&numero===1961){
+   const notices:Record<string,{
+      verdict:"thiqa"|"compagnon";
+      qualification:{fr:string;ar:string;en:string};
+      bio:{fr:string;ar:string;en:string};
+      critique:string;reference:string;referenceUrl:string;
+   }>={
+     "انس":{
+       verdict:"compagnon",
+       qualification:{fr:"Compagnon : probité admise dans la tradition sunnite",ar:"صحابي، تقرر عدالته في منهج أهل السنة",en:"Companion: uprightness accepted in Sunni hadith methodology"},
+       bio:{fr:"Anas ibn Mālik, compagnon et serviteur du Prophète ﷺ. Al-Dhahabī le présente comme l'un des grands transmetteurs.",ar:"أنس بن مالك صاحب رسول الله ﷺ وخادمه، ومن كبار رواة الحديث.",en:"Anas ibn Malik was a Companion and servant of the Prophet, known for transmitting hadith."},
+       critique:"al-Dhahabī",reference:"Siyar Aʿlām al-Nubalāʾ, vol. 3, notice Anas ibn Mālik",
+       referenceUrl:"https://www.islamweb.net/ar/library/content/60/358/أنس-بن-مالك"
+     },
+     "قتادة":{
+       verdict:"thiqa",
+       qualification:{fr:"Fiable (thiqa) selon Ibn Maʿīn ; les questions de transmission et de tadlīs doivent être examinées séparément.",ar:"ثقة عند ابن معين، وتُبحث مسائل التدليس والسماع في كل طريق على حدة.",en:"Trustworthy according to Ibn Ma'in; possible tadlis and actual hearing require separate chain-specific examination."},
+       bio:{fr:"Qatāda ibn Diʿāma al-Sadūsī, savant de Bassora et transmetteur d'Anas. L'identification est limitée à cette chaîne.",ar:"قتادة بن دعامة السدوسي البصري، روى عن أنس بن مالك. التعيين خاص بهذا الإسناد.",en:"Qatada ibn Di'ama al-Sadusi, a Basran transmitter who narrated from Anas; identification is specific to this chain."},
+       critique:"Yaḥyā ibn Maʿīn",reference:"al-Mizzī, Tahdhīb al-Kamāl, vol. 23, p. 515–516",
+       referenceUrl:"https://sunna.alifta.gov.sa/BookToc/ViewServicePage?bookId=48&mainId=452623"
+     },
+     "شعبة":{
+       verdict:"thiqa",
+       qualification:{fr:"Imam et mémorisateur de référence ; al-Dhahabī le présente comme un spécialiste majeur de la critique des transmetteurs.",ar:"إمام حافظ حجة في الحديث، ومن أئمة نقد الرجال.",en:"Leading hadith memorizer and critic, described as an authoritative transmitter by al-Dhahabi."},
+       bio:{fr:"Shuʿba ibn al-Ḥajjāj al-ʿAtakī, grand traditionniste de Bassora, transmetteur de Qatāda et maître de Yaḥyā al-Qaṭṭān.",ar:"شعبة بن الحجاج العتكي، من كبار حفاظ البصرة، روى عن قتادة وروى عنه يحيى القطان.",en:"Shu'ba ibn al-Hajjaj, a major Basran hadith scholar who narrated from Qatada and taught Yahya al-Qattan."},
+       critique:"al-Dhahabī",reference:"Siyar Aʿlām al-Nubalāʾ, vol. 7, notice Shuʿba",
+       referenceUrl:"https://www.islamweb.net/amp/ar/library/content/60/1183/شعبة"
+     },
+     "يحيي":{
+       verdict:"thiqa",
+       qualification:{fr:"Fiable et autorité reconnue en critique du hadith selon al-Dhahabī.",ar:"ثقة مأمون من أئمة النقد والعلل كما ورد في السير.",en:"Trustworthy and a leading hadith critic according to al-Dhahabi."},
+       bio:{fr:"Yaḥyā ibn Saʿīd al-Qaṭṭān : la chaîne identifiée pour ce hadith le relie à Shuʿba et à son élève Musaddad.",ar:"يحيى بن سعيد القطان، روى عن شعبة وروى عنه مسدد في هذا الإسناد.",en:"Yahya ibn Sa'id al-Qattan; in this identified chain he narrates from Shu'ba, with Musaddad narrating from him."},
+       critique:"al-Dhahabī",reference:"Siyar Aʿlām al-Nubalāʾ, notice Yaḥyā al-Qaṭṭān",
+       referenceUrl:"https://ar.wikisource.org/wiki/يحيى_بن_سعيد_القطان"
+     },
+     "مسدد":{
+       verdict:"thiqa",
+       qualification:{fr:"Fiable (thiqa), notamment selon al-Nasāʾī et Ibn Maʿīn, cités par al-Dhahabī.",ar:"ثقة، كما نقل الذهبي عن النسائي وابن معين.",en:"Trustworthy according to al-Nasa'i and Ibn Ma'in as quoted by al-Dhahabi."},
+       bio:{fr:"Musaddad ibn Musarhad al-Baṣrī, enseignant d'al-Bukhārī et élève de Yaḥyā al-Qaṭṭān.",ar:"مسدد بن مسرهد البصري، من شيوخ البخاري، وروى عن يحيى القطان.",en:"Musaddad ibn Musarhad was a Basran transmitter, teacher of al-Bukhari and student of Yahya al-Qattan."},
+       critique:"al-Nasāʾī, Ibn Maʿīn (rapportés par al-Dhahabī)",reference:"Siyar Aʿlām al-Nubalāʾ, notice Musaddad ibn Musarhad",
+       referenceUrl:"https://ar.wikisource.org/wiki/سير_أعلام_النبلاء/مسدد_بن_مسرهد"
+     }
+   };
+   if(Object.hasOwn(notices,nomAr))return notices[nomAr]!;
+ }
+
  if(recueil==="sahih-bukhari"&&numero===1804&&nomAr==="ابي هريرة"){
    return {
      verdict:"compagnon" as const,
