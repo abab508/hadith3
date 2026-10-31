@@ -11,6 +11,11 @@ import sys
 from pathlib import Path
 
 def main():
+    # Le terminal Windows peut utiliser cp1252, incompatible avec l’arabe.
+    # Le JSONL doit être encodé explicitement en UTF-8.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     parser = argparse.ArgumentParser()
     parser.add_argument("db", type=Path)
     parser.add_argument("--limit", type=int, default=100)
