@@ -5,7 +5,7 @@
  */
 export type MaillonExterne={
   id:string;nomAr:string;fragment:string;rang:number;
-  verdict:"non-evalue"|"compagnon"|"source";
+  verdict:"non-evalue"|"compagnon"|"source"|"compilateur";
   qualification?:{fr:string;ar:string;en:string};
   bio?:{fr:string;ar:string;en:string};
   critique?:string;reference?:string;referenceUrl?:string;

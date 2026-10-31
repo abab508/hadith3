@@ -33,6 +33,6 @@ describe("Extraction prudente des noms depuis la source arabe du hadith",()=>{
  it("reconnaît la source dans le hadith des intentions",()=>{
   const r=extraireChaineArabe(bukhari1,"sahih-bukhari",1,"test");
   expect(r.maillons.length).toBeGreaterThanOrEqual(6);
-  expect(r.maillons[0].verdict).toBe("source");
+  expect(r.maillons[0]?.verdict).toBe("source");
  });
 });
