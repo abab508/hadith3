@@ -81,6 +81,9 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
  const maillons:MaillonExterne[]=chaine.maillons.length>0&&compiler?
   [...chaine.maillons,{id:"compiler",rang:chaine.maillons.length+1,nomAr:compiler,fragment:compiler,verdict:"compilateur"}]:chaine.maillons;
  const [selected,setSelected]=useState(Math.min(maillons.length-1,maillons.findIndex(x=>x.verdict!=="source")>=0?maillons.findIndex(x=>x.verdict!=="source"):0));
+ const [voirTableau,setVoirTableau]=useState(false);
+ const documentes=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur"&&(m.jugements?.length||m.referenceUrl)).length;
+ const aVerifier=maillons.filter(m=>m.verdict!=="source"&&m.verdict!=="compilateur").length-documentes;
  const actuel=maillons[selected];
  const text=(v:{fr:string;ar:string;en:string})=>locale==="ar"?v.ar:locale==="fr"?v.fr:v.en;
  const statut=(m:MaillonExterne)=>m.verdict==="source"?t.statusSource:m.verdict==="compagnon"?t.statusCompanion:m.verdict==="compilateur"?t.statusCompiler:m.verdict==="thiqa"?t.statusThiqa:m.verdict==="divergent"?t.statusDiv:t.statusUnknown;
@@ -153,8 +156,14 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
      </div>
     </aside>
    </div>
-   <h3 className={styles.tableTitle}>{t.table}</h3>
-   <div className={styles.tableWrap} tabIndex={0} role="region" aria-label={t.table}>
+   <div className={styles.tableTitle}>
+    <h3>{t.table}</h3>
+    <p>{locale==="fr"?"Références reliées : "+documentes+" · À vérifier : "+aVerifier:locale==="ar"?"مراجع مرتبطة: "+documentes+" · تحتاج مراجعة: "+aVerifier:"Linked references: "+documentes+" · To verify: "+aVerifier}</p>
+    <button type="button" aria-expanded={voirTableau} onClick={()=>setVoirTableau(!voirTableau)}>
+     {voirTableau?(locale==="fr"?"Masquer le tableau":locale==="ar"?"إخفاء الجدول":"Hide table"):(locale==="fr"?"Voir les détails":locale==="ar"?"عرض التفاصيل":"Show details")}
+    </button>
+   </div>
+   {voirTableau&&<div className={styles.tableWrap} tabIndex={0} role="region" aria-label={t.table}>
     <table>
      <thead><tr><th scope="col">{t.pos}</th><th scope="col">{t.name}</th><th scope="col">{t.role}</th><th scope="col">{t.evidence}</th></tr></thead>
      <tbody>
@@ -169,7 +178,7 @@ export default function TableauIsnadExterne({chaine,locale,recueil}:{
       </tr>)}
      </tbody>
     </table>
-   </div>
+   </div>}
   </>}
   <div className={styles.footer}>
    <p>{t.method}</p>
