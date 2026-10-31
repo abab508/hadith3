@@ -32,7 +32,7 @@ export function noticeLocaleExacte(nomAr:string):Partial<MaillonExterne>|null{
     classification==="thiqa"&&found.jugements.length>0?"thiqa" as const:"non-evalue" as const;
  return {
    verdict,nomCompletAr:found.nomAr,nomLatin:found.nomTranslittere,
-   bio:{fr:bio.fr??bio.ar,en:bio.en??bio.ar,ar:bio.ar},
+   bio:{fr:bio.fr??bio.ar??"",en:bio.en??bio.ar??"",ar:bio.ar??""},
    reference:(ouvrage?.nom??source.ouvrage)+" — "+source.reference,
    // Pas de lien inventé lorsque le corpus ne fournit pas d'URL.
  };
