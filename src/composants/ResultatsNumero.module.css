@@ -20,3 +20,10 @@
 .warning{background:#493924;border:1px solid #aa8b58;color:#fbe4bc;}
 
 .links a:focus-visible{outline:3px solid #ffe3a5;outline-offset:3px;}
+
+
+.panel,.card{background:linear-gradient(145deg,#0b2e24,#071c17)!important;border:1px solid #ac8c59!important;}
+.heading,.kicker{color:#f4d3a0;}
+.primary{background:linear-gradient(130deg,#f7dca6,#d0a05e);color:#0a2118;}
+.secondary{background:#0d3b2d;color:#f7e4bd;}
+.empty{background:#08291e;border-color:#9e885d;}
