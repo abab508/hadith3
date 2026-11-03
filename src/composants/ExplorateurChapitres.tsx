@@ -26,6 +26,18 @@ const introFamille:Record<Langue,string>={
 const symboles:Record<string,string>={
  croyance:"☪",science:"✧",purification:"◉",priere:"۞",jeune:"☾",zakat:"♡",pelerinage:"⌂",famille:"❦",comportement:"❧",commerce:"⚖",vie:"✺",sante:"✶",spiritualite:"✦",histoire:"☼",justice:"◇",eschatologie:"⌛"
 };
+const titresCourts:Record<string,{fr:string;ar:string;en:string}>={
+ croyance:{fr:"Croyance et foi",ar:"العقيدة والإيمان",en:"Faith and belief"},
+ purification:{fr:"Purification",ar:"الطهارة",en:"Purification"},
+ priere:{fr:"Prière",ar:"الصلاة",en:"Prayer"},
+ jeune:{fr:"Jeûne et Ramadan",ar:"الصيام ورمضان",en:"Fasting and Ramadan"},
+ famille:{fr:"Mariage et famille",ar:"الزواج والأسرة",en:"Marriage and family"},
+ commerce:{fr:"Commerce et affaires",ar:"التجارة والمعاملات",en:"Trade and business"},
+ comportement:{fr:"Morale et comportement",ar:"الأخلاق والآداب",en:"Ethics and conduct"},
+ eschatologie:{fr:"Signes de la fin des temps",ar:"أشراط الساعة",en:"Signs of the Last Hour"},
+};
+const nomAffiche=(slug:string,langue:Langue,nom:Nom)=>titresCourts[slug]?.[langue]??nom[langue];
+
 export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapitre[];langue:Langue}){
  const [selection,setSelection]=useState("famille");
  const [tous,setTous]=useState(false);
@@ -43,7 +55,7 @@ export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapi
     <span className={styles.pictogramme} aria-hidden="true">{symboles[c.slug]??"✦"}</span>
     {c.slug==="purification"&&<span className={styles.fontaineAnimee} aria-hidden="true"><span/><span/><span/></span>}
     <span className={styles.etoilesAnimees} aria-hidden="true">✧</span>
-    <strong>{c.nom[langue]}</strong>
+    <strong>{nomAffiche(c.slug,langue,c.nom)}</strong>
     {langue!=="ar"&&<span className={styles.nomAr} dir="rtl" lang="ar">{c.nom.ar}</span>}
    </button>)}
    <button type="button" className={styles.plusChapitres} aria-expanded={tous} onClick={()=>setTous(v=>!v)}>
@@ -53,7 +65,7 @@ export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapi
   <aside data-chapitre={actif.slug} className={`${styles.panneau} ${styles[actif.fond]}`} aria-label={t.selection} aria-live="polite">
    <span className={styles.panneauSymbole} aria-hidden="true">{symboles[actif.slug]??"✦"}</span>
    <p className={styles.panneauEyebrow}>{t.selection} · {String(chapitres.indexOf(actif)+1).padStart(2,"0")}/{chapitres.length}</p>
-   <h3>{actif.nom[langue]}</h3>
+   <h3>{nomAffiche(actif.slug,langue,actif.nom)}</h3>
    {langue!=="ar"&&<p className={styles.panneauAr} dir="rtl" lang="ar">{actif.nom.ar}</p>}
    <p className={styles.panneauDescription}>{actif.slug==="famille"?introFamille[langue]:introductions[langue]}</p>
    <div className={styles.panneauDiviseur}><span>✧</span>{t.sousThemes}<span>✧</span></div>
