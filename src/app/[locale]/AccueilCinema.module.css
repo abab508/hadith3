@@ -1,0 +1,12 @@
+.accueilCinema{position:relative;isolation:isolate;max-inline-size:100rem;margin-inline:auto;padding:0 clamp(.5rem,2vw,2rem) 3.5rem;overflow:hidden;background:radial-gradient(ellipse at 55% 6%,#17402f88,transparent 49%),radial-gradient(circle at 80% 25%,#d8ae5614 1px,transparent 2px);background-size:auto,83px 96px}
+.accueilCinema::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(#eacc8b77 .8px,transparent 1.7px),radial-gradient(#fff7cb88 .7px,transparent 1.3px);background-size:97px 115px,149px 137px;animation:scintillement 7s ease-in-out infinite alternate}
+.accueilCinema :global([class*="Themes_hero"]){box-shadow:0 18px 90px #000b,0 0 45px #dfbd6c18,inset 0 0 75px #030f0b80}
+.accueilCinema :global([class*="Themes_carteExplorer"]){transition:transform .4s cubic-bezier(.2,.8,.3,1),box-shadow .4s,filter .4s;transform-origin:center 80%}
+.accueilCinema :global([class*="Themes_carteExplorer"]):is(:hover,:focus-visible){filter:brightness(1.12) saturate(1.08);box-shadow:0 0 0 1px #ffe0a7,0 0 25px #f4c87377,0 18px 30px #000a}
+.commandes{display:flex;justify-content:center;margin-block:1rem}
+.controleCinema button{font:600 .9rem Georgia,serif;border:1px solid #d4ad6c;border-radius:99px;padding:.7rem 1.3rem;background:#0a2b20;color:#ffe3a8;cursor:pointer;box-shadow:0 0 10px #eab75b29}
+.controleCinema button:focus-visible{outline:3px solid #f5d78d;outline-offset:3px}
+@keyframes scintillement{0%{opacity:.35}100%{opacity:.85}}
+@media(prefers-reduced-motion:reduce){.accueilCinema::before{animation:none}.accueilCinema :global([class*="Themes_carteExplorer"]){transition:none}}
+:global(html[data-motion="off"]) .accueilCinema::before{animation:none}
+:global(html[data-motion="off"]) .accueilCinema :global([class*="Themes_carteExplorer"]){transition:none}
