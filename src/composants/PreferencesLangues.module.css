@@ -105,3 +105,9 @@
 .confirmation {
   min-block-size: 1.6em;
 }
+
+
+.page{max-inline-size:94rem;}
+.page h1,.page h2{color:var(--ocre);font-family:"Cormorant Garamond",Georgia,serif;}
+.groupe,.choix{border-color:var(--bordure);background:var(--surface);border-radius:1rem;}
+.actions button[type="submit"]{background:linear-gradient(145deg,#f8daa0,#c99c60);border-color:#e1bf82;color:#14271e;}
