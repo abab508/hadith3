@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "description": "Classification de navigation éditoriale, inspirée des livres des grandes collections de hadiths. Ne constitue ni un index exhaustif de chaque recueil ni une attribution de hadiths.",
+  "sources": [
+    "https://sunnah.com/bukhari",
+    "https://sunnah.com/muslim"
+  ],
+  "chapitres": [
+    {
+      "slug": "croyance",
+      "fond": "cosmos",
+      "nom": {
+        "fr": "Fondements de la foi",
+        "ar": "العقيدة والإيمان",
+        "en": "Faith and belief"
+      },
+      "themes": [
+        {
+          "slug": "unicite",
+          "nom": {
+            "fr": "Unicité d’Allah",
+            "ar": "التوحيد",
+            "en": "Oneness of Allah"
+          }
+        },
+        {
+          "slug": "foi",
+          "nom": {
+            "fr": "Foi et ses branches",
+            "ar": "الإيمان وشعبه",
+            "en": "Faith and its branches"
+          }
+        },
+        {
+          "slug": "destin",
+          "nom": {
+            "fr": "Destin et décret divin",
+            "ar": "القدر",
+            "en": "Divine decree"
+          }
+        },
+        {
+          "slug": "anges",
+          "nom": {
+            "fr": "Les anges",
+            "ar": "الملائكة",
+            "en": "Angels"
+          }
+        },
+        {
+          "slug": "revelation",
+          "nom": {
+            "fr": "Révélation et Écritures",
+            "ar": "الوحي والكتب",
+            "en": "Revelation and scriptures"
+          }
+        },
+        {
+          "slug": "prophetes",
+          "nom": {
+            "fr": "Prophètes et messagers",
+            "ar": "الأنبياء والرسل",
+            "en": "Prophets and messengers"
+          }
+        },
+        {
+          "slug": "au-dela",
+          "nom": {
+            "fr": "Résurrection et au-delà",
+            "ar": "البعث والآخرة",
+            "en": "Resurrection and afterlife"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "science",
+      "fond": "sobre",
+      "nom": {
+        "fr": "Savoir et transmission",
+        "ar": "العلم ونقل الحديث",
+        "en": "Knowledge and transmission"
+      },
+      "themes": [
+        {
+          "slug": "science-religieuse",
+          "nom": {
+            "fr": "Recherche du savoir",
+            "ar": "طلب العلم",
+            "en": "Seeking knowledge"
+          }
+        },
+        {
+          "slug": "coran",
+          "nom": {
+            "fr": "Coran et récitation",
+            "ar": "القرآن وتلاوته",
+            "en": "Qur’an and recitation"
+          }
+        },
+        {
+          "slug": "tafsir",
+          "nom": {
+            "fr": "Exégèse du Coran",
+            "ar": "التفسير",
+            "en": "Qur’anic exegesis"
+          }
+        },
+        {
+          "slug": "sunna",
+          "nom": {
+            "fr": "Sunna et transmission",
+            "ar": "السنة والرواية",
+            "en": "Sunnah and narration"
+          }
+        },
+        {
+          "slug": "isnad",
+          "nom": {
+            "fr": "Chaînes de transmission",
+            "ar": "الإسناد والرواة",
+            "en": "Chains of transmission"
+          }
+        },
+        {
+          "slug": "authenticite",
+          "nom": {
+            "fr": "Critique et authenticité des hadiths",
+            "ar": "نقد الحديث وصحته",
+            "en": "Hadith criticism and authenticity"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "purification",
+      "fond": "eau",
+      "nom": {
+        "fr": "Purification et propreté rituelle",
+        "ar": "الطهارة",
+        "en": "Purification"
+      },
+      "themes": [
+        {
+          "slug": "eau",
+          "nom": {
+            "fr": "Eau et impuretés",
+            "ar": "المياه والنجاسات",
+            "en": "Water and impurities"
+          }
+        },
+        {
+          "slug": "ablutions",
+          "nom": {
+            "fr": "Ablutions (wudû')",
+            "ar": "الوضوء",
+            "en": "Ablution (wudu)"
+          }
+        },
+        {
+          "slug": "ghusl",
+          "nom": {
+            "fr": "Grandes ablutions (ghusl)",
+            "ar": "الغسل",
+            "en": "Ritual bathing"
+          }
+        },
+        {
+          "slug": "tayammum",
+          "nom": {
+            "fr": "Ablution sèche (tayammum)",
+            "ar": "التيمم",
+            "en": "Dry ablution"
+          }
+        },
+        {
+          "slug": "menstruations",
+          "nom": {
+            "fr": "Menstruations et post-partum",
+            "ar": "الحيض والنفاس",
+            "en": "Menstruation and postnatal bleeding"
+          }
+        },
+        {
+          "slug": "hygiene",
+          "nom": {
+            "fr": "Hygiène et fitra",
+            "ar": "خصال الفطرة",
+            "en": "Hygiene and fitrah"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "priere",
+      "fond": "sobre",
+      "nom": {
+        "fr": "Prière et mosquée",
+        "ar": "الصلاة والمساجد",
+        "en": "Prayer and mosques"
+      },
+      "themes": [
+        {
+          "slug": "conditions",
+          "nom": {
+            "fr": "Conditions et piliers",
+            "ar": "شروط الصلاة وأركانها",
+            "en": "Prayer conditions and pillars"
+          }
+        },
+        {
+          "slug": "horaires",
+          "nom": {
+            "fr": "Horaires des prières",
+            "ar": "مواقيت الصلاة",
+            "en": "Prayer times"
+          }
+        },
+        {
+          "slug": "adhan",
+          "nom": {
+            "fr": "Appel à la prière",
+            "ar": "الأذان والإقامة",
+            "en": "Call to prayer"
+          }
+        },
+        {
+          "slug": "congregation",
+          "nom": {
+            "fr": "Prière collective",
+            "ar": "صلاة الجماعة",
+            "en": "Congregational prayer"
+          }
+        },
+        {
+          "slug": "vendredi",
+          "nom": {
+            "fr": "Prière du vendredi",
+            "ar": "الجمعة",
+            "en": "Friday prayer"
+          }
+        },
+        {
+          "slug": "fetes",
+          "nom": {
+            "fr": "Prières des deux fêtes",
+            "ar": "صلاة العيدين",
+            "en": "Eid prayers"
+          }
+        },
+        {
+          "slug": "voyage",
+          "nom": {
+            "fr": "Prière en voyage",
+            "ar": "صلاة المسافر",
+            "en": "Prayer while traveling"
+          }
+        },
+        {
+          "slug": "surrogatoires",
+          "nom": {
+            "fr": "Prières surérogatoires et nocturnes",
+            "ar": "النوافل والتهجد",
+            "en": "Voluntary and night prayers"
+          }
+        },
+        {
+          "slug": "funerailles",
+          "nom": {
+            "fr": "Prière funéraire",
+            "ar": "صلاة الجنازة",
+            "en": "Funeral prayer"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "jeune",
+      "fond": "cosmos",
+      "nom": {
+        "fr": "Jeûne et Ramadan",
+        "ar": "الصيام ورمضان",
+        "en": "Fasting and Ramadan"
+      },
+      "themes": [
+        {
+          "slug": "ramadan",
+          "nom": {
+            "fr": "Jeûne du Ramadan",
+            "ar": "صيام رمضان",
+            "en": "Ramadan fasting"
+          }
+        },
+        {
+          "slug": "suhur-iftar",
+          "nom": {
+            "fr": "Suhûr et rupture du jeûne",
+            "ar": "السحور والإفطار",
+            "en": "Suhoor and iftar"
+          }
+        },
+        {
+          "slug": "laylat-al-qadr",
+          "nom": {
+            "fr": "Nuit du Destin",
+            "ar": "ليلة القدر",
+            "en": "Night of Decree"
+          }
+        },
+        {
+          "slug": "itikaf",
+          "nom": {
+            "fr": "Retraite spirituelle (i‘tikâf)",
+            "ar": "الاعتكاف",
+            "en": "Spiritual retreat"
+          }
+        },
+        {
+          "slug": "volontaire",
+          "nom": {
+            "fr": "Jeûnes volontaires",
+            "ar": "صيام التطوع",
+            "en": "Voluntary fasts"
+          }
+        },
+        {
+          "slug": "dispenses",
+          "nom": {
+            "fr": "Dispenses et rattrapages",
+            "ar": "الرخص والقضاء",
+            "en": "Exemptions and missed fasts"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zakat",
+      "fond": "sobre",
+      "nom": {
+        "fr": "Zakât, dons et solidarité",
+        "ar": "الزكاة والصدقات",
+        "en": "Zakat and charity"
+      },
+      "themes": [
+        {
+          "slug": "zakat-obligatoire",
+          "nom": {
+            "fr": "Zakât obligatoire",
+            "ar": "الزكاة المفروضة",
+            "en": "Obligatory zakat"
+          }
+        },
+        {
+          "slug": "zakat-fitr",
+          "nom": {
+            "fr": "Zakât al-fitr",
+            "ar": "زكاة الفطر",
+            "en": "Zakat al-fitr"
+          }
+        },
+        {
+          "slug": "sadaqa",
+          "nom": {
+            "fr": "Aumône et dons",
+            "ar": "الصدقة والهبات",
+            "en": "Charity and gifts"
+          }
+        },
+        {
+          "slug": "waqf",
+          "nom": {
+            "fr": "Fondations pieuses (waqf)",
+            "ar": "الوقف",
+            "en": "Charitable endowments"
+          }
+        },
+        {
+          "slug": "necessiteux",
+          "nom": {
+            "fr": "Pauvres et nécessiteux",
+            "ar": "الفقراء والمساكين",
+            "en": "Poor and needy"
+          }
+        },
+        {
+          "slug": "entraide",
+          "nom": {
+            "fr": "Entraide et générosité",
+            "ar": "التكافل والكرم",
+            "en": "Mutual support and generosity"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pelerinage",
+      "fond": "cosmos",
+      "nom": {
+        "fr": "Hajj et ‘Umra",
+        "ar": "الحج والعمرة",
+        "en": "Hajj and Umrah"
+      },
+      "themes": [
+        {
+          "slug": "ihram",
+          "nom": {
+            "fr": "Sacralisation et ihrâm",
+            "ar": "الإحرام",
+            "en": "Ihram"
+          }
+        },
+        {
+          "slug": "tawaf",
+          "nom": {
+            "fr": "Circumambulation (tawâf)",
+            "ar": "الطواف",
+            "en": "Tawaf"
+          }
+        },
+        {
+          "slug": "sai",
+          "nom": {
+            "fr": "Parcours Safâ-Marwa",
+            "ar": "السعي بين الصفا والمروة",
+            "en": "Sa’i"
+          }
+        },
+        {
+          "slug": "arafat",
+          "nom": {
+            "fr": "‘Arafât et Muzdalifa",
+            "ar": "عرفة ومزدلفة",
+            "en": "Arafat and Muzdalifah"
+          }
+        },
+        {
+          "slug": "mina",
+          "nom": {
+            "fr": "Minâ et lapidation",
+            "ar": "منى ورمي الجمرات",
+            "en": "Mina and stoning"
+          }
+        },
+        {
+          "slug": "umra",
+          "nom": {
+            "fr": "Petit pèlerinage",
+            "ar": "العمرة",
+            "en": "Umrah"
+          }
+        },
+        {
+          "slug": "sacrifices",
+          "nom": {
+            "fr": "Sacrifices du pèlerinage",
+            "ar": "الهدي والأضاحي",
+            "en": "Pilgrimage sacrifices"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "famille",
+      "fond": "eau",
+      "nom": {
+        "fr": "Mariage, famille et vie conjugale",
+        "ar": "النكاح والأسرة",
+        "en": "Marriage and family"
+      },
+      "themes": [
+        {
+          "slug": "mariage",
+          "nom": {
+            "fr": "Mariage et contrat",
+            "ar": "النكاح والعقد",
+            "en": "Marriage and contract"
+          }
+        },
+        {
+          "slug": "choix-epoux",
+          "nom": {
+            "fr": "Choix des conjoints",
+            "ar": "اختيار الزوجين",
+            "en": "Choosing a spouse"
+          }
+        },
+        {
+          "slug": "droits-conjugaux",
+          "nom": {
+            "fr": "Droits et devoirs des époux",
+            "ar": "حقوق الزوجين",
+            "en": "Spouses’ rights and duties"
+          }
+        },
+        {
+          "slug": "dot",
+          "nom": {
+            "fr": "Dot (mahr)",
+            "ar": "المهر",
+            "en": "Mahr (dowry)"
+          }
+        },
+        {
+          "slug": "divorce",
+          "nom": {
+            "fr": "Divorce et séparation",
+            "ar": "الطلاق والخلع",
+            "en": "Divorce and separation"
+          }
+        },
+        {
+          "slug": "filiation",
+          "nom": {
+            "fr": "Filiation et allaitement",
+            "ar": "النسب والرضاعة",
+            "en": "Lineage and breastfeeding"
+          }
+        },
+        {
+          "slug": "education",
+          "nom": {
+            "fr": "Éducation des enfants",
+            "ar": "تربية الأبناء",
+            "en": "Raising children"
+          }
+        },
+        {
+          "slug": "parents",
+          "nom": {
+            "fr": "Bienfaisance envers les parents",
+            "ar": "بر الوالدين",
+            "en": "Honoring parents"
+          }
+        },
+        {
+          "slug": "orphelins",
+          "nom": {
+            "fr": "Protection des orphelins",
+            "ar": "كفالة اليتيم",
+            "en": "Caring for orphans"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "comportement",
+      "fond": "sobre",
+      "nom": {
+        "fr": "Morale et relations humaines",
+        "ar": "الأخلاق والآداب",
+        "en": "Ethics and conduct"
+      },
+      "themes": [
+        {
+          "slug": "sincerite",
+          "nom": {
+            "fr": "Sincérité et intentions",
+            "ar": "الإخلاص والنيات",
+            "en": "Sincerity and intentions"
+          }
+        },
+        {
+          "slug": "veracite",
+          "nom": {
+            "fr": "Vérité et honnêteté",
+            "ar": "الصدق والأمانة",
+            "en": "Truthfulness and honesty"
+          }
+        },
+        {
+          "slug": "patience",
+          "nom": {
+            "fr": "Patience et gratitude",
+            "ar": "الصبر والشكر",
+            "en": "Patience and gratitude"
+          }
+        },
+        {
+          "slug": "modestie",
+          "nom": {
+            "fr": "Pudeur et modestie",
+            "ar": "الحياء والتواضع",
+            "en": "Modesty and humility"
+          }
+        },
+        {
+          "slug": "voisins",
+          "nom": {
+            "fr": "Droits des voisins",
+            "ar": "حقوق الجيران",
+            "en": "Neighbors’ rights"
+          }
+        },
+        {
+          "slug": "amities",
+          "nom": {
+            "fr": "Amitié et fraternité",
+            "ar": "الأخوة والصحبة",
+            "en": "Friendship and brotherhood"
+          }
+        },
+        {
+          "slug": "parole",
+          "nom": {
+            "fr": "Parole, médisance et calomnie",
+            "ar": "اللسان والغيبة والنميمة",
+            "en": "Speech and backbiting"
+          }
+        },
+        {
+          "slug": "hospitalite",
+          "nom": {
+            "fr": "Hospitalité et salutations",
+            "ar": "الضيافة والسلام",
+            "en": "Hospitality and greetings"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "commerce",
+      "fond": "eau",
+      "nom": {
+        "fr": "Commerce et affaires",
+        "ar": "البيوع والمعاملات",
+        "en": "Trade and transactions"
+      },
+      "themes": [
+        {
+          "slug": "vente",
+          "nom": {
+            "fr": "Vente et achat",
+            "ar": "البيع والشراء",
+            "en": "Buying and selling"
+          }
+        },
+        {
+          "slug": "commerce-loyal",
+          "nom": {
+            "fr": "Loyauté commerciale",
+            "ar": "الصدق في التجارة",
+            "en": "Fair trading"
+          }
+        },
+        {
+          "slug": "riba",
+          "nom": {
+            "fr": "Usure (ribâ)",
+            "ar": "الربا",
+            "en": "Riba (usury)"
+          }
+        },
+        {
+          "slug": "dettes",
+          "nom": {
+            "fr": "Dettes et prêts",
+            "ar": "القروض والديون",
+            "en": "Loans and debts"
+          }
+        },
+        {
+          "slug": "contrats",
+          "nom": {
+            "fr": "Contrats et conditions",
+            "ar": "العقود والشروط",
+            "en": "Contracts and conditions"
+          }
+        },
+        {
+          "slug": "partenariats",
+          "nom": {
+            "fr": "Associations et mandats",
+            "ar": "الشراكة والوكالة",
+            "en": "Partnerships and agency"
+          }
+        },
+        {
+          "slug": "heritage",
+          "nom": {
+            "fr": "Héritage et testaments",
+            "ar": "الميراث والوصايا",
+            "en": "Inheritance and wills"
+          }
+        },
+        {
+          "slug": "travail",
+          "nom": {
+            "fr": "Travail et rémunération",
+            "ar": "العمل والأجرة",
+            "en": "Work and wages"
+          }
+        },
+        {
+          "slug": "propriete",
+          "nom": {
+            "fr": "Propriété et biens",
+            "ar": "الملكية والأموال",
+            "en": "Property and wealth"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vie",
+      "fond": "sobre",
+      "nom": {
+        "fr": "Vie quotidienne et usages",
+        "ar": "الحياة اليومية والعادات",
+        "en": "Daily life and customs"
+      },
+      "themes": [
+        {
+          "slug": "alimentation",
+          "nom": {
+            "fr": "Alimentation et repas",
+            "ar": "الأطعمة والآداب",
+            "en": "Food and dining"
+          }
+        },
+        {
+          "slug": "boissons",
+          "nom": {
+            "fr": "Boissons et règles",
+            "ar": "الأشربة",
+            "en": "Drinks"
+          }
+        },
+        {
+          "slug": "vetements",
+          "nom": {
+            "fr": "Vêtements et apparence",
+            "ar": "اللباس والزينة",
+            "en": "Clothing and adornment"
+          }
+        },
+        {
+          "slug": "habitation",
+          "nom": {
+            "fr": "Habitation et intimité",
+            "ar": "البيوت والاستئذان",
+            "en": "Home and privacy"
+          }
+        },
+        {
+          "slug": "voyages",
+          "nom": {
+            "fr": "Voyages et déplacements",
+            "ar": "السفر",
+            "en": "Travel"
+          }
+        },
+        {
+          "slug": "animaux",
+          "nom": {
+            "fr": "Animaux et environnement",
+            "ar": "الرفق بالحيوان والبيئة",
+            "en": "Animals and environment"
+          }
+        },
+        {
+          "slug": "fetes-coutumes",
+          "nom": {
+            "fr": "Fêtes et coutumes",
+            "ar": "الأعياد والعادات",
+            "en": "Festivals and customs"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "sante",
+      "fond": "eau",
+      "nom": {
+        "fr": "Santé et épreuves",
+        "ar": "الطب والابتلاء",
+        "en": "Health and hardship"
+      },
+      "themes": [
+        {
+          "slug": "maladie",
+          "nom": {
+            "fr": "Maladie et soins",
+            "ar": "المرض والعلاج",
+            "en": "Illness and treatment"
+          }
+        },
+        {
+          "slug": "medecine",
+          "nom": {
+            "fr": "Médecine prophétique et récits médicaux",
+            "ar": "الطب النبوي",
+            "en": "Prophetic medicine narratives"
+          }
+        },
+        {
+          "slug": "ruqya",
+          "nom": {
+            "fr": "Invocations de protection (ruqya)",
+            "ar": "الرقية",
+            "en": "Ruqyah"
+          }
+        },
+        {
+          "slug": "epreuves",
+          "nom": {
+            "fr": "Épreuves et endurance",
+            "ar": "الابتلاء والصبر",
+            "en": "Trials and endurance"
+          }
+        },
+        {
+          "slug": "deuil",
+          "nom": {
+            "fr": "Mort, deuil et condoléances",
+            "ar": "الموت والتعزية",
+            "en": "Death and mourning"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "spiritualite",
+      "fond": "cosmos",
+      "nom": {
+        "fr": "Adoration intérieure et spiritualité",
+        "ar": "الرقائق والتزكية",
+        "en": "Inner worship and spirituality"
+      },
+      "themes": [
+        {
+          "slug": "dhikr",
+          "nom": {
+            "fr": "Rappel d’Allah (dhikr)",
+            "ar": "الذكر",
+            "en": "Remembrance"
+          }
+        },
+        {
+          "slug": "dua",
+          "nom": {
+            "fr": "Invocations (du‘â)",
+            "ar": "الدعاء",
+            "en": "Supplications"
+          }
+        },
+        {
+          "slug": "repentir",
+          "nom": {
+            "fr": "Repentir et pardon",
+            "ar": "التوبة والاستغفار",
+            "en": "Repentance and forgiveness"
+          }
+        },
+        {
+          "slug": "tawakkul",
+          "nom": {
+            "fr": "Confiance en Allah",
+            "ar": "التوكل",
+            "en": "Reliance on Allah"
+          }
+        },
+        {
+          "slug": "coeur",
+          "nom": {
+            "fr": "Purification du cœur",
+            "ar": "تزكية النفس",
+            "en": "Purification of the heart"
+          }
+        },
+        {
+          "slug": "ascese",
+          "nom": {
+            "fr": "Détachement et modération",
+            "ar": "الزهد والرقائق",
+            "en": "Asceticism and moderation"
+          }
+        },
+        {
+          "slug": "reves",
+          "nom": {
+            "fr": "Rêves et interprétations",
+            "ar": "الرؤى وتعبيرها",
+            "en": "Dreams and interpretations"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "histoire",
+      "fond": "cosmos",
+      "nom": {
+        "fr": "Histoire prophétique et compagnons",
+        "ar": "السيرة والمناقب",
+        "en": "Prophetic history and companions"
+      },
+      "themes": [
+        {
+          "slug": "sira",
+          "nom": {
+            "fr": "Vie du Prophète",
+            "ar": "السيرة النبوية",
+            "en": "Prophetic biography"
+          }
+        },
+        {
+          "slug": "revelation-debut",
+          "nom": {
+            "fr": "Début de la Révélation",
+            "ar": "بدء الوحي",
+            "en": "Beginning of revelation"
+          }
+        },
+        {
+          "slug": "hijra",
+          "nom": {
+            "fr": "Hégire et Médine",
+            "ar": "الهجرة والمدينة",
+            "en": "Hijrah and Madinah"
+          }
+        },
+        {
+          "slug": "expeditions",
+          "nom": {
+            "fr": "Expéditions et événements historiques",
+            "ar": "المغازي والسير",
+            "en": "Historical expeditions"
+          }
+        },
+        {
+          "slug": "compagnons",
+          "nom": {
+            "fr": "Compagnons et leurs mérites",
+            "ar": "فضائل الصحابة",
+            "en": "Companions and merits"
+          }
+        },
+        {
+          "slug": "famille-prophete",
+          "nom": {
+            "fr": "Famille du Prophète",
+            "ar": "آل البيت",
+            "en": "Prophet’s family"
+          }
+        },
+        {
+          "slug": "anciens-peuples",
+          "nom": {
+            "fr": "Récits des prophètes précédents",
+            "ar": "قصص الأنبياء",
+            "en": "Earlier prophets’ narratives"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "justice",
+      "fond": "sobre",
+      "nom": {
+        "fr": "Justice, société et gouvernance",
+        "ar": "القضاء والمجتمع",
+        "en": "Justice and society"
+      },
+      "themes": [
+        {
+          "slug": "justice",
+          "nom": {
+            "fr": "Justice et témoignage",
+            "ar": "القضاء والشهادات",
+            "en": "Justice and testimony"
+          }
+        },
+        {
+          "slug": "litiges",
+          "nom": {
+            "fr": "Litiges et conciliation",
+            "ar": "الخصومات والصلح",
+            "en": "Disputes and reconciliation"
+          }
+        },
+        {
+          "slug": "droits",
+          "nom": {
+            "fr": "Droits et responsabilités",
+            "ar": "الحقوق والواجبات",
+            "en": "Rights and responsibilities"
+          }
+        },
+        {
+          "slug": "gouvernance",
+          "nom": {
+            "fr": "Gouvernance et responsabilité",
+            "ar": "الإمارة والمسؤولية",
+            "en": "Leadership and responsibility"
+          }
+        },
+        {
+          "slug": "serments",
+          "nom": {
+            "fr": "Serments et vœux",
+            "ar": "الأيمان والنذور",
+            "en": "Oaths and vows"
+          }
+        },
+        {
+          "slug": "peines",
+          "nom": {
+            "fr": "Sanctions et réparation",
+            "ar": "الحدود والديات",
+            "en": "Penalties and compensation"
+          }
+        },
+        {
+          "slug": "paix",
+          "nom": {
+            "fr": "Paix et relations entre communautés",
+            "ar": "السلم والعلاقات",
+            "en": "Peace and intercommunal relations"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "eschatologie",
+      "fond": "cosmos",
+      "nom": {
+        "fr": "Signes de l’Heure et fin des temps",
+        "ar": "أشراط الساعة والفتن",
+        "en": "Last Hour and end times"
+      },
+      "themes": [
+        {
+          "slug": "signes-mineurs",
+          "nom": {
+            "fr": "Signes mineurs",
+            "ar": "العلامات الصغرى",
+            "en": "Minor signs"
+          }
+        },
+        {
+          "slug": "signes-majeurs",
+          "nom": {
+            "fr": "Signes majeurs",
+            "ar": "العلامات الكبرى",
+            "en": "Major signs"
+          }
+        },
+        {
+          "slug": "dajjal",
+          "nom": {
+            "fr": "Al-Masîh ad-Dajjâl",
+            "ar": "المسيح الدجال",
+            "en": "Al-Masih ad-Dajjal"
+          }
+        },
+        {
+          "slug": "issa",
+          "nom": {
+            "fr": "Descente de ‘Îsâ",
+            "ar": "نزول عيسى",
+            "en": "Descent of Isa"
+          }
+        },
+        {
+          "slug": "yajuj-majuj",
+          "nom": {
+            "fr": "Ya’jûj et Ma’jûj",
+            "ar": "يأجوج ومأجوج",
+            "en": "Gog and Magog"
+          }
+        },
+        {
+          "slug": "fitan",
+          "nom": {
+            "fr": "Troubles et épreuves collectives",
+            "ar": "الفتن",
+            "en": "Tribulations"
+          }
+        },
+        {
+          "slug": "jugement",
+          "nom": {
+            "fr": "Jour du Jugement",
+            "ar": "يوم القيامة",
+            "en": "Day of Judgment"
+          }
+        },
+        {
+          "slug": "paradis-enfer",
+          "nom": {
+            "fr": "Paradis et Enfer",
+            "ar": "الجنة والنار",
+            "en": "Paradise and Hell"
+          }
+        }
+      ]
+    }
+  ]
+}
