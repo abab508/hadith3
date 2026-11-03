@@ -53,6 +53,17 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
         </div>
       </section>
 
+      <section aria-label={locale === "ar" ? "التصنيف الموضوعي" : "Hadiths par thèmes"} style={{padding:"1.5rem",border:"1px solid var(--bordure)",borderRadius:"1.5rem",background:"linear-gradient(120deg,#20392d,#15251e)",color:"#fff3d8",boxShadow:"0 16px 40px #02080755"}}>
+        <span style={{fontSize:".85rem",letterSpacing:".08em",color:"#f1c98b"}}>✦ MILAGHAIBA · الموضوعات</span>
+        <h2 style={{fontFamily:locale==="ar"?"Aref Ruqaa Ink,serif":"Cormorant Garamond,Georgia,serif",fontSize:"clamp(1.8rem,4vw,2.7rem)",color:"#f5d9a7",margin:".5rem 0"}}>
+          {locale==="ar"?"اكتشف الأحاديث حسب الموضوع":locale==="en"?"Explore hadiths by topic":"Explorer les hadiths par grands thèmes"}
+        </h2>
+        <p style={{color:"#dfd9cb"}}>{locale==="ar"?"أبواب العقيدة والطهارة والزواج والأسرة والمعاملات وغيرها":locale==="en"?"Faith, purification, marriage, family, trade and more":"Foi, purification, mariage, famille, commerce, spiritualité, et bien d’autres domaines."}</p>
+        <Link href="/themes" style={{display:"inline-block",background:"#e8c58a",padding:".8rem 1.3rem",borderRadius:"999px",color:"#182b22",fontWeight:800,textDecoration:"none"}}>
+          {locale==="ar"?"تصفح الأبواب":locale==="en"?"Browse 16 chapters":"Découvrir les 16 grands chapitres"} ↗
+        </Link>
+      </section>
+
       <section className={styles.recherche} aria-labelledby="titre-recherche">
         <h2 id="titre-recherche" className="visuellement-cache">{t("accueil.recherche.titre")}</h2>
         <form role="search" action={`/${locale}/recherche`} method="get" className={styles.formulaire}>
