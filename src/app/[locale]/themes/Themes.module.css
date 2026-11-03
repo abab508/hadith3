@@ -1,0 +1,36 @@
+.page{max-inline-size:90rem;margin-inline:auto;padding:2rem clamp(1rem,3vw,2.5rem) 5rem}
+.page a{color:inherit}
+.hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;border-radius:2rem;padding:clamp(2.5rem,6vw,5rem) 1.3rem;margin-block:1rem 2rem;border:1px solid #a78b4e78;background:radial-gradient(ellipse at 50% 10%,#46644c6e,transparent 56%),linear-gradient(145deg,#1d2c22,#0c1514 80%);box-shadow:0 24px 75px #03090675;color:#f8ebd3}
+.hero>a{display:inline-block;font-size:.85rem;margin-block-end:1.4rem}
+.hero h1{font-family:"Berkshire Swash","Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.25;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,5rem);color:#f6d69d;margin:.7rem auto;text-wrap:balance}
+:global(html[lang="ar"]) .hero h1{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;line-height:1.75;letter-spacing:normal}
+.hero p{max-inline-size:50rem;margin-inline:auto;color:#e2d5c0}
+.ornement{font-size:1.4rem;color:#e3b568;letter-spacing:.5rem;animation:flotter 7s ease-in-out infinite alternate}
+.surtitre{font-size:.7rem;letter-spacing:.15em;color:#d3c098!important}
+.compteur{display:inline-block;padding:.7rem 1.1rem;border:1px solid #d8b77580;border-radius:999px;font-size:.85rem;color:#f0d6a5;margin-block-start:.8rem}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.1rem}
+.carte{position:relative;min-block-size:19rem;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;border:1px solid #d6bd845c;border-radius:1.2rem;overflow:hidden;isolation:isolate;text-decoration:none;background-color:#182620;background-image:linear-gradient(0deg,#091410f2,#12282480),radial-gradient(circle at 70% 15%,#efbb7547,transparent 50%);color:#f7edda!important;box-shadow:0 15px 38px #0005;transition:transform .35s,border-color .35s,box-shadow .35s}
+.carte:before{content:"";position:absolute;inset:-25%;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 20%,#dfbf8033,transparent 45%);animation:flotter 8s ease-in-out infinite alternate}
+.carte:hover,.carte:focus-visible{transform:translateY(-6px);border-color:#f2cd8e;box-shadow:0 22px 60px #0008,0 0 25px #e0b56e2b}
+.carte h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;line-height:1.2;margin:.4rem 0}
+:global(html[lang="ar"]) .carte h2{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;line-height:1.6}
+.numero{color:#dbb77b;font-size:.85rem;font-variant-numeric:tabular-nums}
+.ornementCarte{position:absolute;inset-block-start:1rem;inset-inline-end:1.2rem;color:#dec38a;font-size:2rem}
+.carte p{font-size:.85rem;color:#d6d2c5;margin:.3rem 0}
+.nomAr{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:1.15rem;color:#f0d39a;line-height:1.8}
+.ouvrir{font-size:.82rem;color:#f6d59c;margin-block-start:.8rem}
+.eau{background-image:linear-gradient(0deg,#07191cf2,#0a3d4180),radial-gradient(ellipse at 75% 25%,#61c5bf77,transparent 58%)}
+.cosmos{background-image:linear-gradient(0deg,#101324f2,#253353a0),radial-gradient(ellipse at 70% 20%,#d4b07871,transparent 55%)}
+.sobre{background-image:linear-gradient(0deg,#101a16f2,#273527a0),radial-gradient(ellipse at 70% 15%,#d9b2764d,transparent 55%)}
+.note{color:var(--discret);font-size:.88rem;margin-block:1.8rem}
+.retour{display:inline-block;margin-block:1rem}
+.catalogue{max-inline-size:80rem;margin-inline:auto}
+.catalogue h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.8rem,3vw,2.6rem);margin-block:2rem 1rem}
+.sousGrille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.85rem}
+.sousCarte{background:var(--surface);border:1px solid var(--bordure);border-radius:1rem;padding:1.3rem;transition:border-color .2s,transform .2s}
+.sousCarte:hover{border-color:var(--ocre);transform:translateY(-3px)}
+.sousCarte h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.55rem;margin:.5rem 0}
+:global(html[lang="ar"]) .sousCarte h3{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif}
+.rechercher{display:inline-flex;margin-block-start:1rem;color:var(--accent)!important;font-size:.85rem}
+@keyframes flotter{to{transform:translateY(-18px) scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.ornement,.carte:before{animation:none}.carte,.sousCarte{transition:none}.carte:hover,.sousCarte:hover{transform:none}}
