@@ -223,3 +223,41 @@ html[data-motion="off"] .fontaineAnimee,html[data-motion="off"] .etoilesAnimees{
 }
 .vueCatalogue .themepurification:before{background:linear-gradient(180deg,transparent 35%,#01190eeb);}
 .vueCatalogue .panneau[data-chapitre="purification"]{background-image:linear-gradient(180deg,#052e20b4,#02241cf1),url("https://images.unsplash.com/photo-1772411534645-584e7b5a5770?auto=format&fit=crop&w=900&q=82");background-size:cover;background-position:center;}
+
+
+/* Référence validée : photographies découpées de la maquette.
+   Sprite local : 4 colonnes × 2 lignes. Les textes, titres et contrôles restent de vrais éléments HTML. */
+.vueCatalogue .hero{
+ background-image:linear-gradient(90deg,#041c1599 0%,#041d17d9 26%,#041d17d6 69%,#041c1599 100%),
+ url("/illustrations/maquette-hero-photo.svg")!important;
+ background-size:100% 100%,cover!important;
+ background-position:center,center!important;
+}
+.vueCatalogue .carteExplorer:is(.themecroyance,.themepurification,.themepriere,.themejeune,.themefamille,.themecommerce,.themecomportement,.themeeschatologie){
+ background-image:linear-gradient(180deg,#06221913 0%,#001d1468 43%,#00120ced 100%),url("/illustrations/chapitres-photos-reference.svg")!important;
+ background-size:100% 100%,400% 200%!important;
+ background-repeat:no-repeat!important;
+}
+.vueCatalogue .themecroyance{background-position:center,0% 0%!important;}
+.vueCatalogue .themepurification{background-position:center,33.333% 0%!important;}
+.vueCatalogue .themepriere{background-position:center,66.666% 0%!important;}
+.vueCatalogue .themejeune{background-position:center,100% 0%!important;}
+.vueCatalogue .themefamille{background-position:center,0% 100%!important;}
+.vueCatalogue .themecommerce{background-position:center,33.333% 100%!important;}
+.vueCatalogue .themecomportement{background-position:center,66.666% 100%!important;}
+.vueCatalogue .themeeschatologie{background-position:center,100% 100%!important;}
+.vueCatalogue .panneau{
+ background-image:linear-gradient(180deg,#01160c75,#01190fef),url("/illustrations/chapitres-photos-reference.svg")!important;
+ background-size:100% 100%,400% 200%!important;
+ background-repeat:no-repeat!important;
+ background-position:center,0% 100%!important;
+}
+.vueCatalogue .panneau[data-chapitre="croyance"]{background-position:center,0% 0%!important;}
+.vueCatalogue .panneau[data-chapitre="purification"]{background-position:center,33.333% 0%!important;}
+.vueCatalogue .panneau[data-chapitre="priere"]{background-position:center,66.666% 0%!important;}
+.vueCatalogue .panneau[data-chapitre="jeune"]{background-position:center,100% 0%!important;}
+.vueCatalogue .panneau[data-chapitre="famille"]{background-position:center,0% 100%!important;}
+.vueCatalogue .panneau[data-chapitre="commerce"]{background-position:center,33.333% 100%!important;}
+.vueCatalogue .panneau[data-chapitre="comportement"]{background-position:center,66.666% 100%!important;}
+.vueCatalogue .panneau[data-chapitre="eschatologie"]{background-position:center,100% 100%!important;}
+@media(prefers-reduced-motion:reduce){.vueCatalogue .carteExplorer,.vueCatalogue .hero{animation:none!important;transition:none!important;}}
