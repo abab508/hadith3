@@ -39,9 +39,10 @@ test("rapport ar : page en RTL, sans traduction ni texte de repli vide", async (
 
 test("le menu signale la page en cours", async ({ page }) => {
   await page.goto("/fr/chaine");
-  const menu = page.getByRole("list", { name: fr.navigation.titre });
-  await expect(menu.getByRole("link", { name: fr.navigation.chaine, exact: true })).toHaveAttribute("aria-current", "page");
-  await expect(menu.getByRole("link", { name: fr.navigation.recherche, exact: true })).not.toHaveAttribute("aria-current", "page");
+  const menu=page.locator("header nav");
+  await menu.locator("details summary").click();
+  await expect(menu.getByRole("link",{name:"Recherche par chaîne"})).toHaveAttribute("aria-current","page");
+  await expect(menu.getByRole("link",{name:"Recherche",exact:true})).not.toHaveAttribute("aria-current","page");
 });
 
 test("recherche réelle : le texte arabe sans voyelles trouve le bon hadith, et seulement lui", async ({ page }) => {
