@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, hadithParId } from "@/donnees/corpus";
@@ -27,7 +28,8 @@ export default async function Chaine({
   const hadith = (demande && hadithParId(demande)) || corpus.hadiths[0];
 
   return (
-    <main id="contenu" tabIndex={-1} className={ui.page}>
+    <main id="contenu" tabIndex={-1} className={`${ui.page} prestige-page`}>
+      <BannierePrestige locale={locale} />
       <ActionsRapport />
       <div className={styles.intro}>
         <h1 className={styles.titre}>{t("titre")}</h1>
