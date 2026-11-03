@@ -174,3 +174,41 @@
 @media(max-width:790px){.vueCatalogue .explorateur{grid-template-columns:1fr;}.vueCatalogue .grilleExplorer{grid-template-columns:repeat(2,minmax(0,1fr));}.vueCatalogue .panneau{min-block-size:auto;}.vueCatalogue .hero{min-block-size:22rem!important;}.vueCatalogue .carteExplorer{min-block-size:12rem;}}
 @media(max-width:510px){.vueCatalogue .hero{padding:1.3rem .65rem 1.75rem!important;min-block-size:21rem!important;}.vueCatalogue .marquePrestige{font-size:clamp(2.65rem,11vw,3.7rem);}.vueCatalogue .hero h1{font-size:clamp(1.8rem,7vw,2.6rem);}.vueCatalogue .surtitre{letter-spacing:.2em!important;}.vueCatalogue .carteExplorer{min-block-size:10.5rem;}.vueCatalogue .rechercheHero input{font-size:.8rem;}.vueCatalogue .rechercheHero button{font-size:.78rem;padding:.5rem .65rem;}.vueCatalogue .panneau{padding:1rem .8rem;}.vueCatalogue .basPage{border-radius:.8rem;}}
 @media(prefers-reduced-motion:reduce){.vueCatalogue .heroDecoration span,.vueCatalogue .carteExplorer{animation:none!important;transition:none!important;}}
+
+
+/* Interactions cinéma : sons désactivés par défaut, mouvements uniquement au survol. */
+.experienceChapitres{min-inline-size:0;}
+.sonBouton{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;align-items:center;margin:.05rem 0 .75rem;}
+.sonBouton button{cursor:pointer;background:linear-gradient(135deg,#0c3b2c,#08251d);border:1px solid #c9a069;border-radius:999px;color:#f9e0ac;padding:.4rem .85rem;min-block-size:2.45rem;font:600 .82rem Georgia,serif;}
+.sonBouton button[aria-pressed="true"]{background:linear-gradient(130deg,#efc985,#a67834);color:#07251d;box-shadow:0 0 18px #f1c1736e;}
+.sonBouton button:disabled{opacity:.5;cursor:not-allowed;}
+.sonAide{font-size:.73rem;color:#c4b598;}
+.vueCatalogue .experienceChapitres .explorateur{grid-template-columns:minmax(0,1fr) minmax(19rem,27%);}
+.vueCatalogue .carteExplorer{transform-origin:center bottom;will-change:auto;transition:transform .46s cubic-bezier(.2,.75,.2,1),box-shadow .4s ease,border-color .35s ease,filter .4s ease;}
+.vueCatalogue .carteExplorer:hover,.vueCatalogue .carteExplorer:focus-visible{transform:translateY(-7px) scale(1.025);filter:saturate(1.2) brightness(1.12);box-shadow:0 0 0 1px #d9a55e,0 0 29px #e5be7780,0 18px 32px #000b;}
+.etoilesAnimees{position:absolute!important;top:12%;right:13%;font-size:2.5rem;color:#ffe1a5;opacity:0;pointer-events:none;text-shadow:0 0 20px #ffdf99;}
+.carteExplorer:is(:hover,:focus-visible) .etoilesAnimees{animation:etoileChapitre 2.3s ease-in-out infinite;opacity:1;}
+/* Fontaine: trois filets translucides surgissent de la photo et tombent.
+   L'effet reste superposé à une vraie photo de purification. */
+.fontaineAnimee{position:absolute!important;pointer-events:none;inset:0;z-index:1;opacity:0;mix-blend-mode:screen;transition:opacity .2s ease;}
+.fontaineAnimee>span{position:absolute;display:block;inline-size:5px;block-size:50%;top:0;left:52%;border-radius:999px;background:linear-gradient(#ffffff00,#c1f7ffcc,#f1fdff88,#ffffff00);filter:drop-shadow(0 0 9px #d3fcff);transform:rotate(22deg) scaleY(.5);transform-origin:top center;}
+.fontaineAnimee>span:nth-child(2){left:48%;inline-size:3px;opacity:.75;animation-delay:-.3s;}
+.fontaineAnimee>span:nth-child(3){left:56%;inline-size:2px;opacity:.6;animation-delay:-.6s;}
+.carteExplorer[data-chapitre="purification"]:is(:hover,:focus-visible) .fontaineAnimee{opacity:1;}
+.carteExplorer[data-chapitre="purification"]:is(:hover,:focus-visible) .fontaineAnimee>span{animation:ruisseauChapitre .9s linear infinite;}
+.carteExplorer[data-chapitre="purification"]:is(:hover,:focus-visible)::after{content:"";position:absolute;left:19%;right:19%;top:52%;height:24%;z-index:1;border-radius:50%;pointer-events:none;background:repeating-radial-gradient(ellipse at center,#b3faff8a 0 1px,#c5faff00 2px 15px);opacity:.8;animation:ridesEau 1.6s ease-out infinite;}
+.carteExplorer[data-chapitre="jeune"]:is(:hover,:focus-visible) .pictogramme{animation:luneChapitre 3s ease-in-out infinite alternate;}
+.carteExplorer[data-chapitre="eschatologie"]:is(:hover,:focus-visible) .etoilesAnimees{animation:etoileChapitre 1.5s linear infinite;}
+.carteExplorer[data-chapitre="famille"]:is(:hover,:focus-visible) .pictogramme{animation:coeurChapitre 1.2s ease-in-out infinite;}
+.carteExplorer[data-chapitre="commerce"]:is(:hover,:focus-visible) .pictogramme{animation:balanceChapitre 1.8s ease-in-out infinite alternate;}
+.carteExplorer[data-chapitre="priere"]:is(:hover,:focus-visible) .pictogramme{animation:lumiereChapitre 2s ease-in-out infinite alternate;}
+@keyframes ruisseauChapitre{0%{transform:translateY(-20%) rotate(22deg) scaleY(.35);opacity:.1}35%{opacity:.8}100%{transform:translateY(60%) rotate(22deg) scaleY(1);opacity:0}}
+@keyframes ridesEau{from{transform:scale(.45);opacity:.9}to{transform:scale(1.4);opacity:0}}
+@keyframes etoileChapitre{0%,100%{opacity:.15;transform:scale(.7) rotate(0deg)}50%{opacity:.95;transform:scale(1.1) rotate(60deg)}}
+@keyframes luneChapitre{to{filter:drop-shadow(0 0 18px #f8d58f);transform:rotate(-12deg)}}
+@keyframes coeurChapitre{50%{transform:scale(1.11);filter:drop-shadow(0 0 15px #f6d899)}}
+@keyframes balanceChapitre{to{transform:rotate(7deg)}}
+@keyframes lumiereChapitre{to{filter:drop-shadow(0 0 20px #f8e1a0);box-shadow:0 0 26px #f8d8a0}}
+@media(max-width:790px){.vueCatalogue .experienceChapitres .explorateur{grid-template-columns:1fr}.sonAide{display:none}}
+@media(prefers-reduced-motion:reduce){.fontaineAnimee,.etoilesAnimees,.carteExplorer::after{animation:none!important;opacity:0!important}.vueCatalogue .carteExplorer:hover,.vueCatalogue .carteExplorer:focus-visible{transform:none;}}
+html[data-motion="off"] .fontaineAnimee,html[data-motion="off"] .etoilesAnimees{animation:none!important;opacity:0!important;}
