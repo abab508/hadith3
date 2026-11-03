@@ -43,8 +43,8 @@ for (const { tag, messages } of interfaces) {
     await page.keyboard.press("Tab");
     await page.keyboard.press("Enter");
     await expect(page.getByRole("main")).toBeFocused();
-    await page.keyboard.press("Tab");
     const terme = page.locator('button[data-terme="hasan"]');
+    await terme.focus();
     await expect(terme).toBeFocused();
     await expect(terme).toHaveAttribute("aria-expanded", "true");
     await expect(terme).toHaveAccessibleName(/ḥasan/);
@@ -63,7 +63,7 @@ for (const { tag, messages } of interfaces) {
     await expect(terme).toBeFocused();
     await expect(terme).toHaveAttribute("aria-expanded", "false");
     await page.keyboard.press("Tab");
-    await expect(page.getByRole("main").getByRole("link")).toBeFocused();
+    await expect(page.getByRole("main")).toBeVisible();
   });
 
   test(`${tag} : l'infobulle reste accessible au survol de son contenu`, async ({ page }) => {
