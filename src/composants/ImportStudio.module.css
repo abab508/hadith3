@@ -86,3 +86,10 @@
 @media(max-width:960px){.workspace{grid-template-columns:1fr;}.sidebar{position:static;}.sidebar .asideDivider{margin:1rem 0;}}
 @media(max-width:550px){.world{padding:1rem .7rem;}.hero{padding:1.2rem .3rem 2rem;}.metrics{gap:.4rem;}.metrics>div{padding:.65rem;}.metrics strong{font-size:1.4rem;}.confirm{flex-direction:column;align-items:stretch;}.save{inline-size:100%;}}
 @media(prefers-reduced-motion:reduce){.world *,.world *::before{animation:none!important;transition:none!important;transform:none!important;}}
+
+
+/* Préserver les actions de l'admin : transformer la présentation uniquement. */
+.world,.frame,.workspace{background:linear-gradient(145deg,#09251e,#061b16);border-color:#b29461;}
+.sidebar,.content,.drop,.form{background:#0b2c22;border-color:#b3925c;}
+.hero,.kicker{color:#e9c78b;}
+.primary,.save{background:linear-gradient(145deg,#f3d79a,#c59a61);color:#10241b;}
