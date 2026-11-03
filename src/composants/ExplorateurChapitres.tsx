@@ -2,6 +2,7 @@
 
 import {useState} from "react";
 import {Link} from "@/i18n/navigation";
+import SonsChapitres from "@/composants/SonsChapitres";
 import styles from "@/app/[locale]/themes/Themes.module.css";
 
 type Nom={fr:string;ar:string;en:string};
@@ -32,12 +33,16 @@ export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapi
  const visibles=tous?chapitres:ordre.map(slug=>chapitres.find(c=>c.slug===slug)).filter((c):c is Chapitre=>Boolean(c));
  const actif=chapitres.find(c=>c.slug===selection)??chapitres[0]!;
  const t=labels[langue];
- return <div className={styles.explorateur}>
+ return <div className={styles.experienceChapitres}>
+  <SonsChapitres langue={langue}/>
+  <div className={styles.explorateur}>
   <div className={styles.grilleExplorer} role="group" aria-label={t.selection}>
    {visibles.map((c,index)=><button key={c.slug} type="button" aria-pressed={c.slug===selection}
-    onClick={()=>setSelection(c.slug)} className={`${styles.carteExplorer} ${styles[c.fond]} ${styles["theme"+c.slug]??""} ${c.slug===selection?styles.selectionnee:""}`}>
+    onClick={()=>setSelection(c.slug)} data-chapitre={c.slug} className={`${styles.carteExplorer} ${styles[c.fond]} ${styles["theme"+c.slug]??""} ${c.slug===selection?styles.selectionnee:""}`}>
     <span className={styles.numero}> {String(chapitres.indexOf(c)+1).padStart(2,"0")} </span>
     <span className={styles.pictogramme} aria-hidden="true">{symboles[c.slug]??"✦"}</span>
+    {c.slug==="purification"&&<span className={styles.fontaineAnimee} aria-hidden="true"><span/><span/><span/></span>}
+    <span className={styles.etoilesAnimees} aria-hidden="true">✧</span>
     <strong>{c.nom[langue]}</strong>
     {langue!=="ar"&&<span className={styles.nomAr} dir="rtl" lang="ar">{c.nom.ar}</span>}
    </button>)}
@@ -59,5 +64,6 @@ export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapi
    </div>
    <Link href={`/themes/${actif.slug}`} className={styles.voirChapitre}>{t.voirTout} ({actif.themes.length}) ↗</Link>
   </aside>
+  </div>
  </div>;
 }
