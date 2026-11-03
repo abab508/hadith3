@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { EXTERNAL_COLLECTIONS, externalSourceRevision } from "@/donnees/recherche-distante";
@@ -17,7 +18,8 @@ export default async function Sources({params}:{params:Promise<{locale:string}>}
  const sourceF=ar?"فرنسي":en?"French":"Français";
  const sourceE=ar?"إنجليزي":en?"English":"Anglais";
  return (
- <main className={styles.root} id="contenu" tabIndex={-1}>
+ <main className={`${styles.root} prestige-page`} id="contenu" tabIndex={-1}>
+   <BannierePrestige locale={locale} />
    <header className={styles.hero}>
      <span className={styles.eyebrow}>✦ MILAGHAIBA / SOURCES</span>
      <h1>{title}</h1><p>{subtitle}</p>
