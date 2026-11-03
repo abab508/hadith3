@@ -65,6 +65,9 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
         </form>
       </section>
 
+      <p style={{textAlign:"center",margin:".75rem 0 1.5rem"}}>
+        <Link href="/glossaire" className={styles.heroSecondary}>{t("accueil.glossaire")} ↗</Link>
+      </p>
       <section className={styles.memoireFeature}>
         <div className={styles.memoireEmbleme} aria-hidden="true">۞</div>
         <div>
