@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { extraitsMemorisation } from "@/donnees/memorisation";
@@ -13,7 +14,8 @@ export default async function PageMemorisation({params}: {params: Promise<{local
   const {locale}=await params;
   setRequestLocale(locale);
   return (
-    <main id="contenu" tabIndex={-1}>
+    <main id="contenu" tabIndex={-1} className="prestige-page">
+      <BannierePrestige locale={locale} />
       <AtelierMemoire extraits={extraitsMemorisation()} />
     </main>
   );
