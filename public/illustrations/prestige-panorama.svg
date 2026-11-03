@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" fill="none">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071a17"/><stop offset=".5" stop-color="#0c2d28"/><stop offset="1" stop-color="#05140f"/></linearGradient><radialGradient id="light"><stop stop-color="#d6a35d" stop-opacity=".25"/><stop offset="1" stop-color="#d6a35d" stop-opacity="0"/></radialGradient><linearGradient id="gold"><stop stop-color="#74582d"/><stop offset=".5" stop-color="#f0d6a1"/><stop offset="1" stop-color="#99763d"/></linearGradient></defs>
+<rect width="1600" height="640" fill="url(#bg)"/><circle cx="800" cy="180" r="380" fill="url(#light)"/>
+<g stroke="#dfc184" stroke-opacity=".24" stroke-width="2"><path d="M0 0H1600V640H0Z"/><path d="M0 54H1600M0 586H1600"/><path d="M80 0V640M1520 0V640"/></g>
+<g fill="#d7c9a1" opacity=".65"><circle cx="350" cy="99" r="2"/><circle cx="710" cy="74" r="2"/><circle cx="1065" cy="137" r="2"/><circle cx="1235" cy="78" r="3"/><circle cx="1460" cy="195" r="2"/><circle cx="550" cy="250" r="2"/><circle cx="920" cy="50" r="2"/></g>
+<path d="M1290 0a105 105 0 1 0 95 154A110 110 0 0 1 1290 0Z" fill="#f1dcac" opacity=".87"/>
+<path d="M0 540 0 215Q140 -120 280 215V540" stroke="url(#gold)" stroke-width="23" opacity=".6"/>
+<path d="M1600 540V215Q1460 -120 1320 215V540" stroke="url(#gold)" stroke-width="23" opacity=".6"/>
+<g fill="#071b19" stroke="#c7a56b" stroke-width="3" opacity=".85"><path d="M1160 445V323h25v-60l16-20 16 20v60h26v122Z"/><path d="M1255 445V315q68-105 136 0v130Z"/><path d="M1281 320Q1323 251 1365 320" stroke-width="1"/><path d="M1403 445V245h17v-45l12-20 12 20v45h17v200Z"/><path d="M1127 445V315h15v-40l11-16 12 16v40h15v130Z"/></g>
+<path d="M0 444Q245 417 520 462T1060 442T1600 448V640H0Z" fill="#051915" opacity=".8"/>
+<g stroke="#e2bb78" stroke-opacity=".38"><path d="M0 485H1600"/><path d="M0 520H1600"/><path d="M0 560H1600"/></g>
+<g opacity=".5"><path d="M290 430 330 375 370 430V480H290Z" fill="#9e7a4a"/><path d="M330 383v-72" stroke="#e5c68e" stroke-width="5"/><circle cx="330" cy="300" r="11" stroke="#e5c68e" stroke-width="4"/></g>
+</svg>
