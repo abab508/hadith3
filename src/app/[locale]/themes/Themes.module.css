@@ -261,3 +261,42 @@ html[data-motion="off"] .fontaineAnimee,html[data-motion="off"] .etoilesAnimees{
 .vueCatalogue .panneau[data-chapitre="comportement"]{background-position:center,66.666% 100%!important;}
 .vueCatalogue .panneau[data-chapitre="eschatologie"]{background-position:center,100% 100%!important;}
 @media(prefers-reduced-motion:reduce){.vueCatalogue .carteExplorer,.vueCatalogue .hero{animation:none!important;transition:none!important;}}
+
+
+/* Ajustements de fidélité : géométrie 1448 × 1086 et images lisibles. */
+@media(min-width:1000px){
+  .vueCatalogue{margin-block-start:0;border-radius:0;border-inline-color:#c1a064;}
+  .vueCatalogue .hero{min-block-size:26.2rem!important;padding-block-start:3rem!important;padding-block-end:2.1rem!important;}
+  .vueCatalogue .blocTitre{padding-block:.55rem .75rem;}
+  .vueCatalogue .blocTitre p{display:none;}
+  .vueCatalogue .explorateur{gap:.65rem;}
+  .vueCatalogue .carteExplorer{min-block-size:12.15rem;}
+  .vueCatalogue .panneau{min-block-size:25.25rem;}
+}
+.vueCatalogue .hero{
+ background-image:
+ linear-gradient(90deg,#02191025 0%,#001c17ad 30%,#001b16b0 68%,#041c1625 100%),
+ url("/illustrations/maquette-hero-photo.svg")!important;
+}
+.vueCatalogue .hero h1{
+ color:#fbe6bf;font-weight:600;text-shadow:0 2px 6px #000b;
+}
+.vueCatalogue .carteExplorer{
+ border:1px solid #d9b778;border-radius:.95rem;
+ box-shadow:inset 0 0 0 1px #e1bf7635,inset 0 -60px 58px #00140bdc,0 10px 21px #0009;
+}
+.vueCatalogue .carteExplorer strong{
+ font-family:"Cormorant Garamond",Georgia,serif;
+ font-size:clamp(1.2rem,1.65vw,1.55rem);
+ line-height:1.12;font-weight:700;
+}
+.vueCatalogue .carteExplorer .nomAr{color:#ffdf9a;font-size:clamp(.85rem,1.1vw,1.08rem)}
+.vueCatalogue .carteExplorer.selectionnee{box-shadow:0 0 0 1px #fbe9bc,0 0 20px #e6bd6dc4,0 17px 30px #000c}
+.vueCatalogue .panneau{
+ border-color:#efd093;box-shadow:inset 0 0 0 1px #cda86755,0 15px 37px #000a;
+}
+.vueCatalogue .panneau h3{font-size:clamp(1.85rem,2.4vw,2.45rem);color:#ffe8b7;}
+.vueCatalogue .panneauDescription{font-family:Georgia,serif;font-size:.93rem;line-height:1.55;color:#f1e4cc;}
+.vueCatalogue .themeLien{border-color:#d2a76b;box-shadow:inset 0 1px #f6d7a11c;}
+.vueCatalogue .basPage{border-color:#d2af71;}
+@media(max-width:999px){.vueCatalogue .hero{background-size:cover!important;}}

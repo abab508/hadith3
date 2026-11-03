@@ -126,3 +126,26 @@ html:lang(ar) main.prestige-page :is(section,article,aside)[class] :is(h2,h3){
 main.prestige-page :is(.texte-arabe){text-align:start;direction:rtl}
 @media(prefers-reduced-motion:reduce){main.prestige-page :is(a,button){transition:none!important}}
 @media print{.prestige-banniere{display:none!important}}
+
+
+/* Mise en scène du catalogue, fidèle à la référence fournie le 03/11/2026.
+   Le menu demeure normal sur les pages documentaires et les petits écrans. */
+@media(min-width:1000px){
+  body:has([class*="Themes_vueCatalogue"]) header[class*="EnTete_entete"]{
+    position:absolute!important;inset-block-start:0;inset-inline:0;z-index:60;
+    background:linear-gradient(180deg,#021b18b6,#021b1833)!important;
+    border:0!important;box-shadow:none!important;backdrop-filter:none!important;
+  }
+  body:has([class*="Themes_vueCatalogue"]) header [class*="EnTete_lienMarque"]{display:none!important;}
+  body:has([class*="Themes_vueCatalogue"]) header [class*="EnTete_apparenceRepli"]{display:none!important;}
+  body:has([class*="Themes_vueCatalogue"]) header [class*="EnTete_marque"]{
+    max-inline-size:1448px!important;padding-inline:clamp(1.2rem,7vw,7.5rem)!important;
+    justify-content:space-between!important;
+  }
+  body:has([class*="Themes_vueCatalogue"]) header [class*="SelecteurLangue_selecteur"]{
+    inline-size:100%;flex:1 1 100%!important;justify-content:space-between!important;
+  }
+  body:has([class*="Themes_vueCatalogue"]) header [class*="SelecteurLangue_liens"]{
+    flex:0 1 auto!important;overflow:visible!important;
+  }
+}
