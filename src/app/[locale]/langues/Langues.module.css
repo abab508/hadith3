@@ -89,3 +89,8 @@
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+
+.page{max-inline-size:94rem;margin-inline:auto;padding-inline:clamp(.8rem,3vw,2rem);}
+.page>h1{color:#f2d59f;font-family:"Cormorant Garamond",Georgia,serif;}
+.langue{background:linear-gradient(145deg,#0f3428,#071d18);border:1px solid #ac8d5a;border-radius:1rem;box-shadow:0 10px 25px #0005;}
