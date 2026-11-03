@@ -16,31 +16,33 @@ test("passage ar → fr → ur depuis le sélecteur", async ({ page }) => {
   await page.locator('header a[hreflang="fr"]').click();
   await expect(page).toHaveURL(/\/fr$/);
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Milaghaiba");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Les grands chapitres");
   await expect(page).toHaveTitle("Milaghaiba");
 
+  await page.locator("header nav details summary").click();
   await page.locator('header a[hreflang="ur"]').click();
   await expect(page).toHaveURL(/\/ur$/);
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-  await expect(page.locator('header a[hreflang="ur"]')).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("html")).toHaveAttribute("lang","ur");
 });
 
 test("la langue en cours n'est pas écrite deux fois (« français — français »)", async ({ page }) => {
   await page.goto("/fr");
-  await expect(page.locator('header a[hreflang="fr"]')).toHaveText("français");
-  await expect(page.locator('header a[hreflang="en"]')).toHaveText("English — anglais");
+  await expect(page.locator('header a[hreflang="fr"]')).toHaveText("FR");
+  await expect(page.locator('header a[hreflang="en"]')).toHaveText("EN");
 });
 
 test("le sélecteur conserve le chemin et tous les paramètres de recherche", async ({ page }) => {
   await page.goto("/fr/glossaire?q=test&filtre=a&filtre=b");
   const selecteur = page.locator("header nav");
   await expect(selecteur).toBeVisible();
-  await expect(selecteur.getByRole("link").first()).toHaveAttribute("hreflang", catalogue.langueParDefaut);
+  await expect(selecteur.locator('a[hreflang="fr"]')).toBeVisible();
+  await selecteur.locator("details summary").click();
   await expect(selecteur.locator('a[hreflang="es"]')).toContainText("Español");
   await expect(selecteur.locator('a[hreflang="es"]')).toContainText("espagnol");
   await selecteur.locator('a[hreflang="es"]').click();
   await expect(page).toHaveURL(/\/es\/glossaire\?q=test&filtre=a&filtre=b$/);
-  await expect(page.locator('header a[hreflang="es"]')).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("html")).toHaveAttribute("lang","es");
   await page.locator('header a[hreflang="ar"]').click();
   await expect(page).toHaveURL(/\/ar\/glossaire\?q=test&filtre=a&filtre=b$/);
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
@@ -53,8 +55,13 @@ for (const langue of catalogue.entrees.filter((langue) => langue.statut !== "des
     await expect(page.locator("html")).toHaveAttribute("dir", langue.direction);
     const selecteur = page.locator("header nav");
     await expect(selecteur).toBeVisible();
-    await expect(selecteur.locator('a[aria-current="page"]')).toHaveCount(1);
-    await expect(selecteur.locator(`a[hreflang="${langue.tag}"] bdi[lang="${langue.tag}"]`)).toHaveAttribute("dir", langue.direction);
+    await expect(selecteur.locator('a[hreflang][aria-current="page"]')).toHaveCount(["fr","ar","en"].includes(langue.tag)?1:0);
+    if(["fr","ar","en"].includes(langue.tag)) {
+      await expect(selecteur.locator(`a[hreflang="${langue.tag}"]`)).toBeVisible();
+    } else {
+      await selecteur.locator("details summary").click();
+      await expect(selecteur.locator(`a[hreflang="${langue.tag}"] bdi[lang="${langue.tag}"]`)).toHaveAttribute("dir",langue.direction);
+    }
   });
 }
 

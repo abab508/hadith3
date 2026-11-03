@@ -7,10 +7,10 @@ export default function BannierePrestige({locale}:{locale:string}){
    <span className="prestige-marque">Milaghaiba</span>
    <span className="prestige-nom-ar" lang="ar" dir="rtl">الملة الغائبة</span>
    <span className="prestige-legende">✧ {label} ✧</span>
-   <nav className="prestige-raccourcis" aria-label={label}>
+   <div className="prestige-raccourcis">
       <Link href="/">{locale==="ar"?"الرئيسية":locale==="en"?"Home":"Accueil"}</Link>
       <Link href="/themes">{locale==="ar"?"الموضوعات":locale==="en"?"Themes":"Thèmes"}</Link>
       <Link href="/recherche">{locale==="ar"?"البحث":locale==="en"?"Search":"Recherche"}</Link>
-   </nav>
+   </div>
  </div>;
 }

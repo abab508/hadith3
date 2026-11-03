@@ -49,3 +49,22 @@
 .slogan{color:#ebdfc7;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(.98rem,1.5vw,1.28rem);font-weight:600;}
 .marqueSousTitre{color:#e5c188;}
 @media(max-width:820px){.slogan{order:3;flex-basis:100%;text-align:center;font-size:.95rem;}}
+
+
+/* Référence : navigation unique à hauteur réduite, marque or sur émeraude. */
+.entete{position:sticky;top:0;z-index:40;background:linear-gradient(90deg,#031b16f2,#06251fe9 62%,#021b19f5)!important;backdrop-filter:blur(14px);border-block-end:1px solid #bd9a5e80;box-shadow:0 5px 28px #0006;}
+.entete::before{height:1px;background:linear-gradient(90deg,transparent,#e7b86f,transparent);}
+.marque{display:flex!important;flex-wrap:nowrap!important;max-inline-size:96rem;min-block-size:4.6rem;padding:.35rem clamp(.7rem,2vw,1.7rem)!important;gap:.9rem!important;justify-content:space-between;align-items:center;}
+.lienMarque{min-inline-size:13rem;flex:none;gap:.6rem;}
+.logo{inline-size:2.2rem;block-size:2.2rem;}
+.nom{font-size:clamp(1.55rem,2.1vw,2.25rem);line-height:1.15;}
+.marqueSousTitre{font-size:.68rem;gap:.35rem;white-space:nowrap;line-height:1.4;}
+.marqueArabe{color:#d1342c;}
+.marqueLatin{color:#d9bd8d;}
+.sloganVisuel{position:absolute;inline-size:1px;block-size:1px;clip-path:inset(50%);overflow:hidden;}
+.apparenceRepli{position:relative;flex:none;}
+.apparenceRepli details>summary{list-style:none;display:grid;place-items:center;inline-size:2.5rem;block-size:2.5rem;color:#e0bc7b;border:1px solid #b68e51;border-radius:50%;cursor:pointer;background:#103328;}
+.apparenceRepli details>summary::-webkit-details-marker{display:none;}
+.apparenceRepli details>div{position:absolute;right:0;top:calc(100% + .65rem);background:#09231c;border:1px solid #cba66a;border-radius:1rem;padding:1rem;box-shadow:0 18px 44px #0009;min-inline-size:18rem;}
+@media(max-width:1150px){.marque{flex-wrap:wrap!important;}.lienMarque{flex:1 1 auto}.apparenceRepli{order:2}}
+@media(max-width:690px){.marque{min-block-size:4rem;gap:.35rem!important;}.nom{font-size:1.5rem}.lienMarque{min-inline-size:9rem}.logo{inline-size:1.7rem}.apparenceRepli{display:none}}

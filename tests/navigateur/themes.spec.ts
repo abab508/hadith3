@@ -2,10 +2,13 @@ import {expect,test} from "@playwright/test";
 
 test("accueil → catalogue → mariage → sous-thèmes en français",async({page})=>{
  await page.goto("/fr");
- await page.getByRole("link",{name:/Découvrir les 16 grands chapitres/}).click();
+ await expect(page.getByRole("heading",{name:"Les grands chapitres de l’islam"})).toBeVisible();
+ await page.getByRole("link",{name:/Thèmes/}).first().click();
  await expect(page).toHaveURL(/\/fr\/themes$/);
  await expect(page.getByRole("heading",{name:"Les grands chapitres de l’islam"})).toBeVisible();
  const cartes=page.locator("button[aria-pressed]");
+ await expect(cartes).toHaveCount(8);
+ await page.getByRole("button",{name:/Voir les 16 grands chapitres/}).click();
  await expect(cartes).toHaveCount(16);
  const famille=page.getByRole("button",{name:/Mariage, famille et vie conjugale/});
  await famille.click();
