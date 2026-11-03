@@ -63,6 +63,8 @@ export default function SelecteurLangue() {
         })}
       </ul>
       <ul className={styles.liens} aria-label={navigation("titre")}>
+        <li><Link href="/themes" aria-current={chemin === "/themes" || chemin.startsWith("/themes/") ? "page" : undefined}>{locale === "ar" ? "الموضوعات" : locale === "en" ? "Themes" : locale === "fr" ? "Thèmes" : "Themes"}</Link></li>
+        <li><Link href="/sources" aria-current={chemin === "/sources" ? "page" : undefined}>{locale === "ar" ? "المصادر" : locale === "fr" ? "Sources" : "Sources"}</Link></li>
         {liens.map(({ href, cle }) => (
           <li key={href}>
             <Link href={href} aria-current={chemin === href ? "page" : undefined}>{cle === "memorisation" ? "✧ " : ""}{navigation(cle)}</Link>
