@@ -18,3 +18,7 @@
   font-size: clamp(1.625rem, 3vw, 2.125rem);
   line-height: 1.3;
 }
+
+
+.intro{padding:1.3rem 1.5rem;border:1px solid #b69a67;border-radius:1rem;background:linear-gradient(140deg,#113a2d,#071d18);}
+.titre{color:#f4d6a2;font-family:"Cormorant Garamond",Georgia,serif;}
