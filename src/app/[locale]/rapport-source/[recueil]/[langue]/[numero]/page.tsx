@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { corpus } from "@/donnees/corpus";
 import { normaliser } from "@/donnees/recherche";
@@ -108,7 +109,8 @@ export default async function RapportSource({params}:Props){
    {language:langue,text:detail.hadith.text,main:true},
    ...(detail.other?[{language:detail.other.language,text:detail.other.hadith.text,main:false}]:[])
  ]:[];
- return <main id="contenu" tabIndex={-1} className={styles.root}>
+ return <main id="contenu" tabIndex={-1} className={`${styles.root} prestige-page`}>
+ <BannierePrestige locale={locale} />
   <ActionsRapport returnHref={back} print/>
   <header className={styles.hero}>
    <span className={styles.kicker}>✦ MILAGHAIBA · {t.title}</span>
