@@ -50,7 +50,7 @@ export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapi
      {tous?(langue==="ar"?"عرض الأبواب الرئيسية":langue==="en"?"Show featured chapters":"Afficher les chapitres principaux"):(langue==="ar"?"عرض جميع الأبواب الـ ١٦":langue==="en"?"Show all 16 chapters":"Voir les 16 grands chapitres")} <span aria-hidden="true">⌄</span>
    </button>
   </div>
-  <aside className={`${styles.panneau} ${styles[actif.fond]}`} aria-label={t.selection} aria-live="polite">
+  <aside data-chapitre={actif.slug} className={`${styles.panneau} ${styles[actif.fond]}`} aria-label={t.selection} aria-live="polite">
    <span className={styles.panneauSymbole} aria-hidden="true">{symboles[actif.slug]??"✦"}</span>
    <p className={styles.panneauEyebrow}>{t.selection} · {String(chapitres.indexOf(actif)+1).padStart(2,"0")}/{chapitres.length}</p>
    <h3>{actif.nom[langue]}</h3>
