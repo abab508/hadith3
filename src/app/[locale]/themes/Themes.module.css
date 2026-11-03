@@ -120,3 +120,57 @@
 @media(max-width:510px){.grilleExplorer{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.carteExplorer{min-block-size:10rem}.rechercheHero button{padding:.7rem 1rem}.heroDecoration span{font-size:2rem!important}.marquePrestige{font-size:clamp(2.8rem,12vw,4.2rem)}.basPage{border-radius:1rem}}
 @media(prefers-reduced-motion:reduce){.heroDecoration span,.panneauSymbole{animation:none!important}.carteExplorer,.themeLien{transition:none!important}.carteExplorer:hover,.themeLien:hover{transform:none!important}}
 :global(html[data-motion="off"]) .heroDecoration span,:global(html[data-motion="off"]) .carteExplorer{animation:none!important;transition:none!important}
+
+
+/* Maquette de référence : même composition à l'accueil et sur /themes. */
+.vueCatalogue{max-inline-size:1448px;margin:0 auto;position:relative;isolation:isolate;background:linear-gradient(180deg,#051e19,#04291f 52%,#031b16);border:1px solid #9f7c46;border-radius:1rem;box-shadow:0 0 70px #000a,0 0 0 4px #b8964c1b;overflow:hidden;padding-block-end:1.35rem;}
+.vueCatalogue:after{content:"";position:absolute;pointer-events:none;z-index:-1;inset:0;background:repeating-conic-gradient(from 45deg at 50% 50%,#c29e4e12 0 25%,transparent 0 50%) 0 0/34px 34px;mask-image:linear-gradient(to bottom,transparent 15%,#0008 85%);}
+.vueCatalogue .hero{min-block-size:23.5rem!important;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.15rem clamp(1rem,3vw,3rem) 2rem!important;border:0;border-block-end:2px solid #be9654;border-radius:0;box-shadow:inset 0 -30px 35px #05241bd9!important;margin:0!important;
+ background:linear-gradient(90deg,#0520191c 0%,#03201be5 32%,#03241ee0 63%,#0320170d 100%),url("/illustrations/maquette-hero-ornement.svg") center/cover!important;}
+.vueCatalogue .hero:before{background:radial-gradient(ellipse at center,#00493c18,transparent 60%)!important;opacity:1;}
+.vueCatalogue .marquePrestige{font-size:clamp(3.1rem,5.2vw,5rem);line-height:1.12;filter:drop-shadow(0 4px 3px #000) drop-shadow(0 0 11px #eabd7372);}
+.vueCatalogue .arMarque{font-size:clamp(1.55rem,2.6vw,2.55rem);margin:.1rem 0 0!important;line-height:1.45;}
+.vueCatalogue .surtitre{font-size:clamp(.64rem,1vw,.83rem)!important;letter-spacing:.42em!important;margin:.25rem 0 .35rem!important;}
+.vueCatalogue .hero h1{font-size:clamp(2.25rem,3.6vw,3.9rem);line-height:1.12;margin:.15rem 0 .5rem;font-weight:650;text-shadow:0 3px 8px #0009;}
+.vueCatalogue .heroDescription{max-inline-size:41rem;font-family:Georgia,serif;font-size:clamp(.86rem,1.15vw,1rem);margin:.2rem auto .7rem;color:#f1e9dc!important;}
+.vueCatalogue .rechercheHero{inline-size:min(100%,45rem);max-inline-size:45rem;margin:.7rem auto 0;padding:.25rem;border-radius:999px;background:#021e18e9;border:1px solid #f3d394;box-shadow:0 0 0 3px #042e2280,0 12px 34px #0007;}
+.vueCatalogue .rechercheHero>span{font-size:1.65rem;padding-inline-start:.9rem;}
+.vueCatalogue .rechercheHero input{font-family:Georgia,serif;font-size:.92rem;min-block-size:2.15rem;}
+.vueCatalogue .rechercheHero button{padding:.55rem 1.3rem;font-family:Georgia,serif;font-size:.93rem;border:1px solid #e8c48a;box-shadow:0 0 12px #e8b978a3;}
+.vueCatalogue .heroDecoration span:nth-child(1){inset-inline-start:49%;inset-block-end:-.25rem;font-size:2.6rem;}
+.vueCatalogue .heroDecoration span:nth-child(2){inset-inline-end:14%;inset-block-start:12%;font-size:1.8rem;opacity:.2;}
+.vueCatalogue .heroDecoration span:nth-child(3){inset-inline-start:15%;inset-block-end:12%;font-size:1.6rem;opacity:.3;}
+.vueCatalogue .blocTitre{padding:.8rem .5rem .75rem;background:linear-gradient(180deg,#0b2922,#05271d);border-block-start:1px solid #ad9559;gap:1rem;}
+.vueCatalogue .blocTitre h2{font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.1;color:#f8e8ca;text-shadow:0 3px 7px #000;}
+.vueCatalogue .blocTitre p{font-size:.72rem;color:#c9ad81;}
+.vueCatalogue .blocTitre>span{color:#e5bd7a;}
+.vueCatalogue .explorateur{grid-template-columns:minmax(0,1fr) minmax(19rem,27%);gap:.65rem;align-items:start;padding:0 clamp(.6rem,1.4vw,1.25rem);}
+.vueCatalogue .grilleExplorer{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.4rem,1vw,.95rem);align-content:start;}
+.vueCatalogue .carteExplorer{min-block-size:clamp(10.5rem,14vw,13.5rem);border-radius:1rem;border:1.5px solid #d6b479;padding:1rem .35rem .75rem;box-shadow:inset 0 -70px 55px #00140cf2,0 9px 21px #0007;}
+.vueCatalogue .carteExplorer:before{background:linear-gradient(to bottom,transparent 16%,#0420181c 43%,#01160eff 100%);}
+.vueCatalogue .carteExplorer strong{font-size:clamp(1rem,1.55vw,1.4rem);color:#fff3d7;text-shadow:0 2px 5px #000;}
+.vueCatalogue .carteExplorer .nomAr{font-size:clamp(.8rem,1.05vw,1.05rem);line-height:1.45;margin:0;color:#f9d492;}
+.vueCatalogue .pictogramme{inline-size:2.3rem;block-size:2.3rem;font-size:1.35rem;background:#063b2a;border:1.5px solid #efc478;box-shadow:0 0 10px #d4a76199;margin:0 0 .45rem;}
+.vueCatalogue .numero{opacity:.55;font-size:.66rem;inset-block-start:.4rem;}
+.vueCatalogue .carteExplorer.selectionnee{border:2px solid #ffe4a5;box-shadow:0 0 0 1px #f1bb5b,0 0 24px #edb965d9,0 14px 35px #000a;}
+.vueCatalogue .panneau{min-block-size:calc(2 * clamp(10.5rem,14vw,13.5rem) + clamp(.4rem,1vw,.95rem));padding:1.05rem 1rem;border:1.5px solid #f0cc8e;border-radius:1rem;background:linear-gradient(180deg,#052a22d0,#05271de8),url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=650&q=75") center/cover;box-shadow:0 16px 42px #000b,inset 0 0 48px #000b;}
+.vueCatalogue .panneauSymbole{inline-size:2.5rem;block-size:2.5rem;font-size:1.45rem;margin:.1rem 0 .45rem;}
+.vueCatalogue .panneauEyebrow{font-size:.7rem;letter-spacing:.12em;}
+.vueCatalogue .panneau h3{font-size:clamp(1.65rem,2.2vw,2.3rem);color:#ffe9bc;}
+.vueCatalogue .panneauAr{font-size:1.15rem;margin:.1rem 0;}
+.vueCatalogue .panneauDiviseur{margin:.65rem 0;font-size:1.1rem;}
+.vueCatalogue .listeThemes{gap:.32rem;}
+.vueCatalogue .themeLien{min-block-size:2.05rem;padding:.25rem .65rem;border:1px solid #bd9b62;background:#04281dcc;color:#ffecd0;font-size:clamp(.9rem,1.15vw,1.05rem);}
+.vueCatalogue .themeLien:hover{background:#20543a;}
+.plusChapitres{grid-column:1/-1;justify-self:center;cursor:pointer;border:1px solid #bf985f;background:#092c22;color:#f8d99c;font:600 .84rem Georgia,serif;padding:.5rem 1.2rem;border-radius:999px;}
+.plusChapitres:hover{background:#214737;box-shadow:0 0 10px #d0ab7660;}
+.vueCatalogue .voirChapitre{font-size:.81rem;color:#ffda97!important;margin-block:.8rem .1rem;}
+.vueCatalogue .basPage{margin:1rem auto .15rem;inline-size:min(92%,69rem);justify-content:center;border:1px solid #d2ac66;border-radius:999px;background:#04271d;color:#e8c78d;box-shadow:inset 0 0 18px #507c4a44;padding:.65rem 1rem;font:500 clamp(.72rem,1vw,.87rem)/1.5 Georgia,serif;text-align:center;}
+.vueCatalogue .basPage span{color:#f7d596;}
+/* Le fond justice est une balance et ne contient aucune figure humaine. */
+.vueCatalogue .themejustice{background-image:linear-gradient(#071d1780,#07221d88),url("/illustrations/justice-balance.svg");}
+/* L'accueil contient la navigation visuelle puis, plus bas, les fonctions existantes. */
+@media(max-width:1050px){.vueCatalogue .explorateur{grid-template-columns:minmax(0,1fr) minmax(16rem,32%);}.vueCatalogue .grilleExplorer{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:790px){.vueCatalogue .explorateur{grid-template-columns:1fr;}.vueCatalogue .grilleExplorer{grid-template-columns:repeat(2,minmax(0,1fr));}.vueCatalogue .panneau{min-block-size:auto;}.vueCatalogue .hero{min-block-size:22rem!important;}.vueCatalogue .carteExplorer{min-block-size:12rem;}}
+@media(max-width:510px){.vueCatalogue .hero{padding:1.3rem .65rem 1.75rem!important;min-block-size:21rem!important;}.vueCatalogue .marquePrestige{font-size:clamp(2.65rem,11vw,3.7rem);}.vueCatalogue .hero h1{font-size:clamp(1.8rem,7vw,2.6rem);}.vueCatalogue .surtitre{letter-spacing:.2em!important;}.vueCatalogue .carteExplorer{min-block-size:10.5rem;}.vueCatalogue .rechercheHero input{font-size:.8rem;}.vueCatalogue .rechercheHero button{font-size:.78rem;padding:.5rem .65rem;}.vueCatalogue .panneau{padding:1rem .8rem;}.vueCatalogue .basPage{border-radius:.8rem;}}
+@media(prefers-reduced-motion:reduce){.vueCatalogue .heroDecoration span,.vueCatalogue .carteExplorer{animation:none!important;transition:none!important;}}
