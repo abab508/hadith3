@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { chaineDeRepli, entree } from "@/donnees/catalogue";
@@ -44,7 +45,8 @@ export default async function Glossaire({ params }: { params: Promise<{ locale: 
   }
 
   return (
-    <main id="contenu" tabIndex={-1} className={styles.glossaire}>
+    <main id="contenu" tabIndex={-1} className={`${styles.glossaire} prestige-page`}>
+      <BannierePrestige locale={locale} />
       <h1>{t("titre")}</h1>
       <p>{t("introduction")}</p>
       {Object.entries(clesDomaines).map(([domaine, cle]) => (
