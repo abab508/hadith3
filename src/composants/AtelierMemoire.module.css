@@ -49,3 +49,8 @@
 @media(max-width:650px){.reponses{grid-template-columns:1fr;}.espace{border-radius:1.3rem;}.liste{max-block-size:15rem;overflow:auto;}}
 @media(prefers-reduced-motion:reduce){.page *, .page *::before,.page *::after{animation:none!important;transition:none!important;transform:none!important;}}
 html[data-motion="off"] .page *,html[data-motion="off"] .page *::before,html[data-motion="off"] .page *::after{animation:none!important;transition:none!important;transform:none!important;}
+
+
+.page,.espace,.cadreTexte{border-color:#bd9c62;background:linear-gradient(145deg,#103629,#061e18);}
+.accroche,.surtitre{color:#f1d29a;}
+.action{background:linear-gradient(160deg,#f8dfa5,#d2a360);color:#152820;border-color:#f0d2a0;}
