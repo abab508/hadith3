@@ -1,0 +1,122 @@
+.page{max-inline-size:90rem;margin-inline:auto;padding:2rem clamp(1rem,3vw,2.5rem) 5rem}
+.page a{color:inherit}
+.hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;border-radius:2rem;padding:clamp(2.5rem,6vw,5rem) 1.3rem;margin-block:1rem 2rem;border:1px solid #a78b4e78;background:radial-gradient(ellipse at 50% 10%,#46644c6e,transparent 56%),linear-gradient(145deg,#1d2c22,#0c1514 80%);box-shadow:0 24px 75px #03090675;color:#f8ebd3}
+.hero>a{display:inline-block;font-size:.85rem;margin-block-end:1.4rem}
+.hero h1{font-family:"Berkshire Swash","Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.25;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,5rem);color:#f6d69d;margin:.7rem auto;text-wrap:balance}
+:global(html[lang="ar"]) .hero h1{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;line-height:1.75;letter-spacing:normal}
+.hero p{max-inline-size:50rem;margin-inline:auto;color:#e2d5c0}
+.ornement{font-size:1.4rem;color:#e3b568;letter-spacing:.5rem;animation:flotter 7s ease-in-out infinite alternate}
+.surtitre{font-size:.7rem;letter-spacing:.15em;color:#d3c098!important}
+.compteur{display:inline-block;padding:.7rem 1.1rem;border:1px solid #d8b77580;border-radius:999px;font-size:.85rem;color:#f0d6a5;margin-block-start:.8rem}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.1rem}
+.carte{position:relative;min-block-size:19rem;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;border:1px solid #d6bd845c;border-radius:1.2rem;overflow:hidden;isolation:isolate;text-decoration:none;background-color:#182620;background-image:linear-gradient(0deg,#091410f2,#12282480),radial-gradient(circle at 70% 15%,#efbb7547,transparent 50%);color:#f7edda!important;box-shadow:0 15px 38px #0005;transition:transform .35s,border-color .35s,box-shadow .35s}
+.carte:before{content:"";position:absolute;inset:-25%;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 20%,#dfbf8033,transparent 45%);animation:flotter 8s ease-in-out infinite alternate}
+.carte:hover,.carte:focus-visible{transform:translateY(-6px);border-color:#f2cd8e;box-shadow:0 22px 60px #0008,0 0 25px #e0b56e2b}
+.carte h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;line-height:1.2;margin:.4rem 0}
+:global(html[lang="ar"]) .carte h2{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;line-height:1.6}
+.numero{color:#dbb77b;font-size:.85rem;font-variant-numeric:tabular-nums}
+.ornementCarte{position:absolute;inset-block-start:1rem;inset-inline-end:1.2rem;color:#dec38a;font-size:2rem}
+.carte p{font-size:.85rem;color:#d6d2c5;margin:.3rem 0}
+.nomAr{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:1.15rem;color:#f0d39a;line-height:1.8}
+.ouvrir{font-size:.82rem;color:#f6d59c;margin-block-start:.8rem}
+.eau{background-image:linear-gradient(0deg,#07191cf2,#0a3d4180),radial-gradient(ellipse at 75% 25%,#61c5bf77,transparent 58%)}
+.cosmos{background-image:linear-gradient(0deg,#101324f2,#253353a0),radial-gradient(ellipse at 70% 20%,#d4b07871,transparent 55%)}
+.sobre{background-image:linear-gradient(0deg,#101a16f2,#273527a0),radial-gradient(ellipse at 70% 15%,#d9b2764d,transparent 55%)}
+.note{color:var(--discret);font-size:.88rem;margin-block:1.8rem}
+.retour{display:inline-block;margin-block:1rem}
+.catalogue{max-inline-size:80rem;margin-inline:auto}
+.catalogue h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.8rem,3vw,2.6rem);margin-block:2rem 1rem}
+.sousGrille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.85rem}
+.sousCarte{background:var(--surface);border:1px solid var(--bordure);border-radius:1rem;padding:1.3rem;transition:border-color .2s,transform .2s}
+.sousCarte:hover{border-color:var(--ocre);transform:translateY(-3px)}
+.sousCarte h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.55rem;margin:.5rem 0}
+:global(html[lang="ar"]) .sousCarte h3{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif}
+.rechercher{display:inline-flex;margin-block-start:1rem;color:var(--accent)!important;font-size:.85rem}
+@keyframes flotter{to{transform:translateY(-18px) scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.ornement,.carte:before{animation:none}.carte,.sousCarte{transition:none}.carte:hover,.sousCarte:hover{transform:none}}
+
+/* ------------------------------------------------------------------
+   Milaghaiba Prestige — direction validée : émeraude, or, nuit et volumes.
+   Animations CSS respectant le mode réduit. Aucune bibliothèque ajoutée.
+------------------------------------------------------------------ */
+.page{max-inline-size:100rem;padding:1.25rem clamp(.75rem,2.1vw,2.5rem) 4.5rem;position:relative}
+.page:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 75% 10%,#d6c29312 0 1px,transparent 2px),radial-gradient(circle at 18% 24%,#d6c29314 0 1px,transparent 2px);background-size:89px 103px,117px 93px}
+.hero{min-block-size:30rem;padding:clamp(2rem,4vw,3.5rem) clamp(1rem,5vw,4rem);background:linear-gradient(90deg,#041713d8 0%,#09251dc9 48%,#031d19bb 100%),url("https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1600&q=75");background-position:center;background-size:cover;border:1px solid #c9a76b79;border-radius:1.7rem;box-shadow:0 18px 75px #0009,inset 0 0 150px #040b08b9}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 22%,#c4a0641b,transparent 45%),linear-gradient(90deg,transparent 1%,#d1a85d2a 1.2%,transparent 1.4%,transparent 98.5%,#d1a85d20 98.8%,transparent 99%);opacity:.95}
+.navigationLocale{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;gap:1rem;margin-block-end:1rem;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;color:#f1dcaf}
+.navigationLocale a{text-decoration:none}
+.navigationLocale a:hover{text-decoration:underline;text-underline-offset:.25em}
+.heroDecoration span{position:absolute;pointer-events:none;font-size:4.8rem;color:#f6d39488;text-shadow:0 0 28px #e2ba7166}
+.heroDecoration span:nth-child(1){inset-inline-start:7%;inset-block-end:10%;font-size:5rem}
+.heroDecoration span:nth-child(2){inset-inline-end:12%;inset-block-start:10%;font-size:6rem;animation:flotter 9s ease-in-out infinite alternate}
+.heroDecoration span:nth-child(3){inset-inline-end:8%;inset-block-end:16%;font-size:2.6rem;animation:scintiller 4s ease-in-out infinite alternate}
+.marquePrestige{position:relative;z-index:2;font-family:"Berkshire Swash",Georgia,serif;font-size:clamp(3.1rem,7vw,6.5rem);line-height:1.25;background:linear-gradient(180deg,#fff5d8 0%,#ffe2a0 35%,#c58c42 76%,#f9deb0 100%);background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 2px #000a) drop-shadow(0 0 19px #ddae6560);font-weight:400;letter-spacing:-.035em}
+.arMarque{position:relative;z-index:2;font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:clamp(1.5rem,3.1vw,2.7rem);line-height:1.5;color:#ffdd9e!important;text-shadow:0 0 18px #000;margin:.1rem auto!important}
+.surtitre{position:relative;z-index:2;font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.3em!important;text-transform:uppercase;color:#e5c689!important;font-size:clamp(.85rem,1.5vw,1.1rem)!important;margin-block:1rem!important}
+.hero h1{position:relative;z-index:2;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.3rem,4.3vw,4.1rem);font-weight:600;line-height:1.23;color:#f8dbac;text-shadow:0 3px 13px #000a;margin:.2rem auto .7rem}
+:global(html[lang="ar"]) .hero h1{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;line-height:1.7}
+.heroDescription{position:relative;z-index:2;max-inline-size:46rem;font-size:clamp(.95rem,1.3vw,1.18rem);line-height:1.75;color:#f0e5d5!important;text-shadow:0 2px 9px #000}
+.rechercheHero{display:flex;position:relative;z-index:2;align-items:center;gap:.7rem;max-inline-size:46rem;margin:1.5rem auto 0;padding:.35rem;background:#071e1ce8;border:1px solid #eac885;border-radius:999px;box-shadow:0 0 0 4px #0d1e1b82,0 12px 32px #0009}
+.rechercheHero>span{font-size:2rem;line-height:1;color:#dfc89b;padding-inline-start:1.1rem}
+.rechercheHero input{background:none;border:none;min-inline-size:0;min-block-size:2.6rem;flex:1;color:#fff2d4;outline:none;font:inherit}
+.rechercheHero input::placeholder{color:#d3c5ab}
+.rechercheHero button{padding:.8rem 1.4rem;border:none;border-radius:999px;background:linear-gradient(180deg,#f8db9e,#c69a50);color:#1a241c;font-weight:750;cursor:pointer}
+.rechercheHero:focus-within{outline:2px solid #f2d29b;outline-offset:3px}
+.srOnly{position:absolute;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.blocTitre{display:flex;align-items:center;justify-content:center;gap:1.5rem;text-align:center;padding:1.2rem .4rem 1.5rem;color:#f3d6a6}
+.blocTitre>span{font-size:1.8rem;color:#caa363}
+.blocTitre h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.1rem,4vw,3.4rem);line-height:1.15;margin:0;font-weight:600;color:#f3dfc0}
+:global(html[lang="ar"]) .blocTitre h2{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif}
+.blocTitre p{font-size:.78rem;color:#c5c0b2;margin:.3rem}
+.explorateur{display:grid;grid-template-columns:minmax(0,1fr) minmax(17rem,25%);gap:1.1rem;align-items:stretch}
+.grilleExplorer{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem}
+.carteExplorer{display:flex;position:relative;flex-direction:column;justify-content:end;align-items:center;min-block-size:12.5rem;padding:1.1rem .7rem;overflow:hidden;border-radius:1.1rem;border:1px solid #b18d4b92;color:#fff2d9;background-color:#163025;background-size:cover;background-position:center;box-shadow:inset 0 -36px 65px #000b,0 10px 28px #0007;cursor:pointer;font:inherit;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.carteExplorer:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#02231d1d 0%,#061b17b0 55%,#03130ef5 100%);transition:opacity .4s}
+.carteExplorer>*{position:relative;z-index:1}
+.carteExplorer:hover,.carteExplorer:focus-visible{transform:translateY(-4px);border-color:#ffe6a3}
+.carteExplorer.selectionnee{border:2px solid #f9d79c;box-shadow:0 0 0 2px #cfac6b52,0 0 20px #ffcf8285,0 12px 25px #0009}
+.carteExplorer .numero{position:absolute;inset-block-start:.65rem;inset-inline-start:.8rem;color:#e2c992;font-size:.75rem}
+.pictogramme{display:grid;place-items:center;inline-size:2.8rem;block-size:2.8rem;border:1px solid #e8ca87;border-radius:50%;background:#123a2add;color:#f9df9b;font-size:1.65rem;margin-block-end:.65rem;box-shadow:0 0 0 5px #0620174d}
+.carteExplorer strong{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.15rem,1.8vw,1.6rem);line-height:1.14;font-weight:650;text-align:center;text-shadow:0 2px 6px #000b}
+:global(html[lang="ar"]) .carteExplorer strong{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif}
+.carteExplorer .nomAr{font-size:clamp(.8rem,1.2vw,1rem);color:#f0ce91}
+.themecroyance{background-image:linear-gradient(#17312966,#14391a66),url("https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=580&q=65")}
+.themepurification{background-image:linear-gradient(#164c4365,#0d3c4460),url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=580&q=65")}
+.themepriere{background-image:linear-gradient(#253b3760,#123d4460),url("https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?auto=format&fit=crop&w=580&q=65")}
+.themejeune{background-image:linear-gradient(#1b2b3e55,#2f282756),url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=580&q=65")}
+.themefamille{background-image:linear-gradient(#325c4066,#44361f55),url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=580&q=65")}
+.themecommerce{background-image:linear-gradient(#46391e69,#1e2d2455),url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=580&q=65")}
+.themecomportement{background-image:linear-gradient(#1b453466,#243d3569),url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=580&q=65")}
+.themeeschatologie{background-image:linear-gradient(#1c203a7b,#17243955),url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=580&q=65")}
+.themescience{background-image:linear-gradient(#352b1b88,#34291b66),url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=580&q=65")}
+.themezakat{background-image:linear-gradient(#183c3069,#182f2969),url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=580&q=65")}
+.themepelerinage{background-image:linear-gradient(#3d342166,#1e2b2969),url("https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=580&q=65")}
+.themevie{background-image:linear-gradient(#1d473469,#20392a69),url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=580&q=65")}
+.themesante{background-image:linear-gradient(#133d3b69,#1d3c3069),url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=580&q=65")}
+.themespiritualite{background-image:linear-gradient(#27313c69,#28342769),url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=580&q=65")}
+.themehistoire{background-image:linear-gradient(#43321e69,#362b2369),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=580&q=65")}
+.themejustice{background-image:linear-gradient(#342e2769,#232a3069),url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=580&q=65")}
+.panneau{position:relative;min-inline-size:0;border-radius:1.3rem;border:1px solid #e9c57e;box-shadow:inset 0 0 50px #020c08c0,0 14px 32px #000a;padding:1.5rem;overflow:hidden;background:linear-gradient(180deg,#16362bda,#071916f8),radial-gradient(ellipse at 65% 15%,#c8a27625,transparent 65%);color:#fff1ce}
+.panneau:before,.panneau:after{content:"";position:absolute;inline-size:3rem;block-size:3rem;pointer-events:none;border-color:#dfbc75;opacity:.7}
+.panneau:before{inset-inline-start:.6rem;inset-block-start:.6rem;border-block-start:2px solid;border-inline-start:2px solid;border-radius:.7rem 0 0 0}
+.panneau:after{inset-inline-end:.6rem;inset-block-end:.6rem;border-block-end:2px solid;border-inline-end:2px solid;border-radius:0 0 .7rem 0}
+.panneauSymbole{display:grid;place-items:center;inline-size:3.2rem;block-size:3.2rem;margin-block:1rem .7rem;border:1px solid #dfc077;border-radius:50%;font-size:2rem;color:#f6d58d}
+.panneauEyebrow{font-size:.71rem;text-transform:uppercase;letter-spacing:.11em;color:#d8c095}
+.panneau h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.8rem,2.4vw,2.5rem);line-height:1.2;margin:.3rem 0;font-weight:650}
+:global(html[lang="ar"]) .panneau h3{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;line-height:1.6}
+.panneauAr{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;font-size:1.25rem;color:#edce93;margin:.6rem 0}
+.panneauDiviseur{display:flex;align-items:center;gap:.6rem;margin-block:1.1rem;color:#f4d8a4;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.2rem;justify-content:center}
+.panneauDiviseur:before,.panneauDiviseur:after{content:"";block-size:1px;flex:1;background:linear-gradient(90deg,transparent,#d7b16e,transparent)}
+.listeThemes{display:grid;gap:.42rem}
+.themeLien{display:flex;align-items:center;justify-content:space-between;gap:.45rem;text-decoration:none;border:1px solid #dfbc7b85;border-radius:999px;padding:.46rem .85rem;background:#0a271baf;min-block-size:2.3rem;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;transition:background .2s,transform .2s}
+:global(html[lang="ar"]) .themeLien{font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif}
+.themeLien:hover,.themeLien:focus-visible{background:#3c5132;transform:translateX(2px)}
+.voirChapitre{display:inline-block;margin-block:1.35rem .4rem;font-size:.86rem;font-weight:700;color:#f6dba9!important;text-underline-offset:.3em}
+.basPage{display:flex;gap:.9rem;align-items:center;border:1px solid #cba5658c;border-radius:999px;margin-block-start:1.5rem;padding:.8rem 1.3rem;background:#09251b;color:#f2d6a4;font-size:.85rem}
+.basPage span{font-size:1.4rem}
+@keyframes scintiller{to{opacity:.3;transform:scale(.85)}}
+@media(max-width:1100px){.explorateur{grid-template-columns:minmax(0,1fr) minmax(16rem,31%)}.grilleExplorer{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:790px){.explorateur{grid-template-columns:1fr}.grilleExplorer{grid-template-columns:repeat(3,minmax(0,1fr))}.carteExplorer{min-block-size:11.5rem}.panneau{max-inline-size:none}}
+@media(max-width:510px){.grilleExplorer{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.carteExplorer{min-block-size:10rem}.rechercheHero button{padding:.7rem 1rem}.heroDecoration span{font-size:2rem!important}.marquePrestige{font-size:clamp(2.8rem,12vw,4.2rem)}.basPage{border-radius:1rem}}
+@media(prefers-reduced-motion:reduce){.heroDecoration span,.panneauSymbole{animation:none!important}.carteExplorer,.themeLien{transition:none!important}.carteExplorer:hover,.themeLien:hover{transform:none!important}}
+:global(html[data-motion="off"]) .heroDecoration span,:global(html[data-motion="off"]) .carteExplorer{animation:none!important;transition:none!important}
