@@ -1,6 +1,7 @@
 import {Link} from "@/i18n/navigation";
 import {classification,langueThemes} from "@/donnees/themes";
 import ExplorateurChapitres from "@/composants/ExplorateurChapitres";
+import ControleCinema from "@/composants/ControleCinema";
 import styles from "@/app/[locale]/themes/Themes.module.css";
 
 const ui={
@@ -31,6 +32,7 @@ export default function VueCatalogue({locale}:{locale:string}){
      <div><h2>{t.chapitres}</h2><p>{classification.chapitres.length} {l==="ar"?"بابًا":l==="en"?"chapters":"chapitres"} · {classification.chapitres.reduce((n,c)=>n+c.themes.length,0)} {t.sujets}</p></div>
      <span aria-hidden="true">✧</span>
    </div>
+   <ControleCinema langue={l}/>
    <ExplorateurChapitres chapitres={classification.chapitres} langue={l}/>
    <div className={styles.basPage}><span aria-hidden="true">▤</span> {t.note}</div>
  </div>;
