@@ -100,3 +100,29 @@ html[data-theme="light"] main.prestige-page :is(.prestige-carte,.prestige-filtre
 @media(prefers-reduced-motion:reduce){.prestige-banniere::after{animation:none!important;}}
 html[data-motion="off"] .prestige-banniere::after{animation:none!important;}
 @media print{body{background:#fff!important;color:#111!important}body:before,.prestige-banniere::after{display:none!important}main.prestige-page>.prestige-banniere{min-block-size:0;background:#fff!important;color:#111!important;border:0!important;box-shadow:none!important}}
+
+/* Raccourcis de navigation présents sur les pages documentaires. */
+.prestige-raccourcis{display:flex;gap:clamp(.4rem,2vw,1.5rem);align-items:center;flex-wrap:wrap;justify-content:center;margin-block-start:.35rem}
+.prestige-raccourcis a{font:600 clamp(1rem,1.5vw,1.18rem)/1.25 "Cormorant Garamond",Georgia,serif;color:#f9daa2;text-decoration:none;border-block-end:1px solid #cba464b0;padding:.35rem .2rem}
+.prestige-raccourcis a:hover{color:#fff3d5;border-block-end-color:#fff2d1}
+.prestige-parametres{max-inline-size:94rem;margin-inline:auto;padding:1.25rem clamp(.8rem,3vw,2rem) 4rem}
+.prestige-parametres>.prestige-banniere{max-inline-size:94rem;margin:0 auto 1.5rem}
+main.prestige-page>.prestige-banniere{margin-block-end:1rem}
+main.prestige-page :is(h1,h2,h3){text-shadow:0 1px 6px #0003}
+main.prestige-page>h1,main.prestige-page>div>h1{margin-block:.5rem}
+main.prestige-page :is(a,button){transition:box-shadow .23s,filter .23s}
+main.prestige-page :is(button:hover,a:hover){filter:brightness(1.06)}
+/* Semantical panels share golden borders; no replacement of individual
+   narrator categories, disputed verdicts, or source metadata. */
+main.prestige-page :is(section,article,aside)[class]{
+  border-color:color-mix(in srgb,var(--bordure) 70%,transparent);
+}
+main.prestige-page :is(section,article,aside)[class] :is(h2,h3){
+  font-family:"Cormorant Garamond",Georgia,serif;
+}
+html:lang(ar) main.prestige-page :is(section,article,aside)[class] :is(h2,h3){
+  font-family:"Aref Ruqaa Ink","Noto Naskh Arabic",serif;
+}
+main.prestige-page :is(.texte-arabe){text-align:start;direction:rtl}
+@media(prefers-reduced-motion:reduce){main.prestige-page :is(a,button){transition:none!important}}
+@media print{main.prestige-page>.prestige-banniere{display:none!important}}
