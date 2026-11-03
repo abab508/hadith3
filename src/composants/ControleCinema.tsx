@@ -1,7 +1,7 @@
 "use client";
 
 import {useEffect,useState} from "react";
-import styles from "@/app/[locale]/themes/Themes.module.css";
+import styles from "@/app/[locale]/AccueilCinema.module.css";
 
 const libelles={
  fr:{activer:"Activer les animations",desactiver:"Réduire les animations",note:"Effets cinématographiques facultatifs"},
