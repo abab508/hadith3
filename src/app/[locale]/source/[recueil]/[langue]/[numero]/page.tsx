@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
@@ -75,7 +76,8 @@ export default async function FicheDistante({params}:Props){
   ...(data.other?[{language:data.other.language,text:data.other.hadith.text,secondary:true}]:[])
  ]:[];
  const labelFor=(language:string)=>language==="ara"?t.arabic:language==="fra"?t.french:language==="eng"?t.english:t.text;
- return <main className={styles.root} id="contenu" tabIndex={-1}>
+ return <main className={`${styles.root} prestige-page`} id="contenu" tabIndex={-1}>
+ <BannierePrestige locale={locale} />
   <ActionsRapport reportHref={`/rapport-source/${recueil}/${langue}/${numero}`} />
   <div className={styles.breadcrumb}>
    <Link href="/recherche">← {t.back}</Link><span aria-hidden="true">✦</span>
