@@ -5,7 +5,7 @@ test("la page d'accueil affiche la même scène thématique que la page Thèmes"
  await page.goto("/fr");
  await expect(page.locator("header nav")).toHaveCount(1);
  await expect(page.getByRole("heading",{name:"Les grands chapitres de l’islam"})).toBeVisible();
- await expect(page.locator("button[aria-pressed]")).toHaveCount(8);
+ await expect(page.locator("button[data-chapitre]")).toHaveCount(8);
  await expect(page.locator('a[hreflang="fr"]')).toBeVisible();
  await expect(page.locator('a[hreflang="ar"]')).toBeVisible();
  await expect(page.locator('a[hreflang="en"]')).toBeVisible();
@@ -14,7 +14,7 @@ test("la page d'accueil affiche la même scène thématique que la page Thèmes"
  await expect(scene).toBeVisible();
  await expect(scene.getByRole("searchbox")).toBeVisible();
  await page.goto("/fr/themes");
- await expect(page.locator("button[aria-pressed]")).toHaveCount(8);
+ await expect(page.locator("button[data-chapitre]")).toHaveCount(8);
  await expect(page.getByRole("heading",{name:"Les grands chapitres de l’islam"})).toBeVisible();
 });
 
@@ -25,9 +25,9 @@ test("les sections secondaires et les langues restent accessibles sans charger s
  await expect(page.getByRole("link",{name:"Glossaire"})).toBeVisible();
  await expect(page.locator('header a[hreflang="ur"]')).toBeVisible();
  await page.getByRole("button",{name:/Voir les 16 grands chapitres/}).click();
- await expect(page.locator("button[aria-pressed]")).toHaveCount(16);
+ await expect(page.locator("button[data-chapitre]")).toHaveCount(16);
  await page.getByRole("button",{name:/Justice, société et gouvernance/}).click();
- await expect(page.locator("button[aria-pressed='true']")).toContainText("Justice");
+ await expect(page.locator("button[data-chapitre][aria-pressed='true']")).toContainText("Justice");
 });
 
 test("interface mobile, boutons visibles et navigation sans débordement majeur",async({page})=>{
