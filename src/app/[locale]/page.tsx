@@ -7,6 +7,7 @@ import { livresParCategorie, recueils } from "@/donnees/recherche";
 import { bibliothequeParId } from "@/donnees/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
+import VueCatalogue from "@/composants/VueCatalogue";
 import styles from "@/app/[locale]/Accueil.module.css";
 
 const modes = [
@@ -33,36 +34,9 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
 
   return (
     <main id="contenu" tabIndex={-1} className={styles.accueil}>
-      <section className={styles.hero} aria-labelledby="titre-accueil">
-        <h1 id="titre-accueil" className={styles.titre}>{t("accueil.titre")}</h1>
-        <p className={styles.titreComplet}>
-          {locale !== "ar" && <bdi lang="ar" dir="rtl" className={styles.nomArabe}>الملة الغائبة</bdi>}
-          <bdi lang="ar-Latn" dir="ltr" className={styles.nomPhonetique}>Al-milla al-gha'iba</bdi>
-        </p>
-        <p className={styles.sousTitre}>{t("accueil.sousTitre")}</p>
-        <span className={styles.heroDivider} aria-hidden="true" />
-        <p className={`${ui.badge} ${styles.etat}`} data-ton="ocre">{t("accueil.etat")}</p>
-        <p className={styles.terme}>
-          {t("accueil.exempleTerme")} <Terme id="hasan" />
-        </p>
-        <div className={styles.heroActions}>
-          <Link href="/memorisation" className={styles.heroCTA}>
-            <span aria-hidden="true">✧</span> {t("navigation.memorisation")} <span aria-hidden="true">↗</span>
-          </Link>
-          <Link href="/glossaire" className={styles.heroSecondary}>{t("accueil.glossaire")} <span aria-hidden="true">↗</span></Link>
-        </div>
-      </section>
+      <VueCatalogue locale={locale} />
 
-      <section aria-label={locale === "ar" ? "التصنيف الموضوعي" : "Hadiths par thèmes"} style={{padding:"1.5rem",border:"1px solid var(--bordure)",borderRadius:"1.5rem",background:"linear-gradient(120deg,#20392d,#15251e)",color:"#fff3d8",boxShadow:"0 16px 40px #02080755"}}>
-        <span style={{fontSize:".85rem",letterSpacing:".08em",color:"#f1c98b"}}>✦ MILAGHAIBA · الموضوعات</span>
-        <h2 style={{fontFamily:locale==="ar"?"Aref Ruqaa Ink,serif":"Cormorant Garamond,Georgia,serif",fontSize:"clamp(1.8rem,4vw,2.7rem)",color:"#f5d9a7",margin:".5rem 0"}}>
-          {locale==="ar"?"اكتشف الأحاديث حسب الموضوع":locale==="en"?"Explore hadiths by topic":"Explorer les hadiths par grands thèmes"}
-        </h2>
-        <p style={{color:"#dfd9cb"}}>{locale==="ar"?"أبواب العقيدة والطهارة والزواج والأسرة والمعاملات وغيرها":locale==="en"?"Faith, purification, marriage, family, trade and more":"Foi, purification, mariage, famille, commerce, spiritualité, et bien d’autres domaines."}</p>
-        <Link href="/themes" style={{display:"inline-block",background:"#e8c58a",padding:".8rem 1.3rem",borderRadius:"999px",color:"#182b22",fontWeight:800,textDecoration:"none"}}>
-          {locale==="ar"?"تصفح الأبواب":locale==="en"?"Browse 16 chapters":"Découvrir les 16 grands chapitres"} ↗
-        </Link>
-      </section>
+
 
       <section className={styles.recherche} aria-labelledby="titre-recherche">
         <h2 id="titre-recherche" className="visuellement-cache">{t("accueil.recherche.titre")}</h2>
