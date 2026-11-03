@@ -41,3 +41,9 @@
  color:#e9f8ff!important;text-decoration:none!important;font-weight:850;}
 .reportLink:hover{box-shadow:0 0 20px #75ddf469;border-color:#a4e2fa;}
 @media(max-width:550px){.cardActions>a{flex:1 1 100%;}}
+
+
+.panel,.card{background:linear-gradient(150deg,#0a3025,#071c17)!important;border:1px solid #b39661!important;box-shadow:0 12px 35px #0006;}
+.kicker,.header h2{color:#f4d7a4;}
+.reportLink{background:linear-gradient(145deg,#bd9559,#f2cf8b);color:#1b291f!important;border-color:#e8c889;}
+.warning{border-color:#a88956;}

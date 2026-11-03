@@ -40,3 +40,12 @@
 .documentationState span{border:1px solid #6fd4c4;border-radius:99px;padding:.2rem .6rem;font-weight:800;font-variant-numeric:tabular-nums;}
 .documentationState p{flex-basis:100%;margin:0;font-size:.84rem;line-height:1.6;color:#d3e4e5;}
 @media print{.documentationState{background:white!important;color:#111!important;border-color:#888!important;}.documentationState p{color:#111!important;}}
+
+
+.root{max-inline-size:94rem;}
+.hero{background:linear-gradient(90deg,#09281fd9,#123b2ae3),url("/illustrations/prestige-panorama.svg") center/cover;border-color:#b49964;}
+.hero h1{color:#f1d59c;}
+.stats,.panel,.left,.warning,.source{border-color:#ae8d59;background:linear-gradient(145deg,#0d3226,#071d18);}
+.passage{background:#081e18;border-color:#b69b62;}
+.documentationState{background:#123529;border-color:#b28e57;color:#f4e6cd;}
+.documentationState p{color:#e8dcc5;}

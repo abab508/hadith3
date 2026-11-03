@@ -39,3 +39,13 @@
 .nom{background:linear-gradient(165deg,#fff8e9,#efdbac 42%,#c99e50 80%,#f6e7c5);-webkit-background-clip:text;background-clip:text;}
 .slogan{color:#d3dbce;}
 .marqueSousTitre{color:#e3c58c;}
+
+/* Tous les écrans héritent du même bandeau nocturne de la maquette. */
+.entete{background:linear-gradient(90deg,#051a17ec,#0a2a23e8,#061c17ed),url("/illustrations/prestige-panorama.svg") center/cover!important;border-block-end:1px solid #b99a60;box-shadow:0 10px 42px #0008;}
+.entete::before{background:linear-gradient(90deg,transparent,#e8c687,#c99c50,transparent);}
+.marque{max-inline-size:100rem;min-block-size:4.6rem;padding-block:.55rem .35rem;}
+.logo{filter:drop-shadow(0 0 9px #77deb894);}
+.nom{font-size:clamp(1.65rem,2.5vw,2.5rem);background:linear-gradient(180deg,#fff2d5,#e0b56d 72%,#ba8149);background-clip:text;-webkit-text-fill-color:transparent;}
+.slogan{color:#ebdfc7;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(.98rem,1.5vw,1.28rem);font-weight:600;}
+.marqueSousTitre{color:#e5c188;}
+@media(max-width:820px){.slogan{order:3;flex-basis:100%;text-align:center;font-size:.95rem;}}

@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -189,7 +190,8 @@ export default async function Recherche({
   }
 
   return (
-    <main id="contenu" tabIndex={-1} className={ui.page}>
+    <main id="contenu" tabIndex={-1} className={`${ui.page} prestige-page`}>
+      <BannierePrestige locale={locale} />
       <div className={styles.requete}>
         <h1 id="titre-resultats" className={styles.titre}>{t("titre")}</h1>
         <form role="search" method="get" className={`${ui.carte} ${styles.nouvelleRecherche}`}>

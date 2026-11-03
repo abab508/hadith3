@@ -1,3 +1,4 @@
+import BannierePrestige from "@/composants/BannierePrestige";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, ouvrageParId, hadithParId, bibliothequeParId, texteDans } from "@/donnees/corpus";
@@ -51,7 +52,8 @@ export default async function Rapport({
   const hadith = hadithParId(id);
   if (!hadith) {
     return (
-      <main id="contenu" tabIndex={-1} className={ui.page}>
+      <main id="contenu" tabIndex={-1} className={`${ui.page} prestige-page`}>
+      <BannierePrestige locale={locale} />
         <ActionsRapport />
         <h1>{t("titreNotFound")}</h1>
         <p>{t("hadithNotFound")}</p>
@@ -73,7 +75,8 @@ export default async function Rapport({
   });
 
   return (
-    <main id="contenu" tabIndex={-1} className={ui.page}>
+    <main id="contenu" tabIndex={-1} className={`${ui.page} prestige-page`}>
+      <BannierePrestige locale={locale} />
       <ActionsRapport print />
       <p>
         <Link href={{ pathname: "/chaine", query: { hadith: hadith.id } }}>{t("autreHadith")}</Link>

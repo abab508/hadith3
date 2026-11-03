@@ -203,3 +203,18 @@
 .badge[data-ton="ocre"]{border:1px solid #aa8446;background:#47341e;color:#fff0cb;}
 .badge[data-ton="accent"]{border:1px solid #428d87;background:#144b48;color:#d9fff4;}
 .champ input[type="search"],.champ input[type="text"]{background:#102640;color:#f6fbff;border-color:#527998;}
+
+
+/* Couche patrimoniale partagée : cartes de hadith et boutons. */
+.page{max-inline-size:94rem;gap:1.25rem;}
+.carte{background:linear-gradient(145deg,#0e3026,#071d18 90%);border:1px solid #b4945c;box-shadow:inset 0 1px #ffe7b324,0 14px 37px #0008;color:#f8ebd3;border-radius:1.2rem;}
+.carte:hover{border-color:#ecc783;box-shadow:0 0 18px #dfbb6c32,0 18px 45px #0008;}
+.surtitre{color:#e2ba78;letter-spacing:.07em;}
+.badge[data-ton="accent"]{border-color:#6bc49b;background:#124631;color:#e1ffed;}
+.badge[data-ton="ocre"]{border-color:#bd975b;background:#3c2d1a;color:#ffe9b5;}
+.bouton{background:linear-gradient(165deg,#ffe0a0,#d1a058);border:1px solid #ffe2a7;color:#1d291b;box-shadow:0 0 17px #cfad6b3b;}
+.boutonSecondaire{background:#0a2b23;border:1px solid #c2a16c;color:#ffe2ad;}
+.champ input[type="search"],.champ input[type="text"]{background:#071e18;border-color:#a78e60;color:#f8f0de;}
+.traduction{border-inline-start-color:#d8b273;color:#f4e7d1;}
+html[data-theme="light"] .carte{background:var(--surface);color:var(--texte);}
+html[data-theme="light"] .traduction{color:var(--texte);}

@@ -41,3 +41,10 @@ background:linear-gradient(135deg,#192e4a,#0d2844);}
 .footer a{font-size:.88rem;}
 @media(max-width:640px){.summary{grid-template-columns:1fr;}.hero{border-radius:1.2rem;}.match{border-radius:.8rem;}}
 @media(prefers-reduced-motion:reduce){.hero *, .primary *, .secondary *{animation:none!important;transition:none!important;}}
+
+
+.root{max-inline-size:94rem;}
+.hero{background:linear-gradient(90deg,#082b20de,#103627dc),url("/illustrations/prestige-panorama.svg") center/cover;border-color:#b99c69;}
+.hero h1{color:#f3d8a2;}
+.summary,.reading,.primary,.secondary,.grades{border-color:#b49967;background:linear-gradient(145deg,#0d3227,#071e18);}
+.articleHeader{color:#f1d8ab;}

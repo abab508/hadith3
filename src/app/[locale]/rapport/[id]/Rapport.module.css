@@ -103,3 +103,16 @@
 .original{font-size:clamp(1.65rem,3.1vw,2.45rem);line-height:2.2;background:var(--fond);border-radius:1.2rem;padding:clamp(1rem,3vw,2rem);text-align:start;}
 .sousTitre{font-size:clamp(1.15rem,2vw,1.5rem);}
 .duo> *{border-radius:1.5rem;}
+
+
+/* Rapport : conserver les verdicts et la chaîne, remplacer seulement le décor. */
+.titres{padding:1rem 1.35rem;border-inline-start:4px solid #dfb56b;background:linear-gradient(90deg,#183d2d88,transparent);border-radius:.9rem;}
+.titre{font-family:"Cormorant Garamond",Georgia,serif;color:#f5ddaf;font-size:clamp(1.9rem,3.5vw,3rem);}
+.original{background:linear-gradient(145deg,#0b2b22,#061b17);border:1px solid #b99860;color:#f3e8cd;box-shadow:inset 0 1px #fae5b61c;}
+.duo>*{border:1px solid #ad8e5b!important;border-radius:1.2rem!important;}
+.duo>.statut{background:linear-gradient(140deg,#174b37,#0d2d24)!important;color:#f0e6ca!important;}
+.duo>.statut a{color:#f2d49c;}
+.verdict{color:#f5d69e;}
+.sousTitre{font-family:"Cormorant Garamond",Georgia,serif;color:#f2d297;}
+.tableau :is(th,td){border-block-end-color:#92754e;}
+html[data-theme="light"] .original,html[data-theme="light"] .duo>.statut{background:var(--surface)!important;color:var(--texte)!important;}

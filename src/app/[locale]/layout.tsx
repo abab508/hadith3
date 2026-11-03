@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import EnTete from "@/composants/EnTete";
 import "@/styles/polices.css";
 import "@/styles/global.css";
+import "@/styles/prestige.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

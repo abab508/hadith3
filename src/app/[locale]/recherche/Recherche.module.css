@@ -170,3 +170,21 @@
 .catalogueLink{display:flex;flex-wrap:wrap;margin:.3rem 0 .8rem;}
 .catalogueLink a{border-radius:999px;border:1px solid #71e9d5;background:#124347;color:#a3ffe9;padding:.65rem 1.2rem;text-decoration:none;font-weight:800;}
 .catalogueLink a:hover{box-shadow:0 0 20px #67fbe06a;}
+
+
+/* Recherche : filtres et résultats de la même bibliothèque visuelle. */
+.requete{padding:.7rem 0 1rem;}
+.requete>h1,.titre{font-family:"Cormorant Garamond",Georgia,serif;color:#f2d19b;font-size:clamp(2.2rem,4vw,3.4rem);}
+.nouvelleRecherche{background:linear-gradient(145deg,#0b2f26,#061b16)!important;border:1px solid #bd975a!important;}
+.champ :is(input,select){background:#071e18;color:#f6ead0;border-color:#aa8b55;}
+.filtres{border:1px solid #b08e57;border-radius:1rem;padding:1.25rem;background:linear-gradient(145deg,#0c3026,#061b16);box-shadow:0 14px 34px #0006;}
+.titreFiltres{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;color:#f2d29c;}
+.carteHadith{border:1px solid #c3a36f;box-shadow:inset 0 1px #ffe5b527,0 14px 42px #0008;}
+.carteHadith::before{background:linear-gradient(180deg,#ecc786,#5d986e);}
+.sourcesDetail{background:#071b17;border-color:#9c8157;}
+.sourcesDetail summary{color:#f2d397;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.3rem;}
+.resumeResultats{background:linear-gradient(135deg,#184b36,#0b2e24);border-color:#ae8d58;}
+.resumeResultats strong{color:#ffe4ae;}
+.sourceGuide{background:#372b1b;color:#fff0d2;border-inline-start-color:#eac181;}
+.catalogueLink a{background:#103b2c;border:1px solid #e2b970;color:#f5d89e;}
+html[data-theme="light"] .filtres,html[data-theme="light"] .nouvelleRecherche{background:var(--surface)!important;color:var(--texte);}

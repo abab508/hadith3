@@ -42,3 +42,14 @@
 .liens a[aria-current="page"]{color:#baffef;border-color:#6cfce15f;background:#174852;}
 @media(max-width:680px){.selecteur{padding-inline:.85rem;}.langues{gap:.5rem;}.langues a{white-space:nowrap;}.liens{gap:.3rem;}}
 @media(prefers-reduced-motion:reduce){.langues a,.liens a{transition:none;transform:none!important;}}
+
+/* Navigation persistante : mêmes menus sur recherche, rapport, thèmes, admin. */
+.selecteur{max-inline-size:100rem;padding-block:.15rem .65rem;}
+.titre{color:#eed8aa;font-family:"Cormorant Garamond",Georgia,serif;font-size:.9rem;}
+.langues{gap:.3rem;}
+.langues a,.langues .indisponible{background:#061b18d9;border-color:#bda06a9a;color:#edddbd;box-shadow:inset 0 1px #ffe6b11b;min-block-size:2.3rem;padding:.2rem .7rem;}
+.langues a[aria-current="page"]{background:#154735;border-color:#e7c17f;color:#fff0c7;box-shadow:0 0 12px #ceaa6e47;}
+.liens{border-block-start:1px solid #a787545e;gap:.1rem .55rem;padding-block-start:.4rem;margin-block-start:.4rem;}
+.liens a{font:650 clamp(1.05rem,1.45vw,1.25rem)/1.25 "Cormorant Garamond",Georgia,serif;color:#f5e3c5;border-radius:999px;padding:.43rem 1rem;min-block-size:2.55rem;}
+.liens a:hover{background:#164b37;color:#ffe7b8;box-shadow:0 0 13px #e3bf6b4d;}
+.liens a[aria-current="page"]{background:#123c2b;border:1px solid #e2b46f;color:#ffe4ac;box-shadow:0 0 16px #cda55b60;}

@@ -41,7 +41,7 @@
 ------------------------------------------------------------------ */
 .page{max-inline-size:100rem;padding:1.25rem clamp(.75rem,2.1vw,2.5rem) 4.5rem;position:relative}
 .page:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 75% 10%,#d6c29312 0 1px,transparent 2px),radial-gradient(circle at 18% 24%,#d6c29314 0 1px,transparent 2px);background-size:89px 103px,117px 93px}
-.hero{min-block-size:30rem;padding:clamp(2rem,4vw,3.5rem) clamp(1rem,5vw,4rem);background:linear-gradient(90deg,#041713d8 0%,#09251dc9 48%,#031d19bb 100%),url("https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1600&q=75");background-position:center;background-size:cover;border:1px solid #c9a76b79;border-radius:1.7rem;box-shadow:0 18px 75px #0009,inset 0 0 150px #040b08b9}
+.hero{min-block-size:30rem;padding:clamp(2rem,4vw,3.5rem) clamp(1rem,5vw,4rem);background:linear-gradient(90deg,#041713d8 0%,#09251dc9 48%,#031d19bb 100%),url("/illustrations/prestige-panorama.svg");background-position:center;background-size:cover;border:1px solid #c9a76b79;border-radius:1.7rem;box-shadow:0 18px 75px #0009,inset 0 0 150px #040b08b9}
 .hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 22%,#c4a0641b,transparent 45%),linear-gradient(90deg,transparent 1%,#d1a85d2a 1.2%,transparent 1.4%,transparent 98.5%,#d1a85d20 98.8%,transparent 99%);opacity:.95}
 .navigationLocale{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;gap:1rem;margin-block-end:1rem;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;color:#f1dcaf}
 .navigationLocale a{text-decoration:none}
@@ -95,7 +95,7 @@
 .themesante{background-image:linear-gradient(#133d3b69,#1d3c3069),url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=580&q=65")}
 .themespiritualite{background-image:linear-gradient(#27313c69,#28342769),url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=580&q=65")}
 .themehistoire{background-image:linear-gradient(#43321e69,#362b2369),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=580&q=65")}
-.themejustice{background-image:linear-gradient(#342e2769,#232a3069),url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=580&q=65")}
+.themejustice{background-image:linear-gradient(#342e2769,#232a3069),url("/illustrations/justice-balance.svg")}
 .panneau{position:relative;min-inline-size:0;border-radius:1.3rem;border:1px solid #e9c57e;box-shadow:inset 0 0 50px #020c08c0,0 14px 32px #000a;padding:1.5rem;overflow:hidden;background:linear-gradient(180deg,#16362bda,#071916f8),radial-gradient(ellipse at 65% 15%,#c8a27625,transparent 65%);color:#fff1ce}
 .panneau:before,.panneau:after{content:"";position:absolute;inline-size:3rem;block-size:3rem;pointer-events:none;border-color:#dfbc75;opacity:.7}
 .panneau:before{inset-inline-start:.6rem;inset-block-start:.6rem;border-block-start:2px solid;border-inline-start:2px solid;border-radius:.7rem 0 0 0}
