@@ -212,3 +212,14 @@
 @media(max-width:790px){.vueCatalogue .experienceChapitres .explorateur{grid-template-columns:1fr}.sonAide{display:none}}
 @media(prefers-reduced-motion:reduce){.fontaineAnimee,.etoilesAnimees,.carteExplorer::after{animation:none!important;opacity:0!important}.vueCatalogue .carteExplorer:hover,.vueCatalogue .carteExplorer:focus-visible{transform:none;}}
 html[data-motion="off"] .fontaineAnimee,html[data-motion="off"] .etoilesAnimees{animation:none!important;opacity:0!important;}
+
+
+/* Photographie réelle de fontaine (Unsplash, Youssef Mubarak, licence libre).
+   Remplacement de l'ancienne image de vagues, qui ne correspondait pas au sujet. */
+.vueCatalogue .themepurification{
+ background-image:linear-gradient(180deg,#041f1d10 0%,#05251934 38%,#001810e8 100%),
+ url("https://images.unsplash.com/photo-1772411534645-584e7b5a5770?auto=format&fit=crop&w=800&q=82");
+ background-position:center;background-size:cover;
+}
+.vueCatalogue .themepurification:before{background:linear-gradient(180deg,transparent 35%,#01190eeb);}
+.vueCatalogue .panneau[data-chapitre="purification"]{background-image:linear-gradient(180deg,#052e20b4,#02241cf1),url("https://images.unsplash.com/photo-1772411534645-584e7b5a5770?auto=format&fit=crop&w=900&q=82");background-size:cover;background-position:center;}
