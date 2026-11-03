@@ -12,6 +12,16 @@ const labels={
  ar:{explorer:"استكشف",sousThemes:"موضوعات فرعية",voirTout:"عرض جميع الموضوعات",recherche:"ابحث",ouverture:"افتح الباب",selection:"الباب المحدد"},
  en:{explorer:"Explore",sousThemes:"Subtopics",voirTout:"See all subtopics",recherche:"Search",ouverture:"Open chapter",selection:"Selected chapter"}
 } as const;
+const introductions:Record<Langue,string>={
+ fr:"Explorez les enseignements transmis dans les recueils et les sous-thèmes associés, avec leurs références documentaires.",
+ ar:"استكشف الموضوعات الواردة في كتب الحديث مع مراجعة النصوص ومصادرها.",
+ en:"Explore topics documented in hadith collections, with source references to verify."
+};
+const introFamille:Record<Langue,string>={
+ fr:"Les enseignements transmis relatifs au mariage, à la vie conjugale et à l’éducation des enfants.",
+ ar:"الأحاديث المتعلقة بالزواج والحياة الزوجية وتربية الأبناء.",
+ en:"Narrations on marriage, family life, and raising children."
+};
 const symboles:Record<string,string>={
  croyance:"☪",science:"✧",purification:"◉",priere:"۞",jeune:"☾",zakat:"♡",pelerinage:"⌂",famille:"❦",comportement:"❧",commerce:"⚖",vie:"✺",sante:"✶",spiritualite:"✦",histoire:"☼",justice:"◇",eschatologie:"⌛"
 };
@@ -40,9 +50,10 @@ export default function ExplorateurChapitres({chapitres,langue}:{chapitres:Chapi
    <p className={styles.panneauEyebrow}>{t.selection} · {String(chapitres.indexOf(actif)+1).padStart(2,"0")}/{chapitres.length}</p>
    <h3>{actif.nom[langue]}</h3>
    {langue!=="ar"&&<p className={styles.panneauAr} dir="rtl" lang="ar">{actif.nom.ar}</p>}
+   <p className={styles.panneauDescription}>{actif.slug==="famille"?introFamille[langue]:introductions[langue]}</p>
    <div className={styles.panneauDiviseur}><span>✧</span>{t.sousThemes}<span>✧</span></div>
    <div className={styles.listeThemes}>
-    {actif.themes.slice(0,8).map(theme=><Link key={theme.slug}
+    {actif.themes.slice(0,6).map(theme=><Link key={theme.slug}
      href={`/recherche?q=${encodeURIComponent(theme.nom.ar)}&mode=approximative`}
      title={t.recherche} className={styles.themeLien}><span>{theme.nom[langue]}</span><span aria-hidden="true">›</span></Link>)}
    </div>
