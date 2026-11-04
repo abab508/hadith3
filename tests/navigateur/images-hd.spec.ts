@@ -3,7 +3,7 @@ import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { chapitres, imageTheme, themes } from "../../src/donnees/themes";
 
-const parcours = ["", "/themes", "/themes/fin-des-temps", "/chapitres", "/chapitres/signes-mineurs", "/a-z", "/rapport/niyyat"];
+const parcours = ["", "/themes", "/themes/fin-des-temps", "/chapitres", "/chapitres/signes-mineurs", "/a-z", "/rapport/niyyat", "/hadith/sahih-bukhari/fra/201/rapport", "/recueil/musnad-ahmad/1/rapport"];
 const ecrans = [
   { nom: "4K", viewport: { width: 3840, height: 2160 } },
   { nom: "mobile", viewport: { width: 390, height: 844 } },

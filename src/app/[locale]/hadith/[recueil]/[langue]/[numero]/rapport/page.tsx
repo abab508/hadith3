@@ -9,6 +9,7 @@ import { extraireChaine } from "@/donnees/isnad-texte";
 import { categorieDepuisRang, chaineKg } from "@/donnees/fiches-kg";
 import { avecLatin } from "@/donnees/translitteration";
 import Embleme from "@/composants/Embleme";
+import ImageDecorative from "@/composants/ImageDecorative";
 import IconeTheme from "@/composants/IconeTheme";
 import ChaineTexteRapport from "@/composants/ChaineTexteRapport";
 import ui from "@/composants/Interface.module.css";
@@ -56,7 +57,7 @@ export default async function RapportTexte({ params }: { params: Promise<Paramet
   return (
     <main id="contenu" tabIndex={-1} className={`${ui.page} ${rapport.pageRapport}`}>
       <section className={rapport.banniere} aria-label={tRapport("banniere.titre")}>
-        <img className={rapport.imageBanniere} src="/images/maquette/accueil.jpg" alt="" />
+        <ImageDecorative className={rapport.imageBanniere} src="/images/hd/accueil.png" sizes="(max-width: 1344px) 100vw, 84rem" preload />
         <span className={rapport.voileBanniere} aria-hidden="true" />
         <Embleme nomLatin={tAccueil("titre")} nomArabe={tEntete("nomArabe")} mention={tRapport("banniere.surtitre")} />
         <p className={rapport.grandTitre}>{tRapport("banniere.titre")}</p>
