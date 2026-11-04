@@ -46,4 +46,4 @@ export const chapitres = donneesThemes.chapitres;
 export const themeParId = (id: string) => themes.find((t) => t.id === id);
 export const chapitreParId = (id: string) => chapitres.find((c) => c.id === id);
 export const chapitresDuTheme = (id: string) => chapitres.filter((c) => c.theme === id);
-export const imageTheme = (id: string) => (id === "fin-des-temps" ? "/images/maquette/fin-des-temps.jpg" : `/images/maquette/theme-${id}.jpg`);
+export const imageTheme = (id: string) => (id === "fin-des-temps" ? "/images/hd/fin-des-temps.png" : `/images/hd/theme-${id}.png`);

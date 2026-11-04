@@ -4,6 +4,7 @@ import { use } from "react";
 import Terme from "@/composants/Terme";
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
 import SceneImmersive from "@/composants/SceneImmersive";
+import ImageDecorative from "@/composants/ImageDecorative";
 import messagesArabes from "../../../messages/ar.json" with { type: "json" };
 import { livresParCategorie, recueils } from "@/donnees/recherche";
 import { bibliothequeParId, hadithParId, transmetteurParId } from "@/donnees/corpus";
@@ -56,10 +57,10 @@ export default function Accueil({ params }: { params: Promise<{ locale: string }
       <section className={styles.hero} aria-labelledby="titre-accueil">
         <SceneImmersive className={styles.scene}>
         <div className={styles.decor} aria-hidden="true">
-          {/* Image découpée dans la maquette du patron ; textes imprimés floutés, vrais textes posés par-dessus.
+          {/* Décor restauré en haute définition ; les vrais textes restent posés par-dessus.
               Plans en profondeur : fond, rayons, étoiles, brume, braises, lueurs, halo qui suit la souris. */}
           <div className={styles.planFond}>
-            <img className={styles.image} src="/images/maquette/accueil.jpg" alt="" />
+            <ImageDecorative className={styles.image} src="/images/hd/accueil.png" sizes="108vw" preload />
           </div>
           <span className={styles.rayons} />
           <span className={styles.etoiles} />

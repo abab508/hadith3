@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import IndexAZ from "@/composants/IndexAZ";
+import ImageDecorative from "@/composants/ImageDecorative";
 import { entree } from "@/donnees/catalogue";
 import { alphabetArabe, alphabetLatin, lettreIndex, sansArticle, type EntreeIndex } from "@/donnees/index-az";
 import { catalogueRecueils } from "@/donnees/recueils";
@@ -46,7 +47,7 @@ export default async function PageIndexAZ({ params }: { params: Promise<{ locale
         />
       </section>
       <div className={styles.salle} aria-hidden="true">
-        <img src="/images/maquette/salle.jpg" alt="" />
+        <ImageDecorative src="/images/hd/salle.png" sizes="(max-width: 760px) 1px, 36vw" />
         <span className={styles.lueurSalle} />
       </div>
     </main>

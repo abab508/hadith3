@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import ListeChapitres, { type EntreeTheme } from "@/composants/ListeChapitres";
-import { chapitresDuTheme, themes } from "@/donnees/themes";
+import ImageDecorative from "@/composants/ImageDecorative";
+import CartesIllustrees from "@/composants/CartesIllustrees";
+import { chapitres, chapitresDuTheme, themes } from "@/donnees/themes";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
 import styles from "@/composants/Pages.module.css";
 
@@ -56,13 +58,19 @@ export default async function PageChapitres({ params }: { params: Promise<{ loca
         <ListeChapitres entrees={entrees} rechercher={t("rechercher")} aFournir={tt("chapitresAFournir")} />
       </section>
       <figure className={styles.citation}>
-        <img src="/images/maquette/citation.jpg" alt="" />
+        <ImageDecorative src="/images/hd/citation.png" sizes="(max-width: 1100px) 1px, calc(100vw - 43rem)" />
         <blockquote>
           <p>{t("citation")}</p>
           <footer>{t("citationAuteur")}</footer>
         </blockquote>
         <figcaption className={styles.mention}>{t("citationReference")}</figcaption>
       </figure>
+      <section className={`${styles.galerieIllustree} ${styles.galerieChapitres}`} aria-label={t("titre")}>
+        <CartesIllustrees libelle={t("titre")} cartes={chapitres.map((chapitre) => ({
+          id: chapitre.id, href: `/chapitres/${chapitre.id}`, image: `/images/hd/${chapitre.image}.png`,
+          titre: t(clesChapitres[chapitre.cle].titre), description: tt("aFournir"),
+        }))} />
+      </section>
     </main>
   );
 }
