@@ -2,16 +2,14 @@
   "version": "0.1.0",
   "miseAJour": "2026-11-04",
   "statut": "a-valider",
-  "source": "Liste de 92 références fournie par le patron le 2026-11-04 (non exhaustive). Classement par famille et auteurs à valider par un spécialiste.",
+  "source": "Liste de 92 références fournie par le patron le 2026-11-04 (non exhaustive). Classement par famille et auteurs à valider par un spécialiste. Recueils sunnites seulement : rayons imamite et ibadite retirés à la demande du patron le 2026-11-04.",
   "familles": [
     "neuf",
     "transmission",
     "musnad",
     "specialises",
     "compilations",
-    "anciens",
-    "imamite",
-    "ibadite"
+    "anciens"
   ],
   "recueils": [
     {
@@ -557,174 +555,6 @@
       "nomAr": "شرح مشكل الآثار",
       "nom": "Sharh Mushkil al-Athar",
       "auteur": "At-Tahawi"
-    },
-    {
-      "numero": 69,
-      "id": "al-kafi",
-      "famille": "imamite",
-      "nomAr": "الكافي",
-      "nom": "Al-Kafi"
-    },
-    {
-      "numero": 70,
-      "id": "man-la-yahduruhu-al-faqih",
-      "famille": "imamite",
-      "nomAr": "من لا يحضره الفقيه",
-      "nom": "Man la Yahduruhu al-Faqih"
-    },
-    {
-      "numero": 71,
-      "id": "tahdhib-al-ahkam",
-      "famille": "imamite",
-      "nomAr": "تهذيب الأحكام",
-      "nom": "Tahdhib al-Ahkam"
-    },
-    {
-      "numero": 72,
-      "id": "al-istibsar",
-      "famille": "imamite",
-      "nomAr": "الاستبصار",
-      "nom": "Al-Istibsar"
-    },
-    {
-      "numero": 73,
-      "id": "bihar-al-anwar",
-      "famille": "imamite",
-      "nomAr": "بحار الأنوار",
-      "nom": "Bihar al-Anwar"
-    },
-    {
-      "numero": 74,
-      "id": "wasa-il-ash-shia",
-      "famille": "imamite",
-      "nomAr": "وسائل الشيعة",
-      "nom": "Wasa’il ash-Shi‘a"
-    },
-    {
-      "numero": 75,
-      "id": "mustadrak-al-wasa-il",
-      "famille": "imamite",
-      "nomAr": "مستدرك الوسائل",
-      "nom": "Mustadrak al-Wasa’il"
-    },
-    {
-      "numero": 76,
-      "id": "al-wafi",
-      "famille": "imamite",
-      "nomAr": "الوافي",
-      "nom": "Al-Wafi"
-    },
-    {
-      "numero": 77,
-      "id": "al-mahasin",
-      "famille": "imamite",
-      "nomAr": "المحاسن",
-      "nom": "Al-Mahasin"
-    },
-    {
-      "numero": 78,
-      "id": "basa-ir-ad-darajat",
-      "famille": "imamite",
-      "nomAr": "بصائر الدرجات",
-      "nom": "Basa’ir ad-Darajat"
-    },
-    {
-      "numero": 79,
-      "id": "qurb-al-isnad",
-      "famille": "imamite",
-      "nomAr": "قرب الإسناد",
-      "nom": "Qurb al-Isnad"
-    },
-    {
-      "numero": 80,
-      "id": "uyun-akhbar-ar-rida",
-      "famille": "imamite",
-      "nomAr": "عيون أخبار الرضا",
-      "nom": "Uyun Akhbar ar-Rida"
-    },
-    {
-      "numero": 81,
-      "id": "at-tawhid-d-as-saduq",
-      "famille": "imamite",
-      "nomAr": "التوحيد للصدوق",
-      "nom": "At-Tawhid d’As-Saduq"
-    },
-    {
-      "numero": 82,
-      "id": "al-khisal",
-      "famille": "imamite",
-      "nomAr": "الخصال",
-      "nom": "Al-Khisal"
-    },
-    {
-      "numero": 83,
-      "id": "kamal-ad-din",
-      "famille": "imamite",
-      "nomAr": "كمال الدين وتمام النعمة",
-      "nom": "Kamal ad-Din"
-    },
-    {
-      "numero": 84,
-      "id": "kamil-az-ziyarat",
-      "famille": "imamite",
-      "nomAr": "كامل الزيارات",
-      "nom": "Kamil az-Ziyarat"
-    },
-    {
-      "numero": 85,
-      "id": "al-ghayba-d-an-numani",
-      "famille": "imamite",
-      "nomAr": "الغيبة للنعماني",
-      "nom": "Al-Ghayba d’An-Nu‘mani"
-    },
-    {
-      "numero": 86,
-      "id": "al-ghayba-d-at-tusi",
-      "famille": "imamite",
-      "nomAr": "الغيبة للطوسي",
-      "nom": "Al-Ghayba d’At-Tusi"
-    },
-    {
-      "numero": 87,
-      "id": "tuhaf-al-uqul",
-      "famille": "imamite",
-      "nomAr": "تحف العقول",
-      "nom": "Tuhaf al-Uqul"
-    },
-    {
-      "numero": 88,
-      "id": "nahj-al-balagha",
-      "famille": "imamite",
-      "nomAr": "نهج البلاغة",
-      "nom": "Nahj al-Balagha"
-    },
-    {
-      "numero": 89,
-      "id": "as-sahifa-as-sajjadiyya",
-      "famille": "imamite",
-      "nomAr": "الصحيفة السجادية",
-      "nom": "As-Sahifa as-Sajjadiyya"
-    },
-    {
-      "numero": 90,
-      "id": "ghurar-al-hikam",
-      "famille": "imamite",
-      "nomAr": "غرر الحكم",
-      "nom": "Ghurar al-Hikam"
-    },
-    {
-      "numero": 91,
-      "id": "al-jami-as-sahih-d-ar-rabi-ibn-habib",
-      "famille": "ibadite",
-      "nomAr": "الجامع الصحيح للربيع بن حبيب",
-      "nom": "Al-Jami‘ as-Sahih d’Ar-Rabi‘ ibn Habib"
-    },
-    {
-      "numero": 92,
-      "id": "tartib-al-musnad",
-      "famille": "ibadite",
-      "nomAr": "ترتيب المسند",
-      "nom": "Tartib al-Musnad"
     }
   ]
 }

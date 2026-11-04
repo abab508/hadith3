@@ -468,14 +468,6 @@
       "anciens": {
         "titre": "Eski sahifeler ve belgeler",
         "note": "Bazıları yalnızca sonraki rivayet veya alıntılarla bilinir."
-      },
-      "imamite": {
-        "titre": "İmamiyye geleneği",
-        "note": "Yazarlar doğrulanmış bir kaynaktan tamamlanacak."
-      },
-      "ibadite": {
-        "titre": "İbadiyye geleneği",
-        "note": "Yazarlar doğrulanmış bir kaynaktan tamamlanacak."
       }
     },
     "lire": "{n, number} hadisi oku"

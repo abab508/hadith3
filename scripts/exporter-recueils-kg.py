@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Exporte, depuis la base locale hadith-kg (« الجامع — Hadith Knowledge Graph », emadjumaah, CC BY 4.0),
-les recueils de la bibliothèque Milaghaiba qui n'ont pas d'édition hadith-api : texte arabe, chaînes
+les recueils SUNNITES de la bibliothèque Milaghaiba qui n'ont pas d'édition hadith-api
+(aucun recueil imamite ou ibadite : demande du patron) : texte arabe, chaînes
 et fiches des transmetteurs, en petits fichiers JSON pour le dépôt de données public.
 
 Usage : python -I scripts/exporter-recueils-kg.py --db data/kg/hadith-kg.db --sortie <dossier du dépôt de données>
@@ -28,7 +29,6 @@ RECUEILS = {
     "sahifat-hammam-ibn-munabbih": [85], "al-marasil-d-abou-dawoud": [143],
     "al-muntakhab-min-musnad-abd-ibn-humayd": [52], "musnad-al-harith": [42],
     "sharh-maani-al-athar": [229], "sharh-mushkil-al-athar": [230],
-    "al-jami-as-sahih-d-ar-rabi-ibn-habib": [56],
 }
 BLOC = 100          # hadiths par fichier
 SEAU = 1000         # transmetteurs par fichier (id // SEAU)

@@ -468,14 +468,6 @@
       "anciens": {
         "titre": "Colecciones y documentos antiguos",
         "note": "Algunos solo se conocen por transmisiones o citas posteriores."
-      },
-      "imamite": {
-        "titre": "Tradición imamí",
-        "note": "Autores por completar a partir de una fuente verificada."
-      },
-      "ibadite": {
-        "titre": "Tradición ibadí",
-        "note": "Autores por completar a partir de una fuente verificada."
       }
     },
     "lire": "Leer los {n, number} hadices"

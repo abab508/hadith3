@@ -139,3 +139,8 @@
 - Fait : dépôt de données public abab508/milaghaiba-donnees (tag v1, servi par jsDelivr) : 273 984 hadiths de 43 recueils hadith-kg, chaînes et 22 134 fiches ; pages /recueil/<id>, /recueil/<id>/<n> et rapport ; lien « Lire les hadiths » dans la bibliothèque.
 - Vérifié : 147 tests unitaires, 9 contrôles, build, 68/68 tests navigateur ; captures Musnad Aḥmad.
 - Prochaine étape : mise en ligne après accord ; 42 recueils du catalogue absents de hadith-kg (imamites, compilations sans chaîne…).
+
+## 2026-11-04 — Site limité aux recueils sunnites
+- Fait : 24 recueils imamites et ibadites retirés du catalogue (92 → 68) avec leurs rayons ; recueil ibadite d'al-Rabīʿ ibn Ḥabīb retiré des données (42 recueils hadith-kg).
+- Vérifié : 147 tests unitaires, 9 contrôles, build, 68/68 tests navigateur ; capture de la bibliothèque.
+- Prochaine étape : envoi du dépôt de données (tag v2) et mise en ligne après accord du patron.

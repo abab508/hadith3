@@ -14,8 +14,6 @@ const titresFamilles = {
   specialises: "familles.specialises.titre",
   compilations: "familles.compilations.titre",
   anciens: "familles.anciens.titre",
-  imamite: "familles.imamite.titre",
-  ibadite: "familles.ibadite.titre",
 } as const satisfies Record<FamilleRecueil, string>;
 
 const notesFamilles = {
@@ -25,8 +23,6 @@ const notesFamilles = {
   specialises: "familles.specialises.note",
   compilations: "familles.compilations.note",
   anciens: "familles.anciens.note",
-  imamite: "familles.imamite.note",
-  ibadite: "familles.ibadite.note",
 } as const satisfies Record<FamilleRecueil, string>;
 
 // Comparaison tolérante : sans accents latins ni voyelles brèves arabes, insensible à la casse.

@@ -468,14 +468,6 @@
       "anciens": {
         "titre": "Early collections and documents",
         "note": "Some are known only through later transmissions or quotations."
-      },
-      "imamite": {
-        "titre": "Imami tradition",
-        "note": "Authors to be completed from a verified source."
-      },
-      "ibadite": {
-        "titre": "Ibadi tradition",
-        "note": "Authors to be completed from a verified source."
       }
     },
     "lire": "Read the {n, number} hadiths"

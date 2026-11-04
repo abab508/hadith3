@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-// Catalogue des recueils de hadiths (bibliothèque) : liste fournie par le patron, à valider par un spécialiste.
+// Catalogue des recueils de hadiths SUNNITES (bibliothèque) : liste fournie par le patron, à valider par un spécialiste.
 // Les noms arabes sont stockés en Unicode NFC et jamais modifiés.
 
 const nfc = z.string().min(1).refine((texte) => texte === texte.normalize("NFC"), "texte non NFC");
@@ -13,8 +13,6 @@ export const familleRecueil = z.enum([
   "specialises",
   "compilations",
   "anciens",
-  "imamite",
-  "ibadite",
 ]);
 
 export const recueil = z.strictObject({
