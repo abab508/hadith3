@@ -71,4 +71,4 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [!] Contenu des 9 thèmes et 5 chapitres (hadiths, explications, références, audio) : à fournir depuis une source vérifiée
 - [!] Images originales en haute qualité de la maquette (les découpes actuelles sont floues)
 - [!] Citation « Celui qui cherche la science… » : référence à vérifier par un spécialiste
-- [!] 3 tests navigateur en échec hors refonte (glossaire al-illa : deux textes arabes ; recherche « intentions » : 2 résultats au lieu de 4) — à corriger dans une tâche à part
+- [x] 3 tests navigateur en échec hors refonte : tests mis à jour (glossaire : deux textes arabes attendus ; recherche : une carte par hadith depuis 7f24c2b) — 61/61
