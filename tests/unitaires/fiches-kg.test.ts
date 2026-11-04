@@ -9,6 +9,13 @@ describe("fiches hadith-kg", () => {
     expect(c!.at(-1)!.auteur).toBe(true);
     expect(c!.some((m) => m.jugements.length > 0)).toBe(true);
   });
+  it("Bukhari 7 : la chaîne choisie est celle écrite dans le texte (Abū l-Yamān, Shuʿayb, al-Zuhrī)", async () => {
+    const c = await chaineKg("bukhari", 7);
+    const noms = c!.map((m) => m.nom).join(" | ");
+    expect(noms).toContain("شعيب");
+    expect(noms).toContain("حكم بن نافع");
+    expect(noms).not.toContain("يونس بن يزيد");
+  });
   it("hadith non relié ou clé invalide : pas de chaîne", async () => {
     expect(await chaineKg("bukhari", 999999)).toBeNull();
     expect(await chaineKg("../x", 1)).toBeNull();

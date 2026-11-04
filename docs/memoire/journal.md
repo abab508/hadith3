@@ -124,3 +124,8 @@
 - Fait : biographie (nom complet, kunya, ṭabaqa, naissance, décès, nisba, résidence, nombre de récits) et fiabilité (jugement de synthèse + jugements des critiques cités) pour 6 231 transmetteurs ; chaîne reliée pour 26 771 hadiths des 7 grands recueils ; secours : découpage du texte.
 - Vérifié : 141 tests unitaires, contrôles, build ; capture Bukhārī 22 (Ismāʿīl ibn Abī Uways).
 - Prochaine étape : mise en ligne après accord du patron.
+
+## 2026-11-04 — Liaison des chaînes hadith-kg vérifiée par les noms
+- Fait : 33 652 hadiths sur 36 390 reliés (92 %, contre 74 %) ; la chaîne retenue est celle dont les noms sont écrits dans le hadith ; corrige des chaînes fausses déjà en ligne (ex. Bukhārī 7 et 27).
+- Vérifié : 142 tests unitaires, 9 contrôles, build, 67/67 tests navigateur ; capture Bukhārī 7.
+- Prochaine étape : mise en ligne après accord du patron.
