@@ -278,7 +278,15 @@
     "resumeOuvrages": "{count, plural, =0 {Sin obras} =1 {# obra} other {# obras}}",
     "resumeBibliotheques": "{count, plural, =0 {Sin bibliotecas} =1 {# biblioteca} other {# bibliotecas}}",
     "voirRapport": "Ver informe",
-    "hadithManquant": "Hadiz no encontrado"
+    "hadithManquant": "Hadiz no encontrado",
+    "votreRecherche": "Su búsqueda",
+    "introCourte": "Elija un hadiz, añada los transmisores que conoce y genere el informe.",
+    "options": "Opciones avanzadas: bibliotecas y obras",
+    "apercu": "Vista previa de la cadena",
+    "apercuAide": "Los transmisores que añade se iluminan en la cadena.",
+    "voiesSuite": "{count, plural, =0 {Ninguna vía} =1 {Luego # vía hasta las colecciones} other {Luego # vías hasta las colecciones}}",
+    "chercherTexte": "Buscar mejor por un texto o un número",
+    "indique": "Añadido por usted"
   },
   "rapport": {
     "surtitre": "Informe documental",

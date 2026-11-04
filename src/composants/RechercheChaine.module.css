@@ -1,204 +1,80 @@
-/* Formulaire de recherche par chaîne, en trois étapes. Propriétés logiques uniquement. */
+/* Recherche par chaîne — version épurée (charte nuit et or). Propriétés logiques uniquement. */
+.disposition{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:1.6rem;align-items:start;}
 
-.etape {
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-}
+/* ---------- Cadres ---------- */
+.cadre,.apercu{display:flex;flex-direction:column;gap:1.4rem;padding:clamp(1.4rem,2.6vw,2.2rem);border:1.5px solid #e3b866aa;border-radius:1.1rem;
+  background:radial-gradient(ellipse at 20% 0,#16264a,transparent 60%),linear-gradient(180deg,#0f1b31,#0a1324);box-shadow:inset 0 0 0 4px #0a1222,inset 0 0 0 5px #e3b86626,0 20px 50px #0008;}
+.titreCadre{margin:0;font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(1.3rem,2.2vw,1.65rem);color:#fff3cf;}
+.titreCadre::after{display:none!important;}
+.aide{margin:0;color:var(--discret);font-size:.9rem;line-height:1.55;}
 
-.etape > p {
-  margin: 0;
-}
+/* ---------- Champs ---------- */
+.champ{display:flex;flex-direction:column;gap:.55rem;}
+.champ label{font-weight:700;color:#f3ead8;}
+.champ select,.champ input{inline-size:100%;min-block-size:3.1rem;padding-inline:1rem;border:1px solid #e3b8667a;border-radius:.7rem;background:#0b1528;color:var(--texte);font:inherit;font-size:1rem;}
+.champ select:focus-visible,.champ input:focus-visible{outline:none;border-color:var(--ocre);box-shadow:0 0 0 3px #eebc6a33;}
+.puces{display:flex;flex-wrap:wrap;gap:.5rem;margin:.2rem 0 0;padding:0;list-style:none;}
+.puces li{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .4rem .35rem .9rem;border:1.5px solid var(--ocre);border-radius:999px;background:#2a2214;color:#fff3cf;font-weight:700;font-size:.92rem;animation:entrer .35s both;}
+.retirer{display:grid;place-items:center;inline-size:1.7rem;block-size:1.7rem;border:0;border-radius:50%;background:#0a1222;color:var(--texte);cursor:pointer;}
+.retirer:hover{background:var(--alerte);color:#1b0f08;}
+.case{display:flex;align-items:flex-start;gap:.6rem;color:#e8dcc2;line-height:1.5;}
+.case input{margin-block-start:.3rem;accent-color:var(--ocre);inline-size:1.1rem;block-size:1.1rem;}
 
-.titreEtape {
-  margin: 0;
-  font-size: 1.25rem;
-}
+/* ---------- Envoi ---------- */
+.envoi{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.2rem;padding-block-start:.4rem;border-block-start:1px solid #e3b86626;}
+.generer{display:inline-flex;align-items:center;gap:.7rem;min-block-size:3.2rem;padding-inline:1.8rem;border:2px solid #fff0bd;border-radius:999px;
+  background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06;font-family:"Alegreya",serif;font-weight:700;font-size:1.12rem;text-decoration:none;
+  box-shadow:inset 0 0 0 3px #c98d3b55,0 8px 24px #eebc6a44;transition:transform .3s,box-shadow .3s;}
+.generer:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 3px #c98d3b55,0 12px 32px #eebc6a77;}
+.fleche{display:inline-block;transition:transform .3s;}
+.generer:hover .fleche{transform:translateX(4px);}
+:global(html[dir="rtl"]) .fleche{scale:-1 1;}
+.resume{margin:0;color:var(--discret);font-size:.9rem;}
+.lienTexte{margin:0;font-size:.88rem;}
+.lienTexte a{color:var(--ocre);}
 
-.hadiths,
-.pastilles,
-.maillons {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+/* ---------- Aperçu : une seule ligne dorée, un maillon par étape ---------- */
+.ligne{position:relative;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1rem;}
+.ligne::before{content:"";position:absolute;inset-block:1.1rem 1.1rem;inset-inline-start:.85rem;inline-size:2px;background:linear-gradient(180deg,#f2c877,#f2c87744);}
+.etapeLigne{--couleur:var(--ocre);position:relative;display:grid;grid-template-columns:1.8rem minmax(0,1fr) auto;align-items:center;gap:.9rem;
+  padding:.7rem 1rem .7rem 0;border-radius:.8rem;transition:background .3s,box-shadow .3s;animation:entrer .5s calc(var(--i) * .08s) both;}
+.etapeLigne[data-categorie="thiqa"]{--couleur:#6cc3a8;}
+.etapeLigne[data-categorie="saduq"]{--couleur:var(--info);}
+.etapeLigne[data-categorie="daif"]{--couleur:var(--alerte);}
+.etapeLigne[data-categorie="non-evalue"],.etapeLigne[data-categorie="compilateur"]{--couleur:var(--discret);}
+.point{position:relative;z-index:1;justify-self:center;inline-size:1.05rem;block-size:1.05rem;border-radius:50%;border:2px solid var(--couleur);background:#0a1222;transition:background .3s,box-shadow .3s,scale .3s;}
+.nomsLigne{display:flex;flex-direction:column;min-inline-size:0;}
+.nomAr{font-size:1.25rem;line-height:1.5;color:#fff6e3;}
+.nomLatin{font-size:.88rem;color:var(--discret);}
+.statut{font-size:.8rem;color:var(--couleur);white-space:nowrap;}
+/* Transmetteur indiqué par le visiteur : il s'allume. */
+.etapeLigne[data-indique]{background:#e3b86614;box-shadow:inset 0 0 0 1px #e3b86655;}
+.etapeLigne[data-indique] .point{background:var(--ocre);border-color:#fff0bd;box-shadow:0 0 16px #eebc6aaa;scale:1.2;}
+.etapeLigne[data-indique] .statut{color:var(--ocre);font-weight:700;}
+.etapeLigne[data-indique] .nomLatin{color:#fff3cf;}
+.suite{margin:0;padding-inline-start:2.7rem;color:#e8dcc2;font-style:italic;}
 
-.hadiths {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 0.75rem;
-}
+/* ---------- Options avancées (repliées) ---------- */
+.options{grid-column:1/-1;border:1px solid #e3b86640;border-radius:1rem;background:#0c1527;}
+.options summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;cursor:pointer;list-style:none;font-weight:700;color:#f3ead8;}
+.options summary::-webkit-details-marker{display:none;}
+.options summary:hover{color:var(--ocre);}
+.chevron{transition:transform .3s;}
+.options[open] .chevron{transform:rotate(180deg);}
+.corpsOptions{display:flex;flex-direction:column;gap:1.4rem;padding:0 1.4rem 1.4rem;}
+.bibliotheques{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:.8rem;}
+.bibliotheque{display:flex;gap:.7rem;padding:.9rem;border:1px solid #e3b86633;border-radius:.8rem;background:#0f1a2e;cursor:pointer;}
+.bibliotheque input{margin-block-start:.25rem;accent-color:var(--ocre);}
+.descriptif{display:flex;flex-direction:column;gap:.35rem;min-inline-size:0;}
+.nomBibliotheque{font-weight:700;color:#fff3cf;}
+.texteBibliotheque{font-size:.85rem;color:var(--discret);line-height:1.5;}
+.badge{align-self:flex-start;padding:.15rem .6rem;border:1px solid #e3b86655;border-radius:999px;font-size:.75rem;color:var(--ocre);}
+.groupe{display:flex;flex-direction:column;gap:.6rem;}
+.groupe h3{margin:0;font-size:1rem;color:#fff3cf;}
+.pastilles{display:flex;flex-wrap:wrap;gap:.45rem;margin:0;padding:0;list-style:none;}
+.pastille{padding:.4rem .8rem;border:1px solid #e3b86655;border-radius:999px;background:transparent;color:var(--discret);font:inherit;font-size:.85rem;cursor:pointer;transition:background .2s,color .2s;}
+.pastille[aria-pressed="true"]{background:#2a2214;border-color:var(--ocre);color:#fff3cf;}
 
-.hadith {
-  inline-size: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-radius: 0.875rem;
-  border: 1px solid var(--bordure);
-  background: var(--surface);
-  color: var(--texte);
-  font: inherit;
-  text-align: start;
-  cursor: pointer;
-}
-
-.hadith[aria-pressed="true"] {
-  border: 2px solid var(--accent);
-  background: var(--accent-doux);
-}
-
-.reference {
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-.texteHadith {
-  font-size: 1.375rem;
-  line-height: 1.7;
-}
-
-.chaine {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 0.75rem;
-}
-
-.maillons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.maillon {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding-block: 0.25rem;
-  padding-inline: 0.75rem 0.25rem;
-  border-radius: 0.625rem;
-  border: 1.5px solid var(--accent);
-  background: var(--accent-doux);
-}
-
-.retirer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-inline-size: 2.75rem;
-  min-block-size: 2.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: transparent;
-  color: var(--texte);
-  cursor: pointer;
-}
-
-.ajout {
-  flex: 1 1 16rem;
-}
-
-.case {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  min-block-size: 2.75rem;
-}
-
-.case input,
-.bibliotheque input {
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
-  flex: none;
-}
-
-.bibliotheques {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 0.75rem;
-}
-
-.bibliotheque {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem;
-  border-radius: 0.875rem;
-  border: 1px solid var(--bordure);
-  cursor: pointer;
-}
-
-.bibliotheque:has(input:checked) {
-  border: 2px solid var(--accent);
-  background: var(--accent-doux);
-}
-
-.descriptif {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  font-size: 0.875rem;
-}
-
-.nomBibliotheque {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.groupe {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
-
-.groupe > :is(h3, p) {
-  margin: 0;
-  font-size: 0.9375rem;
-}
-
-.pastilles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.pastille {
-  min-block-size: 2.75rem;
-  padding-inline: 0.875rem;
-  border-radius: 999px;
-  border: 1px solid var(--bordure);
-  background: var(--surface);
-  color: var(--texte);
-  font: inherit;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-
-.pastille[aria-pressed="true"] {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--sur-accent);
-}
-
-.envoi {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-}
-
-.envoi > p {
-  margin: 0;
-}
-
-.generer {
-  min-block-size: 3.5rem;
-  padding-inline: 1.75rem;
-  font-size: 1.125rem;
-}
-
-.fleche:dir(rtl) {
-  transform: scaleX(-1);
-}
+@keyframes entrer{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:900px){.disposition{grid-template-columns:minmax(0,1fr);}}
+@media(prefers-reduced-motion:reduce){.puces li,.etapeLigne,.point,.generer,.fleche,.chevron{animation:none!important;transition:none!important;}}

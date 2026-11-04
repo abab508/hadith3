@@ -278,7 +278,15 @@
     "resumeOuvrages": "{count, plural, =0 {Eser yok} =1 {# eser} other {# eser}}",
     "resumeBibliotheques": "{count, plural, =0 {Kütüphane yok} =1 {# kütüphane} other {# kütüphane}}",
     "voirRapport": "Raporu görüntüle",
-    "hadithManquant": "Hadis bulunamadı"
+    "hadithManquant": "Hadis bulunamadı",
+    "votreRecherche": "Aramanız",
+    "introCourte": "Bir hadis seçin, bildiğiniz ravileri ekleyin, sonra raporu oluşturun.",
+    "options": "Gelişmiş seçenekler: kütüphaneler ve eserler",
+    "apercu": "Senet önizlemesi",
+    "apercuAide": "Eklediğiniz raviler senette parlar.",
+    "voiesSuite": "{count, plural, =0 {Tarik yok} =1 {Ardından kitaplara # tarik} other {Ardından kitaplara # tarik}}",
+    "chercherTexte": "Bunun yerine metin veya numarayla ara",
+    "indique": "Sizin eklediğiniz"
   },
   "rapport": {
     "surtitre": "Belgesel rapor",

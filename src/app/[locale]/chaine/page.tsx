@@ -29,7 +29,7 @@ export default async function Chaine({
     <main id="contenu" tabIndex={-1} className={ui.page}>
       <div className={styles.intro}>
         <h1 className={styles.titre}>{t("titre")}</h1>
-        <p>{t("intro")}</p>
+        <p>{t("introCourte")}</p>
       </div>
       {hadith ? <RechercheChaine hadithInitial={hadith.id} /> : <p>{t("hadithManquant")}</p>}
     </main>

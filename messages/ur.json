@@ -278,7 +278,15 @@
     "resumeOuvrages": "{count, plural, =0 {کوئی کتاب نہیں} =1 {# کتاب} other {# کتابیں}}",
     "resumeBibliotheques": "{count, plural, =0 {کوئی لائبریری نہیں} =1 {# لائبریری} other {# لائبریریز}}",
     "voirRapport": "رپورٹ دیکھیں",
-    "hadithManquant": "حدیث نہیں ملی"
+    "hadithManquant": "حدیث نہیں ملی",
+    "votreRecherche": "آپ کی تلاش",
+    "introCourte": "ایک حدیث منتخب کریں، جانے پہچانے راوی شامل کریں، پھر رپورٹ بنائیں۔",
+    "options": "اعلیٰ اختیارات: کتب خانے اور کتابیں",
+    "apercu": "سند کا جائزہ",
+    "apercuAide": "آپ کے شامل کردہ راوی سند میں روشن ہو جاتے ہیں۔",
+    "voiesSuite": "{count, plural, =0 {کوئی طریق نہیں} =1 {پھر کتابوں تک # طریق} other {پھر کتابوں تک # طرق}}",
+    "chercherTexte": "اس کے بجائے متن یا نمبر سے تلاش کریں",
+    "indique": "آپ نے شامل کیا"
   },
   "rapport": {
     "surtitre": "دستاویزی رپورٹ",

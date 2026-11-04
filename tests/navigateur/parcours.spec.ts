@@ -141,6 +141,8 @@ test("recherche par chaîne : ajouter, retirer un transmetteur puis générer le
 
   const resume = page.locator("#resume-chaine");
   await expect(resume).toContainText("23 ouvrages");
+  // Les ouvrages sont repliés dans « Options avancées » (page simplifiée, 2026-11-04).
+  await page.getByText(fr.chaine.options).click();
   await page.getByRole("button", { name: /Ṣaḥīḥ Muslim/ }).click();
   await expect(resume).toContainText("22 ouvrages");
 
