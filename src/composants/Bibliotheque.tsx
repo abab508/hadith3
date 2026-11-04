@@ -112,6 +112,11 @@ export default function Bibliotheque({ rayons, requeteInitiale = "" }: { rayons:
                     <span className="visuellement-cache">{t("auteur")} : </span>
                     {livre.auteur ? <bdi dir="ltr">{livre.auteur}</bdi> : <em>{t("auteurAbsent")}</em>}
                   </p>
+                  {livre.lisible > 0 && (
+                    <Link href={`/recueil/${livre.id}`} className={styles.chercher}>
+                      {t("lire", { n: livre.lisible })} <span aria-hidden="true">↗</span>
+                    </Link>
+                  )}
                   {livre.cherchable && (
                     <Link href={`/recherche?recueil=${livre.id}`} className={styles.chercher}>
                       {t("cherchable")} <span aria-hidden="true">↗</span>

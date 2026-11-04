@@ -477,7 +477,8 @@
         "titre": "Tradición ibadí",
         "note": "Autores por completar a partir de una fuente verificada."
       }
-    }
+    },
+    "lire": "Leer los {n, number} hadices"
   },
   "themes": {
     "titre": "Elige un tema",
@@ -648,5 +649,32 @@
     "guideKg": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena identificada en la base hadith-kg, vinculada a este hadiz comparando los textos árabes.",
     "auteurRecueil": "Autor de la colección",
     "aucunJugementKg": "No hay juicio de críticos en la fuente para este transmisor."
+  },
+  "recueilKg": {
+    "surtitre": "Biblioteca · colección",
+    "compte": "{nombre, number} hadices · {avecChaine, number} con cadena de transmisión identificada",
+    "retourBibliotheque": "Volver a la biblioteca",
+    "retourRecueil": "Volver a la colección",
+    "pages": "Páginas de la colección",
+    "page": "Página {page} de {total}",
+    "precedente": "Página anterior",
+    "suivante": "Página siguiente",
+    "precedent": "Hadiz anterior",
+    "suivant": "Hadiz siguiente",
+    "aller": "Ir al hadiz n.º",
+    "ouvrir": "Abrir",
+    "numero": "n.º {n}",
+    "refSource": "número {ref} en la fuente",
+    "texteArabe": "Texto árabe",
+    "avecChaine": "{count, plural, one {Cadena identificada en la fuente} other {# cadenas identificadas en la fuente}}",
+    "sansChaine": "No hay cadena identificada en la fuente para este texto.",
+    "chaines": "Cadenas de este hadiz ({count})",
+    "chaineN": "Cadena {k}",
+    "hukm": "Valoración de la cadena según la fuente",
+    "hukmAide": "Valoración dada por la base de origen, citada tal cual: no es un veredicto de Milaghaiba.",
+    "indisponible": "Los datos de esta colección no están disponibles por el momento. Inténtelo de nuevo en unos instantes.",
+    "introuvable": "Este hadiz no se encuentra en la colección.",
+    "source": "Texto, cadenas y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0, publicada en el repositorio de datos de Milaghaiba. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
+    "guide": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena dada para este hadiz por la propia base hadith-kg."
   }
 }

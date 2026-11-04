@@ -1,0 +1,20 @@
+/* Liste des hadiths d'un recueil de la bibliothèque — charte nuit et or. Propriétés logiques uniquement. */
+.liste{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.entree{display:grid;grid-template-columns:4.2rem minmax(0,1fr);align-items:start;gap:1rem;padding:.9rem 1.1rem;border:1px solid #e3b86655;border-radius:.9rem;
+  background:linear-gradient(180deg,#101d36,#0a1324);text-decoration:none;color:inherit;transition:border-color .2s,transform .2s;}
+.entree:hover,.entree:focus-visible{border-color:#f2c877;transform:translateY(-1px);}
+.numero{font-family:"Cinzel",serif;font-weight:700;color:var(--ocre);font-size:1rem;padding-block-start:.3rem;}
+.corps{display:flex;flex-direction:column;min-inline-size:0;}
+.extrait{display:block;margin:0;font-size:1.15rem;line-height:1.9;color:#fff6e3;}
+.marque{display:inline-block;margin-block-start:.3rem;font-size:.78rem;color:var(--discret);}
+.pagination{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;}
+.pagination a{color:var(--ocre);font-weight:700;}
+.pagination span{color:#e8dcc2;}
+.aller{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;}
+.aller label{color:#e8dcc2;}
+.aller input{inline-size:7rem;min-block-size:2.6rem;padding-inline:.8rem;border:1px solid #e3b866aa;border-radius:.6rem;background:#0a1324;color:#fff6e3;font:inherit;}
+.aller button{min-block-size:2.6rem;padding-inline:1.1rem;border:1.5px solid #f2c877;border-radius:999px;background:transparent;color:#fff3cf;font:inherit;font-weight:700;cursor:pointer;}
+.selecteur{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none;}
+.selecteur a{display:inline-block;padding:.35rem .9rem;border:1px solid #e3b86688;border-radius:999px;color:#fff3cf;text-decoration:none;font-size:.9rem;}
+.selecteur a[aria-current="true"]{background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06;border-color:#fff0bd;font-weight:700;}
+.nomAr{align-self:flex-start;margin:0;font-size:1.6rem;line-height:1.5;color:#f2c877;}

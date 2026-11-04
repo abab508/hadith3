@@ -12,8 +12,8 @@ import styles from "@/composants/ChaineRapport.module.css";
 type Categorie = "source" | "compagnon" | "thiqa" | "saduq" | "daif" | "compilateur" | "non-evalue";
 type Maillon = { nom: string; categorie: Categorie; fiche?: MaillonKg };
 
-export default function ChaineTexteRapport({ maillons = [], fiches, categories = [], recueil, jusquAuProphete }: {
-  maillons?: string[]; fiches?: MaillonKg[]; categories?: Categorie[]; recueil: string; jusquAuProphete: boolean;
+export default function ChaineTexteRapport({ maillons = [], fiches, categories = [], recueil, jusquAuProphete, guide }: {
+  maillons?: string[]; fiches?: MaillonKg[]; categories?: Categorie[]; recueil: string; jusquAuProphete: boolean; guide?: string;
 }) {
   const t = useTranslations("rapportTexte");
   const tr = useTranslations("rapport");
@@ -76,7 +76,7 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
           </h2>
           <p className={ui.discret}>{tr("cliquer")}</p>
         </div>
-        <p className={styles.guide}><span className={styles.info} aria-hidden="true">i</span><span>{identifiee ? t("guideKg") : t("guide")}</span></p>
+        <p className={styles.guide}><span className={styles.info} aria-hidden="true">i</span><span>{guide ?? (identifiee ? t("guideKg") : t("guide"))}</span></p>
         <div className={styles.stats}><span>{t("maillonsCompte", { count: identifiee ? fiches!.length : maillons.length })}</span></div>
         <ul className={styles.legende} aria-label={tr("legende.titre")}>
           {presentes.map((c) => <li key={c}><span className={`${styles.echantillon} ${styles.porteur}`} data-categorie={c} aria-hidden="true" />{libelle(c)}</li>)}
