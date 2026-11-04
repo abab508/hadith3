@@ -7,13 +7,19 @@ import { memoriserInterface } from "@/donnees/preferences-visiteur";
 import { Link, usePathname } from "@/i18n/navigation";
 import styles from "@/composants/SelecteurLangue.module.css";
 
+// Liens principaux de la maquette d'abord, puis les outils du site.
 const liens = [
+  { href: "/", cle: "accueil" },
+  { href: "/themes", cle: "themes" },
+  { href: "/chapitres", cle: "chapitres" },
+  { href: "/a-z", cle: "az" },
   { href: "/recherche", cle: "recherche" },
+  { href: "/bibliotheque", cle: "bibliotheque" },
   { href: "/chaine", cle: "chaine" },
   { href: "/glossaire", cle: "glossaire" },
-  { href: "/parametres", cle: "parametres" },
-  { href: "/langues", cle: "langues" },
   { href: "/memorisation", cle: "memorisation" },
+  { href: "/langues", cle: "langues" },
+  { href: "/parametres", cle: "parametres" },
 ] as const;
 
 export default function SelecteurLangue() {
@@ -26,13 +32,15 @@ export default function SelecteurLangue() {
 
   return (
     <nav className={styles.selecteur} aria-label={t("titre")}>
-      <p className={styles.titre}>{t("titre")}</p>
+      <p className={`${styles.titre} visuellement-cache`}>{t("titre")}</p>
       <ul className={styles.langues}>
         {languesDuSelecteur().map((langue) => {
           // Pas de « français — français » : le nom traduit n'apparaît que s'il diffère du nom natif.
           const traduit = nomLangueTraduit(langue, locale);
           const nom = (
             <>
+              <span className={styles.code} data-code={langue.tag.toUpperCase()} aria-hidden="true" />
+              <span className="visuellement-cache">
               <bdi lang={langue.tag} dir={langue.direction} style={{ fontFamily: `"${langue.police.famille}"` }}>
                 {langue.nomNatif}
               </bdi>
@@ -42,6 +50,7 @@ export default function SelecteurLangue() {
                   <bdi>{traduit}</bdi>
                 </>
               )}
+              </span>
             </>
           );
           return (
@@ -64,7 +73,8 @@ export default function SelecteurLangue() {
       <ul className={styles.liens} aria-label={navigation("titre")}>
         {liens.map(({ href, cle }) => (
           <li key={href}>
-            <Link href={href} aria-current={chemin === href ? "page" : undefined}>{cle === "memorisation" ? "✧ " : ""}{navigation(cle)}</Link>
+            {/* Accueil : simple repère visuel (data-actif) ; la langue en cours porte déjà aria-current sur cette page. */}
+            <Link href={href} aria-current={chemin === href && href !== "/" ? "page" : undefined} data-actif={chemin === href || undefined}>{navigation(cle)}</Link>
           </li>
         ))}
       </ul>

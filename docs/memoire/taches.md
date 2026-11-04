@@ -61,3 +61,14 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [x] Menu : page en cours signalée (aria-current)
 - [!] Ajouter d'autres hadiths au corpus d'exemple : texte, chaînes et jugements à fournir depuis une source vérifiée (spécialiste), rien ne doit être inventé
 - [x] Textes arabes tronqués (reste de chaîne), textes provisoires entre crochets, titre du rapport, « français — français » (branche fix/textes-et-libelles)
+
+## Étape 5 — Refonte d'après la maquette « Les Hadiths » (2026-11-04)
+- [x] Bibliothèque des 92 recueils (liste du patron), rayons animés
+- [x] Charte nuit et or, police Aref Ruqaa, en-tête de la maquette
+- [x] Accueil immersif + ambiance sonore générée en code
+- [x] Pages Thèmes, Thème (carrousel), Chapitres, Chapitre (onglets), Index A-Z
+- [!] Auteurs des recueils 69 à 92 et classement imamite / ibadite : à valider par un spécialiste
+- [!] Contenu des 9 thèmes et 5 chapitres (hadiths, explications, références, audio) : à fournir depuis une source vérifiée
+- [!] Images originales en haute qualité de la maquette (les découpes actuelles sont floues)
+- [!] Citation « Celui qui cherche la science… » : référence à vérifier par un spécialiste
+- [!] 3 tests navigateur en échec hors refonte (glossaire al-illa : deux textes arabes ; recherche « intentions » : 2 résultats au lieu de 4) — à corriger dans une tâche à part

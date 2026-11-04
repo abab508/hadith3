@@ -10,12 +10,15 @@ test("rapport fr : un clic sur un transmetteur ouvre sa fiche", async ({ page })
   // Le dernier maillon du tronc commun est choisi d'office.
   await expect(fiche.locator('[lang="ar-Latn"]').first()).toHaveText("Yaḥyā ibn Saʿīd al-Anṣārī");
 
-  const taymi = page.getByRole("button", { name: /Muḥammad ibn Ibrāhīm al-Taymī/ });
+  // Les relations de la fiche sont aussi des boutons : on vise la chaîne (refonte 2026-11-04).
+  const taymi = page.locator('section[aria-labelledby="titre-isnad"]').getByRole("button", { name: /Muḥammad ibn Ibrāhīm al-Taymī/ });
   await taymi.click();
   await expect(taymi).toHaveAttribute("aria-pressed", "true");
   await expect(fiche.locator('p[lang="ar"]').first()).toHaveText("محمد بن إبراهيم التيمي");
   // La réserve d'Aḥmad ibn Ḥanbal est signalée, pas cachée.
+  await fiche.getByRole("tab", { name: fr.rapport.fiche.fiabilite }).click(); // onglet Fiabilité (refonte 2026-11-04)
   await expect(fiche.getByText(fr.rapport.fiche.reserve, { exact: true })).toBeVisible();
+  await fiche.getByRole("tab", { name: fr.rapport.fiche.biographie }).click();
   await expect(fiche.getByText("ʿAlqama ibn Waqqāṣ al-Laythī")).toBeVisible();
 });
 

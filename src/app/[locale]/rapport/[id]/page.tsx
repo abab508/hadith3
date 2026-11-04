@@ -5,6 +5,8 @@ import { entree } from "@/donnees/catalogue";
 import type { Bibliotheque } from "@/donnees/schemas/corpus";
 import Terme from "@/composants/Terme";
 import ChaineRapport from "@/composants/ChaineRapport";
+import Embleme from "@/composants/Embleme";
+import IconeTheme from "@/composants/IconeTheme";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
 import styles from "./Rapport.module.css";
@@ -46,6 +48,7 @@ export default async function Rapport({
   const t = await getTranslations("rapport");
   const tRecherche = await getTranslations("recherche");
   const tAccueil = await getTranslations("accueil");
+  const tEntete = await getTranslations("entete");
 
   const hadith = hadithParId(id);
   if (!hadith) {
@@ -71,7 +74,22 @@ export default async function Rapport({
   });
 
   return (
-    <main id="contenu" tabIndex={-1} className={ui.page}>
+    <main id="contenu" tabIndex={-1} className={`${ui.page} ${styles.pageRapport}`}>
+      <section className={styles.banniere} aria-label={t("banniere.titre")}>
+        <img className={styles.imageBanniere} src="/images/maquette/accueil.jpg" alt="" />
+        <span className={styles.voileBanniere} aria-hidden="true" />
+        <Embleme nomLatin={tAccueil("titre")} nomArabe={tEntete("nomArabe")} mention={t("banniere.surtitre")} />
+        <p className={styles.grandTitre}>{t("banniere.titre")}</p>
+        <p className={styles.texteBanniere}>{t("banniere.texte")}</p>
+        <p className={styles.ligneAnalyse}>
+          <span className={styles.filet} aria-hidden="true" />
+          <a href="#titre-isnad" className={styles.pastilleAnalyse}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" /></svg>
+            {t("banniere.analyse")}
+          </a>
+          <span className={styles.filet} aria-hidden="true" />
+        </p>
+      </section>
       <p>
         <Link href={{ pathname: "/chaine", query: { hadith: hadith.id } }}>{t("autreHadith")}</Link>
       </p>
@@ -164,6 +182,12 @@ export default async function Rapport({
         </button>
         <span id="bientot" className={ui.discret}>{t("actions.bientot")}</span>
       </div>
+
+      <p className={styles.barreThematique}>
+        <IconeTheme icone="livre" className={styles.pictoBarre} />
+        <span><strong>{t("navigationThematique.titre")}</strong> : {t("navigationThematique.texte")}</span>
+        <Link href="/themes" aria-label={t("navigationThematique.titre")}>↗</Link>
+      </p>
 
       <p className={ui.avertissement}>{t("avertissementData")}</p>
     </main>

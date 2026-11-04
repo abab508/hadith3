@@ -8,3 +8,10 @@
 .motion:hover{background:var(--accent-doux);}
 @media(max-width:540px){.label{display:none;}.choice{padding:.4rem .55rem;}.controls{gap:.3rem;}}
 @media(prefers-reduced-motion:reduce){.choice,.motion{transition:none!important;}}
+/* En-tête compact de la maquette : icônes seules, libellés lus par les lecteurs d'écran. */
+.label{position:absolute;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.choice span+span{position:absolute;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.segment{background:transparent;border-color:#e3b86640;}
+.choice{min-inline-size:2.2rem;min-block-size:2.2rem;padding:.3rem;}
+.choice[data-selected="true"]{color:var(--sur-accent);background:var(--ocre);box-shadow:none;}
+.motion{inline-size:2.4rem;block-size:2.4rem;background:transparent;border-color:#e3b86640;color:var(--ocre);}

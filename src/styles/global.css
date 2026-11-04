@@ -1,40 +1,40 @@
 /* Propriétés logiques uniquement (docs/memoire/conventions.md). */
 :root {
-  color-scheme: light dark;
-  --fond: #fbfaf7;
-  --texte: #1d1b16;
-  --discret: #6b665c;
-  --accent: #1f6f5c;
-  --surface: #ffffff;
-  --bordure: #ddd7c8;
-  --sur-accent: #ffffff;
-  --accent-doux: #e3f0ec;
-  --ocre: #7f5208;
-  --ocre-doux: #f6ebd6;
-  --info: #2a5596;
-  --info-doux: #e8eef8;
-  --alerte: #9a3510;
-  --alerte-doux: #fbe6dd;
-  --neutre-doux: #eceae3;
+  color-scheme: dark;
+  --fond: #0a1222;
+  --texte: #f3ead8;
+  --discret: #b8ae9a;
+  --accent: #e3b866;
+  --surface: #111c31;
+  --bordure: #33405a;
+  --sur-accent: #1b1307;
+  --accent-doux: #2a2416;
+  --ocre: #eebc6a;
+  --ocre-doux: #2c2314;
+  --info: #8fb3ea;
+  --info-doux: #1b2a44;
+  --alerte: #f0a074;
+  --alerte-doux: #3d2318;
+  --neutre-doux: #1b2537;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fond: #16150f;
-    --texte: #ece9e0;
-    --discret: #a39d90;
-    --accent: #6cc3a8;
-    --surface: #201f18;
-    --bordure: #3d3b31;
-    --sur-accent: #10261f;
-    --accent-doux: #1c3830;
-    --ocre: #e2b465;
-    --ocre-doux: #3a2f1a;
-    --info: #94b8ee;
-    --info-doux: #1d2a3d;
-    --alerte: #f29b76;
-    --alerte-doux: #3d2219;
-    --neutre-doux: #2b2a22;
+    --fond: #0a1222;
+    --texte: #f3ead8;
+    --discret: #b8ae9a;
+    --accent: #e3b866;
+    --surface: #111c31;
+    --bordure: #33405a;
+    --sur-accent: #1b1307;
+    --accent-doux: #2a2416;
+    --ocre: #eebc6a;
+    --ocre-doux: #2c2314;
+    --info: #8fb3ea;
+    --info-doux: #1b2a44;
+    --alerte: #f0a074;
+    --alerte-doux: #3d2318;
+    --neutre-doux: #1b2537;
   }
 }
 
@@ -147,25 +147,26 @@ a {
  --alerte:#9a3510;--alerte-doux:#fae7df;--neutre-doux:#e9efed;
 }
 :root[data-theme="dark"]{
- color-scheme:dark;--fond:#0c1424;--texte:#f0f5fa;--discret:#b5c3d4;--accent:#7bdfcf;
- --surface:#19283d;--bordure:#3a5169;--sur-accent:#092935;--accent-doux:#193d41;
- --ocre:#eac98b;--ocre-doux:#3d3426;--info:#9ebfff;--info-doux:#253953;
- --alerte:#ffaf9d;--alerte-doux:#502c2e;--neutre-doux:#26364a;
+ color-scheme:dark;--fond: #0a1222;--texte: #f3ead8;--discret: #b8ae9a;--accent: #e3b866;--surface: #111c31;--bordure: #33405a;--sur-accent: #1b1307;--accent-doux: #2a2416;--ocre: #eebc6a;--ocre-doux: #2c2314;--info: #8fb3ea;--info-doux: #1b2a44;--alerte: #f0a074;--alerte-doux: #3d2318;--neutre-doux: #1b2537;
 }
-body{background-image:radial-gradient(ellipse 640px 440px at 8% 2%,#14a8ad0e,transparent 70%),radial-gradient(ellipse 650px 360px at 90% 28%,#876ac70d,transparent 70%);background-attachment:fixed;}
+body{background-image:radial-gradient(ellipse 900px 500px at 50% -10%,#1a2c55aa,transparent 70%),radial-gradient(ellipse 700px 400px at 90% 110%,#c2552a1f,transparent 70%);background-attachment:fixed;}
 html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
 
 
 /* Identité typographique : édition patrimoniale, titres et lecture arabe distincts. */
-html{--police-titre-latine:Georgia,"Palatino Linotype",Cambria,serif;}
+html{--police-titre-latine:"Alegreya","Palatino Linotype",Georgia,serif;--police-titre-arabe:"Aref Ruqaa","Noto Naskh Arabic",serif;--police-capitales:"Cinzel","Alegreya",serif;}
+/* Texte latin en Alegreya (police de la capture du patron, 2026-11-04) ; les lettres arabes et ourdoues retombent sur la police de la langue. */
+body{font-family:"Alegreya",var(--police, system-ui, sans-serif);font-size:1.04rem;}
 html:lang(ar){--police-titre-arabe:"Noto Naskh Arabic",serif;}
 :where(h1,h2,h3){text-wrap:balance;line-height:1.4;text-align:start;}
-:where(h1,h2){font-family:var(--police-titre-latine);font-weight:700;letter-spacing:-.022em;}
-html:lang(ar) :where(h1,h2,h3){font-family:"Noto Naskh Arabic",serif;font-weight:700;letter-spacing:normal;line-height:1.6;}
+:where(h1,h2){font-family:var(--police-titre-latine);font-weight:400;letter-spacing:0;}
+html:lang(ar) :where(h1,h2,h3){font-family:var(--police-titre-arabe);font-weight:700;letter-spacing:normal;line-height:1.6;}
 html:lang(ur) :where(h1,h2,h3){font-family:"Noto Nastaliq Urdu",serif;letter-spacing:normal;line-height:2.1;}
 :where(main) > :where(h1,h2),:where(main section) > :where(h1,h2){position:relative;}
 :where(main section) > h2:not(.visuellement-cache)::after{content:"";display:block;inline-size:min(5rem,30%);block-size:2px;margin-block-start:.6rem;background:linear-gradient(90deg,var(--ocre),var(--accent),transparent);}
 :where(main) :where(p,li){overflow-wrap:anywhere;}
 :where(.texte-arabe){font-family:"Noto Naskh Arabic",serif;font-optical-sizing:auto;font-feature-settings:"kern" 1;}
 :where(blockquote){border-inline-start:3px solid var(--ocre);padding-inline-start:1.4rem;margin-inline:0;}
+/* Les décors animés (zoom lent, rayons, flèches de carrousel) ne doivent jamais créer de défilement horizontal. */
+body{overflow-x:clip;}

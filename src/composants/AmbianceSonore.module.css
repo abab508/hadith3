@@ -1,0 +1,12 @@
+/* Bouton d'ambiance sonore : quatre barres d'égaliseur qui dansent quand le son joue. */
+.bouton{display:grid;place-items:center;inline-size:2.6rem;block-size:2.6rem;border-radius:50%;border:1px solid #e3b86640;background:transparent;color:var(--discret);cursor:pointer;transition:color .2s,border-color .2s,box-shadow .2s;}
+.bouton:hover{color:var(--ocre);border-color:var(--ocre);}
+.bouton[data-actif="true"]{color:var(--ocre);border-color:var(--ocre);box-shadow:0 0 16px #eebc6a55;}
+.ondes{display:flex;align-items:flex-end;gap:2px;block-size:14px;}
+.ondes span{inline-size:3px;block-size:4px;border-radius:2px;background:currentColor;transition:block-size .3s;}
+.ondes span:nth-child(2){block-size:9px;}.ondes span:nth-child(3){block-size:6px;}.ondes span:nth-child(4){block-size:11px;}
+.bouton[data-actif="true"] .ondes span{animation:danse 1s ease-in-out infinite alternate;}
+.bouton[data-actif="true"] .ondes span:nth-child(2){animation-delay:-.3s;}
+.bouton[data-actif="true"] .ondes span:nth-child(3){animation-delay:-.6s;}
+.bouton[data-actif="true"] .ondes span:nth-child(4){animation-delay:-.15s;}
+@keyframes danse{from{block-size:3px}to{block-size:14px}}

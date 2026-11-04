@@ -1,0 +1,730 @@
+{
+  "version": "0.1.0",
+  "miseAJour": "2026-11-04",
+  "statut": "a-valider",
+  "source": "Liste de 92 références fournie par le patron le 2026-11-04 (non exhaustive). Classement par famille et auteurs à valider par un spécialiste.",
+  "familles": [
+    "neuf",
+    "transmission",
+    "musnad",
+    "specialises",
+    "compilations",
+    "anciens",
+    "imamite",
+    "ibadite"
+  ],
+  "recueils": [
+    {
+      "numero": 1,
+      "id": "sahih-bukhari",
+      "famille": "neuf",
+      "nomAr": "صحيح البخاري",
+      "nom": "Sahih Al-Boukhari",
+      "auteur": "Al-Boukhari"
+    },
+    {
+      "numero": 2,
+      "id": "sahih-muslim",
+      "famille": "neuf",
+      "nomAr": "صحيح مسلم",
+      "nom": "Sahih Muslim",
+      "auteur": "Muslim ibn al-Hajjaj"
+    },
+    {
+      "numero": 3,
+      "id": "sunan-abi-dawud",
+      "famille": "neuf",
+      "nomAr": "سنن أبي داود",
+      "nom": "Sunan Abou Dawoud",
+      "auteur": "Abou Dawoud"
+    },
+    {
+      "numero": 4,
+      "id": "jami-tirmidhi",
+      "famille": "neuf",
+      "nomAr": "جامع الترمذي",
+      "nom": "Jami‘ At-Tirmidhi",
+      "auteur": "At-Tirmidhi"
+    },
+    {
+      "numero": 5,
+      "id": "sunan-nasai",
+      "famille": "neuf",
+      "nomAr": "سنن النسائي",
+      "nom": "Sunan An-Nasaï (Al-Mujtaba)",
+      "auteur": "An-Nasaï"
+    },
+    {
+      "numero": 6,
+      "id": "sunan-ibn-majah",
+      "famille": "neuf",
+      "nomAr": "سنن ابن ماجه",
+      "nom": "Sunan Ibn Majah",
+      "auteur": "Ibn Majah"
+    },
+    {
+      "numero": 7,
+      "id": "muwatta",
+      "famille": "neuf",
+      "nomAr": "موطأ مالك",
+      "nom": "Al-Muwatta de Malik",
+      "auteur": "Malik ibn Anas"
+    },
+    {
+      "numero": 8,
+      "id": "musnad-ahmad",
+      "famille": "neuf",
+      "nomAr": "مسند أحمد بن حنبل",
+      "nom": "Musnad Ahmad ibn Hanbal",
+      "auteur": "Ahmad ibn Hanbal"
+    },
+    {
+      "numero": 9,
+      "id": "sunan-darimi",
+      "famille": "neuf",
+      "nomAr": "سنن الدارمي",
+      "nom": "Sunan Ad-Darimi",
+      "auteur": "Ad-Darimi"
+    },
+    {
+      "numero": 10,
+      "id": "sahih-ibn-khuzayma",
+      "famille": "transmission",
+      "nomAr": "صحيح ابن خزيمة",
+      "nom": "Sahih Ibn Khuzayma",
+      "auteur": "Ibn Khuzayma"
+    },
+    {
+      "numero": 11,
+      "id": "sahih-ibn-hibban",
+      "famille": "transmission",
+      "nomAr": "صحيح ابن حبان",
+      "nom": "Sahih Ibn Hibban",
+      "auteur": "Ibn Hibban"
+    },
+    {
+      "numero": 12,
+      "id": "mustadrak",
+      "famille": "transmission",
+      "nomAr": "المستدرك على الصحيحين",
+      "nom": "Al-Mustadrak",
+      "auteur": "Al-Hakim"
+    },
+    {
+      "numero": 13,
+      "id": "musannaf-abd-al-razzaq",
+      "famille": "transmission",
+      "nomAr": "مصنف عبد الرزاق",
+      "nom": "Musannaf Abd ar-Razzaq",
+      "auteur": "Abd ar-Razzaq"
+    },
+    {
+      "numero": 14,
+      "id": "musannaf-ibn-abi-shayba",
+      "famille": "transmission",
+      "nomAr": "مصنف ابن أبي شيبة",
+      "nom": "Musannaf Ibn Abi Shaybah",
+      "auteur": "Ibn Abi Shaybah"
+    },
+    {
+      "numero": 15,
+      "id": "sunan-ad-daraqutni",
+      "famille": "transmission",
+      "nomAr": "سنن الدارقطني",
+      "nom": "Sunan Ad-Daraqutni",
+      "auteur": "Ad-Daraqutni"
+    },
+    {
+      "numero": 16,
+      "id": "sunan-kubra-bayhaqi",
+      "famille": "transmission",
+      "nomAr": "السنن الكبرى للبيهقي",
+      "nom": "As-Sunan al-Kubra d’Al-Bayhaqi",
+      "auteur": "Al-Bayhaqi"
+    },
+    {
+      "numero": 17,
+      "id": "sunan-kubra-nasai",
+      "famille": "transmission",
+      "nomAr": "السنن الكبرى للنسائي",
+      "nom": "As-Sunan al-Kubra d’An-Nasaï",
+      "auteur": "An-Nasaï"
+    },
+    {
+      "numero": 18,
+      "id": "as-sunan-al-wusta",
+      "famille": "transmission",
+      "nomAr": "السنن الوسطى للبيهقي",
+      "nom": "As-Sunan al-Wusta",
+      "auteur": "Al-Bayhaqi"
+    },
+    {
+      "numero": 19,
+      "id": "shuab-al-iman",
+      "famille": "transmission",
+      "nomAr": "شعب الإيمان",
+      "nom": "Shu‘ab al-Iman",
+      "auteur": "Al-Bayhaqi"
+    },
+    {
+      "numero": 20,
+      "id": "marifat-as-sunan-wal-athar",
+      "famille": "transmission",
+      "nomAr": "معرفة السنن والآثار",
+      "nom": "Ma‘rifat as-Sunan wal-Athar",
+      "auteur": "Al-Bayhaqi"
+    },
+    {
+      "numero": 21,
+      "id": "sunan-said-ibn-mansur",
+      "famille": "transmission",
+      "nomAr": "سنن سعيد بن منصور",
+      "nom": "Sunan Sa‘id ibn Mansur",
+      "auteur": "Sa‘id ibn Mansur"
+    },
+    {
+      "numero": 22,
+      "id": "kitab-al-athar-shaybani",
+      "famille": "transmission",
+      "nomAr": "كتاب الآثار لمحمد الشيباني",
+      "nom": "Kitab al-Athar d’Ash-Shaybani",
+      "auteur": "Muhammad ash-Shaybani"
+    },
+    {
+      "numero": 23,
+      "id": "kitab-al-athar-abi-yusuf",
+      "famille": "transmission",
+      "nomAr": "كتاب الآثار لأبي يوسف",
+      "nom": "Kitab al-Athar d’Abou Youssouf",
+      "auteur": "Abou Youssouf"
+    },
+    {
+      "numero": 24,
+      "id": "tahdhib-al-athar",
+      "famille": "transmission",
+      "nomAr": "تهذيب الآثار",
+      "nom": "Tahdhib al-Athar",
+      "auteur": "At-Tabari"
+    },
+    {
+      "numero": 25,
+      "id": "musnad-at-tayalisi",
+      "famille": "musnad",
+      "nomAr": "مسند أبي داود الطيالسي",
+      "nom": "Musnad At-Tayalisi",
+      "auteur": "Abou Dawoud At-Tayalisi"
+    },
+    {
+      "numero": 26,
+      "id": "musnad-al-humaydi",
+      "famille": "musnad",
+      "nomAr": "مسند الحميدي",
+      "nom": "Musnad Al-Humaydi",
+      "auteur": "Al-Humaydi"
+    },
+    {
+      "numero": 27,
+      "id": "musnad-ash-shafii",
+      "famille": "musnad",
+      "nomAr": "مسند الشافعي",
+      "nom": "Musnad Ash-Shafi‘i",
+      "auteur": "Ash-Shafi‘i"
+    },
+    {
+      "numero": 28,
+      "id": "musnad-ishaq-ibn-rahwayh",
+      "famille": "musnad",
+      "nomAr": "مسند إسحاق بن راهويه",
+      "nom": "Musnad Ishaq ibn Rahwayh",
+      "auteur": "Ishaq ibn Rahwayh"
+    },
+    {
+      "numero": 29,
+      "id": "musnad-al-bazzar",
+      "famille": "musnad",
+      "nomAr": "مسند البزار",
+      "nom": "Musnad Al-Bazzar",
+      "auteur": "Al-Bazzar"
+    },
+    {
+      "numero": 30,
+      "id": "musnad-abi-yala",
+      "famille": "musnad",
+      "nomAr": "مسند أبي يعلى",
+      "nom": "Musnad Abi Ya‘la",
+      "auteur": "Abou Ya‘la Al-Mawsili"
+    },
+    {
+      "numero": 31,
+      "id": "musnad-abi-awana",
+      "famille": "musnad",
+      "nomAr": "مسند أبي عوانة",
+      "nom": "Musnad Abi Awana",
+      "auteur": "Abou Awana"
+    },
+    {
+      "numero": 32,
+      "id": "musnad-as-sarraj",
+      "famille": "musnad",
+      "nomAr": "مسند السراج",
+      "nom": "Musnad As-Sarraj",
+      "auteur": "As-Sarraj"
+    },
+    {
+      "numero": 33,
+      "id": "musnad-al-firdaws",
+      "famille": "musnad",
+      "nomAr": "مسند الفردوس",
+      "nom": "Musnad Al-Firdaws",
+      "auteur": "Ad-Daylami"
+    },
+    {
+      "numero": 34,
+      "id": "musnad-abi-hanifa",
+      "famille": "musnad",
+      "nomAr": "مسند أبي حنيفة",
+      "nom": "Musnad Abi Hanifa",
+      "auteur": "Attribué à Abou Hanifa, sous diverses compilations"
+    },
+    {
+      "numero": 35,
+      "id": "mujam-kabir",
+      "famille": "specialises",
+      "nomAr": "المعجم الكبير",
+      "nom": "Al-Mu‘jam al-Kabir",
+      "auteur": "At-Tabarani"
+    },
+    {
+      "numero": 36,
+      "id": "al-mujam-al-awsat",
+      "famille": "specialises",
+      "nomAr": "المعجم الأوسط",
+      "nom": "Al-Mu‘jam al-Awsat",
+      "auteur": "At-Tabarani"
+    },
+    {
+      "numero": 37,
+      "id": "al-mujam-as-saghir",
+      "famille": "specialises",
+      "nomAr": "المعجم الصغير",
+      "nom": "Al-Mu‘jam as-Saghir",
+      "auteur": "At-Tabarani"
+    },
+    {
+      "numero": 38,
+      "id": "al-adab-al-mufrad",
+      "famille": "specialises",
+      "nomAr": "الأدب المفرد",
+      "nom": "Al-Adab al-Mufrad",
+      "auteur": "Al-Boukhari"
+    },
+    {
+      "numero": 39,
+      "id": "ash-shama-il-al-muhammadiyya",
+      "famille": "specialises",
+      "nomAr": "الشمائل المحمدية",
+      "nom": "Ash-Shama’il al-Muhammadiyya",
+      "auteur": "At-Tirmidhi"
+    },
+    {
+      "numero": 40,
+      "id": "amal-al-yawm-nasai",
+      "famille": "specialises",
+      "nomAr": "عمل اليوم والليلة للنسائي",
+      "nom": "Amal al-Yawm wal-Layla d’An-Nasaï",
+      "auteur": "An-Nasaï"
+    },
+    {
+      "numero": 41,
+      "id": "amal-al-yawm-ibn-al-sunni",
+      "famille": "specialises",
+      "nomAr": "عمل اليوم والليلة لابن السني",
+      "nom": "Amal al-Yawm wal-Layla d’Ibn as-Sunni",
+      "auteur": "Ibn as-Sunni"
+    },
+    {
+      "numero": 42,
+      "id": "zuhd-ahmad",
+      "famille": "specialises",
+      "nomAr": "الزهد لأحمد بن حنبل",
+      "nom": "Kitab az-Zuhd d’Ahmad",
+      "auteur": "Ahmad ibn Hanbal"
+    },
+    {
+      "numero": 43,
+      "id": "zuhd-ibn-al-mubarak",
+      "famille": "specialises",
+      "nomAr": "الزهد لابن المبارك",
+      "nom": "Kitab az-Zuhd d’Ibn al-Mubarak",
+      "auteur": "Ibn al-Mubarak"
+    },
+    {
+      "numero": 44,
+      "id": "hilyat-al-awliya",
+      "famille": "specialises",
+      "nomAr": "حلية الأولياء",
+      "nom": "Hilyat al-Awliya",
+      "auteur": "Abou Nu‘aym"
+    },
+    {
+      "numero": 45,
+      "id": "at-targhib-wat-tarhib",
+      "famille": "specialises",
+      "nomAr": "الترغيب والترهيب",
+      "nom": "At-Targhib wat-Tarhib",
+      "auteur": "Al-Mundhiri"
+    },
+    {
+      "numero": 46,
+      "id": "riyad-as-salihin",
+      "famille": "specialises",
+      "nomAr": "رياض الصالحين",
+      "nom": "Riyad as-Salihin",
+      "auteur": "An-Nawawi"
+    },
+    {
+      "numero": 47,
+      "id": "al-arbain-an-nawawiyya",
+      "famille": "specialises",
+      "nomAr": "الأربعون النووية",
+      "nom": "Al-Arba‘in an-Nawawiyya",
+      "auteur": "An-Nawawi"
+    },
+    {
+      "numero": 48,
+      "id": "bulugh-al-maram",
+      "famille": "specialises",
+      "nomAr": "بلوغ المرام",
+      "nom": "Bulugh al-Maram",
+      "auteur": "Ibn Hajar"
+    },
+    {
+      "numero": 49,
+      "id": "mishkat-al-masabih",
+      "famille": "specialises",
+      "nomAr": "مشكاة المصابيح",
+      "nom": "Mishkat al-Masabih",
+      "auteur": "At-Tibrizi"
+    },
+    {
+      "numero": 50,
+      "id": "masabih-as-sunna",
+      "famille": "specialises",
+      "nomAr": "مصابيح السنة",
+      "nom": "Masabih as-Sunna",
+      "auteur": "Al-Baghawi"
+    },
+    {
+      "numero": 51,
+      "id": "jami-al-usul",
+      "famille": "compilations",
+      "nomAr": "جامع الأصول",
+      "nom": "Jami‘ al-Usul",
+      "auteur": "Ibn al-Athir"
+    },
+    {
+      "numero": 52,
+      "id": "majma-az-zawa-id",
+      "famille": "compilations",
+      "nomAr": "مجمع الزوائد",
+      "nom": "Majma‘ az-Zawa’id",
+      "auteur": "Al-Haythami"
+    },
+    {
+      "numero": 53,
+      "id": "kanz-al-ummal",
+      "famille": "compilations",
+      "nomAr": "كنز العمال",
+      "nom": "Kanz al-Ummal",
+      "auteur": "Al-Muttaqi al-Hindi"
+    },
+    {
+      "numero": 54,
+      "id": "al-jami-as-saghir",
+      "famille": "compilations",
+      "nomAr": "الجامع الصغير",
+      "nom": "Al-Jami‘ as-Saghir",
+      "auteur": "As-Suyuti"
+    },
+    {
+      "numero": 55,
+      "id": "jam-al-jawami",
+      "famille": "compilations",
+      "nomAr": "جمع الجوامع",
+      "nom": "Jam‘ al-Jawami‘",
+      "auteur": "As-Suyuti"
+    },
+    {
+      "numero": 56,
+      "id": "jami-al-kabir-suyuti",
+      "famille": "compilations",
+      "nomAr": "الجامع الكبير للسيوطي",
+      "nom": "Al-Jami‘ al-Kabir d’As-Suyuti",
+      "auteur": "Autre titre associé au grand recueil d’As-Suyuti"
+    },
+    {
+      "numero": 57,
+      "id": "jam-al-fawa-id",
+      "famille": "compilations",
+      "nomAr": "جمع الفوائد",
+      "nom": "Jam‘ al-Fawa’id",
+      "auteur": "Muhammad ibn Sulayman al-Maghribi"
+    },
+    {
+      "numero": 58,
+      "id": "al-matalib-al-aliya",
+      "famille": "compilations",
+      "nomAr": "المطالب العالية",
+      "nom": "Al-Matalib al-Aliya",
+      "auteur": "Ibn Hajar"
+    },
+    {
+      "numero": 59,
+      "id": "ithaf-al-khiyara-al-mahara",
+      "famille": "compilations",
+      "nomAr": "إتحاف الخيرة المهرة",
+      "nom": "Ithaf al-Khiyara al-Mahara",
+      "auteur": "Al-Busiri"
+    },
+    {
+      "numero": 60,
+      "id": "umdat-al-ahkam",
+      "famille": "compilations",
+      "nomAr": "عمدة الأحكام",
+      "nom": "Umdat al-Ahkam",
+      "auteur": "Abd al-Ghani al-Maqdisi"
+    },
+    {
+      "numero": 61,
+      "id": "sahifat-hammam-ibn-munabbih",
+      "famille": "anciens",
+      "nomAr": "الصحيفة الصحيحة",
+      "nom": "Sahifat Hammam ibn Munabbih",
+      "auteur": "Hammam ibn Munabbih"
+    },
+    {
+      "numero": 62,
+      "id": "as-sahifa-as-sadiqa",
+      "famille": "anciens",
+      "nomAr": "الصحيفة الصادقة",
+      "nom": "As-Sahifa as-Sadiqa",
+      "auteur": "Abd Allah ibn Amr ibn al-As"
+    },
+    {
+      "numero": 63,
+      "id": "sahifat-ali",
+      "famille": "anciens",
+      "nomAr": "صحيفة علي",
+      "nom": "Sahifat Ali",
+      "auteur": "Ali ibn Abi Talib, mentionnée dans les traditions"
+    },
+    {
+      "numero": 64,
+      "id": "al-marasil-d-abou-dawoud",
+      "famille": "anciens",
+      "nomAr": "المراسيل لأبي داود",
+      "nom": "Al-Marasil d’Abou Dawoud",
+      "auteur": "Abou Dawoud"
+    },
+    {
+      "numero": 65,
+      "id": "al-muntakhab-min-musnad-abd-ibn-humayd",
+      "famille": "anciens",
+      "nomAr": "المنتخب من مسند عبد بن حميد",
+      "nom": "Al-Muntakhab min Musnad Abd ibn Humayd",
+      "auteur": "Abd ibn Humayd"
+    },
+    {
+      "numero": 66,
+      "id": "musnad-al-harith",
+      "famille": "anciens",
+      "nomAr": "مسند الحارث",
+      "nom": "Musnad Al-Harith",
+      "auteur": "Al-Harith ibn Abi Usama"
+    },
+    {
+      "numero": 67,
+      "id": "sharh-maani-al-athar",
+      "famille": "anciens",
+      "nomAr": "شرح معاني الآثار",
+      "nom": "Sharh Ma‘ani al-Athar",
+      "auteur": "At-Tahawi"
+    },
+    {
+      "numero": 68,
+      "id": "sharh-mushkil-al-athar",
+      "famille": "anciens",
+      "nomAr": "شرح مشكل الآثار",
+      "nom": "Sharh Mushkil al-Athar",
+      "auteur": "At-Tahawi"
+    },
+    {
+      "numero": 69,
+      "id": "al-kafi",
+      "famille": "imamite",
+      "nomAr": "الكافي",
+      "nom": "Al-Kafi"
+    },
+    {
+      "numero": 70,
+      "id": "man-la-yahduruhu-al-faqih",
+      "famille": "imamite",
+      "nomAr": "من لا يحضره الفقيه",
+      "nom": "Man la Yahduruhu al-Faqih"
+    },
+    {
+      "numero": 71,
+      "id": "tahdhib-al-ahkam",
+      "famille": "imamite",
+      "nomAr": "تهذيب الأحكام",
+      "nom": "Tahdhib al-Ahkam"
+    },
+    {
+      "numero": 72,
+      "id": "al-istibsar",
+      "famille": "imamite",
+      "nomAr": "الاستبصار",
+      "nom": "Al-Istibsar"
+    },
+    {
+      "numero": 73,
+      "id": "bihar-al-anwar",
+      "famille": "imamite",
+      "nomAr": "بحار الأنوار",
+      "nom": "Bihar al-Anwar"
+    },
+    {
+      "numero": 74,
+      "id": "wasa-il-ash-shia",
+      "famille": "imamite",
+      "nomAr": "وسائل الشيعة",
+      "nom": "Wasa’il ash-Shi‘a"
+    },
+    {
+      "numero": 75,
+      "id": "mustadrak-al-wasa-il",
+      "famille": "imamite",
+      "nomAr": "مستدرك الوسائل",
+      "nom": "Mustadrak al-Wasa’il"
+    },
+    {
+      "numero": 76,
+      "id": "al-wafi",
+      "famille": "imamite",
+      "nomAr": "الوافي",
+      "nom": "Al-Wafi"
+    },
+    {
+      "numero": 77,
+      "id": "al-mahasin",
+      "famille": "imamite",
+      "nomAr": "المحاسن",
+      "nom": "Al-Mahasin"
+    },
+    {
+      "numero": 78,
+      "id": "basa-ir-ad-darajat",
+      "famille": "imamite",
+      "nomAr": "بصائر الدرجات",
+      "nom": "Basa’ir ad-Darajat"
+    },
+    {
+      "numero": 79,
+      "id": "qurb-al-isnad",
+      "famille": "imamite",
+      "nomAr": "قرب الإسناد",
+      "nom": "Qurb al-Isnad"
+    },
+    {
+      "numero": 80,
+      "id": "uyun-akhbar-ar-rida",
+      "famille": "imamite",
+      "nomAr": "عيون أخبار الرضا",
+      "nom": "Uyun Akhbar ar-Rida"
+    },
+    {
+      "numero": 81,
+      "id": "at-tawhid-d-as-saduq",
+      "famille": "imamite",
+      "nomAr": "التوحيد للصدوق",
+      "nom": "At-Tawhid d’As-Saduq"
+    },
+    {
+      "numero": 82,
+      "id": "al-khisal",
+      "famille": "imamite",
+      "nomAr": "الخصال",
+      "nom": "Al-Khisal"
+    },
+    {
+      "numero": 83,
+      "id": "kamal-ad-din",
+      "famille": "imamite",
+      "nomAr": "كمال الدين وتمام النعمة",
+      "nom": "Kamal ad-Din"
+    },
+    {
+      "numero": 84,
+      "id": "kamil-az-ziyarat",
+      "famille": "imamite",
+      "nomAr": "كامل الزيارات",
+      "nom": "Kamil az-Ziyarat"
+    },
+    {
+      "numero": 85,
+      "id": "al-ghayba-d-an-numani",
+      "famille": "imamite",
+      "nomAr": "الغيبة للنعماني",
+      "nom": "Al-Ghayba d’An-Nu‘mani"
+    },
+    {
+      "numero": 86,
+      "id": "al-ghayba-d-at-tusi",
+      "famille": "imamite",
+      "nomAr": "الغيبة للطوسي",
+      "nom": "Al-Ghayba d’At-Tusi"
+    },
+    {
+      "numero": 87,
+      "id": "tuhaf-al-uqul",
+      "famille": "imamite",
+      "nomAr": "تحف العقول",
+      "nom": "Tuhaf al-Uqul"
+    },
+    {
+      "numero": 88,
+      "id": "nahj-al-balagha",
+      "famille": "imamite",
+      "nomAr": "نهج البلاغة",
+      "nom": "Nahj al-Balagha"
+    },
+    {
+      "numero": 89,
+      "id": "as-sahifa-as-sajjadiyya",
+      "famille": "imamite",
+      "nomAr": "الصحيفة السجادية",
+      "nom": "As-Sahifa as-Sajjadiyya"
+    },
+    {
+      "numero": 90,
+      "id": "ghurar-al-hikam",
+      "famille": "imamite",
+      "nomAr": "غرر الحكم",
+      "nom": "Ghurar al-Hikam"
+    },
+    {
+      "numero": 91,
+      "id": "al-jami-as-sahih-d-ar-rabi-ibn-habib",
+      "famille": "ibadite",
+      "nomAr": "الجامع الصحيح للربيع بن حبيب",
+      "nom": "Al-Jami‘ as-Sahih d’Ar-Rabi‘ ibn Habib"
+    },
+    {
+      "numero": 92,
+      "id": "tartib-al-musnad",
+      "famille": "ibadite",
+      "nomAr": "ترتيب المسند",
+      "nom": "Tartib al-Musnad"
+    }
+  ]
+}
