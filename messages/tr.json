@@ -640,7 +640,8 @@
     "sourceKg": "Zincir ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
     "guideKg": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Zincir hadith-kg tabanında tanımlanmış, Arapça metinler karşılaştırılarak bu hadise bağlanmıştır.",
     "auteurRecueil": "Kitabın müellifi",
-    "aucunJugementKg": "Kaynakta bu ravi hakkında münekkit sözü yok."
+    "aucunJugementKg": "Kaynakta bu ravi hakkında münekkit sözü yok.",
+    "translitteration": "Latin harfleriyle adlar ve yerler: otomatik çeviri yazı (yapay zekâ), gözden geçirilmeli. Arapça aslı hemen altında verilmiştir."
   },
   "recueilKg": {
     "surtitre": "Kütüphane · eser",

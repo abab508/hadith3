@@ -144,3 +144,8 @@
 - Fait : 24 recueils imamites et ibadites retirés du catalogue (92 → 68) avec leurs rayons ; recueil ibadite d'al-Rabīʿ ibn Ḥabīb retiré des données (42 recueils hadith-kg).
 - Vérifié : 147 tests unitaires, 9 contrôles, build, 68/68 tests navigateur ; capture de la bibliothèque.
 - Prochaine étape : envoi du dépôt de données (tag v2) et mise en ligne après accord du patron.
+
+## 2026-11-04 — Biographies en lettres latines, auteur du recueil corrigé, ibadites effacés en ligne
+- Fait : noms, nisba et lieux des fiches en lettres latines (avec l'arabe dessous) pour les langues en écriture latine ; tables de 2 088 mots et 250 lieux (IA, à relire), champ laissé en arabe si un mot est inconnu ; « Auteur du recueil » seulement pour l'auteur principal (sinon carte du recueil en fin de chaîne) ; historique du dépôt de données réécrit sans le recueil ibadite.
+- Vérifié : 153 tests unitaires, 9 contrôles, build, 68/68 tests navigateur ; capture Bukhārī 1010 (Anas ibn Mālik).
+- Prochaine étape : mise en ligne après accord ; suppression complète de l'ancien commit du dépôt de données (droit GitHub delete_repo à accorder par le patron).

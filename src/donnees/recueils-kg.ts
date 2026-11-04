@@ -7,7 +7,8 @@
 import brut from "../../data/recueils-kg/index.json" with { type: "json" };
 import type { FicheKg, MaillonKg } from "@/donnees/fiches-kg";
 
-export type RecueilKg = { id: string; livres: string[]; nombre: number; avecChaine: number; bloc: number };
+// auteur : premier maillon qui ouvre au moins 80 % des chaînes du recueil (absent pour les recueils de zawāʾid).
+export type RecueilKg = { id: string; livres: string[]; nombre: number; avecChaine: number; bloc: number; auteur?: number };
 export type HadithKg = { n: number; ref: number; texte: string; chaines?: number[][]; hukm?: string[] };
 type FicheBrute = Omit<FicheKg, "id"> & { jugements?: [string, string][] };
 
@@ -55,7 +56,7 @@ export async function hadithKg(recueil: RecueilKg, n: number): Promise<HadithKg 
 }
 
 // Fiches d'une chaîne (ordre de la source : auteur -> Compagnon), rendues du Compagnon vers l'auteur.
-export async function maillonsKg(chaine: number[]): Promise<MaillonKg[] | null> {
+export async function maillonsKg(chaine: number[], auteur?: number): Promise<MaillonKg[] | null> {
   const seaux = [...new Set(chaine.map((id) => Math.floor(id / SEAU)))];
   const lots = await Promise.all(seaux.map((s) => lire<{ transmetteurs: Record<string, FicheBrute> }>(`transmetteurs/${s}.json`)));
   const fiches = Object.assign({}, ...lots.map((l) => l.transmetteurs)) as Record<string, FicheBrute>;
@@ -63,7 +64,7 @@ export async function maillonsKg(chaine: number[]): Promise<MaillonKg[] | null> 
     const f = fiches[String(id)];
     if (!f) return null;
     const { jugements = [], ...reste } = f;
-    return { id: String(id), ...reste, auteur: pos === 0, jugements: jugements.map(([critique, texte]) => ({ critique, texte })) };
+    return { id: String(id), ...reste, auteur: pos === 0 && id === auteur, jugements: jugements.map(([critique, texte]) => ({ critique, texte })) };
   });
   return maillons.some((m) => m === null) ? null : (maillons as MaillonKg[]).reverse();
 }

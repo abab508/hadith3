@@ -33,3 +33,14 @@ describe("fiches hadith-kg", () => {
     expect(categorieDepuisRang({ auteur: false })).toBe("non-evalue");
   });
 });
+
+describe("auteur du recueil", () => {
+  it("Bukhari 1010 : la chaîne commence au maître d'al-Bukhārī, qui n'est pas marqué « auteur »", async () => {
+    const c = await chaineKg("bukhari", 1010);
+    expect(c!.some((m) => m.auteur)).toBe(false);
+  });
+  it("Bukhari 1 : al-Bukhārī est bien l'auteur", async () => {
+    const c = await chaineKg("bukhari", 1);
+    expect(c!.at(-1)!.auteur).toBe(true);
+  });
+});

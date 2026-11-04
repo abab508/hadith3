@@ -640,7 +640,8 @@
     "sourceKg": "Sanad dan kad: pangkalan data «الجامع — Hadith Knowledge Graph» (emadjumaah), lesen CC BY 4.0. Penilaian dipetik seperti dalam sumber, perlu disemak pakar.",
     "guideKg": "Baca nama mengikut susunan, kemudian klik perawi untuk membuka kadnya. Sanad dikenal pasti dalam pangkalan data hadith-kg, dikaitkan dengan hadis ini melalui perbandingan teks Arab.",
     "auteurRecueil": "Penyusun kitab",
-    "aucunJugementKg": "Tiada kenyataan pengkritik dalam sumber untuk perawi ini."
+    "aucunJugementKg": "Tiada kenyataan pengkritik dalam sumber untuk perawi ini.",
+    "translitteration": "Nama dan tempat dalam huruf Rumi: transliterasi automatik (AI), perlu disemak. Teks asal Arab diberikan betul-betul di bawahnya."
   },
   "recueilKg": {
     "surtitre": "Perpustakaan · kitab",
