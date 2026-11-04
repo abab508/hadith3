@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, ouvrageParId, hadithParId, bibliothequeParId, texteDans } from "@/donnees/corpus";
 import { entree } from "@/donnees/catalogue";
+import { clesMention, provenance } from "@/donnees/provenance";
 import type { Bibliotheque } from "@/donnees/schemas/corpus";
 import Terme from "@/composants/Terme";
 import ChaineRapport from "@/composants/ChaineRapport";
@@ -66,7 +67,7 @@ export default async function Rapport({
     return { lang: tag, dir: entree(tag)?.direction, children: contenu };
   };
 
-  const traduction = locale === "ar" ? undefined : hadith.traductions.find((x) => x.langue === locale);
+  const { statut, traduction } = provenance(hadith, locale);
   const principale = hadith.occurrences.find((o) => o.correspondance === "original") ?? hadith.occurrences[0]!;
   const reference = tRecherche("numero", {
     ouvrage: ouvrageParId(principale.ouvrage)?.nom ?? principale.ouvrage,
@@ -96,7 +97,7 @@ export default async function Rapport({
 
       <div className={styles.titres}>
         <p className={ui.surtitre}>{t("surtitre")}</p>
-        {traduction ? (
+        {traduction && locale !== "ar" ? (
           <h1 lang={traduction.langue} className={styles.titre}>{traduction.texte}</h1>
         ) : (
           <h1 lang="ar" dir="rtl" className={`texte-arabe ${styles.titre}`}>{hadith.requeteAr}</h1>
@@ -115,14 +116,10 @@ export default async function Rapport({
           traduction ? (
             <div className={ui.traduction} data-origine={traduction.origine}>
               <p lang={traduction.langue}>{traduction.texte}</p>
-              <p className={ui.mention}>
-                {traduction.origine === "publiee" || traduction.origine === "validee"
-                  ? tRecherche("traduction.publiee", { source: traduction.source ?? "" })
-                  : tRecherche("traduction.ia")}
-              </p>
+              <p className={ui.mention}>{tRecherche(clesMention[statut], { source: traduction.source ?? "" })}</p>
             </div>
           ) : (
-            <p className={`${ui.traduction} ${ui.discret}`}>{tRecherche("aucuneTraduction")}</p>
+            <p className={`${ui.traduction} ${ui.discret}`} data-origine={statut}>{tRecherche(clesMention[statut])}</p>
           )
         )}
       </section>

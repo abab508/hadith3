@@ -15,3 +15,4 @@
 .choice{min-inline-size:2.2rem;min-block-size:2.2rem;padding:.3rem;}
 .choice[data-selected="true"]{color:var(--sur-accent);background:var(--ocre);box-shadow:none;}
 .motion{inline-size:2.4rem;block-size:2.4rem;background:transparent;border-color:#e3b86640;color:var(--ocre);}
+@media(max-width:520px){.segment{display:none;}.motion{inline-size:2.3rem;block-size:2.3rem;}}

@@ -79,3 +79,5 @@
 2026-11-04 — Police Aref Ruqaa (style Ruqʿa) pour les titres latins et arabes, servie par le site — choix du patron ; les textes longs et hadiths restent en Noto Naskh pour la lisibilité (décision prise seul).
 2026-11-04 — Ambiance sonore générée en code (Web Audio), coupée par défaut, démarrée par un bouton de l'en-tête — aucun fichier audio téléchargé (option la plus réversible, le patron n'a pas répondu à la question).
 2026-11-04 — Police latine Alegreya (texte et titres) + Cinzel (petites capitales), d'après la capture du patron — choix du patron ; Aref Ruqaa reste pour les titres arabes.
+2026-11-04 — La charte nuit et or reste la charte du site ; la planche BD « Arrivée à Béjaïa » (style gravure) n'est pas intégrée — décision du patron ; section et images gardées de côté hors du dépôt.
+2026-11-04 — Le site Render mina-gaiba-2.onrender.com passe à la version nuit et or (branche mina-gaiba-2), à la demande du patron ; l'ancienne version verte est sauvegardée dans la branche sauvegarde-mina-gaiba-2-2026-11-04.

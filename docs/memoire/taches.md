@@ -37,15 +37,15 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [x] Tech-lead : fichier de données du dictionnaire terminologique, structure seulement, avec les termes listés dans l'exigence 01 en statut « à valider par un spécialiste »
 - [x] Tech-lead : validateur de schéma du dictionnaire (champs obligatoires, arabe présent, translittération présente, pas de doublon d'identifiant ni de variante)
 - [x] Tech-lead : composant d'affichage d'un terme (format obligatoire selon la langue, infobulle en vue compacte)
-- [ ] Tech-lead : modèle texte original / traductions avec statut de provenance (5 statuts de l'exigence 03 §9) — 4 statuts en place, manque « original non traduit »
+- [x] Tech-lead : modèle texte original / traductions avec statut de provenance (5 statuts de l'exigence 03 §9) — « original non traduit » ajouté, mentions « validée » et « IA relue » corrigées (2026-11-04)
 - [x] Tech-lead : affichage original + traduction séparés, bandeau « traduction automatique » et message « aucune traduction vérifiée » si absente
 - [x] Tech-lead : script de détection des traductions manquantes ou en trop par langue, avec taux de complétude par langue
 - [x] Tech-lead : script de contrôle terminologique d'un texte (terme technique sans arabe ou sans translittération → signalé)
 - [x] Testeur : tests du catalogue et de son validateur (nécessite installation d'un outil de test → validation patron si pas fourni par la stack)
 - [x] Testeur : tests de changement de langue (arabe au premier lancement, état conservé après changement)
-- [ ] Testeur : tests RTL/LTR et textes mixtes (arabe + latin + chiffres + URL, caractères combinés)
+- [ ] Testeur : tests RTL/LTR et textes mixtes (arabe + latin + chiffres + URL, caractères combinés) — arabe, latin diacrité et NFC testés (2026-11-04) ; reste : URL
 - [x] Testeur : tests du dictionnaire et de son validateur
-- [ ] Testeur : tests de séparation original/traductions et du marquage des traductions IA
+- [x] Testeur : tests de séparation original/traductions et du marquage des traductions IA (tests/navigateur/traductions.spec.ts, 2026-11-04)
 - [x] Testeur : tests de la détection des traductions manquantes
 - [x] Livraison : documentation « ajouter une langue sans reconstruire l'application » (docs/ajouter-une-langue.md)
 - [x] Livraison : documentation « ajouter ou corriger un terme du dictionnaire »

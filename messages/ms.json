@@ -205,7 +205,10 @@
     },
     "traduction": {
       "publiee": "Terjemahan terbitan · {source}",
-      "ia": "Terjemahan janaan AI · tidak rasmi, belum disemak"
+      "ia": "Terjemahan janaan AI · tidak rasmi, belum disemak",
+      "validee": "Terjemahan manusia yang disahkan oleh {source}",
+      "iaRelue": "Terjemahan mesin yang telah disemak pakar",
+      "originalNonTraduit": "Teks asal Arab belum diterjemahkan ke bahasa anda: tiada terjemahan yang direka."
     },
     "aucuneTraduction": "Tiada terjemahan disahkan dalam bahasa anda bagi teks ini.",
     "aucunResultat": "Tiada hasil untuk penapis ini.",

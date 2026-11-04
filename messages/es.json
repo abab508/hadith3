@@ -205,7 +205,10 @@
     },
     "traduction": {
       "publiee": "Traducción publicada · {source}",
-      "ia": "Traducción generada por IA · no oficial, no verificada"
+      "ia": "Traducción generada por IA · no oficial, no verificada",
+      "validee": "Traducción humana validada por {source}",
+      "iaRelue": "Traducción automática revisada por un especialista",
+      "originalNonTraduit": "Original árabe no traducido a su idioma: no se inventa ninguna traducción."
     },
     "aucuneTraduction": "No hay traducción verificada en su idioma para este texto.",
     "aucunResultat": "Ningún resultado coincide con estos filtros.",
