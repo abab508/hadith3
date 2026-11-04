@@ -335,3 +335,5 @@
 @keyframes maillonEntre{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes tournerOrnement{to{rotate:360deg}}
 @media(max-width:560px){.relations{grid-template-columns:1fr;}.relations>div+div{border-inline-start:0;padding-inline-start:0;}}
+.latinFiche{font-family:"Alegreya",serif;font-size:1rem;color:#fff3cf;}
+.arabeSous{font-size:.85rem;color:var(--discret);}

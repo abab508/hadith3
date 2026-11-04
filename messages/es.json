@@ -640,7 +640,8 @@
     "sourceKg": "Cadena y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
     "guideKg": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena identificada en la base hadith-kg, vinculada a este hadiz comparando los textos árabes.",
     "auteurRecueil": "Autor de la colección",
-    "aucunJugementKg": "No hay juicio de críticos en la fuente para este transmisor."
+    "aucunJugementKg": "No hay juicio de críticos en la fuente para este transmisor.",
+    "translitteration": "Nombres y lugares en letras latinas: transliteración automática (IA), por revisar. El original árabe figura justo debajo."
   },
   "recueilKg": {
     "surtitre": "Biblioteca · colección",

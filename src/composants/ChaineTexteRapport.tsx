@@ -23,7 +23,8 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
     ...(identifiee
       ? fiches!.map((f, i) => ({ nom: f.kunya ?? f.nom, categorie: categories[i] ?? ("non-evalue" as const), fiche: f }))
       : [...maillons].reverse().map((nom) => ({ nom, categorie: "non-evalue" as const }))),
-    ...(identifiee ? [] : [{ nom: recueil, categorie: "compilateur" as const }]),
+    // Carte du recueil à la fin quand la chaîne ne contient pas l'auteur lui-même.
+    ...(identifiee && fiches!.some((f) => f.auteur) ? [] : [{ nom: recueil, categorie: "compilateur" as const }]),
   ];
   const premier = liste.findIndex((m) => m.categorie !== "source");
   const [choix, setChoix] = useState(premier >= 0 ? premier : 0);
@@ -31,7 +32,8 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
   const choisi = liste[choix] ?? liste[0]!;
   const maitre = liste[choix - 1];
   const eleve = liste[choix + 1];
-  const libelle = (c: Categorie) => c === "compilateur" ? (identifiee ? t("auteurRecueil") : t("recueil"))
+  const avecAuteur = identifiee && fiches!.some((f) => f.auteur);
+  const libelle = (c: Categorie) => c === "compilateur" ? (avecAuteur ? t("auteurRecueil") : t("recueil"))
     : c === "non-evalue" ? tr("legende.nonEvalue")
     : c === "source" ? tr("legende.source") : c === "compagnon" ? tr("legende.compagnon")
     : c === "thiqa" ? tr("legende.thiqa") : c === "saduq" ? tr("legende.saduq") : tr("legende.daif");
@@ -59,8 +61,11 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
       <bdi lang={arabe(m) ? "ar" : "ar-Latn"} dir={arabe(m) ? "rtl" : "ltr"}>{m.nom}</bdi> <span aria-hidden="true">↗</span>
     </button></li></ul>
   ) : <p>{tr("fiche.aucun")}</p>;
-  const ligne = (etiquette: string, valeur: string | number | undefined) => valeur === undefined || valeur === "" ? null : (
-    <div><dt>{etiquette}</dt><dd><bdi dir="auto">{valeur}</bdi></dd></div>
+  // Valeur en lettres latines (si translittérée) puis l'original arabe juste en dessous.
+  const ligne = (etiquette: string, valeur: string | number | undefined, latin?: string) => valeur === undefined || valeur === "" ? null : (
+    <div><dt>{etiquette}</dt><dd>
+      {latin ? <><bdi lang="ar-Latn" dir="ltr" className={styles.latinFiche}>{latin}</bdi><br /><bdi lang="ar" dir="rtl" className={styles.arabeSous}>{valeur}</bdi></> : <bdi dir="auto">{valeur}</bdi>}
+    </dd></div>
   );
 
   return (
@@ -98,6 +103,7 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
           {arabe(choisi)
             ? <p lang="ar" dir="rtl" className={`texte-arabe ${styles.ficheNomAr}`}>{choisi.nom}</p>
             : <p className={styles.ficheNomLatin}><bdi lang="ar-Latn">{choisi.nom}</bdi></p>}
+          {f?.latin?.kunya ?? f?.latin?.nom ? <p className={styles.ficheNomLatin}><bdi lang="ar-Latn" dir="ltr">{f?.latin?.kunya ?? f?.latin?.nom}</bdi></p> : null}
         </div>
         <div className={ui.badges}>
           <span className={`${ui.badge} ${styles.badgeCategorie} ${styles.porteur}`} data-categorie={choisi.categorie}>{libelle(choisi.categorie)}</span>
@@ -115,14 +121,14 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
             <h3 className={styles.titreBloc}>{tr("fiche.biographie")}</h3>
             {f ? (
               <dl className={styles.relations} lang="ar">
-                {ligne(t("nomComplet"), f.nom)}
-                {ligne(t("kunya"), f.kunya)}
+                {ligne(t("nomComplet"), f.nom, f.latin?.nom)}
+                {ligne(t("kunya"), f.kunya, f.latin?.kunya)}
                 {ligne(t("tabaqa"), f.tabaqa)}
                 {ligne(t("naissance"), f.naissance ? t("annee", { annee: f.naissance }) : undefined)}
                 {ligne(t("deces"), f.deces ? t("annee", { annee: f.deces }) : undefined)}
-                {ligne(t("nasab"), f.nasab?.replaceAll("،", "، "))}
-                {ligne(t("residence"), f.residence)}
-                {ligne(t("lieuDeces"), f.lieuDeces)}
+                {ligne(t("nasab"), f.nasab?.replaceAll("،", "، "), f.latin?.nasab)}
+                {ligne(t("residence"), f.residence, f.latin?.residence)}
+                {ligne(t("lieuDeces"), f.lieuDeces, f.latin?.lieuDeces)}
                 {ligne(t("riwayat"), f.riwayat)}
               </dl>
             ) : (
@@ -131,6 +137,7 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
             {f?.tadlis ? <p className={ui.discret}>{t("tadlis")}</p> : null}
             {f?.ikhtilat ? <p className={ui.discret}>{t("ikhtilat")}</p> : null}
             {f?.incomplet ? <p className={ui.discret}>{t("incomplet")}</p> : null}
+            {f?.latin ? <p className={ui.discret}>{t("translitteration")}</p> : null}
           </div>
           <div className={styles.groupe}>
             <h3 className={styles.titreBloc}>{tr("fiche.relations")}</h3>

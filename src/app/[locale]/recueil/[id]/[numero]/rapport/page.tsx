@@ -6,6 +6,7 @@ import { catalogueRecueils } from "@/donnees/recueils";
 import { categorieDepuisRang, type MaillonKg } from "@/donnees/fiches-kg";
 import { hadithKg, maillonsKg, validerRecueil, type HadithKg } from "@/donnees/recueils-kg";
 import { extraireChaine } from "@/donnees/isnad-texte";
+import { avecLatin } from "@/donnees/translitteration";
 import Embleme from "@/composants/Embleme";
 import ChaineTexteRapport from "@/composants/ChaineTexteRapport";
 import ui from "@/composants/Interface.module.css";
@@ -46,7 +47,8 @@ export default async function RapportRecueil({ params, searchParams }: { params:
     hadith = await hadithKg(recueil, n);
     k = Math.min(Math.max(0, (Number.parseInt(choixChaine ?? "1", 10) || 1) - 1), Math.max(0, chaines(hadith).length - 1));
     const ch = chaines(hadith)[k];
-    if (ch) maillons = await maillonsKg(ch);
+    const brutes = ch ? await maillonsKg(ch, recueil.auteur) : null;
+    if (brutes) maillons = avecLatin(brutes, locale);
   } catch { echec = true; }
   const texte = hadith?.texte ?? "";
   const mentionProphete = /(رسول الله|النبي)/u.test(texte.normalize("NFC").replace(/[ً-ٰٟـ]/gu, ""));

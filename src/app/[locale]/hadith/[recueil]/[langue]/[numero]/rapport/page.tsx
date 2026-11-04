@@ -7,6 +7,7 @@ import { loadDetail, validDetailParams } from "@/donnees/fiche-distante";
 import { editionReferenceUrl } from "@/donnees/recherche-distante";
 import { extraireChaine } from "@/donnees/isnad-texte";
 import { categorieDepuisRang, chaineKg } from "@/donnees/fiches-kg";
+import { avecLatin } from "@/donnees/translitteration";
 import Embleme from "@/composants/Embleme";
 import IconeTheme from "@/composants/IconeTheme";
 import ChaineTexteRapport from "@/composants/ChaineTexteRapport";
@@ -46,7 +47,8 @@ export default async function RapportTexte({ params }: { params: Promise<Paramet
   const traduction = arabe?.other?.language === "fra" ? arabe.other.hadith.text : null;
   const chaine = texteAr ? extraireChaine(texteAr) : { maillons: [], jusquAuProphete: false };
   // Chaîne identifiée dans hadith-kg (vraies fiches) ; sinon, découpage automatique du texte en secours.
-  const fiches = await chaineKg(collection.key, number);
+  const brutes = await chaineKg(collection.key, number);
+  const fiches = brutes ? avecLatin(brutes, locale) : null;
   const mentionProphete = /(رسول الله|النبي)/u.test(texteAr.normalize("NFC").replace(/[\u064B-\u065F\u0670\u0640]/gu, ""));
   const analyse = corpus.hadiths.find((h) => h.occurrences.some((o) => o.ouvrage === collection.id && o.numero === String(number)));
   const source = editionReferenceUrl(collection.key, "ara", number);

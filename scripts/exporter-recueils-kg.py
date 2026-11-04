@@ -66,6 +66,15 @@ def main():
             ecrire(os.path.join(o.sortie, "recueils", rid, f"{i // BLOC + 1}.json"), {"hadiths": hadiths[i:i + BLOC]})
         avec = sum(1 for h in hadiths if "chaines" in h)
         man = {"id": rid, "livres": noms, "nombre": len(hadiths), "avecChaine": avec, "bloc": BLOC, "source": SOURCE}
+        # Auteur = premier maillon qui ouvre au moins 80 % des chaînes (sinon aucun : recueils de zawāʾid).
+        premiers = {}
+        for h in hadiths:
+            for ch in h.get("chaines", []):
+                premiers[ch[0]] = premiers.get(ch[0], 0) + 1
+        if premiers:
+            a, k = max(premiers.items(), key=lambda x: x[1])
+            if k / sum(premiers.values()) >= 0.8:
+                man["auteur"] = a
         ecrire(os.path.join(o.sortie, "recueils", rid, "manifeste.json"), man)
         index.append(man)
         print(f"{rid}: {len(hadiths)} hadiths, {avec} avec chaîne")

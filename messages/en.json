@@ -640,7 +640,8 @@
     "sourceKg": "Chain and cards: “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence. Gradings quoted as they appear in the source, to be checked by a specialist.",
     "guideKg": "Read the names in the order shown, then click a narrator to open their card. Chain identified in the hadith-kg database, linked to this hadith by comparing the Arabic texts.",
     "auteurRecueil": "Author of the collection",
-    "aucunJugementKg": "No critic statement in the source for this narrator."
+    "aucunJugementKg": "No critic statement in the source for this narrator.",
+    "translitteration": "Names and places in Latin letters: automatic transliteration (AI), to be checked. The Arabic original is given just below."
   },
   "recueilKg": {
     "surtitre": "Library · collection",
