@@ -624,6 +624,11 @@
     "nonProphete": "Dalam teks ini sanad tidak sampai kepada Nabi ﷺ (perkataan sahabat atau tabiin, atau pemisahan belum lengkap).",
     "texteComplet": "Teks lengkap",
     "retourHadith": "Kembali ke hadis",
-    "ordre": "Dari Nabi ﷺ sampai guru penyusun"
+    "ordre": "Dari Nabi ﷺ sampai guru penyusun",
+    "guide": "Baca nama sesuai urutan, lalu klik perawi untuk membuka kartunya. Sanad dipisahkan otomatis dari teks Arab: belum ada perawi yang diidentifikasi atau dinilai.",
+    "maillonsCompte": "{count, plural, other {# mata rantai}}",
+    "ficheVide": "Kartu belum tersedia: perawi ini belum diidentifikasi di basis data. Nama ditulis sebagaimana dalam teks.",
+    "position": "Mata rantai {rang} dari {total} dalam sanad ini",
+    "rangCompilateur": "Kitab tempat hadis ini diriwayatkan"
   }
 }

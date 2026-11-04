@@ -624,6 +624,11 @@
     "nonProphete": "Dans ce texte, la chaîne ne remonte pas jusqu’au Prophète ﷺ (parole d’un Compagnon ou d’un Successeur, ou découpage incomplet).",
     "texteComplet": "Texte complet",
     "retourHadith": "Retour au hadith",
-    "ordre": "Du Prophète ﷺ jusqu’au maître du compilateur"
+    "ordre": "Du Prophète ﷺ jusqu’au maître du compilateur",
+    "guide": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne découpée automatiquement depuis le texte arabe : aucun transmetteur n’est encore identifié ni jugé.",
+    "maillonsCompte": "{count, plural, =1 {# maillon} other {# maillons}}",
+    "ficheVide": "Fiche pas encore disponible : ce transmetteur n’est pas encore identifié dans la base. Son nom est donné tel qu’il est écrit dans le texte.",
+    "position": "Maillon {rang} sur {total} dans cette chaîne",
+    "rangCompilateur": "Recueil où ce hadith est rapporté"
   }
 }

@@ -624,6 +624,11 @@
     "nonProphete": "En este texto la cadena no llega hasta el Profeta ﷺ (dicho de un Compañero o de un Sucesor, o división incompleta).",
     "texteComplet": "Texto completo",
     "retourHadith": "Volver al hadiz",
-    "ordre": "Del Profeta ﷺ al maestro del compilador"
+    "ordre": "Del Profeta ﷺ al maestro del compilador",
+    "guide": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena dividida automáticamente desde el texto árabe: aún no se ha identificado ni valorado a ningún transmisor.",
+    "maillonsCompte": "{count, plural, =1 {# eslabón} other {# eslabones}}",
+    "ficheVide": "Ficha aún no disponible: este transmisor aún no está identificado en la base. El nombre se da tal como está escrito en el texto.",
+    "position": "Eslabón {rang} de {total} en esta cadena",
+    "rangCompilateur": "Colección en la que se transmite este hadiz"
   }
 }
