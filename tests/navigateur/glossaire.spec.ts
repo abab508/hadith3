@@ -14,7 +14,7 @@ for (const { locale, direction, titre, domaine } of [
     await expect(page.getByRole("heading", { level: 2 })).toHaveCount(5);
     await expect(page.getByRole("heading", { level: 2, name: domaine, exact: true })).toBeVisible();
     const fiche = page.locator('article[data-terme="al-illa"]');
-    await expect(fiche.locator('p[lang="ar"]')).toHaveText("العلة");
+    await expect(fiche.locator('p[lang="ar"]').first()).toHaveText("العلة");
     await expect(fiche.locator('p[lang="ar"]').last()).toHaveAttribute("dir", "rtl");
     await expect(fiche.locator('[lang="ar-Latn"]')).toHaveText("al-ʿilla");
     await expect(fiche.locator('[lang="ar-Latn"]')).toHaveAttribute("dir", "ltr");
@@ -32,6 +32,6 @@ test("le glossaire explique les termes sans afficher de badge de validation", as
   await page.goto("/ar/glossaire");
   const fiche = page.locator('article[data-terme="al-illa"]');
   await expect(fiche.locator('p[lang="ar"]')).toHaveCount(2);
-  await expect(fiche.locator('p[lang="ar"]')).toHaveAttribute("dir", "rtl");
+  for (const paragraphe of await fiche.locator('p[lang="ar"]').all()) await expect(paragraphe).toHaveAttribute("dir", "rtl");
   await expect(page.getByText("بانتظار تحقق متخصص")).toHaveCount(0);
 });

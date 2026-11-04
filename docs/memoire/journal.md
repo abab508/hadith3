@@ -74,3 +74,8 @@
 - Fait : polices Alegreya + Cinzel, emblème doré Milaghaiba (en-tête et bannière), page Rapport en cadres dorés (onglets Biographie / Fiabilité, relations cliquables, bouton doré, barre Navigation thématique), aperçu de la chaîne sur l’accueil.
 - Vérifié : 128 tests unitaires, contrôle, build, 58/61 tests navigateur (3 échecs glossaire et filtres de recherche, fichiers non modifiés dans cette session).
 - Prochaine étape : avis du patron, puis commit après accord ; corriger ou faire corriger les 3 tests en échec.
+
+## 2026-11-04 — Tests navigateur remis au vert
+- Fait : glossaire (fiche arabe = terme + définition, test précisé) ; recherche (une carte par hadith avec ses références depuis 7f24c2b, test mis à jour). Aucun code du site modifié.
+- Vérifié : build et 61/61 tests navigateur.
+- Prochaine étape : relecture et fusion de la PR n° 17 par le patron.

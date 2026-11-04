@@ -105,15 +105,18 @@ test("recherche réelle : un mot absent donne « aucun résultat »", async ({ p
 
 test("résultats : les filtres retirent et rendent les résultats", async ({ page }) => {
   await page.goto("/fr/recherche?q=intentions");
+  // Une carte par hadith (références regroupées dedans) + la carte « résultat incertain » d'exemple.
   const resultats = page.locator('section[aria-labelledby="titre-resultats"] > article');
-  await expect(resultats).toHaveCount(4);
+  await expect(resultats).toHaveCount(2);
+  await expect(resultats.first().locator("summary")).toContainText("(3)");
 
   await page.getByLabel(fr.recherche.correspondance.reference).uncheck();
   await page.getByLabel(fr.recherche.correspondance.similarite).uncheck();
   await page.getByRole("button", { name: fr.recherche.filtres.appliquer }).click();
   await expect(page).toHaveURL(/filtre=1/);
   await expect(page).toHaveURL(/q=intentions/);
-  await expect(resultats).toHaveCount(2);
+  await expect(resultats).toHaveCount(1);
+  await expect(resultats.first().locator("summary")).toContainText("(2)");
   await expect(page.getByLabel(fr.recherche.correspondance.reference)).not.toBeChecked();
 
   for (const cle of ["original", "variante"] as const) {
