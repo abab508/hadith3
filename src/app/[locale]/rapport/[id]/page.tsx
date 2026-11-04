@@ -7,6 +7,7 @@ import type { Bibliotheque } from "@/donnees/schemas/corpus";
 import Terme from "@/composants/Terme";
 import ChaineRapport from "@/composants/ChaineRapport";
 import Embleme from "@/composants/Embleme";
+import TexteMixte from "@/composants/TexteMixte";
 import IconeTheme from "@/composants/IconeTheme";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -64,7 +65,8 @@ export default async function Rapport({
   // Un bloc rédigé : sa propre langue et sa direction, même quand il vient d'une langue de repli.
   const bloc = (texte: Record<string, string>) => {
     const { tag, texte: contenu } = texteDans(texte, locale);
-    return { lang: tag, dir: entree(tag)?.direction, children: contenu };
+    // Les adresses web éventuelles restent isolées en LTR, même dans un bloc arabe.
+    return { lang: tag, dir: entree(tag)?.direction, children: <TexteMixte texte={contenu} /> };
   };
 
   const { statut, traduction } = provenance(hadith, locale);

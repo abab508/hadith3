@@ -278,7 +278,19 @@
     "resumeOuvrages": "{count, plural, =0 {لا توجد كتب} =1 {# كتاب} other {# كتاب}}",
     "resumeBibliotheques": "{count, plural, =0 {لا توجد مكتبات} =1 {# مكتبة} other {# مكتبات}}",
     "voirRapport": "عرض التقرير",
-    "hadithManquant": "لم يتم العثور على الحديث"
+    "hadithManquant": "لم يتم العثور على الحديث",
+    "votreRecherche": "بحثك",
+    "introCourte": "اختر حديثًا، وأضف الرواة الذين تعرفهم، ثم أنشئ التقرير.",
+    "options": "خيارات متقدمة: المكتبات والكتب",
+    "apercu": "معاينة السند",
+    "apercuAide": "يضيء الرواة الذين تضيفهم في السند.",
+    "voiesSuite": "{count, plural, =0 {لا توجد طرق} =1 {ثم طريق واحد إلى الكتب} other {ثم # طرق إلى الكتب}}",
+    "chercherTexte": "ابحث بدلًا من ذلك بنص أو رقم",
+    "indique": "أضفته أنت",
+    "chercherHadith": "ابحث عن الحديث: كلمة (عربية أو من الترجمة) أو رقم",
+    "exempleHadith": "مثال: النيات، الإيمان، 8",
+    "chercherBouton": "بحث",
+    "resultatsHadith": "{count, plural, =0 {لم يُعثر على حديث في المجموعة التجريبية} =1 {عُثر على حديث واحد: اختره} other {عُثر على # أحاديث: اختر الحديث المراد التحقق منه}}"
   },
   "rapport": {
     "surtitre": "تقرير وثائقي",

@@ -7,6 +7,7 @@ import { hadithParId, ouvrageParId, texteDans, transmetteurParId } from "@/donne
 import type { CategorieTransmetteur, Transmetteur } from "@/donnees/schemas/corpus";
 import ui from "@/composants/Interface.module.css";
 import styles from "@/composants/ChaineRapport.module.css";
+import TexteMixte from "@/composants/TexteMixte";
 
 const categories = {
   source: "legende.source",
@@ -65,7 +66,8 @@ export default function ChaineRapport({ hadithId }: { hadithId: string }) {
 
   const bloc = (texte: Record<string, string>) => {
     const { tag, texte: contenu } = texteDans(texte, locale);
-    return { lang: tag, dir: entree(tag)?.direction, children: contenu };
+    // Les adresses web éventuelles restent isolées en LTR, même dans un bloc arabe.
+    return { lang: tag, dir: entree(tag)?.direction, children: <TexteMixte texte={contenu} /> };
   };
 
   const noeud = (id: string, dernier: boolean, i: number) => {

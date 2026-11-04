@@ -278,7 +278,19 @@
     "resumeOuvrages": "{count, plural, =0 {No works} =1 {# work} other {# works}}",
     "resumeBibliotheques": "{count, plural, =0 {No libraries} =1 {# library} other {# libraries}}",
     "voirRapport": "View report",
-    "hadithManquant": "Hadith not found"
+    "hadithManquant": "Hadith not found",
+    "votreRecherche": "Your search",
+    "introCourte": "Choose a hadith, add the narrators you know, then generate the report.",
+    "options": "Advanced options: libraries and books",
+    "apercu": "Chain preview",
+    "apercuAide": "The narrators you add light up in the chain.",
+    "voiesSuite": "{count, plural, =0 {No route} =1 {Then # route to the collections} other {Then # routes to the collections}}",
+    "chercherTexte": "Search by a text or a number instead",
+    "indique": "Added by you",
+    "chercherHadith": "Find the hadith: a word (Arabic or translation) or a number",
+    "exempleHadith": "e.g. النيات, intentions, 8, Bukhari 13",
+    "chercherBouton": "Search",
+    "resultatsHadith": "{count, plural, =0 {No hadith found in the sample corpus} =1 {# hadith found: choose it} other {# hadiths found: choose the one to authenticate}}"
   },
   "rapport": {
     "surtitre": "Documentary report",

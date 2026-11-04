@@ -170,3 +170,5 @@ html:lang(ur) :where(h1,h2,h3){font-family:"Noto Nastaliq Urdu",serif;letter-spa
 :where(blockquote){border-inline-start:3px solid var(--ocre);padding-inline-start:1.4rem;margin-inline:0;}
 /* Les décors animés (zoom lent, rayons, flèches de carrousel) ne doivent jamais créer de défilement horizontal. */
 body{overflow-x:clip;}
+/* Adresse web dans un texte (même arabe) : isolée en LTR, jamais raccourcie ; elle peut passer à la ligne sur petit écran. */
+.url-isolee{unicode-bidi:isolate;direction:ltr;overflow-wrap:anywhere;font-family:"Noto Sans",system-ui,sans-serif;font-size:.92em;}

@@ -31,7 +31,7 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [x] Tech-lead : gestion de la direction RTL/LTR au niveau de la page et de chaque bloc de texte (attributs dir/lang, sans inverser les chaînes)
 - [x] Tech-lead : polices compatibles arabe/ourdou (Nastaliq)/latin (nécessite téléchargement de polices → validation patron)
 - [x] Tech-lead : composant sélecteur de langue alimenté par le catalogue (pas de liste codée en dur), changement sans perdre recherche/filtres/rapport
-- [ ] Tech-lead : recherche et filtres dans le sélecteur (nom, nom natif, code, région, écriture) + badges de niveau de prise en charge
+- [ ] Tech-lead : recherche et filtres dans le sélecteur (nom, nom natif, code, région, écriture) + badges de niveau de prise en charge — confié à Codex (branche codex/langues-recherche-filtres, 2026-11-04)
 - [ ] Tech-lead : mémorisation de la préférence (compte connecté et visiteur) — visiteur fait ; compte connecté : pas encore de comptes
 - [x] Tech-lead : séparation des 3 préférences (interface / rapport / recherche documentaire) dans l'état de l'application
 - [x] Tech-lead : fichier de données du dictionnaire terminologique, structure seulement, avec les termes listés dans l'exigence 01 en statut « à valider par un spécialiste »
@@ -43,13 +43,13 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [x] Tech-lead : script de contrôle terminologique d'un texte (terme technique sans arabe ou sans translittération → signalé)
 - [x] Testeur : tests du catalogue et de son validateur (nécessite installation d'un outil de test → validation patron si pas fourni par la stack)
 - [x] Testeur : tests de changement de langue (arabe au premier lancement, état conservé après changement)
-- [ ] Testeur : tests RTL/LTR et textes mixtes (arabe + latin + chiffres + URL, caractères combinés) — arabe, latin diacrité et NFC testés (2026-11-04) ; reste : URL
+- [x] Testeur : tests RTL/LTR et textes mixtes (arabe + latin + chiffres + URL, caractères combinés) — URL isolées en LTR par le composant TexteMixte (2026-11-04)
 - [x] Testeur : tests du dictionnaire et de son validateur
 - [x] Testeur : tests de séparation original/traductions et du marquage des traductions IA (tests/navigateur/traductions.spec.ts, 2026-11-04)
 - [x] Testeur : tests de la détection des traductions manquantes
 - [x] Livraison : documentation « ajouter une langue sans reconstruire l'application » (docs/ajouter-une-langue.md)
 - [x] Livraison : documentation « ajouter ou corriger un terme du dictionnaire »
-- [ ] Livraison : relecture finale contre les 12 critères d'acceptation de l'exigence 02
+- [x] Livraison : relecture finale contre les 12 critères d'acceptation de l'exigence 02 — docs/livraison/relecture-exigence-02.md : 12/12 conformes et testés (2026-11-04)
 
 ## Étape 3 — Validation humaine (hors autopilote)
 - [!] Validation des termes du dictionnaire par un spécialiste des sciences du hadith (personne à désigner par le patron)
@@ -72,3 +72,4 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [!] Images originales en haute qualité de la maquette (les découpes actuelles sont floues)
 - [!] Citation « Celui qui cherche la science… » : référence à vérifier par un spécialiste
 - [x] 3 tests navigateur en échec hors refonte : tests mis à jour (glossaire : deux textes arabes attendus ; recherche : une carte par hadith depuis 7f24c2b) — 61/61
+- [ ] Livraison : lancer tests unitaires et navigateur automatiquement sur chaque PR (GitHub Actions) — à proposer au patron

@@ -89,3 +89,18 @@
 - Fait : 5e statut « original non traduit » affiché et testé ; une traduction « validée » n'est plus présentée comme « publiée », une traduction IA « relue » n'est plus présentée comme simple IA (8 langues).
 - Vérifié : 130 tests unitaires, contrôle, build, 64/64 tests navigateur (3 nouveaux : séparation original/traduction, original non traduit, textes mixtes en arabe).
 - Prochaine étape : test des URL dans un texte arabe ; relecture finale contre les 12 critères de l'exigence 02.
+
+## 2026-11-04 — Recherche par chaîne simplifiée
+- Fait : page épurée à la demande du patron (cadre « Votre recherche » + aperçu visuel de la chaîne qui s’allume, bibliothèques repliées dans « Options avancées », plus de grands blocs de texte arabe).
+- Vérifié : 130 tests unitaires, build, 64/64 tests navigateur.
+- Prochaine étape : avis du patron sur le rendu, puis PR.
+
+## 2026-11-04 — Recherche par chaîne : retrouver le hadith par un mot ou un numéro
+- Fait : champ « Chercher le hadith » (mot arabe avec ou sans voyelles, traduction, numéro) qui réutilise le moteur de la page Recherche ; les hadiths trouvés se choisissent d’un clic, l’aperçu de la chaîne suit.
+- Vérifié : 130 tests unitaires, build, 65/65 tests navigateur.
+- Prochaine étape : avis du patron, envoi dans la PR n° 20.
+
+## 2026-11-04 — URL dans les textes arabes et relecture finale de l'exigence 02
+- Fait : composant TexteMixte (URL isolées en LTR, jamais raccourcies, ponctuation arabe hors du lien) branché sur les textes rédigés des rapports ; relecture des 12 critères dans docs/livraison/relecture-exigence-02.md (12/12 conformes et testés, limites listées).
+- Vérifié : 134 tests unitaires, 9 contrôles, build, 65/65 tests navigateur.
+- Prochaine étape : relecture humaine des traductions, validation des termes, tests automatiques sur chaque PR.

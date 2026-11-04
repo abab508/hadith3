@@ -278,7 +278,19 @@
     "resumeOuvrages": "{count, plural, =0 {Tiada karya} =1 {# karya} other {# karya}}",
     "resumeBibliotheques": "{count, plural, =0 {Tiada perpustakaan} =1 {# perpustakaan} other {# perpustakaan}}",
     "voirRapport": "Lihat laporan",
-    "hadithManquant": "Hadis tidak dijumpai"
+    "hadithManquant": "Hadis tidak dijumpai",
+    "votreRecherche": "Carian anda",
+    "introCourte": "Pilih hadis, tambah perawi yang anda ketahui, kemudian jana laporan.",
+    "options": "Pilihan lanjutan: perpustakaan dan kitab",
+    "apercu": "Pratonton sanad",
+    "apercuAide": "Perawi yang anda tambah akan menyala dalam sanad.",
+    "voiesSuite": "{count, plural, =0 {Tiada jalur} other {Kemudian # jalur ke kitab}}",
+    "chercherTexte": "Cari dengan teks atau nombor sahaja",
+    "indique": "Ditambah oleh anda",
+    "chercherHadith": "Cari hadis: satu perkataan (Arab atau terjemahan) atau nombor",
+    "exempleHadith": "cth. النيات, niat, 8, Bukhari 13",
+    "chercherBouton": "Cari",
+    "resultatsHadith": "{count, plural, =0 {Tiada hadis ditemui dalam korpus contoh} other {# hadis ditemui: pilih yang hendak disahkan}}"
   },
   "rapport": {
     "surtitre": "Laporan dokumentari",
