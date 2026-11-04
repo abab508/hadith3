@@ -149,3 +149,19 @@ test("recherche par chaîne : ajouter, retirer un transmetteur puis générer le
   await page.getByRole("link", { name: fr.chaine.generer }).click();
   await expect(page).toHaveURL(/\/fr\/rapport\/niyyat$/);
 });
+
+test("recherche par chaîne : retrouver le hadith par un mot ou par un numéro, puis le choisir", async ({ page }) => {
+  await page.goto("/fr/chaine");
+  await page.getByLabel(fr.chaine.chercherHadith).fill("النيات");
+  await page.getByRole("button", { name: fr.chaine.chercherBouton, exact: true }).click();
+  await expect(page).toHaveURL(/\/fr\/chaine\?q=/);
+  const trouves = page.getByRole("button", { name: /Ṣaḥīḥ al-Bukhārī, n° 1\b/ });
+  await expect(trouves.first()).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByLabel(fr.chaine.hadith, { exact: true })).toHaveValue("niyyat");
+
+  // Par numéro : le hadith n° 8 est trouvé et choisi d'office ; le rapport suit ce choix.
+  await page.goto("/fr/chaine?q=8");
+  await expect(page.getByLabel(fr.chaine.hadith, { exact: true })).toHaveValue("bukhari-8");
+  await page.getByRole("link", { name: fr.chaine.generer }).click();
+  await expect(page).toHaveURL(/\/fr\/rapport\/bukhari-8$/);
+});

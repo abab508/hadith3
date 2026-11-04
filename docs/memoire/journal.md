@@ -94,3 +94,8 @@
 - Fait : page épurée à la demande du patron (cadre « Votre recherche » + aperçu visuel de la chaîne qui s’allume, bibliothèques repliées dans « Options avancées », plus de grands blocs de texte arabe).
 - Vérifié : 130 tests unitaires, build, 64/64 tests navigateur.
 - Prochaine étape : avis du patron sur le rendu, puis PR.
+
+## 2026-11-04 — Recherche par chaîne : retrouver le hadith par un mot ou un numéro
+- Fait : champ « Chercher le hadith » (mot arabe avec ou sans voyelles, traduction, numéro) qui réutilise le moteur de la page Recherche ; les hadiths trouvés se choisissent d’un clic, l’aperçu de la chaîne suit.
+- Vérifié : 130 tests unitaires, build, 65/65 tests navigateur.
+- Prochaine étape : avis du patron, envoi dans la PR n° 20.

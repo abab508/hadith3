@@ -286,7 +286,11 @@
     "apercuAide": "Les transmetteurs que vous ajoutez s’allument dans la chaîne.",
     "voiesSuite": "{count, plural, =0 {Aucune voie} =1 {Puis # voie jusqu’aux recueils} other {Puis # voies jusqu’aux recueils}}",
     "chercherTexte": "Chercher plutôt par un texte ou un numéro",
-    "indique": "Indiqué par vous"
+    "indique": "Indiqué par vous",
+    "chercherHadith": "Chercher le hadith : un mot (arabe ou traduction) ou un numéro",
+    "exempleHadith": "ex. النيات, intentions, 8, Bukhari 13",
+    "chercherBouton": "Chercher",
+    "resultatsHadith": "{count, plural, =0 {Aucun hadith trouvé dans le corpus d’exemple} =1 {# hadith trouvé : choisissez-le} other {# hadiths trouvés : choisissez celui à authentifier}}"
   },
   "rapport": {
     "surtitre": "Rapport documentaire",

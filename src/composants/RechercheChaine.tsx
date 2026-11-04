@@ -29,7 +29,7 @@ const tousLesOuvrages = corpus.bibliotheques.flatMap((b) => b.ouvrages.map((o) =
 
 // Recherche par chaîne, version épurée : un cadre « Votre recherche » à gauche,
 // l'aperçu de la chaîne à droite, et les bibliothèques repliées dans « Options avancées ».
-export default function RechercheChaine({ hadithInitial }: { hadithInitial: string }) {
+export default function RechercheChaine({ hadithInitial, requete = "", trouves = null }: { hadithInitial: string; requete?: string; trouves?: string[] | null }) {
   const locale = useLocale();
   const t = useTranslations("chaine");
   const tRecherche = useTranslations("recherche");
@@ -88,6 +88,34 @@ export default function RechercheChaine({ hadithInitial }: { hadithInitial: stri
     <div className={styles.disposition}>
       <section className={styles.cadre} aria-labelledby="titre-votre-recherche">
         <h2 id="titre-votre-recherche" className={styles.titreCadre}>{t("votreRecherche")}</h2>
+
+        <form role="search" action={`/${locale}/chaine`} method="get" className={styles.champ}>
+          <label htmlFor="chercher-hadith">{t("chercherHadith")}</label>
+          <div className={styles.barre}>
+            <input id="chercher-hadith" name="q" type="search" dir="auto" defaultValue={requete} placeholder={t("exempleHadith")} />
+            <button type="submit" className={styles.boutonChercher}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg>
+              {t("chercherBouton")}
+            </button>
+          </div>
+          {trouves && (
+            <div className={styles.trouves} aria-live="polite">
+              <p className={styles.aide}>{t("resultatsHadith", { count: trouves.length })}</p>
+              {trouves.length > 0 && (
+                <ul>
+                  {trouves.map((id) => (
+                    <li key={id}>
+                      <button type="button" className={styles.trouve} aria-pressed={hadithId === id} onClick={() => setHadithId(id)}>
+                        <span className={styles.referenceTrouve}>{reference(id)}</span>
+                        <span lang="ar" dir="rtl" className={`texte-arabe ${styles.extrait}`}>{hadithParId(id)?.requeteAr}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </form>
 
         <div className={styles.champ}>
           <label htmlFor="choix-hadith">{t("hadith")}</label>

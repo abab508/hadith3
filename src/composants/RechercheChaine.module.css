@@ -78,3 +78,16 @@
 @keyframes entrer{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(max-width:900px){.disposition{grid-template-columns:minmax(0,1fr);}}
 @media(prefers-reduced-motion:reduce){.puces li,.etapeLigne,.point,.generer,.fleche,.chevron{animation:none!important;transition:none!important;}}
+
+/* ---------- Recherche du hadith par mot ou numéro ---------- */
+.barre{display:flex;gap:.5rem;}
+.barre input{flex:1;min-inline-size:0;}
+.boutonChercher{display:inline-flex;align-items:center;gap:.45rem;flex:none;min-block-size:3.1rem;padding-inline:1.1rem;border:1px solid var(--ocre);border-radius:.7rem;background:#2a2214;color:#fff3cf;font:inherit;font-weight:700;cursor:pointer;transition:background .2s;}
+.boutonChercher:hover{background:#3a2e18;}
+.trouves{display:flex;flex-direction:column;gap:.5rem;}
+.trouves ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+.trouve{display:flex;align-items:center;justify-content:space-between;gap:1rem;inline-size:100%;padding:.65rem .9rem;border:1px solid #e3b86640;border-radius:.7rem;background:#0b1528;color:var(--texte);font:inherit;text-align:start;cursor:pointer;transition:border-color .2s,background .2s;animation:entrer .35s both;}
+.trouve:hover{border-color:var(--ocre);}
+.trouve[aria-pressed="true"]{border-color:var(--ocre);background:#2a2214;box-shadow:inset 0 0 0 1px var(--ocre);}
+.referenceTrouve{font-weight:700;color:#fff3cf;font-size:.9rem;}
+.extrait{font-size:1.1rem;color:#f3ead8;}

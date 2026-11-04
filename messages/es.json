@@ -286,7 +286,11 @@
     "apercuAide": "Los transmisores que añade se iluminan en la cadena.",
     "voiesSuite": "{count, plural, =0 {Ninguna vía} =1 {Luego # vía hasta las colecciones} other {Luego # vías hasta las colecciones}}",
     "chercherTexte": "Buscar mejor por un texto o un número",
-    "indique": "Añadido por usted"
+    "indique": "Añadido por usted",
+    "chercherHadith": "Buscar el hadiz: una palabra (árabe o traducción) o un número",
+    "exempleHadith": "p. ej. النيات, intenciones, 8, Bukhari 13",
+    "chercherBouton": "Buscar",
+    "resultatsHadith": "{count, plural, =0 {Ningún hadiz encontrado en el corpus de ejemplo} =1 {# hadiz encontrado: elíjalo} other {# hadices encontrados: elija el que desea autenticar}}"
   },
   "rapport": {
     "surtitre": "Informe documental",

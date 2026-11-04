@@ -286,7 +286,11 @@
     "apercuAide": "Perawi yang Anda tambahkan akan menyala dalam sanad.",
     "voiesSuite": "{count, plural, =0 {Tidak ada jalur} other {Lalu # jalur menuju kitab}}",
     "chercherTexte": "Cari dengan teks atau nomor saja",
-    "indique": "Ditambahkan oleh Anda"
+    "indique": "Ditambahkan oleh Anda",
+    "chercherHadith": "Cari hadis: sebuah kata (Arab atau terjemahan) atau nomor",
+    "exempleHadith": "mis. النيات, niat, 8, Bukhari 13",
+    "chercherBouton": "Cari",
+    "resultatsHadith": "{count, plural, =0 {Tidak ada hadis ditemukan di korpus contoh} other {# hadis ditemukan: pilih yang ingin diautentikasi}}"
   },
   "rapport": {
     "surtitre": "Laporan dokumenter",
