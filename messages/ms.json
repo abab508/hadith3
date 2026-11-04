@@ -629,6 +629,24 @@
     "maillonsCompte": "{count, plural, other {# mata rantai}}",
     "ficheVide": "Kad belum tersedia: perawi ini belum dikenal pasti dalam pangkalan data. Nama ditulis seperti dalam teks.",
     "position": "Mata rantai {rang} daripada {total} dalam sanad ini",
-    "rangCompilateur": "Kitab tempat hadis ini diriwayatkan"
+    "rangCompilateur": "Kitab tempat hadis ini diriwayatkan",
+    "nomComplet": "Nama penuh",
+    "kunya": "Dikenali sebagai",
+    "tabaqa": "Tabaqah",
+    "naissance": "Lahir",
+    "deces": "Wafat",
+    "annee": "{annee} H",
+    "residence": "Tempat tinggal",
+    "lieuDeces": "Tempat wafat",
+    "nasab": "Nisbah",
+    "riwayat": "Riwayat dalam pangkalan data",
+    "tadlis": "Disebut melakukan tadlīs",
+    "ikhtilat": "Disebut mengalami ikhtilāṭ (kekeliruan di akhir hayat)",
+    "incomplet": "Biografi tiada dalam sumber: nama diambil daripada teks",
+    "synthese": "Penilaian ringkas",
+    "sourceKg": "Sanad dan kad: pangkalan data «الجامع — Hadith Knowledge Graph» (emadjumaah), lesen CC BY 4.0. Penilaian dipetik seperti dalam sumber, perlu disemak pakar.",
+    "guideKg": "Baca nama mengikut susunan, kemudian klik perawi untuk membuka kadnya. Sanad dikenal pasti dalam pangkalan data hadith-kg, dikaitkan dengan hadis ini melalui perbandingan teks Arab.",
+    "auteurRecueil": "Penyusun kitab",
+    "aucunJugementKg": "Tiada kenyataan pengkritik dalam sumber untuk perawi ini."
   }
 }

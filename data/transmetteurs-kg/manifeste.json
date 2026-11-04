@@ -1,0 +1,36 @@
+{
+ "source": "emadjumaah/hadith-kg (CC BY 4.0)",
+ "seuil": 0.8,
+ "recueils": {
+  "bukhari": {
+   "hadiths": 7589,
+   "relies": 6327
+  },
+  "muslim": {
+   "hadiths": 7563,
+   "relies": 3714
+  },
+  "abudawud": {
+   "hadiths": 5274,
+   "relies": 3736
+  },
+  "tirmidhi": {
+   "hadiths": 3998,
+   "relies": 3040
+  },
+  "nasai": {
+   "hadiths": 5765,
+   "relies": 5151
+  },
+  "ibnmajah": {
+   "hadiths": 4343,
+   "relies": 4072
+  },
+  "malik": {
+   "hadiths": 1858,
+   "relies": 731
+  }
+ },
+ "transmetteurs": 6231,
+ "avecJugements": 6224
+}

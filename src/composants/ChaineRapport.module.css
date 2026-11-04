@@ -318,6 +318,7 @@
 .ongletsFiche button svg{inline-size:1.3rem;block-size:1.3rem;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round;}
 .ongletsFiche button[aria-selected="true"]{background:linear-gradient(180deg,#fbe3a3,#e2ad56);color:#2a1a06;box-shadow:0 4px 16px #eebc6a55;}
 .panneauFiche{display:flex;flex-direction:column;gap:1rem;animation:maillonEntre .4s both;}
+.panneauFiche[hidden]{display:none;}
 .titreBloc{display:flex;align-items:center;gap:.55rem;font-family:"Alegreya",serif;font-weight:700;font-size:1.15rem;color:#fff3cf;}
 .titreBloc::after{content:"";flex:1;block-size:1px;background:linear-gradient(90deg,#e3b86680,transparent);}
 .titreBloc svg{flex:none;inline-size:1.3rem;block-size:1.3rem;fill:none;stroke:#f2c877;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}

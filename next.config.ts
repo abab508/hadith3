@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     "/[locale]/recherche": ["./data/search-index/**/*"],
     "/[locale]/chaine": ["./data/search-index/**/*"],
     "/[locale]/hadith/[recueil]/[langue]/[numero]": ["./data/search-index/**/*"],
-    "/[locale]/hadith/[recueil]/[langue]/[numero]/rapport": ["./data/search-index/**/*"],
+    "/[locale]/hadith/[recueil]/[langue]/[numero]/rapport": ["./data/search-index/**/*", "./data/transmetteurs-kg/**/*"],
   },
 };
 

@@ -119,3 +119,8 @@
 - Fait : la page « Rapport et chaîne de transmission » reprend la disposition du rapport détaillé (bannière, chaîne en cartes avec flèches dans un cadre doré, fiche du transmetteur avec Biographie / Fiabilité, maîtres et élèves dans la chaîne, barre Navigation thématique) ; couleurs nuit et or inchangées.
 - Vérifié : 138 tests unitaires, 9 contrôles, build, 67/67 tests navigateur.
 - Prochaine étape : mise en ligne après accord du patron.
+
+## 2026-11-04 — Fiches des transmetteurs remplies depuis hadith-kg
+- Fait : biographie (nom complet, kunya, ṭabaqa, naissance, décès, nisba, résidence, nombre de récits) et fiabilité (jugement de synthèse + jugements des critiques cités) pour 6 231 transmetteurs ; chaîne reliée pour 26 771 hadiths des 7 grands recueils ; secours : découpage du texte.
+- Vérifié : 141 tests unitaires, contrôles, build ; capture Bukhārī 22 (Ismāʿīl ibn Abī Uways).
+- Prochaine étape : mise en ligne après accord du patron.
