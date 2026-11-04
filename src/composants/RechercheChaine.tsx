@@ -27,7 +27,8 @@ const legendes = {
 
 const tousLesOuvrages = corpus.bibliotheques.flatMap((b) => b.ouvrages.map((o) => o.id));
 
-export type RecitImporte = { id: string; recueilAr: string; recueilLatin: string; numero: string; extrait: string; source: string };
+// Récit trouvé hors du corpus analysé : récit importé (245) ou hadith des grands recueils (lien vers sa page).
+export type RecitImporte = { id: string; recueilAr: string; recueilLatin: string; numero: string; extrait: string; source: string; lien?: string; langue?: "ar" | "fr" };
 
 // Recherche par chaîne, version épurée : un cadre « Votre recherche » à gauche,
 // l'aperçu de la chaîne à droite, et les bibliothèques repliées dans « Options avancées ».
@@ -129,7 +130,7 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
                     <li key={r.id}>
                       <button type="button" className={`${styles.trouve} ${styles.recit}`} aria-pressed={recitChoisi?.id === r.id} onClick={() => setRecitChoisi(r)}>
                         <span className={styles.referenceTrouve}><bdi lang="ar-Latn">{r.recueilLatin}</bdi> · <bdi dir="ltr">n° {r.numero}</bdi></span>
-                        <span lang="ar" dir="rtl" className={`texte-arabe ${styles.extrait}`}>{r.extrait}</span>
+                        <span lang={r.langue ?? "ar"} dir={r.langue === "fr" ? "ltr" : "rtl"} className={r.langue === "fr" ? styles.extraitLatin : `texte-arabe ${styles.extrait}`}>{r.extrait}</span>
                       </button>
                     </li>
                   ))}
@@ -188,7 +189,9 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
 
         <div className={styles.envoi}>
           {recitChoisi ? (
-            <a href={recitChoisi.source} target="_blank" rel="noopener noreferrer" className={styles.generer}>{t("voirSource")} <span aria-hidden="true" className={styles.fleche}>↗</span></a>
+            recitChoisi.lien
+              ? <Link href={recitChoisi.lien} className={styles.generer}>{t("ouvrirHadith")} <span aria-hidden="true" className={styles.fleche}>→</span></Link>
+              : <a href={recitChoisi.source} target="_blank" rel="noopener noreferrer" className={styles.generer}>{t("voirSource")} <span aria-hidden="true" className={styles.fleche}>↗</span></a>
           ) : (
             <Link href={`/rapport/${hadithId}`} className={styles.generer} aria-describedby="resume-chaine">
               {t("generer")} <span aria-hidden="true" className={styles.fleche}>→</span>
@@ -205,10 +208,12 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
         <h2 id="titre-apercu-chaine" className={styles.titreCadre}>{t("apercu")}</h2>
         {recitChoisi ? (
           <div className={styles.recitChoisi}>
-            <p className={styles.referenceTrouve}><bdi lang="ar" dir="rtl" className="texte-arabe">{recitChoisi.recueilAr}</bdi> · <bdi dir="ltr">n° {recitChoisi.numero}</bdi></p>
-            <p lang="ar" dir="rtl" className={`texte-arabe ${styles.extraitGrand}`}>{recitChoisi.extrait}</p>
+            <p className={styles.referenceTrouve}>{recitChoisi.recueilAr ? <bdi lang="ar" dir="rtl" className="texte-arabe">{recitChoisi.recueilAr}</bdi> : <bdi lang="ar-Latn">{recitChoisi.recueilLatin}</bdi>} · <bdi dir="ltr">n° {recitChoisi.numero}</bdi></p>
+            <p lang={recitChoisi.langue ?? "ar"} dir={recitChoisi.langue === "fr" ? "ltr" : "rtl"} className={recitChoisi.langue === "fr" ? styles.extraitLatinGrand : `texte-arabe ${styles.extraitGrand}`}>{recitChoisi.extrait}</p>
             <p className={styles.astuce}>{t("chaineNonAnalysee")}</p>
-            <a href={recitChoisi.source} target="_blank" rel="noopener noreferrer" className={styles.lienSource}>{t("voirSource")} ↗</a>
+            {recitChoisi.lien
+              ? <Link href={recitChoisi.lien} className={styles.lienSource}>{t("ouvrirHadith")} →</Link>
+              : <a href={recitChoisi.source} target="_blank" rel="noopener noreferrer" className={styles.lienSource}>{t("voirSource")} ↗</a>}
           </div>
         ) : (<>
         <p className={styles.aide}>{t("apercuAide")}</p>

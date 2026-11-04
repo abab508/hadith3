@@ -8,6 +8,7 @@ import {
 } from "@/donnees/recherche";
 import SelecteurRecueil from "@/composants/SelecteurRecueil";
 import ResultatsImportes from "@/composants/ResultatsImportes";
+import ResultatsRecueils from "@/composants/ResultatsRecueils";
 import type { Hadith, Occurrence } from "@/donnees/schemas/corpus";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
@@ -46,7 +47,7 @@ export default async function Recherche({
 }: {
   params: Promise<{ locale: string }>;
   searchParams: Promise<Record<
-    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page" | "pageImport",
+    "q" | "mode" | "recueil" | "livre" | "filtre" | "correspondance" | "ouvrage" | "bibliotheque" | "page" | "pageImport" | "pageRecueils",
     string | string[] | undefined
   >>;
 }) {
@@ -175,7 +176,6 @@ export default async function Recherche({
         {occurrence.voie && (
           <div className={ui.actions}>
             <Link href={`/rapport/${hadith.id}`} className={ui.bouton}>{t("voirRapport")}</Link>
-            <Link href={{ pathname: "/chaine", query: { hadith: hadith.id } }} className={ui.boutonSecondaire}>{t("parChaine")}</Link>
           </div>
         )}
       </article>
@@ -292,6 +292,14 @@ export default async function Recherche({
         </form>
 
         <section className={styles.resultats} aria-labelledby="titre-resultats">
+          {/* Toute la base : les grands recueils d'abord (index public, français et arabe). */}
+          <ResultatsRecueils
+            locale={locale}
+            saisie={saisie ?? ""}
+            recueil={recueil}
+            page={Number(premier1(parametres.pageRecueils) ?? "1")}
+            recherche={urlPage(page).split("?")[1] ?? ""}
+          />
           <div className={styles.resumeResultats} role="status">
             <strong>{t("nombreResultats", {nombre:groupes.length, sources:nombreSources})}</strong>
             <span>{t("corpusLimite", {nombre:corpus.hadiths.length})}</span>

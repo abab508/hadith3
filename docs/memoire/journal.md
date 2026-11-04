@@ -109,3 +109,8 @@
 - Fait : la recherche du hadith interroge aussi les 245 récits importés (texte arabe seul) ; un récit choisi affiche son texte, la mention « chaîne pas encore analysée » et le lien vers la source, sans faux rapport ; conseil de chercher en arabe quand un mot français ne donne rien. Mise en ligne : PR n° 21 fusionnée, site Render basculé sur la version nuit et or (mina-gaiba-2 = 35c6d96).
 - Vérifié : 134 tests unitaires, build, 66/66 tests navigateur.
 - Prochaine étape : PR de ce changement ; traductions françaises des récits à fournir depuis une source vérifiée pour chercher en français.
+
+## 2026-11-04 — Recherche dans toute la base des grands recueils
+- Fait : « boire » ou un numéro cherche dans 7 grands recueils (index hadith-api) ; page d'un hadith (arabe, traduction, appréciations publiées) avec bouton « Rapport et chaîne de transmission » ; page du rapport avec la chaîne découpée du texte arabe ; « Recherche par chaîne » retirée du menu.
+- Vérifié : 138 tests unitaires, 9 contrôles, build, 67/67 tests navigateur ; parcours boire → hadith → rapport vu à l'écran (Bukhārī 22, 53, Muslim 100).
+- Prochaine étape : PR et mise en ligne après accord ; vérifier sur Vercel que l'index (11 Mo) est bien embarqué.

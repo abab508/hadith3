@@ -292,12 +292,13 @@
     "chercherBouton": "Buscar",
     "resultatsHadith": "{count, plural, =0 {Ningún hadiz encontrado en el corpus de ejemplo} =1 {# hadiz encontrado: elíjalo} other {# hadices encontrados: elija el que desea autenticar}}",
     "analyses": "Hadices analizados: cadena e informe disponibles",
-    "autresRecits": "Otros relatos de la base: solo texto árabe, cadena aún no analizada",
+    "autresRecits": "Otros relatos: grandes colecciones (texto y traducción publicados) y relatos importados, cadena aún no analizada",
     "nombreRecits": "{count, plural, =0 {Ningún relato} =1 {# relato encontrado} other {# relatos encontrados}} en la base",
     "voirTous": "Ver todos los resultados en Búsqueda",
     "chaineNonAnalysee": "La cadena de este relato aún no se ha analizado: el informe detallado no está disponible. El texto debe verificarse en la fuente.",
     "voirSource": "Ver el texto en la fuente",
-    "astuceArabe": "Los relatos de la base están en árabe: pruebe una palabra árabe (p. ej. الماء o الصلاة) o un número."
+    "astuceArabe": "Los relatos de la base están en árabe: pruebe una palabra árabe (p. ej. الماء o الصلاة) o un número.",
+    "ouvrirHadith": "Abrir el hadiz"
   },
   "rapport": {
     "surtitre": "Informe documental",
@@ -578,5 +579,51 @@
     "chapitre": "Capítulo",
     "recueil": "Colección",
     "toutes": "Todas"
+  },
+  "recueils": {
+    "titre": "En las grandes colecciones",
+    "intro": "Ṣaḥīḥ al-Bukhārī, Ṣaḥīḥ Muslim, Sunan Abī Dāwūd, Sunan an-Nasāʾī, Sunan Ibn Mājah, Muwaṭṭaʾ Mālik (y Jāmiʿ at-Tirmidhī en árabe), según la edición pública hadith-api.",
+    "nombre": "{count, plural, =0 {Ningún hadiz encontrado en las colecciones} =1 {# hadiz encontrado en las colecciones} other {# hadices encontrados en las colecciones}}",
+    "ouvrir": "Abrir el hadiz",
+    "numero": "n.º {numero}",
+    "livre": "libro {livre}",
+    "concordance": "Referencia concordante en árabe y francés",
+    "indisponible": "Texto no disponible por el momento: la referencia sigue disponible.",
+    "precedent": "Anterior",
+    "suivant": "Siguiente",
+    "page": "Página {page} de {total}",
+    "avertissement": "Textos y traducciones tomados de la edición pública hadith-api (fawazahmed0), no verificados por Milaghaiba. Encontrar una referencia no autentica el hadiz.",
+    "astuceArabe": "Las colecciones están indexadas en francés y árabe: pruebe también una palabra árabe."
+  },
+  "fiche": {
+    "retour": "Volver a la búsqueda",
+    "texteArabe": "Texto árabe",
+    "traduction": "Traducción ({langue})",
+    "jugements": "Valoraciones publicadas en esta edición",
+    "aucunJugement": "Esta edición no aporta valoración.",
+    "chaineTitre": "Cadena de transmisión",
+    "chaineTexte": "La cadena (isnād) figura al inicio del texto árabe. Aún no se ha analizado transmisor por transmisor para este hadiz.",
+    "rapportDispo": "Este hadiz tiene un informe detallado con su cadena analizada.",
+    "ouvrirRapport": "Abrir el informe detallado",
+    "source": "Ver el archivo fuente (JSON)",
+    "erreur": "La fuente remota no responde por ahora. Inténtelo más tarde.",
+    "introuvable": "No hay texto para este número en esta edición.",
+    "concordant": "Referencias concordantes: mismo número, libro y posición en árabe y francés.",
+    "nonConcordant": "Concordancia con el otro idioma no verificada para esta referencia.",
+    "provenance": "Procedencia: edición pública hadith-api (fawazahmed0), revisión @1"
+  },
+  "rapportTexte": {
+    "titre": "Informe y cadena de transmisión",
+    "bouton": "Informe y cadena de transmisión",
+    "chaine": "Cadena de transmisión (isnād) escrita en el texto",
+    "aide": "División automática de la cadena tal como está escrita en el texto árabe: aún no se ha identificado ni valorado a ningún transmisor. A verificar por un especialista.",
+    "prophete": "El Profeta ﷺ",
+    "nonEvalue": "No valorado",
+    "recueil": "Colección",
+    "pasDeChaine": "No se pudo dividir ninguna cadena en este texto.",
+    "nonProphete": "En este texto la cadena no llega hasta el Profeta ﷺ (dicho de un Compañero o de un Sucesor, o división incompleta).",
+    "texteComplet": "Texto completo",
+    "retourHadith": "Volver al hadiz",
+    "ordre": "Del Profeta ﷺ al maestro del compilador"
   }
 }

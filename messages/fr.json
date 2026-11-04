@@ -292,12 +292,13 @@
     "chercherBouton": "Chercher",
     "resultatsHadith": "{count, plural, =0 {Aucun hadith trouvé dans le corpus d’exemple} =1 {# hadith trouvé : choisissez-le} other {# hadiths trouvés : choisissez celui à authentifier}}",
     "analyses": "Hadiths analysés : chaîne et rapport disponibles",
-    "autresRecits": "Autres récits de la base : texte arabe seul, chaîne pas encore analysée",
+    "autresRecits": "Autres récits : grands recueils (texte et traduction publiés) et récits importés, chaîne pas encore analysée",
     "nombreRecits": "{count, plural, =0 {Aucun récit} =1 {# récit trouvé} other {# récits trouvés}} dans la base",
     "voirTous": "Voir tous les résultats dans la Recherche",
     "chaineNonAnalysee": "La chaîne de ce récit n’est pas encore analysée : le rapport détaillé n’est pas disponible. Le texte reste à vérifier à la source.",
     "voirSource": "Voir le texte à la source",
-    "astuceArabe": "Les récits de la base sont en arabe : essayez un mot arabe (par ex. الماء ou الصلاة) ou un numéro."
+    "astuceArabe": "Les récits de la base sont en arabe : essayez un mot arabe (par ex. الماء ou الصلاة) ou un numéro.",
+    "ouvrirHadith": "Ouvrir le hadith"
   },
   "rapport": {
     "surtitre": "Rapport documentaire",
@@ -578,5 +579,51 @@
     "chapitre": "Chapitre",
     "recueil": "Recueil",
     "toutes": "Toutes"
+  },
+  "recueils": {
+    "titre": "Dans les grands recueils",
+    "intro": "Ṣaḥīḥ al-Bukhārī, Ṣaḥīḥ Muslim, Sunan Abī Dāwūd, Sunan an-Nasāʾī, Sunan Ibn Mājah, Muwaṭṭaʾ Mālik (et Jāmiʿ at-Tirmidhī en arabe), d’après l’édition publique hadith-api.",
+    "nombre": "{count, plural, =0 {Aucun hadith trouvé dans les recueils} =1 {# hadith trouvé dans les recueils} other {# hadiths trouvés dans les recueils}}",
+    "ouvrir": "Ouvrir le hadith",
+    "numero": "n° {numero}",
+    "livre": "livre {livre}",
+    "concordance": "Référence concordante en arabe et en français",
+    "indisponible": "Texte momentanément indisponible : la référence reste consultable.",
+    "precedent": "Précédent",
+    "suivant": "Suivant",
+    "page": "Page {page} sur {total}",
+    "avertissement": "Textes et traductions repris de l’édition publique hadith-api (fawazahmed0), non vérifiés par Milaghaiba. Trouver une référence n’authentifie pas le hadith.",
+    "astuceArabe": "Les recueils sont indexés en français et en arabe : essayez aussi un mot arabe."
+  },
+  "fiche": {
+    "retour": "Retour à la recherche",
+    "texteArabe": "Texte arabe",
+    "traduction": "Traduction ({langue})",
+    "jugements": "Appréciations publiées dans cette édition",
+    "aucunJugement": "Aucune appréciation fournie par cette édition.",
+    "chaineTitre": "Chaîne de transmission",
+    "chaineTexte": "La chaîne (isnād) figure au début du texte arabe. Elle n’est pas encore analysée maillon par maillon pour ce hadith.",
+    "rapportDispo": "Ce hadith a un rapport détaillé, avec sa chaîne analysée.",
+    "ouvrirRapport": "Ouvrir le rapport détaillé",
+    "source": "Voir le fichier source (JSON)",
+    "erreur": "La source distante ne répond pas pour le moment. Réessayez plus tard.",
+    "introuvable": "Aucun texte pour ce numéro dans cette édition.",
+    "concordant": "Références concordantes : même numéro, même livre et même rang en arabe et en français.",
+    "nonConcordant": "Correspondance avec l’autre langue non vérifiée pour cette référence.",
+    "provenance": "Provenance : édition publique hadith-api (fawazahmed0), révision @1"
+  },
+  "rapportTexte": {
+    "titre": "Rapport et chaîne de transmission",
+    "bouton": "Rapport et chaîne de transmission",
+    "chaine": "Chaîne de transmission (isnād) écrite dans le texte",
+    "aide": "Découpage automatique de la chaîne telle qu’elle est écrite dans le texte arabe : aucun transmetteur n’est encore identifié ni jugé. À vérifier par un spécialiste.",
+    "prophete": "Le Prophète ﷺ",
+    "nonEvalue": "Non évalué",
+    "recueil": "Recueil",
+    "pasDeChaine": "Aucune chaîne n’a pu être découpée dans ce texte.",
+    "nonProphete": "Dans ce texte, la chaîne ne remonte pas jusqu’au Prophète ﷺ (parole d’un Compagnon ou d’un Successeur, ou découpage incomplet).",
+    "texteComplet": "Texte complet",
+    "retourHadith": "Retour au hadith",
+    "ordre": "Du Prophète ﷺ jusqu’au maître du compilateur"
   }
 }

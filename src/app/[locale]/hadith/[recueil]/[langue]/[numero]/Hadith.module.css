@@ -1,0 +1,36 @@
+/* Page d'un hadith des grands recueils — charte nuit et or. Propriétés logiques uniquement. */
+.page{inline-size:min(62rem,100% - 2.5rem);margin-inline:auto;padding-block:1.6rem 4rem;display:flex;flex-direction:column;gap:1.2rem;}
+.retour{margin:0;font-size:.9rem;}
+.retour a{color:var(--ocre);}
+.entete{display:flex;flex-direction:column;gap:.3rem;}
+.surtitre{margin:0;font-family:"Cinzel",serif;letter-spacing:.2em;font-size:.75rem;color:var(--ocre);text-transform:uppercase;}
+.titre{margin:0;font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(1.9rem,4vw,2.8rem);
+  background:linear-gradient(180deg,#fff3c4,#f2c46d 55%,#c98d3b);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.titre::after{display:none!important;}
+.reference{margin:0;color:#e8dcc2;}
+.textes{display:flex;flex-direction:column;gap:1rem;}
+.cadre{display:flex;flex-direction:column;gap:.7rem;padding:clamp(1.1rem,2.4vw,1.6rem);border:1.5px solid #e3b866aa;border-radius:1rem;
+  background:radial-gradient(ellipse at 20% 0,#16264a,transparent 60%),linear-gradient(180deg,#0f1b31,#0a1324);box-shadow:inset 0 0 0 4px #0a1222,inset 0 0 0 5px #e3b86626;}
+.cadre p{margin:0;line-height:1.7;color:#f3ead8;}
+.cadre a{color:var(--ocre);}
+.titreBloc{margin:0;font-family:"Alegreya",serif;font-weight:700;font-size:1.2rem;color:#fff3cf;}
+.titreBloc::after{display:none!important;}
+.arabe{font-size:clamp(1.25rem,2.2vw,1.55rem)!important;line-height:2.1!important;color:#fff6e3!important;}
+.prose{font-size:1.05rem;}
+.mention{margin:0;color:var(--discret);font-size:.85rem;line-height:1.55;}
+.mention a{color:var(--ocre);}
+.jugements{margin:0;padding-inline-start:1.2rem;color:#f3ead8;}
+.bouton{align-self:flex-start;display:inline-flex;align-items:center;gap:.6rem;min-block-size:3rem;padding-inline:1.6rem;border:2px solid #fff0bd;border-radius:999px;
+  background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06!important;font-family:"Alegreya",serif;font-weight:700;text-decoration:none;}
+/* Chaîne découpée depuis le texte : ligne dorée verticale, un point par maillon. */
+.ligne{position:relative;margin:.4rem 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.ligne::before{content:"";position:absolute;inset-block:1rem 1rem;inset-inline-start:.8rem;inline-size:2px;background:linear-gradient(180deg,#f2c877,#f2c87744);}
+.maillon{position:relative;display:grid;grid-template-columns:1.6rem minmax(0,1fr) auto;align-items:center;gap:.8rem;padding:.45rem .9rem .45rem 0;border-radius:.7rem;animation:entrer .45s calc(var(--i, 0) * .06s) both;}
+.point{justify-self:center;position:relative;z-index:1;inline-size:1rem;block-size:1rem;border-radius:50%;border:2px solid var(--discret);background:#0a1222;}
+.maillon[data-prophete] .point,.maillon[data-recueil] .point{border-color:var(--ocre);background:var(--ocre);box-shadow:0 0 14px #eebc6a88;}
+.nom{font-size:1.2rem;line-height:1.5;color:#fff6e3;}
+.statut{font-size:.78rem;color:var(--discret);white-space:nowrap;}
+.maillon[data-prophete] .statut,.maillon[data-recueil] .statut{color:var(--ocre);}
+.boutons{display:flex;flex-wrap:wrap;gap:.8rem;}
+@keyframes entrer{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.maillon{animation:none!important;}}

@@ -292,12 +292,13 @@
     "chercherBouton": "Ara",
     "resultatsHadith": "{count, plural, =0 {Örnek derlemede hadis bulunamadı} other {# hadis bulundu: doğrulanacak olanı seçin}}",
     "analyses": "İncelenmiş hadisler: senet ve rapor mevcut",
-    "autresRecits": "Tabandaki diğer rivayetler: yalnızca Arapça metin, senet henüz incelenmedi",
+    "autresRecits": "Diğer rivayetler: büyük kitaplar (yayımlanmış metin ve çeviri) ve aktarılmış rivayetler, senet henüz incelenmedi",
     "nombreRecits": "Tabanda {count, plural, =0 {rivayet yok} other {# rivayet bulundu}}",
     "voirTous": "Tüm sonuçları Arama sayfasında gör",
     "chaineNonAnalysee": "Bu rivayetin seneti henüz incelenmedi: ayrıntılı rapor mevcut değil. Metin kaynağında doğrulanmalıdır.",
     "voirSource": "Metni kaynağında gör",
-    "astuceArabe": "Tabandaki rivayetler Arapçadır: Arapça bir kelime (örn. الماء veya الصلاة) ya da bir numara deneyin."
+    "astuceArabe": "Tabandaki rivayetler Arapçadır: Arapça bir kelime (örn. الماء veya الصلاة) ya da bir numara deneyin.",
+    "ouvrirHadith": "Hadisi aç"
   },
   "rapport": {
     "surtitre": "Belgesel rapor",
@@ -578,5 +579,51 @@
     "chapitre": "Bölüm",
     "recueil": "Kitap",
     "toutes": "Tümü"
+  },
+  "recueils": {
+    "titre": "Büyük hadis kitaplarında",
+    "intro": "Ṣaḥīḥ al-Bukhārī, Ṣaḥīḥ Muslim, Sunan Abī Dāwūd, Sunan an-Nasāʾī, Sunan Ibn Mājah, Muwaṭṭaʾ Mālik (ve Arapça Jāmiʿ at-Tirmidhī), hadith-api açık baskısından.",
+    "nombre": "{count, plural, =0 {Kitaplarda hadis bulunamadı} other {Kitaplarda # hadis bulundu}}",
+    "ouvrir": "Hadisi aç",
+    "numero": "no. {numero}",
+    "livre": "kitap {livre}",
+    "concordance": "Arapça ve Fransızcada uyumlu kaynak",
+    "indisponible": "Metin şu an alınamıyor: kaynak bilgisi erişilebilir.",
+    "precedent": "Önceki",
+    "suivant": "Sonraki",
+    "page": "Sayfa {page} / {total}",
+    "avertissement": "Metinler ve çeviriler hadith-api açık baskısından (fawazahmed0) alınmıştır, Milaghaiba tarafından doğrulanmamıştır. Bir kaynak bulmak hadisin sahih olduğunu göstermez.",
+    "astuceArabe": "Kitaplar Fransızca ve Arapça dizinlenmiştir: Arapça bir kelime de deneyin."
+  },
+  "fiche": {
+    "retour": "Aramaya dön",
+    "texteArabe": "Arapça metin",
+    "traduction": "Çeviri ({langue})",
+    "jugements": "Bu baskıda yayımlanan değerlendirmeler",
+    "aucunJugement": "Bu baskıda değerlendirme yok.",
+    "chaineTitre": "Rivayet zinciri",
+    "chaineTexte": "Senet (isnād) Arapça metnin başında yer alır. Bu hadis için henüz ravi ravi incelenmedi.",
+    "rapportDispo": "Bu hadisin seneti incelenmiş ayrıntılı bir raporu var.",
+    "ouvrirRapport": "Ayrıntılı raporu aç",
+    "source": "Kaynak dosyayı gör (JSON)",
+    "erreur": "Uzak kaynak şu an yanıt vermiyor. Daha sonra deneyin.",
+    "introuvable": "Bu baskıda bu numara için metin yok.",
+    "concordant": "Uyumlu kaynaklar: Arapça ve Fransızcada aynı numara, kitap ve sıra.",
+    "nonConcordant": "Diğer dille eşleşme bu kaynak için doğrulanmadı.",
+    "provenance": "Kaynak: hadith-api açık baskısı (fawazahmed0), sürüm @1"
+  },
+  "rapportTexte": {
+    "titre": "Rapor ve rivayet zinciri",
+    "bouton": "Rapor ve rivayet zinciri",
+    "chaine": "Metinde yazılı rivayet zinciri (isnād)",
+    "aide": "Zincirin Arapça metinde yazıldığı şekliyle otomatik bölünmesi: hiçbir ravi henüz tanımlanmadı veya değerlendirilmedi. Bir uzman tarafından doğrulanmalı.",
+    "prophete": "Peygamber ﷺ",
+    "nonEvalue": "Değerlendirilmedi",
+    "recueil": "Kitap",
+    "pasDeChaine": "Bu metinde zincir bölünemedi.",
+    "nonProphete": "Bu metinde zincir Peygamber’e ﷺ ulaşmıyor (bir sahabi veya tabiinin sözü ya da eksik bölme).",
+    "texteComplet": "Tam metin",
+    "retourHadith": "Hadise dön",
+    "ordre": "Peygamber’den ﷺ derleyicinin hocasına"
   }
 }

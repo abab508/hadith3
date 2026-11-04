@@ -15,7 +15,6 @@ const liens = [
   { href: "/a-z", cle: "az" },
   { href: "/recherche", cle: "recherche" },
   { href: "/bibliotheque", cle: "bibliotheque" },
-  { href: "/chaine", cle: "chaine" },
   { href: "/glossaire", cle: "glossaire" },
   { href: "/memorisation", cle: "memorisation" },
   { href: "/langues", cle: "langues" },
