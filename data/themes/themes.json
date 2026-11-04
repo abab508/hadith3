@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "miseAJour": "2026-11-04",
+  "statut": "a-fournir",
+  "source": "Thèmes et chapitres repris de la maquette du patron (2026-11-04). Aucun chiffre repris. Contenu (hadiths, explications, références) à fournir depuis une source vérifiée.",
+  "themes": [
+    { "id": "croyance", "cle": "croyance", "icone": "livre", "carte": { "x": 9.4, "y": 8.5 } },
+    { "id": "adoration", "cle": "adoration", "icone": "kaaba", "carte": { "x": 44.5, "y": 8.5 } },
+    { "id": "vie-du-prophete", "cle": "prophete", "icone": "etoile", "carte": { "x": 77.7, "y": 8.8 } },
+    { "id": "relations", "cle": "relations", "icone": "famille", "carte": { "x": 9.3, "y": 41.6 } },
+    { "id": "comportements", "cle": "comportements", "icone": "arbre", "carte": { "x": 42.6, "y": 42.4 } },
+    { "id": "fin-des-temps", "cle": "finDesTemps", "icone": "comete", "carte": { "x": 74.3, "y": 41.6 } },
+    { "id": "science", "cle": "science", "icone": "colonnes", "carte": { "x": 10.7, "y": 71.1 } },
+    { "id": "maladies-et-remedes", "cle": "maladies", "icone": "feuille", "carte": { "x": 41, "y": 73.7 } },
+    { "id": "autres-themes", "cle": "autres", "icone": "lanterne", "carte": { "x": 66.8, "y": 73.5 } }
+  ],
+  "chapitres": [
+    { "id": "signes-mineurs", "cle": "signesMineurs", "theme": "fin-des-temps", "image": "chapitre-1" },
+    { "id": "signes-majeurs", "cle": "signesMajeurs", "theme": "fin-des-temps", "image": "chapitre-2" },
+    { "id": "venue-de-dajjal", "cle": "dajjal", "theme": "fin-des-temps", "image": "chapitre-3" },
+    { "id": "descente-de-issa", "cle": "issa", "theme": "fin-des-temps", "image": "chapitre-4" },
+    { "id": "fin-du-monde", "cle": "finDuMonde", "theme": "fin-des-temps", "image": "chapitre-5" }
+  ]
+}

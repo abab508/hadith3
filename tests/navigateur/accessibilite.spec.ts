@@ -43,8 +43,11 @@ for (const { tag, messages } of interfaces) {
     await page.keyboard.press("Tab");
     await page.keyboard.press("Enter");
     await expect(page.getByRole("main")).toBeFocused();
-    await page.keyboard.press("Tab");
+    // Refonte 2026-11-04 : le bouton de la scène d'accueil précède le terme ; on avance au clavier jusqu'à lui.
     const terme = page.locator('button[data-terme="hasan"]');
+    for (let i = 0; i < 6 && !(await terme.evaluate((b) => b === document.activeElement)); i++) {
+      await page.keyboard.press("Tab");
+    }
     await expect(terme).toBeFocused();
     await expect(terme).toHaveAttribute("aria-expanded", "true");
     await expect(terme).toHaveAccessibleName(/ḥasan/);
@@ -63,7 +66,7 @@ for (const { tag, messages } of interfaces) {
     await expect(terme).toBeFocused();
     await expect(terme).toHaveAttribute("aria-expanded", "false");
     await page.keyboard.press("Tab");
-    await expect(page.getByRole("main").getByRole("link")).toBeFocused();
+    await expect(page.locator("main a:focus")).toHaveCount(1);
   });
 
   test(`${tag} : l'infobulle reste accessible au survol de son contenu`, async ({ page }) => {

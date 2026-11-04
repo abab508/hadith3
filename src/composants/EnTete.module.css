@@ -1,8 +1,17 @@
-.entete{position:relative;background:var(--surface);border-block-end:1px solid var(--bordure);box-shadow:0 10px 32px #060e2210;z-index:5;}
-.entete::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;block-size:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--ocre),transparent);pointer-events:none;}
-.marque{max-inline-size:78rem;margin-inline:auto;padding-block:1.1rem .8rem;padding-inline:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.7rem 1.4rem;}
-.lienMarque{display:inline-flex;align-items:center;gap:.75rem;min-block-size:3.25rem;color:var(--accent);text-decoration:none;}
-.logo{flex:none;filter:drop-shadow(0 4px 10px #74c8ad3f);}
-.nom{color:var(--texte);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:900;letter-spacing:-.02em;}
-.slogan{color:var(--discret);font-size:.92rem;flex:1 1 15rem;max-inline-size:27rem;}
-@media(max-width:630px){.marque{padding-inline:.85rem;}.slogan{order:3;flex-basis:100%;font-size:.8rem;}}
+/* En-tête de la charte « nuit et or » (maquette). Propriétés logiques uniquement. */
+.entete{position:sticky;inset-block-start:0;z-index:20;background:linear-gradient(180deg,#060c19f2,#0a1222e6);backdrop-filter:blur(12px);border-block-end:1px solid #e3b86626;}
+.barre{max-inline-size:90rem;margin-inline:auto;padding-block:.55rem;padding-inline:1.5rem;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:.3rem 1.2rem;}
+.lienMarque{display:inline-flex;align-items:center;gap:.7rem;min-block-size:3rem;color:var(--ocre);text-decoration:none;}
+.logo{flex:none;filter:drop-shadow(0 0 10px #eebc6a55);}
+.textes{display:flex;flex-direction:column;line-height:1.15;}
+.nom{font-family:var(--police-titre-latine);color:var(--texte);font-size:1.3rem;font-weight:500;letter-spacing:.01em;}
+.slogan{color:var(--discret);font-size:.7rem;max-inline-size:16rem;}
+.actions{grid-column:4;grid-row:1;display:flex;align-items:center;gap:.4rem;}
+.icone{display:grid;place-items:center;inline-size:2.6rem;block-size:2.6rem;border-radius:50%;color:var(--texte);text-decoration:none;transition:background .2s,color .2s;}
+.icone:hover{background:#ffffff12;color:var(--ocre);}
+@media(max-width:1400px){.barre{grid-template-columns:auto 1fr auto auto;}.barre>a:first-child{grid-column:1;}}
+@media(max-width:700px){.slogan{display:none;}}
+@media(max-width:980px){.barre{grid-template-columns:1fr auto auto;}.actions{grid-column:3;}}
+@media(max-width:630px){.barre{padding-inline:.85rem;grid-template-columns:1fr auto;}.actions{grid-column:2;}}
+.textes{gap:.1rem;}
+.textes .slogan{margin-block-start:.1rem;}

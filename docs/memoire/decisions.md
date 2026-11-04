@@ -71,3 +71,11 @@
 2026-10-29 — Le patron accepte telle quelle la traduction automatique de « rapport.colonneAcces » (ar, en, es, id, ms, tr, ur) — décision du patron ; une relecture humaine reste possible plus tard.
 2026-10-29 — Début des 5 textes importés de Sanadset : le reste de chaîne (« … رَضِيَ اللَّهُ عَنْهُ ، » ou une virgule seule) est retiré, rien n'est ajouté — le découpage chaîne/texte de la source laissait des hadiths tronqués à l'écran ; un test l'empêche de revenir. À appliquer aussi à l'import en nombre (branche feat/import-bukhari).
 2026-10-29 — Références « [tome, page] » remplacées par une valeur vide (null) affichée « tome et page à compléter » ; « [Bibliothèque partenaire] » renommée « Bibliothèque partenaire (à venir) » — plus aucun texte provisoire entre crochets visible ; textes es/ur/id/ms/tr traduits automatiquement, à relire.
+2026-11-04 — Refonte de tout le site à l'identique de la maquette « Les Hadiths » (accueil, thèmes, chapitres, page chapitre, A-Z, mobile) — décision du patron.
+2026-11-04 — Images du site découpées dans la maquette fournie par le patron (rendu flou accepté) — décision du patron ; à remplacer par les originaux HD s'ils sont fournis.
+2026-11-04 — Le site garde le nom Milaghaiba avec le style de la maquette — décision du patron.
+2026-11-04 — Thèmes et chapitres de la maquette créés sans aucun chiffre, marqués « contenu à fournir » — décision du patron (règle : ne rien inventer).
+2026-11-04 — Bibliothèque : recueils 69-90 rangés « tradition imamite », 91-92 « tradition ibadite », auteurs absents de la liste laissés vides — décision prise seul, à valider par un spécialiste.
+2026-11-04 — Police Aref Ruqaa (style Ruqʿa) pour les titres latins et arabes, servie par le site — choix du patron ; les textes longs et hadiths restent en Noto Naskh pour la lisibilité (décision prise seul).
+2026-11-04 — Ambiance sonore générée en code (Web Audio), coupée par défaut, démarrée par un bouton de l'en-tête — aucun fichier audio téléchargé (option la plus réversible, le patron n'a pas répondu à la question).
+2026-11-04 — Police latine Alegreya (texte et titres) + Cinzel (petites capitales), d'après la capture du patron — choix du patron ; Aref Ruqaa reste pour les titres arabes.

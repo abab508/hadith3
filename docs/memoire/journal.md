@@ -64,3 +64,13 @@
 - Fait : début des textes arabes Bukhārī n° 2, 8, 10, 13, 16 nettoyé ; plus de « [tome, page] » ni de « [Bibliothèque partenaire] » ; titre du rapport lisible ; « français — français » supprimé du menu.
 - Vérifié : typecheck, 102 tests unitaires, contrôle, build, 61 tests navigateur.
 - Prochaine étape : validation du patron pour fusion dans main (= mise en ligne).
+
+## 2026-11-04 — Refonte « nuit et or » d'après la maquette du patron
+- Fait : charte nuit et or, police Aref Ruqaa, en-tête, accueil immersif (profondeur, rayons, brume, étoiles filantes, titre arabe tracé, ambiance sonore en code), Bibliothèque des 92 recueils, pages Thèmes, Thème, Chapitres, Chapitre, Index A-Z ; images découpées dans la maquette et textes imprimés floutés.
+- Vérifié : typecheck, 128 tests unitaires, contrôle, build (tests navigateur : voir rapport) ; contenu des chapitres marqué « à fournir », aucun chiffre inventé.
+- Prochaine étape : avis du patron, puis commit et fusion après accord (branche claude/milaghaiba-motion-design-aef3d2).
+
+## 2026-11-04 — Section « Rapport détaillé du hadith » d’après la capture du patron
+- Fait : polices Alegreya + Cinzel, emblème doré Milaghaiba (en-tête et bannière), page Rapport en cadres dorés (onglets Biographie / Fiabilité, relations cliquables, bouton doré, barre Navigation thématique), aperçu de la chaîne sur l’accueil.
+- Vérifié : 128 tests unitaires, contrôle, build, 58/61 tests navigateur (3 échecs glossaire et filtres de recherche, fichiers non modifiés dans cette session).
+- Prochaine étape : avis du patron, puis commit après accord ; corriger ou faire corriger les 3 tests en échec.

@@ -103,3 +103,29 @@
 .original{font-size:clamp(1.65rem,3.1vw,2.45rem);line-height:2.2;background:var(--fond);border-radius:1.2rem;padding:clamp(1rem,3vw,2rem);text-align:start;}
 .sousTitre{font-size:clamp(1.15rem,2vw,1.5rem);}
 .duo> *{border-radius:1.5rem;}
+
+/* ---------- Bannière de la capture du patron (charte nuit et or) ---------- */
+.pageRapport{max-inline-size:84rem;}
+.banniere{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;
+  margin-inline:-1rem;padding:2.2rem 1.4rem 2rem;border-radius:0 0 1.4rem 1.4rem;border:1px solid #e3b86640;border-block-start:0;
+  box-shadow:inset 0 0 0 4px #0a1222,inset 0 0 0 5px #e3b86633;}
+.imageBanniere{position:absolute;z-index:-2;inset:0;inline-size:100%;block-size:100%;object-fit:cover;object-position:50% 38%;animation:respirerBanniere 28s ease-in-out infinite alternate;}
+.voileBanniere{position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse 55% 75% at 50% 45%,#0a1222e6,#0a122299 60%,#0a122255),linear-gradient(180deg,transparent 70%,#0a1222);}
+.grandTitre{margin:.4rem 0 0;font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.1;
+  background:linear-gradient(180deg,#fff3c4,#f2c46d 55%,#c98d3b);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #4a2c0e) drop-shadow(0 0 16px #eebc6a44);}
+.texteBanniere{margin:0;max-inline-size:44rem;font-size:clamp(.98rem,1.4vw,1.15rem);line-height:1.5;color:#f6eedb;text-shadow:0 2px 8px #000;}
+.ligneAnalyse{display:flex;align-items:center;gap:1rem;margin:.9rem 0 0;}
+.filet{position:relative;inline-size:clamp(3rem,10vw,7rem);block-size:1px;background:linear-gradient(90deg,transparent,#f2c877);}
+.filet:last-child{background:linear-gradient(270deg,transparent,#f2c877);}
+.filet::after{content:"";position:absolute;inset-block-start:50%;inset-inline-end:-.25rem;inline-size:.45rem;block-size:.45rem;border:1px solid #f2c877;rotate:45deg;translate:0 -50%;}
+.filet:last-child::after{inset-inline-end:auto;inset-inline-start:-.25rem;}
+.pastilleAnalyse{display:inline-flex;align-items:center;gap:.6rem;min-block-size:2.7rem;padding-inline:1.5rem;border-radius:999px;border:1.5px solid #f2c877;
+  background:#0a1222cc;color:#fff3cf;font-family:"Alegreya",serif;font-weight:700;font-size:1.1rem;text-decoration:none;box-shadow:0 0 20px #eebc6a33;transition:box-shadow .3s,transform .3s;}
+.pastilleAnalyse:hover{box-shadow:0 0 30px #eebc6a77;transform:translateY(-2px);}
+.pastilleAnalyse svg{inline-size:1.25rem;block-size:1.25rem;fill:none;stroke:#f2c877;stroke-width:1.8;stroke-linecap:round;}
+.barreThematique{display:flex;align-items:center;gap:1rem;margin:0;padding:.9rem 1.4rem;border:1.5px solid #e3b86680;border-radius:999px;background:linear-gradient(180deg,#132139,#0c1527);color:#f3ead8;box-shadow:inset 0 0 0 3px #0a1222,inset 0 0 0 4px #e3b86626;}
+.barreThematique strong{color:var(--ocre);font-family:"Alegreya",serif;}
+.barreThematique a{margin-inline-start:auto;color:var(--ocre);text-decoration:none;font-size:1.2rem;}
+.pictoBarre{flex:none;inline-size:1.6rem;block-size:1.6rem;color:var(--ocre);}
+@keyframes respirerBanniere{from{transform:scale(1)}to{transform:scale(1.06)}}
+@media(max-width:720px){.banniere{margin-inline:-.5rem;}.filet{display:none;}.barreThematique{border-radius:1rem;}}

@@ -43,7 +43,22 @@
         "texte": "Edisi kritis dan terjemahan baru: rujukan dan halaman disebutkan tanpa menyalin teks."
       }
     },
-    "avertissement": "Milaghaiba adalah alat pencarian dan dokumentasi. Ia tidak mengeluarkan fatwa dan tidak menggantikan pakar."
+    "avertissement": "Milaghaiba adalah alat pencarian dan dokumentasi. Ia tidak mengeluarkan fatwa dan tidak menggantikan pakar.",
+    "hero": {
+      "titre": "Hadis",
+      "sousTitre": "Cahaya untuk setiap zaman",
+      "texte": "Jelajahi ajaran Nabi ﷺ melalui pengalaman yang imersif dan interaktif.",
+      "bouton": "Mulai menjelajah",
+      "recueils": "{n} kitab",
+      "az": "A sampai Z",
+      "themes": "Tema beragam",
+      "navigation": "Navigasi mudah"
+    },
+    "apercu": {
+      "titre": "Laporan rinci hadis",
+      "texte": "Ikuti rantai periwayatan mata rantai demi mata rantai, lalu buka kartu setiap perawi.",
+      "bouton": "Buka laporan rinci"
+    }
   },
   "selecteurLangue": {
     "titre": "Bahasa",
@@ -80,7 +95,11 @@
     "recherche": "Pencarian",
     "chaine": "Pencarian lewat sanad",
     "glossaire": "Glosarium",
-    "memorisation": "Hafalan"
+    "memorisation": "Hafalan",
+    "bibliotheque": "Perpustakaan",
+    "themes": "Tema",
+    "chapitres": "Bab",
+    "az": "A-Z"
   },
   "ouverture": {
     "titre": "Buka bahasa tersimpan",
@@ -142,7 +161,12 @@
   },
   "entete": {
     "slogan": "Pencarian dan verifikasi dokumenter hadis",
-    "accueil": "Beranda Milaghaiba"
+    "accueil": "Beranda Milaghaiba",
+    "rechercher": "Cari",
+    "langue": "Bahasa",
+    "ambianceActiver": "Nyalakan suasana suara",
+    "ambianceCouper": "Matikan suasana suara",
+    "nomArabe": "الملة الغائبة"
   },
   "recherche": {
     "titre": "Hasil",
@@ -293,7 +317,11 @@
       "decesVers": "w. sekitar {annee} H",
       "decesEntre": "w. antara {debut} dan {fin} H",
       "aucun": "—",
-      "referenceACompleter": "jilid dan halaman belum dilengkapi"
+      "referenceACompleter": "jilid dan halaman belum dilengkapi",
+      "fiabilite": "Keandalan",
+      "voirFiabilite": "Lihat keandalan perawi ini",
+      "relations": "Hubungan dalam sanad",
+      "onglets": "Bagian kartu"
     },
     "generation": {
       "source": "Sumber hadis",
@@ -335,7 +363,17 @@
       "a-verifier": "Untuk diverifikasi"
     },
     "avertissementData": "Ini adalah versi contoh dengan data terbatas.",
-    "isnadGuide": "Baca nama sesuai urutan lalu pilih perawi untuk melihat keterangannya. Contoh ini bukan verifikasi ilmiah."
+    "isnadGuide": "Baca nama sesuai urutan lalu pilih perawi untuk melihat keterangannya. Contoh ini bukan verifikasi ilmiah.",
+    "banniere": {
+      "surtitre": "Perpustakaan hadis",
+      "titre": "Laporan rinci hadis",
+      "texte": "Analisis rantai periwayatan (isnad) dan para perawi sebuah hadis, beserta jalur, penilaian keandalan, dan rujukannya.",
+      "analyse": "Analisis hadis"
+    },
+    "navigationThematique": {
+      "titre": "Navigasi tematik",
+      "texte": "hadis dikelompokkan menurut tema besar dan subtema."
+    }
   },
   "memorisation": {
     "titre": "Studio hafalan hadis",
@@ -371,5 +409,152 @@
     "animations": "Animasi",
     "activer": "Aktifkan animasi",
     "reduire": "Kurangi animasi"
+  },
+  "bibliotheque": {
+    "titre": "Perpustakaan kitab hadis",
+    "sousTitre": "Jelajahi rak: {total} kitab hadis, dari Ṣaḥīḥ besar hingga dokumen awal.",
+    "filtrer": "Cari kitab atau pengarang",
+    "toutes": "Semua rak",
+    "compteur": "Kitab ditampilkan: {n}",
+    "aucun": "Tidak ada kitab yang cocok dengan pencarian ini.",
+    "auteur": "Pengarang",
+    "auteurAbsent": "Pengarang belum dilengkapi",
+    "cherchable": "Cari di kitab ini",
+    "avertissement": "Daftar kerja yang belum lengkap, perlu diperiksa oleh ahli. Pengelompokan rak tidak menilai keaslian kitab.",
+    "familles": {
+      "neuf": {
+        "titre": "Sembilan kitab utama",
+        "note": "Enam pertama adalah Kutub al-Sittah; kesembilannya sering diindeks bersama."
+      },
+      "transmission": {
+        "titre": "Kitab periwayatan besar lainnya",
+        "note": "Untuk memperluas cakupan fikih dan menemukan beberapa versi riwayat yang sama."
+      },
+      "musnad": {
+        "titre": "Kitab-kitab Musnad",
+        "note": "Disusun menurut perawi, melengkapi penyusunan menurut tema."
+      },
+      "specialises": {
+        "titre": "Muʿjam dan karya khusus",
+        "note": "Nomor 45 sampai 50 adalah kompilasi sekunder dari karya yang lebih awal."
+      },
+      "compilations": {
+        "titre": "Kompilasi besar dan ringkasan",
+        "note": "Menghimpun dan menyusun hadis yang telah diriwayatkan di tempat lain."
+      },
+      "anciens": {
+        "titre": "Kitab dan dokumen awal",
+        "note": "Sebagian hanya dikenal melalui periwayatan atau kutipan yang lebih kemudian."
+      },
+      "imamite": {
+        "titre": "Tradisi Imamiyah",
+        "note": "Pengarang akan dilengkapi dari sumber terverifikasi."
+      },
+      "ibadite": {
+        "titre": "Tradisi Ibadiyah",
+        "note": "Pengarang akan dilengkapi dari sumber terverifikasi."
+      }
+    }
+  },
+  "themes": {
+    "titre": "Pilih tema",
+    "sousTitre": "Jelajahi bab sesuai minat Anda",
+    "retour": "Kembali",
+    "retourThemes": "Kembali ke tema",
+    "aFournir": "Konten akan dilengkapi",
+    "chapitresAFournir": "Bab untuk tema ini akan dilengkapi.",
+    "precedent": "Bab sebelumnya",
+    "suivant": "Bab berikutnya",
+    "chapitre": "Bab {n}",
+    "aValider": "Teks dari rancangan, perlu diperiksa oleh ahli.",
+    "liste": {
+      "croyance": {
+        "titre": "Akidah",
+        "description": "Tauhid, iman, malaikat, nabi…"
+      },
+      "adoration": {
+        "titre": "Ibadah",
+        "description": "Salat, puasa, zakat, haji…"
+      },
+      "prophete": {
+        "titre": "Kehidupan Nabi ﷺ",
+        "description": "Riwayat hidup, sifat-sifat beliau…"
+      },
+      "relations": {
+        "titre": "Hubungan",
+        "description": "Keluarga, pernikahan, hak…"
+      },
+      "comportements": {
+        "titre": "Perilaku",
+        "description": "Etika, akhlak, amal baik…"
+      },
+      "finDesTemps": {
+        "titre": "Tanda-tanda akhir zaman",
+        "description": "Temukan tanda-tanda besar, peristiwa penting, dan peringatan Nabi ﷺ tentang akhir zaman."
+      },
+      "science": {
+        "titre": "Ilmu",
+        "description": "Pengetahuan, belajar…"
+      },
+      "maladies": {
+        "titre": "Penyakit dan pengobatan",
+        "description": "Kesehatan, penyembuhan, pencegahan…"
+      },
+      "autres": {
+        "titre": "Tema lainnya",
+        "description": "Lain-lain, bacaan, doa…"
+      }
+    }
+  },
+  "chapitres": {
+    "titre": "Navigasi per bab",
+    "rechercher": "Cari bab…",
+    "menu": "Menu bab",
+    "citation": "“Siapa yang menuntut ilmu berada di jalan Allah.”",
+    "citationAuteur": "— Nabi ﷺ",
+    "citationReference": "Kutipan dari rancangan, rujukan perlu diperiksa oleh ahli.",
+    "ouvrir": "Buka",
+    "liste": {
+      "signesMineurs": {
+        "titre": "Tanda-tanda kecil",
+        "sousTitre": "Al-ʿAlāmāt aṣ-Ṣughrā",
+        "intro": "Tanda-tanda kecil adalah peristiwa yang terjadi sebelum tanda-tanda besar. Jumlahnya banyak dan tampak dalam kehidupan sehari-hari."
+      },
+      "signesMajeurs": {
+        "titre": "Tanda-tanda besar",
+        "sousTitre": "Al-ʿAlāmāt al-Kubrā"
+      },
+      "dajjal": {
+        "titre": "Kedatangan Dajjal"
+      },
+      "issa": {
+        "titre": "Turunnya ʿĪsā"
+      },
+      "finDuMonde": {
+        "titre": "Akhir dunia"
+      }
+    }
+  },
+  "chapitre": {
+    "fil": "Jejak navigasi",
+    "introduction": "Pendahuluan",
+    "hadiths": "Hadis",
+    "explications": "Penjelasan",
+    "references": "Rujukan",
+    "audio": "Audio / Video",
+    "hadithsDuChapitre": "Hadis dalam bab ini",
+    "hadithsAFournir": "Hadis bab ini akan dilengkapi dari sumber terverifikasi.",
+    "onglets": "Isi bab"
+  },
+  "az": {
+    "titre": "Indeks A - Z",
+    "sousTitre": "Akses semua bab, dari A sampai Z",
+    "rechercher": "Cari bab atau kata kunci…",
+    "lettres": "Huruf",
+    "aucun": "Tidak ada entri untuk pilihan ini.",
+    "theme": "Tema",
+    "chapitre": "Bab",
+    "recueil": "Kitab",
+    "toutes": "Semua"
   }
 }

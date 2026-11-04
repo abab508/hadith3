@@ -43,7 +43,22 @@
         "texte": "Éditions critiques et traductions récentes : la référence et la page sont indiquées, sans copier le texte."
       }
     },
-    "avertissement": "Milaghaiba est un outil de recherche et de documentation. Il ne donne pas d’avis religieux et ne remplace pas un spécialiste."
+    "avertissement": "Milaghaiba est un outil de recherche et de documentation. Il ne donne pas d’avis religieux et ne remplace pas un spécialiste.",
+    "hero": {
+      "titre": "Les Hadiths",
+      "sousTitre": "Une lumière pour chaque époque",
+      "texte": "Explorez l’ensemble des enseignements du Prophète ﷺ à travers une expérience immersive et interactive.",
+      "bouton": "Commencer l’exploration",
+      "recueils": "{n} recueils",
+      "az": "A à Z",
+      "themes": "Thèmes variés",
+      "navigation": "Navigation intuitive"
+    },
+    "apercu": {
+      "titre": "Rapport détaillé du hadith",
+      "texte": "Suivez la chaîne de transmission maillon par maillon, puis ouvrez la fiche de chaque transmetteur.",
+      "bouton": "Ouvrir le rapport détaillé"
+    }
   },
   "selecteurLangue": {
     "titre": "Langue",
@@ -80,7 +95,11 @@
     "recherche": "Recherche",
     "chaine": "Recherche par chaîne",
     "glossaire": "Glossaire",
-    "memorisation": "Mémoriser"
+    "memorisation": "Mémoriser",
+    "bibliotheque": "Bibliothèque",
+    "themes": "Thèmes",
+    "chapitres": "Chapitres",
+    "az": "A-Z"
   },
   "ouverture": {
     "titre": "Choisir la langue mémorisée",
@@ -142,7 +161,12 @@
   },
   "entete": {
     "slogan": "Recherche et vérification documentaire des hadiths",
-    "accueil": "Accueil de Milaghaiba"
+    "accueil": "Accueil de Milaghaiba",
+    "rechercher": "Rechercher",
+    "langue": "Langue",
+    "ambianceActiver": "Activer l’ambiance sonore",
+    "ambianceCouper": "Couper l’ambiance sonore",
+    "nomArabe": "الملة الغائبة"
   },
   "recherche": {
     "titre": "Résultats",
@@ -293,7 +317,11 @@
       "decesVers": "m. vers {annee} H",
       "decesEntre": "m. entre {debut} et {fin} H",
       "aucun": "—",
-      "referenceACompleter": "tome et page à compléter"
+      "referenceACompleter": "tome et page à compléter",
+      "fiabilite": "Fiabilité",
+      "voirFiabilite": "Voir la fiabilité de ce transmetteur",
+      "relations": "Relations dans le sanad",
+      "onglets": "Sections de la fiche"
     },
     "generation": {
       "source": "Source du hadith",
@@ -335,7 +363,17 @@
       "a-verifier": "À vérifier"
     },
     "avertissementData": "Ceci est une version d'exemple avec des données limitées.",
-    "isnadGuide": "Lisez les noms dans l'ordre indiqué, puis ouvrez la fiche d'un transmetteur en cliquant dessus. Ces données de démonstration ne constituent pas une certification religieuse."
+    "isnadGuide": "Lisez les noms dans l'ordre indiqué, puis ouvrez la fiche d'un transmetteur en cliquant dessus. Ces données de démonstration ne constituent pas une certification religieuse.",
+    "banniere": {
+      "surtitre": "Bibliothèque de hadiths",
+      "titre": "Rapport détaillé du hadith",
+      "texte": "Analyse de la chaîne de transmission (isnād) et des transmetteurs d’un hadith, avec l’étude des voies, des jugements de fiabilité et des références.",
+      "analyse": "Analyse du hadith"
+    },
+    "navigationThematique": {
+      "titre": "Navigation thématique",
+      "texte": "les hadiths sont classés par grands thèmes et sous-thèmes."
+    }
   },
   "memorisation": {
     "titre": "Atelier de mémorisation des hadiths",
@@ -371,5 +409,152 @@
     "animations": "Animations",
     "activer": "Activer les animations",
     "reduire": "Réduire les animations"
+  },
+  "bibliotheque": {
+    "titre": "Bibliothèque des recueils",
+    "sousTitre": "Parcourez les rayons : {total} recueils de hadiths, des grands Ṣaḥīḥ aux documents anciens.",
+    "filtrer": "Chercher un recueil ou un auteur",
+    "toutes": "Tous les rayons",
+    "compteur": "Recueils affichés : {n}",
+    "aucun": "Aucun recueil ne correspond à cette recherche.",
+    "auteur": "Auteur",
+    "auteurAbsent": "Auteur à compléter",
+    "cherchable": "Chercher dans ce recueil",
+    "avertissement": "Liste de travail non exhaustive, à valider par un spécialiste. Le classement par rayon ne juge pas l’authenticité des recueils.",
+    "familles": {
+      "neuf": {
+        "titre": "Les neuf grands recueils",
+        "note": "Les six premiers forment les Kutub as-Sitta ; les neuf sont souvent indexés ensemble."
+      },
+      "transmission": {
+        "titre": "Autres grands recueils de transmission",
+        "note": "Pour élargir la couverture juridique et retrouver plusieurs versions d’une même tradition."
+      },
+      "musnad": {
+        "titre": "Les Musnad",
+        "note": "Classés par transmetteur, ils complètent le classement par thème."
+      },
+      "specialises": {
+        "titre": "Muʿjam et recueils spécialisés",
+        "note": "Les numéros 45 à 50 sont des compilations secondaires, tirées d’ouvrages plus anciens."
+      },
+      "compilations": {
+        "titre": "Grandes compilations et synthèses",
+        "note": "Elles rassemblent et ordonnent des hadiths déjà transmis ailleurs."
+      },
+      "anciens": {
+        "titre": "Anciens recueils et documents",
+        "note": "Certains ne sont connus que par des transmissions ou des citations ultérieures."
+      },
+      "imamite": {
+        "titre": "Tradition imamite",
+        "note": "Auteurs à compléter depuis une source vérifiée."
+      },
+      "ibadite": {
+        "titre": "Tradition ibadite",
+        "note": "Auteurs à compléter depuis une source vérifiée."
+      }
+    }
+  },
+  "themes": {
+    "titre": "Choisissez un thème",
+    "sousTitre": "Explorez les chapitres selon vos centres d’intérêt",
+    "retour": "Retour",
+    "retourThemes": "Retour aux thèmes",
+    "aFournir": "Contenu à fournir",
+    "chapitresAFournir": "Les chapitres de ce thème sont à fournir.",
+    "precedent": "Chapitres précédents",
+    "suivant": "Chapitres suivants",
+    "chapitre": "Chapitre {n}",
+    "aValider": "Texte de la maquette, à valider par un spécialiste.",
+    "liste": {
+      "croyance": {
+        "titre": "La croyance",
+        "description": "Tawhid, foi, anges, prophètes…"
+      },
+      "adoration": {
+        "titre": "L’adoration",
+        "description": "Prière, jeûne, zakat, pèlerinage…"
+      },
+      "prophete": {
+        "titre": "La vie du Prophète ﷺ",
+        "description": "Sa biographie, ses qualités…"
+      },
+      "relations": {
+        "titre": "Les relations",
+        "description": "Famille, mariage, droits…"
+      },
+      "comportements": {
+        "titre": "Les comportements",
+        "description": "Éthique, morale, bonnes actions…"
+      },
+      "finDesTemps": {
+        "titre": "Les signes de la fin des temps",
+        "description": "Découvrez les grands signes, les événements majeurs et les avertissements du Prophète ﷺ concernant la fin des temps."
+      },
+      "science": {
+        "titre": "La science",
+        "description": "Savoir, apprentissage…"
+      },
+      "maladies": {
+        "titre": "Les maladies et remèdes",
+        "description": "Santé, guérison, prévention…"
+      },
+      "autres": {
+        "titre": "Autres thèmes",
+        "description": "Divers, lectures, invocations…"
+      }
+    }
+  },
+  "chapitres": {
+    "titre": "Navigation par chapitres",
+    "rechercher": "Rechercher un chapitre…",
+    "menu": "Menu des chapitres",
+    "citation": "« Celui qui cherche la science est sur la voie d’Allah. »",
+    "citationAuteur": "— Prophète ﷺ",
+    "citationReference": "Citation de la maquette, référence à vérifier par un spécialiste.",
+    "ouvrir": "Ouvrir",
+    "liste": {
+      "signesMineurs": {
+        "titre": "Les signes mineurs",
+        "sousTitre": "Al-ʿAlāmāt aṣ-Ṣughrā",
+        "intro": "Les signes mineurs sont des événements qui se produisent avant les grands signes. Ils sont nombreux et se manifestent dans la vie quotidienne des gens."
+      },
+      "signesMajeurs": {
+        "titre": "Les signes majeurs",
+        "sousTitre": "Al-ʿAlāmāt al-Kubrā"
+      },
+      "dajjal": {
+        "titre": "La venue de Dajjal"
+      },
+      "issa": {
+        "titre": "La descente de ʿĪsā"
+      },
+      "finDuMonde": {
+        "titre": "La fin du monde"
+      }
+    }
+  },
+  "chapitre": {
+    "fil": "Fil d’Ariane",
+    "introduction": "Introduction",
+    "hadiths": "Hadiths",
+    "explications": "Explications",
+    "references": "Références",
+    "audio": "Audio / Vidéo",
+    "hadithsDuChapitre": "Hadiths de ce chapitre",
+    "hadithsAFournir": "Les hadiths de ce chapitre sont à fournir depuis une source vérifiée.",
+    "onglets": "Contenu du chapitre"
+  },
+  "az": {
+    "titre": "Index A - Z",
+    "sousTitre": "Accédez à tous les chapitres, de A à Z",
+    "rechercher": "Rechercher un chapitre ou un mot-clé…",
+    "lettres": "Lettres",
+    "aucun": "Aucune entrée pour cette sélection.",
+    "theme": "Thème",
+    "chapitre": "Chapitre",
+    "recueil": "Recueil",
+    "toutes": "Toutes"
   }
 }

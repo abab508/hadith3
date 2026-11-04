@@ -43,7 +43,22 @@
         "texte": "Tahkikli baskılar ve yeni çeviriler: metin kopyalanmadan atıf ve sayfa verilir."
       }
     },
-    "avertissement": "Milaghaiba bir arama ve belgeleme aracıdır. Dini hüküm vermez ve bir uzmanın yerini tutmaz."
+    "avertissement": "Milaghaiba bir arama ve belgeleme aracıdır. Dini hüküm vermez ve bir uzmanın yerini tutmaz.",
+    "hero": {
+      "titre": "Hadisler",
+      "sousTitre": "Her çağ için bir ışık",
+      "texte": "Peygamber’in ﷺ öğretilerini sürükleyici ve etkileşimli bir deneyimle keşfedin.",
+      "bouton": "Keşfe başla",
+      "recueils": "{n} kitap",
+      "az": "A’dan Z’ye",
+      "themes": "Çeşitli konular",
+      "navigation": "Kolay gezinme"
+    },
+    "apercu": {
+      "titre": "Ayrıntılı hadis raporu",
+      "texte": "Rivayet zincirini halka halka izleyin, ardından her ravinin kartını açın.",
+      "bouton": "Ayrıntılı raporu aç"
+    }
   },
   "selecteurLangue": {
     "titre": "Dil",
@@ -80,7 +95,11 @@
     "recherche": "Arama",
     "chaine": "Senetle arama",
     "glossaire": "Sözlük",
-    "memorisation": "Ezberle"
+    "memorisation": "Ezberle",
+    "bibliotheque": "Kütüphane",
+    "themes": "Konular",
+    "chapitres": "Bölümler",
+    "az": "A-Z"
   },
   "ouverture": {
     "titre": "Kaydedilen dili aç",
@@ -142,7 +161,12 @@
   },
   "entete": {
     "slogan": "Hadis arama ve belgesel doğrulama",
-    "accueil": "Milaghaiba ana sayfası"
+    "accueil": "Milaghaiba ana sayfası",
+    "rechercher": "Ara",
+    "langue": "Dil",
+    "ambianceActiver": "Ortam sesini aç",
+    "ambianceCouper": "Ortam sesini kapat",
+    "nomArabe": "الملة الغائبة"
   },
   "recherche": {
     "titre": "Sonuçlar",
@@ -293,7 +317,11 @@
       "decesVers": "ö. yaklaşık {annee} H",
       "decesEntre": "ö. {debut} ile {fin} H arası",
       "aucun": "—",
-      "referenceACompleter": "cilt ve sayfa eklenecek"
+      "referenceACompleter": "cilt ve sayfa eklenecek",
+      "fiabilite": "Güvenilirlik",
+      "voirFiabilite": "Bu ravinin güvenilirliğini gör",
+      "relations": "Senetteki ilişkiler",
+      "onglets": "Kart bölümleri"
     },
     "generation": {
       "source": "Hadisin kaynağı",
@@ -335,7 +363,17 @@
       "a-verifier": "Doğrulanacak"
     },
     "avertissementData": "Bu, sınırlı verilerle örnek bir sürümdür.",
-    "isnadGuide": "İsimleri gösterilen sırayla okuyun; bir kişiye tıklayarak kaydını açın. Örnek veri ilmî tasdik değildir."
+    "isnadGuide": "İsimleri gösterilen sırayla okuyun; bir kişiye tıklayarak kaydını açın. Örnek veri ilmî tasdik değildir.",
+    "banniere": {
+      "surtitre": "Hadis kütüphanesi",
+      "titre": "Ayrıntılı hadis raporu",
+      "texte": "Bir hadisin rivayet zincirinin (isnad) ve ravilerinin analizi; tarikler, güvenilirlik hükümleri ve kaynaklarla.",
+      "analyse": "Hadis analizi"
+    },
+    "navigationThematique": {
+      "titre": "Konulara göre gezinme",
+      "texte": "hadisler ana konulara ve alt konulara göre sınıflandırılmıştır."
+    }
   },
   "memorisation": {
     "titre": "Hadis ezberleme atölyesi",
@@ -371,5 +409,152 @@
     "animations": "Animasyonlar",
     "activer": "Hareketi aç",
     "reduire": "Hareketi azalt"
+  },
+  "bibliotheque": {
+    "titre": "Hadis kitapları kütüphanesi",
+    "sousTitre": "Rafları gezin: büyük Sahihlerden eski belgelere {total} hadis kitabı.",
+    "filtrer": "Kitap veya yazar ara",
+    "toutes": "Tüm raflar",
+    "compteur": "Gösterilen kitaplar: {n}",
+    "aucun": "Bu aramaya uyan kitap yok.",
+    "auteur": "Yazar",
+    "auteurAbsent": "Yazar bilgisi tamamlanacak",
+    "cherchable": "Bu kitapta ara",
+    "avertissement": "Kapsamlı olmayan çalışma listesi, bir uzman tarafından doğrulanmalıdır. Raflara göre sınıflandırma kitapların sıhhatini değerlendirmez.",
+    "familles": {
+      "neuf": {
+        "titre": "Dokuz büyük kitap",
+        "note": "İlk altısı Kütüb-i Sitte’dir; dokuzu genellikle birlikte dizinlenir."
+      },
+      "transmission": {
+        "titre": "Diğer büyük rivayet kitapları",
+        "note": "Fıkhi kapsamı genişletmek ve aynı rivayetin farklı versiyonlarını bulmak için."
+      },
+      "musnad": {
+        "titre": "Müsnedler",
+        "note": "Ravilere göre düzenlenmiş olup konu sınıflandırmasını tamamlar."
+      },
+      "specialises": {
+        "titre": "Mu’cemler ve özel eserler",
+        "note": "45 ile 50 arası numaralar, daha eski eserlerden derlenmiş ikincil derlemelerdir."
+      },
+      "compilations": {
+        "titre": "Büyük derlemeler ve özetler",
+        "note": "Başka yerlerde rivayet edilmiş hadisleri bir araya getirip düzenler."
+      },
+      "anciens": {
+        "titre": "Eski sahifeler ve belgeler",
+        "note": "Bazıları yalnızca sonraki rivayet veya alıntılarla bilinir."
+      },
+      "imamite": {
+        "titre": "İmamiyye geleneği",
+        "note": "Yazarlar doğrulanmış bir kaynaktan tamamlanacak."
+      },
+      "ibadite": {
+        "titre": "İbadiyye geleneği",
+        "note": "Yazarlar doğrulanmış bir kaynaktan tamamlanacak."
+      }
+    }
+  },
+  "themes": {
+    "titre": "Bir konu seçin",
+    "sousTitre": "İlgi alanlarınıza göre bölümleri keşfedin",
+    "retour": "Geri",
+    "retourThemes": "Konulara dön",
+    "aFournir": "İçerik eklenecek",
+    "chapitresAFournir": "Bu konunun bölümleri eklenecek.",
+    "precedent": "Önceki bölümler",
+    "suivant": "Sonraki bölümler",
+    "chapitre": "Bölüm {n}",
+    "aValider": "Taslaktaki metin, bir uzman tarafından doğrulanmalı.",
+    "liste": {
+      "croyance": {
+        "titre": "İman",
+        "description": "Tevhid, iman, melekler, peygamberler…"
+      },
+      "adoration": {
+        "titre": "İbadet",
+        "description": "Namaz, oruç, zekât, hac…"
+      },
+      "prophete": {
+        "titre": "Peygamber’in ﷺ hayatı",
+        "description": "Hayatı, özellikleri…"
+      },
+      "relations": {
+        "titre": "İlişkiler",
+        "description": "Aile, evlilik, haklar…"
+      },
+      "comportements": {
+        "titre": "Davranışlar",
+        "description": "Ahlak, erdem, iyi ameller…"
+      },
+      "finDesTemps": {
+        "titre": "Kıyamet alametleri",
+        "description": "Peygamber’in ﷺ ahir zamanla ilgili büyük alametlerini, önemli olaylarını ve uyarılarını keşfedin."
+      },
+      "science": {
+        "titre": "İlim",
+        "description": "Bilgi, öğrenme…"
+      },
+      "maladies": {
+        "titre": "Hastalıklar ve şifa",
+        "description": "Sağlık, şifa, korunma…"
+      },
+      "autres": {
+        "titre": "Diğer konular",
+        "description": "Çeşitli, okumalar, dualar…"
+      }
+    }
+  },
+  "chapitres": {
+    "titre": "Bölümlere göre gezinme",
+    "rechercher": "Bölüm ara…",
+    "menu": "Bölüm menüsü",
+    "citation": "“İlim arayan Allah’ın yolundadır.”",
+    "citationAuteur": "— Peygamber ﷺ",
+    "citationReference": "Taslaktaki alıntı, kaynak bir uzman tarafından doğrulanmalı.",
+    "ouvrir": "Aç",
+    "liste": {
+      "signesMineurs": {
+        "titre": "Küçük alametler",
+        "sousTitre": "Al-ʿAlāmāt aṣ-Ṣughrā",
+        "intro": "Küçük alametler, büyük alametlerden önce gerçekleşen olaylardır. Çoktur ve insanların gündelik hayatında görülür."
+      },
+      "signesMajeurs": {
+        "titre": "Büyük alametler",
+        "sousTitre": "Al-ʿAlāmāt al-Kubrā"
+      },
+      "dajjal": {
+        "titre": "Deccal’in çıkışı"
+      },
+      "issa": {
+        "titre": "Hz. İsa’nın inişi"
+      },
+      "finDuMonde": {
+        "titre": "Dünyanın sonu"
+      }
+    }
+  },
+  "chapitre": {
+    "fil": "Gezinti yolu",
+    "introduction": "Giriş",
+    "hadiths": "Hadisler",
+    "explications": "Açıklamalar",
+    "references": "Kaynaklar",
+    "audio": "Ses / Video",
+    "hadithsDuChapitre": "Bu bölümün hadisleri",
+    "hadithsAFournir": "Bu bölümün hadisleri doğrulanmış bir kaynaktan eklenecek.",
+    "onglets": "Bölüm içeriği"
+  },
+  "az": {
+    "titre": "A - Z dizini",
+    "sousTitre": "Tüm bölümlere A’dan Z’ye ulaşın",
+    "rechercher": "Bölüm veya anahtar kelime ara…",
+    "lettres": "Harfler",
+    "aucun": "Bu seçim için kayıt yok.",
+    "theme": "Konu",
+    "chapitre": "Bölüm",
+    "recueil": "Kitap",
+    "toutes": "Tümü"
   }
 }

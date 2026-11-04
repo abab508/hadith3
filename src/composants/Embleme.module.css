@@ -1,0 +1,22 @@
+/* Emblème doré « Milaghaiba » (capture du patron). Propriétés logiques uniquement. */
+.embleme{display:inline-flex;flex-direction:column;align-items:center;gap:.05rem;line-height:1;text-align:center;}
+.dome{inline-size:6.5rem;block-size:auto;margin-block-end:-.35rem;fill:none;stroke:#f2c877;stroke-width:1.4;stroke-linecap:round;filter:drop-shadow(0 0 6px #eebc6a88);}
+.dome circle{fill:#f2c877;stroke:none;}
+/* Or en relief : dégradé clair-foncé, liseré sombre et halo chaud. */
+.nomLatin{font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:.005em;
+  background:linear-gradient(180deg,#fff3c4 0%,#f6d27c 35%,#d99a3c 62%,#f3cf7f 80%,#a96c22 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 #5a3410) drop-shadow(0 0 14px #eebc6a66);}
+.ligneArabe{display:inline-flex;align-items:center;gap:.55rem;margin-block-start:.1rem;}
+.nomArabe{font-family:"Aref Ruqaa","Noto Naskh Arabic",serif;font-weight:700;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.2;
+  background:linear-gradient(180deg,#fff0b8,#e6aa4b 70%,#b47a2c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 #5a3410);}
+.losange{position:relative;inline-size:2.6rem;block-size:1px;background:linear-gradient(90deg,transparent,#f2c877);}
+.losange:last-child{background:linear-gradient(270deg,transparent,#f2c877);}
+.losange::after{content:"";position:absolute;inset-block-start:50%;inset-inline-end:-.2rem;inline-size:.38rem;block-size:.38rem;background:#f2c877;rotate:45deg;translate:0 -50%;}
+.losange:last-child::after{inset-inline-end:auto;inset-inline-start:-.2rem;}
+.mention{margin-block-start:.45rem;font-family:"Cinzel",serif;font-weight:500;font-size:.72rem;letter-spacing:.42em;color:#f3ead8;padding-inline-start:.42em;}
+/* Version de l'en-tête : plus petite, sans dôme ni mention. */
+.embleme[data-taille="petit"]{align-items:flex-start;}
+.embleme[data-taille="petit"] .nomLatin{font-size:1.55rem;filter:drop-shadow(0 1px 0 #5a3410) drop-shadow(0 0 8px #eebc6a55);}
+.embleme[data-taille="petit"] .ligneArabe{gap:.3rem;margin-block-start:0;}
+.embleme[data-taille="petit"] .nomArabe{font-size:.85rem;}
+.embleme[data-taille="petit"] .losange{display:none;}

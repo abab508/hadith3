@@ -43,7 +43,22 @@
         "texte": "Critical editions and recent translations: the reference and page are given, without copying the text."
       }
     },
-    "avertissement": "Milaghaiba is a research and documentation tool. It does not issue religious rulings and does not replace a specialist."
+    "avertissement": "Milaghaiba is a research and documentation tool. It does not issue religious rulings and does not replace a specialist.",
+    "hero": {
+      "titre": "The Hadiths",
+      "sousTitre": "A light for every age",
+      "texte": "Explore the teachings of the Prophet ﷺ through an immersive and interactive experience.",
+      "bouton": "Start exploring",
+      "recueils": "{n} collections",
+      "az": "A to Z",
+      "themes": "Varied themes",
+      "navigation": "Intuitive navigation"
+    },
+    "apercu": {
+      "titre": "Detailed hadith report",
+      "texte": "Follow the chain of transmission link by link, then open each narrator’s card.",
+      "bouton": "Open the detailed report"
+    }
   },
   "selecteurLangue": {
     "titre": "Language",
@@ -80,7 +95,11 @@
     "recherche": "Search",
     "chaine": "Search by chain",
     "glossaire": "Glossary",
-    "memorisation": "Memorize"
+    "memorisation": "Memorize",
+    "bibliotheque": "Library",
+    "themes": "Themes",
+    "chapitres": "Chapters",
+    "az": "A-Z"
   },
   "ouverture": {
     "titre": "Open the saved language",
@@ -142,7 +161,12 @@
   },
   "entete": {
     "slogan": "Hadith research and documentary verification",
-    "accueil": "Milaghaiba home"
+    "accueil": "Milaghaiba home",
+    "rechercher": "Search",
+    "langue": "Language",
+    "ambianceActiver": "Turn on ambient sound",
+    "ambianceCouper": "Turn off ambient sound",
+    "nomArabe": "الملة الغائبة"
   },
   "recherche": {
     "titre": "Results",
@@ -293,7 +317,11 @@
       "decesVers": "d. c. {annee} AH",
       "decesEntre": "d. between {debut} and {fin} AH",
       "aucun": "—",
-      "referenceACompleter": "volume and page to be added"
+      "referenceACompleter": "volume and page to be added",
+      "fiabilite": "Reliability",
+      "voirFiabilite": "See this narrator’s reliability",
+      "relations": "Relations in the sanad",
+      "onglets": "Card sections"
     },
     "generation": {
       "source": "Source of the hadith",
@@ -335,7 +363,17 @@
       "a-verifier": "To verify"
     },
     "avertissementData": "This is an example version with limited data.",
-    "isnadGuide": "Read the names in the shown order and select a transmitter to see their record. Sample data is not a scholarly authentication."
+    "isnadGuide": "Read the names in the shown order and select a transmitter to see their record. Sample data is not a scholarly authentication.",
+    "banniere": {
+      "surtitre": "Hadith library",
+      "titre": "Detailed hadith report",
+      "texte": "Analysis of a hadith’s chain of transmission (isnād) and narrators, with its routes, reliability judgements and references.",
+      "analyse": "Hadith analysis"
+    },
+    "navigationThematique": {
+      "titre": "Thematic navigation",
+      "texte": "hadiths are grouped into major themes and sub-themes."
+    }
   },
   "memorisation": {
     "titre": "Hadith memorization studio",
@@ -371,5 +409,152 @@
     "animations": "Animations",
     "activer": "Enable motion",
     "reduire": "Reduce motion"
+  },
+  "bibliotheque": {
+    "titre": "Library of collections",
+    "sousTitre": "Browse the shelves: {total} hadith collections, from the great Ṣaḥīḥ works to early documents.",
+    "filtrer": "Search for a collection or an author",
+    "toutes": "All shelves",
+    "compteur": "Collections shown: {n}",
+    "aucun": "No collection matches this search.",
+    "auteur": "Author",
+    "auteurAbsent": "Author to be completed",
+    "cherchable": "Search in this collection",
+    "avertissement": "Working list, not exhaustive, to be checked by a specialist. Shelf grouping does not judge the authenticity of the collections.",
+    "familles": {
+      "neuf": {
+        "titre": "The nine major collections",
+        "note": "The first six form the Kutub al-Sitta; the nine are often indexed together."
+      },
+      "transmission": {
+        "titre": "Other major transmission collections",
+        "note": "To widen legal coverage and find several versions of the same tradition."
+      },
+      "musnad": {
+        "titre": "The Musnad works",
+        "note": "Arranged by narrator, they complement the thematic arrangement."
+      },
+      "specialises": {
+        "titre": "Muʿjam and specialised works",
+        "note": "Numbers 45 to 50 are secondary compilations drawn from earlier works."
+      },
+      "compilations": {
+        "titre": "Major compilations and syntheses",
+        "note": "They gather and arrange hadiths already transmitted elsewhere."
+      },
+      "anciens": {
+        "titre": "Early collections and documents",
+        "note": "Some are known only through later transmissions or quotations."
+      },
+      "imamite": {
+        "titre": "Imami tradition",
+        "note": "Authors to be completed from a verified source."
+      },
+      "ibadite": {
+        "titre": "Ibadi tradition",
+        "note": "Authors to be completed from a verified source."
+      }
+    }
+  },
+  "themes": {
+    "titre": "Choose a theme",
+    "sousTitre": "Explore chapters by your interests",
+    "retour": "Back",
+    "retourThemes": "Back to themes",
+    "aFournir": "Content to be provided",
+    "chapitresAFournir": "The chapters of this theme are to be provided.",
+    "precedent": "Previous chapters",
+    "suivant": "Next chapters",
+    "chapitre": "Chapter {n}",
+    "aValider": "Text from the mock-up, to be checked by a specialist.",
+    "liste": {
+      "croyance": {
+        "titre": "Belief",
+        "description": "Tawhid, faith, angels, prophets…"
+      },
+      "adoration": {
+        "titre": "Worship",
+        "description": "Prayer, fasting, zakat, pilgrimage…"
+      },
+      "prophete": {
+        "titre": "The life of the Prophet ﷺ",
+        "description": "His biography, his qualities…"
+      },
+      "relations": {
+        "titre": "Relationships",
+        "description": "Family, marriage, rights…"
+      },
+      "comportements": {
+        "titre": "Conduct",
+        "description": "Ethics, morals, good deeds…"
+      },
+      "finDesTemps": {
+        "titre": "Signs of the end of time",
+        "description": "Discover the major signs, great events and warnings of the Prophet ﷺ about the end of time."
+      },
+      "science": {
+        "titre": "Knowledge",
+        "description": "Learning, study…"
+      },
+      "maladies": {
+        "titre": "Illness and remedies",
+        "description": "Health, healing, prevention…"
+      },
+      "autres": {
+        "titre": "Other themes",
+        "description": "Miscellaneous, readings, supplications…"
+      }
+    }
+  },
+  "chapitres": {
+    "titre": "Browse by chapter",
+    "rechercher": "Search a chapter…",
+    "menu": "Chapter menu",
+    "citation": "“Whoever seeks knowledge is on the path of Allah.”",
+    "citationAuteur": "— The Prophet ﷺ",
+    "citationReference": "Quote from the mock-up, reference to be checked by a specialist.",
+    "ouvrir": "Open",
+    "liste": {
+      "signesMineurs": {
+        "titre": "The minor signs",
+        "sousTitre": "Al-ʿAlāmāt aṣ-Ṣughrā",
+        "intro": "The minor signs are events that happen before the major signs. They are many and appear in people’s daily lives."
+      },
+      "signesMajeurs": {
+        "titre": "The major signs",
+        "sousTitre": "Al-ʿAlāmāt al-Kubrā"
+      },
+      "dajjal": {
+        "titre": "The coming of the Dajjal"
+      },
+      "issa": {
+        "titre": "The descent of ʿĪsā"
+      },
+      "finDuMonde": {
+        "titre": "The end of the world"
+      }
+    }
+  },
+  "chapitre": {
+    "fil": "Breadcrumb",
+    "introduction": "Introduction",
+    "hadiths": "Hadiths",
+    "explications": "Explanations",
+    "references": "References",
+    "audio": "Audio / Video",
+    "hadithsDuChapitre": "Hadiths in this chapter",
+    "hadithsAFournir": "The hadiths of this chapter are to be provided from a verified source.",
+    "onglets": "Chapter content"
+  },
+  "az": {
+    "titre": "A - Z index",
+    "sousTitre": "Reach every chapter, from A to Z",
+    "rechercher": "Search a chapter or a keyword…",
+    "lettres": "Letters",
+    "aucun": "No entry for this selection.",
+    "theme": "Theme",
+    "chapitre": "Chapter",
+    "recueil": "Collection",
+    "toutes": "All"
   }
 }

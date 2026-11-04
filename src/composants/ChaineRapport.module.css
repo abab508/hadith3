@@ -278,3 +278,59 @@
 .ficheNomAr{font-size:2rem;line-height:2;}
 @media(max-width:850px){.fiche{position:static;max-block-size:none;}.arbre{flex-basis:100%;}.suite{gap:.65rem;}.noeud{min-inline-size:8rem;}.fleche{inline-size:14px;}}
 @media(prefers-reduced-motion:reduce){.noeud{transition:none;transform:none!important;}}
+
+/* ---------- Mise en page de la capture du patron (cadres dorés, charte nuit et or) ---------- */
+.cadreOr{position:relative;border:1.5px solid #e3b866aa!important;border-radius:1.1rem;background:radial-gradient(ellipse at 20% 0,#16264a,transparent 60%),linear-gradient(180deg,#0f1b31,#0a1324);
+  box-shadow:inset 0 0 0 4px #0a1222,inset 0 0 0 5px #e3b86633,0 24px 60px #0009;}
+/* Fleurons dorés aux quatre coins. */
+.cadreOr::before,.cadreOr::after{content:"";position:absolute;inline-size:1.4rem;block-size:1.4rem;border:1.5px solid #f2c877;pointer-events:none;}
+.cadreOr::before{inset-block-start:.45rem;inset-inline-start:.45rem;border-inline-end:0;border-block-end:0;border-start-start-radius:.6rem;}
+.cadreOr::after{inset-block-end:.45rem;inset-inline-end:.45rem;border-inline-start:0;border-block-start:0;border-end-end-radius:.6rem;}
+.entete h2{display:flex;align-items:center;gap:.7rem;font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(1.4rem,2.4vw,1.9rem);color:#fff3cf;}
+.entete h2::after{display:none!important;}
+.ornement{inline-size:2.4rem;block-size:2.4rem;fill:none;stroke:#f2c877;stroke-width:1.2;filter:drop-shadow(0 0 6px #eebc6a66);animation:tournerOrnement 30s linear infinite;}
+.ornement circle{fill:#f2c877;stroke:none;}
+.guide{display:flex;align-items:center;gap:1rem;padding:.8rem 1.1rem;border:1px solid #e3b86680;border-radius:999px;background:#0d1a30;color:#f3ead8;}
+.info{flex:none;display:grid;place-items:center;inline-size:2rem;block-size:2rem;border-radius:50%;border:1.5px solid #f2c877;color:#f2c877;font-family:"Alegreya",serif;font-weight:700;font-style:italic;}
+.stats span{border:1.5px solid #e3b866aa!important;border-radius:999px!important;background:#0d1a30!important;padding:.35rem 1.2rem!important;}
+.stats strong{font-family:"Alegreya",serif;font-size:1.5rem;color:#f2c877;}
+.sousTitre{display:flex;align-items:center;gap:.6rem;font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:1.3rem;color:#fff3cf;}
+.sousTitre::after{content:"";flex:1;block-size:1px;background:linear-gradient(90deg,#e3b86699,transparent);}
+.pictoTitre{flex:none;inline-size:1.4rem;block-size:1.4rem;fill:none;stroke:#f2c877;stroke-width:1.5;stroke-linejoin:round;}
+.voie{padding:.8rem 1rem;border:1px solid #e3b86640;border-radius:.8rem;}
+.libelleVoie{display:flex;align-items:center;gap:.5rem;font-family:"Alegreya",serif;font-weight:700;color:#fff3cf;}
+/* Maillons : carte sombre bordée de la couleur de leur catégorie, lueur au survol. */
+.maillon{animation:maillonEntre .6s calc(var(--i) * .08s) both;}
+.noeud{border-radius:.8rem!important;border-width:1.5px!important;background:linear-gradient(180deg,color-mix(in srgb,var(--couleur) 16%,#0f1b31),#0b1528)!important;
+  box-shadow:inset 0 0 0 3px #0a1222,inset 0 0 0 4px color-mix(in srgb,var(--couleur) 30%,transparent),0 10px 24px #0008;transition:transform .3s,box-shadow .3s!important;}
+.noeud:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 3px #0a1222,inset 0 0 0 4px var(--couleur),0 0 26px color-mix(in srgb,var(--couleur) 45%,transparent)!important;}
+.noeud[aria-pressed="true"]{box-shadow:inset 0 0 0 3px #0a1222,inset 0 0 0 5px var(--couleur),0 0 34px color-mix(in srgb,var(--couleur) 60%,transparent)!important;}
+.nomAr{font-size:1.35rem!important;color:#fff6e3;}
+.nomLatin{font-family:"Alegreya",serif;color:#f3ead8;}
+/* Fiche du transmetteur. */
+.titreFiche{display:flex;align-items:center;gap:.7rem;margin:0;font-family:"Alegreya",serif;font-weight:700;font-size:1.35rem;color:#fff3cf;}
+.pictoFiche{display:grid;place-items:center;inline-size:2.6rem;block-size:2.6rem;border-radius:50%;border:1.5px solid #f2c877;}
+.pictoFiche svg{inline-size:1.4rem;block-size:1.4rem;fill:#f2c877;}
+.ficheNomAr{font-size:clamp(1.8rem,2.6vw,2.3rem)!important;color:#fff6e3;}
+.ficheNomLatin{font-family:"Alegreya",serif;font-weight:700;font-size:1.25rem;color:#fff3cf;}
+.ongletsFiche{display:grid;grid-template-columns:1fr 1fr;padding:.3rem;border:1.5px solid #e3b86680;border-radius:.9rem;background:#0a1324;}
+.ongletsFiche button{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-block-size:2.8rem;border:0;border-radius:.65rem;background:transparent;color:#f3ead8;font-family:"Alegreya",serif;font-weight:700;font-size:1.05rem;cursor:pointer;transition:background .3s,color .3s;}
+.ongletsFiche button svg{inline-size:1.3rem;block-size:1.3rem;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round;}
+.ongletsFiche button[aria-selected="true"]{background:linear-gradient(180deg,#fbe3a3,#e2ad56);color:#2a1a06;box-shadow:0 4px 16px #eebc6a55;}
+.panneauFiche{display:flex;flex-direction:column;gap:1rem;animation:maillonEntre .4s both;}
+.titreBloc{display:flex;align-items:center;gap:.55rem;font-family:"Alegreya",serif;font-weight:700;font-size:1.15rem;color:#fff3cf;}
+.titreBloc::after{content:"";flex:1;block-size:1px;background:linear-gradient(90deg,#e3b86680,transparent);}
+.titreBloc svg{flex:none;inline-size:1.3rem;block-size:1.3rem;fill:none;stroke:#f2c877;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.relations{display:grid!important;grid-template-columns:1fr 1fr;gap:1rem!important;}
+.relations>div+div{border-inline-start:1px solid #e3b86633;padding-inline-start:1rem;}
+.relations ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.45rem;}
+.etiquetteRelation{margin:0 0 .45rem;font-weight:700;color:#fff3cf;font-size:.9rem;}
+.puceRelation{inline-size:100%;padding:.55rem .8rem;border:1.5px solid #e3b866aa;border-radius:.6rem;background:#0d1a30;color:#fff3cf;font:inherit;font-family:"Alegreya",serif;font-weight:700;text-align:start;cursor:pointer;transition:box-shadow .3s,border-color .3s;}
+.puceRelation:hover{border-color:#f2c877;box-shadow:0 0 18px #eebc6a44;}
+.boutonOr{display:flex;align-items:center;justify-content:center;gap:.6rem;min-block-size:3.3rem;border:2px solid #fff0bd;border-radius:999px;cursor:pointer;
+  background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06;font-family:"Alegreya",serif;font-weight:700;font-size:1.15rem;
+  box-shadow:inset 0 0 0 3px #c98d3b55,0 8px 24px #eebc6a44;transition:transform .3s,box-shadow .3s;}
+.boutonOr:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 3px #c98d3b55,0 12px 34px #eebc6a77;}
+@keyframes maillonEntre{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tournerOrnement{to{rotate:360deg}}
+@media(max-width:560px){.relations{grid-template-columns:1fr;}.relations>div+div{border-inline-start:0;padding-inline-start:0;}}

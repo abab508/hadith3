@@ -43,7 +43,22 @@
         "texte": "Ediciones críticas y traducciones recientes: se indica la referencia y la página, sin copiar el texto."
       }
     },
-    "avertissement": "Milaghaiba es una herramienta de búsqueda y documentación. No emite dictámenes religiosos ni sustituye a un especialista."
+    "avertissement": "Milaghaiba es una herramienta de búsqueda y documentación. No emite dictámenes religiosos ni sustituye a un especialista.",
+    "hero": {
+      "titre": "Los hadices",
+      "sousTitre": "Una luz para cada época",
+      "texte": "Explora las enseñanzas del Profeta ﷺ a través de una experiencia inmersiva e interactiva.",
+      "bouton": "Empezar a explorar",
+      "recueils": "{n} colecciones",
+      "az": "De la A a la Z",
+      "themes": "Temas variados",
+      "navigation": "Navegación intuitiva"
+    },
+    "apercu": {
+      "titre": "Informe detallado del hadiz",
+      "texte": "Sigue la cadena de transmisión eslabón por eslabón y abre la ficha de cada transmisor.",
+      "bouton": "Abrir el informe detallado"
+    }
   },
   "selecteurLangue": {
     "titre": "Idioma",
@@ -80,7 +95,11 @@
     "recherche": "Búsqueda",
     "chaine": "Búsqueda por cadena",
     "glossaire": "Glosario",
-    "memorisation": "Memorizar"
+    "memorisation": "Memorizar",
+    "bibliotheque": "Biblioteca",
+    "themes": "Temas",
+    "chapitres": "Capítulos",
+    "az": "A-Z"
   },
   "ouverture": {
     "titre": "Abrir el idioma guardado",
@@ -142,7 +161,12 @@
   },
   "entete": {
     "slogan": "Búsqueda y verificación documental de hadices",
-    "accueil": "Inicio de Milaghaiba"
+    "accueil": "Inicio de Milaghaiba",
+    "rechercher": "Buscar",
+    "langue": "Idioma",
+    "ambianceActiver": "Activar el ambiente sonoro",
+    "ambianceCouper": "Desactivar el ambiente sonoro",
+    "nomArabe": "الملة الغائبة"
   },
   "recherche": {
     "titre": "Resultados",
@@ -293,7 +317,11 @@
       "decesVers": "m. hacia {annee} H",
       "decesEntre": "m. entre {debut} y {fin} H",
       "aucun": "—",
-      "referenceACompleter": "tomo y página por completar"
+      "referenceACompleter": "tomo y página por completar",
+      "fiabilite": "Fiabilidad",
+      "voirFiabilite": "Ver la fiabilidad de este transmisor",
+      "relations": "Relaciones en el sanad",
+      "onglets": "Secciones de la ficha"
     },
     "generation": {
       "source": "Fuente del hadiz",
@@ -335,7 +363,17 @@
       "a-verifier": "Por verificar"
     },
     "avertissementData": "Esta es una versión de ejemplo con datos limitados.",
-    "isnadGuide": "Sigue los nombres indicados y pulsa uno para abrir su ficha. Los datos de ejemplo no son una certificación religiosa."
+    "isnadGuide": "Sigue los nombres indicados y pulsa uno para abrir su ficha. Los datos de ejemplo no son una certificación religiosa.",
+    "banniere": {
+      "surtitre": "Biblioteca de hadices",
+      "titre": "Informe detallado del hadiz",
+      "texte": "Análisis de la cadena de transmisión (isnād) y de los transmisores de un hadiz, con el estudio de las vías, los juicios de fiabilidad y las referencias.",
+      "analyse": "Análisis del hadiz"
+    },
+    "navigationThematique": {
+      "titre": "Navegación temática",
+      "texte": "los hadices se clasifican por grandes temas y subtemas."
+    }
   },
   "memorisation": {
     "titre": "Taller de memorización de hadices",
@@ -371,5 +409,152 @@
     "animations": "Animaciones",
     "activer": "Activar animaciones",
     "reduire": "Reducir animaciones"
+  },
+  "bibliotheque": {
+    "titre": "Biblioteca de colecciones",
+    "sousTitre": "Recorre los estantes: {total} colecciones de hadices, desde los grandes Ṣaḥīḥ hasta los documentos antiguos.",
+    "filtrer": "Buscar una colección o un autor",
+    "toutes": "Todos los estantes",
+    "compteur": "Colecciones mostradas: {n}",
+    "aucun": "Ninguna colección coincide con esta búsqueda.",
+    "auteur": "Autor",
+    "auteurAbsent": "Autor por completar",
+    "cherchable": "Buscar en esta colección",
+    "avertissement": "Lista de trabajo no exhaustiva, pendiente de revisión por un especialista. La clasificación por estantes no juzga la autenticidad de las colecciones.",
+    "familles": {
+      "neuf": {
+        "titre": "Las nueve grandes colecciones",
+        "note": "Las seis primeras forman los Kutub al-Sitta; las nueve suelen indexarse juntas."
+      },
+      "transmission": {
+        "titre": "Otras grandes colecciones de transmisión",
+        "note": "Para ampliar la cobertura jurídica y encontrar varias versiones de una misma tradición."
+      },
+      "musnad": {
+        "titre": "Los Musnad",
+        "note": "Ordenados por transmisor, completan la clasificación temática."
+      },
+      "specialises": {
+        "titre": "Muʿjam y obras especializadas",
+        "note": "Los números 45 a 50 son compilaciones secundarias tomadas de obras anteriores."
+      },
+      "compilations": {
+        "titre": "Grandes compilaciones y síntesis",
+        "note": "Reúnen y ordenan hadices ya transmitidos en otras obras."
+      },
+      "anciens": {
+        "titre": "Colecciones y documentos antiguos",
+        "note": "Algunos solo se conocen por transmisiones o citas posteriores."
+      },
+      "imamite": {
+        "titre": "Tradición imamí",
+        "note": "Autores por completar a partir de una fuente verificada."
+      },
+      "ibadite": {
+        "titre": "Tradición ibadí",
+        "note": "Autores por completar a partir de una fuente verificada."
+      }
+    }
+  },
+  "themes": {
+    "titre": "Elige un tema",
+    "sousTitre": "Explora los capítulos según tus intereses",
+    "retour": "Volver",
+    "retourThemes": "Volver a los temas",
+    "aFournir": "Contenido por aportar",
+    "chapitresAFournir": "Los capítulos de este tema están por aportar.",
+    "precedent": "Capítulos anteriores",
+    "suivant": "Capítulos siguientes",
+    "chapitre": "Capítulo {n}",
+    "aValider": "Texto de la maqueta, pendiente de revisión por un especialista.",
+    "liste": {
+      "croyance": {
+        "titre": "La creencia",
+        "description": "Tawhid, fe, ángeles, profetas…"
+      },
+      "adoration": {
+        "titre": "La adoración",
+        "description": "Oración, ayuno, zakat, peregrinación…"
+      },
+      "prophete": {
+        "titre": "La vida del Profeta ﷺ",
+        "description": "Su biografía, sus cualidades…"
+      },
+      "relations": {
+        "titre": "Las relaciones",
+        "description": "Familia, matrimonio, derechos…"
+      },
+      "comportements": {
+        "titre": "Los comportamientos",
+        "description": "Ética, moral, buenas acciones…"
+      },
+      "finDesTemps": {
+        "titre": "Las señales del fin de los tiempos",
+        "description": "Descubre las grandes señales, los acontecimientos mayores y las advertencias del Profeta ﷺ sobre el fin de los tiempos."
+      },
+      "science": {
+        "titre": "La ciencia",
+        "description": "Saber, aprendizaje…"
+      },
+      "maladies": {
+        "titre": "Enfermedades y remedios",
+        "description": "Salud, curación, prevención…"
+      },
+      "autres": {
+        "titre": "Otros temas",
+        "description": "Varios, lecturas, invocaciones…"
+      }
+    }
+  },
+  "chapitres": {
+    "titre": "Navegación por capítulos",
+    "rechercher": "Buscar un capítulo…",
+    "menu": "Menú de capítulos",
+    "citation": "«Quien busca el conocimiento está en el camino de Allah.»",
+    "citationAuteur": "— El Profeta ﷺ",
+    "citationReference": "Cita de la maqueta, referencia por verificar por un especialista.",
+    "ouvrir": "Abrir",
+    "liste": {
+      "signesMineurs": {
+        "titre": "Las señales menores",
+        "sousTitre": "Al-ʿAlāmāt aṣ-Ṣughrā",
+        "intro": "Las señales menores son acontecimientos que ocurren antes de las grandes señales. Son numerosas y se manifiestan en la vida cotidiana de la gente."
+      },
+      "signesMajeurs": {
+        "titre": "Las señales mayores",
+        "sousTitre": "Al-ʿAlāmāt al-Kubrā"
+      },
+      "dajjal": {
+        "titre": "La llegada del Dajjal"
+      },
+      "issa": {
+        "titre": "El descenso de ʿĪsā"
+      },
+      "finDuMonde": {
+        "titre": "El fin del mundo"
+      }
+    }
+  },
+  "chapitre": {
+    "fil": "Ruta de navegación",
+    "introduction": "Introducción",
+    "hadiths": "Hadices",
+    "explications": "Explicaciones",
+    "references": "Referencias",
+    "audio": "Audio / Vídeo",
+    "hadithsDuChapitre": "Hadices de este capítulo",
+    "hadithsAFournir": "Los hadices de este capítulo se aportarán desde una fuente verificada.",
+    "onglets": "Contenido del capítulo"
+  },
+  "az": {
+    "titre": "Índice A - Z",
+    "sousTitre": "Accede a todos los capítulos, de la A a la Z",
+    "rechercher": "Buscar un capítulo o una palabra clave…",
+    "lettres": "Letras",
+    "aucun": "Ninguna entrada para esta selección.",
+    "theme": "Tema",
+    "chapitre": "Capítulo",
+    "recueil": "Colección",
+    "toutes": "Todas"
   }
 }
