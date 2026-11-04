@@ -27,14 +27,21 @@ const legendes = {
 
 const tousLesOuvrages = corpus.bibliotheques.flatMap((b) => b.ouvrages.map((o) => o.id));
 
+export type RecitImporte = { id: string; recueilAr: string; recueilLatin: string; numero: string; extrait: string; source: string };
+
 // Recherche par chaîne, version épurée : un cadre « Votre recherche » à gauche,
 // l'aperçu de la chaîne à droite, et les bibliothèques repliées dans « Options avancées ».
-export default function RechercheChaine({ hadithInitial, requete = "", trouves = null }: { hadithInitial: string; requete?: string; trouves?: string[] | null }) {
+export default function RechercheChaine({ hadithInitial, requete = "", trouves = null, recits = [], totalRecits = 0 }: {
+  hadithInitial: string; requete?: string; trouves?: string[] | null; recits?: RecitImporte[]; totalRecits?: number;
+}) {
   const locale = useLocale();
   const t = useTranslations("chaine");
   const tRecherche = useTranslations("recherche");
   const tRapport = useTranslations("rapport");
-  const [hadithId, setHadithId] = useState(hadithInitial);
+  const [hadithId, setHadithIdBrut] = useState(hadithInitial);
+  // Récit de la base choisi (texte arabe seul) : remplace l'aperçu de chaîne par un avertissement honnête.
+  const [recitChoisi, setRecitChoisi] = useState<RecitImporte | null>(trouves && trouves.length === 0 && recits[0] ? recits[0] : null);
+  const setHadithId = (id: string) => { setHadithIdBrut(id); setRecitChoisi(null); };
   const [chaine, setChaine] = useState<string[]>([]);
   const [saisie, setSaisie] = useState("");
   const [faibles, setFaibles] = useState(true);
@@ -100,12 +107,13 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
           </div>
           {trouves && (
             <div className={styles.trouves} aria-live="polite">
+              <p className={styles.etiquetteListe}>{t("analyses")}</p>
               <p className={styles.aide}>{t("resultatsHadith", { count: trouves.length })}</p>
               {trouves.length > 0 && (
                 <ul>
                   {trouves.map((id) => (
                     <li key={id}>
-                      <button type="button" className={styles.trouve} aria-pressed={hadithId === id} onClick={() => setHadithId(id)}>
+                      <button type="button" className={styles.trouve} aria-pressed={!recitChoisi && hadithId === id} onClick={() => setHadithId(id)}>
                         <span className={styles.referenceTrouve}>{reference(id)}</span>
                         <span lang="ar" dir="rtl" className={`texte-arabe ${styles.extrait}`}>{hadithParId(id)?.requeteAr}</span>
                       </button>
@@ -113,6 +121,24 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
                   ))}
                 </ul>
               )}
+              <p className={styles.etiquetteListe}>{t("autresRecits")}</p>
+              <p className={styles.aide}>{t("nombreRecits", { count: totalRecits })}</p>
+              {recits.length > 0 && (
+                <ul className={styles.listeRecits}>
+                  {recits.map((r) => (
+                    <li key={r.id}>
+                      <button type="button" className={`${styles.trouve} ${styles.recit}`} aria-pressed={recitChoisi?.id === r.id} onClick={() => setRecitChoisi(r)}>
+                        <span className={styles.referenceTrouve}><bdi lang="ar-Latn">{r.recueilLatin}</bdi> · <bdi dir="ltr">n° {r.numero}</bdi></span>
+                        <span lang="ar" dir="rtl" className={`texte-arabe ${styles.extrait}`}>{r.extrait}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {totalRecits > recits.length && (
+                <p className={styles.lienTexte}><Link href={{ pathname: "/recherche", query: { q: requete } }}>{t("voirTous")} ({totalRecits}) ↗</Link></p>
+              )}
+              {trouves.length === 0 && totalRecits === 0 && <p className={styles.astuce}>{t("astuceArabe")}</p>}
             </div>
           )}
         </form>
@@ -161,9 +187,13 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
         </label>
 
         <div className={styles.envoi}>
-          <Link href={`/rapport/${hadithId}`} className={styles.generer} aria-describedby="resume-chaine">
-            {t("generer")} <span aria-hidden="true" className={styles.fleche}>→</span>
-          </Link>
+          {recitChoisi ? (
+            <a href={recitChoisi.source} target="_blank" rel="noopener noreferrer" className={styles.generer}>{t("voirSource")} <span aria-hidden="true" className={styles.fleche}>↗</span></a>
+          ) : (
+            <Link href={`/rapport/${hadithId}`} className={styles.generer} aria-describedby="resume-chaine">
+              {t("generer")} <span aria-hidden="true" className={styles.fleche}>→</span>
+            </Link>
+          )}
           <p id="resume-chaine" className={styles.resume} aria-live="polite">
             {t("resumeOuvrages", { count: choisis.length })} · {t("resumeBibliotheques", { count: actives.length })}
           </p>
@@ -173,6 +203,14 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
 
       <section className={styles.apercu} aria-labelledby="titre-apercu-chaine">
         <h2 id="titre-apercu-chaine" className={styles.titreCadre}>{t("apercu")}</h2>
+        {recitChoisi ? (
+          <div className={styles.recitChoisi}>
+            <p className={styles.referenceTrouve}><bdi lang="ar" dir="rtl" className="texte-arabe">{recitChoisi.recueilAr}</bdi> · <bdi dir="ltr">n° {recitChoisi.numero}</bdi></p>
+            <p lang="ar" dir="rtl" className={`texte-arabe ${styles.extraitGrand}`}>{recitChoisi.extrait}</p>
+            <p className={styles.astuce}>{t("chaineNonAnalysee")}</p>
+            <a href={recitChoisi.source} target="_blank" rel="noopener noreferrer" className={styles.lienSource}>{t("voirSource")} ↗</a>
+          </div>
+        ) : (<>
         <p className={styles.aide}>{t("apercuAide")}</p>
         <ol className={styles.ligne}>
           {tronc.map((id, i) => {
@@ -192,6 +230,7 @@ export default function RechercheChaine({ hadithInitial, requete = "", trouves =
           })}
         </ol>
         <p className={styles.suite}>{t("voiesSuite", { count: voies.length })}</p>
+        </>)}
       </section>
 
       <details className={styles.options}>

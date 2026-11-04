@@ -290,7 +290,14 @@
     "chercherHadith": "Hadisi bul: bir kelime (Arapça veya çeviri) ya da bir numara",
     "exempleHadith": "örn. النيات, niyet, 8, Bukhari 13",
     "chercherBouton": "Ara",
-    "resultatsHadith": "{count, plural, =0 {Örnek derlemede hadis bulunamadı} other {# hadis bulundu: doğrulanacak olanı seçin}}"
+    "resultatsHadith": "{count, plural, =0 {Örnek derlemede hadis bulunamadı} other {# hadis bulundu: doğrulanacak olanı seçin}}",
+    "analyses": "İncelenmiş hadisler: senet ve rapor mevcut",
+    "autresRecits": "Tabandaki diğer rivayetler: yalnızca Arapça metin, senet henüz incelenmedi",
+    "nombreRecits": "Tabanda {count, plural, =0 {rivayet yok} other {# rivayet bulundu}}",
+    "voirTous": "Tüm sonuçları Arama sayfasında gör",
+    "chaineNonAnalysee": "Bu rivayetin seneti henüz incelenmedi: ayrıntılı rapor mevcut değil. Metin kaynağında doğrulanmalıdır.",
+    "voirSource": "Metni kaynağında gör",
+    "astuceArabe": "Tabandaki rivayetler Arapçadır: Arapça bir kelime (örn. الماء veya الصلاة) ya da bir numara deneyin."
   },
   "rapport": {
     "surtitre": "Belgesel rapor",

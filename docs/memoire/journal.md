@@ -104,3 +104,8 @@
 - Fait : composant TexteMixte (URL isolées en LTR, jamais raccourcies, ponctuation arabe hors du lien) branché sur les textes rédigés des rapports ; relecture des 12 critères dans docs/livraison/relecture-exigence-02.md (12/12 conformes et testés, limites listées).
 - Vérifié : 134 tests unitaires, 9 contrôles, build, 65/65 tests navigateur.
 - Prochaine étape : relecture humaine des traductions, validation des termes, tests automatiques sur chaque PR.
+
+## 2026-11-04 — Recherche par chaîne : toute la base
+- Fait : la recherche du hadith interroge aussi les 245 récits importés (texte arabe seul) ; un récit choisi affiche son texte, la mention « chaîne pas encore analysée » et le lien vers la source, sans faux rapport ; conseil de chercher en arabe quand un mot français ne donne rien. Mise en ligne : PR n° 21 fusionnée, site Render basculé sur la version nuit et or (mina-gaiba-2 = 35c6d96).
+- Vérifié : 134 tests unitaires, build, 66/66 tests navigateur.
+- Prochaine étape : PR de ce changement ; traductions françaises des récits à fournir depuis une source vérifiée pour chercher en français.

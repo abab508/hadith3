@@ -165,3 +165,16 @@ test("recherche par chaîne : retrouver le hadith par un mot ou par un numéro, 
   await page.getByRole("link", { name: fr.chaine.generer }).click();
   await expect(page).toHaveURL(/\/fr\/rapport\/bukhari-8$/);
 });
+
+test("recherche par chaîne : toute la base est interrogée, récits arabes sans chaîne signalés honnêtement", async ({ page }) => {
+  // Un mot arabe trouve aussi les récits importés (texte arabe seul) : choisis, ils ne donnent pas de faux rapport.
+  await page.goto("/fr/chaine?q=" + encodeURIComponent("الماء"));
+  const recits = page.locator('[aria-labelledby="titre-votre-recherche"] button[aria-pressed]').filter({ hasText: /n° \d+/ });
+  expect(await recits.count()).toBeGreaterThan(0);
+  await expect(page.getByText(fr.chaine.chaineNonAnalysee)).toBeVisible();
+  await expect(page.getByRole("link", { name: fr.chaine.generer })).toHaveCount(0);
+
+  // Un mot français absent de la base : la page conseille de chercher en arabe.
+  await page.goto("/fr/chaine?q=boire");
+  await expect(page.getByText(fr.chaine.astuceArabe)).toBeVisible();
+});
