@@ -669,5 +669,32 @@
     "introuvable": "Este hadiz no se encuentra en la colección.",
     "source": "Texto, cadenas y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0, publicada en el repositorio de datos de Milaghaiba. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
     "guide": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena dada para este hadiz por la propia base hadith-kg."
+  },
+  "chapitreKg": {
+    "compte": "{nombre, number} hadices · {sous, number} subcapítulos",
+    "nbHadiths": "{count, plural, one {# hadiz} other {# hadices}}",
+    "illustration": "ilustración {n}",
+    "sourceTitres": "Títulos traducidos del árabe por IA, por revisar; se muestra al lado el título árabe de la fuente. Ilustraciones dibujadas para el sitio, sin representar seres vivos.",
+    "autres": "Otros hadices del capítulo",
+    "tousLesHadiths": "Todos los hadices del capítulo",
+    "explications": "Aún no hay explicación (comentario de un sabio) para este capítulo: debe proceder de una fuente revisada por un especialista.",
+    "referencesIntro": "Colecciones que contienen los hadices de este capítulo, con su número:",
+    "source": "Clasificación, capítulos y hadices: índice « موضوعات الحديث الشريف » de la base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0.",
+    "lancer": "Iniciar la presentación",
+    "pause": "Pausa",
+    "ecouter": "Escuchar",
+    "arreter": "Detener",
+    "voix": "Lectura con la voz sintética de su navegador (no es una voz grabada).",
+    "sansVoix": "Su navegador no ofrece voz sintética.",
+    "diapo": "Imagen",
+    "sousChapitre": "Subcapítulo",
+    "pages": "Páginas",
+    "page": "Página {page} de {total}",
+    "precedente": "Página anterior",
+    "suivante": "Página siguiente",
+    "numero": "n.º {n}",
+    "ouvrir": "Abrir el hadiz",
+    "indisponible": "Texto no disponible por el momento.",
+    "aucunHadith": "Ningún hadiz de nuestras colecciones en este subcapítulo."
   }
 }

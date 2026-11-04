@@ -669,5 +669,32 @@
     "introuvable": "Ce hadith est introuvable dans le recueil.",
     "source": "Texte, chaînes et fiches : base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0, publiée dans le dépôt de données Milaghaiba. Jugements cités tels qu’ils figurent dans la source, à vérifier par un spécialiste.",
     "guide": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne donnée pour ce hadith par la base hadith-kg elle-même."
+  },
+  "chapitreKg": {
+    "compte": "{nombre, number} hadiths · {sous, number} sous-chapitres",
+    "nbHadiths": "{count, plural, one {# hadith} other {# hadiths}}",
+    "illustration": "illustration {n}",
+    "sourceTitres": "Titres traduits de l’arabe par IA, à relire ; l’intitulé arabe de la source est donné à côté. Illustrations dessinées pour le site, sans représentation d’êtres vivants.",
+    "autres": "Autres hadiths du chapitre",
+    "tousLesHadiths": "Tous les hadiths du chapitre",
+    "explications": "Pas encore d’explication (commentaire d’un savant) pour ce chapitre : elle doit venir d’une source vérifiée par un spécialiste.",
+    "referencesIntro": "Recueils où se trouvent les hadiths de ce chapitre, avec leur nombre :",
+    "source": "Classement, chapitres et hadiths : index « موضوعات الحديث الشريف » de la base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0.",
+    "lancer": "Lancer la présentation",
+    "pause": "Pause",
+    "ecouter": "Écouter",
+    "arreter": "Arrêter",
+    "voix": "Lecture par la voix de synthèse de votre navigateur (pas une voix enregistrée).",
+    "sansVoix": "Votre navigateur ne propose pas de voix de synthèse.",
+    "diapo": "Image",
+    "sousChapitre": "Sous-chapitre",
+    "pages": "Pages",
+    "page": "Page {page} sur {total}",
+    "precedente": "Page précédente",
+    "suivante": "Page suivante",
+    "numero": "n° {n}",
+    "ouvrir": "Ouvrir le hadith",
+    "indisponible": "Texte momentanément indisponible.",
+    "aucunHadith": "Aucun hadith de nos recueils dans ce sous-chapitre."
   }
 }

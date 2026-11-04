@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import ListeChapitres, { type EntreeTheme } from "@/composants/ListeChapitres";
-import { chapitresDuTheme, themes } from "@/donnees/themes";
+import ImageDecorative from "@/composants/ImageDecorative";
+import CartesIllustrees from "@/composants/CartesIllustrees";
+import { chapitreParId, chapitres, themes } from "@/donnees/themes";
+import { chapitreKg, chapitresDuThemeKg, titreKg } from "@/donnees/chapitres-kg";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
 import styles from "@/composants/Pages.module.css";
 
@@ -28,13 +31,17 @@ export default async function PageChapitres({ params }: { params: Promise<{ loca
   const t = await getTranslations("chapitres");
   const tt = await getTranslations("themes");
   const nav = await getTranslations("navigation");
+  const tk = await getTranslations("chapitreKg");
 
   const entrees: EntreeTheme[] = themes.map((theme, i) => ({
     id: theme.id,
     numero: i + 1,
     titre: tt(clesThemes[theme.cle].titre),
     icone: theme.icone,
-    chapitres: chapitresDuTheme(theme.id).map((c) => ({ id: c.id, titre: t(clesChapitres[c.cle].titre) })),
+    chapitres: chapitresDuThemeKg(theme.id).map((c) => {
+      const fixe = chapitreParId(c.id);
+      return { id: c.id, titre: fixe ? t(clesChapitres[fixe.cle].titre) : titreKg(c, locale).texte };
+    }),
   }));
 
   return (
@@ -56,13 +63,20 @@ export default async function PageChapitres({ params }: { params: Promise<{ loca
         <ListeChapitres entrees={entrees} rechercher={t("rechercher")} aFournir={tt("chapitresAFournir")} />
       </section>
       <figure className={styles.citation}>
-        <img src="/images/maquette/citation.jpg" alt="" />
+        <ImageDecorative src="/images/hd/citation.png" sizes="(max-width: 1100px) 1px, calc(100vw - 43rem)" />
         <blockquote>
           <p>{t("citation")}</p>
           <footer>{t("citationAuteur")}</footer>
         </blockquote>
         <figcaption className={styles.mention}>{t("citationReference")}</figcaption>
       </figure>
+      <section className={`${styles.galerieIllustree} ${styles.galerieChapitres}`} aria-label={t("titre")}>
+        <CartesIllustrees libelle={t("titre")} cartes={chapitres.map((chapitre) => ({
+          id: chapitre.id, href: `/chapitres/${chapitre.id}`, image: `/images/hd/${chapitre.image}.png`,
+          titre: t(clesChapitres[chapitre.cle].titre),
+          description: chapitreKg(chapitre.id) ? tk("compte", { nombre: chapitreKg(chapitre.id)!.nombre, sous: chapitreKg(chapitre.id)!.sous.length }) : tt("aFournir"),
+        }))} />
+      </section>
     </main>
   );
 }

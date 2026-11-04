@@ -210,3 +210,14 @@ test("bibliothèque : un recueil hadith-kg se lit, puis son rapport montre les f
   await expect(page.getByRole("heading", { name: fr.rapportTexte.chaine })).toBeVisible();
   await expect(page.locator("#fiche-transmetteur")).toContainText(fr.rapportTexte.nomComplet);
 });
+
+test("chapitres : un thème mène à ses chapitres, sous-chapitres et hadiths", async ({ page }) => {
+  await page.goto("/fr/themes/maladies-et-remedes");
+  await page.getByRole("link", { name: /La médecine et les remèdes/ }).click();
+  await expect(page).toHaveURL(/\/fr\/chapitres\/c53720$/);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("La médecine et les remèdes");
+  await page.getByRole("tab", { name: fr.chapitre.hadiths }).click();
+  await page.locator('a[href*="/fr/chapitres/c53720/s"]').first().click();
+  await expect(page).toHaveURL(/\/fr\/chapitres\/c53720\/s\d+$/);
+  await expect(page.getByRole("link", { name: fr.chapitreKg.ouvrir }).first()).toBeVisible();
+});

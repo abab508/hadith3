@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import IconeTheme from "@/composants/IconeTheme";
-import { themes } from "@/donnees/themes";
+import ImageDecorative from "@/composants/ImageDecorative";
+import { imageTheme, themes } from "@/donnees/themes";
+import CartesIllustrees from "@/composants/CartesIllustrees";
 import { clesThemes } from "@/donnees/cles-themes";
 import styles from "@/composants/Pages.module.css";
 
@@ -24,9 +26,11 @@ export default async function PageThemes({ params }: { params: Promise<{ locale:
         <h1 className={styles.titreCentre}>{t("titre")}</h1>
         <p className={styles.sousTitreCentre}>{t("sousTitre")}</p>
       </div>
-      {/* Carte illustrée de la maquette ; les étiquettes réelles sont posées sur les zones floutées. */}
+      {/* Carte restaurée de la maquette ; les étiquettes restent de vrais textes accessibles. */}
       <div className={styles.carte} dir="ltr">
-        <img className={styles.imageCarte} src="/images/maquette/themes.jpg" alt="" />
+        <div className={styles.cadreCarte}>
+          <ImageDecorative className={styles.imageCarte} src="/images/hd/themes.png" sizes="(max-width: 1440px) 100vw, 90rem" preload />
+        </div>
         <span className={styles.brumeCarte} aria-hidden="true" />
         <ul className={styles.etiquettes}>
           {themes.map((theme, i) => (
@@ -42,6 +46,12 @@ export default async function PageThemes({ params }: { params: Promise<{ locale:
           ))}
         </ul>
       </div>
+      <section className={styles.galerieIllustree} aria-label={t("titre")}>
+        <CartesIllustrees libelle={t("titre")} cartes={themes.map((theme) => ({
+          id: theme.id, href: `/themes/${theme.id}`, image: imageTheme(theme.id),
+          titre: t(clesThemes[theme.cle].titre), description: t(clesThemes[theme.cle].description),
+        }))} />
+      </section>
     </main>
   );
 }

@@ -1,0 +1,20 @@
+/* Présentation animée d'un chapitre — charte nuit et or, propriétés logiques uniquement. */
+.presentation{display:flex;flex-direction:column;gap:.8rem;}
+.scene{position:relative;overflow:hidden;border:1.5px solid #e3b866aa;border-radius:1rem;aspect-ratio:16/9;background:#0a1324;}
+.diapo{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;}
+.diapo[data-active="true"]{opacity:1;}
+.diapo[data-active="true"] svg{animation:zoom 9s ease-out both;}
+.legende{position:absolute;inset-inline:0;inset-block-end:0;margin:0;padding:2.4rem 1.2rem 1rem;background:linear-gradient(0deg,#05080fdd,transparent);
+  color:#fff3cf;font-family:"Alegreya",serif;font-weight:700;font-size:clamp(1rem,2.2vw,1.35rem);text-align:center;animation:monter .9s both;}
+.commandes{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;}
+.commandes>button,.ecouter{min-block-size:2.6rem;padding-inline:1.1rem;border:1.5px solid #f2c877;border-radius:999px;background:transparent;color:#fff3cf;font:inherit;font-weight:700;cursor:pointer;}
+.commandes>button[aria-pressed="true"]{background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06;border-color:#fff0bd;}
+.commandes>button:disabled{opacity:.5;cursor:not-allowed;}
+.points{display:flex;gap:.4rem;margin-inline-start:auto;}
+.points button{inline-size:.75rem;block-size:.75rem;padding:0;border:1px solid #e8b35c;border-radius:50%;background:transparent;cursor:pointer;}
+.points button[aria-current="true"]{background:#e8b35c;}
+.note{margin:0;color:var(--discret);font-size:.82rem;}
+.ecouter{min-block-size:2.2rem;font-size:.85rem;}
+@keyframes zoom{from{scale:1}to{scale:1.08}}
+@keyframes monter{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+@media (prefers-reduced-motion:reduce){.diapo,.diapo svg,.legende{animation:none!important;transition:none!important;}}

@@ -669,5 +669,32 @@
     "introuvable": "Hadis ini tidak ditemukan dalam kitab.",
     "source": "Teks, sanad dan kartu: basis data «الجامع — Hadith Knowledge Graph» (emadjumaah), lisensi CC BY 4.0, diterbitkan di repositori data Milaghaiba. Penilaian dikutip sebagaimana dalam sumber, perlu diperiksa ahli.",
     "guide": "Baca nama sesuai urutan, lalu klik perawi untuk membuka kartunya. Sanad hadis ini diberikan langsung oleh basis data hadith-kg."
+  },
+  "chapitreKg": {
+    "compte": "{nombre, number} hadis · {sous, number} subbab",
+    "nbHadiths": "{count, plural, other {# hadis}}",
+    "illustration": "ilustrasi {n}",
+    "sourceTitres": "Judul diterjemahkan dari bahasa Arab oleh AI, perlu diperiksa; judul Arab dari sumber ditampilkan di sampingnya. Ilustrasi digambar untuk situs, tanpa menggambarkan makhluk hidup.",
+    "autres": "Hadis lain dalam bab ini",
+    "tousLesHadiths": "Semua hadis dalam bab ini",
+    "explications": "Belum ada penjelasan (syarah ulama) untuk bab ini: harus berasal dari sumber yang diperiksa ahli.",
+    "referencesIntro": "Kitab yang memuat hadis bab ini, beserta jumlahnya:",
+    "source": "Klasifikasi, bab dan hadis: indeks « موضوعات الحديث الشريف » dari basis data «الجامع — Hadith Knowledge Graph» (emadjumaah), lisensi CC BY 4.0.",
+    "lancer": "Mulai presentasi",
+    "pause": "Jeda",
+    "ecouter": "Dengarkan",
+    "arreter": "Hentikan",
+    "voix": "Dibacakan dengan suara sintetis peramban Anda (bukan suara rekaman).",
+    "sansVoix": "Peramban Anda tidak menyediakan suara sintetis.",
+    "diapo": "Gambar",
+    "sousChapitre": "Subbab",
+    "pages": "Halaman",
+    "page": "Halaman {page} dari {total}",
+    "precedente": "Halaman sebelumnya",
+    "suivante": "Halaman berikutnya",
+    "numero": "no. {n}",
+    "ouvrir": "Buka hadis",
+    "indisponible": "Teks sementara tidak tersedia.",
+    "aucunHadith": "Tidak ada hadis dari kitab kami dalam subbab ini."
   }
 }
