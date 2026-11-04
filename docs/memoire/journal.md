@@ -79,3 +79,8 @@
 - Fait : glossaire (fiche arabe = terme + définition, test précisé) ; recherche (une carte par hadith avec ses références depuis 7f24c2b, test mis à jour). Aucun code du site modifié.
 - Vérifié : build et 61/61 tests navigateur.
 - Prochaine étape : relecture et fusion de la PR n° 17 par le patron.
+
+## 2026-11-04 — Affichage téléphone de la refonte
+- Fait : plus de débordement horizontal (grilles de l’en-tête et de Chapitres), actions de l’en-tête resserrées, choix clair/sombre masqué sous 520 px, lueurs mal placées retirées sur téléphone.
+- Vérifié : 10 pages à 375 px sans débordement, 128 tests unitaires, build, 61/61 tests navigateur.
+- Prochaine étape : PR de ce correctif après accord du patron.

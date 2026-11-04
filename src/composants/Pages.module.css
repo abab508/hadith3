@@ -180,11 +180,11 @@
   .grilleChapitre{grid-template-columns:1fr;}
 }
 @media(max-width:760px){
-  .pageChapitres{grid-template-columns:1fr;}
+  .pageChapitres{grid-template-columns:minmax(0,1fr);}
   .menuLateral{padding:.6rem 0;border-inline-end:0;border-block-end:1px solid #e3b8661f;}
   .menuLateral ul{flex-direction:row;overflow-x:auto;scrollbar-width:none;}
   .menuLateral a{white-space:nowrap;padding-inline:.9rem;border-inline-start:0;}
-  .pageIndex{grid-template-columns:1fr;}
+  .pageIndex{grid-template-columns:minmax(0,1fr);}
   .salle{display:none;}
   .lettres{grid-template-columns:repeat(6,1fr);gap:.5rem;}
 }
