@@ -195,3 +195,18 @@ test("recherche : un mot français trouve les hadiths des grands recueils, puis 
   // Bukhārī n° 1 fait partie du corpus analysé : le rapport détaillé est proposé.
   await expect(page.getByRole("link", { name: fr.fiche.ouvrirRapport })).toHaveAttribute("href", "/fr/rapport/niyyat");
 });
+
+test("bibliothèque : un recueil hadith-kg se lit, puis son rapport montre les fiches des transmetteurs", async ({ page }) => {
+  await page.goto("/fr/bibliotheque");
+  const lien = page.getByRole("link", { name: new RegExp(fr.bibliotheque.lire.replace("{n, number}", String.raw`26\s?985`)) });
+  await expect(lien).toBeVisible();
+  await lien.click();
+  await expect(page).toHaveURL(/\/fr\/recueil\/musnad-ahmad$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Musnad");
+  await page.getByRole("link", { name: /^n° 1 / }).click();
+  await expect(page).toHaveURL(/\/fr\/recueil\/musnad-ahmad\/1$/);
+  await page.getByRole("link", { name: fr.rapportTexte.bouton }).click();
+  await expect(page).toHaveURL(/\/fr\/recueil\/musnad-ahmad\/1\/rapport$/);
+  await expect(page.getByRole("heading", { name: fr.rapportTexte.chaine })).toBeVisible();
+  await expect(page.locator("#fiche-transmetteur")).toContainText(fr.rapportTexte.nomComplet);
+});

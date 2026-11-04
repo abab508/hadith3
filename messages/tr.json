@@ -477,7 +477,8 @@
         "titre": "İbadiyye geleneği",
         "note": "Yazarlar doğrulanmış bir kaynaktan tamamlanacak."
       }
-    }
+    },
+    "lire": "{n, number} hadisi oku"
   },
   "themes": {
     "titre": "Bir konu seçin",
@@ -648,5 +649,32 @@
     "guideKg": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Zincir hadith-kg tabanında tanımlanmış, Arapça metinler karşılaştırılarak bu hadise bağlanmıştır.",
     "auteurRecueil": "Kitabın müellifi",
     "aucunJugementKg": "Kaynakta bu ravi hakkında münekkit sözü yok."
+  },
+  "recueilKg": {
+    "surtitre": "Kütüphane · eser",
+    "compte": "{nombre, number} hadis · {avecChaine, number} tanesi tanımlı isnadlı",
+    "retourBibliotheque": "Kütüphaneye dön",
+    "retourRecueil": "Esere dön",
+    "pages": "Eserin sayfaları",
+    "page": "Sayfa {page} / {total}",
+    "precedente": "Önceki sayfa",
+    "suivante": "Sonraki sayfa",
+    "precedent": "Önceki hadis",
+    "suivant": "Sonraki hadis",
+    "aller": "Hadis no.ya git",
+    "ouvrir": "Aç",
+    "numero": "no. {n}",
+    "refSource": "kaynakta {ref} numara",
+    "texteArabe": "Arapça metin",
+    "avecChaine": "{count, plural, one {Kaynakta tanımlı isnad} other {Kaynakta tanımlı # isnad}}",
+    "sansChaine": "Bu metin için kaynakta tanımlı isnad yok.",
+    "chaines": "Bu hadisin isnadları ({count})",
+    "chaineN": "İsnad {k}",
+    "hukm": "Kaynağa göre isnad hükmü",
+    "hukmAide": "Kaynak tabanın verdiği değerlendirme, olduğu gibi aktarılmıştır: Milaghaiba'nın hükmü değildir.",
+    "indisponible": "Bu eserin verileri şu anda kullanılamıyor. Birazdan tekrar deneyin.",
+    "introuvable": "Bu hadis eserde bulunamadı.",
+    "source": "Metin, isnadlar ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı, Milaghaiba veri deposunda yayımlanmıştır. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
+    "guide": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Bu hadisin isnadı doğrudan hadith-kg tabanından alınmıştır."
   }
 }

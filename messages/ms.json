@@ -477,7 +477,8 @@
         "titre": "Tradisi Ibadiyah",
         "note": "Pengarang akan dilengkapkan daripada sumber yang disahkan."
       }
-    }
+    },
+    "lire": "Baca {n, number} hadis"
   },
   "themes": {
     "titre": "Pilih tema",
@@ -648,5 +649,32 @@
     "guideKg": "Baca nama mengikut susunan, kemudian klik perawi untuk membuka kadnya. Sanad dikenal pasti dalam pangkalan data hadith-kg, dikaitkan dengan hadis ini melalui perbandingan teks Arab.",
     "auteurRecueil": "Penyusun kitab",
     "aucunJugementKg": "Tiada kenyataan pengkritik dalam sumber untuk perawi ini."
+  },
+  "recueilKg": {
+    "surtitre": "Perpustakaan · kitab",
+    "compte": "{nombre, number} hadis · {avecChaine, number} dengan sanad yang dikenal pasti",
+    "retourBibliotheque": "Kembali ke perpustakaan",
+    "retourRecueil": "Kembali ke kitab",
+    "pages": "Halaman kitab",
+    "page": "Halaman {page} daripada {total}",
+    "precedente": "Halaman sebelumnya",
+    "suivante": "Halaman seterusnya",
+    "precedent": "Hadis sebelumnya",
+    "suivant": "Hadis seterusnya",
+    "aller": "Pergi ke hadis no.",
+    "ouvrir": "Buka",
+    "numero": "no. {n}",
+    "refSource": "nombor {ref} dalam sumber",
+    "texteArabe": "Teks Arab",
+    "avecChaine": "{count, plural, other {# sanad dikenal pasti dalam sumber}}",
+    "sansChaine": "Tiada sanad dikenal pasti dalam sumber untuk teks ini.",
+    "chaines": "Sanad hadis ini ({count})",
+    "chaineN": "Sanad {k}",
+    "hukm": "Penilaian sanad menurut sumber",
+    "hukmAide": "Penilaian daripada pangkalan data sumber, dipetik seadanya: bukan keputusan Milaghaiba.",
+    "indisponible": "Data kitab ini tidak tersedia buat sementara. Cuba lagi sebentar lagi.",
+    "introuvable": "Hadis ini tidak ditemui dalam kitab.",
+    "source": "Teks, sanad dan kad: pangkalan data «الجامع — Hadith Knowledge Graph» (emadjumaah), lesen CC BY 4.0, diterbitkan dalam repositori data Milaghaiba. Penilaian dipetik seperti dalam sumber, perlu disemak pakar.",
+    "guide": "Baca nama mengikut susunan, kemudian klik perawi untuk membuka kadnya. Sanad hadis ini diberikan terus oleh pangkalan data hadith-kg."
   }
 }

@@ -477,7 +477,8 @@
         "titre": "Tradition ibadite",
         "note": "Auteurs à compléter depuis une source vérifiée."
       }
-    }
+    },
+    "lire": "Lire les {n, number} hadiths"
   },
   "themes": {
     "titre": "Choisissez un thème",
@@ -648,5 +649,32 @@
     "guideKg": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne identifiée dans la base hadith-kg, reliée à ce hadith par la comparaison des textes arabes.",
     "auteurRecueil": "Auteur du recueil",
     "aucunJugementKg": "Aucun jugement de critique dans la source pour ce transmetteur."
+  },
+  "recueilKg": {
+    "surtitre": "Bibliothèque · recueil",
+    "compte": "{nombre, number} hadiths · {avecChaine, number} avec chaîne de transmission identifiée",
+    "retourBibliotheque": "Retour à la bibliothèque",
+    "retourRecueil": "Retour au recueil",
+    "pages": "Pages du recueil",
+    "page": "Page {page} sur {total}",
+    "precedente": "Page précédente",
+    "suivante": "Page suivante",
+    "precedent": "Hadith précédent",
+    "suivant": "Hadith suivant",
+    "aller": "Aller au hadith n°",
+    "ouvrir": "Ouvrir",
+    "numero": "n° {n}",
+    "refSource": "numéro {ref} dans la source",
+    "texteArabe": "Texte arabe",
+    "avecChaine": "{count, plural, one {Chaîne identifiée dans la source} other {# chaînes identifiées dans la source}}",
+    "sansChaine": "Pas de chaîne identifiée dans la source pour ce texte.",
+    "chaines": "Chaînes de ce hadith ({count})",
+    "chaineN": "Chaîne {k}",
+    "hukm": "Jugement de la chaîne selon la source",
+    "hukmAide": "Appréciation donnée par la base source, citée telle quelle : ce n’est pas un verdict de Milaghaiba.",
+    "indisponible": "Les données de ce recueil sont momentanément indisponibles. Réessayez dans quelques instants.",
+    "introuvable": "Ce hadith est introuvable dans le recueil.",
+    "source": "Texte, chaînes et fiches : base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0, publiée dans le dépôt de données Milaghaiba. Jugements cités tels qu’ils figurent dans la source, à vérifier par un spécialiste.",
+    "guide": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne donnée pour ce hadith par la base hadith-kg elle-même."
   }
 }

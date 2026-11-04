@@ -134,3 +134,8 @@
 - Fait : candidats hadith-kg choisis aussi par le nombre de mots rares partagés (40 mots, 25 meilleures entrées) ; Bukhārī 1010 a ses fiches ; aucun lien perdu (33 653 reliés).
 - Vérifié : 143 tests unitaires, 9 contrôles, build, 67/67 tests navigateur.
 - Prochaine étape : mise en ligne après accord ; choix d'hébergement pour les autres recueils de la bibliothèque.
+
+## 2026-11-04 — 43 recueils de la bibliothèque lisibles, avec chaînes et fiches
+- Fait : dépôt de données public abab508/milaghaiba-donnees (tag v1, servi par jsDelivr) : 273 984 hadiths de 43 recueils hadith-kg, chaînes et 22 134 fiches ; pages /recueil/<id>, /recueil/<id>/<n> et rapport ; lien « Lire les hadiths » dans la bibliothèque.
+- Vérifié : 147 tests unitaires, 9 contrôles, build, 68/68 tests navigateur ; captures Musnad Aḥmad.
+- Prochaine étape : mise en ligne après accord ; 42 recueils du catalogue absents de hadith-kg (imamites, compilations sans chaîne…).

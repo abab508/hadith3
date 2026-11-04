@@ -477,7 +477,8 @@
         "titre": "Tradisi Ibadiyah",
         "note": "Pengarang akan dilengkapi dari sumber terverifikasi."
       }
-    }
+    },
+    "lire": "Baca {n, number} hadis"
   },
   "themes": {
     "titre": "Pilih tema",
@@ -648,5 +649,32 @@
     "guideKg": "Baca nama sesuai urutan, lalu klik perawi untuk membuka kartunya. Sanad dikenali dalam basis data hadith-kg, dihubungkan ke hadis ini dengan membandingkan teks Arab.",
     "auteurRecueil": "Penyusun kitab",
     "aucunJugementKg": "Tidak ada pernyataan kritikus di sumber untuk perawi ini."
+  },
+  "recueilKg": {
+    "surtitre": "Perpustakaan · kitab",
+    "compte": "{nombre, number} hadis · {avecChaine, number} dengan sanad yang dikenali",
+    "retourBibliotheque": "Kembali ke perpustakaan",
+    "retourRecueil": "Kembali ke kitab",
+    "pages": "Halaman kitab",
+    "page": "Halaman {page} dari {total}",
+    "precedente": "Halaman sebelumnya",
+    "suivante": "Halaman berikutnya",
+    "precedent": "Hadis sebelumnya",
+    "suivant": "Hadis berikutnya",
+    "aller": "Buka hadis no.",
+    "ouvrir": "Buka",
+    "numero": "no. {n}",
+    "refSource": "nomor {ref} di sumber",
+    "texteArabe": "Teks Arab",
+    "avecChaine": "{count, plural, other {# sanad dikenali di sumber}}",
+    "sansChaine": "Tidak ada sanad yang dikenali di sumber untuk teks ini.",
+    "chaines": "Sanad hadis ini ({count})",
+    "chaineN": "Sanad {k}",
+    "hukm": "Penilaian sanad menurut sumber",
+    "hukmAide": "Penilaian dari basis data sumber, dikutip apa adanya: bukan putusan Milaghaiba.",
+    "indisponible": "Data kitab ini sementara tidak tersedia. Coba lagi sebentar lagi.",
+    "introuvable": "Hadis ini tidak ditemukan dalam kitab.",
+    "source": "Teks, sanad dan kartu: basis data «الجامع — Hadith Knowledge Graph» (emadjumaah), lisensi CC BY 4.0, diterbitkan di repositori data Milaghaiba. Penilaian dikutip sebagaimana dalam sumber, perlu diperiksa ahli.",
+    "guide": "Baca nama sesuai urutan, lalu klik perawi untuk membuka kartunya. Sanad hadis ini diberikan langsung oleh basis data hadith-kg."
   }
 }

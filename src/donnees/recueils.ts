@@ -1,8 +1,10 @@
 import brut from "../../data/recueils/catalogue-recueils.json" with { type: "json" };
 import { corpus } from "@/donnees/corpus";
+import { recueilsKg } from "@/donnees/recueils-kg";
 import { fichierRecueils, type FamilleRecueil, type FichierRecueils, type Recueil } from "@/donnees/schemas/recueil";
 
-export type RecueilAffiche = Recueil & { cherchable: boolean };
+// « lisible » = nombre de hadiths consultables dans le dépôt de données (hadith-kg), sinon 0.
+export type RecueilAffiche = Recueil & { cherchable: boolean; lisible: number };
 export type Rayon = { famille: FamilleRecueil; recueils: RecueilAffiche[] };
 
 // Valide le fichier et ses règles de cohérence (numéros 1..n, identifiants uniques, familles déclarées).
@@ -32,6 +34,6 @@ export function rayons(): Rayon[] {
     famille,
     recueils: catalogueRecueils.recueils
       .filter((r) => r.famille === famille)
-      .map((r) => ({ ...r, cherchable: recherchables.has(r.id) })),
+      .map((r) => ({ ...r, cherchable: recherchables.has(r.id), lisible: recueilsKg.get(r.id)?.nombre ?? 0 })),
   }));
 }
