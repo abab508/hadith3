@@ -205,7 +205,10 @@
     },
     "traduction": {
       "publiee": "Yayımlanmış çeviri · {source}",
-      "ia": "Yapay zekâ çevirisi · resmî değil, kontrol edilmedi"
+      "ia": "Yapay zekâ çevirisi · resmî değil, kontrol edilmedi",
+      "validee": "{source} tarafından doğrulanmış insan çevirisi",
+      "iaRelue": "Bir uzman tarafından gözden geçirilmiş makine çevirisi",
+      "originalNonTraduit": "Arapça asıl metin dilinize çevrilmemiştir: hiçbir çeviri uydurulmaz."
     },
     "aucuneTraduction": "Bu metin için dilinizde doğrulanmış çeviri yok.",
     "aucunResultat": "Bu filtrelerle sonuç yok.",

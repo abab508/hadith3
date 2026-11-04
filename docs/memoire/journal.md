@@ -84,3 +84,8 @@
 - Fait : plus de débordement horizontal (grilles de l’en-tête et de Chapitres), actions de l’en-tête resserrées, choix clair/sombre masqué sous 520 px, lueurs mal placées retirées sur téléphone.
 - Vérifié : 10 pages à 375 px sans débordement, 128 tests unitaires, build, 61/61 tests navigateur.
 - Prochaine étape : PR de ce correctif après accord du patron.
+
+## 2026-11-04 — Provenance des traductions (exigence 03 §9)
+- Fait : 5e statut « original non traduit » affiché et testé ; une traduction « validée » n'est plus présentée comme « publiée », une traduction IA « relue » n'est plus présentée comme simple IA (8 langues).
+- Vérifié : 130 tests unitaires, contrôle, build, 64/64 tests navigateur (3 nouveaux : séparation original/traduction, original non traduit, textes mixtes en arabe).
+- Prochaine étape : test des URL dans un texte arabe ; relecture finale contre les 12 critères de l'exigence 02.

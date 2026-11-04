@@ -1,3 +1,4 @@
+import { clesMention } from "@/donnees/provenance";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, bibliothequeParId, ouvrageParId, transmetteurParId } from "@/donnees/corpus";
@@ -138,14 +139,10 @@ export default async function Recherche({
           occurrence.correspondance === "original" && traduction ? (
             <div className={ui.traduction} data-origine={traduction.origine}>
               <p lang={traduction.langue}>{traduction.texte}</p>
-              <span className={ui.mention}>
-                {traduction.origine === "publiee" || traduction.origine === "validee"
-                  ? t("traduction.publiee", { source: traduction.source ?? "" })
-                  : t("traduction.ia")}
-              </span>
+              <span className={ui.mention}>{t(clesMention[traduction.origine], { source: traduction.source ?? "" })}</span>
             </div>
           ) : (
-            <p className={`${ui.traduction} ${ui.discret}`}>{t("aucuneTraduction")}</p>
+            <p className={`${ui.traduction} ${ui.discret}`} data-origine="original-non-traduit">{t(clesMention["original-non-traduit"])}</p>
           )
         )}
         <p className={styles.meta}>

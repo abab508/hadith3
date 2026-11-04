@@ -205,7 +205,10 @@
     },
     "traduction": {
       "publiee": "Published translation · {source}",
-      "ia": "AI-generated translation · unofficial, not checked"
+      "ia": "AI-generated translation · unofficial, not checked",
+      "validee": "Human translation validated by {source}",
+      "iaRelue": "Machine translation reviewed by a specialist",
+      "originalNonTraduit": "Arabic original not translated into your language: no translation is made up."
     },
     "aucuneTraduction": "No checked translation in your language for this text.",
     "aucunResultat": "No results match these filters.",
