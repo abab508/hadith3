@@ -99,3 +99,8 @@
 - Fait : champ « Chercher le hadith » (mot arabe avec ou sans voyelles, traduction, numéro) qui réutilise le moteur de la page Recherche ; les hadiths trouvés se choisissent d’un clic, l’aperçu de la chaîne suit.
 - Vérifié : 130 tests unitaires, build, 65/65 tests navigateur.
 - Prochaine étape : avis du patron, envoi dans la PR n° 20.
+
+## 2026-11-04 — URL dans les textes arabes et relecture finale de l'exigence 02
+- Fait : composant TexteMixte (URL isolées en LTR, jamais raccourcies, ponctuation arabe hors du lien) branché sur les textes rédigés des rapports ; relecture des 12 critères dans docs/livraison/relecture-exigence-02.md (12/12 conformes et testés, limites listées).
+- Vérifié : 134 tests unitaires, 9 contrôles, build, 65/65 tests navigateur.
+- Prochaine étape : relecture humaine des traductions, validation des termes, tests automatiques sur chaque PR.
