@@ -624,6 +624,11 @@
     "nonProphete": "Bu metinde zincir Peygamber’e ﷺ ulaşmıyor (bir sahabi veya tabiinin sözü ya da eksik bölme).",
     "texteComplet": "Tam metin",
     "retourHadith": "Hadise dön",
-    "ordre": "Peygamber’den ﷺ derleyicinin hocasına"
+    "ordre": "Peygamber’den ﷺ derleyicinin hocasına",
+    "guide": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Zincir Arapça metinden otomatik bölünmüştür: hiçbir ravi henüz tanımlanmadı veya değerlendirilmedi.",
+    "maillonsCompte": "{count, plural, other {# halka}}",
+    "ficheVide": "Kart henüz mevcut değil: bu ravi tabanda henüz tanımlanmadı. İsim metinde yazıldığı gibidir.",
+    "position": "Bu zincirde {total} halkadan {rang}. halka",
+    "rangCompilateur": "Bu hadisin rivayet edildiği kitap"
   }
 }

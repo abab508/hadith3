@@ -624,6 +624,11 @@
     "nonProphete": "In this text the chain does not reach the Prophet ﷺ (saying of a Companion or Successor, or incomplete split).",
     "texteComplet": "Full text",
     "retourHadith": "Back to the hadith",
-    "ordre": "From the Prophet ﷺ to the compiler’s teacher"
+    "ordre": "From the Prophet ﷺ to the compiler’s teacher",
+    "guide": "Read the names in the order shown, then click a narrator to open their card. Chain split automatically from the Arabic text: no narrator is identified or graded yet.",
+    "maillonsCompte": "{count, plural, =1 {# link} other {# links}}",
+    "ficheVide": "Card not available yet: this narrator is not yet identified in the database. The name is given as written in the text.",
+    "position": "Link {rang} of {total} in this chain",
+    "rangCompilateur": "Collection in which this hadith is reported"
   }
 }

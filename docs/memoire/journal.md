@@ -114,3 +114,8 @@
 - Fait : « boire » ou un numéro cherche dans 7 grands recueils (index hadith-api) ; page d'un hadith (arabe, traduction, appréciations publiées) avec bouton « Rapport et chaîne de transmission » ; page du rapport avec la chaîne découpée du texte arabe ; « Recherche par chaîne » retirée du menu.
 - Vérifié : 138 tests unitaires, 9 contrôles, build, 67/67 tests navigateur ; parcours boire → hadith → rapport vu à l'écran (Bukhārī 22, 53, Muslim 100).
 - Prochaine étape : PR et mise en ligne après accord ; vérifier sur Vercel que l'index (11 Mo) est bien embarqué.
+
+## 2026-11-04 — Rapport des hadiths des recueils dans la mise en page de la capture
+- Fait : la page « Rapport et chaîne de transmission » reprend la disposition du rapport détaillé (bannière, chaîne en cartes avec flèches dans un cadre doré, fiche du transmetteur avec Biographie / Fiabilité, maîtres et élèves dans la chaîne, barre Navigation thématique) ; couleurs nuit et or inchangées.
+- Vérifié : 138 tests unitaires, 9 contrôles, build, 67/67 tests navigateur.
+- Prochaine étape : mise en ligne après accord du patron.
