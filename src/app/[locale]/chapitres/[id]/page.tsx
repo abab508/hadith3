@@ -72,6 +72,11 @@ export default async function PageChapitre({ params }: { params: Promise<Paramet
           <h1 className={styles.titreChapitre}><bdi lang={titre.langue} dir="auto">{titre.texte}</bdi></h1>
           {titre.sousTitre ? <p className={styles.sousTitreChapitre} dir="auto">({titre.sousTitre})</p>
             : titre.langue !== "ar" ? <p className={`${styles.sousTitreChapitre} ${styles.arabeSousTitre} texte-arabe`} lang="ar" dir="rtl">{c.ar}</p> : null}
+          {fixe && (
+            <div className={styles.illustrationChapitre}>
+              <ImageDecorative src={`/images/hd/${fixe.image}.png`} sizes="(max-width: 1100px) calc(100vw - 2.5rem), 55rem" preload />
+            </div>
+          )}
           <Onglets
             titre={t("onglets")}
             onglets={[
@@ -86,7 +91,6 @@ export default async function PageChapitre({ params }: { params: Promise<Paramet
                       {intro && <p>{intro}</p>}
                       <p>{tk("compte", { nombre: c.nombre, sous: c.sous.length })}</p>
                       <div className={styles.galerieChapitre}>
-                        {fixe ? <span className={styles.cadreGalerie}><ImageDecorative src={`/images/hd/${fixe.image}.png`} sizes="(max-width: 900px) 100vw, 30rem" /></span> : null}
                         {illustrations}
                       </div>
                       <p className={styles.mention}>{tk("sourceTitres")}</p>
