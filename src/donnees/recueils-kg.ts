@@ -15,10 +15,10 @@ const index = brut as { bloc: number; seau: number; recueils: RecueilKg[] };
 export const recueilsKg: ReadonlyMap<string, RecueilKg> = new Map(index.recueils.map((r) => [r.id, r]));
 export const TAILLE_BLOC = index.bloc;
 const SEAU = index.seau;
-// jsDelivr d'abord (CDN), GitHub brut en secours ; version figée « v1 » pour que le cache reste juste.
+// jsDelivr d'abord (CDN), GitHub brut en secours ; version figée « v2 » pour que le cache reste juste.
 const SOURCES = [
-  "https://cdn.jsdelivr.net/gh/abab508/milaghaiba-donnees@v1/",
-  "https://raw.githubusercontent.com/abab508/milaghaiba-donnees/v1/",
+  "https://cdn.jsdelivr.net/gh/abab508/milaghaiba-donnees@v2/",
+  "https://raw.githubusercontent.com/abab508/milaghaiba-donnees/v2/",
 ];
 
 export const blocDe = (n: number) => Math.ceil(n / TAILLE_BLOC);

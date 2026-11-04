@@ -468,14 +468,6 @@
       "anciens": {
         "titre": "Kitab dan dokumen awal",
         "note": "Sebagian hanya dikenal melalui periwayatan atau kutipan yang lebih kemudian."
-      },
-      "imamite": {
-        "titre": "Tradisi Imamiyah",
-        "note": "Pengarang akan dilengkapi dari sumber terverifikasi."
-      },
-      "ibadite": {
-        "titre": "Tradisi Ibadiyah",
-        "note": "Pengarang akan dilengkapi dari sumber terverifikasi."
       }
     },
     "lire": "Baca {n, number} hadis"

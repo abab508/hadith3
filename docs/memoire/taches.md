@@ -67,7 +67,7 @@ toute traduction faite par l'IA est marquée « traduction automatique, à relir
 - [x] Charte nuit et or, police Aref Ruqaa, en-tête de la maquette
 - [x] Accueil immersif + ambiance sonore générée en code
 - [x] Pages Thèmes, Thème (carrousel), Chapitres, Chapitre (onglets), Index A-Z
-- [!] Auteurs des recueils 69 à 92 et classement imamite / ibadite : à valider par un spécialiste
+- [x] Recueils 69 à 92 (imamites et ibadites) retirés : site limité aux recueils sunnites (demande du patron, 2026-11-04)
 - [!] Contenu des 9 thèmes et 5 chapitres (hadiths, explications, références, audio) : à fournir depuis une source vérifiée
 - [!] Images originales en haute qualité de la maquette (les découpes actuelles sont floues)
 - [!] Citation « Celui qui cherche la science… » : référence à vérifier par un spécialiste

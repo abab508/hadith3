@@ -468,14 +468,6 @@
       "anciens": {
         "titre": "Anciens recueils et documents",
         "note": "Certains ne sont connus que par des transmissions ou des citations ultérieures."
-      },
-      "imamite": {
-        "titre": "Tradition imamite",
-        "note": "Auteurs à compléter depuis une source vérifiée."
-      },
-      "ibadite": {
-        "titre": "Tradition ibadite",
-        "note": "Auteurs à compléter depuis une source vérifiée."
       }
     },
     "lire": "Lire les {n, number} hadiths"
