@@ -292,12 +292,13 @@
     "chercherBouton": "Cari",
     "resultatsHadith": "{count, plural, =0 {Tiada hadis ditemui dalam korpus contoh} other {# hadis ditemui: pilih yang hendak disahkan}}",
     "analyses": "Hadis yang dianalisis: sanad dan laporan tersedia",
-    "autresRecits": "Riwayat lain dalam pangkalan data: teks Arab sahaja, sanad belum dianalisis",
+    "autresRecits": "Riwayat lain: kitab utama (teks dan terjemahan terbitan) dan riwayat import, sanad belum dianalisis",
     "nombreRecits": "{count, plural, =0 {Tiada riwayat} other {# riwayat ditemui}} dalam pangkalan data",
     "voirTous": "Lihat semua hasil di Carian",
     "chaineNonAnalysee": "Sanad riwayat ini belum dianalisis: laporan terperinci belum tersedia. Teksnya masih perlu disemak di sumber.",
     "voirSource": "Lihat teks di sumber",
-    "astuceArabe": "Riwayat dalam pangkalan data adalah dalam bahasa Arab: cuba perkataan Arab (cth. الماء atau الصلاة) atau nombor."
+    "astuceArabe": "Riwayat dalam pangkalan data adalah dalam bahasa Arab: cuba perkataan Arab (cth. الماء atau الصلاة) atau nombor.",
+    "ouvrirHadith": "Buka hadis"
   },
   "rapport": {
     "surtitre": "Laporan dokumentari",
@@ -578,5 +579,51 @@
     "chapitre": "Bab",
     "recueil": "Kitab",
     "toutes": "Semua"
+  },
+  "recueils": {
+    "titre": "Dalam kitab-kitab hadis utama",
+    "intro": "Ṣaḥīḥ al-Bukhārī, Ṣaḥīḥ Muslim, Sunan Abī Dāwūd, Sunan an-Nasāʾī, Sunan Ibn Mājah, Muwaṭṭaʾ Mālik (dan Jāmiʿ at-Tirmidhī dalam bahasa Arab), daripada edisi awam hadith-api.",
+    "nombre": "{count, plural, =0 {Tiada hadis ditemui dalam kitab} other {# hadis ditemui dalam kitab}}",
+    "ouvrir": "Buka hadis",
+    "numero": "no. {numero}",
+    "livre": "kitab {livre}",
+    "concordance": "Rujukan sepadan dalam bahasa Arab dan Perancis",
+    "indisponible": "Teks tidak tersedia buat masa ini: rujukan masih boleh dilihat.",
+    "precedent": "Sebelumnya",
+    "suivant": "Seterusnya",
+    "page": "Halaman {page} daripada {total}",
+    "avertissement": "Teks dan terjemahan diambil daripada edisi awam hadith-api (fawazahmed0), belum disahkan oleh Milaghaiba. Menemui rujukan tidak bermakna hadis itu sahih.",
+    "astuceArabe": "Kitab diindeks dalam bahasa Perancis dan Arab: cuba juga perkataan Arab."
+  },
+  "fiche": {
+    "retour": "Kembali ke carian",
+    "texteArabe": "Teks Arab",
+    "traduction": "Terjemahan ({langue})",
+    "jugements": "Penilaian yang diterbitkan dalam edisi ini",
+    "aucunJugement": "Edisi ini tidak menyediakan penilaian.",
+    "chaineTitre": "Rantaian periwayatan",
+    "chaineTexte": "Sanad (isnād) terdapat pada awal teks Arab. Ia belum dianalisis perawi demi perawi untuk hadis ini.",
+    "rapportDispo": "Hadis ini mempunyai laporan terperinci dengan sanad yang dianalisis.",
+    "ouvrirRapport": "Buka laporan terperinci",
+    "source": "Lihat fail sumber (JSON)",
+    "erreur": "Sumber jauh tidak bertindak balas buat masa ini. Cuba lagi nanti.",
+    "introuvable": "Tiada teks untuk nombor ini dalam edisi ini.",
+    "concordant": "Rujukan sepadan: nombor, kitab dan kedudukan sama dalam bahasa Arab dan Perancis.",
+    "nonConcordant": "Padanan dengan bahasa lain belum disahkan untuk rujukan ini.",
+    "provenance": "Asal: edisi awam hadith-api (fawazahmed0), semakan @1"
+  },
+  "rapportTexte": {
+    "titre": "Laporan dan rantaian periwayatan",
+    "bouton": "Laporan dan rantaian periwayatan",
+    "chaine": "Rantaian periwayatan (isnād) yang tertulis dalam teks",
+    "aide": "Pemisahan automatik sanad seperti yang tertulis dalam teks Arab: belum ada perawi yang dikenal pasti atau dinilai. Perlu disemak pakar.",
+    "prophete": "Nabi ﷺ",
+    "nonEvalue": "Belum dinilai",
+    "recueil": "Kitab",
+    "pasDeChaine": "Tiada sanad dapat dipisahkan daripada teks ini.",
+    "nonProphete": "Dalam teks ini sanad tidak sampai kepada Nabi ﷺ (kata-kata sahabat atau tabiin, atau pemisahan tidak lengkap).",
+    "texteComplet": "Teks penuh",
+    "retourHadith": "Kembali ke hadis",
+    "ordre": "Daripada Nabi ﷺ hingga guru penyusun"
   }
 }

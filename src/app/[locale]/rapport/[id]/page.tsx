@@ -94,7 +94,7 @@ export default async function Rapport({
         </p>
       </section>
       <p>
-        <Link href={{ pathname: "/chaine", query: { hadith: hadith.id } }}>{t("autreHadith")}</Link>
+        <Link href="/recherche">{t("autreHadith")}</Link>
       </p>
 
       <div className={styles.titres}>

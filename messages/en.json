@@ -292,12 +292,13 @@
     "chercherBouton": "Search",
     "resultatsHadith": "{count, plural, =0 {No hadith found in the sample corpus} =1 {# hadith found: choose it} other {# hadiths found: choose the one to authenticate}}",
     "analyses": "Analysed hadiths: chain and report available",
-    "autresRecits": "Other narrations in the base: Arabic text only, chain not analysed yet",
+    "autresRecits": "Other narrations: major collections (published text and translation) and imported narrations, chain not analysed yet",
     "nombreRecits": "{count, plural, =0 {No narration} =1 {# narration found} other {# narrations found}} in the base",
     "voirTous": "See all results in Search",
     "chaineNonAnalysee": "This narration’s chain has not been analysed yet: no detailed report is available. The text still has to be checked at the source.",
     "voirSource": "See the text at the source",
-    "astuceArabe": "The narrations in the base are in Arabic: try an Arabic word (e.g. الماء or الصلاة) or a number."
+    "astuceArabe": "The narrations in the base are in Arabic: try an Arabic word (e.g. الماء or الصلاة) or a number.",
+    "ouvrirHadith": "Open the hadith"
   },
   "rapport": {
     "surtitre": "Documentary report",
@@ -578,5 +579,51 @@
     "chapitre": "Chapter",
     "recueil": "Collection",
     "toutes": "All"
+  },
+  "recueils": {
+    "titre": "In the major collections",
+    "intro": "Ṣaḥīḥ al-Bukhārī, Ṣaḥīḥ Muslim, Sunan Abī Dāwūd, Sunan an-Nasāʾī, Sunan Ibn Mājah, Muwaṭṭaʾ Mālik (and Jāmiʿ at-Tirmidhī in Arabic), from the public hadith-api edition.",
+    "nombre": "{count, plural, =0 {No hadith found in the collections} =1 {# hadith found in the collections} other {# hadiths found in the collections}}",
+    "ouvrir": "Open the hadith",
+    "numero": "no. {numero}",
+    "livre": "book {livre}",
+    "concordance": "Matching reference in Arabic and French",
+    "indisponible": "Text temporarily unavailable: the reference remains available.",
+    "precedent": "Previous",
+    "suivant": "Next",
+    "page": "Page {page} of {total}",
+    "avertissement": "Texts and translations taken from the public hadith-api edition (fawazahmed0), not verified by Milaghaiba. Finding a reference does not authenticate the hadith.",
+    "astuceArabe": "The collections are indexed in French and Arabic: try an Arabic word too."
+  },
+  "fiche": {
+    "retour": "Back to search",
+    "texteArabe": "Arabic text",
+    "traduction": "Translation ({langue})",
+    "jugements": "Assessments published in this edition",
+    "aucunJugement": "No assessment provided by this edition.",
+    "chaineTitre": "Chain of transmission",
+    "chaineTexte": "The chain (isnād) appears at the start of the Arabic text. It has not yet been analysed narrator by narrator for this hadith.",
+    "rapportDispo": "This hadith has a detailed report with its analysed chain.",
+    "ouvrirRapport": "Open the detailed report",
+    "source": "See the source file (JSON)",
+    "erreur": "The remote source is not responding at the moment. Try again later.",
+    "introuvable": "No text for this number in this edition.",
+    "concordant": "Matching references: same number, book and position in Arabic and French.",
+    "nonConcordant": "Match with the other language not verified for this reference.",
+    "provenance": "Provenance: public hadith-api edition (fawazahmed0), revision @1"
+  },
+  "rapportTexte": {
+    "titre": "Report and chain of transmission",
+    "bouton": "Report and chain of transmission",
+    "chaine": "Chain of transmission (isnād) written in the text",
+    "aide": "Automatic split of the chain as written in the Arabic text: no narrator is identified or graded yet. To be checked by a specialist.",
+    "prophete": "The Prophet ﷺ",
+    "nonEvalue": "Not graded",
+    "recueil": "Collection",
+    "pasDeChaine": "No chain could be split from this text.",
+    "nonProphete": "In this text the chain does not reach the Prophet ﷺ (saying of a Companion or Successor, or incomplete split).",
+    "texteComplet": "Full text",
+    "retourHadith": "Back to the hadith",
+    "ordre": "From the Prophet ﷺ to the compiler’s teacher"
   }
 }

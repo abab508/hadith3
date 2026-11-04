@@ -41,9 +41,10 @@ test("rapport ar : page en RTL, sans traduction ni texte de repli vide", async (
 });
 
 test("le menu signale la page en cours", async ({ page }) => {
-  await page.goto("/fr/chaine");
+  // « Recherche par chaîne » n'est plus dans le menu (2026-11-04) : on vérifie avec le glossaire.
+  await page.goto("/fr/glossaire");
   const menu = page.getByRole("list", { name: fr.navigation.titre });
-  await expect(menu.getByRole("link", { name: fr.navigation.chaine, exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(menu.getByRole("link", { name: fr.navigation.glossaire, exact: true })).toHaveAttribute("aria-current", "page");
   await expect(menu.getByRole("link", { name: fr.navigation.recherche, exact: true })).not.toHaveAttribute("aria-current", "page");
 });
 
@@ -174,7 +175,23 @@ test("recherche par chaîne : toute la base est interrogée, récits arabes sans
   await expect(page.getByText(fr.chaine.chaineNonAnalysee)).toBeVisible();
   await expect(page.getByRole("link", { name: fr.chaine.generer })).toHaveCount(0);
 
-  // Un mot français absent de la base : la page conseille de chercher en arabe.
-  await page.goto("/fr/chaine?q=boire");
+  // Un mot absent de toute la base (grands recueils compris) : la page conseille de chercher en arabe.
+  await page.goto("/fr/chaine?q=xyzqvw");
   await expect(page.getByText(fr.chaine.astuceArabe)).toBeVisible();
+});
+
+test("recherche : un mot français trouve les hadiths des grands recueils, puis le rapport et la chaîne", async ({ page }) => {
+  await page.goto("/fr/recherche?q=boire");
+  const section = page.locator('section[aria-labelledby="titre-recueils"]');
+  await expect(section.getByRole("status")).toContainText(/\d+ hadiths trouvés dans les recueils/);
+  const premier = section.getByRole("link", { name: fr.recueils.ouvrir }).first();
+  await expect(premier).toHaveAttribute("href", /\/fr\/hadith\/[a-z-]+\/fra\/\d+$/);
+
+  // Page d'un hadith : le bouton mène au rapport et à la chaîne de transmission, sur une autre page.
+  await page.goto("/fr/hadith/sahih-bukhari/fra/1");
+  await page.getByRole("link", { name: fr.rapportTexte.bouton }).click();
+  await expect(page).toHaveURL(/\/fr\/hadith\/sahih-bukhari\/fra\/1\/rapport$/);
+  await expect(page.getByRole("heading", { name: fr.rapportTexte.chaine })).toBeVisible();
+  // Bukhārī n° 1 fait partie du corpus analysé : le rapport détaillé est proposé.
+  await expect(page.getByRole("link", { name: fr.fiche.ouvrirRapport })).toHaveAttribute("href", "/fr/rapport/niyyat");
 });

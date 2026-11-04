@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "source": "fawazahmed0/hadith-api@1",
+  "generatedAt": "2026-10-31T08:23:20.785Z",
+  "entries": [
+    {
+      "language": "fra",
+      "book": "bukhari",
+      "count": 7252,
+      "terms": 14159,
+      "file": "fra-bukhari.json"
+    },
+    {
+      "language": "fra",
+      "book": "muslim",
+      "count": 7219,
+      "terms": 12587,
+      "file": "fra-muslim.json"
+    },
+    {
+      "language": "fra",
+      "book": "abudawud",
+      "count": 5274,
+      "terms": 12153,
+      "file": "fra-abudawud.json"
+    },
+    {
+      "language": "fra",
+      "book": "nasai",
+      "count": 5676,
+      "terms": 9981,
+      "file": "fra-nasai.json"
+    },
+    {
+      "language": "fra",
+      "book": "ibnmajah",
+      "count": 4075,
+      "terms": 10184,
+      "file": "fra-ibnmajah.json"
+    },
+    {
+      "language": "fra",
+      "book": "malik",
+      "count": 1840,
+      "terms": 9249,
+      "file": "fra-malik.json"
+    },
+    {
+      "language": "ara",
+      "book": "bukhari",
+      "count": 7252,
+      "terms": 36229,
+      "file": "ara-bukhari.json"
+    },
+    {
+      "language": "ara",
+      "book": "muslim",
+      "count": 7219,
+      "terms": 35000,
+      "file": "ara-muslim.json"
+    },
+    {
+      "language": "ara",
+      "book": "abudawud",
+      "count": 5274,
+      "terms": 32357,
+      "file": "ara-abudawud.json"
+    },
+    {
+      "language": "ara",
+      "book": "tirmidhi",
+      "count": 3956,
+      "terms": 28468,
+      "file": "ara-tirmidhi.json"
+    },
+    {
+      "language": "ara",
+      "book": "nasai",
+      "count": 5676,
+      "terms": 25365,
+      "file": "ara-nasai.json"
+    },
+    {
+      "language": "ara",
+      "book": "ibnmajah",
+      "count": 4075,
+      "terms": 24890,
+      "file": "ara-ibnmajah.json"
+    },
+    {
+      "language": "ara",
+      "book": "malik",
+      "count": 1840,
+      "terms": 16681,
+      "file": "ara-malik.json"
+    }
+  ]
+}
