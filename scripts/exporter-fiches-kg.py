@@ -67,11 +67,12 @@ def livre_id(c, nom):
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--db", required=True); a.add_argument("--cache", required=True); a.add_argument("--sortie", required=True)
+    a.add_argument("--kg-vers-api", help="fichier JSON facultatif : identifiant hadith-kg -> numéro hadith-api, par recueil (pour les chapitres)")
     o = a.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
     c = sqlite3.connect(f"file:{o.db}?mode=ro", uri=True)
     os.makedirs(o.sortie, exist_ok=True); os.makedirs(o.cache, exist_ok=True)
-    utilises = set(); rapport = {}
+    utilises = set(); rapport = {}; kg_vers_api = {}
     for key, nom in LIVRES.items():
         bid = livre_id(c, nom)
         if bid is None:
@@ -113,17 +114,18 @@ def main():
                         continue
                     score = sum(map(trouve, corps)) / len(corps)
                     if score >= (NOMS if contenance >= SURE else 1) and (meilleur is None or score > meilleur[0]):
-                        meilleur = (score, ch, "chaine")
+                        meilleur = (score, ch, "chaine", x)
                 if not sanads and auteur and " ح " not in " " + norm(kg[x]) + " ":
                     # Entrée sans chaîne : les noms identifiés par la source dans le texte, s'ils sont tous présents ici.
                     ordre = [r for (r,) in c.execute("select rawi_id from hadith_rawis where hadith_id=? order by seq", (x,))]
                     ordre = [r for r in ordre if r != auteur[0]]
                     ch = [auteur[0]] + [r for i, r in enumerate(ordre) if i == 0 or r != ordre[i - 1]]
                     if len(ch) >= 2 and all(map(trouve, ch[1:])) and len(set(ch[1:])) == len(ch[1:]) and (meilleur is None or meilleur[0] < 1):
-                        meilleur = (1.0, ch, "mentions")
+                        meilleur = (1.0, ch, "mentions", x)
                 if meilleur and meilleur[0] == 1:
                     break
             if meilleur:
+                kg_vers_api.setdefault(key, {}).setdefault(str(meilleur[3]), h["hadithnumber"])
                 liens[str(h["hadithnumber"])] = meilleur[1]  # pos 0 = auteur du recueil, puis vers le Compagnon
                 utilises.update(meilleur[1]); stats[meilleur[2]] += 1
         json.dump({"version": 2, "source": "emadjumaah/hadith-kg (CC BY 4.0)", "edition": f"ara-{key}", "contenance": CONTENANCE, "noms": NOMS, "liens": liens},
@@ -145,6 +147,8 @@ def main():
     json.dump({"source": "emadjumaah/hadith-kg (CC BY 4.0)", "contenance": CONTENANCE, "noms": NOMS, "recueils": rapport, "transmetteurs": len(rawis), "avecJugements": len(aqwal)},
               open(os.path.join(o.sortie, "manifeste.json"), "w", encoding="utf8"), ensure_ascii=False, indent=1)
     print(f"transmetteurs: {len(rawis)}, avec jugements: {len(aqwal)}")
+    if o.kg_vers_api:
+        json.dump(kg_vers_api, open(o.kg_vers_api, "w", encoding="utf8"), separators=(",", ":"))
 
 
 if __name__ == "__main__":
