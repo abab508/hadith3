@@ -9,6 +9,7 @@ import ChaineRapport from "@/composants/ChaineRapport";
 import Embleme from "@/composants/Embleme";
 import TexteMixte from "@/composants/TexteMixte";
 import IconeTheme from "@/composants/IconeTheme";
+import ImageDecorative from "@/composants/ImageDecorative";
 import { Link } from "@/i18n/navigation";
 import ui from "@/composants/Interface.module.css";
 import styles from "./Rapport.module.css";
@@ -79,7 +80,7 @@ export default async function Rapport({
   return (
     <main id="contenu" tabIndex={-1} className={`${ui.page} ${styles.pageRapport}`}>
       <section className={styles.banniere} aria-label={t("banniere.titre")}>
-        <img className={styles.imageBanniere} src="/images/maquette/accueil.jpg" alt="" />
+        <ImageDecorative className={styles.imageBanniere} src="/images/hd/accueil.png" sizes="(max-width: 1344px) 100vw, 84rem" preload />
         <span className={styles.voileBanniere} aria-hidden="true" />
         <Embleme nomLatin={tAccueil("titre")} nomArabe={tEntete("nomArabe")} mention={t("banniere.surtitre")} />
         <p className={styles.grandTitre}>{t("banniere.titre")}</p>

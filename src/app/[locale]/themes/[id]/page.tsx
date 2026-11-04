@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Carrousel from "@/composants/Carrousel";
+import ImageDecorative from "@/composants/ImageDecorative";
 import { chapitresDuTheme, imageTheme, themeParId, themes } from "@/donnees/themes";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
 import { routing } from "@/i18n/routing";
@@ -32,7 +33,7 @@ export default async function PageTheme({ params }: { params: Promise<{ locale: 
   return (
     <main id="contenu" tabIndex={-1} className={styles.pageTheme}>
       <section className={styles.banniere} aria-labelledby="titre-theme">
-        <img className={styles.imageBanniere} src={imageTheme(theme.id)} alt="" />
+        <ImageDecorative className={styles.imageBanniere} src={imageTheme(theme.id)} sizes="100vw" preload />
         <span className={styles.meteores} aria-hidden="true"><span /><span /><span /></span>
         <div className={styles.texteBanniere}>
           <Link href="/themes" className={styles.retour}><span aria-hidden="true" className={styles.flecheRetour}>←</span> {t("retourThemes")}</Link>
@@ -48,7 +49,9 @@ export default async function PageTheme({ params }: { params: Promise<{ locale: 
             return (
               <li key={c.id} className={styles.carteChapitre} style={{ ["--i" as string]: i }}>
                 <Link href={`/chapitres/${c.id}`}>
-                  <img src={`/images/maquette/${c.image}.jpg`} alt="" />
+                  <span className={styles.cadreImageChapitre}>
+                    <ImageDecorative src={`/images/hd/${c.image}.png`} sizes="(max-width: 1155px) 13rem, (max-width: 1378px) 18vw, 15.5rem" />
+                  </span>
                   <span className={styles.corpsCarte}>
                     <span className={styles.titreCarte}>{i + 1}. {tc(cles.titre)}</span>
                     {cles.sousTitre && <span className={styles.sousTitreCarte} dir="auto">({tc(cles.sousTitre)})</span>}

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Onglets from "@/composants/Onglets";
+import ImageDecorative from "@/composants/ImageDecorative";
 import { chapitreParId, chapitres, chapitresDuTheme, themeParId } from "@/donnees/themes";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
 import { routing } from "@/i18n/routing";
@@ -37,7 +38,7 @@ export default async function PageChapitre({ params }: { params: Promise<{ local
 
   return (
     <main id="contenu" tabIndex={-1} className={styles.pageChapitre}>
-      <img className={styles.fondChapitre} src="/images/maquette/chapitre-fond.jpg" alt="" />
+      <ImageDecorative className={styles.fondChapitre} src="/images/hd/chapitre-fond.png" sizes="100vw" />
       <div className={styles.grilleChapitre}>
         <div className={styles.colonnePrincipale}>
           <ol className={styles.filAriane} aria-label={t("fil")}>
@@ -48,6 +49,9 @@ export default async function PageChapitre({ params }: { params: Promise<{ local
           <p className={styles.surtitreChapitre}>{tt("chapitre", { n: numero })}</p>
           <h1 className={styles.titreChapitre}>{tc(cles.titre)}</h1>
           {cles.sousTitre && <p className={styles.sousTitreChapitre} dir="auto">({tc(cles.sousTitre)})</p>}
+          <div className={styles.illustrationChapitre}>
+            <ImageDecorative src={`/images/hd/${chapitre.image}.png`} sizes="(max-width: 1100px) calc(100vw - 2.5rem), 55rem" preload />
+          </div>
           <Onglets
             titre={t("onglets")}
             onglets={[
