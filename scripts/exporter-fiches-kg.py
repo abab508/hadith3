@@ -92,8 +92,12 @@ def main():
             if len(s) < 4:
                 continue
             # Candidats : entrées hadith-kg qui partagent les mots les plus rares du texte.
-            rares = sorted((w for w in s if w in inv and len(inv[w]) < 300), key=lambda w: len(inv[w]))[:10]
-            cands = set().union(*(inv[w] for w in rares)) if rares else set()
+            rares = sorted((w for w in s if w in inv and len(inv[w]) < 300), key=lambda w: len(inv[w]))[:40]
+            votes = {}
+            for w in rares:
+                for x in inv[w]:
+                    votes[x] = votes.get(x, 0) + 1
+            cands = set(sorted(votes, key=votes.get, reverse=True)[:25]).union(*(inv[w] for w in rares[:10]))
             classes = sorted(((len(s & toks[x]) / len(s), x) for x in cands), reverse=True)[:3]
             meilleur = None  # (score, chaîne)
             for contenance, x in classes:

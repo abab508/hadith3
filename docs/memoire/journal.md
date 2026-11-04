@@ -129,3 +129,8 @@
 - Fait : 33 652 hadiths sur 36 390 reliés (92 %, contre 74 %) ; la chaîne retenue est celle dont les noms sont écrits dans le hadith ; corrige des chaînes fausses déjà en ligne (ex. Bukhārī 7 et 27).
 - Vérifié : 142 tests unitaires, 9 contrôles, build, 67/67 tests navigateur ; capture Bukhārī 7.
 - Prochaine étape : mise en ligne après accord du patron.
+
+## 2026-11-04 — Bukhārī 1010 relié (recherche des candidats élargie)
+- Fait : candidats hadith-kg choisis aussi par le nombre de mots rares partagés (40 mots, 25 meilleures entrées) ; Bukhārī 1010 a ses fiches ; aucun lien perdu (33 653 reliés).
+- Vérifié : 143 tests unitaires, 9 contrôles, build, 67/67 tests navigateur.
+- Prochaine étape : mise en ligne après accord ; choix d'hébergement pour les autres recueils de la bibliothèque.

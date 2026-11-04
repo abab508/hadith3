@@ -16,6 +16,10 @@ describe("fiches hadith-kg", () => {
     expect(noms).toContain("حكم بن نافع");
     expect(noms).not.toContain("يونس بن يزيد");
   });
+  it("Bukhari 1010 : retrouvé même quand ses mots rares diffèrent de la source", async () => {
+    const c = await chaineKg("bukhari", 1010);
+    expect(c!.map((m) => m.nom).join(" | ")).toContain("ثمامة");
+  });
   it("hadith non relié ou clé invalide : pas de chaîne", async () => {
     expect(await chaineKg("bukhari", 999999)).toBeNull();
     expect(await chaineKg("../x", 1)).toBeNull();
