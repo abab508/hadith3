@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, hadithParId } from "@/donnees/corpus";
 import { chercher } from "@/donnees/recherche";
+import { chercherNoticesImportees } from "@/donnees/index-imports";
+import type { RecitImporte } from "@/composants/RechercheChaine";
 import RechercheChaine from "@/composants/RechercheChaine";
 import ui from "@/composants/Interface.module.css";
 import styles from "./Chaine.module.css";
@@ -28,6 +30,12 @@ export default async function Chaine({
   // Recherche du hadith par mot (arabe, avec ou sans voyelles, ou traduction) ou par numéro : moteur de la page Recherche.
   const requete = (premier(parametres.q) ?? "").trim().slice(0, 200);
   const trouves = requete ? chercher(requete).map((h) => h.id) : [];
+  // Toute la base : les récits importés (texte arabe seul, chaîne non analysée) sont proposés aussi.
+  const importes = requete ? chercherNoticesImportees(requete, undefined, 1, 12) : { total: 0, items: [] };
+  const recits: RecitImporte[] = importes.items.map((n) => ({
+    id: n.id, recueilAr: n.recueilAr, recueilLatin: n.recueilLatin, numero: n.numero,
+    extrait: n.texteAr.length > 160 ? `${n.texteAr.slice(0, 160)}…` : n.texteAr, source: n.fichierSource,
+  }));
   const hadith = (demande && hadithParId(demande)) || (trouves[0] && hadithParId(trouves[0])) || corpus.hadiths[0];
 
   return (
@@ -36,7 +44,7 @@ export default async function Chaine({
         <h1 className={styles.titre}>{t("titre")}</h1>
         <p>{t("introCourte")}</p>
       </div>
-      {hadith ? <RechercheChaine hadithInitial={hadith.id} requete={requete} trouves={requete ? trouves : null} /> : <p>{t("hadithManquant")}</p>}
+      {hadith ? <RechercheChaine hadithInitial={hadith.id} requete={requete} trouves={requete ? trouves : null} recits={recits} totalRecits={importes.total} /> : <p>{t("hadithManquant")}</p>}
     </main>
   );
 }

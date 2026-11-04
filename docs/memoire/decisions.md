@@ -81,3 +81,4 @@
 2026-11-04 — Police latine Alegreya (texte et titres) + Cinzel (petites capitales), d'après la capture du patron — choix du patron ; Aref Ruqaa reste pour les titres arabes.
 2026-11-04 — La charte nuit et or reste la charte du site ; la planche BD « Arrivée à Béjaïa » (style gravure) n'est pas intégrée — décision du patron ; section et images gardées de côté hors du dépôt.
 2026-11-04 — Le site Render mina-gaiba-2.onrender.com passe à la version nuit et or (branche mina-gaiba-2), à la demande du patron ; l'ancienne version verte est sauvegardée dans la branche sauvegarde-mina-gaiba-2-2026-11-04.
+2026-11-04 — Les deux sites sont mis à jour avec main (a18da6c) : Vercel par fusion des PR n° 19, 20 et 21 ; Render par envoi sans forçage sur mina-gaiba-2 (35c6d96) — décision du patron (« les deux sites ») ; version verte sauvegardée dans sauvegarde-mina-gaiba-2-2026-11-04.

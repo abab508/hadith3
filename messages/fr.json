@@ -290,7 +290,14 @@
     "chercherHadith": "Chercher le hadith : un mot (arabe ou traduction) ou un numéro",
     "exempleHadith": "ex. النيات, intentions, 8, Bukhari 13",
     "chercherBouton": "Chercher",
-    "resultatsHadith": "{count, plural, =0 {Aucun hadith trouvé dans le corpus d’exemple} =1 {# hadith trouvé : choisissez-le} other {# hadiths trouvés : choisissez celui à authentifier}}"
+    "resultatsHadith": "{count, plural, =0 {Aucun hadith trouvé dans le corpus d’exemple} =1 {# hadith trouvé : choisissez-le} other {# hadiths trouvés : choisissez celui à authentifier}}",
+    "analyses": "Hadiths analysés : chaîne et rapport disponibles",
+    "autresRecits": "Autres récits de la base : texte arabe seul, chaîne pas encore analysée",
+    "nombreRecits": "{count, plural, =0 {Aucun récit} =1 {# récit trouvé} other {# récits trouvés}} dans la base",
+    "voirTous": "Voir tous les résultats dans la Recherche",
+    "chaineNonAnalysee": "La chaîne de ce récit n’est pas encore analysée : le rapport détaillé n’est pas disponible. Le texte reste à vérifier à la source.",
+    "voirSource": "Voir le texte à la source",
+    "astuceArabe": "Les récits de la base sont en arabe : essayez un mot arabe (par ex. الماء ou الصلاة) ou un numéro."
   },
   "rapport": {
     "surtitre": "Rapport documentaire",

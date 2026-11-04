@@ -290,7 +290,14 @@
     "chercherHadith": "Find the hadith: a word (Arabic or translation) or a number",
     "exempleHadith": "e.g. النيات, intentions, 8, Bukhari 13",
     "chercherBouton": "Search",
-    "resultatsHadith": "{count, plural, =0 {No hadith found in the sample corpus} =1 {# hadith found: choose it} other {# hadiths found: choose the one to authenticate}}"
+    "resultatsHadith": "{count, plural, =0 {No hadith found in the sample corpus} =1 {# hadith found: choose it} other {# hadiths found: choose the one to authenticate}}",
+    "analyses": "Analysed hadiths: chain and report available",
+    "autresRecits": "Other narrations in the base: Arabic text only, chain not analysed yet",
+    "nombreRecits": "{count, plural, =0 {No narration} =1 {# narration found} other {# narrations found}} in the base",
+    "voirTous": "See all results in Search",
+    "chaineNonAnalysee": "This narration’s chain has not been analysed yet: no detailed report is available. The text still has to be checked at the source.",
+    "voirSource": "See the text at the source",
+    "astuceArabe": "The narrations in the base are in Arabic: try an Arabic word (e.g. الماء or الصلاة) or a number."
   },
   "rapport": {
     "surtitre": "Documentary report",
