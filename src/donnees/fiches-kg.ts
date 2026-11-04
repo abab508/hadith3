@@ -1,7 +1,7 @@
 /**
  * Chaînes et fiches des transmetteurs exportées de « الجامع — Hadith Knowledge Graph »
  * (emadjumaah/hadith-kg, CC BY 4.0) par scripts/exporter-fiches-kg.py.
- * Le lien hadith-api -> hadith-kg se fait par le texte arabe (ressemblance >= 0,8) : un hadith
+ * Le lien hadith-api -> hadith-kg se fait par le texte arabe, puis par les noms de la chaîne écrits dans le hadith : un hadith
  * non relié n'a pas de chaîne ici. Les jugements sont cités tels qu'ils figurent dans la source.
  */
 import { readFile } from "node:fs/promises";
