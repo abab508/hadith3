@@ -629,6 +629,24 @@
     "maillonsCompte": "{count, plural, =1 {# eslabón} other {# eslabones}}",
     "ficheVide": "Ficha aún no disponible: este transmisor aún no está identificado en la base. El nombre se da tal como está escrito en el texto.",
     "position": "Eslabón {rang} de {total} en esta cadena",
-    "rangCompilateur": "Colección en la que se transmite este hadiz"
+    "rangCompilateur": "Colección en la que se transmite este hadiz",
+    "nomComplet": "Nombre completo",
+    "kunya": "Conocido como",
+    "tabaqa": "Generación (ṭabaqa)",
+    "naissance": "Nacimiento",
+    "deces": "Muerte",
+    "annee": "{annee} H",
+    "residence": "Lugares de residencia",
+    "lieuDeces": "Lugar de muerte",
+    "nasab": "Nisba (afiliaciones)",
+    "riwayat": "Relatos en la base",
+    "tadlis": "Señalado por tadlīs (ocultación en la cadena)",
+    "ikhtilat": "Señalado por ikhtilāṭ (confusión al final de su vida)",
+    "incomplet": "Biografía ausente en la fuente: nombre tomado del texto",
+    "synthese": "Valoración de síntesis",
+    "sourceKg": "Cadena y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
+    "guideKg": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena identificada en la base hadith-kg, vinculada a este hadiz comparando los textos árabes.",
+    "auteurRecueil": "Autor de la colección",
+    "aucunJugementKg": "No hay juicio de críticos en la fuente para este transmisor."
   }
 }

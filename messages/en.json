@@ -629,6 +629,24 @@
     "maillonsCompte": "{count, plural, =1 {# link} other {# links}}",
     "ficheVide": "Card not available yet: this narrator is not yet identified in the database. The name is given as written in the text.",
     "position": "Link {rang} of {total} in this chain",
-    "rangCompilateur": "Collection in which this hadith is reported"
+    "rangCompilateur": "Collection in which this hadith is reported",
+    "nomComplet": "Full name",
+    "kunya": "Known as",
+    "tabaqa": "Generation (ṭabaqa)",
+    "naissance": "Birth",
+    "deces": "Death",
+    "annee": "{annee} AH",
+    "residence": "Places of residence",
+    "lieuDeces": "Place of death",
+    "nasab": "Nisba (affiliations)",
+    "riwayat": "Narrations in the database",
+    "tadlis": "Reported for tadlīs (concealment in the chain)",
+    "ikhtilat": "Reported for ikhtilāṭ (late-life confusion)",
+    "incomplet": "Biography missing in the source: name taken from the text",
+    "synthese": "Summary grading",
+    "sourceKg": "Chain and cards: “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence. Gradings quoted as they appear in the source, to be checked by a specialist.",
+    "guideKg": "Read the names in the order shown, then click a narrator to open their card. Chain identified in the hadith-kg database, linked to this hadith by comparing the Arabic texts.",
+    "auteurRecueil": "Author of the collection",
+    "aucunJugementKg": "No critic statement in the source for this narrator."
   }
 }

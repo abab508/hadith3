@@ -629,6 +629,24 @@
     "maillonsCompte": "{count, plural, other {# halka}}",
     "ficheVide": "Kart henüz mevcut değil: bu ravi tabanda henüz tanımlanmadı. İsim metinde yazıldığı gibidir.",
     "position": "Bu zincirde {total} halkadan {rang}. halka",
-    "rangCompilateur": "Bu hadisin rivayet edildiği kitap"
+    "rangCompilateur": "Bu hadisin rivayet edildiği kitap",
+    "nomComplet": "Tam adı",
+    "kunya": "Bilinen adı",
+    "tabaqa": "Tabaka",
+    "naissance": "Doğum",
+    "deces": "Vefat",
+    "annee": "{annee} H",
+    "residence": "İkamet yerleri",
+    "lieuDeces": "Vefat yeri",
+    "nasab": "Nisbe",
+    "riwayat": "Tabandaki rivayet sayısı",
+    "tadlis": "Tedlis ile anılmış",
+    "ikhtilat": "İhtilat ile anılmış (ömrünün sonunda karışıklık)",
+    "incomplet": "Kaynakta biyografi yok: isim metinden alındı",
+    "synthese": "Genel hüküm",
+    "sourceKg": "Zincir ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
+    "guideKg": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Zincir hadith-kg tabanında tanımlanmış, Arapça metinler karşılaştırılarak bu hadise bağlanmıştır.",
+    "auteurRecueil": "Kitabın müellifi",
+    "aucunJugementKg": "Kaynakta bu ravi hakkında münekkit sözü yok."
   }
 }

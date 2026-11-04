@@ -629,6 +629,24 @@
     "maillonsCompte": "{count, plural, =1 {# maillon} other {# maillons}}",
     "ficheVide": "Fiche pas encore disponible : ce transmetteur n’est pas encore identifié dans la base. Son nom est donné tel qu’il est écrit dans le texte.",
     "position": "Maillon {rang} sur {total} dans cette chaîne",
-    "rangCompilateur": "Recueil où ce hadith est rapporté"
+    "rangCompilateur": "Recueil où ce hadith est rapporté",
+    "nomComplet": "Nom complet",
+    "kunya": "Nom d’usage",
+    "tabaqa": "Génération (ṭabaqa)",
+    "naissance": "Naissance",
+    "deces": "Décès",
+    "annee": "{annee} H",
+    "residence": "Lieux de résidence",
+    "lieuDeces": "Lieu de décès",
+    "nasab": "Nisba (rattachements)",
+    "riwayat": "Récits dans la base",
+    "tadlis": "Signalé pour tadlīs (dissimulation dans la chaîne)",
+    "ikhtilat": "Signalé pour ikhtilāṭ (confusion en fin de vie)",
+    "incomplet": "Biographie absente de la source : nom repris du texte",
+    "synthese": "Jugement de synthèse",
+    "sourceKg": "Chaîne et fiches : base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0. Jugements cités tels qu’ils figurent dans la source, à vérifier par un spécialiste.",
+    "guideKg": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne identifiée dans la base hadith-kg, reliée à ce hadith par la comparaison des textes arabes.",
+    "auteurRecueil": "Auteur du recueil",
+    "aucunJugementKg": "Aucun jugement de critique dans la source pour ce transmetteur."
   }
 }
