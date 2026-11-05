@@ -1,0 +1,26 @@
+/* Espace d'administration des contenus — charte nuit et or. Propriétés logiques uniquement. */
+.espace{inline-size:min(60rem,100% - 2.5rem);margin-inline:auto;padding-block:1.5rem 4rem;display:flex;flex-direction:column;gap:1rem;}
+.entete{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;}
+.surtitre{inline-size:100%;margin:0;font-family:"Cinzel",serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ocre);}
+.titre{margin:0;margin-inline-end:auto;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff6e3;}
+.sousTitre{margin:0;margin-inline-end:auto;font-size:1.15rem;color:#fff3cf;}
+.carte{display:flex;flex-direction:column;gap:.8rem;padding-block:1.1rem;padding-inline:1.2rem;border:1px solid #e3b86655;border-radius:1rem;background:linear-gradient(180deg,#101d36,#0a1324);}
+.carte label{display:flex;flex-direction:column;gap:.3rem;color:#e8dcc2;font-size:.92rem;}
+.carte input:not([type="checkbox"]),.carte select,.carte textarea{padding-block:.5rem;padding-inline:.7rem;border:1px solid #e3b866aa;border-radius:.6rem;background:#0a1324;color:#fff6e3;font:inherit;}
+.carte textarea{resize:vertical;line-height:1.7;}
+.carte button,.secondaire{align-self:flex-start;min-block-size:2.5rem;padding-inline:1.1rem;border:1.5px solid #f2c877;border-radius:999px;background:transparent;color:#fff3cf;font:inherit;font-weight:700;cursor:pointer;}
+.carte button[type="submit"],.carte .ligne>button:not(.secondaire):not(.lien){background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06;}
+.carte button:disabled{opacity:.5;cursor:default;}
+.ligne{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.8rem;}
+.case{flex-direction:row!important;align-items:center;gap:.5rem!important;}
+.liste{display:flex;flex-direction:column;gap:.5rem;margin:0;padding:0;list-style:none;}
+.liste li{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem;padding-block:.6rem;padding-inline:.8rem;border:1px solid #e3b86633;border-radius:.7rem;}
+.liste a{color:#f2c877;}
+.nom{flex:1;min-inline-size:12rem;color:#fff6e3;}
+.badge{padding-block:.1rem;padding-inline:.6rem;border-radius:999px;background:#2a2416;color:var(--ocre);font-size:.78rem;}
+.publie{color:#9fd8a8;font-size:.82rem;}
+.brouillon{color:var(--discret);font-size:.82rem;font-style:italic;}
+.carte .lien,.lien{min-block-size:auto;padding:0;border:0;background:none!important;color:var(--ocre);font-weight:400;text-decoration:underline;}
+.note{margin:0;color:var(--discret);font-size:.85rem;}
+.erreur{margin:0;padding-block:.6rem;padding-inline:.9rem;border-radius:.6rem;background:#3d2318;color:#f0a074;}
+.succes{margin:0;padding-block:.6rem;padding-inline:.9rem;border-radius:.6rem;background:#1b3324;color:#9fd8a8;}
