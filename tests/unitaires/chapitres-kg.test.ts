@@ -16,6 +16,16 @@ describe("chapitres tirés de l'index hadith-kg", () => {
     const sansFr = tousLesChapitresKg().flatMap((c) => [c, ...c.sous]).filter((e) => !e.fr?.trim());
     expect(sansFr.map((e) => e.ar)).toEqual([]);
   });
+  it("chaque prophète reçoit une scène de son histoire, pas une image commune", () => {
+    expect(motifsDe("Ismāʿīl (paix sur lui)", "autres-themes")[0]).toBe("kaaba");
+    expect(motifsDe("ʿĪsā (paix sur lui)", "autres-themes")[0]).toBe("etoiles");
+    expect(motifsDe("La descente de ʿĪsā (paix sur lui)", "fin-des-temps")).toContain("mosquee");
+    expect(motifsDe("Nūḥ (paix sur lui)", "autres-themes")[0]).toBe("eau");
+    expect(motifsDe("Maryam (paix sur elle)", "autres-themes")[0]).toBe("palmier");
+    expect(motifsDe("Les mérites d’Abū Mūsā al-Ashʿarī", "autres-themes")).not.toContain("montagne");
+    const isma = tousLesChapitresKg().find((c) => c.fr === "Ismāʿīl (paix sur lui)")!;
+    expect(["kaaba", "eau", "tente"]).toContain(illustrationDe(isma).motif);
+  });
   it("les 5 chapitres « Fin des temps » de la maquette viennent en premier", () => {
     expect(chapitresDuThemeKg("fin-des-temps").slice(0, 5).map((c) => c.id)).toEqual(["signes-mineurs", "signes-majeurs", "venue-de-dajjal", "descente-de-issa", "fin-du-monde"]);
   });

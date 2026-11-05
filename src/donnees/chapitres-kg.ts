@@ -83,7 +83,39 @@ export async function repartitionParRecueil(id: string): Promise<{ type: "h" | "
 export const lienHadith = (r: RefHadith) => (r.type === "h" ? `/hadith/${r.recueil}/ara/${r.numero}` : `/recueil/${r.recueil}/${r.numero}`);
 
 // Motifs d'illustration : d'après les mots du titre français, sinon ceux du thème.
+// Prophètes d'abord : chacun reçoit les scènes de son histoire (dans l'ordre de préférence), pas une montagne commune.
+// Les noms courants dans les kunyas (Abū Mūsā, Abū ʿĪsā…) sont exclus.
+const PAS_KUNYA_AR = "(?<!أبو |أبي |أبا |بن |ابن )";
+const PAS_KUNYA_FR = "(?<!abū |abī |abā |ibn )";
+const prophete = (ar: string, fr: string, motifs: Motif[]): [RegExp, Motif][] => {
+  const re = new RegExp(`${PAS_KUNYA_AR}(?:${ar})(?! بن| ابن)|${PAS_KUNYA_FR}(?:${fr})(?! ibn)`, "iu");
+  return motifs.map((m) => [re, m]);
+};
+const PROPHETES: [RegExp, Motif][] = [
+  ...prophete("إسماعيل|هاجر", "ismāʿīl|hājar|zamzam", ["kaaba", "eau", "tente"]),
+  ...prophete("إبراهيم|الخليل", "ibrāhīm", ["kaaba", "etoiles", "tente"]),
+  ...prophete("عيسى|المسيح ابن مريم|نزول المسيح", "ʿīsā|jésus", ["etoiles", "mosquee", "palmier"]),
+  ...prophete("مريم", "maryam", ["palmier", "mosquee", "etoiles"]),
+  ...prophete("موسى|فرعون|الطور", "mūsā|pharaon", ["montagne", "eau", "livre"]),
+  ...prophete("نوح|الطوفان", "nūḥ|déluge", ["eau", "nuage", "montagne"]),
+  ...prophete("يونس|ذي النون", "yūnus", ["eau", "nuage", "croissant"]),
+  ...prophete("آدم", "ādam", ["porte", "feuille", "etoiles"]),
+  ...prophete("يوسف", "yūsuf", ["etoiles", "nuage", "maison"]),
+  ...prophete("سليمان", "sulaymān", ["balance", "mosquee", "etendard"]),
+  ...prophete("داود", "dāwūd", ["livre", "balance", "chapelet"]),
+  ...prophete("هود عليه السلام|قوم عاد", "(?<!\\p{L})(?:hūd|ʿād)(?!\\p{L})", ["nuage", "tente", "chemin"]),
+  ...prophete("صالح عليه السلام|ثمود", "thamūd|(?<!\\p{L})ṣāliḥ \\(paix", ["montagne", "tente", "soleil"]),
+  ...prophete("شعيب|أهل مدين", "shuʿayb", ["balance", "pieces", "tente"]),
+  ...prophete("لوط", "lūṭ", ["nuage", "montagne", "chemin"]),
+  ...prophete("أيوب", "ayyūb", ["eau", "feuille", "chapelet"]),
+  ...prophete("يحيى بن زكريا|زكريا", "yaḥyā ibn zakariyyā|yaḥyā|zakariyyā", ["mosquee", "livre", "lanterne"]),
+  ...prophete("إسحاق", "isḥāq", ["tente", "etoiles", "chemin"]),
+  ...prophete("إدريس", "idrīs", ["plume", "etoiles", "livre"]),
+  ...prophete("الخضر", "khaḍir", ["eau", "chemin", "montagne"]),
+];
 const REGLES: [RegExp, Motif][] = [
+  ...PROPHETES,
+  [/scribe|kātib|كتاب الوحي|compilation|جمع القرآن/i, "plume"], [/الوحي|révélation/i, "livre"], [/الوحي|نزول|révélation|descen(?:du|due|te|dre)/i, "etoiles"],
   [/الصلاة|المسجد|المساجد|الأذان|الإقامة|السجود|القبلة|الإمام/, "mosquee"],
   [/الحج|العمرة|الكعبة|عرفات|زمزم/, "kaaba"],
   [/الوضوء|الغسل|الطهارة|التيمم|الماء|المياه/, "eau"],
@@ -108,19 +140,19 @@ const REGLES: [RegExp, Motif][] = [
   [/ablution|lavage|purif|tayammum|ghusl|\beau\b|pluie|\bmer\b/i, "eau"], [/jeûne|ramadan|croissant|nuit du destin/i, "croissant"],
   [/repas|aliment|nourri|manger|datte|boisson|lait|miel/i, "bol"], [/zakāt|aumône|vente|commerce|prêt|dette|change|usure|location|associ|métayage|marché|salam|gage|cadeau|\bdon\b|\bdons\b|biens|monnaie/i, "pieces"],
   [/justice|droits?|jug|témoign|peine|talion|sang|testament|héritage|condition|serment|vœu|procuration|litige|injustice|corruption/i, "balance"],
-  [/savoir|savant|science|écri|enseign|étudi|apprend/i, "plume"], [/coran|sourate|lecture|verset|révélation|livre|torah|évangile|psaume/i, "livre"],
+  [/savoir|savant|science|écri|enseign|étudi|apprend/i, "plume"], [/coran|sourate|lecture|verset|révélation|livre|torah|évangile|psaume/i, "livre"], [/coran|livre d’allah/i, "lanterne"],
   [/dhikr|invocation|pardon|louange|rappel/i, "chapelet"], [/mariage|famille|époux|épouse|enfant|orphelin|allait|parents|voisin|maison|femme/i, "maison"],
   [/mort|tombe|linceul|funér|deuil|agonie|défunt/i, "lanterne"], [/heure|signe|dajjāl|épreuve|fin des temps|résurrection|trompe|fumée|gog/i, "sablier"],
   [/soleil|lune/i, "soleil"], [/étoile|ciel|création|ange|trône|djinn|invisible/i, "etoiles"],
   [/médecine|remède|malade|fièvre|ventouse|nigelle|peste|guéri|maladie|œil/i, "feuille"], [/jihād|expédition|combat|butin|cheval|bannière|étendard|armée/i, "etendard"],
   [/paradis/i, "porte"], [/rêve|songe/i, "nuage"], [/voyage|chemin|marche|émigration/i, "chemin"],
-  [/prophète|messager|mūsā|ibrāhīm|nūḥ|ʿīsā|yūsuf|sulaymān|dāwūd|ādam/i, "montagne"], [/médine|la mecque|vie du prophète|compagnon/i, "palmier"],
+  [/prophètes|messagers/i, "montagne"], [/prophète|messager d’allah/i, "palmier"], [/prophète|messager d’allah/i, "mosquee"], [/médine|la mecque|vie du prophète|compagnon/i, "palmier"],
   [/tribu|bédouin|désert/i, "tente"], [/caractère|bonté|douceur|salut|politesse|règles/i, "lanterne"], [/remède|coupe|boire/i, "coupe"],
 ];
 const PAR_THEME: Record<string, Motif[]> = {
   croyance: ["etoiles", "croissant", "livre"], adoration: ["mosquee", "chapelet", "kaaba"], "vie-du-prophete": ["palmier", "mosquee", "chemin"],
   relations: ["maison", "tente", "lanterne"], comportements: ["lanterne", "porte", "chapelet"], "fin-des-temps": ["sablier", "soleil", "etoiles"],
-  science: ["plume", "livre", "etoiles"], "maladies-et-remedes": ["feuille", "coupe", "eau"], "autres-themes": ["balance", "livre", "pieces"],
+  science: ["plume", "livre", "etoiles"], "maladies-et-remedes": ["feuille", "coupe", "eau"], "autres-themes": ["livre", "lanterne", "etoiles"],
 };
 const motifsTrouves = (titre: string): Motif[] =>
   [...new Set(REGLES.filter(([re]) => re.test(titre.normalize("NFC").replace(/[\u064B-\u065F\u0670\u0640]/gu, ""))).map(([, m]) => m))];
