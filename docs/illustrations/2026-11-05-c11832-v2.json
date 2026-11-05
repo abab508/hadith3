@@ -1,0 +1,14 @@
+{
+  "path": "C:\\Users\\df\\.codex\\generated_images\\01a1a770-48ec-73c1-9a7e-9741f10e8769\\exec-18c3220f-b2c2-48be-a30a-7731b4926e01.png",
+  "prompt": "Edit the supplied Milaghaiba illustration. Keep its exact landscape composition, exquisite realistic painted quality, midnight navy/antique gold palette, carved Islamic study-room architecture, skylight, table, lamps, objects, rear-view reader and hands. The person MUST remain seen only from the back, with NO visible face, eyes, nose, mouth or profile. Change ONLY the two closed books and the necessary local hand contact. LEFT book: a dignified navy Qur'an, cover clearly and correctly labelled in elegant readable gold Arabic EXACTLY Â«Ø§Ù„Ù‚Ø±Ø¢Ù† Ø§Ù„ÙƒØ±ÙŠÙ…Â». RIGHT book: a distinct brown hadith/Sunna volume, cover clearly and correctly labelled in elegant readable gold Arabic EXACTLY Â«Ø§Ù„Ø³Ù†Ø© Ø§Ù„Ù†Ø¨ÙˆÙŠØ©Â». These are cover titles, NOT verses. Make both Arabic titles visually prominent enough to distinguish the books in a website thumbnail. Integrate lettering naturally into the covers with accurate right-to-left Arabic, connected correct letterforms, no extra text, no transliteration. Simplify the central gold rosettes to make space for the titles; use different restrained cover ornamentation so the right volume does not simply duplicate a Qur'an cover. Render realistic bound-book construction: subtly rounded spines, believable cloth/leather hinges, thin ivory page layers visible at the bottom fore-edges, modest visibly different thickness between the two volumes, coherent perspective and hand grips, no giant gold slab for pages. Keep all other parts of the image unchanged. No watermark, no border, no logo, no other writing. Output at maximum native resolution.",
+  "generator": "built-in image_gen, edit",
+  "source": "c11832.png",
+  "nativeDimensions": [
+    1672,
+    941
+  ],
+  "nativeSha256": "4d6f90e77fb856be13c6a8a4026470ba447037be9c9c357345a99c5f2c6c1126",
+  "webSha256": "89e41abb26b6bdf3a0c4bb71d8cba84593795c57fcc82aa3e83c8a13d869a624",
+  "review": "Arabic titles checked visually: القرآن الكريم left, السنة النبوية right; no visible face; old original retained",
+  "format": "WebP quality90, no resizing"
+}
