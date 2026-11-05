@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "El Milaghaiba",
     "sousTitre": "Teks Arab asal dahulu, bersama sumber, rujukan dan terjemahan yang dinyatakan asalnya.",
     "etat": "Versi demonstrasi: data yang dipaparkan ialah contoh yang menunggu pengesahan pakar.",
     "exempleTerme": "Contoh istilah:",
@@ -43,7 +43,7 @@
         "texte": "Edisi kritis dan terjemahan baharu: rujukan dan halaman dinyatakan tanpa menyalin teks."
       }
     },
-    "avertissement": "Milaghaiba ialah alat carian dan dokumentasi. Ia tidak mengeluarkan fatwa dan tidak menggantikan pakar.",
+    "avertissement": "El Milaghaiba ialah alat carian dan dokumentasi. Ia tidak mengeluarkan fatwa dan tidak menggantikan pakar.",
     "hero": {
       "titre": "Hadis",
       "sousTitre": "Cahaya untuk setiap zaman",
@@ -164,7 +164,7 @@
   },
   "entete": {
     "slogan": "Carian dan pengesahan dokumentari hadis",
-    "accueil": "Laman utama Milaghaiba",
+    "accueil": "Laman utama El Milaghaiba",
     "rechercher": "Cari",
     "langue": "Bahasa",
     "ambianceActiver": "Hidupkan suasana bunyi",
@@ -539,7 +539,7 @@
   "actualites": {
     "surtitre": "Maklumat dan berita",
     "titre": "Artikel dan berita",
-    "intro": "Artikel, berita dan maklumat tentang Islam yang diterbitkan oleh pasukan Milaghaiba, bersama dokumen PDF.",
+    "intro": "Artikel, berita dan maklumat tentang Islam yang diterbitkan oleh pasukan El Milaghaiba, bersama dokumen PDF.",
     "rubriques": {
       "titre": "Ruangan",
       "tous": "Semua",
@@ -704,8 +704,8 @@
       "jeton": "Pautan ini tidak sah lagi (sudah digunakan atau tamat tempoh). Minta yang baharu di «Akaun saya»."
     },
     "courriel": {
-      "sujet": "Milaghaiba: kata laluan baharu",
-      "texte": "Salam {nom},\n\nUntuk memilih kata laluan baharu, buka pautan ini (sah selama 1 jam):\n{lien}\n\nJika anda tidak memintanya, abaikan e-mel ini: kata laluan anda tidak berubah.\n\nMilaghaiba"
+      "sujet": "El Milaghaiba: kata laluan baharu",
+      "texte": "Salam {nom},\n\nUntuk memilih kata laluan baharu, buka pautan ini (sah selama 1 jam):\n{lien}\n\nJika anda tidak memintanya, abaikan e-mel ini: kata laluan anda tidak berubah.\n\nEl Milaghaiba"
     }
   },
   "adminForum": {
@@ -875,7 +875,7 @@
     "precedent": "Sebelumnya",
     "suivant": "Seterusnya",
     "page": "Halaman {page} daripada {total}",
-    "avertissement": "Teks dan terjemahan diambil daripada edisi awam hadith-api (fawazahmed0), belum disahkan oleh Milaghaiba. Menemui rujukan tidak bermakna hadis itu sahih.",
+    "avertissement": "Teks dan terjemahan diambil daripada edisi awam hadith-api (fawazahmed0), belum disahkan oleh El Milaghaiba. Menemui rujukan tidak bermakna hadis itu sahih.",
     "astuceArabe": "Kitab diindeks dalam bahasa Perancis dan Arab: cuba juga perkataan Arab."
   },
   "fiche": {
@@ -896,6 +896,7 @@
     "provenance": "Asal: edisi awam hadith-api (fawazahmed0), semakan @1"
   },
   "rapportTexte": {
+    "jugementsTraduits": "Penilaian diterjemah secara automatik (AI, perlu disemak); teks Arab sumber kekal sebagai rujukan. Ayat panjang kekal dalam bahasa Arab.",
     "titre": "Laporan dan rantaian periwayatan",
     "bouton": "Laporan dan rantaian periwayatan",
     "chaine": "Rantaian periwayatan (isnād) yang tertulis dalam teks",
@@ -954,10 +955,10 @@
     "chaines": "Sanad hadis ini ({count})",
     "chaineN": "Sanad {k}",
     "hukm": "Penilaian sanad menurut sumber",
-    "hukmAide": "Penilaian daripada pangkalan data sumber, dipetik seadanya: bukan keputusan Milaghaiba.",
+    "hukmAide": "Penilaian daripada pangkalan data sumber, dipetik seadanya: bukan keputusan El Milaghaiba.",
     "indisponible": "Data kitab ini tidak tersedia buat sementara. Cuba lagi sebentar lagi.",
     "introuvable": "Hadis ini tidak ditemui dalam kitab.",
-    "source": "Teks, sanad dan kad: pangkalan data «الجامع — Hadith Knowledge Graph» (emadjumaah), lesen CC BY 4.0, diterbitkan dalam repositori data Milaghaiba. Penilaian dipetik seperti dalam sumber, perlu disemak pakar.",
+    "source": "Teks, sanad dan kad: pangkalan data «الجامع — Hadith Knowledge Graph» (emadjumaah), lesen CC BY 4.0, diterbitkan dalam repositori data El Milaghaiba. Penilaian dipetik seperti dalam sumber, perlu disemak pakar.",
     "guide": "Baca nama mengikut susunan, kemudian klik perawi untuk membuka kadnya. Sanad hadis ini diberikan terus oleh pangkalan data hadith-kg."
   },
   "recueilPublic": {
@@ -1005,9 +1006,9 @@
     "fermerIllustration": "Tutup ilustrasi"
   },
   "assistant": {
-    "ouvrir": "Buka pembantu Milaghaiba",
+    "ouvrir": "Buka pembantu El Milaghaiba",
     "fermer": "Tutup pembantu",
-    "titre": "Pembantu Milaghaiba",
+    "titre": "Pembantu El Milaghaiba",
     "nom": "Pembantu",
     "vous": "Anda",
     "accueil": "Helo! Saya boleh membantu anda mencari hadis, membaca teks Arabnya, memahami sanadnya atau istilah dalam glosari.",
@@ -1021,7 +1022,7 @@
     "ecouter": "Dengar",
     "arreter": "Berhenti",
     "reflexion": "Pembantu sedang berfikir…",
-    "recherche": "Mencari dalam sumber Milaghaiba…",
+    "recherche": "Mencari dalam sumber El Milaghaiba…",
     "erreurs": {
       "indisponible": "Pembantu tidak tersedia buat sementara waktu.",
       "trop": "Terlalu banyak soalan berturut-turut: cuba lagi dalam beberapa minit.",

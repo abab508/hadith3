@@ -23,6 +23,6 @@
 .liens li:nth-child(n+6) a{min-block-size:2.1rem;color:var(--discret);font-size:.9rem;}
 .liens li:nth-child(n+6) a[data-actif],.liens li:nth-child(n+6) a:hover{color:var(--ocre);}
 @media(max-width:1400px){.liens{grid-column:1/-1;grid-row:2;border-block-start:1px solid #e3b8661a;padding-block-start:.2rem;}.liens::before{display:none;}.liens li:nth-child(n+6){order:0;}.liens li:nth-child(5){margin-inline-end:1rem;}}
-@media(max-width:980px){.liens{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}.liens li{flex:none;}.langues{grid-column:2;}}
+@media(max-width:980px){.liens{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}.liens li{flex:none;}.langues{grid-column:1/-1;grid-row:3;justify-self:start;}}
 @media(max-width:630px){.langues{grid-column:1/-1;grid-row:3;justify-self:start;}}
 @media(prefers-reduced-motion:reduce){.langues a,.liens a,.liens a::after{transition:none;}}

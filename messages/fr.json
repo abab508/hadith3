@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "El Milaghaiba",
     "sousTitre": "Le texte arabe original d’abord, avec ses sources, ses références et des traductions dont l’origine est indiquée.",
     "etat": "Version de démonstration : les données affichées sont des exemples à valider par un spécialiste.",
     "exempleTerme": "Exemple de terme :",
@@ -43,7 +43,7 @@
         "texte": "Éditions critiques et traductions récentes : la référence et la page sont indiquées, sans copier le texte."
       }
     },
-    "avertissement": "Milaghaiba est un outil de recherche et de documentation. Il ne donne pas d’avis religieux et ne remplace pas un spécialiste.",
+    "avertissement": "El Milaghaiba est un outil de recherche et de documentation. Il ne donne pas d’avis religieux et ne remplace pas un spécialiste.",
     "hero": {
       "titre": "Les Hadiths",
       "sousTitre": "Une lumière pour chaque époque",
@@ -164,7 +164,7 @@
   },
   "entete": {
     "slogan": "Recherche et vérification documentaire des hadiths",
-    "accueil": "Accueil de Milaghaiba",
+    "accueil": "Accueil d’El Milaghaiba",
     "rechercher": "Rechercher",
     "langue": "Langue",
     "ambianceActiver": "Activer l’ambiance sonore",
@@ -539,7 +539,7 @@
   "actualites": {
     "surtitre": "Informations et actualités",
     "titre": "Articles et actualités",
-    "intro": "Articles, actualités et informations sur l’islam publiés par l’équipe de Milaghaiba, avec leurs documents PDF.",
+    "intro": "Articles, actualités et informations sur l’islam publiés par l’équipe d’El Milaghaiba, avec leurs documents PDF.",
     "rubriques": {
       "titre": "Rubriques",
       "tous": "Tout",
@@ -704,8 +704,8 @@
       "jeton": "Ce lien n’est plus valable (déjà utilisé ou expiré). Demandez-en un nouveau depuis « Mon compte »."
     },
     "courriel": {
-      "sujet": "Milaghaiba : nouveau mot de passe",
-      "texte": "Bonjour {nom},\n\nPour choisir un nouveau mot de passe, ouvrez ce lien (valable 1 heure) :\n{lien}\n\nSi vous n’avez rien demandé, ignorez cet e-mail : votre mot de passe ne change pas.\n\nMilaghaiba"
+      "sujet": "El Milaghaiba : nouveau mot de passe",
+      "texte": "Bonjour {nom},\n\nPour choisir un nouveau mot de passe, ouvrez ce lien (valable 1 heure) :\n{lien}\n\nSi vous n’avez rien demandé, ignorez cet e-mail : votre mot de passe ne change pas.\n\nEl Milaghaiba"
     }
   },
   "adminForum": {
@@ -875,7 +875,7 @@
     "precedent": "Précédent",
     "suivant": "Suivant",
     "page": "Page {page} sur {total}",
-    "avertissement": "Textes et traductions repris de l’édition publique hadith-api (fawazahmed0), non vérifiés par Milaghaiba. Trouver une référence n’authentifie pas le hadith.",
+    "avertissement": "Textes et traductions repris de l’édition publique hadith-api (fawazahmed0), non vérifiés par El Milaghaiba. Trouver une référence n’authentifie pas le hadith.",
     "astuceArabe": "Les recueils sont indexés en français et en arabe : essayez aussi un mot arabe."
   },
   "fiche": {
@@ -896,6 +896,7 @@
     "provenance": "Provenance : édition publique hadith-api (fawazahmed0), révision @1"
   },
   "rapportTexte": {
+    "jugementsTraduits": "Jugements traduits automatiquement (IA, à relire) ; l’arabe de la source reste la référence. Les phrases longues restent en arabe.",
     "titre": "Rapport et chaîne de transmission",
     "bouton": "Rapport et chaîne de transmission",
     "chaine": "Chaîne de transmission (isnād) écrite dans le texte",
@@ -954,10 +955,10 @@
     "chaines": "Chaînes de ce hadith ({count})",
     "chaineN": "Chaîne {k}",
     "hukm": "Jugement de la chaîne selon la source",
-    "hukmAide": "Appréciation donnée par la base source, citée telle quelle : ce n’est pas un verdict de Milaghaiba.",
+    "hukmAide": "Appréciation donnée par la base source, citée telle quelle : ce n’est pas un verdict d’El Milaghaiba.",
     "indisponible": "Les données de ce recueil sont momentanément indisponibles. Réessayez dans quelques instants.",
     "introuvable": "Ce hadith est introuvable dans le recueil.",
-    "source": "Texte, chaînes et fiches : base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0, publiée dans le dépôt de données Milaghaiba. Jugements cités tels qu’ils figurent dans la source, à vérifier par un spécialiste.",
+    "source": "Texte, chaînes et fiches : base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0, publiée dans le dépôt de données El Milaghaiba. Jugements cités tels qu’ils figurent dans la source, à vérifier par un spécialiste.",
     "guide": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne donnée pour ce hadith par la base hadith-kg elle-même."
   },
   "recueilPublic": {
@@ -1005,9 +1006,9 @@
     "fermerIllustration": "Fermer l’illustration"
   },
   "assistant": {
-    "ouvrir": "Ouvrir l’assistant Milaghaiba",
+    "ouvrir": "Ouvrir l’assistant El Milaghaiba",
     "fermer": "Fermer l’assistant",
-    "titre": "Assistant Milaghaiba",
+    "titre": "Assistant El Milaghaiba",
     "nom": "Assistant",
     "vous": "Vous",
     "accueil": "Bonjour ! Je peux vous aider à trouver un hadith, lire son texte arabe, comprendre sa chaîne de transmission ou un terme du glossaire.",
@@ -1021,7 +1022,7 @@
     "ecouter": "Écouter",
     "arreter": "Arrêter",
     "reflexion": "L’assistant réfléchit…",
-    "recherche": "Recherche dans les sources de Milaghaiba…",
+    "recherche": "Recherche dans les sources d’El Milaghaiba…",
     "erreurs": {
       "indisponible": "L’assistant est momentanément indisponible.",
       "trop": "Trop de questions d’affilée : réessayez dans quelques minutes.",

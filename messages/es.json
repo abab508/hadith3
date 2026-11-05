@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "El Milaghaiba",
     "sousTitre": "Primero el texto árabe original, con sus fuentes, referencias y traducciones de origen indicado.",
     "etat": "Versión de demostración: los datos mostrados son ejemplos pendientes de validación por un especialista.",
     "exempleTerme": "Ejemplo de término:",
@@ -43,7 +43,7 @@
         "texte": "Ediciones críticas y traducciones recientes: se indica la referencia y la página, sin copiar el texto."
       }
     },
-    "avertissement": "Milaghaiba es una herramienta de búsqueda y documentación. No emite dictámenes religiosos ni sustituye a un especialista.",
+    "avertissement": "El Milaghaiba es una herramienta de búsqueda y documentación. No emite dictámenes religiosos ni sustituye a un especialista.",
     "hero": {
       "titre": "Los hadices",
       "sousTitre": "Una luz para cada época",
@@ -164,7 +164,7 @@
   },
   "entete": {
     "slogan": "Búsqueda y verificación documental de hadices",
-    "accueil": "Inicio de Milaghaiba",
+    "accueil": "Inicio de El Milaghaiba",
     "rechercher": "Buscar",
     "langue": "Idioma",
     "ambianceActiver": "Activar el ambiente sonoro",
@@ -539,7 +539,7 @@
   "actualites": {
     "surtitre": "Información y actualidad",
     "titre": "Artículos y actualidad",
-    "intro": "Artículos, noticias e información sobre el islam publicados por el equipo de Milaghaiba, con sus documentos PDF.",
+    "intro": "Artículos, noticias e información sobre el islam publicados por el equipo de El Milaghaiba, con sus documentos PDF.",
     "rubriques": {
       "titre": "Secciones",
       "tous": "Todo",
@@ -704,8 +704,8 @@
       "jeton": "Este enlace ya no es válido (usado o caducado). Pida uno nuevo desde «Mi cuenta»."
     },
     "courriel": {
-      "sujet": "Milaghaiba: nueva contraseña",
-      "texte": "Hola, {nom}:\n\nPara elegir una contraseña nueva, abra este enlace (válido 1 hora):\n{lien}\n\nSi no lo ha pedido, ignore este correo: su contraseña no cambia.\n\nMilaghaiba"
+      "sujet": "El Milaghaiba: nueva contraseña",
+      "texte": "Hola, {nom}:\n\nPara elegir una contraseña nueva, abra este enlace (válido 1 hora):\n{lien}\n\nSi no lo ha pedido, ignore este correo: su contraseña no cambia.\n\nEl Milaghaiba"
     }
   },
   "adminForum": {
@@ -875,7 +875,7 @@
     "precedent": "Anterior",
     "suivant": "Siguiente",
     "page": "Página {page} de {total}",
-    "avertissement": "Textos y traducciones tomados de la edición pública hadith-api (fawazahmed0), no verificados por Milaghaiba. Encontrar una referencia no autentica el hadiz.",
+    "avertissement": "Textos y traducciones tomados de la edición pública hadith-api (fawazahmed0), no verificados por El Milaghaiba. Encontrar una referencia no autentica el hadiz.",
     "astuceArabe": "Las colecciones están indexadas en francés y árabe: pruebe también una palabra árabe."
   },
   "fiche": {
@@ -896,6 +896,7 @@
     "provenance": "Procedencia: edición pública hadith-api (fawazahmed0), revisión @1"
   },
   "rapportTexte": {
+    "jugementsTraduits": "Juicios traducidos automáticamente (IA, por revisar); el árabe de la fuente sigue siendo la referencia. Las frases largas quedan en árabe.",
     "titre": "Informe y cadena de transmisión",
     "bouton": "Informe y cadena de transmisión",
     "chaine": "Cadena de transmisión (isnād) escrita en el texto",
@@ -954,10 +955,10 @@
     "chaines": "Cadenas de este hadiz ({count})",
     "chaineN": "Cadena {k}",
     "hukm": "Valoración de la cadena según la fuente",
-    "hukmAide": "Valoración dada por la base de origen, citada tal cual: no es un veredicto de Milaghaiba.",
+    "hukmAide": "Valoración dada por la base de origen, citada tal cual: no es un veredicto de El Milaghaiba.",
     "indisponible": "Los datos de esta colección no están disponibles por el momento. Inténtelo de nuevo en unos instantes.",
     "introuvable": "Este hadiz no se encuentra en la colección.",
-    "source": "Texto, cadenas y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0, publicada en el repositorio de datos de Milaghaiba. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
+    "source": "Texto, cadenas y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0, publicada en el repositorio de datos de El Milaghaiba. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
     "guide": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena dada para este hadiz por la propia base hadith-kg."
   },
   "recueilPublic": {
@@ -1005,9 +1006,9 @@
     "fermerIllustration": "Cerrar la ilustración"
   },
   "assistant": {
-    "ouvrir": "Abrir el asistente Milaghaiba",
+    "ouvrir": "Abrir el asistente El Milaghaiba",
     "fermer": "Cerrar el asistente",
-    "titre": "Asistente Milaghaiba",
+    "titre": "Asistente El Milaghaiba",
     "nom": "Asistente",
     "vous": "Usted",
     "accueil": "¡Hola! Puedo ayudarle a encontrar un hadiz, leer su texto árabe, entender su cadena de transmisión o un término del glosario.",
@@ -1021,7 +1022,7 @@
     "ecouter": "Escuchar",
     "arreter": "Detener",
     "reflexion": "El asistente está pensando…",
-    "recherche": "Buscando en las fuentes de Milaghaiba…",
+    "recherche": "Buscando en las fuentes de El Milaghaiba…",
     "erreurs": {
       "indisponible": "El asistente no está disponible por el momento.",
       "trop": "Demasiadas preguntas seguidas: vuelva a intentarlo en unos minutos.",

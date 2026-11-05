@@ -8,7 +8,7 @@ import { languesContenu } from "@/lib/contenus/depot";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "adminContenus" });
-  return { robots: { index: false, follow: false }, title: `${t("metaTitre")} — Milaghaiba` };
+  return { robots: { index: false, follow: false }, title: `${t("metaTitre")} — El Milaghaiba` };
 }
 
 export default async function PageGestionContenus({ params }: { params: Promise<{ locale: string }> }) {

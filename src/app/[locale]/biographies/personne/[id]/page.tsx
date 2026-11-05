@@ -8,6 +8,7 @@ import { catalogueRecueils } from "@/donnees/recueils";
 import { ecritLatin, translitererLieux, translitererNom } from "@/donnees/translitteration";
 import styles from "../../Biographies.module.css";
 import { CLES_SERIES } from "@/donnees/cles-interface";
+import { traduireJugement } from "@/donnees/jugements-traduits";
 
 type Parametres = { locale: string; id: string };
 const lireId = (id: string) => (/^\d{1,6}$/.test(id) ? Number(id) : NaN);
@@ -49,7 +50,8 @@ export default async function PagePersonne({ params }: { params: Promise<Paramet
   if (f.residence) reperes.push([tr("residence"), lieu(f.residence)]);
   if (f.nasab) reperes.push([tr("nasab"), <bdi key="s" lang="ar" dir="rtl" className="texte-arabe">{f.nasab.replaceAll("،", "، ")}</bdi>]);
   if (f.metier) reperes.push([t("metier"), <bdi key="m" lang="ar" dir="rtl" className="texte-arabe">{f.metier}</bdi>]);
-  if (f.rang) reperes.push([tr("synthese"), <bdi key="r" lang="ar" dir="rtl" className="texte-arabe">{f.rang}</bdi>]);
+  const rangTraduit = traduireJugement(f.rang, locale);
+  if (f.rang) reperes.push([tr("synthese"), <span key="r">{rangTraduit && <bdi lang={locale}>{rangTraduit} · </bdi>}<bdi lang="ar" dir="rtl" className="texte-arabe">{f.rang}</bdi></span>]);
   if (f.riwayat) reperes.push([tr("riwayat"), t("recits", { n: f.riwayat })]);
   if (f.tadlis) reperes.push(["", tr("tadlis")]);
   if (f.ikhtilat) reperes.push(["", tr("ikhtilat")]);
@@ -106,8 +108,9 @@ export default async function PagePersonne({ params }: { params: Promise<Paramet
             {f.jugements && f.jugements.length > 0 ? (
               <ul className={styles.jugements}>
                 {f.jugements.map(([critique, texte], i) => (
-                  <li key={i} lang="ar" dir="rtl" className="texte-arabe">
-                    <span className={styles.critique}>{critique}</span>{texte}
+                  <li key={i}>
+                    <p lang="ar" dir="rtl" className="texte-arabe"><span className={styles.critique}>{critique}</span>{texte}</p>
+                    {traduireJugement(texte, locale) && <p lang={locale}>{traduireJugement(texte, locale)}</p>}
                   </li>
                 ))}
               </ul>

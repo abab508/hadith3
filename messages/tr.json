@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "El Milaghaiba",
     "sousTitre": "Önce özgün Arapça metin; kaynakları, atıfları ve kökeni belirtilmiş çevirileriyle.",
     "etat": "Tanıtım sürümü: gösterilen veriler bir uzmanın doğrulamasını bekleyen örneklerdir.",
     "exempleTerme": "Terim örneği:",
@@ -43,7 +43,7 @@
         "texte": "Tahkikli baskılar ve yeni çeviriler: metin kopyalanmadan atıf ve sayfa verilir."
       }
     },
-    "avertissement": "Milaghaiba bir arama ve belgeleme aracıdır. Dini hüküm vermez ve bir uzmanın yerini tutmaz.",
+    "avertissement": "El Milaghaiba bir arama ve belgeleme aracıdır. Dini hüküm vermez ve bir uzmanın yerini tutmaz.",
     "hero": {
       "titre": "Hadisler",
       "sousTitre": "Her çağ için bir ışık",
@@ -164,7 +164,7 @@
   },
   "entete": {
     "slogan": "Hadis arama ve belgesel doğrulama",
-    "accueil": "Milaghaiba ana sayfası",
+    "accueil": "El Milaghaiba ana sayfası",
     "rechercher": "Ara",
     "langue": "Dil",
     "ambianceActiver": "Ortam sesini aç",
@@ -539,7 +539,7 @@
   "actualites": {
     "surtitre": "Bilgiler ve haberler",
     "titre": "Makaleler ve haberler",
-    "intro": "Milaghaiba ekibinin İslam hakkında yayımladığı makaleler, haberler ve bilgiler, PDF belgeleriyle birlikte.",
+    "intro": "El Milaghaiba ekibinin İslam hakkında yayımladığı makaleler, haberler ve bilgiler, PDF belgeleriyle birlikte.",
     "rubriques": {
       "titre": "Bölümler",
       "tous": "Tümü",
@@ -704,8 +704,8 @@
       "jeton": "Bu bağlantı artık geçerli değil (kullanılmış veya süresi dolmuş). «Hesabım» bölümünden yenisini isteyin."
     },
     "courriel": {
-      "sujet": "Milaghaiba: yeni şifre",
-      "texte": "Merhaba {nom},\n\nYeni şifre seçmek için bu bağlantıyı açın (1 saat geçerli):\n{lien}\n\nBunu siz istemediyseniz bu e-postayı yok sayın: şifreniz değişmez.\n\nMilaghaiba"
+      "sujet": "El Milaghaiba: yeni şifre",
+      "texte": "Merhaba {nom},\n\nYeni şifre seçmek için bu bağlantıyı açın (1 saat geçerli):\n{lien}\n\nBunu siz istemediyseniz bu e-postayı yok sayın: şifreniz değişmez.\n\nEl Milaghaiba"
     }
   },
   "adminForum": {
@@ -875,7 +875,7 @@
     "precedent": "Önceki",
     "suivant": "Sonraki",
     "page": "Sayfa {page} / {total}",
-    "avertissement": "Metinler ve çeviriler hadith-api açık baskısından (fawazahmed0) alınmıştır, Milaghaiba tarafından doğrulanmamıştır. Bir kaynak bulmak hadisin sahih olduğunu göstermez.",
+    "avertissement": "Metinler ve çeviriler hadith-api açık baskısından (fawazahmed0) alınmıştır, El Milaghaiba tarafından doğrulanmamıştır. Bir kaynak bulmak hadisin sahih olduğunu göstermez.",
     "astuceArabe": "Kitaplar Fransızca ve Arapça dizinlenmiştir: Arapça bir kelime de deneyin."
   },
   "fiche": {
@@ -896,6 +896,7 @@
     "provenance": "Kaynak: hadith-api açık baskısı (fawazahmed0), sürüm @1"
   },
   "rapportTexte": {
+    "jugementsTraduits": "Değerlendirmeler otomatik çevrildi (yapay zekâ, gözden geçirilmeli); kaynak Arapça metin esastır. Uzun cümleler Arapça kalır.",
     "titre": "Rapor ve rivayet zinciri",
     "bouton": "Rapor ve rivayet zinciri",
     "chaine": "Metinde yazılı rivayet zinciri (isnād)",
@@ -954,10 +955,10 @@
     "chaines": "Bu hadisin isnadları ({count})",
     "chaineN": "İsnad {k}",
     "hukm": "Kaynağa göre isnad hükmü",
-    "hukmAide": "Kaynak tabanın verdiği değerlendirme, olduğu gibi aktarılmıştır: Milaghaiba'nın hükmü değildir.",
+    "hukmAide": "Kaynak tabanın verdiği değerlendirme, olduğu gibi aktarılmıştır: El Milaghaiba'nın hükmü değildir.",
     "indisponible": "Bu eserin verileri şu anda kullanılamıyor. Birazdan tekrar deneyin.",
     "introuvable": "Bu hadis eserde bulunamadı.",
-    "source": "Metin, isnadlar ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı, Milaghaiba veri deposunda yayımlanmıştır. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
+    "source": "Metin, isnadlar ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı, El Milaghaiba veri deposunda yayımlanmıştır. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
     "guide": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Bu hadisin isnadı doğrudan hadith-kg tabanından alınmıştır."
   },
   "recueilPublic": {
@@ -1005,9 +1006,9 @@
     "fermerIllustration": "Görseli kapat"
   },
   "assistant": {
-    "ouvrir": "Milaghaiba asistanını aç",
+    "ouvrir": "El Milaghaiba asistanını aç",
     "fermer": "Asistanı kapat",
-    "titre": "Milaghaiba asistanı",
+    "titre": "El Milaghaiba asistanı",
     "nom": "Asistan",
     "vous": "Siz",
     "accueil": "Merhaba! Bir hadisi bulmanıza, Arapça metnini okumanıza, isnadını ya da sözlükteki bir terimi anlamanıza yardımcı olabilirim.",
@@ -1021,7 +1022,7 @@
     "ecouter": "Dinle",
     "arreter": "Durdur",
     "reflexion": "Asistan düşünüyor…",
-    "recherche": "Milaghaiba kaynaklarında aranıyor…",
+    "recherche": "El Milaghaiba kaynaklarında aranıyor…",
     "erreurs": {
       "indisponible": "Asistan geçici olarak kullanılamıyor.",
       "trop": "Arka arkaya çok fazla soru: birkaç dakika sonra tekrar deneyin.",

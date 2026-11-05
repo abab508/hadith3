@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { MaillonKg } from "@/donnees/fiches-kg";
+import { traduireJugement } from "@/donnees/jugements-traduits";
 import ui from "@/composants/Interface.module.css";
 import styles from "@/composants/ChaineRapport.module.css";
 
@@ -17,6 +18,9 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
 }) {
   const t = useTranslations("rapportTexte");
   const tr = useTranslations("rapport");
+  const locale = useLocale();
+  // Jugement traduit dans la langue choisie (dictionnaire IA à relire) ; null = seul l'arabe de la source.
+  const traduit = (texte?: string) => traduireJugement(texte, locale);
   const identifiee = !!fiches?.length;
   const liste: Maillon[] = [
     ...(jusquAuProphete ? [{ nom: "النبي ﷺ", categorie: "source" as const }] : []),
@@ -48,7 +52,9 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
         {arabe(m)
           ? <bdi lang="ar" dir="rtl" className={`texte-arabe ${styles.nomAr}`}>{m.nom}</bdi>
           : <bdi lang="ar-Latn" dir="ltr" className={styles.nomLatin}>{m.nom}</bdi>}
-        {m.fiche?.rang && <bdi lang="ar" dir="rtl" className={styles.nomLatin}>{m.fiche.rang.length > 34 ? `${m.fiche.rang.slice(0, 34)}…` : m.fiche.rang}</bdi>}
+        {m.fiche?.rang && (traduit(m.fiche.rang)
+          ? <bdi lang={locale} className={styles.nomLatin}>{traduit(m.fiche.rang)}</bdi>
+          : <bdi lang="ar" dir="rtl" className={styles.nomLatin}>{m.fiche.rang.length > 34 ? `${m.fiche.rang.slice(0, 34)}…` : m.fiche.rang}</bdi>)}
         <span className={styles.categorie}>{libelle(m.categorie)} <span aria-hidden="true">↗</span></span>
       </button>
       {i < liste.length - 1 && (
@@ -155,6 +161,7 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
           {f?.rang && (
             <div className={styles.verdict}>
               <p className={styles.etiquette}>{t("synthese")}</p>
+              {traduit(f.rang) && <p lang={locale} className={styles.verdictTraduit}>{traduit(f.rang)}</p>}
               <p lang="ar" dir="rtl" className={`texte-arabe ${styles.verdictAr}`}>{f.rang}</p>
             </div>
           )}
@@ -163,6 +170,7 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
             f.jugements.map((j, i) => (
               <div key={`${i}-${j.critique}`} className={styles.jugement}>
                 <p className={styles.critique}><bdi lang="ar" dir="rtl">{j.critique}</bdi></p>
+                {traduit(j.texte) && <p lang={locale} className={styles.jugementTraduit}>{traduit(j.texte)}</p>}
                 <p lang="ar" dir="rtl" className="texte-arabe">{j.texte}</p>
               </div>
             ))
@@ -170,6 +178,7 @@ export default function ChaineTexteRapport({ maillons = [], fiches, categories =
             <p className={styles.jugement}>{f ? t("aucunJugementKg") : tr("fiche.aucunJugement")}</p>
           )}
         </div>
+        {locale !== "ar" && f?.rang ? <p className={ui.discret}>{t("jugementsTraduits")}</p> : null}
         <p className={ui.avertissement}>{identifiee ? t("sourceKg") : t("aide")}</p>
       </aside>
     </div>
