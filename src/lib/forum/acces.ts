@@ -1,0 +1,40 @@
+/**
+ * Règles communes du forum : membre connecté (et non bloqué), limites de fréquence, formats des saisies.
+ */
+import { z } from "zod";
+import { cookieMembre, lireSession } from "@/lib/forum/securite";
+import { depotForum, type Membre } from "@/lib/forum/depot";
+
+// Membre de la session, seulement s'il existe, n'est pas bloqué et n'a pas changé de mot de passe depuis.
+export async function membreDeSession(valeur?: string): Promise<Membre | null> {
+  const s = lireSession(valeur);
+  const d = depotForum();
+  if (!s || !d) return null;
+  const m = await d.membreParId(s.id).catch(() => null);
+  return m && m.statut === "actif" && m.version === s.version ? m : null;
+}
+export const membreConnecte = (req: Request) => membreDeSession(cookieMembre(req));
+
+// Limite simple par clé (adresse IP ou membre) : n actions par fenêtre (mémoire de l'instance).
+const compteurs = new Map<string, number[]>();
+export function tropDeRequetes(cle: string, n: number, fenetreMs: number): boolean {
+  const t = Date.now();
+  const r = (compteurs.get(cle) ?? []).filter((x) => t - x < fenetreMs);
+  r.push(t);
+  compteurs.set(cle, r);
+  if (compteurs.size > 5000) for (const [k, v] of compteurs) if (v.every((x) => t - x >= fenetreMs)) compteurs.delete(k);
+  return r.length > n;
+}
+export const ipDe = (req: Request) => (req.headers.get("x-forwarded-for")?.split(",")[0] ?? "local").trim().slice(0, 70);
+
+export const formats = {
+  email: z.string().trim().toLowerCase().email().max(200),
+  nom: z.string().trim().min(3).max(30).regex(/^[\p{L}\p{N} _.-]+$/u),
+  motDePasse: z.string().min(10).max(200),
+  code: z.string().trim().toUpperCase().regex(/^[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/),
+  titre: z.string().trim().min(5).max(150),
+  corps: z.string().trim().min(2).max(5000),
+  mot: z.string().trim().min(2).max(80),
+};
+// Au plus 6 messages (discussions comprises) par membre en 10 minutes.
+export const LIMITE_MESSAGES = { n: 6, fenetreMs: 10 * 60 * 1000 };

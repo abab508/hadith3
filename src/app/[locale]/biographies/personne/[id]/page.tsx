@@ -7,6 +7,7 @@ import { aUneFiche, ficheBio, serieDe, type Voisin } from "@/donnees/biographies
 import { catalogueRecueils } from "@/donnees/recueils";
 import { ecritLatin, translitererLieux, translitererNom } from "@/donnees/translitteration";
 import styles from "../../Biographies.module.css";
+import { CLES_SERIES } from "@/donnees/cles-interface";
 
 type Parametres = { locale: string; id: string };
 const lireId = (id: string) => (/^\d{1,6}$/.test(id) ? Number(id) : NaN);
@@ -72,10 +73,10 @@ export default async function PagePersonne({ params }: { params: Promise<Paramet
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p className={styles.retour}>
-        {serie ? <Link href={`/biographies/${serie}`}>← {t(`series.${serie}.titre`)}</Link> : <Link href="/biographies">← {t("retour")}</Link>}
+        {serie ? <Link href={`/biographies/${serie}`}>← {t(CLES_SERIES[serie].titre)}</Link> : <Link href="/biographies">← {t("retour")}</Link>}
       </p>
       <EntetePatrimoine scene="biographies" compacte className={styles.entete}>
-        <p className={styles.surtitre}>{serie ? t(`series.${serie}.titre`) : t("titre")}</p>
+        <p className={styles.surtitre}>{serie ? t(CLES_SERIES[serie].titre) : t("titre")}</p>
         <h1 className={styles.titre}><bdi lang="ar" dir="rtl" className="texte-arabe">{usage}</bdi></h1>
         {translit && <p className={styles.nomLatin} lang="ar-Latn">{translit}</p>}
       </EntetePatrimoine>

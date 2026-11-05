@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import styles from "@/composants/GestionContenus.module.css";
+import { CLES_TYPES_CONTENU, cleErreurContenus } from "@/donnees/cles-interface";
 
 type Type = "article" | "actualite" | "information";
 type Contenu = { id: number; slug: string; type: Type; titre: string; resume: string; corps: string; langue: string;
@@ -12,18 +13,13 @@ type Etat = { configure: boolean; connecte: boolean; base: boolean; pdf: boolean
 type Brouillon = Omit<Contenu, "id" | "slug" | "majLe" | "publieLe"> & { id?: number };
 
 const TYPES: Type[] = ["article", "actualite", "information"];
-// Codes d'erreur des routes -> clés de traduction (adminContenus.erreurs.*).
-const CLES_ERREURS: Record<string, string> = {
-  "mot-de-passe": "motDePasse", trop: "trop", "non-configure": "nonConfigure", connexion: "connexion", base: "base", stockage: "stockage",
-  invalide: "invalide", "trop-gros": "tropGros", "pas-pdf": "pasPdf", origine: "origine", introuvable: "introuvable",
-};
 class ErreurApi extends Error { constructor(public cle: string, public statut: number) { super(cle); } }
 const vide = (langue: string): Brouillon => ({ type: "article", titre: "", resume: "", corps: "", langue, pdfUrl: null, pdfNom: null, publie: false });
 
 async function api<T>(url: string, init?: RequestInit): Promise<T> {
   const r = await fetch(url, { ...init, credentials: "same-origin", cache: "no-store" });
   const corps = await r.json().catch(() => ({}));
-  if (!r.ok) throw new ErreurApi(CLES_ERREURS[(corps as { erreur?: string }).erreur ?? ""] ?? "serveur", r.status);
+  if (!r.ok) throw new ErreurApi(String((corps as { erreur?: string }).erreur ?? "serveur"), r.status);
   return corps as T;
 }
 const json = (method: string, body: unknown): RequestInit => ({ method, headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
@@ -33,7 +29,7 @@ export default function GestionContenus({ locale, langues }: { locale: string; l
   // Chaque brouillon ouvert reçoit un numéro : un PDF envoyé pour un brouillon ne s'attache jamais à un autre.
   const generation = useRef(0);
   const ouvrir = (b: Brouillon | null) => { generation.current++; setBrouillon(b); };
-  const texteErreur = (err: unknown) => (err instanceof ErreurApi ? t(`erreurs.${err.cle}`, { status: err.statut }) : t("erreurs.serveur", { status: 0 }));
+  const texteErreur = (err: unknown) => (err instanceof ErreurApi ? t(cleErreurContenus(err.cle), { status: err.statut }) : t("erreurs.serveur", { status: 0 }));
   const [etat, setEtat] = useState<Etat | null>(null);
   const [contenus, setContenus] = useState<Contenu[]>([]);
   const [brouillon, setBrouillon] = useState<Brouillon | null>(null);
@@ -113,7 +109,7 @@ export default function GestionContenus({ locale, langues }: { locale: string; l
           <div className={styles.ligne}>
             <label>{t("rubrique")}
               <select value={brouillon.type} onChange={(e) => setBrouillon({ ...brouillon, type: e.currentTarget.value as Type })}>
-                {TYPES.map((v) => <option key={v} value={v}>{t(`types.${v}`)}</option>)}
+                {TYPES.map((v) => <option key={v} value={v}>{t(CLES_TYPES_CONTENU[v])}</option>)}
               </select>
             </label>
             <label>{t("langue")}
@@ -156,7 +152,7 @@ export default function GestionContenus({ locale, langues }: { locale: string; l
             <ul className={styles.liste}>
               {contenus.map((c) => (
                 <li key={c.id} data-contenu={c.slug}>
-                  <span className={styles.badge}>{t(`types.${c.type}`)}</span>
+                  <span className={styles.badge}>{t(CLES_TYPES_CONTENU[c.type])}</span>
                   <bdi dir="auto" className={styles.nom}>{c.titre}</bdi>
                   <span className={c.publie ? styles.publie : styles.brouillon}>{c.publie ? t("publie") : t("brouillon")}</span>
                   {c.publie && <a href={`/${locale}/actualites/${encodeURIComponent(c.slug)}`} target="_blank" rel="noopener noreferrer">{t("voir")}</a>}

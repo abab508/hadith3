@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { PROPHETES, SERIES, critiques, personnesDe, type Serie } from "@/donnees/biographies";
 import styles from "./Biographies.module.css";
+import { CLES_SERIES } from "@/donnees/cles-interface";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -47,8 +48,8 @@ export default async function PageBiographies({ params }: { params: Promise<{ lo
                 <rect x="9" y="9" width="22" height="22" rx="2" transform="rotate(45 20 20)" />
                 <circle cx="20" cy="20" r="3" />
               </svg>
-              <h2 className={styles.nomSerie}>{t(`series.${s}.titre`)}</h2>
-              <p className={styles.descSerie}>{t(`series.${s}.description`)}</p>
+              <h2 className={styles.nomSerie}>{t(CLES_SERIES[s].titre)}</h2>
+              <p className={styles.descSerie}>{t(CLES_SERIES[s].description)}</p>
               <span className={styles.compte}>{t(s === "prophetes" ? "nbProphetes" : "compteur", { n: compte(s) })} →</span>
             </Link>
           </li>
