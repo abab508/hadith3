@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { depotMemoire, saisieContenu, slugDe } from "@/lib/contenus/depot";
+import { depotMemoire, languesContenu, saisieContenu, slugDe } from "@/lib/contenus/depot";
+import { catalogue } from "@/donnees/catalogue";
 import { creerSession, motDePasseValide, sessionValide } from "@/lib/admin-auth";
 import { POST as creer } from "@/app/api/admin/contenus/route";
 import { POST as connexion } from "@/app/api/admin/session/route";
@@ -17,6 +18,20 @@ describe("contenus de l'administrateur", () => {
     expect(saisieContenu.safeParse({ type: "article", titre: "ab", langue: "fr" }).success).toBe(false);
     expect(saisieContenu.safeParse({ type: "fatwa", titre: "Titre", langue: "fr" }).success).toBe(false);
     expect(saisieContenu.safeParse({ type: "article", titre: "Titre", langue: "fr", pdfUrl: "http://x.test/a.pdf" }).success).toBe(false);
+  });
+
+  it("prend les langues d'écriture dans le catalogue des langues", () => {
+    const actives = catalogue.entrees.filter((e) => e.statut !== "desactivee").map((e) => e.tag);
+    expect(languesContenu()).toEqual(actives);
+    for (const tag of actives) expect(saisieContenu.safeParse({ type: "article", titre: "Titre", langue: tag }).success).toBe(true);
+    expect(saisieContenu.safeParse({ type: "article", titre: "Titre", langue: "xx" }).success).toBe(false);
+  });
+
+  it("montre tous les contenus à l'admin, sans limite", async () => {
+    const d = depotMemoire();
+    for (let i = 0; i < 520; i++) await d.creer(saisie(`Contenu ${i}`, i % 2 === 0));
+    expect((await d.lister()).length).toBe(520);
+    expect((await d.lister({ publiesSeulement: true, limite: 200 })).length).toBe(200);
   });
 
   it("crée, liste, modifie et supprime ; les brouillons restent cachés", async () => {

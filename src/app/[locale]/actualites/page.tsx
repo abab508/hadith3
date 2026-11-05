@@ -21,7 +21,7 @@ export default async function PageActualites({ params, searchParams }: { params:
   const t = await getTranslations("actualites");
   const type = estType(rubrique) ? rubrique : undefined;
   const d = depot();
-  let contenus = d ? await d.lister({ publiesSeulement: true, type }).catch(() => null) : null;
+  let contenus = d ? await d.lister({ publiesSeulement: true, type, limite: 200 }).catch(() => null) : null;
   const date = (iso: string | null) => (iso ? new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(new Date(iso)) : "");
 
   return (

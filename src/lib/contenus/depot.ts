@@ -5,10 +5,12 @@
  */
 import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
+import { catalogue, entree } from "@/donnees/catalogue";
 
 export const TYPES_CONTENU = ["article", "actualite", "information"] as const;
 export type TypeContenu = typeof TYPES_CONTENU[number];
-export const LANGUES_CONTENU = ["ar", "fr", "en", "es", "ur", "id", "ms", "tr"] as const;
+// Langues d'écriture possibles : celles du catalogue (data/langues/catalogue.json) qui ne sont pas désactivées.
+export const languesContenu = (): string[] => catalogue.entrees.filter((e) => e.statut !== "desactivee").map((e) => e.tag);
 
 export type Contenu = {
   id: number; slug: string; type: TypeContenu; titre: string; resume: string; corps: string; langue: string;
@@ -21,7 +23,7 @@ export const saisieContenu = z.object({
   titre: z.string().trim().min(3).max(200),
   resume: z.string().trim().max(600).default(""),
   corps: z.string().trim().max(60000).default(""),
-  langue: z.enum(LANGUES_CONTENU),
+  langue: z.string().refine((t) => entree(t) !== undefined && entree(t)!.statut !== "desactivee", "langue inconnue du catalogue"),
   pdfUrl: z.string().url().startsWith("https://").max(500).nullable().default(null),
   pdfNom: z.string().trim().max(200).nullable().default(null),
   publie: z.boolean().default(false),
@@ -36,7 +38,8 @@ export function slugDe(titre: string): string {
 }
 
 export interface Depot {
-  lister(options?: { publiesSeulement?: boolean; type?: TypeContenu }): Promise<Contenu[]>;
+  // limite : nombre maximal de contenus (aucune limite si absent, pour que l'admin voie tout).
+  lister(options?: { publiesSeulement?: boolean; type?: TypeContenu; limite?: number }): Promise<Contenu[]>;
   lireParSlug(slug: string): Promise<Contenu | null>;
   lireParId(id: number): Promise<Contenu | null>;
   creer(s: SaisieContenu): Promise<Contenu>;
@@ -60,7 +63,7 @@ export function depotMemoire(): Depot {
   return {
     async lister(o = {}) {
       return lignes.filter((c) => (!o.publiesSeulement || c.publie) && (!o.type || c.type === o.type))
-        .sort((a, b) => (b.publieLe ?? b.creeLe).localeCompare(a.publieLe ?? a.creeLe));
+        .sort((a, b) => (b.publieLe ?? b.creeLe).localeCompare(a.publieLe ?? a.creeLe)).slice(0, o.limite ?? Infinity);
     },
     async lireParSlug(slug) { return lignes.find((c) => c.slug === slug) ?? null; },
     async lireParId(id) { return lignes.find((c) => c.id === id) ?? null; },
@@ -109,7 +112,7 @@ export function depotNeon(url: string): Depot {
       await schema();
       const r = await sql`SELECT * FROM contenus
         WHERE (${!o.publiesSeulement} OR publie) AND (${o.type ?? null}::text IS NULL OR type = ${o.type ?? null})
-        ORDER BY COALESCE(publie_le, cree_le) DESC LIMIT 500`;
+        ORDER BY COALESCE(publie_le, cree_le) DESC LIMIT ${o.limite ?? null}`;
       return (r as Ligne[]).map(versContenu);
     },
     async lireParSlug(slug) { await schema(); return un(await sql`SELECT * FROM contenus WHERE slug = ${slug}`); },

@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import fr from "../../messages/fr.json" with { type: "json" };
+import ar from "../../messages/ar.json" with { type: "json" };
 
 // Le serveur de test tourne avec un dépôt en mémoire et un mot de passe d'essai (playwright.config.ts).
 test("l'administrateur publie un article, qui apparaît dans la rubrique publique", async ({ page }) => {
@@ -34,4 +35,11 @@ test("la rubrique publique est dans le menu", async ({ page }) => {
   await page.locator("header").getByRole("link", { name: fr.navigation.actualites, exact: true }).first().click();
   await expect(page).toHaveURL(/\/fr\/actualites$/);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(fr.actualites.titre);
+});
+
+test("l'espace admin est traduit (arabe, de droite à gauche)", async ({ page }) => {
+  await page.goto("/ar/admin/contenus");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(ar.adminContenus.titre);
+  await expect(page.getByLabel(ar.adminContenus.motDePasse)).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
 });
