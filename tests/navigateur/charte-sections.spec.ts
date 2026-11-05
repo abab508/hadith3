@@ -1,4 +1,25 @@
 import { expect, test } from "@playwright/test";
+import fr from "../../messages/fr.json" with { type: "json" };
+
+test("le menu conserve un contraste lisible en mode clair", async ({ page }) => {
+  await page.goto("/fr/parametres");
+  await page.getByRole("button", { name: fr.apparence.clair, exact: true }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  const contrastes = await page.getByRole("banner").evaluate((banner) => {
+    const luminance = (couleur: string) => {
+      const rgb = couleur.match(/[\d.]+/g)!.slice(0, 3).map((v) => Number(v) / 255);
+      const lin = rgb.map((v) => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
+      return .2126 * lin[0]! + .7152 * lin[1]! + .0722 * lin[2]!;
+    };
+    const fond = luminance(getComputedStyle(banner).backgroundColor);
+    return [...banner.querySelectorAll("nav a")].map((lien) => {
+      const texte = luminance(getComputedStyle(lien).color);
+      return (Math.max(texte, fond) + .05) / (Math.min(texte, fond) + .05);
+    });
+  });
+  expect(contrastes.length).toBeGreaterThan(0);
+  for (const contraste of contrastes) expect(contraste).toBeGreaterThanOrEqual(4.5);
+});
 
 const parcours = [
   ["/recherche", "recherche"], ["/chaine", "recherche"],
