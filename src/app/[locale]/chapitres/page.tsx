@@ -5,7 +5,7 @@ import ListeChapitres, { type EntreeTheme } from "@/composants/ListeChapitres";
 import ImageDecorative from "@/composants/ImageDecorative";
 import CartesIllustrees from "@/composants/CartesIllustrees";
 import { chapitreParId, chapitres, themes } from "@/donnees/themes";
-import { imageMotif } from "@/donnees/illustrations-chapitres";
+import { imageChapitre } from "@/donnees/illustrations-chapitres";
 import { chapitreKg, chapitresDuThemeKg, illustrationDe, titreKg } from "@/donnees/chapitres-kg";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
 import styles from "@/composants/Pages.module.css";
@@ -42,7 +42,7 @@ export default async function PageChapitres({ params }: { params: Promise<{ loca
     chapitres: chapitresDuThemeKg(theme.id).map((c) => {
       const fixe = chapitreParId(c.id);
       const titre = fixe ? { texte: t(clesChapitres[fixe.cle].titre), langue: locale } : titreKg(c, locale);
-      return { id: c.id, titre: titre.texte, langue: titre.langue, image: fixe ? `/images/hd/${fixe.image}.png` : imageMotif(illustrationDe(c).motif) };
+      return { id: c.id, titre: titre.texte, langue: titre.langue, image: fixe ? `/images/hd/${fixe.image}.png` : imageChapitre(c.id, illustrationDe(c).motif) };
     }),
   }));
 

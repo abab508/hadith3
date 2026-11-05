@@ -38,7 +38,7 @@ for (const ecran of ecrans) {
               const adresse = new URL(img.currentSrc, window.location.href);
               return adresse.searchParams.get("url") ?? adresse.pathname;
             });
-            expect(source).toMatch(/^\/images\/(?:hd|chapitres)\/[a-z0-9-]+\.png$/);
+            expect(source).toMatch(/^\/images\/(?:hd|chapitres|chapitres-dedies)\/[a-z0-9-]+\.(?:png|webp)$/);
           }
           if (ecran.nom === "mobile" && chemin === "/themes/fin-des-temps") {
             const texte = await page.locator('main section[aria-labelledby="titre-theme"] p').boundingBox();
