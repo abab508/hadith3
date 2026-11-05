@@ -2,8 +2,8 @@
 
 // Formulaires du forum et du compte : ils appellent les routes /api/compte et /api/forum, puis rafraîchissent la page.
 import { useEffect, useState, type FormEvent } from "react";
-import { useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, useRouter } from "@/i18n/navigation";
 import styles from "@/app/[locale]/forum/Forum.module.css";
 import { cleErreurCompte, cleErreurForum } from "@/donnees/cles-interface";
 
@@ -121,6 +121,7 @@ export function FormulaireCompte({ membre }: { membre: { nom: string } | null })
     if (!r.ok) return erreur(r);
     if (corps.action === "connexion" || corps.action === "inscription") retenirEmail(corps.email ?? "");
     if (reussite) setMessage({ texte: reussite });
+    setOnglet("connexion"); setOubli(false);
     setChamps({ email: lireEmailRetenu(), motDePasse: "", code: "", nom: "", ancien: "", nouveau: "" });
     router.refresh();
   };
@@ -156,7 +157,6 @@ export function FormulaireCompte({ membre }: { membre: { nom: string } | null })
           </label>
           <button type="submit" disabled={occupe}>{t("seConnecter")}</button>
           <button type="button" className={styles.lien} aria-expanded={oubli} onClick={() => setOubli(!oubli)}>{t("oublie")}</button>
-          {oubli ? <p className={styles.note} role="status">{t("aideOubli")}</p> : null}
         </form>
       ) : (
         <form className={styles.carte} onSubmit={(e) => { e.preventDefault(); void action({ action: "inscription", code: champs.code, email: champs.email, nom: champs.nom, motDePasse: champs.motDePasse }); }}>
@@ -171,8 +171,70 @@ export function FormulaireCompte({ membre }: { membre: { nom: string } | null })
           <button type="submit" disabled={occupe}>{t("creer")}</button>
         </form>
       )}
+      {onglet === "connexion" && oubli ? <DemandeOubli emailInitial={champs.email} /> : null}
       <Alerte message={message} />
       <p className={styles.note}>{t("viePrivee")}</p>
     </div>
+  );
+}
+
+// Mot de passe oublié : on demande un lien par e-mail. Sans service d'e-mail, on invite à contacter l'administrateur.
+function DemandeOubli({ emailInitial }: { emailInitial: string }) {
+  const { t, message, setMessage, occupe, setOccupe, erreur } = useEnvoi("compte");
+  const locale = useLocale();
+  const [email, setEmail] = useState(emailInitial);
+  const [sansCourriel, setSansCourriel] = useState(false);
+  const soumettre = async (e: FormEvent) => {
+    e.preventDefault(); setOccupe(true); setMessage(null);
+    const r = await envoyer("/api/compte", { action: "oubli", email, locale }).catch((): Reponse => ({ ok: false, status: 0, corps: {} }));
+    setOccupe(false);
+    if (r.corps.erreur === "courriel") { setSansCourriel(true); return; }
+    if (!r.ok) return erreur(r);
+    setMessage({ texte: t("lienEnvoye") });
+  };
+  if (sansCourriel) return <p className={styles.carte} role="status">{t("aideOubli")}</p>;
+  return (
+    <form className={styles.carte} onSubmit={soumettre}>
+      <h2 className={styles.sousTitre}>{t("oublie")}</h2>
+      <p className={styles.note}>{t("aideLien")}</p>
+      <label>{t("email")}<input type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} required /></label>
+      <Alerte message={message} />
+      <button type="submit" disabled={occupe}>{t("recevoirLien")}</button>
+    </form>
+  );
+}
+
+// Page ouverte depuis le lien de l'e-mail : le jeton est après le « # » (il n'est jamais envoyé dans l'adresse au serveur).
+export function FormulaireNouveauMotDePasse() {
+  const { t, message, setMessage, occupe, setOccupe, erreur } = useEnvoi("compte");
+  const [jeton, setJeton] = useState<string | null>(null);
+  const [nouveau, setNouveau] = useState("");
+  const [fait, setFait] = useState(false);
+  useEffect(() => {
+    setJeton(window.location.hash.slice(1));
+    // On retire le jeton de la barre d'adresse et de l'historique.
+    window.history.replaceState(null, "", window.location.pathname);
+  }, []);
+  const soumettre = async (e: FormEvent) => {
+    e.preventDefault(); setOccupe(true); setMessage(null);
+    const r = await envoyer("/api/compte", { action: "reinitialiser", jeton, nouveau }).catch((): Reponse => ({ ok: false, status: 0, corps: {} }));
+    setOccupe(false);
+    if (!r.ok) return erreur(r);
+    setFait(true);
+  };
+  if (jeton === null) return null;
+  if (fait) return (
+    <div className={styles.carte}>
+      <p className={styles.succes} role="status">{t("mdpReinitialise")}</p>
+      <Link className={styles.bouton} href="/compte">{t("seConnecter")}</Link>
+    </div>
+  );
+  if (!/^[A-Za-z0-9_-]{43}$/.test(jeton)) return <p className={styles.erreur} role="alert">{t("erreurs.jeton")}</p>;
+  return (
+    <form className={styles.carte} onSubmit={soumettre}>
+      <ChampMotDePasse libelle={t("nouveau")} autoComplete="new-password" minLength={10} valeur={nouveau} onChange={(e) => setNouveau(e.currentTarget.value)} aide={t("aideMdp")} />
+      <Alerte message={message} />
+      <button type="submit" disabled={occupe}>{t("enregistrer")}</button>
+    </form>
   );
 }

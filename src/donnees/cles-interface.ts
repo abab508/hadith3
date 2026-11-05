@@ -44,6 +44,7 @@ export const cleErreurCompte = choisir({
   identifiants: "erreurs.identifiants", bloque: "erreurs.bloque", code: "erreurs.code", "email-pris": "erreurs.emailPris",
   "nom-pris": "erreurs.nomPris", invalide: "erreurs.invalide", trop: "erreurs.trop", indisponible: "erreurs.indisponible",
   connexion: "erreurs.connexion", origine: "erreurs.origine", serveur: "erreurs.serveur",
+  courriel: "erreurs.courriel", jeton: "erreurs.jeton",
 }, "erreurs.serveur");
 
 // adminForum.erreurs.* et adminForum.onglets.*

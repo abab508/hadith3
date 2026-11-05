@@ -29,6 +29,11 @@ export interface DepotForum {
   listerMembres(): Promise<Membre[]>;
   changerStatut(id: number, statut: StatutMembre): Promise<boolean>;
   changerMotDePasse(id: number, hash: string): Promise<boolean>;
+  // Mot de passe oublié : on ne garde que l'empreinte (sha256) du jeton envoyé par e-mail.
+  creerJeton(membreId: number, empreinte: string, dureeMs: number): Promise<void>;
+  // Jeton valable (non utilisé, non expiré, membre actif) : nouveau mot de passe, sessions révoquées,
+  // jetons du membre annulés. Renvoie l'identifiant du membre, ou null.
+  utiliserJeton(empreinte: string, hash: string): Promise<number | null>;
   listerMots(): Promise<string[]>;
   ajouterMot(mot: string): Promise<void>;
   retirerMot(mot: string): Promise<void>;
@@ -52,6 +57,7 @@ export const emailNormal = (e: string) => e.trim().toLowerCase();
 export function depotForumMemoire(): DepotForum {
   const membres: MembreInterne[] = [], invitations: Invitation[] = [], mots = new Set<string>();
   const sujets: Omit<Sujet, "auteurNom" | "nbMessages">[] = [], messages: Omit<Message, "auteurNom">[] = [];
+  const jetons: { membreId: number; empreinte: string; expire: number; utilise: boolean }[] = [];
   let idM = 1, idS = 1, idMsg = 1;
   const nom = (id: number) => membres.find((m) => m.id === id)?.nom ?? "?";
   const publique = ({ hash: _h, ...m }: MembreInterne): Membre => m;
@@ -78,6 +84,17 @@ export function depotForumMemoire(): DepotForum {
     async listerMembres() { return membres.map(publique).reverse(); },
     async changerStatut(id, statut) { const m = membres.find((x) => x.id === id); if (m) m.statut = statut; return Boolean(m); },
     async changerMotDePasse(id, hash) { const m = membres.find((x) => x.id === id); if (m) { m.hash = hash; m.version++; } return Boolean(m); },
+    async creerJeton(membreId, empreinte, dureeMs) { jetons.push({ membreId, empreinte, expire: Date.now() + dureeMs, utilise: false }); },
+    async utiliserJeton(empreinte, hash) {
+      const j = jetons.find((x) => x.empreinte === empreinte && !x.utilise && x.expire > Date.now());
+      if (!j) return null;
+      j.utilise = true;
+      const m = membres.find((x) => x.id === j.membreId && x.statut === "actif");
+      if (!m) return null;
+      m.hash = hash; m.version++;
+      for (const x of jetons) if (x.membreId === m.id) x.utilise = true;
+      return m.id;
+    },
     async listerMots() { return [...mots].sort(); },
     async ajouterMot(mot) { mots.add(mot); },
     async retirerMot(mot) { mots.delete(mot); },
@@ -167,6 +184,8 @@ export function depotForumNeon(url: string): DepotForum {
       statut TEXT NOT NULL CHECK (statut IN ('publie','retenu','masque')), mots_trouves TEXT[] NOT NULL DEFAULT '{}',
       cree_le TIMESTAMPTZ NOT NULL DEFAULT now())`;
     await sql`CREATE INDEX IF NOT EXISTS forum_messages_sujet ON forum_messages (sujet_id, id)`;
+    await sql`CREATE TABLE IF NOT EXISTS forum_jetons (empreinte TEXT PRIMARY KEY, membre_id INTEGER NOT NULL REFERENCES forum_membres(id),
+      expire_le TIMESTAMPTZ NOT NULL, utilise_le TIMESTAMPTZ)`;
   })());
   const lignes = async (r: Promise<unknown>) => (await r) as L[];
   const sujetSql = (filtre: ReturnType<typeof sql>) => sql`SELECT s.*, m.nom AS auteur_nom,
@@ -198,6 +217,21 @@ export function depotForumNeon(url: string): DepotForum {
     async listerMembres() { await schema(); return (await lignes(sql`SELECT * FROM forum_membres ORDER BY id DESC`)).map((l) => publique(vMembre(l))); },
     async changerStatut(id, statut) { await schema(); return (await lignes(sql`UPDATE forum_membres SET statut = ${statut} WHERE id = ${id} RETURNING id`)).length > 0; },
     async changerMotDePasse(id, hash) { await schema(); return (await lignes(sql`UPDATE forum_membres SET hash = ${hash}, version = version + 1 WHERE id = ${id} RETURNING id`)).length > 0; },
+    async creerJeton(membreId, empreinte, dureeMs) {
+      await schema();
+      await sql`DELETE FROM forum_jetons WHERE expire_le < now() - interval '1 day'`;
+      await sql`INSERT INTO forum_jetons (empreinte, membre_id, expire_le) VALUES (${empreinte}, ${membreId}, now() + (${dureeMs} || ' milliseconds')::interval)`;
+    },
+    // Une seule requête : le jeton ne sert qu'une fois, même si deux demandes arrivent en même temps.
+    async utiliserJeton(empreinte, hash) {
+      await schema();
+      const l = (await lignes(sql`WITH j AS (UPDATE forum_jetons SET utilise_le = now()
+          WHERE empreinte = ${empreinte} AND utilise_le IS NULL AND expire_le > now() RETURNING membre_id)
+        UPDATE forum_membres m SET hash = ${hash}, version = m.version + 1 FROM j WHERE m.id = j.membre_id AND m.statut = 'actif' RETURNING m.id`))[0];
+      if (!l) return null;
+      await sql`UPDATE forum_jetons SET utilise_le = now() WHERE membre_id = ${l.id as number} AND utilise_le IS NULL`;
+      return l.id as number;
+    },
     async listerMots() { await schema(); return (await lignes(sql`SELECT mot FROM forum_mots ORDER BY mot`)).map((l) => l.mot as string); },
     async ajouterMot(mot) { await schema(); await sql`INSERT INTO forum_mots (mot) VALUES (${mot}) ON CONFLICT DO NOTHING`; },
     async retirerMot(mot) { await schema(); await sql`DELETE FROM forum_mots WHERE mot = ${mot}`; },

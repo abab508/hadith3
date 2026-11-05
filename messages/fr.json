@@ -683,6 +683,11 @@
     "souvenir": "Se souvenir de mon e-mail sur cet appareil",
     "oublie": "Mot de passe oublié ?",
     "aideOubli": "Contactez l’administrateur du site : il vous donnera un mot de passe provisoire, que vous changerez ensuite dans « Mon compte ».",
+    "aideLien": "Entrez votre adresse : vous recevrez un lien pour choisir un nouveau mot de passe.",
+    "recevoirLien": "Recevoir le lien",
+    "lienEnvoye": "Si un compte existe avec cette adresse, un e-mail vient d’être envoyé. Le lien est valable 1 heure. Pensez à regarder dans les indésirables.",
+    "titreNouveau": "Nouveau mot de passe",
+    "mdpReinitialise": "Mot de passe changé. Vous pouvez vous connecter.",
     "erreurs": {
       "identifiants": "E-mail ou mot de passe incorrect.",
       "bloque": "Ce compte est bloqué par l’administrateur.",
@@ -694,7 +699,13 @@
       "indisponible": "Les comptes ne sont pas encore disponibles.",
       "connexion": "Connectez-vous d’abord.",
       "origine": "Requête refusée.",
-      "serveur": "Erreur du serveur ({status})."
+      "serveur": "Erreur du serveur ({status}).",
+      "courriel": "L’envoi d’e-mails n’est pas encore disponible : contactez l’administrateur du site.",
+      "jeton": "Ce lien n’est plus valable (déjà utilisé ou expiré). Demandez-en un nouveau depuis « Mon compte »."
+    },
+    "courriel": {
+      "sujet": "Milaghaiba : nouveau mot de passe",
+      "texte": "Bonjour {nom},\n\nPour choisir un nouveau mot de passe, ouvrez ce lien (valable 1 heure) :\n{lien}\n\nSi vous n’avez rien demandé, ignorez cet e-mail : votre mot de passe ne change pas.\n\nMilaghaiba"
     }
   },
   "adminForum": {

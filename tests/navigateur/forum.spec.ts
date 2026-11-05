@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
+import { readFile } from "node:fs/promises";
 import fr from "../../messages/fr.json" with { type: "json" };
+import { JOURNAL_COURRIELS } from "../../playwright.config";
 
 // Serveur de test : dépôt en mémoire et mot de passe d'essai (playwright.config.ts).
 const MDP_ADMIN = "mot-de-passe-de-test-1234";
@@ -87,11 +89,67 @@ test("l'œil affiche le mot de passe, l'e-mail peut être retenu, « mot de pass
   await expect(mdp).toHaveAttribute("type", "password");
 
   await page.getByRole("button", { name: C.oublie }).click();
-  await expect(page.getByText(C.aideOubli)).toBeVisible();
+  await expect(page.getByRole("button", { name: C.recevoirLien })).toBeVisible();
 
   // L'adresse n'est retenue qu'après une connexion réussie : on simule une adresse déjà retenue.
   await page.evaluate(() => localStorage.setItem("milaghaiba_email", "retenu@exemple.test"));
   await page.reload();
   await expect(page.getByLabel(C.email)).toHaveValue("retenu@exemple.test");
   await expect(page.getByLabel(C.souvenir)).toBeChecked();
+});
+
+test("mot de passe oublié : lien par e-mail, nouveau mot de passe, lien utilisable une seule fois", async ({ browser }) => {
+  const unique = Date.now().toString(36);
+  const email = `oubli-${unique}@exemple.test`;
+  const admin = await (await browser.newContext()).newPage();
+  await admin.goto("/fr/admin/forum");
+  await admin.getByLabel(A.motDePasse).fill(MDP_ADMIN);
+  await admin.getByRole("button", { name: A.seConnecter }).click();
+  await admin.getByRole("tab", { name: A.onglets.invitations }).click();
+  await admin.getByLabel(A.note).fill(`note-${unique}`);
+  await admin.getByRole("button", { name: A.creerCode }).click();
+  // On attend le code de CETTE invitation (un autre test peut en créer en même temps).
+  const code = (await admin.locator("li[data-invitation]", { hasText: `note-${unique}` }).getAttribute("data-invitation"))!;
+
+  const page = await (await browser.newContext()).newPage();
+  await page.goto("/fr/compte");
+  await page.getByRole("tab", { name: C.inscription }).click();
+  await page.getByLabel(C.code).fill(code);
+  await page.getByLabel(C.email).fill(email);
+  await page.getByLabel(C.nom).fill(`Oubli ${unique}`);
+  await page.getByLabel(C.motDePasse).fill("ancien-mot-de-passe");
+  await page.getByRole("button", { name: C.creer }).click();
+  await page.getByRole("button", { name: C.deconnexion }).click();
+
+  // Demande du lien : même réponse pour une adresse connue ou inconnue.
+  await page.getByRole("button", { name: C.oublie }).click();
+  const champ = page.locator("form", { has: page.getByRole("button", { name: C.recevoirLien }) }).getByLabel(C.email);
+  await champ.fill(email);
+  await page.getByRole("button", { name: C.recevoirLien }).click();
+  await expect(page.getByText(C.lienEnvoye)).toBeVisible();
+
+  const lignes = (await readFile(JOURNAL_COURRIELS, "utf8")).trim().split("\n").map((l) => JSON.parse(l) as { a: string; texte: string });
+  const courriel = lignes.reverse().find((c) => c.a === email)!;
+  const lien = courriel.texte.match(/https?:\/\/\S+/)![0];
+  expect(lien).toContain("/fr/compte/nouveau-mot-de-passe#");
+
+  await page.goto(new URL(lien).pathname + new URL(lien).hash);
+  await expect(page).not.toHaveURL(/#/);
+  await page.getByLabel(C.nouveau).fill("nouveau-mot-de-passe");
+  await page.getByRole("button", { name: C.enregistrer }).click();
+  await expect(page.getByText(C.mdpReinitialise)).toBeVisible();
+
+  // Le même lien ne sert plus.
+  await page.goto("/fr/compte");
+  await page.goto(new URL(lien).pathname + new URL(lien).hash);
+  await page.getByLabel(C.nouveau).fill("encore-un-autre-mdp");
+  await page.getByRole("button", { name: C.enregistrer }).click();
+  await expect(page.getByText(C.erreurs.jeton)).toBeVisible();
+
+  // Connexion avec le nouveau mot de passe.
+  await page.goto("/fr/compte");
+  await page.getByLabel(C.email).fill(email);
+  await page.getByLabel(C.motDePasse, { exact: true }).fill("nouveau-mot-de-passe");
+  await page.getByRole("button", { name: C.seConnecter }).click();
+  await expect(page.getByText(C.connecte.replace("{nom}", `Oubli ${unique}`))).toBeVisible();
 });

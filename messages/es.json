@@ -683,6 +683,11 @@
     "souvenir": "Recordar mi correo en este dispositivo",
     "oublie": "¿Olvidó su contraseña?",
     "aideOubli": "Contacte con el administrador del sitio: le dará una contraseña provisional, que luego podrá cambiar en «Mi cuenta».",
+    "aideLien": "Escriba su correo: recibirá un enlace para elegir una contraseña nueva.",
+    "recevoirLien": "Recibir el enlace",
+    "lienEnvoye": "Si existe una cuenta con esta dirección, se acaba de enviar un correo. El enlace es válido 1 hora. Revise también la carpeta de spam.",
+    "titreNouveau": "Nueva contraseña",
+    "mdpReinitialise": "Contraseña cambiada. Ya puede iniciar sesión.",
     "erreurs": {
       "identifiants": "Correo o contraseña incorrectos.",
       "bloque": "El administrador ha bloqueado esta cuenta.",
@@ -694,7 +699,13 @@
       "indisponible": "Las cuentas aún no están disponibles.",
       "connexion": "Inicie sesión primero.",
       "origine": "Solicitud rechazada.",
-      "serveur": "Error del servidor ({status})."
+      "serveur": "Error del servidor ({status}).",
+      "courriel": "El envío de correos aún no está disponible: contacte con el administrador del sitio.",
+      "jeton": "Este enlace ya no es válido (usado o caducado). Pida uno nuevo desde «Mi cuenta»."
+    },
+    "courriel": {
+      "sujet": "Milaghaiba: nueva contraseña",
+      "texte": "Hola, {nom}:\n\nPara elegir una contraseña nueva, abra este enlace (válido 1 hora):\n{lien}\n\nSi no lo ha pedido, ignore este correo: su contraseña no cambia.\n\nMilaghaiba"
     }
   },
   "adminForum": {

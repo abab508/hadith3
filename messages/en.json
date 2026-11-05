@@ -683,6 +683,11 @@
     "souvenir": "Remember my email on this device",
     "oublie": "Forgot your password?",
     "aideOubli": "Contact the site administrator: they will give you a temporary password, which you can then change in “My account”.",
+    "aideLien": "Enter your email: you will receive a link to choose a new password.",
+    "recevoirLien": "Send me the link",
+    "lienEnvoye": "If an account exists with this address, an email has just been sent. The link is valid for 1 hour. Check your spam folder too.",
+    "titreNouveau": "New password",
+    "mdpReinitialise": "Password changed. You can now sign in.",
     "erreurs": {
       "identifiants": "Incorrect email or password.",
       "bloque": "This account has been blocked by the administrator.",
@@ -694,7 +699,13 @@
       "indisponible": "Accounts are not available yet.",
       "connexion": "Please log in first.",
       "origine": "Request refused.",
-      "serveur": "Server error ({status})."
+      "serveur": "Server error ({status}).",
+      "courriel": "Email sending is not available yet: please contact the site administrator.",
+      "jeton": "This link is no longer valid (already used or expired). Request a new one from “My account”."
+    },
+    "courriel": {
+      "sujet": "Milaghaiba: new password",
+      "texte": "Hello {nom},\n\nTo choose a new password, open this link (valid for 1 hour):\n{lien}\n\nIf you did not ask for this, ignore this email: your password stays the same.\n\nMilaghaiba"
     }
   },
   "adminForum": {

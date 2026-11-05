@@ -103,3 +103,36 @@ describe("forum : corrections de la relecture", () => {
     expect((await d.sujet(sujet.id, true))!.dernierLe > avant).toBe(true);
   });
 });
+
+describe("mot de passe oublié (jetons)", () => {
+  it("un jeton change le mot de passe une seule fois, révoque les sessions et annule les autres jetons", async () => {
+    const { empreinteJeton, jetonReinitialisation } = await import("@/lib/forum/securite");
+    const d = depotForumMemoire();
+    await d.creerInvitation("AAAA-BBBB-CCCC", "");
+    const r = await d.inscrire({ code: "AAAA-BBBB-CCCC", email: "a@exemple.test", nom: "Abc", hash: hacherMotDePasse("ancien-mdp-123") });
+    if (!r.ok) throw new Error("inscription");
+    const j1 = jetonReinitialisation(), j2 = jetonReinitialisation();
+    expect(j1).toMatch(/^[A-Za-z0-9_-]{43}$/);
+    await d.creerJeton(r.membre.id, empreinteJeton(j1), 60_000);
+    await d.creerJeton(r.membre.id, empreinteJeton(j2), 60_000);
+    expect(await d.utiliserJeton(empreinteJeton(j1), hacherMotDePasse("nouveau-mdp-123"))).toBe(r.membre.id);
+    const m = (await d.membreParEmail("a@exemple.test"))!;
+    expect(verifierMotDePasse("nouveau-mdp-123", m.hash)).toBe(true);
+    expect(m.version).toBe(1);
+    expect(await d.utiliserJeton(empreinteJeton(j1), hacherMotDePasse("x-x-x-x-x-x"))).toBeNull();
+    expect(await d.utiliserJeton(empreinteJeton(j2), hacherMotDePasse("x-x-x-x-x-x"))).toBeNull();
+  });
+
+  it("refuse un jeton expiré ou celui d'un membre bloqué", async () => {
+    const { empreinteJeton } = await import("@/lib/forum/securite");
+    const d = depotForumMemoire();
+    await d.creerInvitation("AAAA-BBBB-DDDD", "");
+    const r = await d.inscrire({ code: "AAAA-BBBB-DDDD", email: "b@exemple.test", nom: "Bcd", hash: hacherMotDePasse("ancien-mdp-123") });
+    if (!r.ok) throw new Error("inscription");
+    await d.creerJeton(r.membre.id, empreinteJeton("expire"), -1);
+    expect(await d.utiliserJeton(empreinteJeton("expire"), "h")).toBeNull();
+    await d.creerJeton(r.membre.id, empreinteJeton("bloque"), 60_000);
+    await d.changerStatut(r.membre.id, "bloque");
+    expect(await d.utiliserJeton(empreinteJeton("bloque"), "h")).toBeNull();
+  });
+});
