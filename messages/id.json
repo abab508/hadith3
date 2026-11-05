@@ -98,6 +98,7 @@
     "memorisation": "Hafalan",
     "bibliotheque": "Perpustakaan",
     "biographies": "Biografi",
+    "actualites": "Artikel",
     "themes": "Tema",
     "chapitres": "Bab",
     "az": "A-Z"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, other {# bab}}",
     "aucunChapitre": "Belum ada bab yang ditemukan.",
     "nbHadiths": "{n, plural, other {# hadis}}"
+  },
+  "actualites": {
+    "surtitre": "Informasi dan berita",
+    "titre": "Artikel dan berita",
+    "intro": "Artikel, berita, dan informasi tentang Islam yang diterbitkan tim Milaghaiba, beserta dokumen PDF-nya.",
+    "rubriques": {
+      "titre": "Rubrik",
+      "tous": "Semua",
+      "article": "Artikel",
+      "actualite": "Berita",
+      "information": "Informasi"
+    },
+    "aucun": "Belum ada yang diterbitkan di rubrik ini.",
+    "bientot": "Rubrik ini akan segera tersedia.",
+    "retour": "Kembali ke artikel dan berita",
+    "pdf": "Buka PDF",
+    "publieLe": "Diterbitkan pada {date}",
+    "mention": "Ditulis oleh tim situs: tidak menggantikan pendapat ahli yang berkompeten."
   },
   "themes": {
     "titre": "Pilih tema",

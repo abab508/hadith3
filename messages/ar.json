@@ -98,6 +98,7 @@
     "memorisation": "حفظ الحديث",
     "bibliotheque": "المكتبة",
     "biographies": "التراجم",
+    "actualites": "المقالات",
     "themes": "الموضوعات",
     "chapitres": "الأبواب",
     "az": "الفهرس"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, one {باب واحد} two {بابان} few {# أبواب} many {# بابًا} other {# باب}}",
     "aucunChapitre": "لم يوجد باب بعد.",
     "nbHadiths": "{n, plural, one {حديث واحد} two {حديثان} few {# أحاديث} many {# حديثًا} other {# حديث}}"
+  },
+  "actualites": {
+    "surtitre": "معلومات وأخبار",
+    "titre": "المقالات والأخبار",
+    "intro": "مقالات وأخبار ومعلومات عن الإسلام ينشرها فريق ميلاغايبا، مع ملفات PDF المرفقة.",
+    "rubriques": {
+      "titre": "الأقسام",
+      "tous": "الكل",
+      "article": "مقالات",
+      "actualite": "أخبار",
+      "information": "معلومات"
+    },
+    "aucun": "لم يُنشر شيء في هذا القسم بعد.",
+    "bientot": "سيتوفر هذا القسم قريبًا.",
+    "retour": "العودة إلى المقالات والأخبار",
+    "pdf": "فتح ملف PDF",
+    "publieLe": "نُشر في {date}",
+    "mention": "محتوى كتبه فريق الموقع، ولا يغني عن رأي متخصص مؤهل."
   },
   "themes": {
     "titre": "اختر موضوعًا",

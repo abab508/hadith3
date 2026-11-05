@@ -98,6 +98,7 @@
     "memorisation": "Ezberle",
     "bibliotheque": "Kütüphane",
     "biographies": "Biyografiler",
+    "actualites": "Makaleler",
     "themes": "Konular",
     "chapitres": "Bölümler",
     "az": "A-Z"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, other {# bölüm}}",
     "aucunChapitre": "Henüz bölüm bulunamadı.",
     "nbHadiths": "{n, plural, other {# hadis}}"
+  },
+  "actualites": {
+    "surtitre": "Bilgiler ve haberler",
+    "titre": "Makaleler ve haberler",
+    "intro": "Milaghaiba ekibinin İslam hakkında yayımladığı makaleler, haberler ve bilgiler, PDF belgeleriyle birlikte.",
+    "rubriques": {
+      "titre": "Bölümler",
+      "tous": "Tümü",
+      "article": "Makaleler",
+      "actualite": "Haberler",
+      "information": "Bilgiler"
+    },
+    "aucun": "Bu bölümde henüz yayımlanmış bir içerik yok.",
+    "bientot": "Bu bölüm yakında kullanıma açılacak.",
+    "retour": "Makalelere ve haberlere dön",
+    "pdf": "PDF’yi aç",
+    "publieLe": "{date} tarihinde yayımlandı",
+    "mention": "Site ekibi tarafından yazılmıştır: yetkin bir uzmanın görüşünün yerini tutmaz."
   },
   "themes": {
     "titre": "Bir konu seçin",

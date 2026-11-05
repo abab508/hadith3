@@ -98,6 +98,7 @@
     "memorisation": "حفظ کریں",
     "bibliotheque": "کتب خانہ",
     "biographies": "سوانح",
+    "actualites": "مضامین",
     "themes": "موضوعات",
     "chapitres": "ابواب",
     "az": "اشاریہ"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, one {# باب} other {# ابواب}}",
     "aucunChapitre": "ابھی کوئی باب نہیں ملا۔",
     "nbHadiths": "{n, plural, one {# حدیث} other {# احادیث}}"
+  },
+  "actualites": {
+    "surtitre": "معلومات اور خبریں",
+    "titre": "مضامین اور خبریں",
+    "intro": "Milaghaiba کی ٹیم کے شائع کردہ اسلام سے متعلق مضامین، خبریں اور معلومات، ان کی PDF دستاویزات کے ساتھ۔",
+    "rubriques": {
+      "titre": "حصے",
+      "tous": "سب",
+      "article": "مضامین",
+      "actualite": "خبریں",
+      "information": "معلومات"
+    },
+    "aucun": "اس حصے میں ابھی کچھ شائع نہیں ہوا۔",
+    "bientot": "یہ حصہ جلد دستیاب ہوگا۔",
+    "retour": "مضامین اور خبروں پر واپس",
+    "pdf": "PDF کھولیں",
+    "publieLe": "{date} کو شائع ہوا",
+    "mention": "سائٹ کی ٹیم کا لکھا ہوا مواد: یہ کسی مستند ماہر کی رائے کا متبادل نہیں۔"
   },
   "themes": {
     "titre": "ایک موضوع منتخب کریں",

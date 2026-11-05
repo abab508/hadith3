@@ -98,6 +98,7 @@
     "memorisation": "Memorize",
     "bibliotheque": "Library",
     "biographies": "Biographies",
+    "actualites": "Articles",
     "themes": "Themes",
     "chapitres": "Chapters",
     "az": "A-Z"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, one {# chapter} other {# chapters}}",
     "aucunChapitre": "No chapter found yet.",
     "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}"
+  },
+  "actualites": {
+    "surtitre": "Information and news",
+    "titre": "Articles and news",
+    "intro": "Articles, news and information about Islam published by the Milaghaiba team, with their PDF documents.",
+    "rubriques": {
+      "titre": "Sections",
+      "tous": "All",
+      "article": "Articles",
+      "actualite": "News",
+      "information": "Information"
+    },
+    "aucun": "Nothing has been published in this section yet.",
+    "bientot": "This section will be available soon.",
+    "retour": "Back to articles and news",
+    "pdf": "Open the PDF",
+    "publieLe": "Published on {date}",
+    "mention": "Written by the site team: this does not replace the advice of a qualified specialist."
   },
   "themes": {
     "titre": "Choose a theme",

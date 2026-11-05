@@ -98,6 +98,7 @@
     "memorisation": "Hafazan",
     "bibliotheque": "Perpustakaan",
     "biographies": "Biografi",
+    "actualites": "Artikel",
     "themes": "Tema",
     "chapitres": "Bab",
     "az": "A-Z"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, other {# bab}}",
     "aucunChapitre": "Belum ada bab ditemui.",
     "nbHadiths": "{n, plural, other {# hadis}}"
+  },
+  "actualites": {
+    "surtitre": "Maklumat dan berita",
+    "titre": "Artikel dan berita",
+    "intro": "Artikel, berita dan maklumat tentang Islam yang diterbitkan oleh pasukan Milaghaiba, bersama dokumen PDF.",
+    "rubriques": {
+      "titre": "Ruangan",
+      "tous": "Semua",
+      "article": "Artikel",
+      "actualite": "Berita",
+      "information": "Maklumat"
+    },
+    "aucun": "Belum ada yang diterbitkan dalam ruangan ini.",
+    "bientot": "Ruangan ini akan tersedia tidak lama lagi.",
+    "retour": "Kembali ke artikel dan berita",
+    "pdf": "Buka PDF",
+    "publieLe": "Diterbitkan pada {date}",
+    "mention": "Ditulis oleh pasukan laman: tidak menggantikan pandangan pakar yang berkelayakan."
   },
   "themes": {
     "titre": "Pilih tema",

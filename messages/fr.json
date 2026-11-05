@@ -98,6 +98,7 @@
     "memorisation": "Mémoriser",
     "bibliotheque": "Bibliothèque",
     "biographies": "Biographies",
+    "actualites": "Articles",
     "themes": "Thèmes",
     "chapitres": "Chapitres",
     "az": "A-Z"
@@ -533,6 +534,24 @@
     "nbChapitres": "{n, plural, one {# chapitre} other {# chapitres}}",
     "aucunChapitre": "Aucun chapitre trouvé pour l’instant.",
     "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}"
+  },
+  "actualites": {
+    "surtitre": "Informations et actualités",
+    "titre": "Articles et actualités",
+    "intro": "Articles, actualités et informations sur l’islam publiés par l’équipe de Milaghaiba, avec leurs documents PDF.",
+    "rubriques": {
+      "titre": "Rubriques",
+      "tous": "Tout",
+      "article": "Articles",
+      "actualite": "Actualités",
+      "information": "Informations"
+    },
+    "aucun": "Aucun contenu publié dans cette rubrique pour l’instant.",
+    "bientot": "Cette rubrique sera bientôt disponible.",
+    "retour": "Retour aux articles et actualités",
+    "pdf": "Ouvrir le PDF",
+    "publieLe": "Publié le {date}",
+    "mention": "Contenus rédigés par l’équipe du site : ils ne remplacent pas l’avis d’un spécialiste qualifié."
   },
   "themes": {
     "titre": "Choisissez un thème",
