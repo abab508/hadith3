@@ -678,6 +678,11 @@
     "mdpChange": "Mot de passe changé.",
     "allerForum": "Aller au forum",
     "viePrivee": "Votre adresse e-mail sert seulement à vous connecter : elle n’est jamais affichée.",
+    "afficherCaracteres": "Afficher les caractères",
+    "masquerCaracteres": "Masquer les caractères",
+    "souvenir": "Se souvenir de mon e-mail sur cet appareil",
+    "oublie": "Mot de passe oublié ?",
+    "aideOubli": "Contactez l’administrateur du site : il vous donnera un mot de passe provisoire, que vous changerez ensuite dans « Mon compte ».",
     "erreurs": {
       "identifiants": "E-mail ou mot de passe incorrect.",
       "bloque": "Ce compte est bloqué par l’administrateur.",

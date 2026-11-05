@@ -39,3 +39,9 @@
 .tableau{display:flex;flex-direction:column;gap:.5rem;margin:0;padding:0;list-style:none;}
 .tableau>li{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem;padding-block:.6rem;padding-inline:.8rem;border:1px solid #e3b86633;border-radius:.7rem;}
 .code{font-family:ui-monospace,monospace;font-size:1rem;color:#fff3cf;letter-spacing:.06em;}
+.champMdp{position:relative;display:flex;}
+.champMdp input{flex:1;min-inline-size:0;padding-inline-end:2.8rem;}
+.carte .oeil{position:absolute;inset-block:0;inset-inline-end:.3rem;align-self:center;display:grid;place-items:center;min-block-size:2rem;inline-size:2.2rem;padding:0;border:0;border-radius:.5rem;background:transparent;color:var(--ocre);}
+.carte .oeil:hover,.carte .oeil:focus-visible{color:#fff3cf;background:#e3b86622;}
+.carte .caseACocher{flex-direction:row;align-items:center;gap:.5rem;cursor:pointer;}
+.caseACocher input{inline-size:1.05rem;block-size:1.05rem;accent-color:#e8b35c;}

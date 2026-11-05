@@ -678,6 +678,11 @@
     "mdpChange": "Password changed.",
     "allerForum": "Go to the forum",
     "viePrivee": "Your email address is only used to log in: it is never displayed.",
+    "afficherCaracteres": "Show characters",
+    "masquerCaracteres": "Hide characters",
+    "souvenir": "Remember my email on this device",
+    "oublie": "Forgot your password?",
+    "aideOubli": "Contact the site administrator: they will give you a temporary password, which you can then change in “My account”.",
     "erreurs": {
       "identifiants": "Incorrect email or password.",
       "bloque": "This account has been blocked by the administrator.",

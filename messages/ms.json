@@ -678,6 +678,11 @@
     "mdpChange": "Kata laluan ditukar.",
     "allerForum": "Ke forum",
     "viePrivee": "Alamat e-mel anda hanya digunakan untuk log masuk dan tidak pernah dipaparkan.",
+    "afficherCaracteres": "Tunjukkan aksara",
+    "masquerCaracteres": "Sembunyikan aksara",
+    "souvenir": "Ingat e-mel saya pada peranti ini",
+    "oublie": "Lupa kata laluan?",
+    "aideOubli": "Hubungi pentadbir laman: anda akan diberi kata laluan sementara, kemudian tukarkannya di «Akaun saya».",
     "erreurs": {
       "identifiants": "E-mel atau kata laluan salah.",
       "bloque": "Akaun ini disekat oleh pentadbir.",
