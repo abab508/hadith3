@@ -8,6 +8,8 @@ type Message = { role: "user" | "assistant"; content: string };
 const CLE = "milaghaiba-assistant";
 const VOIX: Record<string, string> = { ar: "ar-SA", fr: "fr-FR", en: "en-US", es: "es-ES", ur: "ur-PK", id: "id-ID", ms: "ms-MY", tr: "tr-TR" };
 const ARABE = /[؀-ۿ]/u;
+// Lettres propres à l'ourdou (ٹ ڈ ڑ ں ہ ھ ے ی ک گ پ چ ژ…) : l'arabe des hadiths ne les emploie pas.
+const OURDOU = /[ٹڈڑںہھےۓیکگپچژ]/u;
 
 // Reconnaissance vocale du navigateur (types absents de la bibliothèque DOM standard).
 type Reconnaissance = { lang: string; interimResults: boolean; continuous: boolean; start(): void; stop(): void;
@@ -40,13 +42,24 @@ function Riche({ texte }: { texte: string }) {
   );
 }
 
-// Texte lisible à voix haute : sans balises Markdown ni liens, découpé en passages arabes / non arabes.
-function passages(texte: string): { texte: string; arabe: boolean }[] {
+// Langue d'un passage en lettres latines : quelques lettres propres à chaque langue, sinon la langue du site
+// (ou l'anglais quand le site est en arabe ou en ourdou).
+function langueLatine(t: string, locale: string): string {
+  if (/[şğıİ]/u.test(t)) return "tr-TR";
+  if (/[ñ¿¡]/u.test(t)) return "es-ES";
+  if (/[éèêàçùœ]/u.test(t)) return "fr-FR";
+  return locale === "ar" || locale === "ur" ? "en-US" : VOIX[locale] ?? "fr-FR";
+}
+
+// Texte lisible à voix haute : sans balises Markdown ni liens, découpé en passages par écriture,
+// chacun avec sa langue (arabe, ourdou, ou une langue en lettres latines).
+export function passages(texte: string, locale: string): { texte: string; langue: string }[] {
   const propre = texte.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/[*_#>`]/g, "");
-  const sortie: { texte: string; arabe: boolean }[] = [];
+  const sortie: { texte: string; langue: string }[] = [];
   for (const m of propre.matchAll(/([؀-ۿ][؀-ۿ\sً-ٰٟ«»،؛؟.:!]*)|([^؀-ۿ]+)/gu)) {
     const t = m[0].trim();
-    if (t) sortie.push({ texte: t, arabe: Boolean(m[1]) });
+    if (!t) continue;
+    sortie.push({ texte: t, langue: m[1] ? (OURDOU.test(t) ? "ur-PK" : "ar-SA") : langueLatine(t, locale) });
   }
   return sortie;
 }
@@ -156,12 +169,14 @@ export default function Assistant() {
     synthese.cancel();
     if (lecture === i) { setLecture(null); return; }
     const voix = synthese.getVoices();
-    const voixArabe = voix.find((v) => v.lang.toLowerCase().startsWith("ar"));
-    const morceaux = passages(texte);
+    // Pour chaque passage, une voix installée de sa langue si elle existe (sinon le navigateur choisit).
+    const voixDe = (langue: string) => voix.find((v) => v.lang.toLowerCase().startsWith(langue.slice(0, 2)));
+    const morceaux = passages(texte, locale);
     morceaux.forEach((p, k) => {
       const u = new SpeechSynthesisUtterance(p.texte);
-      u.lang = p.arabe ? "ar-SA" : VOIX[locale] ?? "fr-FR";
-      if (p.arabe && voixArabe) u.voice = voixArabe;
+      u.lang = p.langue;
+      const v = voixDe(p.langue);
+      if (v) u.voice = v;
       if (k === morceaux.length - 1) u.onend = () => setLecture(null);
       synthese.speak(u);
     });

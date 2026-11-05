@@ -69,3 +69,14 @@ describe("assistant : route API sans clé", () => {
     expect(r.status).toBe(400);
   });
 });
+
+describe("assistant : voix adaptée à la langue", async () => {
+  const { passages } = await import("@/composants/Assistant");
+  it("lit l'arabe en arabe, l'ourdou en ourdou et le reste dans sa langue", () => {
+    expect(passages("إنما الأعمال بالنيات", "fr")[0]!.langue).toBe("ar-SA");
+    expect(passages("یہ حدیث صحیح بخاری میں ہے", "ur")[0]!.langue).toBe("ur-PK");
+    expect(passages("Le texte arabe est à la page indiquée.", "en")[0]!.langue).toBe("fr-FR");
+    expect(passages("The Arabic text is here", "ar")[0]!.langue).toBe("en-US");
+    expect(passages("[la fiche](/fr/glossaire#hasan) **ḥasan**", "fr")[0]!.texte).toBe("la fiche ḥasan");
+  });
+});

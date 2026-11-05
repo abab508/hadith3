@@ -76,7 +76,7 @@ export async function POST(requete: Request) {
             cache_control: { type: "ephemeral" },
             system: [
               { type: "text", text: CHARTE },
-              { type: "text", text: `Langue de l'interface de l'utilisateur : ${locale}. Préfixe des liens du site : /${locale}/.` },
+              { type: "text", text: `Langue de l'interface : ${locale}. Réponds dans la langue dans laquelle l'utilisateur écrit sa question, même si elle diffère de celle de l'interface ; si on ne peut pas la reconnaître (un seul mot, un nom propre…), réponds dans la langue de l'interface. Les textes arabes des sources restent toujours en arabe. Préfixe des liens du site : /${locale}/.` },
             ],
             tools: DEFINITIONS_OUTILS,
             messages,
