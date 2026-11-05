@@ -159,3 +159,8 @@
 - Fait : intégration du travail non publié de Codex (copie de travail milaghaiba-chapitres-final) : 24 images peintes (une par motif, sans être vivant) à la place des dessins SVG, agrandissement au clic, vignettes dans la liste des chapitres, index étendu à 517 chapitres / 4 410 sous-chapitres sans perte de référence, titres français des chapitres complétés (IA, à relire), schéma de validation. Ajout : une même image ne revient plus sur 5 cartes voisines d'un thème (motif neutre de remplacement, recadrage si elle revient plus loin) ; galerie du chapitre qui commence par l'image de sa carte. Test 4K de Codex corrigé (il lisait la largeur « corrigée par densité » au lieu des pixels réels) ; attente de navigation allongée (15 s) dans un test d'images sous charge.
 - Vérifié : 167 tests unitaires, 9 contrôles, build, 132/132 tests navigateur ; captures La croyance, Le mariage, image agrandie.
 - Prochaine étape : mise en ligne après accord du patron ; 1 669 titres de sous-chapitres restent en arabe seulement (traduction à faire).
+
+## 2026-11-05 — Titres français des sous-chapitres
+- Fait : traduction IA (à relire) des 1 652 titres arabes distincts qui n'avaient pas de français (1 669 sous-chapitres) ; titres longs de récit résumés en un titre court fidèle ; fichier data/chapitres/titres-fr-sous-chapitres.tsv (relu par l'exportateur) et index.json complété. L'arabe de la source reste affiché à côté.
+- Vérifié : 0 chapitre et 0 sous-chapitre sans titre français (nouveau test), 168 tests unitaires, 9 contrôles, build, 132/132 tests navigateur, capture « La foi au destin » (sous-chapitres 23 et 24).
+- Prochaine étape : mise en ligne sur Vercel après accord du patron.
