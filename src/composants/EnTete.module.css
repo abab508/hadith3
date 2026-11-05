@@ -5,7 +5,7 @@
 .logo{flex:none;filter:drop-shadow(0 0 10px #eebc6a55);}
 .textes{display:flex;flex-direction:column;line-height:1.15;}
 .nom{font-family:var(--police-titre-latine);color:var(--texte);font-size:1.3rem;font-weight:500;letter-spacing:.01em;}
-.slogan{color:var(--discret);font-size:.7rem;max-inline-size:16rem;}
+.slogan{color:var(--discret);font-size:.84rem;max-inline-size:19rem;}
 .actions{grid-column:4;grid-row:1;display:flex;align-items:center;gap:.4rem;}
 .icone{display:grid;place-items:center;inline-size:2.6rem;block-size:2.6rem;border-radius:50%;color:var(--texte);text-decoration:none;transition:background .2s,color .2s;}
 .icone:hover{background:#ffffff12;color:var(--ocre);}

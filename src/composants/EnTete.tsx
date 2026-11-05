@@ -15,7 +15,7 @@ export default async function EnTete() {
     <header className={styles.entete}>
       <div className={styles.barre}>
         <Link href="/" className={styles.lienMarque} aria-label={t("accueil")}>
-          <svg className={styles.logo} width="44" height="44" viewBox="0 0 48 48" aria-hidden="true">
+          <svg className={styles.logo} width="54" height="54" viewBox="0 0 48 48" aria-hidden="true">
             <path d="M8 40V22C8 13 15 6 24 4c9 2 16 9 16 18v18" fill="none" stroke="currentColor" strokeWidth="2" />
             <path d="M13 40V24c0-6 5-11 11-13 6 2 11 7 11 13v16" fill="none" stroke="currentColor" strokeWidth="1.3" opacity=".7" />
             <path d="M24 36c-4-2.5-8-3-12-2.5V27c4-.5 8 0 12 2.5 4-2.5 8-3 12-2.5v6.5c-4-.5-8 0-12 2.5z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />

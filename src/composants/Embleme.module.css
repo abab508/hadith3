@@ -16,7 +16,7 @@
 .mention{margin-block-start:.45rem;font-family:"Cinzel",serif;font-weight:500;font-size:.72rem;letter-spacing:.42em;color:#f3ead8;padding-inline-start:.42em;}
 /* Version de l'en-tête : plus petite, sans dôme ni mention. */
 .embleme[data-taille="petit"]{align-items:flex-start;}
-.embleme[data-taille="petit"] .nomLatin{font-size:1.55rem;filter:drop-shadow(0 1px 0 #5a3410) drop-shadow(0 0 8px #eebc6a55);}
+.embleme[data-taille="petit"] .nomLatin{font-size:2.05rem;line-height:1.1;filter:drop-shadow(0 1px 0 #5a3410) drop-shadow(0 0 8px #eebc6a55);}
 .embleme[data-taille="petit"] .ligneArabe{gap:.3rem;margin-block-start:0;}
-.embleme[data-taille="petit"] .nomArabe{font-size:.85rem;}
+.embleme[data-taille="petit"] .nomArabe{font-size:1.2rem;}
 .embleme[data-taille="petit"] .losange{display:none;}

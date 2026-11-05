@@ -155,7 +155,7 @@ html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="of
 
 
 /* Identité typographique : édition patrimoniale, titres et lecture arabe distincts. */
-html{--police-titre-latine:"Alegreya","Palatino Linotype",Georgia,serif;--police-titre-arabe:"Aref Ruqaa","Noto Naskh Arabic",serif;--police-capitales:"Cinzel","Alegreya",serif;}
+html{font-size:106.25%;--police-titre-latine:"Alegreya","Palatino Linotype",Georgia,serif;--police-titre-arabe:"Aref Ruqaa","Noto Naskh Arabic",serif;--police-capitales:"Cinzel","Alegreya",serif;}
 /* Texte latin en Alegreya (police de la capture du patron, 2026-11-04) ; les lettres arabes et ourdoues retombent sur la police de la langue. */
 body{font-family:"Alegreya",var(--police, system-ui, sans-serif);font-size:1.04rem;}
 html:lang(ar){--police-titre-arabe:"Noto Naskh Arabic",serif;}
