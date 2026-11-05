@@ -1,0 +1,57 @@
+{
+  "generator": "built-in image_gen",
+  "images": [
+    {
+      "id": "biographies",
+      "prompt": "Use case: illustration-story. One single landscape 16:9 edge-to-edge cinematic realistic painted website background. Maximum fine detail and native resolution. Milaghaiba identity: deep midnight navy, restrained antique gold and warm amber, refined historical Islamic and Algerian architectural motifs, tactile wood, stone, leather and paper. A vast historical archive of individual cloth-bound folios, genealogical records and rolled documents arranged in separate carved wooden compartments, long perspective through pointed arches toward a blue night courtyard. A single slender brass lamp outlines a collection of sealed folders on the right foreground. Suggest transmission across generations without depicting a person or a portrait. No literal family-tree graphic, no readable labels. Left half quiet dark navy for website title. Absolutely no human, no animal, no face, no readable lettering, no fake calligraphy, no verse, no logo, watermark, border, UI or collage. Each scene must be architecturally coherent and distinct. No oversaturated orange sunset. Elegant scholarly atmosphere.",
+      "path": "C:\\Users\\df\\.codex\\generated_images\\01a1a770-48ec-73c1-9a7e-9741f10e8769\\exec-be11ea6d-0c9c-4f12-bcef-a9b4c54a2767.png",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "8740998229dce09053abbecb571a273fd8df5b8c7efa329f5e864ff22230724d",
+      "review": "inspected, no person or face, no readable text",
+      "format": "WebP quality90, no resizing; PNG preserved"
+    },
+    {
+      "id": "glossaire",
+      "prompt": "Use case: illustration-story. One single landscape 16:9 edge-to-edge cinematic realistic painted website background. Maximum fine detail and native resolution. Milaghaiba identity: deep midnight navy, restrained antique gold and warm amber, refined historical Islamic and Algerian architectural motifs, tactile wood, stone, leather and paper. Close-up of an elegant scholarly dictionary workshop: two distinctly different ivory blank-page folios on a walnut slanted desk, inkstone, reed pens and small solid geometric brass markers used as reference tokens. Intricate restrained Algerian zellige visible along the far wall. Strong intimate lateral composition, objects on right half, left half deep navy negative space. No symbols resembling text. Absolutely no human, no animal, no face, no readable lettering, no fake calligraphy, no verse, no logo, watermark, border, UI or collage. Each scene must be architecturally coherent and distinct. No oversaturated orange sunset. Elegant scholarly atmosphere.",
+      "path": "C:\\Users\\df\\.codex\\generated_images\\01a1a770-48ec-73c1-9a7e-9741f10e8769\\exec-d248a700-5bc8-476c-b922-1d7a8cc24148.png",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "a7e118c064903ca04ef0f54a1cdad8c9ef7e69177dd5fbd837a1620cffe9f1ad",
+      "review": "inspected, no person or face, no readable text",
+      "format": "WebP quality90, no resizing; PNG preserved"
+    },
+    {
+      "id": "memorisation",
+      "prompt": "Use case: illustration-story. One single landscape 16:9 edge-to-edge cinematic realistic painted website background. Maximum fine detail and native resolution. Milaghaiba identity: deep midnight navy, restrained antique gold and warm amber, refined historical Islamic and Algerian architectural motifs, tactile wood, stone, leather and paper. A serene small Islamic study alcove at night, a low wooden reading stand with a modest closed navy book and a plain empty ivory practice tablet, folded woven rug, one warm brass oil lamp, moonlight through a geometric carved screen, courtyard fig-tree shadows. A quiet space for attentive learning and recall, not a giant library. Lower-right foreground detail, generous deep navy atmosphere on left for real website title. Absolutely no human, no animal, no face, no readable lettering, no fake calligraphy, no verse, no logo, watermark, border, UI or collage. Each scene must be architecturally coherent and distinct. No oversaturated orange sunset. Elegant scholarly atmosphere.",
+      "path": "C:\\Users\\df\\.codex\\generated_images\\01a1a770-48ec-73c1-9a7e-9741f10e8769\\exec-e88c00ef-b5c3-4d6d-affc-e7fc53b98868.png",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "dafff4a3a29d0399fa6b3e6ad0f7824c8ad4d3f32bdd9743474a304aa6ba4d1e",
+      "review": "inspected, no person or face, no readable text",
+      "format": "WebP quality90, no resizing; PNG preserved"
+    },
+    {
+      "id": "recherche",
+      "prompt": "Use case: illustration-story. One single landscape 16:9 edge-to-edge cinematic realistic painted website background. Maximum fine detail and native resolution. Milaghaiba identity: deep midnight navy, restrained antique gold and warm amber, refined historical Islamic and Algerian architectural motifs, tactile wood, stone, leather and paper. A manuscript researcherâ€™s workbench seen at an oblique angle: several open folios with completely blank ivory pages, small numbered-free wooden dividers, magnifying lens on brass stand, a bronze geometric measuring instrument, rolled reference scrolls in separate cubbies. The feeling is careful comparison of sources. Objects concentrated on the right third; the left half is quiet deep navy shadow for website text. Absolutely no human, no animal, no face, no readable lettering, no fake calligraphy, no verse, no logo, watermark, border, UI or collage. Each scene must be architecturally coherent and distinct. No oversaturated orange sunset. Elegant scholarly atmosphere.",
+      "path": "C:\\Users\\df\\.codex\\generated_images\\01a1a770-48ec-73c1-9a7e-9741f10e8769\\exec-613d2fc0-ca94-44e2-b588-149dd056cd26.png",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "93bd9c3aa8b700f199c2a967488314805585b7c6a00ffc8e631058871aee7c42",
+      "review": "inspected, no person or face, no readable text",
+      "format": "WebP quality90, no resizing; PNG preserved"
+    }
+  ]
+}

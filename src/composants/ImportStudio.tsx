@@ -1,5 +1,7 @@
 "use client";
 
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
+
 import { useCallback, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { IMPORT_COLUMNS, parseCsv, validateRows, summaryRows, type CsvRow, type ImportedNotice } from "@/donnees/import-csv";
 import styles from "./ImportStudio.module.css";
@@ -141,12 +143,12 @@ export default function ImportStudio({lang}:{lang:string}){
     <div className={styles.world}>
       <div className={styles.orb} aria-hidden="true"/>
       <div className={styles.frame}>
-        <header className={styles.hero}>
+        <EntetePatrimoine scene="reglages" className={styles.hero}>
           <div className={styles.kicker}><span className={styles.spark}>✦</span> {t.admin}<span className={styles.secure}>{t.protected} · <span aria-hidden>⌁</span></span></div>
           <h1>{t.title}</h1>
           <p>{t.subtitle}</p>
           <div className={styles.tags}><span>CSV UTF-8</span><span>GitHub main</span><span>01 — {t.append}</span></div>
-        </header>
+        </EntetePatrimoine>
 
         <div className={styles.workspace}>
           <aside className={styles.sidebar}>

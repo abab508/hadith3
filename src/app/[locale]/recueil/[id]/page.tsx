@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -53,12 +54,12 @@ export default async function PageRecueil({ params, searchParams }: { params: Pr
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p className={styles.retour}><Link href="/bibliotheque">← {t("retourBibliotheque")}</Link></p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="lecture" compacte className={styles.entete}>
         <p className={styles.surtitre}>{t("surtitre")}</p>
         <h1 className={styles.titre}><bdi lang="ar-Latn">{fiche.nom}</bdi></h1>
         <p lang="ar" dir="rtl" className={`texte-arabe ${liste.nomAr}`}>{fiche.nomAr}</p>
         <p className={styles.reference}>{t("compte", { nombre: recueil.nombre, avecChaine: recueil.avecChaine })}</p>
-      </header>
+      </EntetePatrimoine>
 
       <form className={liste.aller} action={`/${locale}/recueil/${id}`} method="get">
         <label htmlFor="aller-numero">{t("aller")}</label>

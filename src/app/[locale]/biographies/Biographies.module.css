@@ -66,3 +66,12 @@ a.personne:hover,a.personne:focus-visible{border-color:#f2c877;transform:transla
 @media(max-width:52rem){.fiche{grid-template-columns:minmax(0,1fr);}}
 @media(prefers-reduced-motion:reduce){.carteSerie,.personne{transition:none;}.carteSerie:hover,a.personne:hover{transform:none;}}
 :global(html[data-motion="off"]) .carteSerie:hover,:global(html[data-motion="off"]) a.personne:hover{transform:none;}
+
+/* Décor propre à chaque série ; les personnes gardent des fiches textuelles. */
+.imageSerie{position:relative;display:block;aspect-ratio:16/9;margin-block:-1.3rem .6rem;margin-inline:-1.3rem;overflow:hidden;border-start-start-radius:1rem;border-start-end-radius:1rem;}
+.imageSerie img{object-fit:cover;transition:transform .8s;}
+.carteSerie:hover .imageSerie img{transform:scale(1.035);}
+.carteSerie{overflow:hidden;}
+@media(max-width:400px){.series,.personnes{grid-template-columns:minmax(0,1fr);}}
+@media(prefers-reduced-motion:reduce){.imageSerie img{transition:none;}.carteSerie:hover .imageSerie img{transform:none;}}
+:global(html[data-motion="off"]) .carteSerie:hover .imageSerie img{transform:none;}

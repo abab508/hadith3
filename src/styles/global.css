@@ -141,10 +141,10 @@ a {
 
 /* Choix explicite du thème : prioritaire sur la préférence système. */
 :root[data-theme="light"]{
- color-scheme:light;--fond:#f5f7f7;--texte:#172b34;--discret:#4f6871;--accent:#087c70;
- --surface:#ffffff;--bordure:#cbdad9;--sur-accent:#ffffff;--accent-doux:#e0f3ef;
- --ocre:#885f26;--ocre-doux:#f7f0de;--info:#285694;--info-doux:#e6eff8;
- --alerte:#9a3510;--alerte-doux:#fae7df;--neutre-doux:#e9efed;
+ color-scheme:light;--fond:#f7f2e8;--texte:#202b3b;--discret:#625746;--accent:#80551c;
+ --surface:#fffdf7;--bordure:#d7c7a7;--sur-accent:#ffffff;--accent-doux:#f0e3c8;
+ --ocre:#80551c;--ocre-doux:#f0e3c8;--info:#285694;--info-doux:#e6eff8;
+ --alerte:#9a3510;--alerte-doux:#fae7df;--neutre-doux:#ece4d6;
 }
 :root[data-theme="dark"]{
  color-scheme:dark;--fond: #0a1222;--texte: #f3ead8;--discret: #b8ae9a;--accent: #e3b866;--surface: #111c31;--bordure: #33405a;--sur-accent: #1b1307;--accent-doux: #2a2416;--ocre: #eebc6a;--ocre-doux: #2c2314;--info: #8fb3ea;--info-doux: #1b2a44;--alerte: #f0a074;--alerte-doux: #3d2318;--neutre-doux: #1b2537;

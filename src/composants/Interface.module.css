@@ -193,3 +193,8 @@
 .bouton,.boutonSecondaire{border-radius:999px;transition:transform .2s,box-shadow .2s;}
 .bouton:hover:not(:disabled),.boutonSecondaire:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px #050d2221;}
 @media(prefers-reduced-motion:reduce){.carte,.bouton,.boutonSecondaire{transition:none!important;transform:none!important;}}
+
+/* Même finition pour les formulaires, résultats et rapports. */
+.carte{border-color:color-mix(in srgb,var(--accent) 28%,var(--bordure));background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 4%,var(--surface)),var(--surface));box-shadow:0 12px 32px #00000018;}
+.bouton,.boutonSecondaire{transition:background .2s,box-shadow .2s;}
+.bouton:hover,.boutonSecondaire:hover{box-shadow:0 0 18px color-mix(in srgb,var(--accent) 16%,transparent);}

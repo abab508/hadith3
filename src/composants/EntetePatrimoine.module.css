@@ -1,0 +1,23 @@
+.entete{
+  --texte:#f3ead8;--discret:#d0c4ac;--accent:#e3b866;--ocre:#eebc6a;
+  position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:center;
+  min-block-size:clamp(14rem,24vw,21rem);padding:clamp(1.5rem,4vw,3.5rem);
+  border:1px solid #e3b86650;border-radius:1rem;background:#0a1222;color:var(--texte);
+  box-shadow:0 20px 50px #0003;inline-size:100%;min-inline-size:0;
+}
+.entete[data-compacte="true"]{min-block-size:11rem;}
+.decor{position:absolute;z-index:-1;inset:0;pointer-events:none;overflow:hidden;}
+.image{object-fit:cover;object-position:center 55%;opacity:.8;}
+.decor::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08101ff0,#08101fd1 48%,#08101f30),linear-gradient(0deg,#08101fb3,transparent 65%);}
+:global(html[dir="rtl"]) .decor::after{background:linear-gradient(270deg,#08101ff0,#08101fd1 48%,#08101f30),linear-gradient(0deg,#08101fb3,transparent 65%);}
+.contenu{position:relative;inline-size:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.65rem;min-inline-size:0;}
+.contenu>:is(h1,p){margin:0;max-inline-size:48rem;}
+.contenu>h1{font-size:clamp(1.9rem,3.7vw,3.2rem);color:#fff3d7;line-height:1.35;}
+.contenu>p{color:#e8dcc2;line-height:1.8;}
+.rayon{position:absolute;z-index:1;inset:-30%;background:linear-gradient(115deg,transparent 45%,#e3b86618 50%,transparent 56%);animation:rayonLent 24s ease-in-out infinite alternate;}
+.poussiere{position:absolute;z-index:1;inset:0;opacity:.4;background:radial-gradient(2px 2px at 14% 28%,#e3b866,transparent),radial-gradient(1px 1px at 35% 68%,#e3b866,transparent),radial-gradient(2px 2px at 84% 24%,#e3b866,transparent);animation:lueurDouce 8s ease-in-out infinite alternate;}
+@keyframes rayonLent{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+@keyframes lueurDouce{from{opacity:.2}to{opacity:.55}}
+@media(max-width:600px){.entete{min-block-size:15rem;border-radius:.8rem;}.decor::after{background:linear-gradient(90deg,#08101fe6,#08101fa6),linear-gradient(0deg,#08101fb3,transparent);}.contenu>h1{font-size:1.9rem;}}
+@media(prefers-reduced-motion:reduce){.rayon,.poussiere{animation:none;}}
+:global(html[data-motion="off"]) .rayon,:global(html[data-motion="off"]) .poussiere{animation:none;}

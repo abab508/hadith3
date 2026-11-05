@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import { catalogue } from "@/donnees/catalogue";
@@ -43,8 +44,10 @@ export default async function Langues({ params }: { params: Promise<{ locale: st
 
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
-      <h1>{t("titre")}</h1>
-      <p>{t("introduction")}</p>
+      <EntetePatrimoine scene="langues">
+        <h1>{t("titre")}</h1>
+        <p>{t("introduction")}</p>
+      </EntetePatrimoine>
       <p className={styles.avertissement}>{t("avertissement")}</p>
       <div className={styles.langues}>
         {langues.map(({ langue, completude }) => (

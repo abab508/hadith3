@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -32,14 +33,14 @@ export default async function PageHadithRecueil({ params }: { params: Promise<Pa
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p className={styles.retour}><Link href={`/recueil/${id}?page=${blocDe(n)}`}>← {t("retourRecueil")}</Link></p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="lecture" compacte className={styles.entete}>
         <p className={styles.surtitre}>{t("surtitre")}</p>
         <h1 className={styles.titre}><bdi lang="ar-Latn">{fiche.nom}</bdi></h1>
         <p className={styles.reference}>
           <bdi dir="ltr">{t("numero", { n })}</bdi>
           {hadith ? <> · {t("refSource", { ref: hadith.ref })}</> : null}
         </p>
-      </header>
+      </EntetePatrimoine>
 
       {echec || !hadith ? (
         <section className={styles.cadre} role="status"><p>{echec ? t("indisponible") : t("introuvable")}</p></section>

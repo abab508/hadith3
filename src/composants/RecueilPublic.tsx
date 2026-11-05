@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { fetchRemoteSection, type RemoteRow } from "@/donnees/recherche-distante";
@@ -38,12 +39,12 @@ export default async function RecueilPublic({ locale, fiche, collection, sommair
       <p className={styles.retour}>
         {choisi ? <Link href={`/recueil/${id}`}>← {tp("retourSommaire")}</Link> : <Link href="/bibliotheque">← {t("retourBibliotheque")}</Link>}
       </p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="lecture" compacte className={styles.entete}>
         <p className={styles.surtitre}>{t("surtitre")}</p>
         <h1 className={styles.titre}><bdi lang="ar-Latn">{fiche.nom}</bdi></h1>
         <p lang="ar" dir="rtl" className={`texte-arabe ${liste.nomAr}`}>{fiche.nomAr}</p>
         <p className={styles.reference}>{tp("compte", { nombre: sommaire.total, livres: sommaire.livres.filter(([s]) => s !== 0).length })}</p>
-      </header>
+      </EntetePatrimoine>
 
       <form className={liste.aller} action={`/${locale}/recueil/${id}`} method="get">
         <label htmlFor="aller-numero">{t("aller")}</label>

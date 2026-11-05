@@ -89,3 +89,6 @@
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+/* Cadres de lecture dans la palette commune. */
+.langue{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 5%,var(--surface)),var(--surface));border-color:color-mix(in srgb,var(--accent) 38%,var(--bordure));border-radius:.9rem;box-shadow:0 12px 30px #00000010;}

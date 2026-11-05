@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import { clesMention } from "@/donnees/provenance";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -185,7 +186,7 @@ export default async function Recherche({
   return (
     <main id="contenu" tabIndex={-1} className={ui.page}>
       <div className={styles.requete}>
-        <h1 id="titre-resultats" className={styles.titre}>{t("titre")}</h1>
+        <EntetePatrimoine scene="recherche"><h1 id="titre-resultats" className={styles.titre}>{t("titre")}</h1></EntetePatrimoine>
         <form role="search" method="get" className={`${ui.carte} ${styles.nouvelleRecherche}`}>
           <div className={styles.ligneRecherche}>
             <label className={styles.champ}>
