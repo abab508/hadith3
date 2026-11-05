@@ -775,5 +775,31 @@
     "aucunHadith": "No hadith from our collections in this sub-chapter.",
     "agrandirIllustration": "Enlarge illustration {n}",
     "fermerIllustration": "Close illustration"
+  },
+  "assistant": {
+    "ouvrir": "Open the Milaghaiba assistant",
+    "fermer": "Close the assistant",
+    "titre": "Milaghaiba assistant",
+    "nom": "Assistant",
+    "vous": "You",
+    "accueil": "Hello! I can help you find a hadith, read its Arabic text, understand its chain of transmission or a glossary term.",
+    "rappel": "A documentation tool: it does not replace a specialist and gives no religious rulings.",
+    "placeholder": "Ask your question…",
+    "envoyer": "Send",
+    "effacer": "Clear",
+    "micro": "Speak (microphone)",
+    "microEcoute": "Stop listening",
+    "microAbsent": "This browser does not support the microphone: type your question.",
+    "ecouter": "Listen",
+    "arreter": "Stop",
+    "reflexion": "The assistant is thinking…",
+    "recherche": "Searching Milaghaiba’s sources…",
+    "erreurs": {
+      "indisponible": "The assistant is temporarily unavailable.",
+      "trop": "Too many questions in a row: try again in a few minutes.",
+      "occupe": "The assistant is busy: try again in a moment.",
+      "refus": "The assistant cannot answer this request.",
+      "invalide": "Message too long or incomplete."
+    }
   }
 }

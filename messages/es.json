@@ -775,5 +775,31 @@
     "aucunHadith": "Ningún hadiz de nuestras colecciones en este subcapítulo.",
     "agrandirIllustration": "Ampliar la ilustración {n}",
     "fermerIllustration": "Cerrar la ilustración"
+  },
+  "assistant": {
+    "ouvrir": "Abrir el asistente Milaghaiba",
+    "fermer": "Cerrar el asistente",
+    "titre": "Asistente Milaghaiba",
+    "nom": "Asistente",
+    "vous": "Usted",
+    "accueil": "¡Hola! Puedo ayudarle a encontrar un hadiz, leer su texto árabe, entender su cadena de transmisión o un término del glosario.",
+    "rappel": "Herramienta de documentación: no sustituye a un especialista ni da dictámenes religiosos.",
+    "placeholder": "Escriba su pregunta…",
+    "envoyer": "Enviar",
+    "effacer": "Borrar",
+    "micro": "Hablar (micrófono)",
+    "microEcoute": "Dejar de escuchar",
+    "microAbsent": "Este navegador no admite el micrófono: escriba su pregunta.",
+    "ecouter": "Escuchar",
+    "arreter": "Detener",
+    "reflexion": "El asistente está pensando…",
+    "recherche": "Buscando en las fuentes de Milaghaiba…",
+    "erreurs": {
+      "indisponible": "El asistente no está disponible por el momento.",
+      "trop": "Demasiadas preguntas seguidas: vuelva a intentarlo en unos minutos.",
+      "occupe": "El asistente está muy solicitado: vuelva a intentarlo en un momento.",
+      "refus": "El asistente no puede responder a esta solicitud.",
+      "invalide": "Mensaje demasiado largo o incompleto."
+    }
   }
 }

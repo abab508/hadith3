@@ -775,5 +775,31 @@
     "aucunHadith": "Bu alt bölümde eserlerimizden hadis yok.",
     "agrandirIllustration": "Görseli büyüt {n}",
     "fermerIllustration": "Görseli kapat"
+  },
+  "assistant": {
+    "ouvrir": "Milaghaiba asistanını aç",
+    "fermer": "Asistanı kapat",
+    "titre": "Milaghaiba asistanı",
+    "nom": "Asistan",
+    "vous": "Siz",
+    "accueil": "Merhaba! Bir hadisi bulmanıza, Arapça metnini okumanıza, isnadını ya da sözlükteki bir terimi anlamanıza yardımcı olabilirim.",
+    "rappel": "Bir belgeleme aracıdır: bir uzmanın yerini tutmaz ve dinî fetva vermez.",
+    "placeholder": "Sorunuzu yazın…",
+    "envoyer": "Gönder",
+    "effacer": "Temizle",
+    "micro": "Konuş (mikrofon)",
+    "microEcoute": "Dinlemeyi durdur",
+    "microAbsent": "Bu tarayıcı mikrofonu desteklemiyor: sorunuzu yazın.",
+    "ecouter": "Dinle",
+    "arreter": "Durdur",
+    "reflexion": "Asistan düşünüyor…",
+    "recherche": "Milaghaiba kaynaklarında aranıyor…",
+    "erreurs": {
+      "indisponible": "Asistan geçici olarak kullanılamıyor.",
+      "trop": "Arka arkaya çok fazla soru: birkaç dakika sonra tekrar deneyin.",
+      "occupe": "Asistan çok yoğun: biraz sonra tekrar deneyin.",
+      "refus": "Asistan bu isteğe yanıt veremez.",
+      "invalide": "Mesaj çok uzun veya eksik."
+    }
   }
 }

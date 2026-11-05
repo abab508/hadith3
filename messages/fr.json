@@ -775,5 +775,31 @@
     "aucunHadith": "Aucun hadith de nos recueils dans ce sous-chapitre.",
     "agrandirIllustration": "Agrandir l’illustration {n}",
     "fermerIllustration": "Fermer l’illustration"
+  },
+  "assistant": {
+    "ouvrir": "Ouvrir l’assistant Milaghaiba",
+    "fermer": "Fermer l’assistant",
+    "titre": "Assistant Milaghaiba",
+    "nom": "Assistant",
+    "vous": "Vous",
+    "accueil": "Bonjour ! Je peux vous aider à trouver un hadith, lire son texte arabe, comprendre sa chaîne de transmission ou un terme du glossaire.",
+    "rappel": "Outil de documentation : il ne remplace pas un spécialiste et ne donne pas d’avis religieux.",
+    "placeholder": "Posez votre question…",
+    "envoyer": "Envoyer",
+    "effacer": "Effacer",
+    "micro": "Parler (micro)",
+    "microEcoute": "Arrêter l’écoute",
+    "microAbsent": "Le micro n’est pas pris en charge par ce navigateur : écrivez votre question.",
+    "ecouter": "Écouter",
+    "arreter": "Arrêter",
+    "reflexion": "L’assistant réfléchit…",
+    "recherche": "Recherche dans les sources de Milaghaiba…",
+    "erreurs": {
+      "indisponible": "L’assistant est momentanément indisponible.",
+      "trop": "Trop de questions d’affilée : réessayez dans quelques minutes.",
+      "occupe": "L’assistant est très demandé : réessayez dans un instant.",
+      "refus": "L’assistant ne peut pas répondre à cette demande.",
+      "invalide": "Message trop long ou incomplet."
+    }
   }
 }

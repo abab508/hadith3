@@ -7,6 +7,7 @@ import { entree } from "@/donnees/catalogue";
 import { clesManquantes } from "@/i18n/charger";
 import { routing } from "@/i18n/routing";
 import EnTete from "@/composants/EnTete";
+import Assistant from "@/composants/Assistant";
 import "@/styles/polices.css";
 import "@/styles/global.css";
 
@@ -51,6 +52,7 @@ export default async function Layout({
         <NextIntlClientProvider>
           <EnTete />
           {children}
+          <Assistant />
         </NextIntlClientProvider>
       </body>
     </html>

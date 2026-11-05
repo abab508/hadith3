@@ -775,5 +775,31 @@
     "aucunHadith": "Tiada hadis daripada kitab kami dalam subbab ini.",
     "agrandirIllustration": "Besarkan ilustrasi {n}",
     "fermerIllustration": "Tutup ilustrasi"
+  },
+  "assistant": {
+    "ouvrir": "Buka pembantu Milaghaiba",
+    "fermer": "Tutup pembantu",
+    "titre": "Pembantu Milaghaiba",
+    "nom": "Pembantu",
+    "vous": "Anda",
+    "accueil": "Helo! Saya boleh membantu anda mencari hadis, membaca teks Arabnya, memahami sanadnya atau istilah dalam glosari.",
+    "rappel": "Alat dokumentasi: tidak menggantikan pakar dan tidak memberi fatwa.",
+    "placeholder": "Tulis soalan anda…",
+    "envoyer": "Hantar",
+    "effacer": "Padam",
+    "micro": "Bercakap (mikrofon)",
+    "microEcoute": "Berhenti mendengar",
+    "microAbsent": "Pelayar ini tidak menyokong mikrofon: tulis soalan anda.",
+    "ecouter": "Dengar",
+    "arreter": "Berhenti",
+    "reflexion": "Pembantu sedang berfikir…",
+    "recherche": "Mencari dalam sumber Milaghaiba…",
+    "erreurs": {
+      "indisponible": "Pembantu tidak tersedia buat sementara waktu.",
+      "trop": "Terlalu banyak soalan berturut-turut: cuba lagi dalam beberapa minit.",
+      "occupe": "Pembantu sedang sibuk: cuba lagi sebentar lagi.",
+      "refus": "Pembantu tidak dapat menjawab permintaan ini.",
+      "invalide": "Mesej terlalu panjang atau tidak lengkap."
+    }
   }
 }
