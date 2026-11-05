@@ -11,14 +11,12 @@
   background:radial-gradient(ellipse at 50% 0%,#16264a 0%,transparent 60%),linear-gradient(180deg,#08101f,#0a1222 40%,#0c1424);
   padding-block:0 5rem;padding-inline:max(1.25rem,calc((100% - 78rem) / 2));display:flex;flex-direction:column;gap:2.4rem;}
 
-/* ---------- Entrée : arche, ciel et lanternes ---------- */
+/* ---------- Entrée dans la salle de lecture ---------- */
 .hero{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:.8rem;text-align:center;
   margin-inline:calc(-1 * max(1.25rem,calc((100vw - 78rem) / 2)));
-  padding:clamp(5rem,10vw,8rem) 1.4rem clamp(8rem,14vw,11rem);
-  background:
-    radial-gradient(ellipse 60% 40% at 50% 100%,#f2a2578c,transparent 70%),
-    radial-gradient(ellipse 90% 35% at 50% 100%,#c2552a66,transparent 75%),
-    linear-gradient(180deg,#060c1a 0%,#0d1a36 38%,#22284a 62%,#5b3541 80%,#b8613a 100%);
+  padding:clamp(4rem,7vw,7rem) 1.4rem clamp(5rem,8vw,8rem);
+  min-block-size:32rem;
+  justify-content:center;background:#08101f;
   border-block-end:1px solid #e2b46255;}
 .hero::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.55;
   background-image:
@@ -33,16 +31,11 @@
   animation:scintiller 4s ease-in-out infinite alternate;}
 /* Frise géométrique au pied de l'arche. */
 .hero::after{content:"";position:absolute;z-index:-1;inset-inline:0;inset-block-end:0;block-size:5rem;pointer-events:none;background:linear-gradient(180deg,transparent,var(--fond));}
-.ciel{position:absolute;z-index:-1;inset:0;pointer-events:none;color:var(--ocre);}
-.silhouette{position:absolute;inset-inline:0;inset-block-end:0;inline-size:100%;block-size:auto;fill:#070b16;opacity:.95;}
-.silhouette .fenetre{fill:#f2b25e;animation:vaciller 3s ease-in-out infinite alternate;}
-.croissant{position:absolute;inset-block-start:16%;inset-inline-end:16%;inline-size:3.4rem;block-size:3.4rem;border-radius:50%;
-  box-shadow:-.75rem .35rem 0 0 var(--ocre);transform:rotate(-20deg);opacity:.85;filter:drop-shadow(0 0 14px color-mix(in srgb,var(--ocre) 55%,transparent));
-  animation:flotter 7s ease-in-out infinite;}
-.lanterne{position:absolute;inset-block-start:0;color:var(--ocre);transform-origin:50% 0;animation:balancer 6s ease-in-out infinite;filter:drop-shadow(0 0 18px color-mix(in srgb,var(--ocre) 60%,transparent));}
-.lanterneA{inset-inline-start:7%;inline-size:52px;block-size:117px;}
-.lanterneB{inset-inline-start:20%;animation-duration:7.5s;animation-delay:-2s;opacity:.8;}
-.flamme{fill:var(--ocre);animation:vaciller 1.8s ease-in-out infinite alternate;transform-origin:50% 60%;transform-box:fill-box;}
+.decorBibliotheque{position:absolute;z-index:-2;inset:0;pointer-events:none;overflow:hidden;}
+.decorBibliotheque::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0710204d,#071020a6 35%,#071020b8 65%,#0a1222),linear-gradient(90deg,#07102033,transparent 30% 70%,#07102033);}
+.imageBibliotheque{object-fit:cover;object-position:center 57%;}
+.lumiere{position:absolute;z-index:1;inset:-25%;opacity:.2;background:linear-gradient(115deg,transparent 35%,#e2b46255 48%,transparent 60%);animation:lumiereSalle 18s ease-in-out infinite alternate;}
+.sceau{display:grid;place-items:center;inline-size:3rem;block-size:3rem;border:1px solid #e2b46270;border-radius:50%;color:var(--ocre);background:#07102080;font-size:1.8rem;box-shadow:0 0 30px #e2b46220;}
 .poussiere{position:absolute;inset-block-end:-10px;inset-inline-start:calc(4% + var(--i) * 6.8%);inline-size:4px;block-size:4px;border-radius:50%;
   background:var(--ocre);opacity:0;box-shadow:0 0 8px var(--ocre);
   animation:monter calc(9s + var(--i) * .45s) linear infinite;animation-delay:calc(var(--i) * -1.1s);}
@@ -55,7 +48,7 @@
 
 /* ---------- Outils : recherche et rayons ---------- */
 .bibliotheque{display:flex;flex-direction:column;gap:2.6rem;}
-.outils{position:relative;z-index:3;display:flex;flex-direction:column;gap:.8rem;padding:.9rem;border:1px solid var(--bordure);border-radius:1.3rem;
+.outils{position:relative;z-index:3;display:flex;flex-direction:column;gap:.8rem;padding:clamp(1rem,2vw,1.5rem);border:1px solid var(--bordure);border-radius:.75rem;
   background:#0f1a2ee0;backdrop-filter:blur(10px);box-shadow:0 15px 45px #0007;border-color:#e2b46240;}
 .recherche{display:flex;align-items:center;gap:.6rem;padding-inline:1rem;border:1px solid #e2b4627a;border-radius:999px;background:var(--fond);color:var(--discret);transition:border-color .2s,box-shadow .2s;}
 .recherche:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent);}
@@ -75,7 +68,7 @@
 .rayon{display:flex;flex-direction:column;gap:1.1rem;scroll-margin-block-start:12rem;}
 .enteteRayon h2{margin:0;color:var(--ocre);font-weight:600;font-size:clamp(1.35rem,3vw,2rem);letter-spacing:-.02em;}
 .enteteRayon p{margin:.35rem 0 0;color:var(--discret);}
-.etagere{list-style:none;margin:0;padding:1.4rem 1rem 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(13.5rem,1fr));gap:1.6rem 1.1rem;position:relative;perspective:1200px;
+.etagere{list-style:none;margin:0;padding:1.4rem 1rem 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:1.6rem 1.5rem;position:relative;perspective:1200px;
   border-radius:1.2rem;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--ocre) 6%,transparent));}
 /* Planche dorée sous les livres. */
 .etagere::after{content:"";grid-column:1/-1;block-size:12px;margin-inline:-1rem;border-radius:0 0 .8rem .8rem;
@@ -90,12 +83,14 @@
 .rayon[data-famille="imamite"],.rayon[data-famille="ibadite"]{--teinte:#d9a0b0;}
 
 .livre{display:flex;min-inline-size:0;}
-.couverture{position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column;gap:.55rem;min-block-size:15rem;padding-block:1.1rem 1rem;padding-inline:1.6rem 1rem;
+.couverture{position:relative;isolation:isolate;overflow:hidden;flex:1;display:flex;flex-direction:column;gap:.85rem;min-block-size:20rem;padding-block:1.5rem 1.35rem;padding-inline:2rem 1.3rem;
   border:1px solid color-mix(in srgb,var(--teinte) 45%,var(--bordure));border-start-start-radius:.35rem;border-end-start-radius:.35rem;border-start-end-radius:.9rem;border-end-end-radius:.9rem;
   background:
     radial-gradient(circle at 50% 0%,color-mix(in srgb,var(--teinte) 16%,transparent),transparent 60%),
-    linear-gradient(180deg,#132139,#0d1628);
-  box-shadow:0 12px 28px #050d2222;transform-origin:50% 100%;
+    repeating-linear-gradient(55deg,#e2b46205 0 1px,transparent 1px 5px),
+    linear-gradient(110deg,#1d2d45,#0a1425 18%,#122139 80%,#253047);
+  outline:1px solid #e2b46230;outline-offset:-.65rem;
+  box-shadow:inset .4rem 0 .8rem #0008,inset -.3rem 0 .4rem #f2dcaf15,.3rem .3rem 0 #9d8a60,0 14px 30px #0007;transform-origin:50% 100%;
   transition:transform .45s cubic-bezier(.2,.8,.2,1.2),box-shadow .45s,border-color .3s;}
 /* Dos du livre avec nervures dorées. */
 .couverture::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;inline-size:.7rem;
@@ -111,7 +106,7 @@
 .ornement{position:absolute;inset-block-start:.8rem;inset-inline-end:.8rem;inline-size:2.4rem;block-size:2.4rem;fill:none;stroke:var(--ocre);stroke-width:1.6;opacity:.7;transition:transform 1.2s;}
 .ornement circle{fill:var(--ocre);stroke:none;}
 .livre:hover .ornement,.livre:focus-within .ornement{transform:rotate(45deg) scale(1.1);}
-.titreLivre{margin:0;display:flex;flex-direction:column;gap:.3rem;}
+.titreLivre{margin:.6rem 0 0;display:flex;flex-direction:column;gap:.65rem;}
 .nomAr{font-size:1.45rem;line-height:1.6;color:var(--texte);}
 .nom{font-family:var(--police-titre-latine);font-size:1.02rem;font-weight:600;color:var(--teinte);}
 .auteur{margin:0;color:var(--discret);font-size:.9rem;}
@@ -120,14 +115,6 @@
   color:var(--accent);background:transparent;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);text-decoration:none;transition:transform .2s,background .2s,color .2s;}
 .chercher:hover{transform:translateY(-2px);background:var(--accent);color:var(--sur-accent);}
 .chercher:focus-visible{outline:3px solid var(--accent);outline-offset:.2rem;}
-/* Lien principal étiré sur toute la couverture ; le lien de recherche reste cliquable au-dessus. */
-.principal::before{content:"";position:absolute;inset:0;z-index:1;}
-.principal:hover,.livre:hover .principal{transform:none;background:var(--accent);color:var(--sur-accent);}
-.secondaire{position:relative;z-index:2;margin-block-start:0;}
-/* Livre sans page sur le site : il ne se soulève pas et le dit clairement. */
-.indisponible{margin-block-start:auto;margin-block-end:0;font-size:.85rem;font-style:italic;color:var(--discret);}
-.livre[data-disponible="non"]:hover .couverture,.livre[data-disponible="non"]:focus-within .couverture{transform:none;box-shadow:0 12px 28px #050d2222;border-color:color-mix(in srgb,var(--teinte) 45%,var(--bordure));}
-.livre[data-disponible="non"]:hover .couverture::after{transform:translateX(-160%);}
 
 /* Les livres « sortent » de l'étagère quand on arrive sur le rayon (navigateurs compatibles). */
 @supports (animation-timeline:view()){
@@ -144,13 +131,12 @@
 @keyframes apparaitre{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes reflet{0%,100%{background-position:100% 0}50%{background-position:0 0}}
 @keyframes posee{from{opacity:0;transform:translateY(40px) rotateX(-18deg)}to{opacity:1;transform:none}}
+@keyframes lumiereSalle{from{transform:translateX(-8%);opacity:.12}to{transform:translateX(8%);opacity:.28}}
 
 @media(max-width:720px){
   .page{padding-inline:.85rem;}
-  .lanterneA{inline-size:36px;block-size:81px;}
-  .hero{margin-inline:-.85rem;padding-block:4rem 6rem;}
-  .lanterneB{display:none;}
-  .etagere{grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));padding-inline:.6rem;}
+  .hero{margin-inline:-.85rem;padding-block:3rem 4rem;min-block-size:27rem;}
+  .etagere{grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));padding-inline:.6rem;}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -159,3 +145,12 @@
 }
 :global(html[data-motion="off"]) .page *,:global(html[data-motion="off"]) .page *::before,:global(html[data-motion="off"]) .page *::after{animation:none!important;transition:none!important;}
 :global(html[data-motion="off"]) .livre:hover .couverture,:global(html[data-motion="off"]) .livre:focus-within .couverture{transform:none!important;}
+
+/* Lien principal étiré sur toute la couverture ; le lien de recherche reste cliquable au-dessus. */
+.principal::before{content:"";position:absolute;inset:0;z-index:1;}
+.principal:hover,.livre:hover .principal{transform:none;background:var(--accent);color:var(--sur-accent);}
+.secondaire{position:relative;z-index:2;margin-block-start:0;}
+/* Livre sans page sur le site : il ne se soulève pas et le dit clairement. */
+.indisponible{margin-block-start:auto;margin-block-end:0;font-size:.85rem;font-style:italic;color:var(--discret);}
+.livre[data-disponible="non"]:hover .couverture,.livre[data-disponible="non"]:focus-within .couverture{transform:none;box-shadow:0 12px 28px #050d2222;border-color:color-mix(in srgb,var(--teinte) 45%,var(--bordure));}
+.livre[data-disponible="non"]:hover .couverture::after{transform:translateX(-160%);}

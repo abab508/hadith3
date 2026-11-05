@@ -59,13 +59,13 @@ export default async function PageChapitre({ params }: { params: Promise<Paramet
   const dessiner = (instance: string) => motifs.map((m, i) => {
     const legende = `${titre.texte} — ${tk("illustration", { n: i + 1 })}`;
     const variante = i === 0 ? varianteCarte : 0;
-    const image = <IllustrationChapitre motif={m} variante={variante} graine={`${id}-${i}`} instance={instance} titre={legende} />;
+    const image = <IllustrationChapitre chapitreId={i === 0 ? id : undefined} motif={m} variante={variante} graine={`${id}-${i}`} instance={instance} titre={legende} />;
     return instance === "g" ? (
       <ApercuIllustration key={m} titre={legende}
-        agrandie={<IllustrationChapitre motif={m} variante={variante} graine={`${id}-${i}`} titre={legende} sizes="(max-width: 760px) 92vw, 90rem" />} ouvrir={tk("agrandirIllustration", { n: i + 1 })} fermer={tk("fermerIllustration")}>
+        agrandie={<IllustrationChapitre chapitreId={i === 0 ? id : undefined} motif={m} variante={variante} graine={`${id}-${i}`} titre={legende} sizes="(max-width: 760px) 92vw, 90rem" />} ouvrir={tk("agrandirIllustration", { n: i + 1 })} fermer={tk("fermerIllustration")}>
         {image}
       </ApercuIllustration>
-    ) : <IllustrationChapitre key={m} motif={m} variante={variante} graine={`${id}-${i}`} titre={legende} />;
+    ) : <IllustrationChapitre key={m} chapitreId={i === 0 ? id : undefined} motif={m} variante={variante} graine={`${id}-${i}`} titre={legende} />;
   });
   const illustrations = dessiner("g");
 
