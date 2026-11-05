@@ -57,7 +57,7 @@ export default async function PageTheme({ params }: { params: Promise<{ locale: 
                 <Link href={`/chapitres/${c.id}`}>
                   <span className={styles.cadreImageChapitre}>
                     {fixe ? <ImageDecorative src={`/images/hd/${fixe.image}.png`} sizes="(max-width: 1155px) 13rem, (max-width: 1378px) 18vw, 15.5rem" />
-                      : <IllustrationChapitre motif={ill.motif} variante={ill.variante} graine={`${c.id}-0`} />}
+                      : <IllustrationChapitre chapitreId={c.id} motif={ill.motif} variante={ill.variante} graine={`${c.id}-0`} />}
                   </span>
                   <span className={styles.corpsCarte}>
                     <span className={styles.titreCarte}>{i + 1}. <bdi lang={titre.langue} dir="auto">{titre.texte}</bdi></span>

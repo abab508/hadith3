@@ -75,7 +75,7 @@ export default async function PageSousChapitre({ params, searchParams }: { param
         {r.ar && r.titre.langue !== "ar" && <p lang="ar" dir="rtl" className={`texte-arabe ${liste.nomAr}`}>{r.ar}</p>}
         <p className={styles.reference}>{tk("nbHadiths", { count: refs.length })}</p>
       </header>
-      <div className={liste.bandeauIllustration}><IllustrationChapitre motif={motifs[0]!} second={motifs[1]} graine={`${id}-${sous}`} /></div>
+      <div className={liste.bandeauIllustration}><IllustrationChapitre chapitreId={id} motif={motifs[0]!} second={motifs[1]} graine={`${id}-${sous}`} /></div>
 
       {pagination}
       {refs.length === 0 ? <p>{tk("aucunHadith")}</p> : (

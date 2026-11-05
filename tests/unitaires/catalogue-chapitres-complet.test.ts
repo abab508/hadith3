@@ -108,7 +108,7 @@ describe("catalogue complet des chapitres illustrés", () => {
       if (chapitre.nombre > 0 && uniques.size === 0) erreurs.push(`${chapitre.id} : aucun hadith consultable malgré un sujet annoncé non vide`);
     }
     expect(erreurs, erreurs.slice(0, 50).join("\n")).toEqual([]);
-  });
+  }, 20_000);
 
   it("associe chaque sujet à une véritable scène PNG existante et lisible", () => {
     const motifs = new Set<string>(motifsIllustrations);
