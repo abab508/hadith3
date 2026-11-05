@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import IllustrationChapitre from "@/composants/IllustrationChapitre";
-import { BoutonEcouter } from "@/composants/PresentationChapitre";
 import { chapitreKg, hadithsDuSous, hadithsHorsSous, lienHadith, motifsDe, sousChapitreKg, titreKg, type RefHadith } from "@/donnees/chapitres-kg";
 import { hadithKg, recueilsKg } from "@/donnees/recueils-kg";
 import { loadDetail } from "@/donnees/fiche-distante";
@@ -94,7 +93,6 @@ export default async function PageSousChapitre({ params, searchParams }: { param
                 ) : <p className={styles.mention}>{tk("indisponible")}</p>}
                 <p className={styles.boutons}>
                   <Link href={lienHadith(ref)} className={styles.bouton}>{tk("ouvrir")} <span aria-hidden="true">→</span></Link>
-                  {tx && <BoutonEcouter texte={tx.ar} langue="ar" ecouter={tk("ecouter")} arreter={tk("arreter")} />}
                 </p>
               </li>
             );
