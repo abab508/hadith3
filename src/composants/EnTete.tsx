@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import SelecteurLangue from "@/composants/SelecteurLangue";
 import ThemeSwitch from "@/composants/ThemeSwitch";
-import AmbianceSonore from "@/composants/AmbianceSonore";
 import Embleme from "@/composants/Embleme";
 import styles from "@/composants/EnTete.module.css";
 
@@ -38,7 +37,6 @@ export default async function EnTete() {
               <path d="M20 20l-4-4" />
             </svg>
           </Link>
-          <AmbianceSonore />
           <ThemeSwitch />
           <Link href="/parametres" className={styles.icone} aria-label={navigation("parametres")} title={navigation("parametres")}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">

@@ -161,8 +161,7 @@ export default async function PageChapitre({ params }: { params: Promise<Paramet
                   <PresentationChapitre
                     diapos={dessiner("d")}
                     lignes={[titre.texte, ...sousTitres.slice(0, 12).map((s) => s.texte)]}
-                    langue={titre.langue}
-                    libelles={{ lancer: tk("lancer"), pause: tk("pause"), ecouter: tk("ecouter"), arreter: tk("arreter"), voix: tk("voix"), sansVoix: tk("sansVoix"), diapo: tk("diapo") }}
+                    libelles={{ lancer: tk("lancer"), pause: tk("pause"), diapo: tk("diapo") }}
                   />
                 ),
               },

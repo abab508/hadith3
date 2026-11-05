@@ -169,3 +169,8 @@
 - Fait : chaque prophète reçoit 3 scènes de son histoire parmi les 24 images (Ismāʿīl et Ibrāhīm : Kaaba ; ʿĪsā : ciel étoilé, minaret pour sa descente ; Maryam : palmier ; Nūḥ, Yūnus, Ayyūb : eau ; Mūsā : montagne…) au lieu d'une montagne commune ; kunyas exclues (Abū Mūsā…). « Le Prophète » (Muḥammad) : palmier ou mosquée de Médine. Révélation : livre puis ciel ; compilation et scribes : plume.
 - Vérifié : 169 tests unitaires (nouveau test des prophètes), 9 contrôles, build, 132/132 tests navigateur ; captures du thème « Autres thèmes » (Isḥāq, Ismāʿīl, ʿĪsā).
 - Prochaine étape : mise en ligne après accord du patron ; de nouvelles images peintes (propres à un prophète) demanderaient une génération d'images.
+
+## 2026-11-05 — Tout le son retiré du site
+- Fait : à la demande du patron (« désactiver tout ce qui est son et ambiance »), bouton d'ambiance sonore retiré de l'en-tête et boutons « Écouter » (voix de synthèse) retirés des chapitres et sous-chapitres ; l'onglet « Audio / Vidéo » devient « Diaporama » (8 langues), sans son. AmbianceSonore.tsx est gardé mais plus utilisé (aucune suppression de fichier sans accord). Les essais voix naturelle et sons de nature sont abandonnés.
+- Vérifié : 169 tests unitaires, 9 contrôles, build, 132/132 tests navigateur, capture du chapitre « La foi au destin » (en-tête sans bouton son, onglet Diaporama).
+- Prochaine étape : mise en ligne après accord du patron.
