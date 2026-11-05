@@ -12,6 +12,10 @@ describe("chapitres tirés de l'index hadith-kg", () => {
       }
     }
   });
+  it("chaque chapitre et chaque sous-chapitre a un titre français (traduction IA à relire)", () => {
+    const sansFr = tousLesChapitresKg().flatMap((c) => [c, ...c.sous]).filter((e) => !e.fr?.trim());
+    expect(sansFr.map((e) => e.ar)).toEqual([]);
+  });
   it("les 5 chapitres « Fin des temps » de la maquette viennent en premier", () => {
     expect(chapitresDuThemeKg("fin-des-temps").slice(0, 5).map((c) => c.id)).toEqual(["signes-mineurs", "signes-majeurs", "venue-de-dajjal", "descente-de-issa", "fin-du-monde"]);
   });
