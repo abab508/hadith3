@@ -470,7 +470,9 @@
         "note": "Algunos solo se conocen por transmisiones o citas posteriores."
       }
     },
-    "lire": "Leer los {n, number} hadices"
+    "lire": "Leer los {n, number} hadices",
+    "premier": "Abrir el hadiz n.º 1",
+    "indisponible": "Aún no disponible en el sitio: esta colección todavía no tiene página de lectura."
   },
   "themes": {
     "titre": "Elige un tema",

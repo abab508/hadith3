@@ -120,6 +120,14 @@
   color:var(--accent);background:transparent;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);text-decoration:none;transition:transform .2s,background .2s,color .2s;}
 .chercher:hover{transform:translateY(-2px);background:var(--accent);color:var(--sur-accent);}
 .chercher:focus-visible{outline:3px solid var(--accent);outline-offset:.2rem;}
+/* Lien principal étiré sur toute la couverture ; le lien de recherche reste cliquable au-dessus. */
+.principal::before{content:"";position:absolute;inset:0;z-index:1;}
+.principal:hover,.livre:hover .principal{transform:none;background:var(--accent);color:var(--sur-accent);}
+.secondaire{position:relative;z-index:2;margin-block-start:0;}
+/* Livre sans page sur le site : il ne se soulève pas et le dit clairement. */
+.indisponible{margin-block-start:auto;margin-block-end:0;font-size:.85rem;font-style:italic;color:var(--discret);}
+.livre[data-disponible="non"]:hover .couverture,.livre[data-disponible="non"]:focus-within .couverture{transform:none;box-shadow:0 12px 28px #050d2222;border-color:color-mix(in srgb,var(--teinte) 45%,var(--bordure));}
+.livre[data-disponible="non"]:hover .couverture::after{transform:translateX(-160%);}
 
 /* Les livres « sortent » de l'étagère quand on arrive sur le rayon (navigateurs compatibles). */
 @supports (animation-timeline:view()){

@@ -23,6 +23,17 @@ describe("catalogue des recueils de hadiths", () => {
     expect(rayons().find((r) => r.famille === "neuf")?.recueils.every((l) => l.cherchable)).toBe(true);
   });
 
+  it("donne à chaque livre une vraie page du site, ou aucune (jamais la Recherche)", () => {
+    const livres = rayons().flatMap((r) => r.recueils);
+    for (const l of livres) {
+      if (l.lisible > 0) expect(l.page).toEqual({ href: `/recueil/${l.id}`, type: "recueil" });
+      else if (l.page) expect(l.page.href).toBe(`/hadith/${l.id}/ara/1`);
+    }
+    expect(livres.find((l) => l.id === "sahih-bukhari")?.page?.type).toBe("premier");
+    expect(livres.find((l) => l.id === "jami-al-usul")?.page).toBeNull();
+    expect(livres.filter((l) => l.page).length).toBe(49);
+  });
+
   it("refuse un doublon ou une numérotation cassée", () => {
     const double = structuredClone(brut);
     double.recueils[1] = { ...double.recueils[0]!, numero: 2 };

@@ -470,7 +470,9 @@
         "note": "Certains ne sont connus que par des transmissions ou des citations ultérieures."
       }
     },
-    "lire": "Lire les {n, number} hadiths"
+    "lire": "Lire les {n, number} hadiths",
+    "premier": "Ouvrir le hadith n° 1",
+    "indisponible": "Pas encore disponible sur le site : ce recueil n’a pas encore de page de lecture."
   },
   "themes": {
     "titre": "Choisissez un thème",
