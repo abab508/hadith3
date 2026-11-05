@@ -10,6 +10,37 @@ const catalogue = brut as unknown as { themes: Record<string, string[]>; chapitr
 const sujets: Record<string, string> = { croyance: "c3", adoration: "c38359", relations: "c48886", science: "c11954", "autres-themes": "c46937" };
 const traductions = { ar, fr };
 
+for (const locale of ["fr", "ar"] as const) {
+  test(`${locale} : chaque carte de science possède sa propre scène et la galerie la conserve`, async ({ page }) => {
+    test.setTimeout(90_000);
+    await page.goto(`/${locale}/themes/science`);
+    const ids = catalogue.themes.science!;
+    const sources = new Set<string>();
+    for (const id of ids) {
+      const image = page.locator(`main a[href="/${locale}/chapitres/${id}"] img`);
+      const source = await image.getAttribute("src");
+      const fichier = id === "c11832" ? "c11832-v2" : id;
+      expect(decodeURIComponent(source!)).toContain(`/images/chapitres-dedies/${fichier}.webp`);
+      sources.add(source!);
+    }
+    expect(sources.size).toBe(ids.length);
+    for (const id of ["c12304", "c12213", "c11617", "c12223"]) {
+      await page.goto(`/${locale}/chapitres/${id}`);
+      const ouvrir = traductions[locale].chapitreKg.agrandirIllustration.replace("{n}", "1");
+      const bouton = page.getByRole("button", { name: ouvrir, exact: true });
+      await imageChargee(bouton.locator("img"));
+      await bouton.click();
+      const image = page.getByRole("dialog").locator("img");
+      await imageChargee(image);
+      expect(decodeURIComponent((await image.getAttribute("src"))!)).toContain(`/images/chapitres-dedies/${id}.webp`);
+      await page.keyboard.press("Escape");
+      await expect(bouton).toBeFocused();
+      await largeurStable(page);
+    }
+  });
+}
+
+
 async function imageChargee(image: Locator) {
   await image.scrollIntoViewIfNeeded();
   await expect(image).toBeVisible();
