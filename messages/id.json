@@ -471,7 +471,6 @@
       }
     },
     "lire": "Baca {n, number} hadis",
-    "premier": "Buka hadis no. 1",
     "indisponible": "Belum tersedia di situs: kitab ini belum memiliki halaman baca."
   },
   "themes": {
@@ -671,6 +670,21 @@
     "introuvable": "Hadis ini tidak ditemukan dalam kitab.",
     "source": "Teks, sanad dan kartu: basis data «الجامع — Hadith Knowledge Graph» (emadjumaah), lisensi CC BY 4.0, diterbitkan di repositori data Milaghaiba. Penilaian dikutip sebagaimana dalam sumber, perlu diperiksa ahli.",
     "guide": "Baca nama sesuai urutan, lalu klik perawi untuk membuka kartunya. Sanad hadis ini diberikan langsung oleh basis data hadith-kg."
+  },
+  "recueilPublic": {
+    "compte": "{nombre, number} hadis · {livres, number} kitab",
+    "livres": "Kitab-kitab dalam koleksi",
+    "livre": "Kitab {n}",
+    "horsLivre": "Di luar kitab (klasifikasi sumber)",
+    "nbHadiths": "{count, plural, other {# hadis}}",
+    "titresSource": "Judul kitab sebagaimana diberikan sumber, dalam bahasa Inggris.",
+    "source": "Teks: edisi publik hadith-api (fawazahmed0), domain publik (Unlicense), dengan penomorannya. Dibaca langsung dari sumber: perlu diperiksa oleh ahli.",
+    "retourSommaire": "Kembali ke kitab-kitab koleksi",
+    "livrePrecedent": "Kitab sebelumnya",
+    "livreSuivant": "Kitab berikutnya",
+    "navigationLivres": "Kitab terdekat",
+    "voirRecueil": "Lihat di koleksi",
+    "voisins": "Hadis terdekat"
   },
   "chapitreKg": {
     "compte": "{nombre, number} hadis · {sous, number} subbab",

@@ -471,7 +471,6 @@
       }
     },
     "lire": "{n, number} hadisi oku",
-    "premier": "1 numaralı hadisi aç",
     "indisponible": "Sitede henüz mevcut değil: bu eserin henüz okuma sayfası yok."
   },
   "themes": {
@@ -671,6 +670,21 @@
     "introuvable": "Bu hadis eserde bulunamadı.",
     "source": "Metin, isnadlar ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı, Milaghaiba veri deposunda yayımlanmıştır. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
     "guide": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Bu hadisin isnadı doğrudan hadith-kg tabanından alınmıştır."
+  },
+  "recueilPublic": {
+    "compte": "{nombre, number} hadis · {livres, number} kitap",
+    "livres": "Eserin kitapları",
+    "livre": "Kitap {n}",
+    "horsLivre": "Kitap dışı (kaynağın sınıflandırması)",
+    "nbHadiths": "{count, plural, other {# hadis}}",
+    "titresSource": "Kitap başlıkları kaynağın verdiği şekilde, İngilizce.",
+    "source": "Metin: hadith-api kamu sürümleri (fawazahmed0), kamu malı (Unlicense), kendi numaralandırmasıyla. Kaynaktan istek üzerine okunur: bir uzman tarafından doğrulanmalıdır.",
+    "retourSommaire": "Eserin kitaplarına dön",
+    "livrePrecedent": "Önceki kitap",
+    "livreSuivant": "Sonraki kitap",
+    "navigationLivres": "Komşu kitaplar",
+    "voirRecueil": "Eserde gör",
+    "voisins": "Komşu hadisler"
   },
   "chapitreKg": {
     "compte": "{nombre, number} hadis · {sous, number} alt bölüm",

@@ -471,7 +471,6 @@
       }
     },
     "lire": "Lire les {n, number} hadiths",
-    "premier": "Ouvrir le hadith n° 1",
     "indisponible": "Pas encore disponible sur le site : ce recueil n’a pas encore de page de lecture."
   },
   "themes": {
@@ -671,6 +670,21 @@
     "introuvable": "Ce hadith est introuvable dans le recueil.",
     "source": "Texte, chaînes et fiches : base « الجامع — Hadith Knowledge Graph » (emadjumaah), licence CC BY 4.0, publiée dans le dépôt de données Milaghaiba. Jugements cités tels qu’ils figurent dans la source, à vérifier par un spécialiste.",
     "guide": "Lisez les noms dans l’ordre indiqué, puis ouvrez la fiche d’un transmetteur en cliquant dessus. Chaîne donnée pour ce hadith par la base hadith-kg elle-même."
+  },
+  "recueilPublic": {
+    "compte": "{nombre, number} hadiths · {livres, number} livres",
+    "livres": "Livres du recueil",
+    "livre": "Livre {n}",
+    "horsLivre": "Hors livre (classement de la source)",
+    "nbHadiths": "{count, plural, one {# hadith} other {# hadiths}}",
+    "titresSource": "Titres des livres tels que donnés par la source, en anglais.",
+    "source": "Texte : éditions publiques hadith-api (fawazahmed0), domaine public (Unlicense), avec leur numérotation. Lu à la demande chez la source : à vérifier par un spécialiste.",
+    "retourSommaire": "Retour aux livres du recueil",
+    "livrePrecedent": "Livre précédent",
+    "livreSuivant": "Livre suivant",
+    "navigationLivres": "Livres voisins",
+    "voirRecueil": "Voir dans le recueil",
+    "voisins": "Hadiths voisins"
   },
   "chapitreKg": {
     "compte": "{nombre, number} hadiths · {sous, number} sous-chapitres",

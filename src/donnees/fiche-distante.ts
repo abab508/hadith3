@@ -3,16 +3,17 @@
  * Références et traductions ne sont jamais "certifiées" par le site.
  */
 import {
-  EXTERNAL_COLLECTIONS, canUseRemote, editionReferenceUrl, fetchRemoteEdition,
+  canUseRemote, type CollectionPublique, editionReferenceUrl, fetchRemoteEdition,
   compareEditionReferences, type RemoteEdition, type RemoteRow
 } from "@/donnees/recherche-distante";
 import { readIndex, type SearchCandidate } from "@/donnees/index-leger";
+import { COLLECTIONS_LECTURE } from "@/donnees/recueils-publics";
 
 export const DETAIL_LANGUAGES=["ara","fra","eng","urd","tur","ind"] as const;
 export type DetailLanguage=typeof DETAIL_LANGUAGES[number];
 
 export type DetailHadith={
-  collection:typeof EXTERNAL_COLLECTIONS[number];
+  collection:CollectionPublique;
   language:DetailLanguage;
   number:number;
   hadith:RemoteRow;
@@ -23,7 +24,7 @@ export type DetailHadith={
 };
 
 export function validDetailParams(recueil:string,language:string,number:string){
-  const collection=EXTERNAL_COLLECTIONS.find(c=>c.id===recueil);
+  const collection=COLLECTIONS_LECTURE.find(c=>c.id===recueil);
   const n=Number(number);
   if(!collection||!DETAIL_LANGUAGES.includes(language as DetailLanguage)||
      !/^[1-9]\d{0,5}$/.test(number)||!Number.isSafeInteger(n)||n>100000||

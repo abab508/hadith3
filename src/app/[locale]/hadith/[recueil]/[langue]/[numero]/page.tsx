@@ -5,7 +5,9 @@ import { Link } from "@/i18n/navigation";
 import { corpus } from "@/donnees/corpus";
 import { loadDetail, validDetailParams } from "@/donnees/fiche-distante";
 import { editionReferenceUrl } from "@/donnees/recherche-distante";
+import { recueilPublic } from "@/donnees/recueils-publics";
 import styles from "./Hadith.module.css";
+import liste from "@/app/[locale]/recueil/[id]/Recueil.module.css";
 
 type Parametres = { locale: string; recueil: string; langue: string; numero: string };
 
@@ -28,6 +30,8 @@ export default async function PageHadith({ params }: { params: Promise<Parametre
   const t = await getTranslations("fiche");
   const tr = await getTranslations("recueils");
   const tc = await getTranslations("rapportTexte");
+  const tk = await getTranslations("recueilKg");
+  const tp = await getTranslations("recueilPublic");
   const { collection, number } = valide;
 
   let detail: Awaited<ReturnType<typeof loadDetail>> = null;
@@ -42,10 +46,17 @@ export default async function PageHadith({ params }: { params: Promise<Parametre
         .sort((a, b) => (a.langue === "ara" ? -1 : b.langue === "ara" ? 1 : 0))
     : [];
   const jugements = (detail?.hadith.grades ?? []).filter((g) => g?.name && g?.grade);
+  // Lecture à la suite : retour au livre du recueil et hadiths voisins (numérotation de l'édition publique).
+  const sommaire = recueilPublic(recueil)?.sommaire;
+  const livreSource = detail?.hadith.reference?.book;
+  const lienRecueil = `/recueil/${recueil}${typeof livreSource === "number" && Number.isSafeInteger(livreSource) ? `?livre=${livreSource}` : ""}`;
 
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
-      <p className={styles.retour}><Link href="/recherche">← {t("retour")}</Link></p>
+      <p className={styles.retour}>
+        <Link href="/recherche">← {t("retour")}</Link>
+        {sommaire && <> · <Link href={lienRecueil}>{tp("voirRecueil")}</Link></>}
+      </p>
       <header className={styles.entete}>
         <p className={styles.surtitre}>{tr("titre")}</p>
         <h1 className={styles.titre}><bdi lang="ar-Latn">{collection.nom}</bdi></h1>
@@ -54,6 +65,13 @@ export default async function PageHadith({ params }: { params: Promise<Parametre
           {detail?.hadith.reference?.book ? <> · {tr("livre", { livre: detail.hadith.reference.book })}</> : null}
         </p>
       </header>
+
+      {sommaire && (
+        <nav className={liste.pagination} aria-label={tp("voisins")}>
+          {number > 1 ? <Link href={`/hadith/${recueil}/${langue}/${number - 1}`}>← {tk("precedent")}</Link> : <span />}
+          {number < sommaire.dernier ? <Link href={`/hadith/${recueil}/${langue}/${number + 1}`}>{tk("suivant")} →</Link> : <span />}
+        </nav>
+      )}
 
       {/* Le bouton qui mène au rapport et à toute la chaîne de transmission, sur une autre page. */}
       <p className={styles.boutons}>
