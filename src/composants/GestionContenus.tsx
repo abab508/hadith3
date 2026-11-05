@@ -135,7 +135,7 @@ export default function GestionContenus({ locale, langues }: { locale: string; l
             {!etat.pdf && <p className={styles.note}>{t("pdfAbsent")}</p>}
             {brouillon.pdfUrl && (
               <p className={styles.note}>
-                <a href={brouillon.pdfUrl} target="_blank" rel="noopener noreferrer">{brouillon.pdfNom ?? "PDF"}</a>{" "}
+                <a href={`/api/pdf?u=${encodeURIComponent(brouillon.pdfUrl)}`} target="_blank" rel="noopener noreferrer">{brouillon.pdfNom ?? "PDF"}</a>{" "}
                 <button type="button" className={styles.lien} onClick={() => setBrouillon({ ...brouillon, pdfUrl: null, pdfNom: null })}>{t("retirerPdf")}</button>
               </p>
             )}

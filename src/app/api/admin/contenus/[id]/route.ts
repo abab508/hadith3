@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { del } from "@vercel/blob";
 import { adminConnecte, memeOrigine } from "@/lib/admin-auth";
 import { depot, saisieContenu } from "@/lib/contenus/depot";
+import { stockagePdf, urlPdfValide } from "@/lib/contenus/pdf";
 
 export const runtime = "nodejs";
 type Ctx = { params: Promise<{ id: string }> };
@@ -19,7 +20,7 @@ async function garde(req: Request, ctx: Ctx) {
 }
 
 const retirerPdf = async (url: string | null) => {
-  if (url && process.env.BLOB_READ_WRITE_TOKEN && /\.blob\.vercel-storage\.com\//.test(url)) await del(url).catch(() => undefined);
+  if (url && stockagePdf() && urlPdfValide(url)) await del(url).catch(() => undefined);
 };
 
 export async function PUT(req: Request, ctx: Ctx) {
