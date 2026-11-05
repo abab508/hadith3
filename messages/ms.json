@@ -470,7 +470,9 @@
         "note": "Sebahagiannya hanya dikenali melalui periwayatan atau petikan kemudian."
       }
     },
-    "lire": "Baca {n, number} hadis"
+    "lire": "Baca {n, number} hadis",
+    "premier": "Buka hadis no. 1",
+    "indisponible": "Belum tersedia di laman: kitab ini belum mempunyai halaman bacaan."
   },
   "themes": {
     "titre": "Pilih tema",

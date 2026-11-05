@@ -470,7 +470,9 @@
         "note": "Bazıları yalnızca sonraki rivayet veya alıntılarla bilinir."
       }
     },
-    "lire": "{n, number} hadisi oku"
+    "lire": "{n, number} hadisi oku",
+    "premier": "1 numaralı hadisi aç",
+    "indisponible": "Sitede henüz mevcut değil: bu eserin henüz okuma sayfası yok."
   },
   "themes": {
     "titre": "Bir konu seçin",

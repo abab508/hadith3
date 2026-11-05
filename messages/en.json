@@ -470,7 +470,9 @@
         "note": "Some are known only through later transmissions or quotations."
       }
     },
-    "lire": "Read the {n, number} hadiths"
+    "lire": "Read the {n, number} hadiths",
+    "premier": "Open hadith no. 1",
+    "indisponible": "Not yet available on the site: this collection has no reading page yet."
   },
   "themes": {
     "titre": "Choose a theme",

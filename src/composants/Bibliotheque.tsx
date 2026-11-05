@@ -92,7 +92,7 @@ export default function Bibliotheque({ rayons, requeteInitiale = "" }: { rayons:
           </header>
           <ol className={styles.etagere}>
             {rayon.recueils.map((livre, index) => (
-              <li key={livre.id} className={styles.livre} style={{ ["--i" as string]: index % 12 }}>
+              <li key={livre.id} className={styles.livre} data-livre={livre.id} data-disponible={livre.page ? "oui" : "non"} style={{ ["--i" as string]: index % 12 }}>
                 <article className={styles.couverture}>
                   <span className={styles.numero}>{livre.numero}</span>
                   <svg className={styles.ornement} viewBox="0 0 40 40" aria-hidden="true">
@@ -108,13 +108,16 @@ export default function Bibliotheque({ rayons, requeteInitiale = "" }: { rayons:
                     <span className="visuellement-cache">{t("auteur")} : </span>
                     {livre.auteur ? <bdi dir="ltr">{livre.auteur}</bdi> : <em>{t("auteurAbsent")}</em>}
                   </p>
-                  {livre.lisible > 0 && (
-                    <Link href={`/recueil/${livre.id}`} className={styles.chercher}>
-                      {t("lire", { n: livre.lisible })} <span aria-hidden="true">↗</span>
+                  {/* Le lien principal couvre toute la carte : un clic sur le livre ouvre sa vraie page. */}
+                  {livre.page ? (
+                    <Link href={livre.page.href} className={`${styles.chercher} ${styles.principal}`}>
+                      {livre.page.type === "recueil" ? t("lire", { n: livre.lisible }) : t("premier")} <span aria-hidden="true">↗</span>
                     </Link>
+                  ) : (
+                    <p className={styles.indisponible}>{t("indisponible")}</p>
                   )}
                   {livre.cherchable && (
-                    <Link href={`/recherche?recueil=${livre.id}`} className={styles.chercher}>
+                    <Link href={`/recherche?recueil=${livre.id}`} className={`${styles.chercher} ${styles.secondaire}`}>
                       {t("cherchable")} <span aria-hidden="true">↗</span>
                     </Link>
                   )}
