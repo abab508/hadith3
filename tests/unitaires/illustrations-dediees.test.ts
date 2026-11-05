@@ -11,7 +11,8 @@ describe("illustrations narratives de science", () => {
     for (const id of ids) {
       expect(chapitreKg(id)?.theme).toBe("science");
       const chemin = imageChapitre(id, "livre");
-      expect(chemin).toBe(`/images/chapitres-dedies/${id}.webp`);
+      const fichierAttendu = id === "c11832" ? "c11832-v2" : id;
+      expect(chemin).toBe(`/images/chapitres-dedies/${fichierAttendu}.webp`);
       const fichier = readFileSync(join(process.cwd(), "public", chemin));
       expect(fichier.toString("ascii", 0, 4)).toBe("RIFF");
       expect(fichier.toString("ascii", 8, 12)).toBe("WEBP");
