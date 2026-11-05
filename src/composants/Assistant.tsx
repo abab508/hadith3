@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { cleErreurAssistant } from "@/donnees/cles-interface";
 import styles from "@/composants/Assistant.module.css";
 
 type Message = { role: "user" | "assistant"; content: string };
@@ -131,7 +132,7 @@ export default function Assistant() {
           const ev = JSON.parse(l) as { t: string; d?: string; nom?: string; code?: string };
           if (ev.t === "texte" && ev.d) { reponse += ev.d; ecrire(reponse); setEtat(null); }
           else if (ev.t === "outil") setEtat(t("recherche"));
-          else if (ev.t === "erreur") { reponse += `${reponse ? "\n\n" : ""}${t(`erreurs.${["trop", "occupe", "refus", "invalide"].includes(ev.code ?? "") ? ev.code : "indisponible"}`)}`; ecrire(reponse); }
+          else if (ev.t === "erreur") { reponse += `${reponse ? "\n\n" : ""}${t(cleErreurAssistant(ev.code))}`; ecrire(reponse); }
         }
       }
       if (!reponse.trim()) ecrire(t("erreurs.indisponible"));

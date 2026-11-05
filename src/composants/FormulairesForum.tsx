@@ -5,24 +5,21 @@ import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import styles from "@/app/[locale]/forum/Forum.module.css";
+import { cleErreurCompte, cleErreurForum } from "@/donnees/cles-interface";
 
 type Reponse = { ok: boolean; status: number; corps: Record<string, unknown> };
 async function envoyer(url: string, corps: unknown): Promise<Reponse> {
   const r = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, credentials: "same-origin", body: JSON.stringify(corps) });
   return { ok: r.ok, status: r.status, corps: await r.json().catch(() => ({})) };
 }
-// Codes renvoyés par les routes -> clés de traduction.
-const CLE: Record<string, string> = { "email-pris": "emailPris", "nom-pris": "nomPris" };
-const cleErreur = (r: Reponse) => { const c = String(r.corps.erreur ?? "serveur"); return CLE[c] ?? c; };
 
 function useEnvoi(espace: "forum" | "compte") {
   const t = useTranslations(espace);
+  // Code renvoyé par la route -> clé de traduction complète (table explicite, jamais de clé construite).
+  const cle = espace === "forum" ? cleErreurForum : cleErreurCompte;
   const [message, setMessage] = useState<{ texte: string; erreur?: boolean } | null>(null);
   const [occupe, setOccupe] = useState(false);
-  const erreur = (r: Reponse) => {
-    const cle = cleErreur(r);
-    setMessage({ texte: t.has(`erreurs.${cle}`) ? t(`erreurs.${cle}`, { status: r.status }) : t("erreurs.serveur", { status: r.status }), erreur: true });
-  };
+  const erreur = (r: Reponse) => setMessage({ texte: t(cle(String(r.corps.erreur ?? "serveur")), { status: r.status }), erreur: true });
   return { t, message, setMessage, occupe, setOccupe, erreur };
 }
 

@@ -10,6 +10,7 @@ import { titreKg } from "@/donnees/chapitres-kg";
 import { catalogueRecueils } from "@/donnees/recueils";
 import { ecritLatin, translitererNom } from "@/donnees/translitteration";
 import styles from "../Biographies.module.css";
+import { CLES_SERIES } from "@/donnees/cles-interface";
 
 type Parametres = { locale: string; serie: string };
 const TAILLE_PAGE = 60;
@@ -17,7 +18,7 @@ const TAILLE_PAGE = 60;
 export async function generateMetadata({ params }: { params: Promise<Parametres> }): Promise<Metadata> {
   const { locale, serie } = await params;
   const t = await getTranslations({ locale, namespace: "biographies" });
-  return { title: estSerie(serie) ? `${t(`series.${serie}.titre`)} · ${t("titre")}` : t("titre") };
+  return { title: estSerie(serie) ? `${t(CLES_SERIES[serie].titre)} · ${t("titre")}` : t("titre") };
 }
 
 export default async function PageSerie({ params, searchParams }: { params: Promise<Parametres>; searchParams: Promise<{ q?: string; page?: string }> }) {
@@ -159,8 +160,8 @@ export default async function PageSerie({ params, searchParams }: { params: Prom
       <p className={styles.retour}><Link href="/biographies">← {t("retour")}</Link></p>
       <EntetePatrimoine scene="biographies" compacte className={styles.entete}>
         <p className={styles.surtitre}>{t("titre")}</p>
-        <h1 className={styles.titre}>{t(`series.${serie}.titre`)}</h1>
-        <p className={styles.intro}>{t(`series.${serie}.description`)}</p>
+        <h1 className={styles.titre}>{t(CLES_SERIES[serie].titre)}</h1>
+        <p className={styles.intro}>{t(CLES_SERIES[serie].description)}</p>
       </EntetePatrimoine>
       {contenu}
       <p className={styles.mention}>{t("avertissement")}</p>

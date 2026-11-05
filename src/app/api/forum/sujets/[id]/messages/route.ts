@@ -22,8 +22,9 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   if (sujet.ferme) return NextResponse.json({ erreur: "ferme" }, { status: 409 });
   const v = saisie.safeParse(await req.json().catch(() => null));
   if (!v.success) return NextResponse.json({ erreur: "invalide" }, { status: 400 });
-  if ((await d.messagesRecentsDe(moi.id, LIMITE_MESSAGES.fenetreMs)) >= LIMITE_MESSAGES.n) return NextResponse.json({ erreur: "trop" }, { status: 429 });
   const trouves = motsTrouves(v.data.corps, await d.listerMots());
-  const m = await d.ajouterMessage(sujet.id, moi.id, v.data.corps, trouves.length ? "retenu" : "publie", trouves);
+  // Le quota est vérifié par le stockage, en même temps que l'ajout (envois simultanés compris).
+  const m = await d.ajouterMessage(sujet.id, moi.id, v.data.corps, trouves.length ? "retenu" : "publie", trouves, LIMITE_MESSAGES);
+  if (!m) return NextResponse.json({ erreur: "trop" }, { status: 429 });
   return NextResponse.json({ id: m.id, statut: m.statut }, { status: 201 });
 }

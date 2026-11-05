@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { TYPES_CONTENU, depot, type TypeContenu } from "@/lib/contenus/depot";
 import styles from "./Actualites.module.css";
+import { CLES_RUBRIQUES } from "@/donnees/cles-interface";
 
 export const dynamic = "force-dynamic";
 
@@ -32,7 +33,7 @@ export default async function PageActualites({ params, searchParams }: { params:
       <ul className={styles.onglets} aria-label={t("rubriques.titre")}>
         <li><Link href="/actualites" aria-current={!type ? "page" : undefined}>{t("rubriques.tous")}</Link></li>
         {TYPES_CONTENU.map((r) => (
-          <li key={r}><Link href={`/actualites?rubrique=${r}`} aria-current={type === r ? "page" : undefined}>{t(`rubriques.${r}`)}</Link></li>
+          <li key={r}><Link href={`/actualites?rubrique=${r}`} aria-current={type === r ? "page" : undefined}>{t(CLES_RUBRIQUES[r])}</Link></li>
         ))}
       </ul>
       {contenus === null ? <p className={styles.vide}>{t("bientot")}</p>
@@ -42,7 +43,7 @@ export default async function PageActualites({ params, searchParams }: { params:
               <li key={c.id}>
                 <Link href={`/actualites/${encodeURIComponent(c.slug)}`} className={styles.carte} data-contenu={c.slug}>
                   <span className={styles.meta}>
-                    <span className={styles.badge}>{t(`rubriques.${c.type}`)}</span>
+                    <span className={styles.badge}>{t(CLES_RUBRIQUES[c.type])}</span>
                     {c.publieLe && <time dateTime={c.publieLe}>{date(c.publieLe)}</time>}
                     {c.pdfUrl && <span>PDF</span>}
                   </span>

@@ -17,8 +17,9 @@ export async function POST(req: Request) {
   if (!moi) return NextResponse.json({ erreur: "connexion" }, { status: 401 });
   const v = saisie.safeParse(await req.json().catch(() => null));
   if (!v.success) return NextResponse.json({ erreur: "invalide" }, { status: 400 });
-  if ((await d.messagesRecentsDe(moi.id, LIMITE_MESSAGES.fenetreMs)) >= LIMITE_MESSAGES.n) return NextResponse.json({ erreur: "trop" }, { status: 429 });
-  const trouves = motsTrouves(`${v.data.titre}\n${v.data.corps}`, await d.listerMots());
-  const { sujet, message } = await d.creerSujet(moi.id, v.data.titre, v.data.corps, trouves.length ? "retenu" : "publie", trouves);
-  return NextResponse.json({ id: sujet.id, statut: message.statut }, { status: 201 });
+  const trouves = motsTrouves(`${v.data.titre} ${v.data.corps}`, await d.listerMots());
+  // Le quota est vérifié par le stockage, en même temps que l'ajout (envois simultanés compris).
+  const r = await d.creerSujet(moi.id, v.data.titre, v.data.corps, trouves.length ? "retenu" : "publie", trouves, LIMITE_MESSAGES);
+  if (!r) return NextResponse.json({ erreur: "trop" }, { status: 429 });
+  return NextResponse.json({ id: r.sujet.id, statut: r.message.statut }, { status: 201 });
 }

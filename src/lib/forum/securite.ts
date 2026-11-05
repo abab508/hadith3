@@ -1,6 +1,7 @@
 /**
  * Mots de passe des membres (scrypt, sel aléatoire) et session de membre signée (cookie de 30 jours).
- * La session ne porte que l'identifiant : le statut (bloqué ou non) est relu à chaque requête.
+ * La session porte l'identifiant et la version du membre : le statut (bloqué ou non) et la version sont relus
+ * à chaque requête, donc un changement de mot de passe déconnecte toutes les anciennes sessions.
  */
 import { createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 
@@ -33,21 +34,21 @@ const secret = () => process.env.HADITH_IMPORT_SESSION_SECRET ?? "";
 export const sessionsMembresPossibles = () => secret().length >= 32;
 const signer = (t: string) => createHmac("sha256", secret()).update(`membre:${t}`).digest("hex");
 
-export function creerSessionMembre(id: number): string {
-  const corps = `${id}.${Math.floor(Date.now() / 1000) + DUREE}.${randomBytes(9).toString("hex")}`;
+export function creerSessionMembre(id: number, version: number): string {
+  const corps = `${id}.${version}.${Math.floor(Date.now() / 1000) + DUREE}.${randomBytes(9).toString("hex")}`;
   return `${corps}.${signer(corps)}`;
 }
 
-export function idDeSession(valeur?: string): number | null {
+export function lireSession(valeur?: string): { id: number; version: number } | null {
   if (!sessionsMembresPossibles() || !valeur) return null;
   const morceaux = valeur.split(".");
-  if (morceaux.length !== 4) return null;
-  const [id, exp, alea, sig] = morceaux as [string, string, string, string];
-  const attendu = Buffer.from(signer(`${id}.${exp}.${alea}`)), recu = Buffer.from(sig);
+  if (morceaux.length !== 5) return null;
+  const [id, version, exp, alea, sig] = morceaux as [string, string, string, string, string];
+  const attendu = Buffer.from(signer(`${id}.${version}.${exp}.${alea}`)), recu = Buffer.from(sig);
   if (attendu.length !== recu.length || !timingSafeEqual(attendu, recu)) return null;
-  const fin = Number(exp), n = Number(id);
-  if (!Number.isSafeInteger(fin) || fin < Math.floor(Date.now() / 1000) || !Number.isSafeInteger(n)) return null;
-  return n;
+  const fin = Number(exp), n = Number(id), v = Number(version);
+  if (!Number.isSafeInteger(fin) || fin < Math.floor(Date.now() / 1000) || !Number.isSafeInteger(n) || !Number.isSafeInteger(v)) return null;
+  return { id: n, version: v };
 }
 
 export const optionsCookieMembre = () => ({

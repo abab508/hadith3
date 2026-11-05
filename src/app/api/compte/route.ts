@@ -42,7 +42,7 @@ export async function POST(req: Request) {
     const r = await d.inscrire({ code: a.code, email: a.email, nom: a.nom, hash: hacherMotDePasse(a.motDePasse) });
     if (!r.ok) return erreur(r.raison === "code" ? "code" : r.raison === "email" ? "email-pris" : "nom-pris", 409);
     const rep = NextResponse.json({ membre: { id: r.membre.id, nom: r.membre.nom } }, { status: 201, headers: sansCache });
-    rep.cookies.set(COOKIE_MEMBRE, creerSessionMembre(r.membre.id), optionsCookieMembre());
+    rep.cookies.set(COOKIE_MEMBRE, creerSessionMembre(r.membre.id, r.membre.version), optionsCookieMembre());
     return rep;
   }
 
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     if (!m || !verifierMotDePasse(a.motDePasse, m.hash)) return erreur("identifiants", 401);
     if (m.statut === "bloque") return erreur("bloque", 403);
     const rep = NextResponse.json({ membre: { id: m.id, nom: m.nom } }, { headers: sansCache });
-    rep.cookies.set(COOKIE_MEMBRE, creerSessionMembre(m.id), optionsCookieMembre());
+    rep.cookies.set(COOKIE_MEMBRE, creerSessionMembre(m.id, m.version), optionsCookieMembre());
     return rep;
   }
 
@@ -62,5 +62,9 @@ export async function POST(req: Request) {
   const interne = await d.membreParEmail(moi.email);
   if (!interne || !verifierMotDePasse(a.ancien, interne.hash)) return erreur("identifiants", 401);
   await d.changerMotDePasse(moi.id, hacherMotDePasse(a.nouveau));
-  return NextResponse.json({ ok: true }, { headers: sansCache });
+  // Les autres sessions sont révoquées (version + 1) ; celle-ci reçoit une session neuve.
+  const apres = await d.membreParId(moi.id);
+  const rep = NextResponse.json({ ok: true }, { headers: sansCache });
+  if (apres) rep.cookies.set(COOKIE_MEMBRE, creerSessionMembre(apres.id, apres.version), optionsCookieMembre());
+  return rep;
 }

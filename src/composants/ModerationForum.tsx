@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import styles from "@/app/[locale]/forum/Forum.module.css";
+import { CLES_ONGLETS_FORUM, cleErreurAdminForum } from "@/donnees/cles-interface";
 
 type Membre = { id: number; email: string; nom: string; statut: "actif" | "bloque"; creeLe: string };
 type Invitation = { code: string; note: string; creeLe: string; utiliseLe: string | null };
@@ -11,7 +12,6 @@ type Sujet = { id: number; titre: string; auteurNom: string; ferme: boolean; mas
 type Retenu = { id: number; sujetId: number; sujetTitre: string; auteurNom: string; corps: string; motsTrouves: string[] };
 type Donnees = { retenus: Retenu[]; membres: Membre[]; invitations: Invitation[]; mots: string[]; sujets: Sujet[] };
 type Onglet = "retenus" | "discussions" | "membres" | "invitations" | "mots";
-const CLES: Record<string, string> = { "mot-de-passe": "motDePasse", "non-configure": "nonConfigure" };
 
 export default function ModerationForum({ locale }: { locale: string }) {
   const t = useTranslations("adminForum");
@@ -26,8 +26,7 @@ export default function ModerationForum({ locale }: { locale: string }) {
     const r = await fetch(url, { ...init, credentials: "same-origin", cache: "no-store", headers: { "content-type": "application/json" } });
     const corps = await r.json().catch(() => ({})) as Record<string, unknown>;
     if (!r.ok) {
-      const cle = CLES[String(corps.erreur)] ?? String(corps.erreur ?? "serveur");
-      throw new Error(t.has(`erreurs.${cle}`) ? t(`erreurs.${cle}`) : t("erreurs.serveur", { status: r.status }));
+      throw new Error(t(cleErreurAdminForum(String(corps.erreur ?? "serveur")), { status: r.status }));
     }
     return corps;
   }, [t]);
@@ -73,7 +72,7 @@ export default function ModerationForum({ locale }: { locale: string }) {
             <div className={styles.onglets} role="tablist">
               {(["retenus", "discussions", "membres", "invitations", "mots"] as const).map((o) => (
                 <button key={o} type="button" role="tab" aria-selected={onglet === o} onClick={() => setOnglet(o)}>
-                  {t(`onglets.${o}`, { n: o === "retenus" ? donnees.retenus.length : 0 })}
+                  {t(CLES_ONGLETS_FORUM[o], { n: o === "retenus" ? donnees.retenus.length : 0 })}
                 </button>
               ))}
             </div>

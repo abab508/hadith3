@@ -2,17 +2,18 @@
  * Règles communes du forum : membre connecté (et non bloqué), limites de fréquence, formats des saisies.
  */
 import { z } from "zod";
-import { cookieMembre, idDeSession } from "@/lib/forum/securite";
+import { cookieMembre, lireSession } from "@/lib/forum/securite";
 import { depotForum, type Membre } from "@/lib/forum/depot";
 
-// Membre de la session, seulement s'il existe et n'est pas bloqué (relu à chaque requête).
-export async function membreConnecte(req: Request): Promise<Membre | null> {
-  const id = idDeSession(cookieMembre(req));
+// Membre de la session, seulement s'il existe, n'est pas bloqué et n'a pas changé de mot de passe depuis.
+export async function membreDeSession(valeur?: string): Promise<Membre | null> {
+  const s = lireSession(valeur);
   const d = depotForum();
-  if (id === null || !d) return null;
-  const m = await d.membreParId(id).catch(() => null);
-  return m && m.statut === "actif" ? m : null;
+  if (!s || !d) return null;
+  const m = await d.membreParId(s.id).catch(() => null);
+  return m && m.statut === "actif" && m.version === s.version ? m : null;
 }
+export const membreConnecte = (req: Request) => membreDeSession(cookieMembre(req));
 
 // Limite simple par clé (adresse IP ou membre) : n actions par fenêtre (mémoire de l'instance).
 const compteurs = new Map<string, number[]>();

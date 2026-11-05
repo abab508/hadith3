@@ -6,6 +6,7 @@ import TexteContenu from "@/composants/TexteContenu";
 import { depot } from "@/lib/contenus/depot";
 import { lienPdf } from "@/lib/contenus/pdf";
 import styles from "../Actualites.module.css";
+import { CLES_RUBRIQUES } from "@/donnees/cles-interface";
 
 export const dynamic = "force-dynamic";
 type Parametres = { locale: string; slug: string };
@@ -30,7 +31,7 @@ export default async function PageContenu({ params }: { params: Promise<Parametr
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p className={styles.retour}><Link href="/actualites">← {t("retour")}</Link></p>
-      <p className={styles.surtitre}>{t(`rubriques.${c.type}`)}</p>
+      <p className={styles.surtitre}>{t(CLES_RUBRIQUES[c.type])}</p>
       <h1 className={styles.titre} lang={c.langue} dir="auto">{c.titre}</h1>
       {c.publieLe && <p className={styles.mention}><time dateTime={c.publieLe}>{t("publieLe", { date: new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(new Date(c.publieLe)) })}</time></p>}
       {c.resume && <p className={styles.intro} lang={c.langue} dir="auto">{c.resume}</p>}

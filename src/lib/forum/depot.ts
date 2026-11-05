@@ -7,7 +7,8 @@ import { neon } from "@neondatabase/serverless";
 
 export type StatutMembre = "actif" | "bloque";
 export type StatutMessage = "publie" | "retenu" | "masque";
-export type Membre = { id: number; email: string; nom: string; statut: StatutMembre; creeLe: string };
+// version : augmente à chaque changement de mot de passe ; une session d'une version plus ancienne n'est plus valable.
+export type Membre = { id: number; email: string; nom: string; statut: StatutMembre; creeLe: string; version: number };
 export type MembreInterne = Membre & { hash: string };
 export type Invitation = { code: string; note: string; creeLe: string; utiliseLe: string | null; membreId: number | null };
 // enAttente : le premier message est retenu par le filtre, la discussion reste cachée jusqu'à décision de l'admin.
@@ -16,6 +17,8 @@ export type Sujet = { id: number; titre: string; auteurId: number; auteurNom: st
 export type Message = { id: number; sujetId: number; auteurId: number; auteurNom: string; corps: string; statut: StatutMessage; motsTrouves: string[]; creeLe: string };
 export type Inscription = { code: string; email: string; nom: string; hash: string };
 export type ResultatInscription = { ok: true; membre: Membre } | { ok: false; raison: "code" | "email" | "nom" };
+// Quota par membre : au plus n messages (discussions comprises) sur la fenêtre, vérifié en même temps que l'ajout.
+export type Quota = { n: number; fenetreMs: number };
 
 export interface DepotForum {
   creerInvitation(code: string, note: string): Promise<Invitation>;
@@ -32,14 +35,15 @@ export interface DepotForum {
   // Vue publique : discussions visibles (ni masquées ni en attente) ; vue admin : toutes.
   listerSujets(admin: boolean): Promise<Sujet[]>;
   sujet(id: number, admin: boolean): Promise<Sujet | null>;
-  creerSujet(auteurId: number, titre: string, corps: string, statut: StatutMessage, mots: string[]): Promise<{ sujet: Sujet; message: Message }>;
+  // La discussion et son premier message sont créés ensemble (ou pas du tout) ; null si le quota est atteint.
+  creerSujet(auteurId: number, titre: string, corps: string, statut: StatutMessage, mots: string[], quota: Quota): Promise<{ sujet: Sujet; message: Message } | null>;
   // Messages visibles : publiés, plus ceux du lecteur retenus (il voit qu'ils attendent) ; l'admin voit tout.
   messages(sujetId: number, lecteurId: number | null, admin: boolean): Promise<Message[]>;
-  ajouterMessage(sujetId: number, auteurId: number, corps: string, statut: StatutMessage, mots: string[]): Promise<Message>;
+  // null si le quota est atteint.
+  ajouterMessage(sujetId: number, auteurId: number, corps: string, statut: StatutMessage, mots: string[], quota: Quota): Promise<Message | null>;
   modererMessage(id: number, statut: StatutMessage): Promise<boolean>;
   modererSujet(id: number, changement: { ferme?: boolean; masque?: boolean }): Promise<boolean>;
   messagesRetenus(): Promise<(Message & { sujetTitre: string })[]>;
-  messagesRecentsDe(auteurId: number, depuisMs: number): Promise<number>;
 }
 
 const maintenant = () => new Date().toISOString();
@@ -54,6 +58,8 @@ export function depotForumMemoire(): DepotForum {
   const complet = (s: Omit<Sujet, "auteurNom" | "nbMessages">): Sujet =>
     ({ ...s, auteurNom: nom(s.auteurId), nbMessages: messages.filter((m) => m.sujetId === s.id && m.statut === "publie").length });
   const visible = (s: { masque: boolean; enAttente: boolean }) => !s.masque && !s.enAttente;
+  const recents = (auteurId: number, fenetreMs: number) =>
+    messages.filter((m) => m.auteurId === auteurId && Date.now() - new Date(m.creeLe).getTime() < fenetreMs).length;
   return {
     async creerInvitation(code, note) { const i = { code, note, creeLe: maintenant(), utiliseLe: null, membreId: null }; invitations.push(i); return i; },
     async listerInvitations() { return [...invitations].reverse(); },
@@ -62,7 +68,7 @@ export function depotForumMemoire(): DepotForum {
       if (!inv) return { ok: false, raison: "code" };
       if (membres.some((m) => m.email === emailNormal(email))) return { ok: false, raison: "email" };
       if (membres.some((m) => m.nom.toLowerCase() === n.toLowerCase())) return { ok: false, raison: "nom" };
-      const m: MembreInterne = { id: idM++, email: emailNormal(email), nom: n, statut: "actif", creeLe: maintenant(), hash };
+      const m: MembreInterne = { id: idM++, email: emailNormal(email), nom: n, statut: "actif", creeLe: maintenant(), version: 0, hash };
       membres.push(m);
       inv.utiliseLe = maintenant(); inv.membreId = m.id;
       return { ok: true, membre: publique(m) };
@@ -71,7 +77,7 @@ export function depotForumMemoire(): DepotForum {
     async membreParId(id) { const m = membres.find((x) => x.id === id); return m ? publique(m) : null; },
     async listerMembres() { return membres.map(publique).reverse(); },
     async changerStatut(id, statut) { const m = membres.find((x) => x.id === id); if (m) m.statut = statut; return Boolean(m); },
-    async changerMotDePasse(id, hash) { const m = membres.find((x) => x.id === id); if (m) m.hash = hash; return Boolean(m); },
+    async changerMotDePasse(id, hash) { const m = membres.find((x) => x.id === id); if (m) { m.hash = hash; m.version++; } return Boolean(m); },
     async listerMots() { return [...mots].sort(); },
     async ajouterMot(mot) { mots.add(mot); },
     async retirerMot(mot) { mots.delete(mot); },
@@ -79,7 +85,9 @@ export function depotForumMemoire(): DepotForum {
       return sujets.filter((s) => admin || visible(s)).map(complet).sort((a, b) => b.dernierLe.localeCompare(a.dernierLe));
     },
     async sujet(id, admin) { const s = sujets.find((x) => x.id === id); return s && (admin || visible(s)) ? complet(s) : null; },
-    async creerSujet(auteurId, titre, corps, statut, trouves) {
+    // Aucune attente entre le comptage et l'ajout : en mémoire, l'opération ne peut pas être doublée.
+    async creerSujet(auteurId, titre, corps, statut, trouves, quota) {
+      if (recents(auteurId, quota.fenetreMs) >= quota.n) return null;
       const t = maintenant();
       const s = { id: idS++, titre, auteurId, ferme: false, masque: false, enAttente: statut === "retenu", creeLe: t, dernierLe: t };
       sujets.push(s);
@@ -91,7 +99,8 @@ export function depotForumMemoire(): DepotForum {
       return messages.filter((m) => m.sujetId === sujetId && (admin || m.statut === "publie" || (m.statut === "retenu" && m.auteurId === lecteurId)))
         .map((m) => ({ ...m, auteurNom: nom(m.auteurId) }));
     },
-    async ajouterMessage(sujetId, auteurId, corps, statut, trouves) {
+    async ajouterMessage(sujetId, auteurId, corps, statut, trouves, quota) {
+      if (recents(auteurId, quota.fenetreMs) >= quota.n) return null;
       const m = { id: idMsg++, sujetId, auteurId, corps, statut, motsTrouves: trouves, creeLe: maintenant() };
       messages.push(m);
       const s = sujets.find((x) => x.id === sujetId);
@@ -103,6 +112,8 @@ export function depotForumMemoire(): DepotForum {
       if (!m) return false;
       m.statut = statut;
       const s = sujets.find((x) => x.id === m.sujetId);
+      // Un message accepté remet la discussion en tête (sans jamais reculer sa date).
+      if (s && statut === "publie") { const t = maintenant(); if (t > s.dernierLe) s.dernierLe = t; }
       // La discussion attendait la décision sur son premier message : elle est tranchée.
       if (s?.enAttente && messages.find((x) => x.sujetId === s.id)?.id === m.id) {
         s.enAttente = false;
@@ -121,17 +132,13 @@ export function depotForumMemoire(): DepotForum {
       return messages.filter((m) => m.statut === "retenu")
         .map((m) => ({ ...m, auteurNom: nom(m.auteurId), sujetTitre: sujets.find((s) => s.id === m.sujetId)?.titre ?? "" }));
     },
-    async messagesRecentsDe(auteurId, depuisMs) {
-      const limite = Date.now() - depuisMs;
-      return messages.filter((m) => m.auteurId === auteurId && new Date(m.creeLe).getTime() >= limite).length;
-    },
   };
 }
 
 type L = Record<string, unknown>;
 const iso = (d: unknown) => (d === null || d === undefined ? null : new Date(d as string).toISOString());
 const vMembre = (l: L): MembreInterne => ({ id: l.id as number, email: l.email as string, nom: l.nom as string,
-  statut: l.statut as StatutMembre, creeLe: iso(l.cree_le)!, hash: l.hash as string });
+  statut: l.statut as StatutMembre, creeLe: iso(l.cree_le)!, version: Number(l.version ?? 0), hash: l.hash as string });
 const vInvitation = (l: L): Invitation => ({ code: l.code as string, note: l.note as string, creeLe: iso(l.cree_le)!,
   utiliseLe: iso(l.utilise_le), membreId: (l.membre_id as number | null) ?? null });
 const vSujet = (l: L): Sujet => ({ id: l.id as number, titre: l.titre as string, auteurId: l.auteur_id as number, auteurNom: l.auteur_nom as string,
@@ -148,6 +155,7 @@ export function depotForumNeon(url: string): DepotForum {
     await sql`CREATE TABLE IF NOT EXISTS forum_membres (id SERIAL PRIMARY KEY, email TEXT UNIQUE NOT NULL, nom TEXT NOT NULL,
       hash TEXT NOT NULL, statut TEXT NOT NULL DEFAULT 'actif' CHECK (statut IN ('actif','bloque')), cree_le TIMESTAMPTZ NOT NULL DEFAULT now())`;
     await sql`CREATE UNIQUE INDEX IF NOT EXISTS forum_membres_nom ON forum_membres (lower(nom))`;
+    await sql`ALTER TABLE forum_membres ADD COLUMN IF NOT EXISTS version INTEGER NOT NULL DEFAULT 0`;
     await sql`CREATE TABLE IF NOT EXISTS forum_invitations (code TEXT PRIMARY KEY, note TEXT NOT NULL DEFAULT '',
       cree_le TIMESTAMPTZ NOT NULL DEFAULT now(), utilise_le TIMESTAMPTZ, membre_id INTEGER REFERENCES forum_membres(id))`;
     await sql`CREATE TABLE IF NOT EXISTS forum_mots (mot TEXT PRIMARY KEY)`;
@@ -189,7 +197,7 @@ export function depotForumNeon(url: string): DepotForum {
     async membreParId(id) { await schema(); const l = (await lignes(sql`SELECT * FROM forum_membres WHERE id = ${id}`))[0]; return l ? publique(vMembre(l)) : null; },
     async listerMembres() { await schema(); return (await lignes(sql`SELECT * FROM forum_membres ORDER BY id DESC`)).map((l) => publique(vMembre(l))); },
     async changerStatut(id, statut) { await schema(); return (await lignes(sql`UPDATE forum_membres SET statut = ${statut} WHERE id = ${id} RETURNING id`)).length > 0; },
-    async changerMotDePasse(id, hash) { await schema(); return (await lignes(sql`UPDATE forum_membres SET hash = ${hash} WHERE id = ${id} RETURNING id`)).length > 0; },
+    async changerMotDePasse(id, hash) { await schema(); return (await lignes(sql`UPDATE forum_membres SET hash = ${hash}, version = version + 1 WHERE id = ${id} RETURNING id`)).length > 0; },
     async listerMots() { await schema(); return (await lignes(sql`SELECT mot FROM forum_mots ORDER BY mot`)).map((l) => l.mot as string); },
     async ajouterMot(mot) { await schema(); await sql`INSERT INTO forum_mots (mot) VALUES (${mot}) ON CONFLICT DO NOTHING`; },
     async retirerMot(mot) { await schema(); await sql`DELETE FROM forum_mots WHERE mot = ${mot}`; },
@@ -203,11 +211,25 @@ export function depotForumNeon(url: string): DepotForum {
       const l = (await lignes(sujetSql(admin ? sql`WHERE s.id = ${id}` : sql`WHERE s.id = ${id} AND NOT s.masque AND NOT s.en_attente`)))[0];
       return l ? vSujet(l) : null;
     },
-    async creerSujet(auteurId, titre, corps, statut, trouves) {
+    // Verrou par membre (pg_advisory_xact_lock) puis comptage et ajout dans la même transaction :
+    // des envois simultanés ne peuvent pas dépasser le quota. La discussion et son premier message
+    // sont insérés par une seule requête : si le message échoue, la discussion n'existe pas.
+    async creerSujet(auteurId, titre, corps, statut, trouves, quota) {
       await schema();
-      const s = (await lignes(sql`INSERT INTO forum_sujets (titre, auteur_id, en_attente) VALUES (${titre}, ${auteurId}, ${statut === "retenu"}) RETURNING id`))[0]!;
-      const message = await this.ajouterMessage(s.id as number, auteurId, corps, statut, trouves);
-      return { sujet: (await this.sujet(s.id as number, true))!, message };
+      const [, r] = await sql.transaction([
+        sql`SELECT pg_advisory_xact_lock(4242, ${auteurId})`,
+        sql`WITH ok AS (SELECT 1 WHERE (SELECT count(*) FROM forum_messages WHERE auteur_id = ${auteurId}
+              AND cree_le > now() - (${quota.fenetreMs} || ' milliseconds')::interval) < ${quota.n}),
+            s AS (INSERT INTO forum_sujets (titre, auteur_id, en_attente) SELECT ${titre}, ${auteurId}, ${statut === "retenu"} FROM ok RETURNING id),
+            m AS (INSERT INTO forum_messages (sujet_id, auteur_id, corps, statut, mots_trouves)
+              SELECT s.id, ${auteurId}, ${corps}, ${statut}, ${trouves} FROM s RETURNING id, sujet_id)
+            SELECT sujet_id, id FROM m`,
+      ]);
+      const ligne = (r as L[])[0];
+      if (!ligne) return null;
+      const sujet = (await this.sujet(ligne.sujet_id as number, true))!;
+      const message = (await this.messages(sujet.id, null, true)).find((x) => x.id === (ligne.id as number))!;
+      return { sujet, message };
     },
     async messages(sujetId, lecteurId, admin) {
       await schema();
@@ -215,10 +237,18 @@ export function depotForumNeon(url: string): DepotForum {
         WHERE x.sujet_id = ${sujetId} AND (${admin} OR x.statut = 'publie' OR (x.statut = 'retenu' AND x.auteur_id = ${lecteurId}))
         ORDER BY x.id`)).map(vMessage);
     },
-    async ajouterMessage(sujetId, auteurId, corps, statut, trouves) {
+    async ajouterMessage(sujetId, auteurId, corps, statut, trouves, quota) {
       await schema();
-      const l = (await lignes(sql`INSERT INTO forum_messages (sujet_id, auteur_id, corps, statut, mots_trouves)
-        VALUES (${sujetId}, ${auteurId}, ${corps}, ${statut}, ${trouves}) RETURNING *, (SELECT nom FROM forum_membres WHERE id = ${auteurId}) AS auteur_nom`))[0]!;
+      const [, r] = await sql.transaction([
+        sql`SELECT pg_advisory_xact_lock(4242, ${auteurId})`,
+        sql`INSERT INTO forum_messages (sujet_id, auteur_id, corps, statut, mots_trouves)
+          SELECT ${sujetId}, ${auteurId}, ${corps}, ${statut}, ${trouves}
+          WHERE (SELECT count(*) FROM forum_messages WHERE auteur_id = ${auteurId}
+            AND cree_le > now() - (${quota.fenetreMs} || ' milliseconds')::interval) < ${quota.n}
+          RETURNING *, (SELECT nom FROM forum_membres WHERE id = ${auteurId}) AS auteur_nom`,
+      ]);
+      const l = (r as L[])[0];
+      if (!l) return null;
       if (statut === "publie") await sql`UPDATE forum_sujets SET dernier_le = now() WHERE id = ${sujetId}`;
       return vMessage(l);
     },
@@ -226,6 +256,8 @@ export function depotForumNeon(url: string): DepotForum {
       await schema();
       const l = (await lignes(sql`UPDATE forum_messages SET statut = ${statut} WHERE id = ${id} RETURNING sujet_id`))[0];
       if (!l) return false;
+      // Un message accepté remet la discussion en tête (GREATEST : la date ne recule jamais).
+      if (statut === "publie") await sql`UPDATE forum_sujets SET dernier_le = GREATEST(dernier_le, now()) WHERE id = ${l.sujet_id as number}`;
       const premier = (await lignes(sql`SELECT min(id) AS id FROM forum_messages WHERE sujet_id = ${l.sujet_id as number}`))[0];
       if (premier?.id === id) {
         await sql`UPDATE forum_sujets SET en_attente = FALSE, masque = CASE WHEN en_attente AND ${statut} <> 'publie' THEN TRUE ELSE masque END
@@ -244,12 +276,6 @@ export function depotForumNeon(url: string): DepotForum {
       return (await lignes(sql`SELECT x.*, m.nom AS auteur_nom, s.titre AS sujet_titre FROM forum_messages x
         JOIN forum_membres m ON m.id = x.auteur_id JOIN forum_sujets s ON s.id = x.sujet_id WHERE x.statut = 'retenu' ORDER BY x.id`))
         .map((l) => ({ ...vMessage(l), sujetTitre: l.sujet_titre as string }));
-    },
-    async messagesRecentsDe(auteurId, depuisMs) {
-      await schema();
-      const l = (await lignes(sql`SELECT count(*) AS n FROM forum_messages WHERE auteur_id = ${auteurId}
-        AND cree_le >= now() - (${depuisMs} || ' milliseconds')::interval`))[0];
-      return Number(l?.n ?? 0);
     },
   };
 }
