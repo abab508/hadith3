@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -57,14 +58,14 @@ export default async function PageHadith({ params }: { params: Promise<Parametre
         <Link href="/recherche">← {t("retour")}</Link>
         {sommaire && <> · <Link href={lienRecueil}>{tp("voirRecueil")}</Link></>}
       </p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="lecture" compacte className={styles.entete}>
         <p className={styles.surtitre}>{tr("titre")}</p>
         <h1 className={styles.titre}><bdi lang="ar-Latn">{collection.nom}</bdi></h1>
         <p className={styles.reference}>
           <bdi dir="ltr">{tr("numero", { numero: number })}</bdi>
           {detail?.hadith.reference?.book ? <> · {tr("livre", { livre: detail.hadith.reference.book })}</> : null}
         </p>
-      </header>
+      </EntetePatrimoine>
 
       {sommaire && (
         <nav className={liste.pagination} aria-label={tp("voisins")}>

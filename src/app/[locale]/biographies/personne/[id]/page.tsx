@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -73,11 +74,11 @@ export default async function PagePersonne({ params }: { params: Promise<Paramet
       <p className={styles.retour}>
         {serie ? <Link href={`/biographies/${serie}`}>← {t(`series.${serie}.titre`)}</Link> : <Link href="/biographies">← {t("retour")}</Link>}
       </p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="biographies" compacte className={styles.entete}>
         <p className={styles.surtitre}>{serie ? t(`series.${serie}.titre`) : t("titre")}</p>
         <h1 className={styles.titre}><bdi lang="ar" dir="rtl" className="texte-arabe">{usage}</bdi></h1>
         {translit && <p className={styles.nomLatin} lang="ar-Latn">{translit}</p>}
-      </header>
+      </EntetePatrimoine>
 
       <div className={styles.fiche}>
         <div className={styles.colonne}>

@@ -1,5 +1,8 @@
 "use client";
 
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
+
+
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -46,12 +49,12 @@ export default function AtelierMemoire({extraits}: {extraits: ExtraitMemorisatio
       <nav aria-label={navigation("titre")}>
         <Link href="/" className={styles.source}>↩ {navigation("accueil")}</Link>
       </nav>
-      <section className={styles.intro}>
+      <EntetePatrimoine scene="memorisation" className={styles.intro}>
         <p className={styles.surtitre}><span aria-hidden="true">✧</span> {locale==="ar"?"ميلاغايبا":"Milaghaiba"} · {t("titre")}</p>
         <h1>{t("titre")}</h1>
         <p className={styles.accroche}>{t("intro")}</p>
         <p className={styles.aide}>{t("aide")}</p>
-      </section>
+      </EntetePatrimoine>
       <section className={styles.choix} aria-label={t("choisir")}>
         <div className={styles.barre}>
           <h2>{t("choisir")}</h2>

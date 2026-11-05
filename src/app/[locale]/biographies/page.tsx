@@ -1,3 +1,5 @@
+import ImageDecorative from "@/composants/ImageDecorative";
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -21,17 +23,25 @@ export default async function PageBiographies({ params }: { params: Promise<{ lo
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("biographies");
+  const imagesSeries: Record<Serie, string> = {
+    prophetes: "/images/chapitres/montagne.png",
+    compagnons: "/images/chapitres/tente.png",
+    successeurs: "/images/chapitres/chemin.png",
+    atba: "/images/chapitres/plume.png",
+    savants: "/images/chapitres-dedies/c11954.webp",
+  };
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="biographies" className={styles.entete}>
         <p className={styles.surtitre}>{t("surtitre")}</p>
         <h1 className={styles.titre}>{t("titre")}</h1>
         <p className={styles.intro}>{t("intro")}</p>
-      </header>
+      </EntetePatrimoine>
       <ul className={styles.series}>
         {SERIES.map((s) => (
           <li key={s} data-serie={s}>
             <Link href={`/biographies/${s}`} className={styles.carteSerie}>
+              <span className={styles.imageSerie}><ImageDecorative src={imagesSeries[s]} sizes="(max-width: 600px) calc(100vw - 2.5rem), 24rem" /></span>
               <svg className={styles.ornement} viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <rect x="9" y="9" width="22" height="22" rx="2" />
                 <rect x="9" y="9" width="22" height="22" rx="2" transform="rotate(45 20 20)" />

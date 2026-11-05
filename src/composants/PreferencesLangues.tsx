@@ -1,5 +1,8 @@
 "use client";
 
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
+
+
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { catalogue, entree, languesRoutables } from "@/donnees/catalogue";
@@ -74,8 +77,10 @@ export default function PreferencesLangues() {
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p><Link href="/">{navigation("accueil")}</Link>{" / "}{navigation("parametres")}</p>
-      <h1>{t("titre")}</h1>
-      <p>{t("intro")}</p>
+      <EntetePatrimoine scene="reglages">
+        <h1>{t("titre")}</h1>
+        <p>{t("intro")}</p>
+      </EntetePatrimoine>
       {!charge ? <p role="status">{t("chargement")}</p> : (
         <form onSubmit={enregistrer}>
           <fieldset className={styles.groupe}>

@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { chaineDeRepli, entree } from "@/donnees/catalogue";
@@ -45,8 +46,10 @@ export default async function Glossaire({ params }: { params: Promise<{ locale: 
 
   return (
     <main id="contenu" tabIndex={-1} className={styles.glossaire}>
-      <h1>{t("titre")}</h1>
-      <p>{t("introduction")}</p>
+      <EntetePatrimoine scene="glossaire">
+        <h1>{t("titre")}</h1>
+        <p>{t("introduction")}</p>
+      </EntetePatrimoine>
       {Object.entries(clesDomaines).map(([domaine, cle]) => (
         <section key={domaine} aria-labelledby={`domaine-${domaine}`} className={styles.domaine} data-domaine={domaine}>
           <h2 id={`domaine-${domaine}`}>{t(cle)}</h2>

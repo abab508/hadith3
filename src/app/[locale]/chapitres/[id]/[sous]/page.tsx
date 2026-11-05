@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -69,12 +70,12 @@ export default async function PageSousChapitre({ params, searchParams }: { param
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p className={styles.retour}><Link href={`/chapitres/${id}`}>← <bdi lang={titreChapitre.langue}>{titreChapitre.texte}</bdi></Link></p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="lecture" compacte className={styles.entete}>
         <p className={styles.surtitre}>{tk("sousChapitre")}</p>
         <h1 className={styles.titre}><bdi lang={r.titre.langue} dir="auto">{r.titre.texte}</bdi></h1>
         {r.ar && r.titre.langue !== "ar" && <p lang="ar" dir="rtl" className={`texte-arabe ${liste.nomAr}`}>{r.ar}</p>}
         <p className={styles.reference}>{tk("nbHadiths", { count: refs.length })}</p>
-      </header>
+      </EntetePatrimoine>
       <div className={liste.bandeauIllustration}><IllustrationChapitre chapitreId={id} motif={motifs[0]!} second={motifs[1]} graine={`${id}-${sous}`} /></div>
 
       {pagination}

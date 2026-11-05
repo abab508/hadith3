@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { corpus, hadithParId } from "@/donnees/corpus";
@@ -49,10 +50,10 @@ export default async function Chaine({
 
   return (
     <main id="contenu" tabIndex={-1} className={ui.page}>
-      <div className={styles.intro}>
+      <EntetePatrimoine scene="recherche" className={styles.intro}>
         <h1 className={styles.titre}>{t("titre")}</h1>
         <p>{t("introCourte")}</p>
-      </div>
+      </EntetePatrimoine>
       {hadith ? <RechercheChaine hadithInitial={hadith.id} requete={requete} trouves={requete ? trouves : null} recits={[...recitsRecueils, ...recits]} totalRecits={recueils.total + importes.total} /> : <p>{t("hadithManquant")}</p>}
     </main>
   );

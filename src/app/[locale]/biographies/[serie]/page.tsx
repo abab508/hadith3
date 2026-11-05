@@ -1,3 +1,4 @@
+import EntetePatrimoine from "@/composants/EntetePatrimoine";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -156,11 +157,11 @@ export default async function PageSerie({ params, searchParams }: { params: Prom
   return (
     <main id="contenu" tabIndex={-1} className={styles.page}>
       <p className={styles.retour}><Link href="/biographies">← {t("retour")}</Link></p>
-      <header className={styles.entete}>
+      <EntetePatrimoine scene="biographies" compacte className={styles.entete}>
         <p className={styles.surtitre}>{t("titre")}</p>
         <h1 className={styles.titre}>{t(`series.${serie}.titre`)}</h1>
         <p className={styles.intro}>{t(`series.${serie}.description`)}</p>
-      </header>
+      </EntetePatrimoine>
       {contenu}
       <p className={styles.mention}>{t("avertissement")}</p>
       {serie !== "prophetes" && <p className={styles.mention}>{t("source")}</p>}
