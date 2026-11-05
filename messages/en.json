@@ -97,6 +97,7 @@
     "glossaire": "Glossary",
     "memorisation": "Memorize",
     "bibliotheque": "Library",
+    "biographies": "Biographies",
     "themes": "Themes",
     "chapitres": "Chapters",
     "az": "A-Z"
@@ -472,6 +473,66 @@
     },
     "lire": "Read the {n, number} hadiths",
     "indisponible": "Not yet available on the site: this collection has no reading page yet."
+  },
+  "biographies": {
+    "titre": "Biographies",
+    "surtitre": "The women and men of transmission",
+    "intro": "Prophets, Companions, Successors and scholars: key facts from the sources, and the hadiths that speak of them.",
+    "avertissement": "Entries assembled automatically from the source data, with no narrative written by the site. To be checked by a specialist.",
+    "source": "Entries, teachers and students: « الجامع — Hadith Knowledge Graph » database (emadjumaah), CC BY 4.0 licence. Judgements quoted as they appear in the source.",
+    "sourceChapitres": "Chapters: thematic index of the hadith-kg database, already used in the site’s chapters.",
+    "series": {
+      "prophetes": {
+        "titre": "The prophets",
+        "description": "Their stories through the hadiths in the site’s chapters."
+      },
+      "compagnons": {
+        "titre": "The Companions",
+        "description": "Those who saw the Prophet ﷺ and transmitted from him (at least 5 narrations in the source)."
+      },
+      "successeurs": {
+        "titre": "The Successors",
+        "description": "The tābiʿūn, generations 2 to 5 of the source (at least 20 narrations)."
+      },
+      "atba": {
+        "titre": "The Successors of the Successors",
+        "description": "The atbāʿ at-tābiʿīn, generations 6 to 9 of the source (at least 50 narrations)."
+      },
+      "savants": {
+        "titre": "The scholars",
+        "description": "The authors of the library’s collections and the critics of narrators."
+      }
+    },
+    "compteur": "{n, number} people",
+    "nbProphetes": "{n, number} prophets",
+    "rechercher": "Search a name (in Arabic)",
+    "chercher": "Search",
+    "aucun": "No one matches this search.",
+    "retour": "Back to biographies",
+    "ouvrir": "View the series",
+    "recits": "{n, number} narrations",
+    "deces": "Death: {annee} AH",
+    "generation": "Generation {n} according to the source",
+    "reperes": "Key facts",
+    "age": "Age at death",
+    "metier": "Occupation or role",
+    "recueils": "Compiled collections (library)",
+    "maitres": "Teachers, according to the chains",
+    "eleves": "Students, according to the chains",
+    "chaines": "{n, plural, one {# chain} other {# chains}}",
+    "voisinsAide": "People placed just before or just after in the source’s chains of transmission.",
+    "jugements": "What the critics say",
+    "auteurs": "Authors of the collections",
+    "critiques": "Critics of narrators",
+    "critiquesAide": "Scholars who judged narrators in the source, with the number of judgements recorded.",
+    "nbJugements": "{n, number} judgements",
+    "mohammed": "The Prophet Muḥammad ﷺ",
+    "mohammedTexte": "His life is told in the theme “The life of the Prophet ﷺ”.",
+    "voirTheme": "Open the theme",
+    "prophetesAide": "Site chapters whose Arabic title names this prophet; each chapter gathers hadiths from the source.",
+    "nbChapitres": "{n, plural, one {# chapter} other {# chapters}}",
+    "aucunChapitre": "No chapter found yet.",
+    "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}"
   },
   "themes": {
     "titre": "Choose a theme",

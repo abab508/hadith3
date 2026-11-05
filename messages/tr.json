@@ -97,6 +97,7 @@
     "glossaire": "Sözlük",
     "memorisation": "Ezberle",
     "bibliotheque": "Kütüphane",
+    "biographies": "Biyografiler",
     "themes": "Konular",
     "chapitres": "Bölümler",
     "az": "A-Z"
@@ -472,6 +473,66 @@
     },
     "lire": "{n, number} hadisi oku",
     "indisponible": "Sitede henüz mevcut değil: bu eserin henüz okuma sayfası yok."
+  },
+  "biographies": {
+    "titre": "Biyografiler",
+    "surtitre": "Rivayetin kadınları ve erkekleri",
+    "intro": "Peygamberler, Sahabeler, Tâbiîn ve âlimler: kaynaklardan bilgiler ve onlardan söz eden hadisler.",
+    "avertissement": "Kaynak verilerinden otomatik olarak derlenen kartlar; site tarafından yazılmış bir anlatı yoktur. Bir uzman tarafından doğrulanmalıdır.",
+    "source": "Kartlar, hocalar ve öğrenciler: « الجامع — Hadith Knowledge Graph » veritabanı (emadjumaah), CC BY 4.0 lisansı. Değerlendirmeler kaynakta geçtiği gibi aktarılmıştır.",
+    "sourceChapitres": "Bölümler: hadith-kg veritabanının konu dizini, sitenin bölümlerinde zaten kullanılıyor.",
+    "series": {
+      "prophetes": {
+        "titre": "Peygamberler",
+        "description": "Sitenin bölümlerindeki hadislerle kıssaları."
+      },
+      "compagnons": {
+        "titre": "Sahabeler",
+        "description": "Peygamber’i ﷺ görüp ondan rivayet edenler (kaynakta en az 5 rivayet)."
+      },
+      "successeurs": {
+        "titre": "Tâbiîn",
+        "description": "Tâbiûn, kaynağın 2 ile 5. tabakaları (en az 20 rivayet)."
+      },
+      "atba": {
+        "titre": "Tebeu’t-tâbiîn",
+        "description": "Etbâu’t-tâbiîn, kaynağın 6 ile 9. tabakaları (en az 50 rivayet)."
+      },
+      "savants": {
+        "titre": "Âlimler",
+        "description": "Kütüphanedeki eserlerin müellifleri ve râvi tenkitçileri."
+      }
+    },
+    "compteur": "{n, number} kişi",
+    "nbProphetes": "{n, number} peygamber",
+    "rechercher": "Bir isim ara (Arapça)",
+    "chercher": "Ara",
+    "aucun": "Bu aramaya uyan kimse yok.",
+    "retour": "Biyografilere dön",
+    "ouvrir": "Seriyi gör",
+    "recits": "{n, number} rivayet",
+    "deces": "Vefat: {annee} H",
+    "generation": "Kaynağa göre {n}. tabaka",
+    "reperes": "Bilgiler",
+    "age": "Vefat yaşı",
+    "metier": "Meslek veya görev",
+    "recueils": "Derlediği eserler (kütüphane)",
+    "maitres": "Hocaları, senetlere göre",
+    "eleves": "Öğrencileri, senetlere göre",
+    "chaines": "{n, plural, other {# senet}}",
+    "voisinsAide": "Kaynağın rivayet zincirlerinde hemen önce veya hemen sonra gelen kişiler.",
+    "jugements": "Tenkitçilerin görüşleri",
+    "auteurs": "Eserlerin müellifleri",
+    "critiques": "Râvi tenkitçileri",
+    "critiquesAide": "Kaynakta râvileri değerlendiren âlimler ve kayıtlı değerlendirme sayısı.",
+    "nbJugements": "{n, number} değerlendirme",
+    "mohammed": "Peygamber Muḥammad ﷺ",
+    "mohammedTexte": "Hayatı “Peygamber’in ﷺ hayatı” konusunda anlatılır.",
+    "voirTheme": "Konuyu aç",
+    "prophetesAide": "Arapça başlığında bu peygamberin adı geçen site bölümleri; her bölüm kaynaktaki hadisleri bir araya getirir.",
+    "nbChapitres": "{n, plural, other {# bölüm}}",
+    "aucunChapitre": "Henüz bölüm bulunamadı.",
+    "nbHadiths": "{n, plural, other {# hadis}}"
   },
   "themes": {
     "titre": "Bir konu seçin",
