@@ -76,3 +76,32 @@ describe("connexion de l'administrateur", () => {
     expect(autreSite.status).toBe(403);
   });
 });
+
+describe("PDF en stockage privé", async () => {
+  const { accesPdf, lienPdf, stockagePdf, urlPdfValide } = await import("@/lib/contenus/pdf");
+  const { GET } = await import("@/app/api/pdf/route");
+  const avant = { ...process.env };
+  afterEach(() => { process.env = { ...avant }; });
+
+  it("n'accepte que les PDF de contenus dans notre stockage", () => {
+    expect(urlPdfValide("https://abc.private.blob.vercel-storage.com/contenus/guide-x1.pdf")).toBe(true);
+    expect(urlPdfValide("https://abc.private.blob.vercel-storage.com/autre/guide.pdf")).toBe(false);
+    expect(urlPdfValide("https://pirate.test/contenus/guide.pdf")).toBe(false);
+    expect(urlPdfValide("http://abc.private.blob.vercel-storage.com/contenus/guide.pdf")).toBe(false);
+    expect(accesPdf("https://abc.private.blob.vercel-storage.com/contenus/a.pdf")).toBe("private");
+    expect(lienPdf("https://a.b/c d.pdf")).toBe("/api/pdf?u=https%3A%2F%2Fa.b%2Fc%20d.pdf");
+  });
+
+  it("reconnaît le stockage branché par Vercel (BLOB_STORE_ID) ou par jeton", () => {
+    delete process.env.BLOB_STORE_ID; delete process.env.BLOB_READ_WRITE_TOKEN;
+    expect(stockagePdf()).toBe(false);
+    process.env.BLOB_STORE_ID = "store_test";
+    expect(stockagePdf()).toBe(true);
+  });
+
+  it("refuse de servir un PDF qui n'appartient à aucun contenu publié", async () => {
+    process.env.BLOB_STORE_ID = "store_test";
+    const r = await GET(new Request(`http://site.test${lienPdf("https://abc.private.blob.vercel-storage.com/contenus/secret.pdf")}`));
+    expect(r.status).toBe(404);
+  });
+});

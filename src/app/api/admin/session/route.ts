@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { COOKIE_ADMIN, adminConfigure, adminConnecte, creerSession, memeOrigine, motDePasseValide, optionsCookie } from "@/lib/admin-auth";
 import { depot } from "@/lib/contenus/depot";
+import { stockagePdf } from "@/lib/contenus/pdf";
 
 export const runtime = "nodejs";
 const essais = new Map<string, { n: number; depuis: number }>();
@@ -10,7 +11,7 @@ const sansCache = { "Cache-Control": "no-store" };
 export async function GET(req: Request) {
   return NextResponse.json({
     configure: adminConfigure(), connecte: adminConnecte(req),
-    base: depot() !== null, pdf: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+    base: depot() !== null, pdf: stockagePdf(),
   }, { headers: sansCache });
 }
 
