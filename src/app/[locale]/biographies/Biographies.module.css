@@ -1,0 +1,68 @@
+/* Biographies — charte nuit et or. Propriétés logiques uniquement. */
+.page{inline-size:min(78rem,100% - 2.5rem);margin-inline:auto;padding-block:1.5rem 4rem;display:flex;flex-direction:column;gap:1.4rem;}
+.entete{display:flex;flex-direction:column;gap:.4rem;}
+.surtitre{margin:0;font-family:"Cinzel",serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ocre);}
+.titre{margin:0;font-size:clamp(1.9rem,4vw,3rem);color:#fff6e3;}
+.intro{margin:0;max-inline-size:46rem;color:#e8dcc2;line-height:1.7;}
+.retour{margin:0;}
+.retour a{color:var(--ocre);}
+.mention{margin:0;color:var(--discret);font-size:.8rem;font-style:italic;}
+
+/* Les cinq séries */
+.series{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1rem;margin:0;padding:0;list-style:none;}
+.carteSerie{position:relative;display:flex;flex-direction:column;gap:.5rem;block-size:100%;padding-block:1.3rem 1.1rem;padding-inline:1.3rem;border:1px solid #e3b86655;border-radius:1rem;
+  background:radial-gradient(circle at 50% 0,#e3b86622,transparent 60%),linear-gradient(180deg,#132139,#0d1628);color:inherit;text-decoration:none;transition:transform .3s,border-color .3s,box-shadow .3s;}
+.carteSerie:hover,.carteSerie:focus-visible{transform:translateY(-4px);border-color:#f2c877;box-shadow:0 18px 36px #0008,0 0 24px #f2a25733;}
+.ornement{inline-size:2.4rem;block-size:2.4rem;color:var(--ocre);}
+.nomSerie{margin:0;font-family:var(--police-titre-latine);font-size:1.25rem;color:#fff3cf;}
+.descSerie{margin:0;color:#e8dcc2;font-size:.92rem;line-height:1.6;}
+.compte{margin-block-start:auto;color:var(--ocre);font-weight:700;font-size:.85rem;}
+
+/* Liste des personnes */
+.outils{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;}
+.outils input{inline-size:min(24rem,100%);min-block-size:2.6rem;padding-inline:.9rem;border:1px solid #e3b866aa;border-radius:.6rem;background:#0a1324;color:#fff6e3;font:inherit;}
+.outils button{min-block-size:2.6rem;padding-inline:1.1rem;border:1.5px solid #f2c877;border-radius:999px;background:transparent;color:#fff3cf;font:inherit;font-weight:700;cursor:pointer;}
+.personnes{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.8rem;margin:0;padding:0;list-style:none;}
+.personne{display:flex;flex-direction:column;gap:.3rem;block-size:100%;padding-block:.9rem;padding-inline:1rem;border:1px solid #e3b86655;border-radius:.9rem;
+  background:linear-gradient(180deg,#101d36,#0a1324);color:inherit;text-decoration:none;transition:border-color .2s,transform .2s;}
+a.personne:hover,a.personne:focus-visible{border-color:#f2c877;transform:translateY(-2px);}
+.nomAr{font-size:1.2rem;line-height:1.7;color:#fff6e3;}
+.nomLatin{font-family:var(--police-titre-latine);font-size:.95rem;color:#f2c877;}
+.nomComplet{font-size:.85rem;color:var(--discret);line-height:1.6;}
+.details{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin-block-start:auto;font-size:.8rem;color:#e8dcc2;}
+.pagination{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;}
+.pagination a{color:var(--ocre);font-weight:700;}
+.vide{padding:1.2rem;border:1px dashed #e3b86666;border-radius:.8rem;color:var(--discret);text-align:center;}
+
+/* Prophètes */
+.prophetes{display:flex;flex-direction:column;gap:.8rem;margin:0;padding:0;list-style:none;}
+.prophete{border:1px solid #e3b86655;border-radius:.9rem;background:linear-gradient(180deg,#101d36,#0a1324);}
+.prophete summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;padding-block:.9rem;padding-inline:1.1rem;cursor:pointer;list-style:none;}
+.prophete summary::-webkit-details-marker{display:none;}
+.prophete[open] summary{border-block-end:1px solid #e3b86633;}
+.chapitres{display:flex;flex-direction:column;gap:.4rem;margin:0;padding-block:.8rem 1rem;padding-inline:1.1rem;list-style:none;}
+.chapitres a{color:#fff3cf;text-decoration:none;}
+.chapitres a:hover,.chapitres a:focus-visible{color:#f2c877;text-decoration:underline;}
+
+/* Fiche */
+.colonne{display:flex;flex-direction:column;gap:1.2rem;min-inline-size:0;}
+.ligne{display:contents;}
+.fiche{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1.2rem;align-items:start;}
+.cadre{display:flex;flex-direction:column;gap:.7rem;padding-block:1.1rem;padding-inline:1.2rem;border:1px solid #e3b86655;border-radius:1rem;background:linear-gradient(180deg,#101d36,#0a1324);}
+.titreBloc{margin:0;font-family:var(--police-titre-latine);font-size:1.1rem;color:#fff3cf;}
+.reperes{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.45rem 1rem;margin:0;}
+.reperes dt{color:var(--discret);font-size:.88rem;}
+.reperes dd{margin:0;color:#fff6e3;}
+.voisins{display:flex;flex-direction:column;gap:.35rem;margin:0;padding:0;list-style:none;}
+.voisins li{display:flex;justify-content:space-between;gap:.8rem;}
+.voisins a{color:#fff3cf;}
+.nombre{flex:none;color:var(--discret);font-size:.8rem;}
+.jugements{display:flex;flex-direction:column;gap:.5rem;margin:0;padding:0;list-style:none;}
+.jugements li{padding-block:.5rem;padding-inline:.8rem;border-inline-start:3px solid var(--ocre);background:#0a132488;border-radius:.4rem;line-height:1.8;}
+.critique{display:block;font-size:.85rem;color:var(--ocre);}
+.puces{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none;}
+.puces a{display:inline-block;padding-block:.3rem;padding-inline:.9rem;border:1px solid #e3b86688;border-radius:999px;color:#fff3cf;text-decoration:none;font-size:.9rem;}
+
+@media(max-width:52rem){.fiche{grid-template-columns:minmax(0,1fr);}}
+@media(prefers-reduced-motion:reduce){.carteSerie,.personne{transition:none;}.carteSerie:hover,a.personne:hover{transform:none;}}
+:global(html[data-motion="off"]) .carteSerie:hover,:global(html[data-motion="off"]) a.personne:hover{transform:none;}

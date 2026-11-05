@@ -97,6 +97,7 @@
     "glossaire": "Glosarium",
     "memorisation": "Hafalan",
     "bibliotheque": "Perpustakaan",
+    "biographies": "Biografi",
     "themes": "Tema",
     "chapitres": "Bab",
     "az": "A-Z"
@@ -472,6 +473,66 @@
     },
     "lire": "Baca {n, number} hadis",
     "indisponible": "Belum tersedia di situs: kitab ini belum memiliki halaman baca."
+  },
+  "biographies": {
+    "titre": "Biografi",
+    "surtitre": "Para perawi, perempuan dan laki-laki",
+    "intro": "Para nabi, Sahabat, Tabiin, dan ulama: data dari sumber, serta hadis-hadis yang membicarakan mereka.",
+    "avertissement": "Profil disusun otomatis dari data sumber, tanpa kisah yang ditulis oleh situs. Perlu diperiksa oleh ahli.",
+    "source": "Profil, guru, dan murid: basis data « الجامع — Hadith Knowledge Graph » (emadjumaah), lisensi CC BY 4.0. Penilaian dikutip sebagaimana tercantum dalam sumber.",
+    "sourceChapitres": "Bab: indeks tematik basis data hadith-kg, yang sudah dipakai dalam bab-bab situs.",
+    "series": {
+      "prophetes": {
+        "titre": "Para nabi",
+        "description": "Kisah mereka melalui hadis-hadis dalam bab situs."
+      },
+      "compagnons": {
+        "titre": "Para Sahabat",
+        "description": "Mereka yang melihat Nabi ﷺ dan meriwayatkan darinya (minimal 5 riwayat dalam sumber)."
+      },
+      "successeurs": {
+        "titre": "Para Tabiin",
+        "description": "Tābiʿūn, generasi 2 sampai 5 dalam sumber (minimal 20 riwayat)."
+      },
+      "atba": {
+        "titre": "Para Tabiut Tabiin",
+        "description": "Atbāʿ at-tābiʿīn, generasi 6 sampai 9 dalam sumber (minimal 50 riwayat)."
+      },
+      "savants": {
+        "titre": "Para ulama",
+        "description": "Para penyusun kitab di perpustakaan dan para kritikus perawi."
+      }
+    },
+    "compteur": "{n, number} orang",
+    "nbProphetes": "{n, number} nabi",
+    "rechercher": "Cari nama (dalam bahasa Arab)",
+    "chercher": "Cari",
+    "aucun": "Tidak ada yang cocok dengan pencarian ini.",
+    "retour": "Kembali ke biografi",
+    "ouvrir": "Lihat seri",
+    "recits": "{n, number} riwayat",
+    "deces": "Wafat: {annee} H",
+    "generation": "Generasi {n} menurut sumber",
+    "reperes": "Data",
+    "age": "Usia saat wafat",
+    "metier": "Pekerjaan atau peran",
+    "recueils": "Kitab yang disusun (perpustakaan)",
+    "maitres": "Guru, menurut sanad",
+    "eleves": "Murid, menurut sanad",
+    "chaines": "{n, plural, other {# sanad}}",
+    "voisinsAide": "Orang yang berada tepat sebelum atau sesudahnya dalam sanad sumber.",
+    "jugements": "Pendapat para kritikus",
+    "auteurs": "Penyusun kitab",
+    "critiques": "Kritikus perawi",
+    "critiquesAide": "Ulama yang menilai perawi dalam sumber, beserta jumlah penilaian yang tercatat.",
+    "nbJugements": "{n, number} penilaian",
+    "mohammed": "Nabi Muḥammad ﷺ",
+    "mohammedTexte": "Kisah hidupnya ada dalam tema “Kehidupan Nabi ﷺ”.",
+    "voirTheme": "Buka tema",
+    "prophetesAide": "Bab situs yang judul Arabnya menyebut nabi ini; setiap bab menghimpun hadis dari sumber.",
+    "nbChapitres": "{n, plural, other {# bab}}",
+    "aucunChapitre": "Belum ada bab yang ditemukan.",
+    "nbHadiths": "{n, plural, other {# hadis}}"
   },
   "themes": {
     "titre": "Pilih tema",

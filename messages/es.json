@@ -97,6 +97,7 @@
     "glossaire": "Glosario",
     "memorisation": "Memorizar",
     "bibliotheque": "Biblioteca",
+    "biographies": "Biografías",
     "themes": "Temas",
     "chapitres": "Capítulos",
     "az": "A-Z"
@@ -472,6 +473,66 @@
     },
     "lire": "Leer los {n, number} hadices",
     "indisponible": "Aún no disponible en el sitio: esta colección todavía no tiene página de lectura."
+  },
+  "biographies": {
+    "titre": "Biografías",
+    "surtitre": "Las mujeres y los hombres de la transmisión",
+    "intro": "Profetas, Compañeros, Sucesores y sabios: sus datos según las fuentes y los hadices que hablan de ellos.",
+    "avertissement": "Fichas reunidas automáticamente a partir de los datos de la fuente, sin relato redactado por el sitio. Debe verificarlas un especialista.",
+    "source": "Fichas, maestros y discípulos: base « الجامع — Hadith Knowledge Graph » (emadjumaah), licencia CC BY 4.0. Juicios citados tal como figuran en la fuente.",
+    "sourceChapitres": "Capítulos: índice temático de la base hadith-kg, ya presente en los capítulos del sitio.",
+    "series": {
+      "prophetes": {
+        "titre": "Los profetas",
+        "description": "Sus historias a través de los hadices de los capítulos del sitio."
+      },
+      "compagnons": {
+        "titre": "Los Compañeros",
+        "description": "Quienes vieron al Profeta ﷺ y transmitieron de él (al menos 5 relatos en la fuente)."
+      },
+      "successeurs": {
+        "titre": "Los Sucesores",
+        "description": "Los tābiʿūn, generaciones 2 a 5 de la fuente (al menos 20 relatos)."
+      },
+      "atba": {
+        "titre": "Los Sucesores de los Sucesores",
+        "description": "Los atbāʿ at-tābiʿīn, generaciones 6 a 9 de la fuente (al menos 50 relatos)."
+      },
+      "savants": {
+        "titre": "Los sabios",
+        "description": "Los autores de las colecciones de la biblioteca y los críticos de los transmisores."
+      }
+    },
+    "compteur": "{n, number} personas",
+    "nbProphetes": "{n, number} profetas",
+    "rechercher": "Buscar un nombre (en árabe)",
+    "chercher": "Buscar",
+    "aucun": "Nadie coincide con esta búsqueda.",
+    "retour": "Volver a las biografías",
+    "ouvrir": "Ver la serie",
+    "recits": "{n, number} relatos",
+    "deces": "Muerte: {annee} H",
+    "generation": "Generación {n} según la fuente",
+    "reperes": "Datos",
+    "age": "Edad al morir",
+    "metier": "Oficio o función",
+    "recueils": "Colecciones compiladas (biblioteca)",
+    "maitres": "Maestros, según las cadenas",
+    "eleves": "Discípulos, según las cadenas",
+    "chaines": "{n, plural, one {# cadena} other {# cadenas}}",
+    "voisinsAide": "Personas situadas justo antes o justo después en las cadenas de transmisión de la fuente.",
+    "jugements": "Lo que dicen los críticos",
+    "auteurs": "Autores de las colecciones",
+    "critiques": "Críticos de los transmisores",
+    "critiquesAide": "Sabios que juzgaron a los transmisores en la fuente, con el número de juicios registrados.",
+    "nbJugements": "{n, number} juicios",
+    "mohammed": "El Profeta Muḥammad ﷺ",
+    "mohammedTexte": "Su vida se cuenta en el tema «La vida del Profeta ﷺ».",
+    "voirTheme": "Abrir el tema",
+    "prophetesAide": "Capítulos del sitio cuyo título árabe nombra a este profeta; cada capítulo reúne hadices de la fuente.",
+    "nbChapitres": "{n, plural, one {# capítulo} other {# capítulos}}",
+    "aucunChapitre": "Aún no se ha encontrado ningún capítulo.",
+    "nbHadiths": "{n, plural, one {# hadiz} other {# hadices}}"
   },
   "themes": {
     "titre": "Elige un tema",
