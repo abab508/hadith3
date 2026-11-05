@@ -43,7 +43,7 @@ test("les 40 hadiths d'an-Nawawī ont leur page de lecture", async ({ page }) =>
   await livre.locator("article").click();
   await expect(page).toHaveURL(/\/fr\/recueil\/al-arbain-an-nawawiyya$/);
   await page.getByLabel(fr.recueilKg.aller).fill("1");
-  await page.getByRole("button", { name: fr.recueilKg.ouvrir }).click();
+  await page.getByRole("button", { name: fr.recueilKg.ouvrir, exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/hadith\/al-arbain-an-nawawiyya\/ara\/1$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Nawawiyya");
 });
