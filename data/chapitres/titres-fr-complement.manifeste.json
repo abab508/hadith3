@@ -1,0 +1,1633 @@
+{
+  "origine": "ia",
+  "relu": false,
+  "langue": "fr",
+  "usage": "Titres courts de navigation, traduction ou condensation de l’intitulé source ; aucune authentification de hadith ni commentaire religieux.",
+  "source": "https://huggingface.co/datasets/emadjumaah/hadith-kg/blob/main/README.md",
+  "licence_source": "CC BY 4.0",
+  "date": "2026-11-05",
+  "chapitres": 229,
+  "arabe_original_preserve": true,
+  "fichier": "titres-fr-complement.tsv",
+  "index_source_sha256": "b327dc8aef566d145da3b41cfaf437e999b5a4f080e1c2f9572eca4a4fdea5cd",
+  "carte_kg_api_sha256": "db7bcb93ff43e3c3db433e339e9257baae6fc90c59b110d02f2a7f1f3839a7e1",
+  "lignes": [
+    {
+      "id": "c22089",
+      "ar": "أبناء النبي",
+      "fr": "Les fils du Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22447",
+      "ar": "إذا مر أحدكم بجدار قد مال فليسرع في المشي",
+      "fr": "Passer rapidement près d’un mur qui penche",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c21926",
+      "ar": "أشياء لا تفارق النبي",
+      "fr": "Les objets qui ne quittaient pas le Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22387",
+      "ar": "أكثر مال أوتي به النبي",
+      "fr": "La plus grande somme apportée au Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22455",
+      "ar": "الاستجارة بالنبي من النار",
+      "fr": "Demander au Prophète protection contre le Feu",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22502",
+      "ar": "الاستخلاف وتركه",
+      "fr": "Désigner un successeur ou s’en abstenir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22389",
+      "ar": "النبي يقيل عند شجرة بين مكة والمدينة",
+      "fr": "La sieste du Prophète sous un arbre entre La Mecque et Médine",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22498",
+      "ar": "النبي يملأ الجزيرة قسطا وعدلا",
+      "fr": "Le Prophète remplit la péninsule d’équité et de justice",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22553",
+      "ar": "إنكم ستمرون برجل صبيح الوجه يطعمكم من الطعام ويسقيكم من الشراب ويدلكم على الطريق وهو من أهل الجنة",
+      "fr": "L’homme au beau visage qui offre nourriture, boisson et indications du chemin",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22385",
+      "ar": "بيعة النبي للصحابة بالمدينة",
+      "fr": "L’engagement d’allégeance des Compagnons envers le Prophète à Médine",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22452",
+      "ar": "تحمل لك صفوان بدينك وعيالك على أن تقتلني له",
+      "fr": "Ṣafwān prend en charge les dettes et la famille en échange d’un meurtre",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c19792",
+      "ar": "تلخيص لفحوى عقيدة الإسلام",
+      "fr": "Résumé de la croyance islamique",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22543",
+      "ar": "خبر مسيلمة الكذاب",
+      "fr": "Le récit de Musaylima le menteur",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22457",
+      "ar": "خطب النبي صلى الله عليه وسلم",
+      "fr": "Les sermons du Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22445",
+      "ar": "ذكر الموالي والأعاجم",
+      "fr": "Les affranchis et les non-Arabes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22436",
+      "ar": "رسائل الصحابة للنبي",
+      "fr": "Les lettres des Compagnons au Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22431",
+      "ar": "كتب النبي لأصحابه",
+      "fr": "Les écrits du Prophète à ses Compagnons",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22551",
+      "ar": "لا ينام ليلة ولا ينتبه إلا استن",
+      "fr": "L’usage du siwāk au coucher et au réveil",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22364",
+      "ar": "ما استشهد به النبي من الشعر",
+      "fr": "Les vers de poésie cités par le Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22554",
+      "ar": "ما جرعة أحب إلى الله من جرعة غيظ كتمها رجل جرعة صبر عند مصيبة ما قطرة أحب إلى الله من قطرة دمع من خشية الله قطرة دم في سبيل الله",
+      "fr": "La colère maîtrisée, la patience dans l’épreuve et les larmes de crainte d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22500",
+      "ar": "ما كان النبي يعرف رجلا",
+      "fr": "Un homme que le Prophète ne connaissait pas",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22391",
+      "ar": "من أردفهم النبي خلفه على الدابة",
+      "fr": "Ceux que le Prophète prenait en croupe sur sa monture",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22520",
+      "ar": "من كذب النبي يقتل",
+      "fr": "Le récit de la mise à mort de celui qui dément le Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c22449",
+      "ar": "من مات على الكفر فهو في النار",
+      "fr": "Le titre relatif à celui qui meurt dans la mécréance et au Feu",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c50290",
+      "ar": "إرسال الرسل",
+      "fr": "L’envoi de messagers",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46415",
+      "ar": "إجلال الكبير",
+      "fr": "Honorer les personnes âgées",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46359",
+      "ar": "أخذ على النساء لا يحدثن إلا المحرم",
+      "fr": "L’engagement des femmes à ne parler qu’à un maḥram",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46627",
+      "ar": "أدب الركوب",
+      "fr": "Les règles à observer en montant une monture",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46417",
+      "ar": "إذا أحب الله عبدا حماه الدنيا",
+      "fr": "Allah préserve du bas monde le serviteur qu’Il aime",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46712",
+      "ar": "إذا تناول أحدكم عن أخيه شيئا فليره إياه",
+      "fr": "Montrer à son frère ce que l’on retire de lui",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46348",
+      "ar": "إذا سل أحدكم سيفه",
+      "fr": "Dégainer son épée",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46695",
+      "ar": "استأخرن فإنه ليس لكن أن تحققن الطريق عليكن بحافات الطريق",
+      "fr": "Le retrait des femmes vers les bords du chemin",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46706",
+      "ar": "استأذنته أن تصور في بيتها نخل فمنعها أو نهاها",
+      "fr": "La demande de représenter des palmiers dans une maison et son refus",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46496",
+      "ar": "استحباب الرقية ما لم يكن فيها شرك",
+      "fr": "La ruqya recommandée lorsqu’elle ne comporte pas d’associationnisme",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46705",
+      "ar": "أعظم الناس فرية لرجل هاجى رجلا فهجا القبيلة بأسرها رجل انتفى من أبيه وزنى أمه",
+      "fr": "Les graves calomnies : insulter une tribu entière ou renier son père",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46219",
+      "ar": "البغض في الله",
+      "fr": "Détester pour Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46529",
+      "ar": "الخالة تحل محل الأم بعد فقدها",
+      "fr": "La tante maternelle tient la place de la mère après sa perte",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46676",
+      "ar": "الخذف أو كان يكره الخذف وقال إنه لا يصاد به صيد ولا ينكى به عدو ولكنها قد تكسر السن وتفقأ العينن ثم رآه بعد ذلك يخذف فقال له أحدثك عن رسول الله أنه نهى عن الخذف أو كره الخذف وأنت تخذف لا أكلمك كذا وكذا",
+      "fr": "L’interdiction de lancer de petits cailloux et les blessures qu’ils provoquent",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46223",
+      "ar": "الرجل يكلم المرأة",
+      "fr": "L’homme qui parle à une femme",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46390",
+      "ar": "الزيارة",
+      "fr": "La visite",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46363",
+      "ar": "اللعنة تتوجه إلى الملعون",
+      "fr": "La malédiction se dirige vers celui qu’elle vise",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46685",
+      "ar": "الله يبغض البليغ من الرجال الذي يتخلل بلسانه كما تتخلل البقرة",
+      "fr": "L’éloquence affectée que le titre compare au mouvement de langue de la vache",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46655",
+      "ar": "الله يحب النظافة",
+      "fr": "Allah aime la propreté",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46698",
+      "ar": "الله يحب أن تؤتى رخصه كما يكره أن تؤتى معصيته",
+      "fr": "Allah aime que l’on use de Ses dispenses",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46549",
+      "ar": "الله يحب أن يرى أثر نعمته على عبده",
+      "fr": "Allah aime voir les marques de Son bienfait sur Son serviteur",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46659",
+      "ar": "المتشدق في الكلام",
+      "fr": "L’affectation dans la parole",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46486",
+      "ar": "المستهزءون بالناس",
+      "fr": "Ceux qui se moquent des gens",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46668",
+      "ar": "النهي عن ترويع المؤمن",
+      "fr": "L’interdiction d’effrayer le croyant",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46515",
+      "ar": "النهي عن تقنيط الإنسان من رحمة الله",
+      "fr": "L’interdiction de faire désespérer de la miséricorde d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46701",
+      "ar": "أنتم أهل بدونا ونحن أهل حضركم",
+      "fr": "Les habitants du désert et ceux de la ville",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46382",
+      "ar": "أوذي موسى بأكثر من هذا فصبر",
+      "fr": "Mūsā endura avec patience des offenses plus grandes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46384",
+      "ar": "ترك إثارة الشر على مسلم أو كافر",
+      "fr": "S’abstenir de susciter le mal contre un musulman ou un non-musulman",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46356",
+      "ar": "تعاون المؤمنين بعضهم بعضا",
+      "fr": "L’entraide entre les croyants",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46681",
+      "ar": "تعلموا من أنسابكم ما تصلون به أرحامكم صلة الرحم محبة في الأهل مثراة في المال منسأة في الأثر",
+      "fr": "Connaître sa parenté pour entretenir les liens familiaux",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46697",
+      "ar": "تلقى جعفر بن أبي طالب فالتزمه وقبل ما بين عينيه",
+      "fr": "L’accueil de Jaʿfar ibn Abī Ṭālib, l’accolade et le baiser entre les yeux",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46642",
+      "ar": "ثلاثة لا ترد دعوتهم",
+      "fr": "Trois personnes dont l’invocation n’est pas repoussée",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46342",
+      "ar": "حب خيار الناس",
+      "fr": "Aimer les meilleurs des gens",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46594",
+      "ar": "حكم المخنثين",
+      "fr": "Le statut des hommes efféminés dans les récits",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46680",
+      "ar": "خير الأصحاب عند الله خيرهم لصاحبه خير الجيران عند الله خيرهم لجاره",
+      "fr": "Le meilleur compagnon et le meilleur voisin",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46713",
+      "ar": "سلوا الله ببطون أكفكم ولا تسألوه بظهورها فإذا فرغتم فامسحوا بها وجوهكم",
+      "fr": "Invoquer Allah avec les paumes et les passer sur le visage",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46570",
+      "ar": "شر ما في رجل شح هالع وجبن خالع",
+      "fr": "L’avidité anxieuse et la lâcheté déstabilisante",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46677",
+      "ar": "صغارهم دعاميص الجنة يتلقى أحدهم أباه",
+      "fr": "Les jeunes enfants du Paradis qui accueillent leur père",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46552",
+      "ar": "فناء أعمار هذه ما بين الستين والسبعين",
+      "fr": "Des durées de vie situées entre soixante et soixante-dix ans",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46589",
+      "ar": "في اتخاذ الغرف",
+      "fr": "L’aménagement de pièces en hauteur",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46687",
+      "ar": "قاعد القرفصاء فلما رأيت رسول الله المختشع",
+      "fr": "La position accroupie et l’humilité du Messager d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46350",
+      "ar": "قتل الولد خشية أن يأكل معه",
+      "fr": "Tuer son enfant par crainte de partager sa nourriture",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46618",
+      "ar": "قول الرجل كيف أصبحتم",
+      "fr": "Demander : « Comment allez-vous ce matin ? »",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46711",
+      "ar": "كأن الموت فيها على غيرنا كتب وكأن الحق فيها على غيرنا وجب وكأنما نشيع من الموتى سفر عما قليل إلينا راجعون نبوئهم أجداثهم ونأكل تراثهم كأنكم مخلدون بعدهم قد نسيتم كل واعظة وأمنتم كل جائحة طوبى لمن شغله عيبه عن عيوب الناس وتواضع لله في غير منقصة وأنفق من ما",
+      "fr": "La mort, l’oubli des avertissements et l’attention portée à ses propres défauts",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46694",
+      "ar": "كتب إلى النبي فبدأ باسمه",
+      "fr": "Commencer une lettre au Prophète par son propre nom",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46624",
+      "ar": "كراهية إيذاء المسلم وإن كان حقا",
+      "fr": "La réprobation du tort causé au musulman, même en réclamant un droit",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46573",
+      "ar": "كل كلام لا يبدأ فيه بالحمد لله فهو أجذم",
+      "fr": "La parole qui ne commence pas par la louange d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46691",
+      "ar": "لا أنهى أحدا يصلي بليل ولا نهار ما شاء غير أن لا تحروا طلوع الشمس ولا غروبها",
+      "fr": "Prier de jour ou de nuit sans viser le lever ni le coucher du soleil",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46678",
+      "ar": "لا تبدءوا اليهود ولا النصارى بالسلام فإذا لقيتم أحدهم في طريق فاضطروه إلى أضيقه",
+      "fr": "Le récit sur le salut aux juifs et aux chrétiens et le passage sur le chemin",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46710",
+      "ar": "لا تتحدثوا عن النساء",
+      "fr": "Ne pas parler des femmes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46699",
+      "ar": "لا تجلس هكذا إنما هذه جلسة الذين يعذبون",
+      "fr": "La posture assise décrite comme celle des personnes châtiées",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46693",
+      "ar": "لا تسبوا الديك فإنه يوقظ للصلاة",
+      "fr": "Ne pas insulter le coq qui réveille pour la prière",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46689",
+      "ar": "لا تقل تعس الشيطان فإنك إذا قلت ذلك تعاظم حتى يكون مثل البيت ويقول بقوتي ولكن قل بسم الله فإنك إذا قلت ذلك تصاغر حتى يكون مثل الذباب",
+      "fr": "Dire « Au nom d’Allah » plutôt que maudire Satan",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46682",
+      "ar": "لا تقوم الساعة حتى يتقارب الزمان فتكون السنة كالشهر والشهر كالجمعة وتكون الجمعة كاليوم ويكون اليوم كالساعة وتكون الساعة كالضرمة بالنار",
+      "fr": "Le rapprochement des durées à l’approche de l’Heure",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46679",
+      "ar": "لا تمار أخاك لا تمازحه لا تعده موعدة فتخلفه",
+      "fr": "Ne pas quereller son frère, le taquiner ni manquer à sa promesse",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46421",
+      "ar": "لا حليم إلا ذو عثرة",
+      "fr": "La mansuétude et l’expérience du faux pas",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46688",
+      "ar": "لا يستر عبد عبدا في الدنيا إلا ستره الله يوم القيامة",
+      "fr": "Couvrir les fautes d’autrui et la protection au Jour de la Résurrection",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46419",
+      "ar": "لا يكون أحدكم إمعة",
+      "fr": "Ne pas suivre aveuglément les autres",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46434",
+      "ar": "لا يلدغ المؤمن من جحر مرتين",
+      "fr": "Le croyant n’est pas piqué deux fois depuis le même trou",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46629",
+      "ar": "لا ينزع يده من مصافحة",
+      "fr": "Ne pas retirer sa main lors d’une poignée de main",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46690",
+      "ar": "لقد شققت علي أنا هاهنا منذ ثلاث أنتظرك",
+      "fr": "L’attente de trois jours et la peine qu’elle cause",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46561",
+      "ar": "ليس منا من لم يرحم صغيرنا",
+      "fr": "La miséricorde envers les plus jeunes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46692",
+      "ar": "ما من مسلم يبيت على ذكر طاهرا فيتعار من الليل فيسأل الله خيرا من الدنيا والآخرة إلا أعطاه إياه",
+      "fr": "L’invocation nocturne de celui qui s’endort purifié dans le rappel d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46702",
+      "ar": "مسألة الغني شين في وجهه يوم القيامة",
+      "fr": "La mendicité du riche et sa marque au Jour de la Résurrection",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46666",
+      "ar": "ملعون من ضار مؤمنا",
+      "fr": "La malédiction mentionnée à propos de celui qui nuit à un croyant",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46708",
+      "ar": "من أحدث هجاء في الإسلام فاقطعوا لسانه",
+      "fr": "Le récit ordonnant de couper la langue de l’auteur d’une satire",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46709",
+      "ar": "من أخلص لله أربعين صباحا ظهرت ينابيع الحكمة من قلبه على لسانه كأنه يريد بذلك من يحضر العشاء والفجر في جماعة ومن حضرهما أربعين يوما يدرك التكبيرة الأولى كتب له براءتان براءة من النار وبراءة من النفاق",
+      "fr": "Quarante matins de sincérité, la sagesse et les prières en groupe",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46704",
+      "ar": "من اعتذر إلى أخيه بمعذرة فلم يقبلها كان عليه مثل خطيئة صاحب مكس",
+      "fr": "Refuser les excuses de son frère",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46432",
+      "ar": "من أغاث ملهوفا",
+      "fr": "Secourir une personne en détresse",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46395",
+      "ar": "من أكل تمرا مع قوم فلا يقرن إلا بإذنهم",
+      "fr": "Ne pas prendre deux dattes à la fois sans la permission des convives",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46703",
+      "ar": "من باع عقدة مال سلط الله عليها تالفا يتلفها",
+      "fr": "La vente d’un bien durable et sa perte",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46684",
+      "ar": "من كان يؤمن بالله واليوم الآخر فلا يدخل الحمام بغير إزار من كان يؤمن بالله واليوم الآخر فلا يدخل حليلته الحمام من كان يؤمن بالله واليوم الآخر فلا يجلس على مائدة يدار عليها بالخمر",
+      "fr": "Le bain public, le vêtement de pudeur et les tables où circule le vin",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46410",
+      "ar": "من كفر أخاه فهو كما قال",
+      "fr": "Accuser son frère de mécréance",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46707",
+      "ar": "من يخفر ذمتي كنت خصمه ومن خاصمته خصمته",
+      "fr": "La violation de la protection accordée par le Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46700",
+      "ar": "نفخ الشيطان في منخريها",
+      "fr": "Le souffle de Satan dans ses narines",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46696",
+      "ar": "نهى أن يمشي الرجل بين البعيرين يقودهما",
+      "fr": "L’interdiction de marcher entre deux chameaux que l’on conduit",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46686",
+      "ar": "وضعت يدي اليسرى خلف ظهري واتكأت على ألية يدي فقال أتقعد قعدة المغضوب عليهم",
+      "fr": "S’asseoir en prenant appui sur la main gauche derrière le dos",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46460",
+      "ar": "يمشي الرجل بين المرأتين",
+      "fr": "L’homme qui marche entre deux femmes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46683",
+      "ar": "يود أهل العافية يوم القيامة حين يعطى أهل البلاء الثواب لو أن جلودهم كانت قرضت في الدنيا بالمقاريض",
+      "fr": "La récompense des éprouvés et le souhait des personnes épargnées",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46925",
+      "ar": "إذا انتهى أحدكم إلى مجلس فليسلم فإن بدا له أن يجلس فليجلس ثم إذا قام فليسلم فليست الأولى بأحق من الآخرة",
+      "fr": "Saluer à l’arrivée dans une assemblée et en la quittant",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46820",
+      "ar": "إذا دعي الرجل فجاء هل يستأذن",
+      "fr": "La personne invitée doit-elle demander la permission d’entrer ?",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46924",
+      "ar": "إذنك علي أن يرفع الحجاب وأن تستمع سوادي حتى أنهاك",
+      "fr": "La permission de lever le voile et d’écouter les propos privés",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46923",
+      "ar": "استأذن عليها أتحب أن تراها عريانة قال لا",
+      "fr": "Demander la permission d’entrer pour préserver la pudeur",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46740",
+      "ar": "استئذان الجارية",
+      "fr": "La permission d’entrer demandée par la jeune servante",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46918",
+      "ar": "أصبح النبي بها عروسا فدعا القوم فأصابوا من الطعام ثم خرجوا وبقي رهط منهم عند النبي فأطالوا المكث فقام النبي فخرج وخرجت معه لكي يخرجوا فمشى النبي ومشيت حتى جاء عتبة حجرة عائشة ثم ظ",
+      "fr": "Le repas de noces du Prophète et les invités qui prolongent leur visite",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46742",
+      "ar": "الاستئذان ثلاثا",
+      "fr": "Demander trois fois la permission d’entrer",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46921",
+      "ar": "الاستئناس أن تدعو الخادم حتى يستأنس أهل البيت الذين تستأذن عليهم",
+      "fr": "Prévenir les habitants par l’intermédiaire du serviteur avant d’entrer",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46914",
+      "ar": "التحية في الجاهلية",
+      "fr": "Les salutations à l’époque préislamique",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46746",
+      "ar": "الرجل يستأذن عن القوم",
+      "fr": "Demander la permission d’entrer au nom d’un groupe",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46826",
+      "ar": "السلام على الكفار بإكرام الأكابر منهم",
+      "fr": "Saluer les non-musulmans en honorant leurs notables",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46916",
+      "ar": "السلام يطفئ الشرة",
+      "fr": "Le salut apaise l’emportement",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46920",
+      "ar": "الله حليم رحيم بالمؤمنين يحب الستر وكان الناس ليس لبيوتهم ستور ولا حجال فربما دخل الخادم أو الولد أو يتيمة الرجل والرجل على أهله فأمرهم الله بالاستئذان في تلك العورات فجاءهم الله بالستور والخير فلم أر أحدا يعمل بذلك بعد",
+      "fr": "La permission d’entrer aux moments d’intimité et l’installation de rideaux",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46930",
+      "ar": "إنهم كذبوا على أنبيائهم كما حرفوا كتابهم إن الله أبدلنا خيرا من ذلك السلام تحية أهل الجنة",
+      "fr": "Le salut présenté comme la salutation des habitants du Paradis",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46932",
+      "ar": "أينحني بعضنا لبعض إذا التقينا فقال لا قيل فيلتزم بعضنا بعضا قال لا قال فنتصافح قال تصافحوا",
+      "fr": "S’incliner, s’étreindre ou se serrer la main lors d’une rencontre",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46829",
+      "ar": "جبريل يقرأ عائشة السلام وترد عليه",
+      "fr": "Jibrīl transmet le salut à ʿĀʾisha et elle lui répond",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46928",
+      "ar": "حمدي زين وإن ذمي شين قال رسول الله ذاك الله",
+      "fr": "Celui dont la louange embellit et dont le blâme déshonore",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46922",
+      "ar": "خمروا الآنية أجيفوا الأبواب أطفئوا المصابيح الفويسقة ربما جرت الفتيلة فأحرقت أهل البيت",
+      "fr": "Couvrir les récipients, fermer les portes et éteindre les lampes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46757",
+      "ar": "راعي يسلم على النبي",
+      "fr": "Un berger salue le Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46744",
+      "ar": "صور استئذان المرء",
+      "fr": "Les formes de demande de permission d’entrer",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46927",
+      "ar": "عليك السلام وعلى أبيك السلام",
+      "fr": "Le salut adressé à une personne et à son père",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46801",
+      "ar": "قرع باب النبي بالأظافر",
+      "fr": "Frapper à la porte du Prophète avec les ongles",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46783",
+      "ar": "كراهية إشارة اليد بالسلام",
+      "fr": "La réprobation du salut par un geste de la main",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46926",
+      "ar": "كل عين زانية المرأة إذا استعطرت فمرت بالمجلس فهي كذا وكذا",
+      "fr": "Le regard et le passage d’une femme parfumée dans une assemblée",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46901",
+      "ar": "كم مرة يسلم الرجل في الاستذان",
+      "fr": "Combien de fois saluer en demandant la permission d’entrer ?",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46908",
+      "ar": "لا تترك النار في البيت عند النوم",
+      "fr": "Ne pas laisser de feu dans la maison pendant le sommeil",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46877",
+      "ar": "لا يقيم الرجل الرجل من مجلسه",
+      "fr": "Ne pas faire lever quelqu’un de sa place",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46766",
+      "ar": "ما جاء في السلام قبل الكلام",
+      "fr": "Saluer avant de parler",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46931",
+      "ar": "ما حسدتكم اليهود على شيء ما حسدتكم على آمين فأكثروا من قول آمين",
+      "fr": "Le récit sur la jalousie des juifs à propos de « āmīn »",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46919",
+      "ar": "مر بمجلس وفيه أخلاط من المسلمين واليهود فسلم عليهم",
+      "fr": "Saluer une assemblée mêlant musulmans et juifs",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46935",
+      "ar": "من الصدقة أن تسلم على الناس وأنت طلق الوجه",
+      "fr": "Saluer avec un visage accueillant est une aumône",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46894",
+      "ar": "موسى أوذي بأكثر من هذا فصبر",
+      "fr": "Mūsā endura avec patience des offenses plus grandes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c46929",
+      "ar": "يقول يا حرام فقال يا حلال",
+      "fr": "L’appel « ô Ḥarām » et la réponse « ô Ḥalāl »",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29803",
+      "ar": "أجر من حارب الفتن",
+      "fr": "La récompense de celui qui combat les troubles",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29799",
+      "ar": "التعوذ من الفتن",
+      "fr": "Chercher refuge contre les troubles",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29612",
+      "ar": "الفقير عند الغني فتنة",
+      "fr": "Le pauvre comme épreuve pour le riche",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29614",
+      "ar": "القوي عند الضعيف فتنة",
+      "fr": "Le fort comme épreuve pour le faible",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29809",
+      "ar": "الله لم يحل في الفتنة شيئا حرمه",
+      "fr": "Les troubles ne rendent pas licite ce qu’Allah a interdit",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29797",
+      "ar": "تمني الفتن",
+      "fr": "Souhaiter la survenue des troubles",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29793",
+      "ar": "ذئبان آخر الزمان",
+      "fr": "Les deux loups de la fin des temps",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29616",
+      "ar": "شر قتيل",
+      "fr": "Le pire des hommes tués",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29807",
+      "ar": "فتنة أضر من فتنة الدجال",
+      "fr": "Une épreuve plus nuisible que celle du Dajjāl",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29795",
+      "ar": "قتل الساجد درءا للفتنة",
+      "fr": "Le récit de la mise à mort d’un homme prosterné pour prévenir les troubles",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c29791",
+      "ar": "هل رأي فيكم المغربون",
+      "fr": "La question sur les « mugharribūn »",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12231",
+      "ar": "الإذن بتعلم كتاب اليهود",
+      "fr": "La permission d’apprendre l’écriture des juifs",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12308",
+      "ar": "التناصح في العلم",
+      "fr": "Le conseil mutuel dans le savoir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12219",
+      "ar": "التواضع للعلماء",
+      "fr": "L’humilité envers les savants",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12246",
+      "ar": "الجهل بالفرئض والسنن",
+      "fr": "L’ignorance des obligations et des pratiques de la Sunna",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12263",
+      "ar": "الخط بقية العلم",
+      "fr": "L’écriture comme vestige du savoir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11825",
+      "ar": "الراسخون في العلم",
+      "fr": "Les personnes enracinées dans le savoir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12306",
+      "ar": "السمت الحسن والفقه في الدين لا يجتمعان في منافق",
+      "fr": "La bonne conduite et la compréhension de la religion face à l’hypocrisie",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12227",
+      "ar": "النهي عن عضل المسائل",
+      "fr": "L’interdiction des questions destinées à mettre en difficulté",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12233",
+      "ar": "انظروا كيف تعملون فيما تعلمون",
+      "fr": "Examiner sa manière d’agir selon ce que l’on sait",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12261",
+      "ar": "أول ما يعلم النبي من غلمان بني عبد المطلب",
+      "fr": "Le premier enseignement du Prophète aux jeunes Banū ʿAbd al-Muṭṭalib",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12221",
+      "ar": "تبليغ العلم",
+      "fr": "Transmettre le savoir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12253",
+      "ar": "تسألون أهل الكتاب وعندكم القرآن",
+      "fr": "Interroger les gens du Livre alors que l’on dispose du Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12304",
+      "ar": "تعليم النساء",
+      "fr": "L’enseignement des femmes",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12377",
+      "ar": "جمع الحلم والعلم",
+      "fr": "Réunir la mansuétude et le savoir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12379",
+      "ar": "جمع العلم والقرآن",
+      "fr": "Réunir le savoir et le Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12287",
+      "ar": "خلاصة العلم خمس",
+      "fr": "Le savoir résumé en cinq points",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12213",
+      "ar": "علم النجوم",
+      "fr": "La connaissance des astres",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12296",
+      "ar": "عليكم بسنتي وسنة الخلفاء الراشدين المهديين",
+      "fr": "Suivre la Sunna du Prophète et celle des califes bien guidés",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12235",
+      "ar": "فتنة العالم",
+      "fr": "L’épreuve du savant",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12248",
+      "ar": "كل العلماء يؤخذ من قولهم ويرد",
+      "fr": "Les paroles des savants peuvent être acceptées ou rejetées",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12393",
+      "ar": "لا ترفع الأيدي إلا في سبع مواطن",
+      "fr": "Le récit limitant le lever des mains à sept circonstances",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12294",
+      "ar": "لا تنزلوا العارفين جنة ولا نارا",
+      "fr": "Ne pas assigner les connaisseurs au Paradis ni au Feu",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12395",
+      "ar": "ليس في عهد النبي قصاص",
+      "fr": "Les « quṣṣāṣ » à l’époque du Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12290",
+      "ar": "ما مات النبي حتى كتب وقرأ",
+      "fr": "Le récit selon lequel le Prophète écrivit et lut avant sa mort",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12183",
+      "ar": "من أجرى قلمه في طاعة",
+      "fr": "Faire courir sa plume dans l’obéissance",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12373",
+      "ar": "من بلغه فضل عن الله",
+      "fr": "Celui à qui parvient l’annonce d’un mérite venant d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11874",
+      "ar": "من كتب الحديث في حياة النبي",
+      "fr": "Ceux qui écrivirent le hadith du vivant du Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12375",
+      "ar": "موعظة بليغة",
+      "fr": "Une exhortation éloquente",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12371",
+      "ar": "هل خص آل البيت بعلم دون المسلمين",
+      "fr": "Un savoir a-t-il été réservé aux gens de la Maison ?",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c12229",
+      "ar": "يعافي الأميين ما لا يعافي العلماء",
+      "fr": "La différence de pardon accordé aux non-lettrés et aux savants",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11612",
+      "ar": "أخشى أن يطول عليك الزمان وأن تمل فاقرأه في شهر فقلت دعني أستمتع من قوتي وشبابي قال فاقرأه في عشرة قلت دعني أستمتع من قوتي وشبابي قال فاقرأه في سبع قلت دعني أستمتع من قوتي وشبابي فأبى",
+      "fr": "Réciter le Coran en un mois, dix jours ou sept jours",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11528",
+      "ar": "أعربوا القرآن",
+      "fr": "Prononcer le Coran en respectant la langue arabe",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11591",
+      "ar": "أعطيت مكان التوراة السبع أعطيت مكان الزبور المئين أعطيت مكان الإنجيل المثاني فضلت بالمفصل",
+      "fr": "Les groupes de sourates comparés à la Torah, aux Psaumes et à l’Évangile",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11581",
+      "ar": "اقرأ على عمر بن الخطاب فدعاه فأمره أن يحضر القرآن إذا نزل ليقرأه عليه",
+      "fr": "La lecture à ʿUmar ibn al-Khaṭṭāb et la présence lors de la révélation",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11600",
+      "ar": "الآيات خرزات منظومات في سلك فإن يقطع السلك يتبع بعضها بعضا",
+      "fr": "Les signes comparés à des perles enfilées sur un fil",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11560",
+      "ar": "الحدة تعتري خيار أمتي",
+      "fr": "La vivacité de caractère chez les meilleurs de la communauté",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11565",
+      "ar": "الحلال ما أحل الله في كتابه",
+      "fr": "Le licite défini par ce qu’Allah a rendu licite dans Son Livre",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11605",
+      "ar": "الحمد لله كتاب الله واحد وفيكم الأحمر وفيكم الأبيض وفيكم الأسود اقرءوه قبل أن يقرأه أقوام يقيمونه كما يقوم السهم يتعجل أجره ولا يتأجله",
+      "fr": "Un même Livre pour tous et la recherche de la récompense de sa lecture",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11601",
+      "ar": "الصيام القرآن يشفعان للعبد يوم القيامة يقول الصيام أي رب منعته الطعام والشهوات بالنهار فشفعني فيه يقول القرآن منعته النوم بالليل فشفعني فيه قال فيشفعان",
+      "fr": "L’intercession du jeûne et du Coran au Jour de la Résurrection",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11519",
+      "ar": "الفواصل بين السور",
+      "fr": "La séparation entre les sourates",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11558",
+      "ar": "القرآن طرفه بيد الله والآخر بأيدينا",
+      "fr": "Le Coran : une extrémité auprès d’Allah, l’autre entre nos mains",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11179",
+      "ar": "القرآن والذي جاء به موسى",
+      "fr": "Le Coran et ce qui fut apporté par Mūsā",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11596",
+      "ar": "الله كتب الحسنات والسيئات ثم بين ذلك فمن هم بحسنة فلم يعملها كتبها الله له عنده حسنة كاملة هو هم بها فعملها كتبها الله له عنده عشر حسنات إلى سبع مائة ضعف إلى أضعاف كثيرة ومن هم بسيئة فلم يعملها كتبها الله له عنده حسنة كاملة فإن هو هم بها فعملها كتبها",
+      "fr": "L’inscription des bonnes et mauvaises actions, accomplies ou seulement envisagées",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11392",
+      "ar": "الله يحب أن تسمع الملائكة لذكره",
+      "fr": "Allah aime que les anges entendent Son rappel",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11607",
+      "ar": "المسر بالقرآن كالمسر بالصدقة والمجهر بالقرآن كالمجهر بالصدقة",
+      "fr": "La récitation discrète ou publique comparée à l’aumône",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11592",
+      "ar": "الورود الدخول لا يبقى بر ولا فاجر إلا دخلها فتكون على المؤمن بردا وسلاما كما كانت على إبراهيم حتى إن للنار أو قال لجهنم ضجيجا من بردهم ثم ينجي الله الذين اتقوا ويذر الظالمين فيها جثيا",
+      "fr": "Le passage par le Feu et la délivrance des pieux",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11594",
+      "ar": "أوصيك بتقوى الله فإنه رأس كل شيء عليك بالجهاد فإنه رهبانية الإسلام عليك بذكر الله وتلاوة القرآن فإنه روحك في السماء وذكرك في الأرض",
+      "fr": "Conseils de piété, de jihād, de rappel et de récitation du Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11571",
+      "ar": "تركت فيكم الثقلين",
+      "fr": "Les deux dépôts précieux laissés à la communauté",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11593",
+      "ar": "تعلموا القرآن فإذا علمتموه فلا تغلوا فيه ولا تجفوا عنه ولا تأكلوا به ولا تستكثروا به",
+      "fr": "Apprendre le Coran sans excès, sans le délaisser ni en tirer un gain",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11599",
+      "ar": "تقرأ الكتابين التوراة والفرقان فكان يقرؤهما",
+      "fr": "Lire les deux Livres : la Torah et le Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11545",
+      "ar": "حفظ القرآن والعمل به",
+      "fr": "Mémoriser le Coran et le mettre en pratique",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11562",
+      "ar": "حملة القرآن أولياء الله",
+      "fr": "Les porteurs du Coran comme alliés d’Allah",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11540",
+      "ar": "خير الدواء القرآن",
+      "fr": "Le Coran présenté comme le meilleur remède",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11395",
+      "ar": "دعاء حفظ القرآن",
+      "fr": "L’invocation pour mémoriser le Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11587",
+      "ar": "ذلك أوان ينسخ القرآن فقال رجل كالأعرابي يا رسول الله ما النسخ وكيف ينسخ قال يذهب بأهله ويبقى رجال كأنهم البغاث",
+      "fr": "La disparition du Coran par la perte de ceux qui le portent",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11189",
+      "ar": "شرف أمتي القرآن",
+      "fr": "Le Coran comme honneur de la communauté",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11610",
+      "ar": "عرضت علي أجور أمتي حتى القذات يخرجها الرجل من المسجد عرضت علي ذنوب أمتي فلم أر ذنبا أعظم من",
+      "fr": "Les récompenses et les péchés de la communauté présentés au Prophète",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c10585",
+      "ar": "فضل سماع القرآن",
+      "fr": "Le mérite de l’écoute du Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c10587",
+      "ar": "فواتح السور",
+      "fr": "Les ouvertures des sourates",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11598",
+      "ar": "قلبك حشي الإيمان وإن الإيمان يعطى العبد قبل القرآن",
+      "fr": "La foi reçue avant le Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11405",
+      "ar": "قوم يقرءون القرآن ينثرونه",
+      "fr": "Des personnes qui récitent le Coran en en dispersant les mots",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11588",
+      "ar": "لا تذهب الليالي والأيام حتى يخلق القرآن في صدور أقوام من هذه الأمة كما تخلق الثياب ويكون غيره أعجب إليهم ويكون أمرهم طمعا كله لا يخالطه خوف إن قصر عن حق الله منته نفسه الأماني وإن تجاوز إلى نهي الله قال أرجو أن يتجاوز الله عني يلبسون جلود الضأن",
+      "fr": "Le Coran qui s’use dans les cœurs et l’espoir dépourvu de crainte",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11611",
+      "ar": "ما أذن الله لعبد في شيء أفضل من ركعتين يصليهما البر ليذر على رأس العبد ما دام في صلاته ما تقرب العباد إلى الله بمثل ما خرج منه",
+      "fr": "Les deux unités de prière et le rapprochement d’Allah par Sa parole",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11602",
+      "ar": "ما ترك رسول الله إلا ما بين هذين اللوحين ودخلنا على محمد بن علي فقال مثل ذلك قال وكان المختار يقول الوحي",
+      "fr": "Ce que le Messager d’Allah laissa entre les deux couvertures du Livre",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11590",
+      "ar": "ما من رجل يأوي إلى فراشه فيقرأ سورة من كتاب الله إلا بعث الله إليه ملكا يحفظه من كل شيء يؤذيه حتى يهب متى هب",
+      "fr": "La sourate récitée au coucher et l’ange protecteur",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11521",
+      "ar": "ما يجزئ الأمي والأعجمي من القراءة",
+      "fr": "La lecture suffisante pour le non-lettré et le non-Arabe",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11583",
+      "ar": "من اتبع كتاب الله هداه الله من الضلالة ووقاه سوء الحساب يوم القيامة وذلك أن الله يقول فمن اتبع هداي فلا يضل ولا يشقى",
+      "fr": "Suivre le Livre d’Allah et être préservé de l’égarement et d’un mauvais compte",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11569",
+      "ar": "من أوتي الحكم صبيا",
+      "fr": "Celui qui reçut la sagesse dès l’enfance",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11586",
+      "ar": "من جمع القرآن كانت له عند الله دعوة مستجابة إن شاء عجلها له في الدنيا وإن شاء أخرها له في الآخرة",
+      "fr": "L’invocation exaucée de celui qui a réuni le Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11606",
+      "ar": "من شهد القرآن حين يفتح فكأنما شهد فتحا في سبيل الله من شهد ختمه حين يختم فكأنما شهد الغنائم حين تقسم",
+      "fr": "Assister au début et à l’achèvement d’une récitation du Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11389",
+      "ar": "من قرأ القرآن بأجر",
+      "fr": "Réciter le Coran contre rémunération",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11615",
+      "ar": "من قرأ القرآن وعمل بما فيه ألبس والداه تاجا يوم القيامة ضوءه أحسن من ضوء الشمس في بيوت الدنيا لو كانت فيكم فما ظنكم بالذي عمل بهذا",
+      "fr": "La couronne promise aux parents de celui qui récite et applique le Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11412",
+      "ar": "نسخ سورة من القرآن",
+      "fr": "L’abrogation d’une sourate du Coran",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11595",
+      "ar": "وراءك يا بني",
+      "fr": "« En arrière, mon fils »",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11603",
+      "ar": "يأمركم أن تقرءوا كما علمتم",
+      "fr": "Lire comme cela a été enseigné",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11604",
+      "ar": "يرفع الرجل صوته بالقرآن قبل العتمة وبعدها يغلط أصحابه في الصلاة",
+      "fr": "Élever la voix en récitant et troubler les compagnons dans leur prière",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11609",
+      "ar": "يصلي ثم ينام قدر ما صلى ثم يصلي قدر ما نام ثم ينام قدر ما صلى حتى يصبح ثم نعتت قراءته فإذا هي تنعت قراءة مفسرة حرفا حرفا",
+      "fr": "L’alternance de la prière et du sommeil et la récitation distincte, lettre par lettre",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c11613",
+      "ar": "يقرأ المسبحات قبل أن يرقد ويقول إن فيهن آية خير من ألف آية",
+      "fr": "Réciter les sourates de glorification avant de dormir",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c14173",
+      "ar": "ذكر أم إسماعيل عليها السلام",
+      "fr": "La mère d’Ismāʿīl",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c14382",
+      "ar": "ذكر شعيب عليه السلام",
+      "fr": "Shuʿayb",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c14510",
+      "ar": "ذكر يحيى بن زكريا عليهما السلام",
+      "fr": "Yaḥyā ibn Zakariyyā",
+      "origine": "ia",
+      "relu": false
+    },
+    {
+      "id": "c27705",
+      "ar": "فضائل التابعين",
+      "fr": "Les mérites des Successeurs",
+      "origine": "ia",
+      "relu": false
+    }
+  ],
+  "a_relire_en_priorite": [
+    "c29791",
+    "c12395",
+    "c12294",
+    "c11600",
+    "c11412",
+    "c46706",
+    "c22500"
+  ],
+  "notes": [
+    "Les intitulés longs de la source sont parfois des phrases de narration ; le français les condense en titres sans compléter leurs fins tronquées.",
+    "Les termes ambigus ou techniques demandent une relecture humaine ; l’arabe source reste la référence.",
+    "Les 1 676 sous-chapitres sans traduction ne sont pas traduits par ce complément."
+  ]
+}

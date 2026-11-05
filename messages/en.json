@@ -695,6 +695,8 @@
     "numero": "no. {n}",
     "ouvrir": "Open the hadith",
     "indisponible": "Text temporarily unavailable.",
-    "aucunHadith": "No hadith from our collections in this sub-chapter."
+    "aucunHadith": "No hadith from our collections in this sub-chapter.",
+    "agrandirIllustration": "Enlarge illustration {n}",
+    "fermerIllustration": "Close illustration"
   }
 }

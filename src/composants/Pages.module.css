@@ -215,3 +215,8 @@
 .arabeSousTitre{inline-size:fit-content;font-size:1.4rem;}
 .cadreGalerie{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:.6rem;}
 .cadreGalerie img{object-fit:cover;}
+
+.sousListe .lienChapitreIllustre{display:flex;align-items:center;gap:.7rem;}
+.lienChapitreIllustre bdi{min-inline-size:0;overflow-wrap:anywhere;}
+.vignetteChapitre{position:relative;display:block;flex:none;inline-size:4.5rem;aspect-ratio:16/9;overflow:hidden;border:1px solid #e3b86644;border-radius:.35rem;}
+.vignetteChapitre img{object-fit:cover;}

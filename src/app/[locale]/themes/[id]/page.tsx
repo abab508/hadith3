@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import Carrousel from "@/composants/Carrousel";
 import ImageDecorative from "@/composants/ImageDecorative";
 import { chapitreParId, imageTheme, themeParId, themes } from "@/donnees/themes";
-import { chapitresDuThemeKg, motifsDe, titreKg } from "@/donnees/chapitres-kg";
+import { chapitresDuThemeKg, illustrationDe, titreKg } from "@/donnees/chapitres-kg";
 import IllustrationChapitre from "@/composants/IllustrationChapitre";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
 import { routing } from "@/i18n/routing";
@@ -51,13 +51,13 @@ export default async function PageTheme({ params }: { params: Promise<{ locale: 
             const fixe = chapitreParId(c.id);
             const cles = fixe ? clesChapitres[fixe.cle] : null;
             const titre = cles ? { texte: tc(cles.titre), langue: locale } : titreKg(c, locale);
-            const motifs = motifsDe(c.fr ?? c.ar, c.theme);
+            const ill = illustrationDe(c);
             return (
               <li key={c.id} className={styles.carteChapitre} style={{ ["--i" as string]: i % 12 }}>
                 <Link href={`/chapitres/${c.id}`}>
                   <span className={styles.cadreImageChapitre}>
                     {fixe ? <ImageDecorative src={`/images/hd/${fixe.image}.png`} sizes="(max-width: 1155px) 13rem, (max-width: 1378px) 18vw, 15.5rem" />
-                      : <IllustrationChapitre motif={motifs[0]!} second={motifs[1]} graine={`${c.id}-0`} />}
+                      : <IllustrationChapitre motif={ill.motif} variante={ill.variante} graine={`${c.id}-0`} />}
                   </span>
                   <span className={styles.corpsCarte}>
                     <span className={styles.titreCarte}>{i + 1}. <bdi lang={titre.langue} dir="auto">{titre.texte}</bdi></span>

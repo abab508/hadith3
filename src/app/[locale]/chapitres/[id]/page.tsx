@@ -5,10 +5,11 @@ import { Link } from "@/i18n/navigation";
 import Onglets from "@/composants/Onglets";
 import ImageDecorative from "@/composants/ImageDecorative";
 import IllustrationChapitre from "@/composants/IllustrationChapitre";
+import ApercuIllustration from "@/composants/ApercuIllustration";
 import PresentationChapitre from "@/composants/PresentationChapitre";
 import { chapitreParId, themeParId } from "@/donnees/themes";
 import { clesChapitres, clesThemes } from "@/donnees/cles-themes";
-import { chapitreKg, chapitresDuThemeKg, motifsDe, repartitionParRecueil, titreKg } from "@/donnees/chapitres-kg";
+import { chapitreKg, chapitresDuThemeKg, illustrationDe, motifsGalerie, repartitionParRecueil, titreKg } from "@/donnees/chapitres-kg";
 import { nomRecueil } from "@/donnees/noms-recueils";
 import styles from "@/composants/Pages.module.css";
 import liste from "@/app/[locale]/recueil/[id]/Recueil.module.css";
@@ -48,14 +49,24 @@ export default async function PageChapitre({ params }: { params: Promise<Paramet
   const nav = await getTranslations("navigation");
   const numero = chapitresDuThemeKg(theme.id).findIndex((x) => x.id === id) + 1;
   const titreTheme = tt(clesThemes[theme.cle].titre);
-  const motifs = motifsDe(c.fr ?? c.ar, c.theme);
+  // Galerie : l'image de la carte du chapitre (même cadrage) puis deux autres scènes de son sujet.
+  const motifs = motifsGalerie(c);
+  const varianteCarte = illustrationDe(c).variante;
   const repartition = await repartitionParRecueil(id);
   const cleIntro = fixe ? clesChapitres[fixe.cle].intro : null;
   const intro = cleIntro ? tc(cleIntro) : null;
   const sousTitres = c.sous.map((s) => titreKg(s, locale));
-  const dessiner = (instance: string) => motifs.map((m, i) => (
-    <IllustrationChapitre key={m} motif={m} second={motifs[(i + 1) % motifs.length]} graine={`${id}-${i}`} instance={instance} titre={`${titre.texte} — ${tk("illustration", { n: i + 1 })}`} />
-  ));
+  const dessiner = (instance: string) => motifs.map((m, i) => {
+    const legende = `${titre.texte} — ${tk("illustration", { n: i + 1 })}`;
+    const variante = i === 0 ? varianteCarte : 0;
+    const image = <IllustrationChapitre motif={m} variante={variante} graine={`${id}-${i}`} instance={instance} titre={legende} />;
+    return instance === "g" ? (
+      <ApercuIllustration key={m} titre={legende}
+        agrandie={<IllustrationChapitre motif={m} variante={variante} graine={`${id}-${i}`} titre={legende} sizes="(max-width: 760px) 92vw, 90rem" />} ouvrir={tk("agrandirIllustration", { n: i + 1 })} fermer={tk("fermerIllustration")}>
+        {image}
+      </ApercuIllustration>
+    ) : <IllustrationChapitre key={m} motif={m} variante={variante} graine={`${id}-${i}`} titre={legende} />;
+  });
   const illustrations = dessiner("g");
 
   return (

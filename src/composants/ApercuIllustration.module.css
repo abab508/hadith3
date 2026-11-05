@@ -1,0 +1,9 @@
+.apercu{position:relative;display:block;inline-size:100%;padding:0;border:0;border-radius:.6rem;background:#0a1324;color:#fff3cf;cursor:zoom-in;}
+.apercu:focus-visible{outline:2px solid var(--ocre);outline-offset:4px;}
+.icone{position:absolute;inset-inline-end:.6rem;inset-block-end:.6rem;inline-size:1.8rem;block-size:1.8rem;padding:.3rem;border:1px solid #e3b86688;border-radius:.4rem;background:#0a1324c9;fill:none;stroke:currentColor;stroke-width:1.6;pointer-events:none;}
+.dialogue{inline-size:min(92vw,90rem);max-inline-size:92vw;max-block-size:92svh;padding:1rem;border:1px solid #e3b866aa;border-radius:1rem;background:#0a1324;color:#fff3cf;box-shadow:0 20px 90px #000c;overflow:auto;}
+.dialogue::backdrop{background:#030712dc;backdrop-filter:blur(6px);}
+.entete{display:flex;align-items:center;gap:1rem;margin-block-end:.8rem;}
+.entete h2{flex:1;margin:0;font-size:clamp(1rem,2vw,1.5rem);overflow-wrap:anywhere;}
+.entete button{flex:none;inline-size:2.5rem;block-size:2.5rem;border:1px solid #e3b86688;border-radius:50%;background:transparent;color:inherit;font-size:1.8rem;cursor:pointer;}
+.grand{inline-size:100%;}

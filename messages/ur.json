@@ -695,6 +695,8 @@
     "numero": "نمبر {n}",
     "ouvrir": "حدیث کھولیں",
     "indisponible": "متن عارضی طور پر دستیاب نہیں۔",
-    "aucunHadith": "اس ذیلی باب میں ہماری کتب کی کوئی حدیث نہیں۔"
+    "aucunHadith": "اس ذیلی باب میں ہماری کتب کی کوئی حدیث نہیں۔",
+    "agrandirIllustration": "تصویر {n} بڑی کریں",
+    "fermerIllustration": "تصویر بند کریں"
   }
 }

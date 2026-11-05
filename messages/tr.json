@@ -695,6 +695,8 @@
     "numero": "no. {n}",
     "ouvrir": "Hadisi aç",
     "indisponible": "Metin şu anda kullanılamıyor.",
-    "aucunHadith": "Bu alt bölümde eserlerimizden hadis yok."
+    "aucunHadith": "Bu alt bölümde eserlerimizden hadis yok.",
+    "agrandirIllustration": "Görseli büyüt {n}",
+    "fermerIllustration": "Görseli kapat"
   }
 }
