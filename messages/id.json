@@ -683,6 +683,11 @@
     "souvenir": "Ingat email saya di perangkat ini",
     "oublie": "Lupa kata sandi?",
     "aideOubli": "Hubungi admin situs: Anda akan diberi kata sandi sementara, lalu ubah di «Akun saya».",
+    "aideLien": "Masukkan email Anda: Anda akan menerima tautan untuk memilih kata sandi baru.",
+    "recevoirLien": "Kirim tautan",
+    "lienEnvoye": "Jika ada akun dengan alamat ini, email baru saja dikirim. Tautan berlaku 1 jam. Periksa juga folder spam.",
+    "titreNouveau": "Kata sandi baru",
+    "mdpReinitialise": "Kata sandi diubah. Silakan masuk.",
     "erreurs": {
       "identifiants": "E-mail atau kata sandi salah.",
       "bloque": "Akun ini diblokir oleh administrator.",
@@ -694,7 +699,13 @@
       "indisponible": "Akun belum tersedia.",
       "connexion": "Silakan masuk terlebih dahulu.",
       "origine": "Permintaan ditolak.",
-      "serveur": "Kesalahan server ({status})."
+      "serveur": "Kesalahan server ({status}).",
+      "courriel": "Pengiriman email belum tersedia: hubungi admin situs.",
+      "jeton": "Tautan ini tidak berlaku lagi (sudah dipakai atau kedaluwarsa). Minta yang baru dari «Akun saya»."
+    },
+    "courriel": {
+      "sujet": "Milaghaiba: kata sandi baru",
+      "texte": "Halo {nom},\n\nUntuk memilih kata sandi baru, buka tautan ini (berlaku 1 jam):\n{lien}\n\nJika Anda tidak memintanya, abaikan email ini: kata sandi Anda tidak berubah.\n\nMilaghaiba"
     }
   },
   "adminForum": {

@@ -2,10 +2,14 @@
 // changement de mot de passe (POST { action, ... }).
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import { courrielPossible, envoyerCourriel } from "@/lib/courriel";
 import { memeOrigine } from "@/lib/admin-auth";
 import { depotForum } from "@/lib/forum/depot";
 import { formats, ipDe, membreConnecte, tropDeRequetes } from "@/lib/forum/acces";
-import { COOKIE_MEMBRE, creerSessionMembre, hacherMotDePasse, optionsCookieMembre, sessionsMembresPossibles, verifierMotDePasse } from "@/lib/forum/securite";
+import { COOKIE_MEMBRE, DUREE_JETON_MS, creerSessionMembre, empreinteJeton, jetonReinitialisation, hacherMotDePasse, optionsCookieMembre, sessionsMembresPossibles, verifierMotDePasse } from "@/lib/forum/securite";
 
 export const runtime = "nodejs";
 const sansCache = { "Cache-Control": "no-store" };
@@ -16,7 +20,14 @@ const actions = z.discriminatedUnion("action", [
   z.object({ action: z.literal("connexion"), email: formats.email, motDePasse: z.string().max(200) }),
   z.object({ action: z.literal("deconnexion") }),
   z.object({ action: z.literal("motDePasse"), ancien: z.string().max(200), nouveau: formats.motDePasse }),
+  z.object({ action: z.literal("oubli"), email: formats.email, locale: z.string().max(5) }),
+  z.object({ action: z.literal("reinitialiser"), jeton: z.string().regex(/^[A-Za-z0-9_-]{43}$/), nouveau: formats.motDePasse }),
 ]);
+
+// Adresse du site pour le lien envoyé par e-mail : l'adresse de production fixée par Vercel,
+// jamais l'en-tête Host de la requête (qui pourrait être falsifié).
+const adresseSite = (req: Request) =>
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : new URL(req.url).origin;
 
 export async function GET(req: Request) {
   const m = await membreConnecte(req);
@@ -37,6 +48,29 @@ export async function POST(req: Request) {
     return r;
   }
   if (tropDeRequetes(`compte:${ipDe(req)}`, 10, 15 * 60 * 1000)) return erreur("trop", 429);
+
+  if (a.action === "oubli") {
+    // Sans service d'e-mail : la page propose de contacter l'administrateur.
+    if (!courrielPossible()) return erreur("courriel", 503);
+    if (tropDeRequetes(`oubli:${a.email}`, 3, 60 * 60 * 1000)) return erreur("trop", 429);
+    const m = await d.membreParEmail(a.email);
+    // Même réponse que l'adresse existe ou non (on ne révèle pas qui est inscrit).
+    if (m && m.statut === "actif") {
+      const jeton = jetonReinitialisation();
+      await d.creerJeton(m.id, empreinteJeton(jeton), DUREE_JETON_MS);
+      const locale = hasLocale(routing.locales, a.locale) ? a.locale : routing.defaultLocale;
+      const t = await getTranslations({ locale, namespace: "compte.courriel" });
+      const lien = `${adresseSite(req)}/${locale}/compte/nouveau-mot-de-passe#${jeton}`;
+      await envoyerCourriel({ a: m.email, sujet: t("sujet"), texte: t("texte", { nom: m.nom, lien }) });
+    }
+    return NextResponse.json({ ok: true }, { headers: sansCache });
+  }
+
+  if (a.action === "reinitialiser") {
+    const id = await d.utiliserJeton(empreinteJeton(a.jeton), hacherMotDePasse(a.nouveau));
+    if (id === null) return erreur("jeton", 400);
+    return NextResponse.json({ ok: true }, { headers: sansCache });
+  }
 
   if (a.action === "inscription") {
     const r = await d.inscrire({ code: a.code, email: a.email, nom: a.nom, hash: hacherMotDePasse(a.motDePasse) });

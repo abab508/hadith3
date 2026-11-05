@@ -3,7 +3,7 @@
  * La session porte l'identifiant et la version du membre : le statut (bloqué ou non) et la version sont relus
  * à chaque requête, donc un changement de mot de passe déconnecte toutes les anciennes sessions.
  */
-import { createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
+import { createHash, createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 
 export function hacherMotDePasse(mdp: string): string {
   const sel = randomBytes(16);
@@ -56,3 +56,8 @@ export const optionsCookieMembre = () => ({
 });
 export const cookieMembre = (req: Request) =>
   req.headers.get("cookie")?.split(/;\s*/).find((c) => c.startsWith(`${COOKIE_MEMBRE}=`))?.slice(COOKIE_MEMBRE.length + 1);
+
+// Mot de passe oublié : jeton aléatoire envoyé par e-mail ; la base ne garde que son empreinte.
+export const jetonReinitialisation = () => randomBytes(32).toString("base64url");
+export const empreinteJeton = (jeton: string) => createHash("sha256").update(jeton).digest("hex");
+export const DUREE_JETON_MS = 60 * 60 * 1000;

@@ -683,6 +683,11 @@
     "souvenir": "Bu cihazda e-postamı hatırla",
     "oublie": "Şifrenizi mi unuttunuz?",
     "aideOubli": "Site yöneticisiyle iletişime geçin: size geçici bir şifre verecek, ardından «Hesabım» bölümünden değiştirebilirsiniz.",
+    "aideLien": "E-posta adresinizi yazın: yeni şifre seçmeniz için bir bağlantı alacaksınız.",
+    "recevoirLien": "Bağlantıyı gönder",
+    "lienEnvoye": "Bu adresle bir hesap varsa az önce bir e-posta gönderildi. Bağlantı 1 saat geçerlidir. İstenmeyen klasörüne de bakın.",
+    "titreNouveau": "Yeni şifre",
+    "mdpReinitialise": "Şifre değiştirildi. Artık giriş yapabilirsiniz.",
     "erreurs": {
       "identifiants": "E-posta veya parola yanlış.",
       "bloque": "Bu hesap yönetici tarafından engellendi.",
@@ -694,7 +699,13 @@
       "indisponible": "Hesaplar henüz kullanılamıyor.",
       "connexion": "Önce giriş yapın.",
       "origine": "İstek reddedildi.",
-      "serveur": "Sunucu hatası ({status})."
+      "serveur": "Sunucu hatası ({status}).",
+      "courriel": "E-posta gönderimi henüz kullanılamıyor: site yöneticisiyle iletişime geçin.",
+      "jeton": "Bu bağlantı artık geçerli değil (kullanılmış veya süresi dolmuş). «Hesabım» bölümünden yenisini isteyin."
+    },
+    "courriel": {
+      "sujet": "Milaghaiba: yeni şifre",
+      "texte": "Merhaba {nom},\n\nYeni şifre seçmek için bu bağlantıyı açın (1 saat geçerli):\n{lien}\n\nBunu siz istemediyseniz bu e-postayı yok sayın: şifreniz değişmez.\n\nMilaghaiba"
     }
   },
   "adminForum": {

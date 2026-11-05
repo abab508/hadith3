@@ -683,6 +683,11 @@
     "souvenir": "Ingat e-mel saya pada peranti ini",
     "oublie": "Lupa kata laluan?",
     "aideOubli": "Hubungi pentadbir laman: anda akan diberi kata laluan sementara, kemudian tukarkannya di «Akaun saya».",
+    "aideLien": "Masukkan e-mel anda: anda akan menerima pautan untuk memilih kata laluan baharu.",
+    "recevoirLien": "Hantar pautan",
+    "lienEnvoye": "Jika ada akaun dengan alamat ini, e-mel baru sahaja dihantar. Pautan sah selama 1 jam. Semak juga folder spam.",
+    "titreNouveau": "Kata laluan baharu",
+    "mdpReinitialise": "Kata laluan ditukar. Anda boleh log masuk sekarang.",
     "erreurs": {
       "identifiants": "E-mel atau kata laluan salah.",
       "bloque": "Akaun ini disekat oleh pentadbir.",
@@ -694,7 +699,13 @@
       "indisponible": "Akaun belum tersedia.",
       "connexion": "Sila log masuk dahulu.",
       "origine": "Permintaan ditolak.",
-      "serveur": "Ralat pelayan ({status})."
+      "serveur": "Ralat pelayan ({status}).",
+      "courriel": "Penghantaran e-mel belum tersedia: hubungi pentadbir laman.",
+      "jeton": "Pautan ini tidak sah lagi (sudah digunakan atau tamat tempoh). Minta yang baharu di «Akaun saya»."
+    },
+    "courriel": {
+      "sujet": "Milaghaiba: kata laluan baharu",
+      "texte": "Salam {nom},\n\nUntuk memilih kata laluan baharu, buka pautan ini (sah selama 1 jam):\n{lien}\n\nJika anda tidak memintanya, abaikan e-mel ini: kata laluan anda tidak berubah.\n\nMilaghaiba"
     }
   },
   "adminForum": {
