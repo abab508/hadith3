@@ -17,3 +17,6 @@
 .textes .slogan{margin-block-start:.1rem;}
 /* Petit téléphone : on garde la marque et les actions essentielles sur une ligne. */
 @media(max-width:520px){.icone{inline-size:2.3rem;block-size:2.3rem;}.actions{gap:.15rem;}.logo{inline-size:34px;block-size:34px;}}
+
+/* Le bandeau reste nuit et or même lorsque le contenu passe en mode parchemin. */
+.entete{--fond:#0a1222;--surface:#111c31;--texte:#f3ead8;--discret:#b8ae9a;--accent:#e3b866;--ocre:#eebc6a;--sur-accent:#1b1307;--bordure:#33405a;background-color:#0a1222;}
