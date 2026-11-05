@@ -82,16 +82,41 @@ export function searchIndex(index:SearchIndex,query:string):SearchCandidate[]{
  const number=numeroDemande(query);
  if(number)return index.docs.filter(d=>String(d[0])===number)
      .map(d=>({numero:d[0],section:d[1],dansSection:d[2]}));
- const words=[...new Set(normaliser(query).split(" ").filter(Boolean))];
+ const forme=normaliser(query);
+ // Mot du quotidien absent des traductions (ex. « migraine ») : on cherche les formulations des textes.
+ const concept=(index.language==="ara"?CONCEPTS_AR:CONCEPTS_FR)[forme];
+ if(concept){
+  const ids=new Set<number>();
+  for(const alternative of [[forme],...concept])for(const id of idsPourMots(index,alternative))ids.add(id);
+  return [...ids].sort((x,y)=>x-y).flatMap(id=>{const doc=index.docs[id];return doc?[{numero:doc[0],section:doc[1],dansSection:doc[2]}]:[];});
+ }
+ const words=[...new Set(forme.split(" ").filter(Boolean))];
  if(words.length===0||words.length>8||words.some(x=>x.length>55))return [];
+ return idsPourMots(index,words).flatMap(id=>{const doc=index.docs[id];return doc?[{numero:doc[0],section:doc[1],dansSection:doc[2]}]:[];});
+}
+
+// Documents qui contiennent TOUS les mots (chaque mot accepte ses variantes et ses débuts de mot).
+function idsPourMots(index:SearchIndex,words:string[]):number[]{
  const postings=words.map(x=>postingsPourMot(index,x)).sort((a,b)=>a.length-b.length);
  if(!postings[0]?.length)return [];
  const remaining=postings.slice(1).map(p=>new Set(p));
- const out:SearchCandidate[]=[];
- for(const id of postings[0]){
-  if(!remaining.every(set=>set.has(id)))continue;
-  const doc=index.docs[id];
-  if(doc)out.push({numero:doc[0],section:doc[1],dansSection:doc[2]});
- }
- return out;
+ return postings[0].filter(id=>remaining.every(set=>set.has(id)));
 }
+
+/**
+ * Mots courants qui n'apparaissent pas tels quels dans les éditions : chaque entrée donne d'autres
+ * recherches équivalentes (tous les mots d'une même ligne doivent être présents). Aucun texte n'est ajouté :
+ * on ne fait que retrouver les hadiths qui emploient une autre formulation.
+ */
+const MAL_DE_TETE=[["douleur","tete"],["souffr","tete"],["migraine"],["cephal"]];
+export const CONCEPTS_FR:Record<string,string[][]>={
+ migraine:MAL_DE_TETE,migraines:MAL_DE_TETE,cephalee:MAL_DE_TETE,cephalees:MAL_DE_TETE,
+ "mal de tete":MAL_DE_TETE,"maux de tete":MAL_DE_TETE,"mal a la tete":MAL_DE_TETE,"douleur a la tete":MAL_DE_TETE,
+ grippe:[["rhume"],["fievre"]],
+ depression:[["tristesse"],["chagrin"],["angoisse"]],
+ stress:[["angoisse"],["inquiet"],["anxiete"]],anxiete:[["angoisse"],["inquiet"]],
+};
+const SUDAA=[["صداع"],["صدع"],["وجع","راس"]];
+export const CONCEPTS_AR:Record<string,string[][]>={
+ "صداع":SUDAA,"الصداع":SUDAA,"وجع الراس":SUDAA,"الم الراس":SUDAA,
+};

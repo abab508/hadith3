@@ -101,3 +101,5 @@
 2026-11-05 — Titres de sous-chapitres trop longs (récits entiers dans l'index source) : traduits par un titre français court et fidèle au sens, pas mot à mot ; noms propres translittérés (ʿ, ā, ḥ…) — décidé seul pour la lisibilité, l'arabe complet reste affiché.
 2026-11-05 — Images des prophètes : scène choisie d'après leur histoire dans les 24 images existantes (pas de nouvelle image ni de personnage représenté) — demande du patron (Ismāʿīl, ʿĪsā), choix des scènes décidé seul.
 2026-11-05 — Aucun son sur le site (ni ambiance, ni lecture à voix haute) — décision du patron ; l'onglet du chapitre s'appelle « Diaporama ».
+2026-11-05 — Nom affiché du site : « El Milaghaiba » (demande du patron) ; l'adresse milaghaiba.vercel.app et le nom arabe ne changent pas.
+2026-11-05 — Jugements des critiques : traduction par dictionnaire de termes, jamais de traduction partielle (phrase non entièrement reconnue = arabe seul) — décidé seul pour ne rien inventer.

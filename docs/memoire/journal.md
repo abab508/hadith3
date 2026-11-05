@@ -174,3 +174,8 @@
 - Fait : à la demande du patron (« désactiver tout ce qui est son et ambiance »), bouton d'ambiance sonore retiré de l'en-tête et boutons « Écouter » (voix de synthèse) retirés des chapitres et sous-chapitres ; l'onglet « Audio / Vidéo » devient « Diaporama » (8 langues), sans son. AmbianceSonore.tsx est gardé mais plus utilisé (aucune suppression de fichier sans accord). Les essais voix naturelle et sons de nature sont abandonnés.
 - Vérifié : 169 tests unitaires, 9 contrôles, build, 132/132 tests navigateur, capture du chapitre « La foi au destin » (en-tête sans bouton son, onglet Diaporama).
 - Prochaine étape : mise en ligne après accord du patron.
+
+## 2026-11-05 — Nom « El Milaghaiba », Fiabilité traduite, recherche « migraine »
+- Fait : nom du site « El Milaghaiba » partout où il s'affiche (8 langues, titres, assistant) et en-tête réparé (nom sur une ligne, langues sur leur propre ligne sous 980 px) ; jugements des critiques et jugement de synthèse traduits dans la langue choisie par un dictionnaire de 201 termes et formules (IA, à relire ; data/termes/jugements-critiques.json), l'arabe toujours affiché dessous, phrase non reconnue = arabe seul (98 % des jugements de synthèse, 54 % des jugements de critiques) ; recherche : mots du quotidien absents des traductions (migraine, mal de tête, céphalée, grippe, dépression, stress, صداع) cherchés par leurs formulations dans les textes.
+- Vérifié : 212 tests unitaires, 9 contrôles, build, 164 tests navigateur (3 tests instables sous charge, verts 3 fois sur 3 seuls) ; captures : en-tête, « migraine » → 19 hadiths, Fiabilité « fiable / ثقة ».
+- Prochaine étape : mise en ligne après accord du patron.

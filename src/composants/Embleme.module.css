@@ -3,7 +3,7 @@
 .dome{inline-size:6.5rem;block-size:auto;margin-block-end:-.35rem;fill:none;stroke:#f2c877;stroke-width:1.4;stroke-linecap:round;filter:drop-shadow(0 0 6px #eebc6a88);}
 .dome circle{fill:#f2c877;stroke:none;}
 /* Or en relief : dégradé clair-foncé, liseré sombre et halo chaud. */
-.nomLatin{font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:.005em;
+.nomLatin{white-space:nowrap;font-family:"Alegreya",var(--police-titre-latine);font-weight:700;font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:.005em;
   background:linear-gradient(180deg,#fff3c4 0%,#f6d27c 35%,#d99a3c 62%,#f3cf7f 80%,#a96c22 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 2px 0 #5a3410) drop-shadow(0 0 14px #eebc6a66);}
 .ligneArabe{display:inline-flex;align-items:center;gap:.55rem;margin-block-start:.1rem;}

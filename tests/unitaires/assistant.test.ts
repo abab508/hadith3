@@ -11,7 +11,7 @@ const lire = async (nom: string, entree: unknown) => {
 describe("assistant : charte et outils", () => {
   it("garde les règles absolues de la charte", () => {
     expect(CHARTE).toContain("Ne jamais inventer.");
-    expect(CHARTE).toContain("Je ne trouve pas ce texte dans les sources de Milaghaiba.");
+    expect(CHARTE).toContain("Je ne trouve pas ce texte dans les sources d'El Milaghaiba.");
     expect(CHARTE).toContain("Aucun avis religieux.");
     expect(DEFINITIONS_OUTILS.map((o) => o.name)).toEqual(["rechercher_hadith", "lire_rapport", "fiche_transmetteur", "definir_terme"]);
   });

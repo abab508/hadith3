@@ -4,7 +4,7 @@
     "relu": false
   },
   "accueil": {
-    "titre": "Milaghaiba",
+    "titre": "El Milaghaiba",
     "sousTitre": "The original Arabic text first, with its sources, references and translations whose origin is stated.",
     "etat": "Demonstration version: the data shown are examples awaiting a specialist’s review.",
     "exempleTerme": "Example term:",
@@ -43,7 +43,7 @@
         "texte": "Critical editions and recent translations: the reference and page are given, without copying the text."
       }
     },
-    "avertissement": "Milaghaiba is a research and documentation tool. It does not issue religious rulings and does not replace a specialist.",
+    "avertissement": "El Milaghaiba is a research and documentation tool. It does not issue religious rulings and does not replace a specialist.",
     "hero": {
       "titre": "The Hadiths",
       "sousTitre": "A light for every age",
@@ -164,7 +164,7 @@
   },
   "entete": {
     "slogan": "Hadith research and documentary verification",
-    "accueil": "Milaghaiba home",
+    "accueil": "El Milaghaiba home",
     "rechercher": "Search",
     "langue": "Language",
     "ambianceActiver": "Turn on ambient sound",
@@ -539,7 +539,7 @@
   "actualites": {
     "surtitre": "Information and news",
     "titre": "Articles and news",
-    "intro": "Articles, news and information about Islam published by the Milaghaiba team, with their PDF documents.",
+    "intro": "Articles, news and information about Islam published by the El Milaghaiba team, with their PDF documents.",
     "rubriques": {
       "titre": "Sections",
       "tous": "All",
@@ -704,8 +704,8 @@
       "jeton": "This link is no longer valid (already used or expired). Request a new one from “My account”."
     },
     "courriel": {
-      "sujet": "Milaghaiba: new password",
-      "texte": "Hello {nom},\n\nTo choose a new password, open this link (valid for 1 hour):\n{lien}\n\nIf you did not ask for this, ignore this email: your password stays the same.\n\nMilaghaiba"
+      "sujet": "El Milaghaiba: new password",
+      "texte": "Hello {nom},\n\nTo choose a new password, open this link (valid for 1 hour):\n{lien}\n\nIf you did not ask for this, ignore this email: your password stays the same.\n\nEl Milaghaiba"
     }
   },
   "adminForum": {
@@ -875,7 +875,7 @@
     "precedent": "Previous",
     "suivant": "Next",
     "page": "Page {page} of {total}",
-    "avertissement": "Texts and translations taken from the public hadith-api edition (fawazahmed0), not verified by Milaghaiba. Finding a reference does not authenticate the hadith.",
+    "avertissement": "Texts and translations taken from the public hadith-api edition (fawazahmed0), not verified by El Milaghaiba. Finding a reference does not authenticate the hadith.",
     "astuceArabe": "The collections are indexed in French and Arabic: try an Arabic word too."
   },
   "fiche": {
@@ -896,6 +896,7 @@
     "provenance": "Provenance: public hadith-api edition (fawazahmed0), revision @1"
   },
   "rapportTexte": {
+    "jugementsTraduits": "Judgements translated automatically (AI, to be reviewed); the Arabic source remains the reference. Long sentences stay in Arabic.",
     "titre": "Report and chain of transmission",
     "bouton": "Report and chain of transmission",
     "chaine": "Chain of transmission (isnād) written in the text",
@@ -954,10 +955,10 @@
     "chaines": "Chains of this hadith ({count})",
     "chaineN": "Chain {k}",
     "hukm": "Grading of the chain according to the source",
-    "hukmAide": "Assessment given by the source database, quoted as is: it is not a Milaghaiba verdict.",
+    "hukmAide": "Assessment given by the source database, quoted as is: it is not a El Milaghaiba verdict.",
     "indisponible": "This collection’s data is temporarily unavailable. Please try again in a moment.",
     "introuvable": "This hadith cannot be found in the collection.",
-    "source": "Text, chains and cards: “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence, published in the Milaghaiba data repository. Gradings quoted as they appear in the source, to be checked by a specialist.",
+    "source": "Text, chains and cards: “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence, published in the El Milaghaiba data repository. Gradings quoted as they appear in the source, to be checked by a specialist.",
     "guide": "Read the names in the order shown, then click a narrator to open their card. Chain given for this hadith by the hadith-kg database itself."
   },
   "recueilPublic": {
@@ -1005,9 +1006,9 @@
     "fermerIllustration": "Close illustration"
   },
   "assistant": {
-    "ouvrir": "Open the Milaghaiba assistant",
+    "ouvrir": "Open the El Milaghaiba assistant",
     "fermer": "Close the assistant",
-    "titre": "Milaghaiba assistant",
+    "titre": "El Milaghaiba assistant",
     "nom": "Assistant",
     "vous": "You",
     "accueil": "Hello! I can help you find a hadith, read its Arabic text, understand its chain of transmission or a glossary term.",
@@ -1021,7 +1022,7 @@
     "ecouter": "Listen",
     "arreter": "Stop",
     "reflexion": "The assistant is thinking…",
-    "recherche": "Searching Milaghaiba’s sources…",
+    "recherche": "Searching El Milaghaiba’s sources…",
     "erreurs": {
       "indisponible": "The assistant is temporarily unavailable.",
       "trop": "Too many questions in a row: try again in a few minutes.",

@@ -1,6 +1,6 @@
 /**
  * Outils de l'assistant : ils appellent les fonctions existantes du site (aucune recherche dupliquée)
- * et renvoient toujours la source et le chemin de la page Milaghaiba correspondante.
+ * et renvoient toujours la source et le chemin de la page El Milaghaiba correspondante.
  * Rien n'est trouvé ? L'outil le dit explicitement (« aucun résultat »).
  */
 import type Anthropic from "@anthropic-ai/sdk";
@@ -21,7 +21,7 @@ const IDS_RECUEILS = EXTERNAL_COLLECTIONS.map((c) => c.id);
 export const DEFINITIONS_OUTILS: Anthropic.Beta.BetaTool[] = [
   {
     name: "rechercher_hadith",
-    description: "Cherche un hadith dans les sources de Milaghaiba : les 7 grands recueils (éditions publiques hadith-api, arabe et français) et le corpus analysé du site. Accepte des mots (arabe ou français) ou un numéro. Renvoie le texte exact de la source, la référence, l'origine de la traduction et le chemin de la page du site. À appeler avant toute réponse sur un hadith.",
+    description: "Cherche un hadith dans les sources d'El Milaghaiba : les 7 grands recueils (éditions publiques hadith-api, arabe et français) et le corpus analysé du site. Accepte des mots (arabe ou français) ou un numéro. Renvoie le texte exact de la source, la référence, l'origine de la traduction et le chemin de la page du site. À appeler avant toute réponse sur un hadith.",
     input_schema: {
       type: "object",
       properties: {
@@ -91,7 +91,7 @@ async function rechercherHadith({ requete, recueil }: z.infer<typeof schemas.rec
   if (locaux.length < corpus.hadiths.length) {
     for (const h of locaux.slice(0, 3)) {
       resultats.push({
-        source: "Corpus analysé de Milaghaiba (statut : exemple à valider par un spécialiste)",
+        source: "Corpus analysé d'El Milaghaiba (statut : exemple à valider par un spécialiste)",
         texteArabe: h.texteAr,
         references: h.occurrences.map((o) => `${ouvrageParId(o.ouvrage)?.nom ?? o.ouvrage}, n° ${o.numero}`),
         traductions: h.traductions.map((t) => ({ langue: t.langue, texte: t.texte, origine: { publiee: "publiée", validee: "validée par un humain", ia: "générée par IA, non vérifiée", "ia-relue": "générée par IA puis relue" }[t.origine], source: t.source })),
@@ -121,7 +121,7 @@ async function rechercherHadith({ requete, recueil }: z.infer<typeof schemas.rec
 async function lireRapport({ recueil, numero }: z.infer<typeof schemas.lire_rapport>, locale: string) {
   const c = EXTERNAL_COLLECTIONS.find((x) => x.id === recueil)!;
   const maillons = await chaineKg(c.key, numero);
-  if (!maillons) return { resultat: AUCUN, note: "La chaîne de ce récit n'est pas encore analysée sur Milaghaiba.", page: `/${locale}/hadith/${recueil}/ara/${numero}` };
+  if (!maillons) return { resultat: AUCUN, note: "La chaîne de ce récit n'est pas encore analysée sur El Milaghaiba.", page: `/${locale}/hadith/${recueil}/ara/${numero}` };
   return {
     source: "Base « الجامع — Hadith Knowledge Graph » (emadjumaah), CC BY 4.0 ; chaîne reliée au hadith par comparaison des textes arabes",
     ordre: "du Compagnon jusqu'à l'auteur du recueil",
@@ -161,7 +161,7 @@ function definirTerme({ terme }: z.infer<typeof schemas.definir_terme>, locale: 
   if (!t) return { resultat: AUCUN };
   const def = definitionGlossaire(t.id, locale);
   const trad = t.langues[locale] ?? t.langues.fr!;
-  return { terme: trad.terme, arabe: t.ar, translitteration: t.translitteration, definition: def?.texte ?? trad.explication, page: `/${locale}/glossaire#${t.id}`, source: "Glossaire de Milaghaiba" };
+  return { terme: trad.terme, arabe: t.ar, translitteration: t.translitteration, definition: def?.texte ?? trad.explication, page: `/${locale}/glossaire#${t.id}`, source: "Glossaire d'El Milaghaiba" };
 }
 
 // Exécute un outil après validation de son entrée (le modèle peut produire une entrée incomplète).

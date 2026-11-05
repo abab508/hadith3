@@ -5,7 +5,7 @@ import ModerationForum from "@/composants/ModerationForum";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "adminForum" });
-  return { robots: { index: false, follow: false }, title: `${t("titre")} — Milaghaiba` };
+  return { robots: { index: false, follow: false }, title: `${t("titre")} — El Milaghaiba` };
 }
 
 export default async function PageModerationForum({ params }: { params: Promise<{ locale: string }> }) {

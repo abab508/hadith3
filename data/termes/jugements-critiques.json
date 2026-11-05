@@ -1,0 +1,1814 @@
+{
+"source": "Traduction IA des termes de critique des transmetteurs (jarḥ wa taʿdīl), à relire par un spécialiste ; l'arabe de la source reste la référence.",
+"termes": {
+"ثقة": {
+"fr": "fiable",
+"en": "reliable",
+"es": "fiable",
+"id": "tepercaya",
+"ms": "dipercayai",
+"tr": "güvenilir",
+"ur": "ثقہ (قابلِ اعتماد)"
+},
+"ثقه": {
+"fr": "fiable",
+"en": "reliable",
+"es": "fiable",
+"id": "tepercaya",
+"ms": "dipercayai",
+"tr": "güvenilir",
+"ur": "ثقہ (قابلِ اعتماد)"
+},
+"ثقة ثبت": {
+"fr": "fiable et solide",
+"en": "reliable and firm",
+"es": "fiable y firme",
+"id": "tepercaya dan kokoh",
+"ms": "dipercayai dan kukuh",
+"tr": "güvenilir ve sağlam",
+"ur": "ثقہ اور پختہ"
+},
+"ثقة حافظ": {
+"fr": "fiable, mémorisateur",
+"en": "reliable, a memorizer",
+"es": "fiable, memorizador",
+"id": "tepercaya, hafiz",
+"ms": "dipercayai, hafiz",
+"tr": "güvenilir, hâfız",
+"ur": "ثقہ، حافظ"
+},
+"ثقة متقن": {
+"fr": "fiable et rigoureux",
+"en": "reliable and meticulous",
+"es": "fiable y riguroso",
+"id": "tepercaya dan cermat",
+"ms": "dipercayai dan teliti",
+"tr": "güvenilir ve titiz",
+"ur": "ثقہ اور پختہ کار"
+},
+"ثقة مأمون": {
+"fr": "fiable et digne de confiance",
+"en": "reliable and trustworthy",
+"es": "fiable y digno de confianza",
+"id": "tepercaya dan amanah",
+"ms": "dipercayai dan amanah",
+"tr": "güvenilir ve emin",
+"ur": "ثقہ اور امانت دار"
+},
+"ثقة ثقة": {
+"fr": "fiable, fiable",
+"en": "reliable, reliable",
+"es": "fiable, fiable",
+"id": "tepercaya, tepercaya",
+"ms": "dipercayai, dipercayai",
+"tr": "güvenilir, güvenilir",
+"ur": "ثقہ، ثقہ"
+},
+"ثقة حجة": {
+"fr": "fiable, fait autorité",
+"en": "reliable, an authority",
+"es": "fiable, autoridad",
+"id": "tepercaya, hujah",
+"ms": "dipercayai, hujah",
+"tr": "güvenilir, hüccet",
+"ur": "ثقہ، حجت"
+},
+"ثقة فقيه": {
+"fr": "fiable, juriste",
+"en": "reliable, a jurist",
+"es": "fiable, jurista",
+"id": "tepercaya, ahli fikih",
+"ms": "dipercayai, ahli fiqh",
+"tr": "güvenilir, fakih",
+"ur": "ثقہ، فقیہ"
+},
+"ثقة عابد": {
+"fr": "fiable, dévot",
+"en": "reliable, devout",
+"es": "fiable, devoto",
+"id": "tepercaya, ahli ibadah",
+"ms": "dipercayai, ahli ibadah",
+"tr": "güvenilir, âbid",
+"ur": "ثقہ، عبادت گزار"
+},
+"ثقة إمام": {
+"fr": "fiable, imam",
+"en": "reliable, an imam",
+"es": "fiable, imán",
+"id": "tepercaya, imam",
+"ms": "dipercayai, imam",
+"tr": "güvenilir, imam",
+"ur": "ثقہ، امام"
+},
+"ثقة حافظ فقيه": {
+"fr": "fiable, mémorisateur, juriste",
+"en": "reliable, memorizer, jurist",
+"es": "fiable, memorizador, jurista",
+"id": "tepercaya, hafiz, ahli fikih",
+"ms": "dipercayai, hafiz, ahli fiqh",
+"tr": "güvenilir, hâfız, fakih",
+"ur": "ثقہ، حافظ، فقیہ"
+},
+"ثقة ثبت فقيه": {
+"fr": "fiable, solide, juriste",
+"en": "reliable, firm, jurist",
+"es": "fiable, firme, jurista",
+"id": "tepercaya, kokoh, ahli fikih",
+"ms": "dipercayai, kukuh, ahli fiqh",
+"tr": "güvenilir, sağlam, fakih",
+"ur": "ثقہ، پختہ، فقیہ"
+},
+"ثبت": {
+"fr": "solide",
+"en": "firm",
+"es": "firme",
+"id": "kokoh",
+"ms": "kukuh",
+"tr": "sağlam",
+"ur": "پختہ"
+},
+"ثبتت": {
+"fr": "solide",
+"en": "firm",
+"es": "firme",
+"id": "kokoh",
+"ms": "kukuh",
+"tr": "sağlam",
+"ur": "پختہ"
+},
+"حافظ": {
+"fr": "mémorisateur",
+"en": "memorizer",
+"es": "memorizador",
+"id": "hafiz",
+"ms": "hafiz",
+"tr": "hâfız",
+"ur": "حافظ"
+},
+"الحافظ": {
+"fr": "le mémorisateur",
+"en": "the memorizer",
+"es": "el memorizador",
+"id": "sang hafiz",
+"ms": "sang hafiz",
+"tr": "hâfız",
+"ur": "حافظ"
+},
+"متقن": {
+"fr": "rigoureux",
+"en": "meticulous",
+"es": "riguroso",
+"id": "cermat",
+"ms": "teliti",
+"tr": "titiz",
+"ur": "پختہ کار"
+},
+"مأمون": {
+"fr": "digne de confiance",
+"en": "trustworthy",
+"es": "digno de confianza",
+"id": "amanah",
+"ms": "amanah",
+"tr": "emin",
+"ur": "امانت دار"
+},
+"أمين": {
+"fr": "digne de confiance",
+"en": "trustworthy",
+"es": "digno de confianza",
+"id": "amanah",
+"ms": "amanah",
+"tr": "emin",
+"ur": "امانت دار"
+},
+"حجة": {
+"fr": "fait autorité",
+"en": "an authority",
+"es": "autoridad",
+"id": "hujah",
+"ms": "hujah",
+"tr": "hüccet",
+"ur": "حجت"
+},
+"إمام": {
+"fr": "imam",
+"en": "imam",
+"es": "imán",
+"id": "imam",
+"ms": "imam",
+"tr": "imam",
+"ur": "امام"
+},
+"إمام حجة": {
+"fr": "imam qui fait autorité",
+"en": "an authoritative imam",
+"es": "imán de autoridad",
+"id": "imam yang menjadi hujah",
+"ms": "imam yang menjadi hujah",
+"tr": "hüccet bir imam",
+"ur": "امام، حجت"
+},
+"فقيه": {
+"fr": "juriste",
+"en": "jurist",
+"es": "jurista",
+"id": "ahli fikih",
+"ms": "ahli fiqh",
+"tr": "fakih",
+"ur": "فقیہ"
+},
+"عابد": {
+"fr": "dévot",
+"en": "devout",
+"es": "devoto",
+"id": "ahli ibadah",
+"ms": "ahli ibadah",
+"tr": "âbid",
+"ur": "عبادت گزار"
+},
+"فاضل": {
+"fr": "vertueux",
+"en": "virtuous",
+"es": "virtuoso",
+"id": "utama",
+"ms": "mulia",
+"tr": "faziletli",
+"ur": "فاضل"
+},
+"قدوة": {
+"fr": "modèle",
+"en": "a role model",
+"es": "modelo",
+"id": "teladan",
+"ms": "teladan",
+"tr": "örnek",
+"ur": "نمونہ"
+},
+"زاهد": {
+"fr": "ascète",
+"en": "ascetic",
+"es": "asceta",
+"id": "zuhud",
+"ms": "zuhud",
+"tr": "zâhid",
+"ur": "زاہد"
+},
+"ضابط": {
+"fr": "précis",
+"en": "precise",
+"es": "preciso",
+"id": "akurat",
+"ms": "tepat",
+"tr": "zabt sahibi",
+"ur": "ضابط"
+},
+"يحفظ": {
+"fr": "retient bien",
+"en": "memorizes well",
+"es": "memoriza bien",
+"id": "hafalannya baik",
+"ms": "hafalannya baik",
+"tr": "iyi ezberler",
+"ur": "اچھا یاد رکھتا ہے"
+},
+"مصنف": {
+"fr": "auteur d'ouvrages",
+"en": "author of works",
+"es": "autor de obras",
+"id": "penulis kitab",
+"ms": "pengarang kitab",
+"tr": "eser sahibi",
+"ur": "مصنف"
+},
+"أحد الحفاظ": {
+"fr": "l'un des mémorisateurs",
+"en": "one of the memorizers",
+"es": "uno de los memorizadores",
+"id": "salah satu hafiz",
+"ms": "salah seorang hafiz",
+"tr": "hâfızlardan biri",
+"ur": "حفاظ میں سے ایک"
+},
+"مكثر": {
+"fr": "rapporte beaucoup",
+"en": "narrates much",
+"es": "narra mucho",
+"id": "banyak meriwayatkan",
+"ms": "banyak meriwayatkan",
+"tr": "çok rivayet eder",
+"ur": "کثیر الروایہ"
+},
+"صدوق": {
+"fr": "véridique",
+"en": "truthful",
+"es": "veraz",
+"id": "jujur",
+"ms": "jujur",
+"tr": "sadûk (doğru sözlü)",
+"ur": "صدوق (سچا)"
+},
+"صدوق حسن الحديث": {
+"fr": "véridique, hadiths bons",
+"en": "truthful, good in hadith",
+"es": "veraz, hadices buenos",
+"id": "jujur, hadisnya hasan",
+"ms": "jujur, hadisnya hasan",
+"tr": "sadûk, hadisi hasen",
+"ur": "صدوق، حسن الحدیث"
+},
+"حسن الحديث": {
+"fr": "hadiths bons",
+"en": "good in hadith",
+"es": "hadices buenos",
+"id": "hadisnya hasan",
+"ms": "hadisnya hasan",
+"tr": "hadisi hasen",
+"ur": "حسن الحدیث"
+},
+"صدوق يخطئ": {
+"fr": "véridique, se trompe parfois",
+"en": "truthful, makes mistakes",
+"es": "veraz, a veces se equivoca",
+"id": "jujur, kadang keliru",
+"ms": "jujur, kadang tersilap",
+"tr": "sadûk, hata eder",
+"ur": "صدوق، غلطی کرتا ہے"
+},
+"صدوق يخطئ كثيرا": {
+"fr": "véridique, se trompe souvent",
+"en": "truthful, often mistaken",
+"es": "veraz, se equivoca a menudo",
+"id": "jujur, sering keliru",
+"ms": "jujur, sering tersilap",
+"tr": "sadûk, çok hata eder",
+"ur": "صدوق، بہت غلطی کرتا ہے"
+},
+"صدوق له أوهام": {
+"fr": "véridique, a des méprises",
+"en": "truthful, has errors",
+"es": "veraz, tiene errores",
+"id": "jujur, punya kekeliruan",
+"ms": "jujur, ada kekeliruan",
+"tr": "sadûk, vehimleri var",
+"ur": "صدوق، اس کے اوہام ہیں"
+},
+"صدوق يهم": {
+"fr": "véridique, commet des méprises",
+"en": "truthful, errs",
+"es": "veraz, comete errores",
+"id": "jujur, kadang salah duga",
+"ms": "jujur, kadang tersalah",
+"tr": "sadûk, vehmeder",
+"ur": "صدوق، وہم کرتا ہے"
+},
+"صدوق يهم كثيرا": {
+"fr": "véridique, commet souvent des méprises",
+"en": "truthful, errs often",
+"es": "veraz, yerra a menudo",
+"id": "jujur, sering salah duga",
+"ms": "jujur, sering tersalah",
+"tr": "sadûk, çok vehmeder",
+"ur": "صدوق، بہت وہم کرتا ہے"
+},
+"صدوق يغلط": {
+"fr": "véridique, se trompe",
+"en": "truthful, errs",
+"es": "veraz, se equivoca",
+"id": "jujur, keliru",
+"ms": "jujur, tersilap",
+"tr": "sadûk, yanılır",
+"ur": "صدوق، غلطی کرتا ہے"
+},
+"صدوق ربما وهم": {
+"fr": "véridique, s'est parfois mépris",
+"en": "truthful, sometimes erred",
+"es": "veraz, a veces erró",
+"id": "jujur, terkadang salah duga",
+"ms": "jujur, kadangkala tersalah",
+"tr": "sadûk, bazen vehmetmiş",
+"ur": "صدوق، کبھی وہم ہوا"
+},
+"صدوق سيئ الحفظ": {
+"fr": "véridique, mauvaise mémoire",
+"en": "truthful, poor memory",
+"es": "veraz, mala memoria",
+"id": "jujur, hafalannya buruk",
+"ms": "jujur, hafalannya lemah",
+"tr": "sadûk, hafızası zayıf",
+"ur": "صدوق، کمزور حافظہ"
+},
+"صدوق سيء الحفظ": {
+"fr": "véridique, mauvaise mémoire",
+"en": "truthful, poor memory",
+"es": "veraz, mala memoria",
+"id": "jujur, hafalannya buruk",
+"ms": "jujur, hafalannya lemah",
+"tr": "sadûk, hafızası zayıf",
+"ur": "صدوق، کمزور حافظہ"
+},
+"سيء الحفظ": {
+"fr": "mauvaise mémoire",
+"en": "poor memory",
+"es": "mala memoria",
+"id": "hafalannya buruk",
+"ms": "hafalannya lemah",
+"tr": "hafızası zayıf",
+"ur": "کمزور حافظہ"
+},
+"صدوق اختلط": {
+"fr": "véridique, sa mémoire s'est altérée",
+"en": "truthful, his memory deteriorated",
+"es": "veraz, su memoria se deterioró",
+"id": "jujur, hafalannya kacau",
+"ms": "jujur, hafalannya bercampur",
+"tr": "sadûk, ihtilât etti",
+"ur": "صدوق، اختلاط ہوا"
+},
+"صدوق رمي بالتشيع": {
+"fr": "véridique, accusé de chiisme",
+"en": "truthful, accused of Shiism",
+"es": "veraz, acusado de chiismo",
+"id": "jujur, dituduh Syiah",
+"ms": "jujur, dituduh Syiah",
+"tr": "sadûk, Şiîlikle itham edildi",
+"ur": "صدوق، تشیع کا الزام"
+},
+"صدوق رمي بالقدر": {
+"fr": "véridique, accusé de qadarisme",
+"en": "truthful, accused of Qadarism",
+"es": "veraz, acusado de qadarismo",
+"id": "jujur, dituduh Qadariyah",
+"ms": "jujur, dituduh Qadariyah",
+"tr": "sadûk, Kaderiyecilikle itham edildi",
+"ur": "صدوق، قدری ہونے کا الزام"
+},
+"صدوق رمي بالإرجاء": {
+"fr": "véridique, accusé de murjiisme",
+"en": "truthful, accused of Irjāʾ",
+"es": "veraz, acusado de murjiismo",
+"id": "jujur, dituduh Murjiah",
+"ms": "jujur, dituduh Murjiah",
+"tr": "sadûk, Mürcielikle itham edildi",
+"ur": "صدوق، ارجاء کا الزام"
+},
+"صدوق يدلس": {
+"fr": "véridique, pratique le tadlīs",
+"en": "truthful, practises tadlīs",
+"es": "veraz, practica el tadlīs",
+"id": "jujur, melakukan tadlis",
+"ms": "jujur, melakukan tadlis",
+"tr": "sadûk, tedlîs yapar",
+"ur": "صدوق، تدلیس کرتا ہے"
+},
+"صدوق كثير الخطأ": {
+"fr": "véridique, se trompe souvent",
+"en": "truthful, often mistaken",
+"es": "veraz, se equivoca a menudo",
+"id": "jujur, banyak keliru",
+"ms": "jujur, banyak tersilap",
+"tr": "sadûk, çok hata eder",
+"ur": "صدوق، کثیر الخطا"
+},
+"صدوق يتشيع": {
+"fr": "véridique, tendances chiites",
+"en": "truthful, Shiite leanings",
+"es": "veraz, tendencias chiíes",
+"id": "jujur, condong Syiah",
+"ms": "jujur, cenderung Syiah",
+"tr": "sadûk, Şiî eğilimli",
+"ur": "صدوق، شیعی رجحان"
+},
+"صدوق كثير الإرسال": {
+"fr": "véridique, pratique souvent l'irsāl",
+"en": "truthful, often practises irsāl",
+"es": "veraz, practica a menudo el irsāl",
+"id": "jujur, sering melakukan irsal",
+"ms": "jujur, sering melakukan irsal",
+"tr": "sadûk, çok irsal yapar",
+"ur": "صدوق، کثیر الارسال"
+},
+"مقبول": {
+"fr": "acceptable",
+"en": "acceptable",
+"es": "aceptable",
+"id": "diterima",
+"ms": "diterima",
+"tr": "makbul",
+"ur": "مقبول"
+},
+"مقبولة": {
+"fr": "acceptable",
+"en": "acceptable",
+"es": "aceptable",
+"id": "diterima",
+"ms": "diterima",
+"tr": "makbul",
+"ur": "مقبول"
+},
+"صحابي": {
+"fr": "Compagnon",
+"en": "Companion",
+"es": "Compañero",
+"id": "Sahabat",
+"ms": "Sahabat",
+"tr": "sahâbî",
+"ur": "صحابی"
+},
+"صحابية": {
+"fr": "Compagnonne",
+"en": "female Companion",
+"es": "Compañera",
+"id": "Sahabiyah",
+"ms": "Sahabiah",
+"tr": "sahâbiye",
+"ur": "صحابیہ"
+},
+"صحابي صغير": {
+"fr": "jeune Compagnon",
+"en": "young Companion",
+"es": "Compañero joven",
+"id": "Sahabat muda",
+"ms": "Sahabat muda",
+"tr": "küçük sahâbî",
+"ur": "کم سن صحابی"
+},
+"له صحبة": {
+"fr": "a été Compagnon",
+"en": "was a Companion",
+"es": "fue Compañero",
+"id": "termasuk Sahabat",
+"ms": "termasuk Sahabat",
+"tr": "sahâbîdir",
+"ur": "صحابی ہیں"
+},
+"لها صحبة": {
+"fr": "a été Compagnonne",
+"en": "was a female Companion",
+"es": "fue Compañera",
+"id": "termasuk Sahabiyah",
+"ms": "termasuk Sahabiah",
+"tr": "sahâbiyedir",
+"ur": "صحابیہ ہیں"
+},
+"له رؤية": {
+"fr": "a vu le Prophète ﷺ",
+"en": "saw the Prophet ﷺ",
+"es": "vio al Profeta ﷺ",
+"id": "pernah melihat Nabi ﷺ",
+"ms": "pernah melihat Nabi ﷺ",
+"tr": "Peygamber'i ﷺ gördü",
+"ur": "نبی ﷺ کو دیکھا"
+},
+"لها رؤية": {
+"fr": "a vu le Prophète ﷺ",
+"en": "saw the Prophet ﷺ",
+"es": "vio al Profeta ﷺ",
+"id": "pernah melihat Nabi ﷺ",
+"ms": "pernah melihat Nabi ﷺ",
+"tr": "Peygamber'i ﷺ gördü",
+"ur": "نبی ﷺ کو دیکھا"
+},
+"له إدراك": {
+"fr": "a connu l'époque du Prophète ﷺ",
+"en": "lived in the Prophet's ﷺ time",
+"es": "conoció la época del Profeta ﷺ",
+"id": "sezaman dengan Nabi ﷺ",
+"ms": "sezaman dengan Nabi ﷺ",
+"tr": "Peygamber ﷺ dönemine yetişti",
+"ur": "نبی ﷺ کا زمانہ پایا"
+},
+"مخضرم": {
+"fr": "mukhaḍram (avant et après l'islam)",
+"en": "mukhaḍram (lived before and after Islam)",
+"es": "mujadram (antes y después del islam)",
+"id": "mukhadram (sebelum dan sesudah Islam)",
+"ms": "mukhadram (sebelum dan selepas Islam)",
+"tr": "muhadram (İslam öncesi ve sonrası)",
+"ur": "مخضرم"
+},
+"ثقة مخضرم": {
+"fr": "fiable, mukhaḍram",
+"en": "reliable, mukhaḍram",
+"es": "fiable, mujadram",
+"id": "tepercaya, mukhadram",
+"ms": "dipercayai, mukhadram",
+"tr": "güvenilir, muhadram",
+"ur": "ثقہ، مخضرم"
+},
+"مختلف في صحبته": {
+"fr": "sa qualité de Compagnon est discutée",
+"en": "his Companionship is disputed",
+"es": "su condición de Compañero es discutida",
+"id": "status sahabatnya diperselisihkan",
+"ms": "status sahabatnya dipertikaikan",
+"tr": "sahâbîliği tartışmalı",
+"ur": "صحابیت میں اختلاف ہے"
+},
+"مختلف في صحبتها": {
+"fr": "sa qualité de Compagnonne est discutée",
+"en": "her Companionship is disputed",
+"es": "su condición de Compañera es discutida",
+"id": "status sahabiyahnya diperselisihkan",
+"ms": "status sahabiahnya dipertikaikan",
+"tr": "sahâbiyeliği tartışmalı",
+"ur": "صحابیت میں اختلاف ہے"
+},
+"لم تثبت له صحبة": {
+"fr": "sa qualité de Compagnon n'est pas établie",
+"en": "his Companionship is not established",
+"es": "su condición de Compañero no está probada",
+"id": "status sahabatnya tidak terbukti",
+"ms": "status sahabatnya tidak sabit",
+"tr": "sahâbîliği sabit değil",
+"ur": "صحابیت ثابت نہیں"
+},
+"لم يثبت له صحبة": {
+"fr": "sa qualité de Compagnon n'est pas établie",
+"en": "his Companionship is not established",
+"es": "su condición de Compañero no está probada",
+"id": "status sahabatnya tidak terbukti",
+"ms": "status sahabatnya tidak sabit",
+"tr": "sahâbîliği sabit değil",
+"ur": "صحابیت ثابت نہیں"
+},
+"والراجح أنه تابعي": {
+"fr": "l'avis le plus fort : c'est un Successeur",
+"en": "the stronger view: he is a Successor",
+"es": "la opinión más fuerte: es un Sucesor",
+"id": "pendapat terkuat: ia tabiin",
+"ms": "pendapat terkuat: dia tabiin",
+"tr": "tercih edilen görüş: tâbiîdir",
+"ur": "راجح یہ ہے کہ تابعی ہیں"
+},
+"والراجح أنها تابعية": {
+"fr": "l'avis le plus fort : c'est une Successeuse",
+"en": "the stronger view: she is a Successor",
+"es": "la opinión más fuerte: es una Sucesora",
+"id": "pendapat terkuat: ia tabiiyah",
+"ms": "pendapat terkuat: dia tabiiah",
+"tr": "tercih edilen görüş: tâbiiyedir",
+"ur": "راجح یہ ہے کہ تابعیہ ہیں"
+},
+"والأكثر أنه صحابي": {
+"fr": "pour la majorité, c'est un Compagnon",
+"en": "most say he is a Companion",
+"es": "según la mayoría, es Compañero",
+"id": "mayoritas: ia Sahabat",
+"ms": "majoriti: dia Sahabat",
+"tr": "çoğunluğa göre sahâbîdir",
+"ur": "اکثر کے نزدیک صحابی ہیں"
+},
+"ذكره في الصحابة": {
+"fr": "cité parmi les Compagnons",
+"en": "listed among the Companions",
+"es": "citado entre los Compañeros",
+"id": "disebut di antara Sahabat",
+"ms": "disebut dalam kalangan Sahabat",
+"tr": "sahâbîler arasında anılmış",
+"ur": "صحابہ میں ذکر کیا"
+},
+"ذكرها في الصحابة": {
+"fr": "citée parmi les Compagnons",
+"en": "listed among the Companions",
+"es": "citada entre los Compañeros",
+"id": "disebut di antara Sahabat",
+"ms": "disebut dalam kalangan Sahabat",
+"tr": "sahâbîler arasında anılmış",
+"ur": "صحابہ میں ذکر کیا"
+},
+"تابعي": {
+"fr": "Successeur (tābiʿī)",
+"en": "Successor (tābiʿī)",
+"es": "Sucesor (tābiʿī)",
+"id": "tabiin",
+"ms": "tabiin",
+"tr": "tâbiî",
+"ur": "تابعی"
+},
+"تابعية": {
+"fr": "Successeuse (tābiʿiyya)",
+"en": "female Successor",
+"es": "Sucesora",
+"id": "tabiiyah",
+"ms": "tabiiah",
+"tr": "tâbiiye",
+"ur": "تابعیہ"
+},
+"من التابعين": {
+"fr": "parmi les Successeurs",
+"en": "among the Successors",
+"es": "entre los Sucesores",
+"id": "termasuk tabiin",
+"ms": "termasuk tabiin",
+"tr": "tâbiîlerden",
+"ur": "تابعین میں سے"
+},
+"شهد بدرا": {
+"fr": "a participé à Badr",
+"en": "took part in Badr",
+"es": "participó en Badr",
+"id": "ikut Perang Badar",
+"ms": "menyertai Perang Badar",
+"tr": "Bedir'e katıldı",
+"ur": "بدر میں شریک ہوئے"
+},
+"ضعيف": {
+"fr": "faible",
+"en": "weak",
+"es": "débil",
+"id": "lemah",
+"ms": "lemah",
+"tr": "zayıf",
+"ur": "ضعیف"
+},
+"ضعيف الحديث": {
+"fr": "hadiths faibles",
+"en": "weak in hadith",
+"es": "débil en hadiz",
+"id": "hadisnya lemah",
+"ms": "hadisnya lemah",
+"tr": "hadiste zayıf",
+"ur": "ضعیف الحدیث"
+},
+"ضعيف جدا": {
+"fr": "très faible",
+"en": "very weak",
+"es": "muy débil",
+"id": "sangat lemah",
+"ms": "sangat lemah",
+"tr": "çok zayıf",
+"ur": "بہت ضعیف"
+},
+"ضعيف يعتبر به": {
+"fr": "faible, retenu en appui",
+"en": "weak, used as support",
+"es": "débil, usado como apoyo",
+"id": "lemah, dipakai sebagai penguat",
+"ms": "lemah, diambil sebagai sokongan",
+"tr": "zayıf, destek olarak alınır",
+"ur": "ضعیف، اعتبار کے لیے"
+},
+"ضعيف يعتبر به في المتابعات والشواهد": {
+"fr": "faible, retenu en appui (corroborations)",
+"en": "weak, used in corroborations",
+"es": "débil, usado en corroboraciones",
+"id": "lemah, dipakai dalam mutaba'at dan syawahid",
+"ms": "lemah, diambil dalam mutaba'at dan syawahid",
+"tr": "zayıf, mütâbaat ve şevâhidde alınır",
+"ur": "ضعیف، متابعات و شواہد میں معتبر"
+},
+"يعتبر به": {
+"fr": "retenu en appui",
+"en": "used as support",
+"es": "usado como apoyo",
+"id": "dipakai sebagai penguat",
+"ms": "diambil sebagai sokongan",
+"tr": "destek olarak alınır",
+"ur": "اعتبار کیا جاتا ہے"
+},
+"ضعفه": {
+"fr": "l'a déclaré faible",
+"en": "declared him weak",
+"es": "lo declaró débil",
+"id": "melemahkannya",
+"ms": "melemahkannya",
+"tr": "zayıf saydı",
+"ur": "ضعیف قرار دیا"
+},
+"ضعفوه": {
+"fr": "ils l'ont déclaré faible",
+"en": "they declared him weak",
+"es": "lo declararon débil",
+"id": "mereka melemahkannya",
+"ms": "mereka melemahkannya",
+"tr": "zayıf saydılar",
+"ur": "ضعیف قرار دیا"
+},
+"ضعف": {
+"fr": "faiblesse",
+"en": "weakness",
+"es": "debilidad",
+"id": "kelemahan",
+"ms": "kelemahan",
+"tr": "zayıflık",
+"ur": "ضعف"
+},
+"فيه ضعف": {
+"fr": "a de la faiblesse",
+"en": "has some weakness",
+"es": "tiene debilidad",
+"id": "ada kelemahan",
+"ms": "ada kelemahan",
+"tr": "zayıflığı var",
+"ur": "اس میں ضعف ہے"
+},
+"لين": {
+"fr": "peu sûr",
+"en": "soft (weak)",
+"es": "poco seguro",
+"id": "lunak (lemah)",
+"ms": "lemah sedikit",
+"tr": "leyyin (biraz zayıf)",
+"ur": "لین (کمزور)"
+},
+"لين الحديث": {
+"fr": "hadiths peu sûrs",
+"en": "soft in hadith",
+"es": "poco seguro en hadiz",
+"id": "hadisnya lunak",
+"ms": "hadisnya agak lemah",
+"tr": "hadiste leyyin",
+"ur": "لین الحدیث"
+},
+"فيه لين": {
+"fr": "a quelque faiblesse",
+"en": "has some softness",
+"es": "tiene alguna debilidad",
+"id": "ada kelunakan",
+"ms": "ada sedikit kelemahan",
+"tr": "biraz zayıflığı var",
+"ur": "اس میں کمزوری ہے"
+},
+"واه": {
+"fr": "très faible",
+"en": "very weak",
+"es": "muy débil",
+"id": "sangat lemah",
+"ms": "sangat lemah",
+"tr": "çok zayıf",
+"ur": "واہی (بہت کمزور)"
+},
+"مجهول": {
+"fr": "inconnu",
+"en": "unknown",
+"es": "desconocido",
+"id": "tidak dikenal",
+"ms": "tidak dikenali",
+"tr": "meçhul",
+"ur": "مجہول"
+},
+"مجهول الحال": {
+"fr": "état inconnu",
+"en": "condition unknown",
+"es": "estado desconocido",
+"id": "keadaannya tidak dikenal",
+"ms": "keadaannya tidak dikenali",
+"tr": "durumu meçhul",
+"ur": "مجہول الحال"
+},
+"مجهول الحديث": {
+"fr": "hadiths inconnus",
+"en": "unknown in hadith",
+"es": "desconocido en hadiz",
+"id": "hadisnya tidak dikenal",
+"ms": "hadisnya tidak dikenali",
+"tr": "hadiste meçhul",
+"ur": "مجہول الحدیث"
+},
+"مستور": {
+"fr": "état non connu",
+"en": "of hidden condition",
+"es": "de estado oculto",
+"id": "tertutup keadaannya",
+"ms": "tersembunyi keadaannya",
+"tr": "mestûr",
+"ur": "مستور"
+},
+"لا يعرف": {
+"fr": "inconnu",
+"en": "not known",
+"es": "no conocido",
+"id": "tidak dikenal",
+"ms": "tidak dikenali",
+"tr": "bilinmiyor",
+"ur": "معروف نہیں"
+},
+"لا يعرف حاله": {
+"fr": "son état est inconnu",
+"en": "his condition is unknown",
+"es": "su estado es desconocido",
+"id": "keadaannya tidak diketahui",
+"ms": "keadaannya tidak diketahui",
+"tr": "durumu bilinmiyor",
+"ur": "اس کا حال معلوم نہیں"
+},
+"لا أعرفه": {
+"fr": "je ne le connais pas",
+"en": "I do not know him",
+"es": "no lo conozco",
+"id": "aku tidak mengenalnya",
+"ms": "saya tidak mengenalinya",
+"tr": "onu tanımıyorum",
+"ur": "میں اسے نہیں جانتا"
+},
+"متروك": {
+"fr": "abandonné",
+"en": "abandoned",
+"es": "abandonado",
+"id": "ditinggalkan",
+"ms": "ditinggalkan",
+"tr": "metrûk",
+"ur": "متروک"
+},
+"متروك الحديث": {
+"fr": "hadiths abandonnés",
+"en": "abandoned in hadith",
+"es": "abandonado en hadiz",
+"id": "hadisnya ditinggalkan",
+"ms": "hadisnya ditinggalkan",
+"tr": "hadisi metrûk",
+"ur": "متروک الحدیث"
+},
+"منكر": {
+"fr": "rejeté",
+"en": "denounced",
+"es": "rechazado",
+"id": "munkar",
+"ms": "munkar",
+"tr": "münker",
+"ur": "منکر"
+},
+"منكر الحديث": {
+"fr": "hadiths rejetés",
+"en": "denounced in hadith",
+"es": "hadices rechazados",
+"id": "hadisnya munkar",
+"ms": "hadisnya munkar",
+"tr": "hadisi münker",
+"ur": "منکر الحدیث"
+},
+"له مناكير": {
+"fr": "a des hadiths rejetés",
+"en": "has denounced narrations",
+"es": "tiene narraciones rechazadas",
+"id": "punya riwayat munkar",
+"ms": "ada riwayat munkar",
+"tr": "münker rivayetleri var",
+"ur": "اس کی منکر روایات ہیں"
+},
+"عنده مناكير": {
+"fr": "a des hadiths rejetés",
+"en": "has denounced narrations",
+"es": "tiene narraciones rechazadas",
+"id": "punya riwayat munkar",
+"ms": "ada riwayat munkar",
+"tr": "münker rivayetleri var",
+"ur": "اس کے پاس منکر روایات ہیں"
+},
+"يروي المناكير": {
+"fr": "rapporte des hadiths rejetés",
+"en": "narrates denounced reports",
+"es": "narra relatos rechazados",
+"id": "meriwayatkan yang munkar",
+"ms": "meriwayatkan yang munkar",
+"tr": "münker rivayet eder",
+"ur": "منکر روایات بیان کرتا ہے"
+},
+"متهم بالكذب": {
+"fr": "accusé de mensonge",
+"en": "accused of lying",
+"es": "acusado de mentir",
+"id": "tertuduh dusta",
+"ms": "dituduh berdusta",
+"tr": "yalanla itham edildi",
+"ur": "جھوٹ کا متہم"
+},
+"متهم بالوضع": {
+"fr": "accusé de forger des hadiths",
+"en": "accused of forgery",
+"es": "acusado de forjar hadices",
+"id": "tertuduh memalsukan hadis",
+"ms": "dituduh memalsukan hadis",
+"tr": "hadis uydurmakla itham edildi",
+"ur": "وضع کا متہم"
+},
+"ورمي بالرفض": {
+"fr": "et accusé de rafḍ",
+"en": "and accused of Rafḍ",
+"es": "y acusado de rafḍ",
+"id": "dan dituduh Rafidhah",
+"ms": "dan dituduh Rafidhah",
+"tr": "ve Râfızîlikle itham edildi",
+"ur": "اور رفض کا الزام"
+},
+"وضاع": {
+"fr": "forgeur de hadiths",
+"en": "forger of hadith",
+"es": "falsificador de hadices",
+"id": "pemalsu hadis",
+"ms": "pemalsu hadis",
+"tr": "hadis uyduran",
+"ur": "وضاع (حدیث گھڑنے والا)"
+},
+"كذاب": {
+"fr": "menteur",
+"en": "liar",
+"es": "mentiroso",
+"id": "pendusta",
+"ms": "pendusta",
+"tr": "yalancı",
+"ur": "کذاب"
+},
+"يكذب": {
+"fr": "ment",
+"en": "lies",
+"es": "miente",
+"id": "berdusta",
+"ms": "berdusta",
+"tr": "yalan söyler",
+"ur": "جھوٹ بولتا ہے"
+},
+"يضع الحديث": {
+"fr": "forge des hadiths",
+"en": "forges hadith",
+"es": "forja hadices",
+"id": "memalsukan hadis",
+"ms": "memalsukan hadis",
+"tr": "hadis uydurur",
+"ur": "حدیث گھڑتا ہے"
+},
+"ليس بثقة": {
+"fr": "pas fiable",
+"en": "not reliable",
+"es": "no fiable",
+"id": "tidak tepercaya",
+"ms": "tidak dipercayai",
+"tr": "güvenilir değil",
+"ur": "ثقہ نہیں"
+},
+"ليس بشيء": {
+"fr": "sans valeur",
+"en": "worthless",
+"es": "sin valor",
+"id": "tidak bernilai",
+"ms": "tidak bernilai",
+"tr": "bir şey değil",
+"ur": "کچھ نہیں"
+},
+"ليس بشيء في الحديث": {
+"fr": "sans valeur en hadith",
+"en": "worthless in hadith",
+"es": "sin valor en hadiz",
+"id": "tidak bernilai dalam hadis",
+"ms": "tidak bernilai dalam hadis",
+"tr": "hadiste bir şey değil",
+"ur": "حدیث میں کچھ نہیں"
+},
+"ليس بالقوي": {
+"fr": "pas solide",
+"en": "not strong",
+"es": "no fuerte",
+"id": "tidak kuat",
+"ms": "tidak kuat",
+"tr": "kuvvetli değil",
+"ur": "قوی نہیں"
+},
+"ليس بقوي": {
+"fr": "pas solide",
+"en": "not strong",
+"es": "no fuerte",
+"id": "tidak kuat",
+"ms": "tidak kuat",
+"tr": "kuvvetli değil",
+"ur": "قوی نہیں"
+},
+"ليس بالقوي عندهم": {
+"fr": "pas solide selon eux",
+"en": "not strong in their view",
+"es": "no fuerte según ellos",
+"id": "tidak kuat menurut mereka",
+"ms": "tidak kuat menurut mereka",
+"tr": "onlara göre kuvvetli değil",
+"ur": "ان کے نزدیک قوی نہیں"
+},
+"ليس بذاك": {
+"fr": "pas de grande valeur",
+"en": "not up to much",
+"es": "no de gran valor",
+"id": "tidak seberapa",
+"ms": "tidak seberapa",
+"tr": "pek değil",
+"ur": "کچھ خاص نہیں"
+},
+"ليس به بأس": {
+"fr": "rien à lui reprocher",
+"en": "no harm in him",
+"es": "nada que reprocharle",
+"id": "tidak mengapa",
+"ms": "tiada masalah",
+"tr": "kendisinde beis yok",
+"ur": "اس میں کوئی حرج نہیں"
+},
+"لا بأس به": {
+"fr": "rien à lui reprocher",
+"en": "no harm in him",
+"es": "nada que reprocharle",
+"id": "tidak mengapa",
+"ms": "tiada masalah",
+"tr": "kendisinde beis yok",
+"ur": "اس میں کوئی حرج نہیں"
+},
+"صالح": {
+"fr": "convenable",
+"en": "fair",
+"es": "aceptable",
+"id": "baik",
+"ms": "baik",
+"tr": "sâlih",
+"ur": "صالح"
+},
+"صالح الحديث": {
+"fr": "hadiths convenables",
+"en": "fair in hadith",
+"es": "hadices aceptables",
+"id": "hadisnya baik",
+"ms": "hadisnya baik",
+"tr": "hadisi sâlih",
+"ur": "صالح الحدیث"
+},
+"محله الصدق": {
+"fr": "sa place est la véracité",
+"en": "his place is truthfulness",
+"es": "su lugar es la veracidad",
+"id": "tempatnya kejujuran",
+"ms": "tempatnya kejujuran",
+"tr": "yeri doğruluktur",
+"ur": "اس کا مقام سچائی ہے"
+},
+"شيخ": {
+"fr": "shaykh (rapporteur moyen)",
+"en": "shaykh (average narrator)",
+"es": "šayj (narrador medio)",
+"id": "syaikh (perawi sedang)",
+"ms": "syeikh (perawi sederhana)",
+"tr": "şeyh (orta râvi)",
+"ur": "شیخ (درمیانہ راوی)"
+},
+"يكتب حديثه": {
+"fr": "on note ses hadiths",
+"en": "his hadith is written down",
+"es": "se anotan sus hadices",
+"id": "hadisnya ditulis",
+"ms": "hadisnya ditulis",
+"tr": "hadisi yazılır",
+"ur": "اس کی حدیث لکھی جاتی ہے"
+},
+"يكتب حديثه ولا يحتج به": {
+"fr": "on note ses hadiths, sans s'en servir comme preuve",
+"en": "his hadith is written, not used as proof",
+"es": "se anotan sus hadices, sin usarlos como prueba",
+"id": "hadisnya ditulis, tidak dijadikan hujah",
+"ms": "hadisnya ditulis, tidak dijadikan hujah",
+"tr": "hadisi yazılır, delil alınmaz",
+"ur": "حدیث لکھی جاتی ہے، حجت نہیں"
+},
+"لا يحتج به": {
+"fr": "on ne s'en sert pas comme preuve",
+"en": "not used as proof",
+"es": "no se usa como prueba",
+"id": "tidak dijadikan hujah",
+"ms": "tidak dijadikan hujah",
+"tr": "delil alınmaz",
+"ur": "اس سے حجت نہیں لی جاتی"
+},
+"يحتج به": {
+"fr": "on s'en sert comme preuve",
+"en": "used as proof",
+"es": "se usa como prueba",
+"id": "dijadikan hujah",
+"ms": "dijadikan hujah",
+"tr": "delil alınır",
+"ur": "اس سے حجت لی جاتی ہے"
+},
+"لا يتابع عليه": {
+"fr": "n'est pas corroboré",
+"en": "not corroborated",
+"es": "no corroborado",
+"id": "tidak ada penguatnya",
+"ms": "tiada sokongan",
+"tr": "mütâbaati yok",
+"ur": "اس کی متابعت نہیں"
+},
+"لا يتابع على حديثه": {
+"fr": "ses hadiths ne sont pas corroborés",
+"en": "his hadith is not corroborated",
+"es": "sus hadices no están corroborados",
+"id": "hadisnya tidak ada penguat",
+"ms": "hadisnya tiada sokongan",
+"tr": "hadisine mütâbaat yok",
+"ur": "اس کی حدیث کی متابعت نہیں"
+},
+"وثق": {
+"fr": "déclaré fiable",
+"en": "declared reliable",
+"es": "declarado fiable",
+"id": "dinyatakan tepercaya",
+"ms": "dinyatakan dipercayai",
+"tr": "güvenilir sayıldı",
+"ur": "ثقہ قرار دیا گیا"
+},
+"وثقه": {
+"fr": "l'a déclaré fiable",
+"en": "declared him reliable",
+"es": "lo declaró fiable",
+"id": "menyatakannya tepercaya",
+"ms": "menyatakannya dipercayai",
+"tr": "güvenilir saydı",
+"ur": "ثقہ قرار دیا"
+},
+"وثقوه": {
+"fr": "ils l'ont déclaré fiable",
+"en": "they declared him reliable",
+"es": "lo declararon fiable",
+"id": "mereka menyatakannya tepercaya",
+"ms": "mereka menyatakannya dipercayai",
+"tr": "güvenilir saydılar",
+"ur": "ثقہ قرار دیا"
+},
+"أثنى عليه": {
+"fr": "l'a loué",
+"en": "praised him",
+"es": "lo elogió",
+"id": "memujinya",
+"ms": "memujinya",
+"tr": "onu övdü",
+"ur": "اس کی تعریف کی"
+},
+"صحح حديثه": {
+"fr": "a authentifié ses hadiths",
+"en": "authenticated his hadith",
+"es": "autentificó sus hadices",
+"id": "menshahihkan hadisnya",
+"ms": "mensahihkan hadisnya",
+"tr": "hadisini sahih saydı",
+"ur": "اس کی حدیث کو صحیح کہا"
+},
+"من الثقات": {
+"fr": "parmi les fiables",
+"en": "among the reliable",
+"es": "entre los fiables",
+"id": "termasuk yang tepercaya",
+"ms": "termasuk yang dipercayai",
+"tr": "güvenilirlerden",
+"ur": "ثقات میں سے"
+},
+"يدلس": {
+"fr": "pratique le tadlīs",
+"en": "practises tadlīs",
+"es": "practica el tadlīs",
+"id": "melakukan tadlis",
+"ms": "melakukan tadlis",
+"tr": "tedlîs yapar",
+"ur": "تدلیس کرتا ہے"
+},
+"مدلس": {
+"fr": "pratique le tadlīs",
+"en": "practises tadlīs",
+"es": "practica el tadlīs",
+"id": "mudallis",
+"ms": "mudallis",
+"tr": "müdellis",
+"ur": "مدلس"
+},
+"وكان يدلس كثيرا": {
+"fr": "et pratiquait souvent le tadlīs",
+"en": "and often practised tadlīs",
+"es": "y practicaba a menudo el tadlīs",
+"id": "dan sering melakukan tadlis",
+"ms": "dan sering melakukan tadlis",
+"tr": "ve çok tedlîs yapardı",
+"ur": "اور بہت تدلیس کرتا تھا"
+},
+"يرسل": {
+"fr": "pratique l'irsāl",
+"en": "practises irsāl",
+"es": "practica el irsāl",
+"id": "melakukan irsal",
+"ms": "melakukan irsal",
+"tr": "irsal yapar",
+"ur": "ارسال کرتا ہے"
+},
+"ثقة يرسل": {
+"fr": "fiable, pratique l'irsāl",
+"en": "reliable, practises irsāl",
+"es": "fiable, practica el irsāl",
+"id": "tepercaya, melakukan irsal",
+"ms": "dipercayai, melakukan irsal",
+"tr": "güvenilir, irsal yapar",
+"ur": "ثقہ، ارسال کرتا ہے"
+},
+"كثير الإرسال": {
+"fr": "pratique souvent l'irsāl",
+"en": "often practises irsāl",
+"es": "practica a menudo el irsāl",
+"id": "sering melakukan irsal",
+"ms": "sering melakukan irsal",
+"tr": "çok irsal yapar",
+"ur": "کثیر الارسال"
+},
+"وكان يرسل": {
+"fr": "et pratiquait l'irsāl",
+"en": "and practised irsāl",
+"es": "y practicaba el irsāl",
+"id": "dan melakukan irsal",
+"ms": "dan melakukan irsal",
+"tr": "ve irsal yapardı",
+"ur": "اور ارسال کرتا تھا"
+},
+"اختلط": {
+"fr": "sa mémoire s'est altérée",
+"en": "his memory deteriorated",
+"es": "su memoria se deterioró",
+"id": "hafalannya kacau",
+"ms": "hafalannya bercampur",
+"tr": "ihtilât etti",
+"ur": "اختلاط ہوا"
+},
+"اختلط بأخرة": {
+"fr": "sa mémoire s'est altérée à la fin de sa vie",
+"en": "his memory deteriorated late in life",
+"es": "su memoria se deterioró al final",
+"id": "hafalannya kacau di akhir hayat",
+"ms": "hafalannya bercampur di akhir hayat",
+"tr": "ömrünün sonunda ihtilât etti",
+"ur": "آخر عمر میں اختلاط ہوا"
+},
+"تغير": {
+"fr": "sa mémoire a changé",
+"en": "his memory changed",
+"es": "su memoria cambió",
+"id": "hafalannya berubah",
+"ms": "hafalannya berubah",
+"tr": "hafızası değişti",
+"ur": "حافظہ بدل گیا"
+},
+"تغير بأخرة": {
+"fr": "sa mémoire a changé à la fin de sa vie",
+"en": "his memory changed late in life",
+"es": "su memoria cambió al final",
+"id": "hafalannya berubah di akhir hayat",
+"ms": "hafalannya berubah di akhir hayat",
+"tr": "ömrünün sonunda hafızası değişti",
+"ur": "آخر عمر میں حافظہ بدل گیا"
+},
+"كثير الحديث": {
+"fr": "a rapporté beaucoup de hadiths",
+"en": "narrated many hadiths",
+"es": "narró muchos hadices",
+"id": "banyak hadisnya",
+"ms": "banyak hadisnya",
+"tr": "çok hadis rivayet etti",
+"ur": "کثیر الحدیث"
+},
+"قليل الحديث": {
+"fr": "a rapporté peu de hadiths",
+"en": "narrated few hadiths",
+"es": "narró pocos hadices",
+"id": "sedikit hadisnya",
+"ms": "sedikit hadisnya",
+"tr": "az hadis rivayet etti",
+"ur": "قلیل الحدیث"
+},
+"مشهور": {
+"fr": "connu",
+"en": "well known",
+"es": "conocido",
+"id": "terkenal",
+"ms": "terkenal",
+"tr": "meşhur",
+"ur": "مشہور"
+},
+"معروف": {
+"fr": "connu",
+"en": "known",
+"es": "conocido",
+"id": "dikenal",
+"ms": "dikenali",
+"tr": "tanınır",
+"ur": "معروف"
+},
+"مستقيم الحديث": {
+"fr": "hadiths droits",
+"en": "sound in hadith",
+"es": "hadices rectos",
+"id": "hadisnya lurus",
+"ms": "hadisnya lurus",
+"tr": "hadisi müstakim",
+"ur": "مستقیم الحدیث"
+},
+"يخطئ": {
+"fr": "se trompe",
+"en": "makes mistakes",
+"es": "se equivoca",
+"id": "keliru",
+"ms": "tersilap",
+"tr": "hata eder",
+"ur": "غلطی کرتا ہے"
+},
+"يخطئ كثيرا": {
+"fr": "se trompe souvent",
+"en": "often mistaken",
+"es": "se equivoca a menudo",
+"id": "sering keliru",
+"ms": "sering tersilap",
+"tr": "çok hata eder",
+"ur": "بہت غلطی کرتا ہے"
+},
+"يهم": {
+"fr": "commet des méprises",
+"en": "errs",
+"es": "comete errores",
+"id": "salah duga",
+"ms": "tersalah",
+"tr": "vehmeder",
+"ur": "وہم کرتا ہے"
+},
+"يهم كثيرا": {
+"fr": "commet souvent des méprises",
+"en": "errs often",
+"es": "yerra a menudo",
+"id": "sering salah duga",
+"ms": "sering tersalah",
+"tr": "çok vehmeder",
+"ur": "بہت وہم کرتا ہے"
+},
+"يغلط": {
+"fr": "se trompe",
+"en": "errs",
+"es": "se equivoca",
+"id": "keliru",
+"ms": "tersilap",
+"tr": "yanılır",
+"ur": "غلطی کرتا ہے"
+},
+"ربما أخطأ": {
+"fr": "s'est parfois trompé",
+"en": "sometimes erred",
+"es": "a veces se equivocó",
+"id": "terkadang keliru",
+"ms": "kadangkala tersilap",
+"tr": "bazen hata etti",
+"ur": "کبھی غلطی کی"
+},
+"ربما وهم": {
+"fr": "s'est parfois mépris",
+"en": "sometimes erred",
+"es": "a veces erró",
+"id": "terkadang salah duga",
+"ms": "kadangkala tersalah",
+"tr": "bazen vehmetti",
+"ur": "کبھی وہم ہوا"
+},
+"يخطئ ويخالف": {
+"fr": "se trompe et contredit les autres",
+"en": "errs and contradicts others",
+"es": "se equivoca y contradice",
+"id": "keliru dan menyelisihi",
+"ms": "tersilap dan menyalahi",
+"tr": "hata eder ve muhalefet eder",
+"ur": "غلطی اور مخالفت کرتا ہے"
+},
+"يغرب": {
+"fr": "rapporte des récits singuliers",
+"en": "narrates odd reports",
+"es": "narra relatos singulares",
+"id": "meriwayatkan yang gharib",
+"ms": "meriwayatkan yang gharib",
+"tr": "garip rivayet eder",
+"ur": "غریب روایات بیان کرتا ہے"
+},
+"له أفراد": {
+"fr": "a des récits isolés",
+"en": "has isolated reports",
+"es": "tiene relatos aislados",
+"id": "punya riwayat tunggal",
+"ms": "ada riwayat tunggal",
+"tr": "ferd rivayetleri var",
+"ur": "اس کی منفرد روایات ہیں"
+},
+"وله أحاديث": {
+"fr": "et il a des hadiths",
+"en": "and he has hadiths",
+"es": "y tiene hadices",
+"id": "dan ia punya hadis",
+"ms": "dan dia ada hadis",
+"tr": "ve hadisleri var",
+"ur": "اور اس کی احادیث ہیں"
+},
+"رمي بالتشيع": {
+"fr": "accusé de chiisme",
+"en": "accused of Shiism",
+"es": "acusado de chiismo",
+"id": "dituduh Syiah",
+"ms": "dituduh Syiah",
+"tr": "Şiîlikle itham edildi",
+"ur": "تشیع کا الزام"
+},
+"رمي بالقدر": {
+"fr": "accusé de qadarisme",
+"en": "accused of Qadarism",
+"es": "acusado de qadarismo",
+"id": "dituduh Qadariyah",
+"ms": "dituduh Qadariyah",
+"tr": "Kaderiyecilikle itham edildi",
+"ur": "قدر کا الزام"
+},
+"رمي بالإرجاء": {
+"fr": "accusé de murjiisme",
+"en": "accused of Irjāʾ",
+"es": "acusado de murjiismo",
+"id": "dituduh Murjiah",
+"ms": "dituduh Murjiah",
+"tr": "Mürcielikle itham edildi",
+"ur": "ارجاء کا الزام"
+},
+"رمي بالنصب": {
+"fr": "accusé d'hostilité envers ʿAlī",
+"en": "accused of hostility to ʿAlī",
+"es": "acusado de hostilidad hacia ʿAlī",
+"id": "dituduh Nashibi",
+"ms": "dituduh Nasibi",
+"tr": "Nâsıbîlikle itham edildi",
+"ur": "ناصبیت کا الزام"
+},
+"يتشيع": {
+"fr": "a des tendances chiites",
+"en": "has Shiite leanings",
+"es": "tiene tendencias chiíes",
+"id": "condong Syiah",
+"ms": "cenderung Syiah",
+"tr": "Şiî eğilimli",
+"ur": "شیعی رجحان رکھتا ہے"
+},
+"تكلم فيه للقدر": {
+"fr": "critiqué pour le qadarisme",
+"en": "criticised for Qadarism",
+"es": "criticado por qadarismo",
+"id": "dikritik karena Qadariyah",
+"ms": "dikritik kerana Qadariyah",
+"tr": "Kaderiyecilik yüzünden tenkit edildi",
+"ur": "قدر کی وجہ سے اس پر کلام کیا گیا"
+},
+"انفرد بتوثيقه ابن حبان": {
+"fr": "seul Ibn Ḥibbān l'a déclaré fiable",
+"en": "only Ibn Ḥibbān declared him reliable",
+"es": "solo Ibn Ḥibbān lo declaró fiable",
+"id": "hanya Ibnu Hibban yang mentsiqahkannya",
+"ms": "hanya Ibnu Hibban yang mentausiqnya",
+"tr": "onu yalnız İbn Hibbân güvenilir saydı",
+"ur": "صرف ابن حبان نے ثقہ کہا"
+},
+"فيه نظر": {
+"fr": "il y a à redire",
+"en": "there is a question about him",
+"es": "hay reparos",
+"id": "perlu ditinjau",
+"ms": "perlu diteliti",
+"tr": "hakkında söz var",
+"ur": "اس میں نظر ہے"
+},
+"ولا نعلم فيه جرحا": {
+"fr": "et nous ne lui connaissons aucune critique",
+"en": "and we know of no criticism of him",
+"es": "y no le conocemos ninguna crítica",
+"id": "dan kami tidak mengetahui celaan padanya",
+"ms": "dan kami tidak mengetahui celaan terhadapnya",
+"tr": "ve hakkında bir cerh bilmiyoruz",
+"ur": "اور ہم اس میں کوئی جرح نہیں جانتے"
+},
+"إن شاء الله": {
+"fr": "si Allah le veut",
+"en": "God willing",
+"es": "si Dios quiere",
+"id": "insya Allah",
+"ms": "insya-Allah",
+"tr": "inşallah",
+"ur": "ان شاء اللہ"
+},
+"عندهم": {
+"fr": "selon eux",
+"en": "in their view",
+"es": "según ellos",
+"id": "menurut mereka",
+"ms": "menurut mereka",
+"tr": "onlara göre",
+"ur": "ان کے نزدیک"
+},
+"جدا": {
+"fr": "très",
+"en": "very",
+"es": "muy",
+"id": "sangat",
+"ms": "sangat",
+"tr": "çok",
+"ur": "بہت"
+},
+"ذكره في الثقات": {
+"fr": "cité dans « Les fiables » (al-Thiqāt)",
+"en": "listed in “The Reliable” (al-Thiqāt)",
+"es": "citado en «Los fiables» (al-Thiqāt)",
+"id": "disebut dalam kitab ats-Tsiqat",
+"ms": "disebut dalam kitab al-Thiqat",
+"tr": "es-Sikât'ta anıldı",
+"ur": "الثقات میں ذکر کیا"
+},
+"وذكره في الثقات": {
+"fr": "et cité dans « Les fiables » (al-Thiqāt)",
+"en": "and listed in “The Reliable” (al-Thiqāt)",
+"es": "y citado en «Los fiables» (al-Thiqāt)",
+"id": "dan disebut dalam ats-Tsiqat",
+"ms": "dan disebut dalam al-Thiqat",
+"tr": "ve es-Sikât'ta anıldı",
+"ur": "اور الثقات میں ذکر کیا"
+},
+"ذكرها في الثقات": {
+"fr": "citée dans « Les fiables » (al-Thiqāt)",
+"en": "listed in “The Reliable” (al-Thiqāt)",
+"es": "citada en «Los fiables» (al-Thiqāt)",
+"id": "disebut dalam kitab ats-Tsiqat",
+"ms": "disebut dalam kitab al-Thiqat",
+"tr": "es-Sikât'ta anıldı",
+"ur": "الثقات میں ذکر کیا"
+},
+"ذكره في الثقات وقال": {
+"fr": "cité dans « Les fiables » (al-Thiqāt), avec ce commentaire :",
+"en": "listed in “The Reliable” (al-Thiqāt), with the remark:",
+"es": "citado en «Los fiables» (al-Thiqāt), con el comentario:",
+"id": "disebut dalam ats-Tsiqat, dengan catatan:",
+"ms": "disebut dalam al-Thiqat, dengan catatan:",
+"tr": "es-Sikât'ta anıldı, şu notla:",
+"ur": "الثقات میں ذکر کر کے کہا:"
+},
+"ذكره في الضعفاء": {
+"fr": "cité dans « Les faibles » (al-Ḍuʿafāʾ)",
+"en": "listed in “The Weak” (al-Ḍuʿafāʾ)",
+"es": "citado en «Los débiles» (al-Ḍuʿafāʾ)",
+"id": "disebut dalam kitab adh-Dhu'afa",
+"ms": "disebut dalam kitab al-Dhu'afa",
+"tr": "ed-Duafâ'da anıldı",
+"ur": "الضعفاء میں ذکر کیا"
+},
+"ذكره في الضعفاء والمتروكين": {
+"fr": "cité dans « Les faibles et abandonnés »",
+"en": "listed in “The Weak and Abandoned”",
+"es": "citado en «Los débiles y abandonados»",
+"id": "disebut dalam adh-Dhu'afa wal-Matrukin",
+"ms": "disebut dalam al-Dhu'afa wal-Matrukin",
+"tr": "ed-Duafâ ve'l-Metrûkîn'de anıldı",
+"ur": "الضعفاء والمتروکین میں ذکر کیا"
+},
+"ذكره في الضعفاء الكبير": {
+"fr": "cité dans « Les grands faibles » (al-Ḍuʿafāʾ al-Kabīr)",
+"en": "listed in “The Great Book of the Weak”",
+"es": "citado en «El gran libro de los débiles»",
+"id": "disebut dalam adh-Dhu'afa al-Kabir",
+"ms": "disebut dalam al-Dhu'afa al-Kabir",
+"tr": "ed-Duafâü'l-Kebîr'de anıldı",
+"ur": "الضعفاء الکبیر میں ذکر کیا"
+},
+"ذكره في أسامي الضعفاء": {
+"fr": "cité dans « Les noms des faibles »",
+"en": "listed in “The Names of the Weak”",
+"es": "citado en «Los nombres de los débiles»",
+"id": "disebut dalam Asami adh-Dhu'afa",
+"ms": "disebut dalam Asami al-Dhu'afa",
+"tr": "Esâmi'd-Duafâ'da anıldı",
+"ur": "اسامی الضعفاء میں ذکر کیا"
+},
+"ذكره في الألقاب": {
+"fr": "cité dans « Les surnoms » (al-Alqāb)",
+"en": "listed in “The Nicknames” (al-Alqāb)",
+"es": "citado en «Los apodos» (al-Alqāb)",
+"id": "disebut dalam kitab al-Alqab",
+"ms": "disebut dalam kitab al-Alqab",
+"tr": "el-Elkâb'da anıldı",
+"ur": "الالقاب میں ذکر کیا"
+},
+"ذكره في تاريخ بغداد": {
+"fr": "cité dans « L'histoire de Bagdad »",
+"en": "listed in “The History of Baghdad”",
+"es": "citado en «La historia de Bagdad»",
+"id": "disebut dalam Tarikh Baghdad",
+"ms": "disebut dalam Tarikh Baghdad",
+"tr": "Târîhu Bağdâd'da anıldı",
+"ur": "تاریخ بغداد میں ذکر کیا"
+},
+"ذكره في التاريخ الكبير": {
+"fr": "cité dans « La grande histoire » (al-Tārīkh al-Kabīr)",
+"en": "listed in “The Great History” (al-Tārīkh al-Kabīr)",
+"es": "citado en «La gran historia»",
+"id": "disebut dalam at-Tarikh al-Kabir",
+"ms": "disebut dalam al-Tarikh al-Kabir",
+"tr": "et-Târîhu'l-Kebîr'de anıldı",
+"ur": "التاریخ الکبیر میں ذکر کیا"
+},
+"ذكره في تاريخ دمشق": {
+"fr": "cité dans « L'histoire de Damas »",
+"en": "listed in “The History of Damascus”",
+"es": "citado en «La historia de Damasco»",
+"id": "disebut dalam Tarikh Dimasyq",
+"ms": "disebut dalam Tarikh Dimasyq",
+"tr": "Târîhu Dımaşk'ta anıldı",
+"ur": "تاریخ دمشق میں ذکر کیا"
+},
+"ذكره في الجرح والتعديل": {
+"fr": "cité dans « La critique et l'éloge » (al-Jarḥ wa-l-Taʿdīl)",
+"en": "listed in “Criticism and Praise” (al-Jarḥ wa-l-Taʿdīl)",
+"es": "citado en «La crítica y el elogio»",
+"id": "disebut dalam al-Jarh wat-Ta'dil",
+"ms": "disebut dalam al-Jarh wa al-Ta'dil",
+"tr": "el-Cerh ve't-Ta'dîl'de anıldı",
+"ur": "الجرح والتعدیل میں ذکر کیا"
+},
+"ذكره في المستدرك": {
+"fr": "cité dans al-Mustadrak",
+"en": "listed in al-Mustadrak",
+"es": "citado en al-Mustadrak",
+"id": "disebut dalam al-Mustadrak",
+"ms": "disebut dalam al-Mustadrak",
+"tr": "el-Müstedrek'te anıldı",
+"ur": "المستدرک میں ذکر کیا"
+},
+"ذكره في تسمية شيوخ أبي داود": {
+"fr": "cité dans « Les maîtres d'Abū Dāwūd »",
+"en": "listed in “The Teachers of Abū Dāwūd”",
+"es": "citado en «Los maestros de Abū Dāwūd»",
+"id": "disebut dalam daftar guru Abu Dawud",
+"ms": "disebut dalam senarai guru Abu Dawud",
+"tr": "Ebû Dâvûd'un hocaları listesinde anıldı",
+"ur": "شیوخ ابی داود میں ذکر کیا"
+},
+"في سؤالات أبي عبد الرحمن السلمي": {
+"fr": "dans les « Questions » d'Abū ʿAbd al-Raḥmān al-Sulamī",
+"en": "in the “Questions” of Abū ʿAbd al-Raḥmān al-Sulamī",
+"es": "en las «Preguntas» de Abū ʿAbd al-Raḥmān al-Sulamī",
+"id": "dalam Su'alat Abu Abdurrahman as-Sulami",
+"ms": "dalam Su'alat Abu Abdul Rahman al-Sulami",
+"tr": "Sülemî'nin Suâlât'ında",
+"ur": "سوالات ابی عبد الرحمن السلمی میں"
+},
+"قال في التقريب": {
+"fr": "dans al-Taqrīb :",
+"en": "in al-Taqrīb:",
+"es": "en al-Taqrīb:",
+"id": "dalam at-Taqrib:",
+"ms": "dalam al-Taqrib:",
+"tr": "et-Takrîb'de:",
+"ur": "التقریب میں:"
+},
+"وقال في التقريب": {
+"fr": "et dans al-Taqrīb :",
+"en": "and in al-Taqrīb:",
+"es": "y en al-Taqrīb:",
+"id": "dan dalam at-Taqrib:",
+"ms": "dan dalam al-Taqrib:",
+"tr": "ve et-Takrîb'de:",
+"ur": "اور التقریب میں:"
+},
+"قال في الكاشف": {
+"fr": "dans al-Kāshif :",
+"en": "in al-Kāshif:",
+"es": "en al-Kāshif:",
+"id": "dalam al-Kasyif:",
+"ms": "dalam al-Kasyif:",
+"tr": "el-Kâşif'te:",
+"ur": "الکاشف میں:"
+},
+"ومرة": {
+"fr": "une autre fois :",
+"en": "another time:",
+"es": "otra vez:",
+"id": "di kali lain:",
+"ms": "pada kali lain:",
+"tr": "bir başka sefer:",
+"ur": "اور ایک بار:"
+},
+"مرة": {
+"fr": "une fois :",
+"en": "once:",
+"es": "una vez:",
+"id": "sekali:",
+"ms": "sekali:",
+"tr": "bir kez:",
+"ur": "ایک بار:"
+},
+"وقال": {
+"fr": "et il a dit :",
+"en": "and he said:",
+"es": "y dijo:",
+"id": "dan ia berkata:",
+"ms": "dan dia berkata:",
+"tr": "ve dedi ki:",
+"ur": "اور کہا:"
+},
+"قال": {
+"fr": "il a dit :",
+"en": "he said:",
+"es": "dijo:",
+"id": "ia berkata:",
+"ms": "dia berkata:",
+"tr": "dedi ki:",
+"ur": "کہا:"
+}
+}
+}

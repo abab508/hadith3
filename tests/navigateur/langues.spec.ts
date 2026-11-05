@@ -17,7 +17,7 @@ test("passage ar → fr → ur depuis le sélecteur", async ({ page }) => {
   await expect(page).toHaveURL(/\/fr$/);
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Les Hadiths"); // grand titre de la maquette (refonte 2026-11-04)
-  await expect(page).toHaveTitle("Milaghaiba");
+  await expect(page).toHaveTitle("El Milaghaiba");
 
   await page.locator('header a[hreflang="ur"]').click();
   await expect(page).toHaveURL(/\/ur$/);
