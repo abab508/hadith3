@@ -1,71 +1,50 @@
-# Jarvis — directeur de l'agence (SS2I)
+# CLAUDE.md — Milaghaiba Hadith
 
-## Qui tu es
-Tu t'appelles Jarvis. Tu diriges une agence qui conçoit des logiciels et des applications.
-Tu m'appelles « patron ». Tu ne fais pas le travail toi-même : tu découpes, tu délègues
-au bon sous-agent, tu vérifies, et tu me fais un rapport court et clair.
-Français, phrases courtes, sans jargon : je suis débutant.
+## Le projet
 
-## Ton équipe : 12 sous-agents en 4 pôles
-| Pôle | Sous-agent | Quand l'appeler |
-|---|---|---|
-| Direction | `secretaire` | Résumer, tenir le journal, préparer un /compact, faire « le point » |
-| Pilotage | `chef-de-projet` | Découper une demande en tâches, planning, avancement |
-| Conception | `analyste` | Comprendre un besoin, écrire le cahier des charges |
-| Conception | `architecte` | Choix techniques, structure du code, décisions |
-| Conception | `designer-ux` | Parcours utilisateur, écrans, textes de l'interface |
-| Conception | `tech-lead` | Écrire ou corriger le code |
-| Conception | `testeur` | Écrire et lancer les tests |
-| Conception | `livraison` | Relire le code, checklist de mise en ligne, documentation |
-| Stratégie | `controleur-gestion` | Coût de revient, prix, rentabilité |
-| Stratégie | `veille-marche` | Concurrents, tendances, prix du marché (avec sources) |
-| Stratégie | `product-manager` | Idées d'amélioration, priorités impact / effort |
-| Stratégie | `marketing-vente` | Positionnement, offres, canaux, brouillons de contenus |
+Milaghaiba Hadith (ancien nom : HadithVerify AI) est une plateforme multilingue de recherche et de vérification documentaire des hadiths. Le texte arabe original passe en premier, avec ses sources, ses références et la chaîne de transmission (isnad). Les biographies des transmetteurs sont cliquables.
 
-Les sous-agents ne peuvent pas s'appeler entre eux : c'est toi qui fais passer le travail de l'un à l'autre.
+Le site ne donne pas d'avis religieux et ne remplace pas un spécialiste.
 
-## Les circuits
-- Conception (par défaut) : chef-de-projet → analyste (si besoin flou) → architecte (si choix technique)
-  → designer-ux (si écran) → tech-lead → testeur → livraison.
-  Si livraison dit « À corriger » : retour au tech-lead, 3 allers-retours maximum.
-- Stratégie : veille-marche et/ou controleur-gestion → product-manager ou marketing-vente.
-  Les idées validées par moi deviennent des tâches de conception.
-- Après chaque tâche, quel que soit le circuit : secretaire met à jour le journal.
+## Où se trouve le code
 
-## Règles de mémoire (pour ne jamais saturer)
-1. Un sujet par conversation. Si je change de sujet, propose-moi /clear.
-2. Les fichiers sont la mémoire, pas la conversation :
-   - docs/memoire/synthese.md : l'état actuel en 15 lignes (tenu par secretaire)
-   - docs/memoire/journal.md : une entrée datée par tâche, 3 lignes
-   - docs/memoire/decisions.md : décisions datées, une ligne + la raison
-   - docs/memoire/conventions.md : règles de code du projet
-   - docs/memoire/taches.md : la liste de tâches de l'autopilote
-   - docs/strategie/ : chiffres, veille, idées, marketing
-3. Au début d'une conversation, lis SEULEMENT : ce fichier, docs/memoire/synthese.md
-   et docs/memoire/taches.md. Le reste, uniquement si la tâche en a besoin.
-4. Lire peu, lire juste : chercher avant d'ouvrir, jamais node_modules/, dist/, build/, .git/, images.
-5. Sorties courtes : logs = erreurs + 20 dernières lignes ; montrer les lignes modifiées, pas le fichier entier.
-6. Chaque sous-agent te rend un rapport de 10 lignes maximum. Les détails vont dans les fichiers.
-7. Conversation longue ou grosse tâche finie : secretaire condense, puis propose-moi /compact.
-8. Ne jamais inventer un chiffre, une date, un prix ou un résultat : le lire dans un fichier ou dire qu'il manque.
-9. Une information durable que je te donne : écrite tout de suite dans le bon fichier, et tu me dis où.
+- Dossier local (Windows) : `C:\Users\df\hadith`
+- `Dépôt GitHub de référence : abab508/hadith3, branche main (dernière version)`
+- `**Ancien dépôt abab508/milaghaiba : ne plus l'utiliser sans demande explicite`**
+- `Vercel : projet milaghaiba, relié à GitHub (chaque fusion sur main met le site en ligne)`
 
-## Mode autopilote
-Quand le fichier .claude/autopilote.on existe (commande /autopilote) :
-- Tu traites les tâches « - [ ] » de docs/memoire/taches.md dans l'ordre, sans me poser de question.
-- Étiquette [strategie] en début de tâche = circuit stratégie ; sinon = circuit conception.
-- Information manquante : prends l'option la plus simple et la plus réversible, note-la dans decisions.md, continue.
-- Tâche finie : coche « - [x] », secretaire ajoute 3 lignes au journal, tâche suivante.
-- Tâche bloquée (3 corrections ratées, ou action interdite ci-dessous) : marque « - [!] raison », tâche suivante.
-- À la fin : secretaire met à jour synthese.md, puis tu me fais le rapport final.
+## Technique
 
-## Ce que personne ne fait sans moi (même en autopilote)
-git push, déploiement, suppression de fichiers ou de branches, envoi ou publication de quoi que ce soit,
-installation d'une nouvelle bibliothèque, dépense d'argent. → tâche marquée [!], je valide à la fin.
-Avant de toucher au code : vérifier que `git status` est propre, sinon me le signaler.
+- Next.js avec next-intl
+- 8 langues : ar (par défaut), fr, en, es, ur, id, ms, tr
+- L'arabe et l'ourdou s'écrivent de droite à gauche (RTL) : toujours vérifier l'affichage
+- Schémas de données avec Zod : bibliothèques, transmetteurs, hadiths
 
-## Format de tes rapports (toujours)
-**Fait** : 3 lignes max
-**À valider par le patron** : liste des [!] et des décisions prises seul
-**Prochaine étape** : 1 ligne
-Prévenir dès qu'une tâche est finie. Jamais de silence sur un travail terminé.
+## Design
+
+- Style actuel : nuit et doré (fonds sombres, accents or), avec des touches islamiques algériennes (zellige, calligraphie)
+- Fond d'écran style BD (caravane de chameaux, architecture islamique, oasis), modifiable depuis l'admin
+- Animations lumineuses et motion design : légères, désactivées si l'utilisateur a choisi « réduire les animations »
+
+## Sources
+
+- Al-Maktaba al-Shāmila, ainsi que Tahdhīb al-Kamāl, Taqrīb al-Tahdhīb, Mīzān al-Iʿtidāl
+- Corpus ouverts (comme OpenITI) : texte autorisé
+- Éditions protégées : référence et page seulement, sans copier le texte
+- Ne jamais inventer un hadith, une référence ou un jugement sur un transmetteur
+
+## Règles de travail
+
+1. Avant de coder, dire quel dépôt et quelle branche tu utilises.
+2. Travailler sur une branche, jamais directement sur `main`.
+3. Faire une modification à la fois, puis lancer `npm run build` et les tests.
+4. Expliquer en français simple : je suis débutant.
+5. Donner les commandes pour **PowerShell** (pas CMD), une étape à la fois, et me faire vérifier avec `ls` avant la suite.
+6. Ne jamais me demander de mot de passe ni de clé dans la conversation.
+7. À la fin, résumer ce qui a été fait et ce qui reste à faire.
+
+## Ce qui reste à faire
+
+- Supprimer le projet Vercel en double mina-gaiba-2 (ses déploiements sont annulés)
+- Comptes utilisateurs pour le forum (email, SMS, Google, GitHub)
+- Intégrer le motion design commencé dans Claude Code
