@@ -695,6 +695,8 @@
     "numero": "n° {n}",
     "ouvrir": "Ouvrir le hadith",
     "indisponible": "Texte momentanément indisponible.",
-    "aucunHadith": "Aucun hadith de nos recueils dans ce sous-chapitre."
+    "aucunHadith": "Aucun hadith de nos recueils dans ce sous-chapitre.",
+    "agrandirIllustration": "Agrandir l’illustration {n}",
+    "fermerIllustration": "Fermer l’illustration"
   }
 }

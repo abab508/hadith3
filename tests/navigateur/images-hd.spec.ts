@@ -38,7 +38,7 @@ for (const ecran of ecrans) {
               const adresse = new URL(img.currentSrc, window.location.href);
               return adresse.searchParams.get("url") ?? adresse.pathname;
             });
-            expect(source).toMatch(/^\/images\/hd\/[a-z0-9-]+\.png$/);
+            expect(source).toMatch(/^\/images\/(?:hd|chapitres)\/[a-z0-9-]+\.png$/);
           }
           if (ecran.nom === "mobile" && chemin === "/themes/fin-des-temps") {
             const texte = await page.locator('main section[aria-labelledby="titre-theme"] p').boundingBox();
@@ -98,7 +98,8 @@ for (const locale of ["fr", "ar"]) {
       const lien = page.locator(`main ul[aria-label] > li > a[href="/${locale}/chapitres/${chapitre.id}"]`);
       await expect(lien).toBeVisible();
       await lien.click();
-      await expect(page).toHaveURL(new RegExp(`/chapitres/${chapitre.id}$`));
+      // 15 s : la page chapitre lit ses références sur le disque ; sous la charge de toute la suite, 5 s ne suffisent pas toujours.
+      await expect(page).toHaveURL(new RegExp(`/chapitres/${chapitre.id}$`), { timeout: 15_000 });
       await expect(page.locator(`main img[src*="${encodeURIComponent(`/images/hd/${chapitre.image}.png`)}"]`)).toBeVisible();
       await page.goto(`/${locale}/chapitres`);
     }

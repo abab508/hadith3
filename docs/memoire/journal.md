@@ -154,3 +154,8 @@
 - Fait : 284 chapitres et 2 714 sous-chapitres (index « موضوعات الحديث الشريف » de hadith-kg) pour les 9 thèmes, titres français (IA, à relire) ; pages chapitre (galerie de 3 illustrations SVG, sous-chapitres, références par recueil, présentation animée + voix de synthèse) et sous-chapitre (hadiths paginés avec texte arabe, traduction française si disponible, bouton Écouter).
 - Vérifié : 161 tests unitaires, 9 contrôles, build, 107/107 tests navigateur ; captures thème Adoration, chapitre Prière, sous-chapitre peste.
 - Prochaine étape : mise en ligne après accord du patron ; explications (charḥ) à fournir par un spécialiste.
+
+## 2026-11-05 — Reprise du travail graphique de Codex (images peintes, chapitres étendus)
+- Fait : intégration du travail non publié de Codex (copie de travail milaghaiba-chapitres-final) : 24 images peintes (une par motif, sans être vivant) à la place des dessins SVG, agrandissement au clic, vignettes dans la liste des chapitres, index étendu à 517 chapitres / 4 410 sous-chapitres sans perte de référence, titres français des chapitres complétés (IA, à relire), schéma de validation. Ajout : une même image ne revient plus sur 5 cartes voisines d'un thème (motif neutre de remplacement, recadrage si elle revient plus loin) ; galerie du chapitre qui commence par l'image de sa carte. Test 4K de Codex corrigé (il lisait la largeur « corrigée par densité » au lieu des pixels réels) ; attente de navigation allongée (15 s) dans un test d'images sous charge.
+- Vérifié : 167 tests unitaires, 9 contrôles, build, 132/132 tests navigateur ; captures La croyance, Le mariage, image agrandie.
+- Prochaine étape : mise en ligne après accord du patron ; 1 669 titres de sous-chapitres restent en arabe seulement (traduction à faire).

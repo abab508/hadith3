@@ -29,8 +29,7 @@ THEMES = {
     "maladies-et-remedes": {"noeuds": ["الطب والتداوي", "المرضى"]},
     "autres-themes": {"racines": ["القرآن الكريم", "قصص الأنبياء", "الفضائل والمناقب", "المعاملات", "الأقضية والأحكام"]},
 }
-MOTS_CHAPITRE, MOTS_SOUS = 5, 6        # un titre plus long est une phrase de hadith, pas un titre
-MIN_CHAPITRE, MIN_SOUS = 10, 3         # nombre minimal de hadiths de nos recueils
+MIN_CHAPITRE, MIN_SOUS = 1, 1  # Toute rubrique source ayant une référence navigable est conservée.
 
 
 def compacter(refs):
@@ -48,7 +47,7 @@ def main():
     a.add_argument("--db", required=True); a.add_argument("--kg-vers-api", required=True); a.add_argument("--sortie", required=True)
     o = a.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
-    c = sqlite3.connect(f"file:{o.db}?mode=ro", uri=True)
+    c = sqlite3.connect(f"file:{o.db}?mode=ro&immutable=1", uri=True)
     sp = importlib.util.spec_from_file_location("r", os.path.join(ICI, "exporter-recueils-kg.py")); r = importlib.util.module_from_spec(sp); sp.loader.exec_module(r)
 
     # hadith-kg -> référence du site, dans l'ordre de priorité des recueils
@@ -112,8 +111,8 @@ def main():
             return
         sous, contenu = [], {}
         for s in enfants.get(t[0], []):
-            if len(s[1].split()) > MOTS_SOUS:
-                continue
+            if "موضوع" in s[1]:
+                continue  # Même exclusion documentaire que les chapitres parents.
             hs = hadiths(s)
             if len(hs) >= MIN_SOUS:
                 sid = f"s{s[0]}"
@@ -136,13 +135,12 @@ def main():
         for racine in regle.get("racines", []):
             rac = par_nom(racine, 1)[0]
             for ch in enfants.get(rac[0], []):
-                if ch[1] in regle.get("exclure", []) or len(ch[1].split()) > MOTS_CHAPITRE:
+                if ch[1] in regle.get("exclure", []):
                     continue
                 if ch[1] in regle.get("deplier", []):
                     # Chapitre trop vaste : ses sous-thèmes deviennent des chapitres.
                     for s in enfants.get(ch[0], []):
-                        if len(s[1].split()) <= MOTS_CHAPITRE:
-                            ajouter(theme, f"c{s[0]}", s)
+                        ajouter(theme, f"c{s[0]}", s)
                 else:
                     ajouter(theme, f"c{ch[0]}", ch)
     with open(os.path.join(o.sortie, "index.json"), "w", encoding="utf8", newline="\n") as f:

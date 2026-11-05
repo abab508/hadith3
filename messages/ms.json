@@ -695,6 +695,8 @@
     "numero": "no. {n}",
     "ouvrir": "Buka hadis",
     "indisponible": "Teks tidak tersedia buat sementara.",
-    "aucunHadith": "Tiada hadis daripada kitab kami dalam subbab ini."
+    "aucunHadith": "Tiada hadis daripada kitab kami dalam subbab ini.",
+    "agrandirIllustration": "Besarkan ilustrasi {n}",
+    "fermerIllustration": "Tutup ilustrasi"
   }
 }

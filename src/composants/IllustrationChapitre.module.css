@@ -1,14 +1,11 @@
-/* Illustrations SVG des chapitres — propriétés logiques uniquement, animations douces et coupées si mouvement réduit. */
-.illustration{display:block;inline-size:100%;block-size:auto;aspect-ratio:16/9;border-radius:.6rem;background:#0a1324;}
-.scintille{animation:scintiller 3.6s var(--d,0s) ease-in-out infinite;}
-.motif{animation:flotter 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
-.motifSecond{animation:flotter 9s 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
-.flamme{animation:vaciller 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom;}
-.sable{stroke-dasharray:4 4;animation:couler 1.2s linear infinite;}
-.pluie{animation:tomber 1.4s var(--d,0s) linear infinite;}
-@keyframes scintiller{0%,100%{opacity:.25}50%{opacity:1}}
-@keyframes flotter{0%,100%{translate:0 0}50%{translate:0 -3px}}
-@keyframes vaciller{0%,100%{scale:1 1}50%{scale:.9 1.08}}
-@keyframes couler{to{stroke-dashoffset:-8}}
-@keyframes tomber{from{opacity:1;translate:0 0}to{opacity:0;translate:-2px 10px}}
-@media (prefers-reduced-motion:reduce){.scintille,.motif,.motifSecond,.flamme,.sable,.pluie{animation:none!important;}}
+/* Scènes de nuit et or, dimensions réservées avant le chargement. */
+.illustration{position:relative;display:block;inline-size:100%;aspect-ratio:16/9;overflow:hidden;border-radius:.6rem;background:#0a1324;isolation:isolate;}
+.image{object-fit:cover;transition:transform .8s ease,filter .6s ease;}
+.lueur{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px #e3b86644;transition:box-shadow .4s;}
+.illustration:hover .image{transform:scale(1.045);filter:brightness(1.08);}
+.illustration:hover .lueur{box-shadow:inset 0 0 0 1px #e3b866aa,inset 0 0 30px #e3b86615;}
+/* Variantes de cadrage d'une même scène (l'image remplit déjà son cadre 16/9 : on rapproche vers une autre zone). */
+.illustration[data-variante="1"] .image{scale:1.32;transform-origin:15% 40%;}
+.illustration[data-variante="2"] .image{scale:1.36;transform-origin:85% 60%;}
+.illustration[data-variante="3"] .image{scale:1.45;transform-origin:50% 18%;}
+@media(prefers-reduced-motion:reduce){.image,.lueur{transition:none;}.illustration:hover .image{transform:none;}}

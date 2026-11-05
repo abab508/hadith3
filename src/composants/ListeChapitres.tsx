@@ -3,10 +3,11 @@
 import { useMemo, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import IconeTheme from "@/composants/IconeTheme";
+import ImageDecorative from "@/composants/ImageDecorative";
 import type { Icone } from "@/donnees/themes";
 import styles from "@/composants/Pages.module.css";
 
-export type EntreeTheme = { id: string; numero: number; titre: string; icone: Icone; chapitres: { id: string; titre: string }[] };
+export type EntreeTheme = { id: string; numero: number; titre: string; icone: Icone; chapitres: { id: string; titre: string; image?: string; langue?: string }[] };
 
 const normaliser = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f\u064b-\u0652]/g, "").toLowerCase();
 
@@ -40,7 +41,10 @@ export default function ListeChapitres({ entrees, rechercher, aFournir }: { entr
               {e.chapitres.length > 0 ? (
                 <ul className={styles.sousListe}>
                   {e.chapitres.map((c) => (
-                    <li key={c.id}><Link href={`/chapitres/${c.id}`}>{c.titre}</Link></li>
+                    <li key={c.id}><Link href={`/chapitres/${c.id}`} className={styles.lienChapitreIllustre}>
+                      {c.image && <span className={styles.vignetteChapitre}><ImageDecorative src={c.image} sizes="4.5rem" /></span>}
+                      <bdi lang={c.langue} dir="auto">{c.titre}</bdi>
+                    </Link></li>
                   ))}
                   <li><Link href={`/themes/${e.id}`} className={styles.lienTheme}>↗ {e.titre}</Link></li>
                 </ul>

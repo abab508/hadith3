@@ -3,7 +3,7 @@
 .scene{position:relative;overflow:hidden;border:1.5px solid #e3b866aa;border-radius:1rem;aspect-ratio:16/9;background:#0a1324;}
 .diapo{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;}
 .diapo[data-active="true"]{opacity:1;}
-.diapo[data-active="true"] svg{animation:zoom 9s ease-out both;}
+.diapo[data-active="true"] [data-motif]{animation:zoom 9s ease-out both;}
 .legende{position:absolute;inset-inline:0;inset-block-end:0;margin:0;padding:2.4rem 1.2rem 1rem;background:linear-gradient(0deg,#05080fdd,transparent);
   color:#fff3cf;font-family:"Alegreya",serif;font-weight:700;font-size:clamp(1rem,2.2vw,1.35rem);text-align:center;animation:monter .9s both;}
 .commandes{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;}
@@ -17,4 +17,4 @@
 .ecouter{min-block-size:2.2rem;font-size:.85rem;}
 @keyframes zoom{from{scale:1}to{scale:1.08}}
 @keyframes monter{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
-@media (prefers-reduced-motion:reduce){.diapo,.diapo svg,.legende{animation:none!important;transition:none!important;}}
+@media (prefers-reduced-motion:reduce){.diapo,.diapo [data-motif],.legende{animation:none!important;transition:none!important;}}

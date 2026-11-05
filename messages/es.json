@@ -695,6 +695,8 @@
     "numero": "n.º {n}",
     "ouvrir": "Abrir el hadiz",
     "indisponible": "Texto no disponible por el momento.",
-    "aucunHadith": "Ningún hadiz de nuestras colecciones en este subcapítulo."
+    "aucunHadith": "Ningún hadiz de nuestras colecciones en este subcapítulo.",
+    "agrandirIllustration": "Ampliar la ilustración {n}",
+    "fermerIllustration": "Cerrar la ilustración"
   }
 }
