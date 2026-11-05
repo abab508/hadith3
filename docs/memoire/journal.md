@@ -164,3 +164,8 @@
 - Fait : traduction IA (à relire) des 1 652 titres arabes distincts qui n'avaient pas de français (1 669 sous-chapitres) ; titres longs de récit résumés en un titre court fidèle ; fichier data/chapitres/titres-fr-sous-chapitres.tsv (relu par l'exportateur) et index.json complété. L'arabe de la source reste affiché à côté.
 - Vérifié : 0 chapitre et 0 sous-chapitre sans titre français (nouveau test), 168 tests unitaires, 9 contrôles, build, 132/132 tests navigateur, capture « La foi au destin » (sous-chapitres 23 et 24).
 - Prochaine étape : mise en ligne sur Vercel après accord du patron.
+
+## 2026-11-05 — Images des prophètes adaptées à leur histoire
+- Fait : chaque prophète reçoit 3 scènes de son histoire parmi les 24 images (Ismāʿīl et Ibrāhīm : Kaaba ; ʿĪsā : ciel étoilé, minaret pour sa descente ; Maryam : palmier ; Nūḥ, Yūnus, Ayyūb : eau ; Mūsā : montagne…) au lieu d'une montagne commune ; kunyas exclues (Abū Mūsā…). « Le Prophète » (Muḥammad) : palmier ou mosquée de Médine. Révélation : livre puis ciel ; compilation et scribes : plume.
+- Vérifié : 169 tests unitaires (nouveau test des prophètes), 9 contrôles, build, 132/132 tests navigateur ; captures du thème « Autres thèmes » (Isḥāq, Ismāʿīl, ʿĪsā).
+- Prochaine étape : mise en ligne après accord du patron ; de nouvelles images peintes (propres à un prophète) demanderaient une génération d'images.
