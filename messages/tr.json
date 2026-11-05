@@ -669,5 +669,32 @@
     "introuvable": "Bu hadis eserde bulunamadı.",
     "source": "Metin, isnadlar ve kartlar: «الجامع — Hadith Knowledge Graph» tabanı (emadjumaah), CC BY 4.0 lisansı, Milaghaiba veri deposunda yayımlanmıştır. Hükümler kaynakta olduğu gibi aktarılmıştır, bir uzman tarafından doğrulanmalı.",
     "guide": "İsimleri gösterilen sırayla okuyun, sonra bir raviye tıklayarak kartını açın. Bu hadisin isnadı doğrudan hadith-kg tabanından alınmıştır."
+  },
+  "chapitreKg": {
+    "compte": "{nombre, number} hadis · {sous, number} alt bölüm",
+    "nbHadiths": "{count, plural, other {# hadis}}",
+    "illustration": "görsel {n}",
+    "sourceTitres": "Başlıklar Arapçadan yapay zekâ ile çevrildi, gözden geçirilmeli; kaynağın Arapça başlığı yanında verilir. Görseller site için çizildi, canlı varlık tasviri yoktur.",
+    "autres": "Bölümün diğer hadisleri",
+    "tousLesHadiths": "Bölümün tüm hadisleri",
+    "explications": "Bu bölüm için henüz açıklama (âlim şerhi) yok: bir uzmanın denetlediği kaynaktan gelmelidir.",
+    "referencesIntro": "Bu bölümün hadislerinin bulunduğu eserler ve sayıları:",
+    "source": "Sınıflandırma, bölümler ve hadisler: «الجامع — Hadith Knowledge Graph» tabanının (emadjumaah) « موضوعات الحديث الشريف » dizini, CC BY 4.0 lisansı.",
+    "lancer": "Sunumu başlat",
+    "pause": "Duraklat",
+    "ecouter": "Dinle",
+    "arreter": "Durdur",
+    "voix": "Tarayıcınızın yapay sesiyle okunur (kayıtlı ses değildir).",
+    "sansVoix": "Tarayıcınız yapay ses sunmuyor.",
+    "diapo": "Görsel",
+    "sousChapitre": "Alt bölüm",
+    "pages": "Sayfalar",
+    "page": "Sayfa {page} / {total}",
+    "precedente": "Önceki sayfa",
+    "suivante": "Sonraki sayfa",
+    "numero": "no. {n}",
+    "ouvrir": "Hadisi aç",
+    "indisponible": "Metin şu anda kullanılamıyor.",
+    "aucunHadith": "Bu alt bölümde eserlerimizden hadis yok."
   }
 }

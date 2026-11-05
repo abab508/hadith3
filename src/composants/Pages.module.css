@@ -204,3 +204,14 @@
 @media(max-width:600px){.grilleCartes{grid-template-columns:minmax(0,1fr);}}
 
 @media(max-width:760px){.carrousel{margin-block-start:1rem;}}
+.galerieChapitre{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.8rem;margin-block:1rem;}
+.galerieChapitre img{inline-size:100%;aspect-ratio:16/9;object-fit:cover;border-radius:.6rem;}
+.listeReferences{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.5rem 1.2rem;}
+.listeReferences li{display:flex;justify-content:space-between;gap:.6rem;padding-block:.35rem;border-block-end:1px solid #e3b86633;}
+.listeReferences a{color:var(--ocre);}
+.illustrationPanneau{margin-block:.6rem 1rem;}
+.listeSousPanneau{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.listeSousPanneau a{color:#fff3cf;}
+.arabeSousTitre{inline-size:fit-content;font-size:1.4rem;}
+.cadreGalerie{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:.6rem;}
+.cadreGalerie img{object-fit:cover;}

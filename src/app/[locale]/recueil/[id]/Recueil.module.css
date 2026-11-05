@@ -18,3 +18,5 @@
 .selecteur a{display:inline-block;padding:.35rem .9rem;border:1px solid #e3b86688;border-radius:999px;color:#fff3cf;text-decoration:none;font-size:.9rem;}
 .selecteur a[aria-current="true"]{background:linear-gradient(180deg,#fde7aa,#e8b35c 55%,#c98d3b);color:#2a1a06;border-color:#fff0bd;font-weight:700;}
 .nomAr{align-self:flex-start;margin:0;font-size:1.6rem;line-height:1.5;color:#f2c877;}
+.titreSous{font-family:"Alegreya",serif;font-weight:700;font-size:1.08rem;color:#fff3cf;}
+.bandeauIllustration{max-inline-size:22rem;}

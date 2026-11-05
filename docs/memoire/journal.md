@@ -149,3 +149,8 @@
 - Fait : noms, nisba et lieux des fiches en lettres latines (avec l'arabe dessous) pour les langues en écriture latine ; tables de 2 088 mots et 250 lieux (IA, à relire), champ laissé en arabe si un mot est inconnu ; « Auteur du recueil » seulement pour l'auteur principal (sinon carte du recueil en fin de chaîne) ; historique du dépôt de données réécrit sans le recueil ibadite.
 - Vérifié : 153 tests unitaires, 9 contrôles, build, 68/68 tests navigateur ; capture Bukhārī 1010 (Anas ibn Mālik).
 - Prochaine étape : mise en ligne après accord ; suppression complète de l'ancien commit du dépôt de données (droit GitHub delete_repo à accorder par le patron).
+
+## 2026-11-05 — Chapitres et sous-chapitres pour tous les thèmes, illustrations, audio/vidéo
+- Fait : 284 chapitres et 2 714 sous-chapitres (index « موضوعات الحديث الشريف » de hadith-kg) pour les 9 thèmes, titres français (IA, à relire) ; pages chapitre (galerie de 3 illustrations SVG, sous-chapitres, références par recueil, présentation animée + voix de synthèse) et sous-chapitre (hadiths paginés avec texte arabe, traduction française si disponible, bouton Écouter).
+- Vérifié : 161 tests unitaires, 9 contrôles, build, 107/107 tests navigateur ; captures thème Adoration, chapitre Prière, sous-chapitre peste.
+- Prochaine étape : mise en ligne après accord du patron ; explications (charḥ) à fournir par un spécialiste.

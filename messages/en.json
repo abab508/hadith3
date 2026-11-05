@@ -669,5 +669,32 @@
     "introuvable": "This hadith cannot be found in the collection.",
     "source": "Text, chains and cards: “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence, published in the Milaghaiba data repository. Gradings quoted as they appear in the source, to be checked by a specialist.",
     "guide": "Read the names in the order shown, then click a narrator to open their card. Chain given for this hadith by the hadith-kg database itself."
+  },
+  "chapitreKg": {
+    "compte": "{nombre, number} hadiths · {sous, number} sub-chapters",
+    "nbHadiths": "{count, plural, one {# hadith} other {# hadiths}}",
+    "illustration": "illustration {n}",
+    "sourceTitres": "Titles translated from Arabic by AI, to be checked; the source’s Arabic heading is shown alongside. Illustrations drawn for the site, without depicting living beings.",
+    "autres": "Other hadiths of the chapter",
+    "tousLesHadiths": "All hadiths of the chapter",
+    "explications": "No explanation (scholarly commentary) for this chapter yet: it must come from a source checked by a specialist.",
+    "referencesIntro": "Collections containing the hadiths of this chapter, with their number:",
+    "source": "Classification, chapters and hadiths: the « موضوعات الحديث الشريف » index of the “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence.",
+    "lancer": "Start the presentation",
+    "pause": "Pause",
+    "ecouter": "Listen",
+    "arreter": "Stop",
+    "voix": "Read aloud by your browser’s synthetic voice (not a recorded voice).",
+    "sansVoix": "Your browser offers no synthetic voice.",
+    "diapo": "Image",
+    "sousChapitre": "Sub-chapter",
+    "pages": "Pages",
+    "page": "Page {page} of {total}",
+    "precedente": "Previous page",
+    "suivante": "Next page",
+    "numero": "no. {n}",
+    "ouvrir": "Open the hadith",
+    "indisponible": "Text temporarily unavailable.",
+    "aucunHadith": "No hadith from our collections in this sub-chapter."
   }
 }
