@@ -678,6 +678,11 @@
     "mdpChange": "Contraseña cambiada.",
     "allerForum": "Ir al foro",
     "viePrivee": "Su correo solo sirve para iniciar sesión: nunca se muestra.",
+    "afficherCaracteres": "Mostrar caracteres",
+    "masquerCaracteres": "Ocultar caracteres",
+    "souvenir": "Recordar mi correo en este dispositivo",
+    "oublie": "¿Olvidó su contraseña?",
+    "aideOubli": "Contacte con el administrador del sitio: le dará una contraseña provisional, que luego podrá cambiar en «Mi cuenta».",
     "erreurs": {
       "identifiants": "Correo o contraseña incorrectos.",
       "bloque": "El administrador ha bloqueado esta cuenta.",

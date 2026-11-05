@@ -678,6 +678,11 @@
     "mdpChange": "Kata sandi diganti.",
     "allerForum": "Ke forum",
     "viePrivee": "Alamat e-mail Anda hanya dipakai untuk masuk dan tidak pernah ditampilkan.",
+    "afficherCaracteres": "Tampilkan karakter",
+    "masquerCaracteres": "Sembunyikan karakter",
+    "souvenir": "Ingat email saya di perangkat ini",
+    "oublie": "Lupa kata sandi?",
+    "aideOubli": "Hubungi admin situs: Anda akan diberi kata sandi sementara, lalu ubah di «Akun saya».",
     "erreurs": {
       "identifiants": "E-mail atau kata sandi salah.",
       "bloque": "Akun ini diblokir oleh administrator.",

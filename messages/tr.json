@@ -678,6 +678,11 @@
     "mdpChange": "Parola değiştirildi.",
     "allerForum": "Foruma git",
     "viePrivee": "E-posta adresiniz yalnızca giriş için kullanılır, hiçbir zaman gösterilmez.",
+    "afficherCaracteres": "Karakterleri göster",
+    "masquerCaracteres": "Karakterleri gizle",
+    "souvenir": "Bu cihazda e-postamı hatırla",
+    "oublie": "Şifrenizi mi unuttunuz?",
+    "aideOubli": "Site yöneticisiyle iletişime geçin: size geçici bir şifre verecek, ardından «Hesabım» bölümünden değiştirebilirsiniz.",
     "erreurs": {
       "identifiants": "E-posta veya parola yanlış.",
       "bloque": "Bu hesap yönetici tarafından engellendi.",

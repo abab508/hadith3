@@ -75,3 +75,23 @@ test("un mauvais mot de passe membre est refusé sans dire si l'e-mail existe", 
   await page.getByRole("button", { name: C.seConnecter }).click();
   await expect(page.getByText(C.erreurs.identifiants)).toBeVisible();
 });
+
+test("l'œil affiche le mot de passe, l'e-mail peut être retenu, « mot de passe oublié » explique quoi faire", async ({ page }) => {
+  await page.goto("/fr/compte");
+  const mdp = page.getByLabel(C.motDePasse, { exact: true });
+  await mdp.fill("secret-a-voir");
+  await expect(mdp).toHaveAttribute("type", "password");
+  await page.getByRole("button", { name: C.afficherCaracteres }).click();
+  await expect(mdp).toHaveAttribute("type", "text");
+  await page.getByRole("button", { name: C.masquerCaracteres }).click();
+  await expect(mdp).toHaveAttribute("type", "password");
+
+  await page.getByRole("button", { name: C.oublie }).click();
+  await expect(page.getByText(C.aideOubli)).toBeVisible();
+
+  // L'adresse n'est retenue qu'après une connexion réussie : on simule une adresse déjà retenue.
+  await page.evaluate(() => localStorage.setItem("milaghaiba_email", "retenu@exemple.test"));
+  await page.reload();
+  await expect(page.getByLabel(C.email)).toHaveValue("retenu@exemple.test");
+  await expect(page.getByLabel(C.souvenir)).toBeChecked();
+});
