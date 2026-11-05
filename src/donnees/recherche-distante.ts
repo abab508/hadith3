@@ -16,6 +16,8 @@ export const EXTERNAL_COLLECTIONS = [
   {id:"muwatta",key:"malik",nom:"Muwaṭṭaʾ Mālik",fr:true}
 ] as const;
 export type ExternalCollection = typeof EXTERNAL_COLLECTIONS[number];
+// Recueil lisible depuis les éditions publiques (les 7 grands, plus ceux qui n'ont pas d'index de recherche).
+export type CollectionPublique = { readonly id: string; readonly key: string; readonly nom: string; readonly fr: boolean };
 export type RemoteRow = {
   hadithnumber: number; arabicnumber?: number|string;
   text: string; grades?: {name?:string;grade?:string}[];
@@ -43,7 +45,7 @@ export function remoteLanguage(locale:string,search:string){
   const known:Record<string,string>={fr:"fra",en:"eng",ar:"ara",ur:"urd",tr:"tur",id:"ind",ms:"ind"};
   return known[locale]??"eng";
 }
-export function canUseRemote(collection:ExternalCollection,lang:string){
+export function canUseRemote(collection:CollectionPublique,lang:string){
   return lang!=="fra"||collection.fr;
 }
 export function editionUrl(key:string,language:string,number?:number){
@@ -81,9 +83,17 @@ export function extractHits(edition:RemoteEdition,collection:ExternalCollection,
   return out;
 }
 const requestTimeout=16000;
-export async function fetchRemoteEdition(collection:ExternalCollection,lang:string,number?:number):Promise<RemoteEdition>{
+export async function fetchRemoteEdition(collection:CollectionPublique,lang:string,number?:number):Promise<RemoteEdition>{
+  return fetchEditionPath(collection,lang,number?"/"+number:"");
+}
+// Un « livre » (section) entier d'une édition, dans l'ordre de la source.
+export async function fetchRemoteSection(collection:CollectionPublique,lang:string,section:number):Promise<RemoteEdition>{
+  if(!Number.isSafeInteger(section)||section<0||section>1000)throw new Error("Invalid section");
+  return fetchEditionPath(collection,lang,"/sections/"+section);
+}
+async function fetchEditionPath(collection:CollectionPublique,lang:string,chemin:string):Promise<RemoteEdition>{
   if(!canUseRemote(collection,lang))throw new Error("Edition not available in this language");
-  const suffix=lang+"-"+collection.key+(number?"/"+number:"")+".min.json";
+  const suffix=lang+"-"+collection.key+chemin+".min.json";
   let lastError:unknown;
   for(const base of [PREFIX,FALLBACK]){
     try{

@@ -1,20 +1,15 @@
 import brut from "../../data/recueils/catalogue-recueils.json" with { type: "json" };
 import { corpus } from "@/donnees/corpus";
-import { EXTERNAL_COLLECTIONS } from "@/donnees/recherche-distante";
+import { recueilPublic } from "@/donnees/recueils-publics";
 import { recueilsKg } from "@/donnees/recueils-kg";
 import { fichierRecueils, type FamilleRecueil, type FichierRecueils, type Recueil } from "@/donnees/schemas/recueil";
 
-// « lisible » = nombre de hadiths consultables dans le dépôt de données (hadith-kg), sinon 0.
-// « page » = vraie page du site pour ce livre : le recueil entier, sinon le hadith n° 1 de l'édition publique, sinon aucune.
-export type PageLivre = { href: string; type: "recueil" | "premier" } | null;
-export type RecueilAffiche = Recueil & { cherchable: boolean; lisible: number; page: PageLivre };
+// « lisible » = nombre de hadiths consultables : dépôt de données (hadith-kg) ou édition publique (hadith-api), sinon 0.
+// « page » = page de lecture du recueil sur le site, sinon aucune (le livre n'est alors pas un lien).
+export type RecueilAffiche = Recueil & { cherchable: boolean; lisible: number; page: string | null };
 
-const editionsPubliques = new Set<string>(EXTERNAL_COLLECTIONS.map((c) => c.id));
-
-export function pageDuLivre(id: string): PageLivre {
-  if ((recueilsKg.get(id)?.nombre ?? 0) > 0) return { href: `/recueil/${id}`, type: "recueil" };
-  if (editionsPubliques.has(id)) return { href: `/hadith/${id}/ara/1`, type: "premier" };
-  return null;
+export function hadithsLisibles(id: string): number {
+  return recueilsKg.get(id)?.nombre || recueilPublic(id)?.sommaire.total || 0;
 }
 export type Rayon = { famille: FamilleRecueil; recueils: RecueilAffiche[] };
 
@@ -45,6 +40,6 @@ export function rayons(): Rayon[] {
     famille,
     recueils: catalogueRecueils.recueils
       .filter((r) => r.famille === famille)
-      .map((r) => ({ ...r, cherchable: recherchables.has(r.id), lisible: recueilsKg.get(r.id)?.nombre ?? 0, page: pageDuLivre(r.id) })),
+      .map((r) => ({ ...r, cherchable: recherchables.has(r.id), lisible: hadithsLisibles(r.id), page: hadithsLisibles(r.id) > 0 ? `/recueil/${r.id}` : null })),
   }));
 }

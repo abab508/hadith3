@@ -471,7 +471,6 @@
       }
     },
     "lire": "Leer los {n, number} hadices",
-    "premier": "Abrir el hadiz n.º 1",
     "indisponible": "Aún no disponible en el sitio: esta colección todavía no tiene página de lectura."
   },
   "themes": {
@@ -671,6 +670,21 @@
     "introuvable": "Este hadiz no se encuentra en la colección.",
     "source": "Texto, cadenas y fichas: base «الجامع — Hadith Knowledge Graph» (emadjumaah), licencia CC BY 4.0, publicada en el repositorio de datos de Milaghaiba. Valoraciones citadas tal como figuran en la fuente, a verificar por un especialista.",
     "guide": "Lea los nombres en el orden indicado y abra la ficha de un transmisor haciendo clic. Cadena dada para este hadiz por la propia base hadith-kg."
+  },
+  "recueilPublic": {
+    "compte": "{nombre, number} hadices · {livres, number} libros",
+    "livres": "Libros de la colección",
+    "livre": "Libro {n}",
+    "horsLivre": "Fuera de libro (clasificación de la fuente)",
+    "nbHadiths": "{count, plural, one {# hadiz} other {# hadices}}",
+    "titresSource": "Títulos de los libros tal como los da la fuente, en inglés.",
+    "source": "Texto: ediciones públicas hadith-api (fawazahmed0), dominio público (Unlicense), con su numeración. Leído bajo demanda en la fuente: debe verificarlo un especialista.",
+    "retourSommaire": "Volver a los libros de la colección",
+    "livrePrecedent": "Libro anterior",
+    "livreSuivant": "Libro siguiente",
+    "navigationLivres": "Libros vecinos",
+    "voirRecueil": "Ver en la colección",
+    "voisins": "Hadices vecinos"
   },
   "chapitreKg": {
     "compte": "{nombre, number} hadices · {sous, number} subcapítulos",

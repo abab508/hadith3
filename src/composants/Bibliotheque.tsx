@@ -110,8 +110,8 @@ export default function Bibliotheque({ rayons, requeteInitiale = "" }: { rayons:
                   </p>
                   {/* Le lien principal couvre toute la carte : un clic sur le livre ouvre sa vraie page. */}
                   {livre.page ? (
-                    <Link href={livre.page.href} className={`${styles.chercher} ${styles.principal}`}>
-                      {livre.page.type === "recueil" ? t("lire", { n: livre.lisible }) : t("premier")} <span aria-hidden="true">↗</span>
+                    <Link href={livre.page} className={`${styles.chercher} ${styles.principal}`}>
+                      {t("lire", { n: livre.lisible })} <span aria-hidden="true">↗</span>
                     </Link>
                   ) : (
                     <p className={styles.indisponible}>{t("indisponible")}</p>

@@ -471,7 +471,6 @@
       }
     },
     "lire": "Read the {n, number} hadiths",
-    "premier": "Open hadith no. 1",
     "indisponible": "Not yet available on the site: this collection has no reading page yet."
   },
   "themes": {
@@ -671,6 +670,21 @@
     "introuvable": "This hadith cannot be found in the collection.",
     "source": "Text, chains and cards: “الجامع — Hadith Knowledge Graph” database (emadjumaah), CC BY 4.0 licence, published in the Milaghaiba data repository. Gradings quoted as they appear in the source, to be checked by a specialist.",
     "guide": "Read the names in the order shown, then click a narrator to open their card. Chain given for this hadith by the hadith-kg database itself."
+  },
+  "recueilPublic": {
+    "compte": "{nombre, number} hadiths · {livres, number} books",
+    "livres": "Books of the collection",
+    "livre": "Book {n}",
+    "horsLivre": "Outside a book (source's classification)",
+    "nbHadiths": "{count, plural, one {# hadith} other {# hadiths}}",
+    "titresSource": "Book titles as given by the source, in English.",
+    "source": "Text: public hadith-api editions (fawazahmed0), public domain (Unlicense), with their numbering. Read on demand from the source: to be checked by a specialist.",
+    "retourSommaire": "Back to the books of the collection",
+    "livrePrecedent": "Previous book",
+    "livreSuivant": "Next book",
+    "navigationLivres": "Neighbouring books",
+    "voirRecueil": "View in the collection",
+    "voisins": "Neighbouring hadiths"
   },
   "chapitreKg": {
     "compte": "{nombre, number} hadiths · {sous, number} sub-chapters",

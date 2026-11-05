@@ -4,6 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link, redirect } from "@/i18n/navigation";
 import { catalogueRecueils } from "@/donnees/recueils";
 import { blocKg, extrait, nombreBlocs, validerRecueil, type HadithKg } from "@/donnees/recueils-kg";
+import { recueilPublic } from "@/donnees/recueils-publics";
+import { validDetailParams } from "@/donnees/fiche-distante";
+import RecueilPublic from "@/composants/RecueilPublic";
 import styles from "@/app/[locale]/hadith/[recueil]/[langue]/[numero]/Hadith.module.css";
 import liste from "./Recueil.module.css";
 
@@ -16,12 +19,18 @@ export async function generateMetadata({ params }: { params: Promise<Parametres>
 }
 
 // Un recueil de la bibliothèque : ses hadiths, 100 par page, tirés du dépôt de données public.
-export default async function PageRecueil({ params, searchParams }: { params: Promise<Parametres>; searchParams: Promise<{ page?: string; n?: string }> }) {
+export default async function PageRecueil({ params, searchParams }: { params: Promise<Parametres>; searchParams: Promise<{ page?: string; n?: string; livre?: string }> }) {
   const { locale, id } = await params;
-  const { page, n } = await searchParams;
+  const { page, n, livre } = await searchParams;
   setRequestLocale(locale);
   const valide = validerRecueil(id);
   const fiche = catalogueRecueils.recueils.find((x) => x.id === id);
+  // Recueil lu depuis l'édition publique (7 grands recueils, 40 hadiths d'an-Nawawī) : même numérotation que /hadith/...
+  const publique = !valide && fiche ? recueilPublic(id) : null;
+  if (publique && fiche) {
+    if (typeof n === "string" && validDetailParams(id, "ara", n.trim())) redirect({ href: `/hadith/${id}/ara/${Number(n.trim())}`, locale });
+    return <RecueilPublic locale={locale} fiche={fiche} collection={publique.collection} sommaire={publique.sommaire} livre={livre} page={page} />;
+  }
   if (!valide || !fiche) notFound();
   const { recueil } = valide;
   if (typeof n === "string" && validerRecueil(id, n.trim())?.n) redirect({ href: `/recueil/${id}/${Number(n.trim())}`, locale });
