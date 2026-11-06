@@ -1,0 +1,172 @@
+{
+  "titre": "Abou Bakr as-Siddîq",
+  "source": "El Milaghaiba — fiche transmetteur n° 4945 (data/biographies/fiches/2.json), données hadith-kg (CC BY 4.0)",
+  "voix": "ar-SA-HamedNeural",
+  "debit": "+0%",
+  "scenes": [
+    {
+      "id": 1,
+      "type": "nom",
+      "ar": "هو عبدُ الله بنُ عثمان، أبو بكرٍ الصِّدِّيق، رضي الله عنه.",
+      "fr": "C'est ʿAbd Allâh ibn ʿUthmân : Abou Bakr as-Siddîq.",
+      "sous_titres": [
+        [
+          0,
+          "C'est ʿAbd Allâh ibn ʿUthmân :"
+        ],
+        [
+          5,
+          "Abou Bakr as-Siddîq."
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "type": "nasab",
+      "ar": "عبدُ الله بنُ عثمانَ بنِ عامرِ بنِ عمرِو بنِ كعبِ بنِ سعدِ بنِ تيمِ بنِ مُرّة، القُرَشيُّ التَّيْميّ.",
+      "fr": "Sa lignée remonte à Taym ibn Murra. Il est de Quraych, du clan de Taym.",
+      "sous_titres": [
+        [
+          0,
+          "Sa lignée remonte à Taym ibn Murra."
+        ],
+        [
+          16,
+          "Il est de Quraych, du clan de Taym."
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "type": "citation",
+      "livre": "كشف النقاب",
+      "auteur": "ابن الجوزي",
+      "citation": "لقبه عتيق",
+      "ar": "قال ابنُ الجوزيّ في «كشفِ النِّقاب»: لقبُه عَتيق.",
+      "fr": "Ibn al-Jawzî, dans Kashf an-Niqâb : « son surnom est ʿAtîq ».",
+      "sous_titres": [
+        [
+          0,
+          "Ibn al-Jawzî, dans Kashf an-Niqâb :"
+        ],
+        [
+          6,
+          "« son surnom est ʿAtîq »."
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "type": "citation",
+      "livre": "الجرح والتعديل",
+      "auteur": "ابن أبي حاتم الرازي",
+      "citation": "صاحب رسول الله ﷺ",
+      "ar": "وذكره ابنُ أبي حاتمٍ في «الجرحِ والتعديل» وقال: صاحبُ رسولِ الله، صلى الله عليه وسلم.",
+      "fr": "Ibn Abî Hâtim, dans al-Jarh wa at-Taʿdîl : « le compagnon du Messager d'Allah ﷺ ».",
+      "sous_titres": [
+        [
+          0,
+          "Ibn Abî Hâtim, dans al-Jarh wa at-Taʿdîl :"
+        ],
+        [
+          8,
+          "« le compagnon du Messager d'Allah ﷺ »."
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "type": "grotte",
+      "livre": "تقريب التهذيب",
+      "auteur": "ابن حجر العسقلاني",
+      "citation": "صحابي، خليفة رسول الله ﷺ، وثاني اثنين في الغار",
+      "ar": "وقال ابنُ حجرٍ العسقلانيّ في «التقريب»: صحابيّ، خليفةُ رسولِ الله صلى الله عليه وسلم، وثاني اثنين في الغار.",
+      "fr": "Ibn Hajar, dans at-Taqrîb : « Compagnon, calife du Messager d'Allah ﷺ, et le second des deux dans la grotte ».",
+      "sous_titres": [
+        [
+          0,
+          "Ibn Hajar, dans at-Taqrîb :"
+        ],
+        [
+          6,
+          "« Compagnon, calife du Messager d'Allah ﷺ,"
+        ],
+        [
+          14,
+          "et le second des deux dans la grotte »."
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "type": "medine",
+      "ar": "من الطبقةِ الأولى، سكن المدينة، وله في قاعدةِ «ميلاغايبا» ثلاثُمئةٍ وثمانٍ وخمسون رواية.",
+      "fr": "Première génération (ṭabaqa 1). Il résidait à Médine. El Milaghaiba lui rattache 358 narrations.",
+      "sous_titres": [
+        [
+          0,
+          "Première génération (ṭabaqa 1)."
+        ],
+        [
+          3,
+          "Il résidait à Médine."
+        ],
+        [
+          5,
+          "El Milaghaiba lui rattache 358 narrations."
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "type": "eleves",
+      "noms": [
+        "أنس بن مالك",
+        "عائشة",
+        "علي بن أبي طالب",
+        "أبو هريرة",
+        "قيس بن أبي حازم"
+      ],
+      "ar": "وروى عنه: أنسُ بنُ مالك، وعائشةُ، وعليُّ بنُ أبي طالب، وأبو هريرة، وقيسُ بنُ أبي حازم.",
+      "fr": "Ont transmis de lui : Anas ibn Mâlik, ʿÂʾicha, ʿAlî ibn Abî Tâlib, Abou Hourayra, Qays ibn Abî Hâzim.",
+      "sous_titres": [
+        [
+          0,
+          "Ont transmis de lui :"
+        ],
+        [
+          2,
+          "Anas ibn Mâlik, ʿÂʾicha,"
+        ],
+        [
+          6,
+          "ʿAlî ibn Abî Tâlib,"
+        ],
+        [
+          10,
+          "Abou Hourayra, Qays ibn Abî Hâzim."
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "type": "deces",
+      "ar": "تُوُفِّيَ بالمدينةِ سنةَ ثلاثَ عشرةَ للهجرة، وعمرُه ثلاثٌ وستّون سنة.",
+      "fr": "Il est mort à Médine en l'an 13 de l'Hégire, à 63 ans.",
+      "sous_titres": [
+        [
+          0,
+          "Il est mort à Médine"
+        ],
+        [
+          2,
+          "en l'an 13 de l'Hégire,"
+        ],
+        [
+          6,
+          "à 63 ans."
+        ]
+      ]
+    }
+  ]
+}
