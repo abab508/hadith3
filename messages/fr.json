@@ -534,7 +534,13 @@
     "prophetesAide": "Chapitres du site dont le titre arabe nomme ce prophète ; chaque chapitre réunit les hadiths de la source.",
     "nbChapitres": "{n, plural, one {# chapitre} other {# chapitres}}",
     "aucunChapitre": "Aucun chapitre trouvé pour l’instant.",
-    "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}"
+    "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}",
+    "video": {
+      "titre": "Courte vidéo",
+      "description": "Voix off en arabe, sous-titres en français. Réalisée uniquement à partir de cette fiche, sans montrer aucun visage.",
+      "texte": "Texte de la voix off",
+      "repli": "Votre navigateur ne peut pas lire cette vidéo : <lien>la télécharger (MP4)</lien>."
+    }
   },
   "actualites": {
     "surtitre": "Informations et actualités",

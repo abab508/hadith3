@@ -534,7 +534,13 @@
     "prophetesAide": "Arapça başlığında bu peygamberin adı geçen site bölümleri; her bölüm kaynaktaki hadisleri bir araya getirir.",
     "nbChapitres": "{n, plural, other {# bölüm}}",
     "aucunChapitre": "Henüz bölüm bulunamadı.",
-    "nbHadiths": "{n, plural, other {# hadis}}"
+    "nbHadiths": "{n, plural, other {# hadis}}",
+    "video": {
+      "titre": "Kısa video",
+      "description": "Arapça seslendirme, Fransızca alt yazı. Yalnızca bu biyografiden hazırlandı; hiçbir yüz gösterilmez.",
+      "texte": "Seslendirme metni",
+      "repli": "Tarayıcınız bu videoyu oynatamıyor: <lien>videoyu indirin (MP4)</lien>."
+    }
   },
   "actualites": {
     "surtitre": "Bilgiler ve haberler",

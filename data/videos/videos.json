@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "videos": [
+    {
+      "id": "abou-bakr-siddiq",
+      "personne": 4945,
+      "fichier": "/videos/abou-bakr-siddiq.mp4",
+      "affiche": "/videos/abou-bakr-siddiq.jpg",
+      "largeur": 720,
+      "hauteur": 1280,
+      "duree": 63,
+      "voix": "ar",
+      "sousTitres": "fr",
+      "texte": [
+        {
+          "ar": "هو عبدُ الله بنُ عثمان، أبو بكرٍ الصِّدِّيق، رضي الله عنه.",
+          "sousTitre": "C'est ʿAbd Allâh ibn ʿUthmân : Abou Bakr as-Siddîq."
+        },
+        {
+          "ar": "عبدُ الله بنُ عثمانَ بنِ عامرِ بنِ عمرِو بنِ كعبِ بنِ سعدِ بنِ تيمِ بنِ مُرّة، القُرَشيُّ التَّيْميّ.",
+          "sousTitre": "Sa lignée remonte à Taym ibn Murra. Il est de Quraych, du clan de Taym."
+        },
+        {
+          "ar": "قال ابنُ الجوزيّ في «كشفِ النِّقاب»: لقبُه عَتيق.",
+          "sousTitre": "Ibn al-Jawzî, dans Kashf an-Niqâb : « son surnom est ʿAtîq »."
+        },
+        {
+          "ar": "وذكره ابنُ أبي حاتمٍ في «الجرحِ والتعديل» وقال: صاحبُ رسولِ الله، صلى الله عليه وسلم.",
+          "sousTitre": "Ibn Abî Hâtim, dans al-Jarh wa at-Taʿdîl : « le compagnon du Messager d'Allah ﷺ »."
+        },
+        {
+          "ar": "وقال ابنُ حجرٍ العسقلانيّ في «التقريب»: صحابيّ، خليفةُ رسولِ الله صلى الله عليه وسلم، وثاني اثنين في الغار.",
+          "sousTitre": "Ibn Hajar, dans at-Taqrîb : « Compagnon, calife du Messager d'Allah ﷺ, et le second des deux dans la grotte »."
+        },
+        {
+          "ar": "من الطبقةِ الأولى، سكن المدينة، وله في قاعدةِ «ميلاغايبا» ثلاثُمئةٍ وثمانٍ وخمسون رواية.",
+          "sousTitre": "Première génération (ṭabaqa 1). Il résidait à Médine. El Milaghaiba lui rattache 358 narrations."
+        },
+        {
+          "ar": "وروى عنه: أنسُ بنُ مالك، وعائشةُ، وعليُّ بنُ أبي طالب، وأبو هريرة، وقيسُ بنُ أبي حازم.",
+          "sousTitre": "Ont transmis de lui : Anas ibn Mâlik, ʿÂʾicha, ʿAlî ibn Abî Tâlib, Abou Hourayra, Qays ibn Abî Hâzim."
+        },
+        {
+          "ar": "تُوُفِّيَ بالمدينةِ سنةَ ثلاثَ عشرةَ للهجرة، وعمرُه ثلاثٌ وستّون سنة.",
+          "sousTitre": "Il est mort à Médine en l'an 13 de l'Hégire, à 63 ans."
+        }
+      ]
+    }
+  ]
+}

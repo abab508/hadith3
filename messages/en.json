@@ -534,7 +534,13 @@
     "prophetesAide": "Site chapters whose Arabic title names this prophet; each chapter gathers hadiths from the source.",
     "nbChapitres": "{n, plural, one {# chapter} other {# chapters}}",
     "aucunChapitre": "No chapter found yet.",
-    "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}"
+    "nbHadiths": "{n, plural, one {# hadith} other {# hadiths}}",
+    "video": {
+      "titre": "Short video",
+      "description": "Arabic voice-over, French subtitles. Made only from this entry, without showing any face.",
+      "texte": "Voice-over text",
+      "repli": "Your browser cannot play this video: <lien>download it (MP4)</lien>."
+    }
   },
   "actualites": {
     "surtitre": "Information and news",
