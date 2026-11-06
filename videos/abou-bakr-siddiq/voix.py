@@ -1,10 +1,12 @@
 """Génère la voix off arabe (gratuite, edge-tts) scène par scène, avec le minutage de chaque mot.
 
 Usage : python voix.py
-Sortie : audio/scene-N.mp3, audio/durees.json, audio/mots.json
+Sortie : audio/durees.json et audio/mots.json (dans le dépôt : le minutage),
+         TRAVAIL/audio/scene-N.mp3 (hors du dépôt, par défaut ~/videos-milaghaiba/<nom du dossier>/audio)
 """
 import asyncio
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -14,6 +16,7 @@ import imageio_ffmpeg
 
 ICI = Path(__file__).parent
 AUDIO = ICI / "audio"
+MP3 = Path(os.environ.get("MILAGHAIBA_VIDEOS", Path.home() / "videos-milaghaiba")) / ICI.name / "audio"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
 
@@ -41,9 +44,10 @@ async def une_scene(scene: dict, voix: str, debit: str, fichier: Path) -> list:
 async def main() -> None:
     donnees = json.loads((ICI / "scenes.json").read_text(encoding="utf-8"))
     AUDIO.mkdir(exist_ok=True)
+    MP3.mkdir(parents=True, exist_ok=True)
     durees, tous_mots = {}, {}
     for scene in donnees["scenes"]:
-        fichier = AUDIO / f"scene-{scene['id']}.mp3"
+        fichier = MP3 / f"scene-{scene['id']}.mp3"
         tous_mots[scene["id"]] = await une_scene(scene, donnees["voix"], donnees["debit"], fichier)
         durees[scene["id"]] = round(duree(fichier), 3)
         print(f"scène {scene['id']} : {durees[scene['id']]} s, {len(tous_mots[scene['id']])} mots")

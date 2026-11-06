@@ -9,11 +9,12 @@ Usage : python construire_openmontage.py
 """
 import json
 import subprocess
+import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True  # pas de __pycache__ dans le dépôt
 import construire_hyperframes as hf  # minutage commun (aucun fichier n'est écrit à l'import)
 
-ICI = Path(__file__).parent
 PROJET = Path("C:/Users/df/videos-milaghaiba/OpenMontage/projects/abou-bakr-siddiq")
 FFMPEG = next(Path.home().glob("AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg*/*/bin/ffmpeg.exe"))
 
@@ -51,7 +52,7 @@ def narration() -> Path:
     cmd = [str(FFMPEG), "-y", "-loglevel", "error"]
     filtres, noms = [], []
     for i, s in enumerate(hf.scenes):
-        cmd += ["-i", str(ICI / f"audio/scene-{s['id']}.mp3")]
+        cmd += ["-i", str(hf.TRAVAIL / f"audio/scene-{s['id']}.mp3")]
         ms = int(hf.voix_debut[i] * 1000)
         filtres.append(f"[{i}:a]adelay={ms}|{ms}[a{i}]")
         noms.append(f"[a{i}]")

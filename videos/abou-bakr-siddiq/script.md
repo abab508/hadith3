@@ -28,3 +28,16 @@ Taqrîb at-Tahdhîb, al-Jarh wa at-Taʿdîl, Kashf an-Niqâb. Contenu documentai
 - Exclu volontairement : la liste « maîtres » (Bilal, Abou Hourayra… comme maîtres d'Abou Bakr est un artefact des données) et « موضع انقطاع » dans les élèves (ce n'est pas une personne, ça marque une rupture de chaîne).
 - Ajouts de politesse non tirés de la fiche : « رضي الله عنه » (scène 1). À retirer si tu veux zéro ajout.
 - Aucun visage ni personnage représentant le compagnon.
+
+## Fabrication
+
+Le dépôt ne garde que les sources (ce fichier, `scenes.json`, `audio/*.json`, les scripts).
+Tout ce qui est fabriqué va **hors du dépôt**, dans `~/videos-milaghaiba/abou-bakr-siddiq/`
+(autre dossier possible avec la variable `MILAGHAIBA_VIDEOS`) : MP3, projet HyperFrames, MP4.
+
+1. `python voix.py` : voix arabe (edge-tts) et minutage mot par mot
+2. `python construire_hyperframes.py` : projet HyperFrames dans `~/videos-milaghaiba/abou-bakr-siddiq/hyperframes`
+3. Dans ce dossier `hyperframes` : `npx --yes hyperframes@0.9.19 render --quality delivery -o ../sortie/abou-bakr-siddiq.mp4`
+   (FFmpeg doit être dans le PATH ; mettre `HYPERFRAMES_NO_TELEMETRY=1`)
+
+Les skills HyperFrames pour l'agent se réinstallent avec `npx skills add heygen-com/hyperframes`.

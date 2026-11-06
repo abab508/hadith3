@@ -1,18 +1,39 @@
 """Construit le projet HyperFrames (exemple 1) à partir de scenes.json et de la voix.
 
 Usage : python construire_hyperframes.py
-Écrit : hyperframes/index.html, hyperframes/compositions/*.html, copie l'audio dans hyperframes/assets/audio.
+Écrit HORS du dépôt, dans le dossier de travail TRAVAIL (par défaut ~/videos-milaghaiba/<nom du dossier>) :
+  hyperframes/index.html, hyperframes/compositions/*.html, les réglages HyperFrames,
+  les polices (copiées depuis public/polices du site) et l'audio (copié depuis TRAVAIL/audio).
 Tout est déterministe (aucun hasard non fixé) : même entrée, même vidéo.
 """
 import json
+import os
 import random
 import shutil
 from pathlib import Path
 from string import Template
 
 ICI = Path(__file__).parent
-PROJET = ICI / "hyperframes"
+RACINE = ICI.parents[1]  # racine du dépôt (pour public/polices)
+# Les fichiers fabriqués (MP3, projet HyperFrames, MP4) restent hors du dépôt.
+TRAVAIL = Path(os.environ.get("MILAGHAIBA_VIDEOS", Path.home() / "videos-milaghaiba")) / ICI.name
+PROJET = TRAVAIL / "hyperframes"
 COMPOS = PROJET / "compositions"
+FICHIERS_POLICES = {"ArefRuqaa": ["aref-ruqaa-arabic-400", "aref-ruqaa-arabic-700"],
+           "NotoNaskhArabic": ["noto-naskh-arabic-arabic-400-normal", "noto-naskh-arabic-arabic-700-normal"],
+           "Alegreya": ["alegreya-latin-400-normal", "alegreya-latin-ext-400-normal", "alegreya-latin-500-normal",
+                        "alegreya-latin-ext-500-normal", "alegreya-latin-400-italic", "alegreya-latin-ext-400-italic"],
+           "Cinzel": ["cinzel-latin-700-normal", "cinzel-latin-ext-700-normal"]}
+REGLAGES = {  # fichiers de projet créés par « hyperframes init », version figée
+    "package.json": {"name": "hyperframes", "private": True, "type": "module", "scripts": {
+        "dev": "npx --yes hyperframes@0.9.19 preview", "check": "npx --yes hyperframes@0.9.19 check",
+        "render": "npx --yes hyperframes@0.9.19 render", "publish": "npx --yes hyperframes@0.9.19 publish"}},
+    "hyperframes.json": {"$schema": "https://hyperframes.heygen.com/schema/hyperframes.json",
+                         "registry": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry",
+                         "paths": {"blocks": "compositions", "components": "compositions/components", "assets": "assets"},
+                         "media": {"autoProxy": True}},
+    "meta.json": {"id": "hyperframes", "name": "hyperframes", "createdAt": "2026-11-06T10:00:50.582Z"},
+}
 L, H = 1080, 1920
 
 AVANCE, ECART, AVANT = 0.3, 0.4, 0.25   # début de la voix, silence entre phrases, avance de l'image
@@ -458,14 +479,21 @@ def racine() -> str:
 def main() -> None:
     COMPOS.mkdir(parents=True, exist_ok=True)
     (PROJET / "assets/audio").mkdir(parents=True, exist_ok=True)
+    (PROJET / "assets/fonts").mkdir(parents=True, exist_ok=True)
+    for nom, contenu in REGLAGES.items():
+        (PROJET / nom).write_text(json.dumps(contenu, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for dossier, fichiers in FICHIERS_POLICES.items():
+        for f in fichiers:
+            shutil.copy(RACINE / f"public/polices/{dossier}/{f}.woff2", PROJET / f"assets/fonts/{f}.woff2")
     for s in scenes:
-        shutil.copy(ICI / f"audio/scene-{s['id']}.mp3", PROJET / f"assets/audio/scene-{s['id']}.mp3")
+        shutil.copy(TRAVAIL / f"audio/scene-{s['id']}.mp3", PROJET / f"assets/audio/scene-{s['id']}.mp3")
     for i, s in enumerate(scenes):
         html = TYPES[s["type"]](i, s, creneaux[i][1])
         (COMPOS / f"s{s['id']}.html").write_text(html, encoding="utf-8")
     (COMPOS / "fin.html").write_text(s_fin(CARTE_FIN), encoding="utf-8")
     (COMPOS / "soustitres.html").write_text(sous_titres(), encoding="utf-8")
     (PROJET / "index.html").write_text(racine(), encoding="utf-8")
+    print(f"projet écrit dans {PROJET}")
     print(f"durée totale : {TOTAL} s")
     for i, s in enumerate(scenes):
         print(f"  scène {s['id']} : {creneaux[i][0]} s → {round(creneaux[i][0] + creneaux[i][1], 2)} s")
