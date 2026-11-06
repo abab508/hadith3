@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 import fr from "../../messages/fr.json" with { type: "json" };
 import { JOURNAL_COURRIELS } from "../../playwright.config";
+import { normaliserTexte } from "../../src/lib/forum/filtre";
 
 // Serveur de test : dépôt en mémoire et mot de passe d'essai (playwright.config.ts).
 const MDP_ADMIN = "mot-de-passe-de-test-1234";
@@ -18,13 +19,16 @@ test("invitation, inscription, discussion, message retenu puis publié par l'adm
   await admin.getByLabel(A.motDePasse).fill(MDP_ADMIN);
   await admin.getByRole("button", { name: A.seConnecter }).click();
   await admin.getByRole("tab", { name: A.onglets.invitations }).click();
+  await admin.getByLabel(A.note).fill(`note-${unique}`);
   await admin.getByRole("button", { name: A.creerCode }).click();
-  const code = (await admin.locator("li[data-invitation]").first().getAttribute("data-invitation"))!;
+  // On attend le code de CETTE invitation : « le premier de la liste » peut être un ancien code déjà utilisé.
+  const code = (await admin.locator("li[data-invitation]", { hasText: `note-${unique}` }).getAttribute("data-invitation"))!;
   expect(code).toMatch(/^[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/);
   await admin.getByRole("tab", { name: A.onglets.mots }).click();
   await admin.getByLabel(A.mot).fill(motInterdit);
   await admin.getByRole("button", { name: A.ajouterMot }).click();
-  await expect(admin.getByText(motInterdit)).toBeVisible();
+  // La liste montre le mot normalisé : un « yy » tiré au hasard dans `unique` devient « y ».
+  await expect(admin.getByText(normaliserTexte(motInterdit))).toBeVisible();
 
   // 2. Le membre s'inscrit avec le code et ouvre une discussion.
   await membre.goto("/fr/compte");
