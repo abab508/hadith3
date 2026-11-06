@@ -2,21 +2,26 @@
 
 Même script, même voix et même minutage que l'exemple HyperFrames (repris de construire_hyperframes.py).
 Usage : python construire_openmontage.py
-Écrit dans  C:/Users/df/videos-milaghaiba/OpenMontage/projects/abou-bakr-siddiq/ :
+Écrit dans ~/videos-milaghaiba/OpenMontage/projects/abou-bakr-siddiq/ (ou MILAGHAIBA_VIDEOS) :
   assets/audio/narration.mp3            la voix des 8 scènes, mixée au bon moment
   artifacts/composition_props.json      la composition Remotion « Explainer » (scènes, sous-titres, thème)
   artifacts/apercu_props.json           la même sans l'audio, pour les images d'aperçu
 """
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
 
+import imageio_ffmpeg
+
 sys.dont_write_bytecode = True  # pas de __pycache__ dans le dépôt
 import construire_hyperframes as hf  # minutage commun (aucun fichier n'est écrit à l'import)
 
-PROJET = Path("C:/Users/df/videos-milaghaiba/OpenMontage/projects/abou-bakr-siddiq")
-FFMPEG = next(Path.home().glob("AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg*/*/bin/ffmpeg.exe"))
+# Le clone d'OpenMontage est à côté du dossier de travail : ~/videos-milaghaiba/OpenMontage.
+PROJET = hf.TRAVAIL.parent / "OpenMontage" / "projects" / hf.TRAVAIL.name
+# FFmpeg du PATH, sinon celui fourni par imageio-ffmpeg (comme voix.py) : marche sous Windows, macOS et Linux.
+FFMPEG = shutil.which("ffmpeg") or imageio_ffmpeg.get_ffmpeg_exe()
 
 THEME_NUIT_OR = {
     "primaryColor": "#E3B866", "accentColor": "#F0C96F", "backgroundColor": "#0A1222",

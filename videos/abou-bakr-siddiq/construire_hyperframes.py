@@ -88,7 +88,7 @@ POLICES = """
 COMMUN = POLICES + """
 #root{position:absolute;inset:0;overflow:hidden}
 .plein{position:absolute;inset:0}
-.ligne{position:absolute;left:60px;right:60px;text-align:center;direction:rtl}
+.ligne{position:absolute;inset-inline:60px;text-align:center;direction:rtl}
 .ruqaa{font-family:"Aref Ruqaa",serif}
 .naskh{font-family:"Noto Naskh Arabic",serif}
 .or{background:linear-gradient(180deg,#fff1c7 0%,#f0c96f 42%,#b9852f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -147,12 +147,12 @@ def etoile8(taille: int, w: float = 3, id1: str = "", id2: str = "") -> str:
 def s_nom(i, s, d):
     sid = f"s{s['id']}"
     corps = f"""
-      <svg id="{sid}-etoile" width="720" height="720" viewBox="0 0 720 720" style="position:absolute;left:180px;top:330px">
+      <svg id="{sid}-etoile" width="720" height="720" viewBox="0 0 720 720" style="position:absolute;inset-inline-start:180px;top:330px">
         {etoile8(720, 3, sid + '-c1', sid + '-c2')}
         <circle cx="360" cy="360" r="214" fill="none" stroke="#e3b866" stroke-width="1.5" opacity=".55" pathLength="1" stroke-dasharray="1" id="{sid}-cercle"/>
       </svg>
       <div id="{sid}-nasab" class="ligne naskh creme" style="top:200px;font-size:60px;font-weight:700">عبدُ الله بنُ عثمان</div>
-      <div id="{sid}-halo" data-layout-ignore style="position:absolute;left:140px;top:560px;width:800px;height:240px;border-radius:50%;background:radial-gradient(closest-side,rgba(240,201,111,.55),rgba(240,201,111,0));opacity:.35"></div>
+      <div id="{sid}-halo" data-layout-ignore style="position:absolute;inset-inline-start:140px;top:560px;width:800px;height:240px;border-radius:50%;background:radial-gradient(closest-side,rgba(240,201,111,.55),rgba(240,201,111,0));opacity:.35"></div>
       <div class="ligne lueur" style="top:560px"><div id="{sid}-nom" class="ruqaa or" style="font-size:158px;font-weight:700;line-height:1.4">أبو بكر الصديق</div></div>
       <div id="{sid}-rda" class="ligne ruqaa or" style="top:1075px;font-size:62px">رضي الله عنه</div>"""
     anim = trace(f"#{sid}-c1", 0, 1.6) + trace(f"#{sid}-c2", 0.25, 1.6) + trace(f"#{sid}-cercle", 0.6, 1.4)
@@ -169,7 +169,7 @@ def s_nasab(i, s, d):
     noms = [("عبدُ الله", 0), ("عثمان", 3), ("عامر", 5), ("عمرو", 7), ("كعب", 9), ("سعد", 11), ("تيم", 13), ("مُرّة", 15)]
     pas, haut0 = 98, 230
     corps = f"""
-      <svg width="1080" height="1000" viewBox="0 0 1080 1000" style="position:absolute;left:0;top:0">
+      <svg width="1080" height="1000" viewBox="0 0 1080 1000" style="position:absolute;inset-inline-start:0;top:0">
         <line id="{sid}-fil" x1="830" y1="{haut0 + 36}" x2="830" y2="{haut0 + 36 + pas * 7}" stroke="#e3b866" stroke-width="3" pathLength="1" stroke-dasharray="1" opacity=".8"/>
       </svg>"""
     anim = trace(f"#{sid}-fil", mot(i, 0), mots[s['id']][15]['debut'] + 0.4)
@@ -177,8 +177,8 @@ def s_nasab(i, s, d):
         y = haut0 + k * pas
         prefixe = "" if k == 0 else '<span class="discret" style="font-size:40px;font-weight:400">بنُ </span>'
         corps += f"""
-      <svg id="{sid}-pt{k}" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;left:810px;top:{y + 16}px">{etoile8(40, 2.5)}</svg>
-      <div id="{sid}-n{k}" class="naskh creme" style="position:absolute;right:300px;left:60px;top:{y}px;text-align:right;direction:rtl;font-size:56px;font-weight:700">{prefixe}{nom}</div>"""
+      <svg id="{sid}-pt{k}" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;inset-inline-start:810px;top:{y + 16}px">{etoile8(40, 2.5)}</svg>
+      <div id="{sid}-n{k}" class="naskh creme" style="position:absolute;inset-inline-start:300px;inset-inline-end:60px;top:{y}px;text-align:start;direction:rtl;font-size:56px;font-weight:700">{prefixe}{nom}</div>"""
         anim += apparition(f"#{sid}-pt{k}", mot(i, n), 0, 0.3)
         anim += (f'    tl.fromTo("#{sid}-n{k}", {{ opacity: 0, x: -40 }}, '
                  f'{{ opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }}, {mot(i, n)});\n')
@@ -190,7 +190,7 @@ def s_nasab(i, s, d):
 
 def cadre_livre(sid: str, haut: int, hauteur: int) -> str:
     return f"""
-      <svg width="940" height="{hauteur}" viewBox="0 0 940 {hauteur}" style="position:absolute;left:70px;top:{haut}px;overflow:visible" data-layout-allow-overflow>
+      <svg width="940" height="{hauteur}" viewBox="0 0 940 {hauteur}" style="position:absolute;inset-inline-start:70px;top:{haut}px;overflow:visible" data-layout-allow-overflow>
         <rect id="{sid}-cadre1" x="6" y="6" width="928" height="{hauteur - 12}" rx="34" fill="rgba(10,18,34,.72)" stroke="#e3b866" stroke-width="3" pathLength="1" stroke-dasharray="1"/>
         <rect id="{sid}-cadre2" x="22" y="22" width="896" height="{hauteur - 44}" rx="24" fill="none" stroke="#e3b866" stroke-width="1.2" opacity=".6" pathLength="1" stroke-dasharray="1"/>
         <g transform="translate(450 -14)">{etoile8(40, 2.5)}</g>
@@ -205,7 +205,7 @@ def s_citation(i, s, d):
     corps = cadre_livre(sid, 330, 700) + f"""
       <div id="{sid}-livre" class="ligne ruqaa or lueur" style="top:400px;font-size:84px;font-weight:700">«{s['livre']}»</div>
       <div id="{sid}-auteur" class="ligne naskh discret" style="top:530px;font-size:48px">{s['auteur']}</div>
-      <svg id="{sid}-sep" width="500" height="40" viewBox="0 0 500 40" style="position:absolute;left:290px;top:625px">
+      <svg id="{sid}-sep" width="500" height="40" viewBox="0 0 500 40" style="position:absolute;inset-inline-start:290px;top:625px">
         <line x1="0" y1="20" x2="225" y2="20" stroke="#e3b866" stroke-width="1.5"/><line x1="275" y1="20" x2="500" y2="20" stroke="#e3b866" stroke-width="1.5"/>
         <g transform="translate(232 2) scale(.9)">{etoile8(40, 2.5)}</g>
       </svg>
@@ -226,7 +226,7 @@ def s_grotte(i, s, d):
       <div id="{sid}-p1" class="ligne naskh creme" style="top:300px;font-size:76px;font-weight:700">صحابيّ</div>
       <div id="{sid}-p2" class="ligne naskh creme" style="top:405px;font-size:76px;font-weight:700">خليفةُ رسولِ الله ﷺ</div>
       <div class="ligne lueur" style="top:520px"><div id="{sid}-p3" class="ruqaa or" style="font-size:108px;font-weight:700;line-height:1.4">وثاني اثنين في الغار</div></div>
-      <svg width="1080" height="910" viewBox="0 0 1080 910" style="position:absolute;left:0;top:700px" data-layout-allow-overflow>
+      <svg width="1080" height="910" viewBox="0 0 1080 910" style="position:absolute;inset-inline-start:0;top:700px" data-layout-allow-overflow>
         <defs><radialGradient id="{sid}-gl" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#f6d995" stop-opacity=".95"/><stop offset="1" stop-color="#e3b866" stop-opacity="0"/></radialGradient></defs>
         <g id="{sid}-lune" transform="translate(860 70)"><circle r="44" fill="#f3e2b4"/><circle cx="18" cy="-10" r="40" fill="#0b1426"/></g>
         <path d="M0 910 L0 300 L140 230 L260 270 L380 170 L470 215 L560 120 L680 205 L790 160 L920 245 L1080 200 L1080 910 Z" fill="#0d1830" opacity=".9"/>
@@ -260,7 +260,7 @@ def s_medine(i, s, d):
       <div class="ligne lueur" style="top:320px"><div id="{sid}-ville" class="ruqaa or" style="font-size:160px;font-weight:700;line-height:1.4">المدينة</div></div>
       <div id="{sid}-compteur" class="ligne naskh creme" style="top:560px;font-size:190px;font-weight:700;line-height:1.3">٠</div>
       <div id="{sid}-label" class="ligne naskh discret" style="top:815px;font-size:46px">رواية في قاعدة «ميلاغايبا»</div>
-      <svg width="1080" height="710" viewBox="0 0 1080 710" style="position:absolute;left:0;top:900px" data-layout-allow-overflow>
+      <svg width="1080" height="710" viewBox="0 0 1080 710" style="position:absolute;inset-inline-start:0;top:900px" data-layout-allow-overflow>
         <path d="M0 710 L0 150 Q180 60 380 95 Q560 40 760 85 Q930 55 1080 120 L1080 710 Z" fill="#0d1830" stroke="#e3b866" stroke-width="1.5" stroke-opacity=".45"/>
         <rect x="0" y="268" width="1080" height="442" fill="#060c18"/>
         {maisons}{palmier(470, 270, 170)}{palmier(560, 270, 135)}{palmier(1000, 190, 120)}
@@ -286,8 +286,8 @@ def s_eleves(i, s, d):
     for k, ((x, y), nom) in enumerate(zip(points, s["noms"])):
         lignes += f'<line id="{sid}-l{k}" x1="{cx}" y1="{cy}" x2="{x}" y2="{y}" stroke="#e3b866" stroke-width="2" opacity=".7" pathLength="1" stroke-dasharray="1"/>'
         noeuds += f"""
-      <svg id="{sid}-e{k}" width="56" height="56" viewBox="0 0 56 56" style="position:absolute;left:{x - 28}px;top:{y - 28}px">{etoile8(56, 3)}<circle cx="28" cy="28" r="7" fill="#f6d995"/></svg>
-      <div id="{sid}-t{k}" class="naskh creme" style="position:absolute;left:{x - 200}px;width:400px;top:{y + 30}px;text-align:center;direction:rtl;font-size:46px;font-weight:700">{nom}</div>"""
+      <svg id="{sid}-e{k}" width="56" height="56" viewBox="0 0 56 56" style="position:absolute;inset-inline-start:{x - 28}px;top:{y - 28}px">{etoile8(56, 3)}<circle cx="28" cy="28" r="7" fill="#f6d995"/></svg>
+      <div id="{sid}-t{k}" class="naskh creme" style="position:absolute;inset-inline-end:{x - 200}px;width:400px;top:{y + 30}px;text-align:center;direction:rtl;font-size:46px;font-weight:700">{nom}</div>"""
         t = mot(i, reperes[k])
         anim += trace(f"#{sid}-l{k}", t - 0.25, 0.5)
         anim += (f'    tl.fromTo("#{sid}-e{k}", {{ opacity: 0, scale: .3 }}, '
@@ -295,11 +295,11 @@ def s_eleves(i, s, d):
         anim += apparition(f"#{sid}-t{k}", t + 0.05, 14, 0.45)
     corps = f"""
       <div id="{sid}-titre" class="ligne ruqaa or lueur" style="top:190px;font-size:76px;font-weight:700">روى عنه</div>
-      <svg width="1080" height="1200" viewBox="0 0 1080 1200" style="position:absolute;left:0;top:0">{lignes}
+      <svg width="1080" height="1200" viewBox="0 0 1080 1200" style="position:absolute;inset-inline-start:0;top:0">{lignes}
         <circle cx="{cx}" cy="{cy}" r="150" fill="rgba(10,18,34,.85)" stroke="#e3b866" stroke-width="3"/>
         <circle cx="{cx}" cy="{cy}" r="136" fill="none" stroke="#e3b866" stroke-width="1" opacity=".6"/>
       </svg>
-      <div id="{sid}-centre" class="ruqaa or" style="position:absolute;left:390px;width:300px;top:{cy - 95}px;text-align:center;direction:rtl;font-size:72px;font-weight:700;line-height:1.25">أبو بكر الصديق</div>{noeuds}"""
+      <div id="{sid}-centre" class="ruqaa or" style="position:absolute;inset-inline-end:390px;width:300px;top:{cy - 95}px;text-align:center;direction:rtl;font-size:72px;font-weight:700;line-height:1.25">أبو بكر الصديق</div>{noeuds}"""
     anim = apparition(f"#{sid}-titre", mot(i, 0), 14) + anim
     return scene_html(sid, corps, anim, d)
 
@@ -310,7 +310,7 @@ def s_deces(i, s, d):
       <div class="ligne lueur" style="top:220px"><div id="{sid}-titre" class="ruqaa or" style="font-size:118px;font-weight:700;line-height:1.4">تُوُفِّيَ بالمدينة</div></div>
       <div id="{sid}-annee" class="ligne naskh creme" style="top:450px;font-size:180px;font-weight:700;line-height:1.3">{chiffres_arabes(13)} هـ</div>
       <div id="{sid}-annee-l" class="ligne naskh discret" style="top:690px;font-size:46px">سنة الوفاة</div>
-      <svg id="{sid}-sep" width="500" height="40" viewBox="0 0 500 40" style="position:absolute;left:290px;top:770px">
+      <svg id="{sid}-sep" width="500" height="40" viewBox="0 0 500 40" style="position:absolute;inset-inline-start:290px;top:770px">
         <line x1="0" y1="20" x2="225" y2="20" stroke="#e3b866" stroke-width="1.5"/><line x1="275" y1="20" x2="500" y2="20" stroke="#e3b866" stroke-width="1.5"/>
         <g transform="translate(232 2) scale(.9)">{etoile8(40, 2.5)}</g>
       </svg>
@@ -326,13 +326,13 @@ def s_deces(i, s, d):
 def s_fin(d):
     sid = "fin"
     corps = f"""
-      <svg id="{sid}-etoile" width="110" height="110" viewBox="0 0 110 110" style="position:absolute;left:485px;top:300px">{etoile8(110, 3, sid + '-c1', sid + '-c2')}</svg>
+      <svg id="{sid}-etoile" width="110" height="110" viewBox="0 0 110 110" style="position:absolute;inset-inline-start:485px;top:300px">{etoile8(110, 3, sid + '-c1', sid + '-c2')}</svg>
       <div class="ligne lueur" style="top:420px"><div id="{sid}-nom" class="ruqaa or" style="font-size:150px;font-weight:700;line-height:1.4">ميلاغايبا</div></div>
-      <div id="{sid}-latin" style="position:absolute;left:60px;right:60px;top:650px;text-align:center;font-family:Cinzel,serif;font-weight:700;font-size:58px;letter-spacing:.12em;color:#e3b866">EL MILAGHAIBA</div>
-      <div id="{sid}-sources" style="position:absolute;left:90px;right:90px;top:790px;text-align:center;font-family:Alegreya,serif;font-size:36px;line-height:1.5;color:#f3ead8">
+      <div id="{sid}-latin" style="position:absolute;inset-inline:60px;top:650px;text-align:center;font-family:Cinzel,serif;font-weight:700;font-size:58px;letter-spacing:.12em;color:#e3b866">EL MILAGHAIBA</div>
+      <div id="{sid}-sources" style="position:absolute;inset-inline:90px;top:790px;text-align:center;font-family:Alegreya,serif;font-size:36px;line-height:1.5;color:#f3ead8">
         Source : fiche transmetteur n° 4945<br>Données hadith-kg (CC BY 4.0)<br>Taqrîb at-Tahdhîb · al-Jarh wa at-Ta‘dîl · Kashf an-Niqâb
       </div>
-      <div id="{sid}-avis" style="position:absolute;left:90px;right:90px;top:1080px;text-align:center;font-family:Alegreya,serif;font-style:italic;font-size:34px;color:#b8ae9a">Contenu documentaire, pas un avis religieux.</div>"""
+      <div id="{sid}-avis" style="position:absolute;inset-inline:90px;top:1080px;text-align:center;font-family:Alegreya,serif;font-style:italic;font-size:34px;color:#b8ae9a">Contenu documentaire, pas un avis religieux.</div>"""
     anim = trace(f"#{sid}-c1", 0, 0.9) + trace(f"#{sid}-c2", 0.1, 0.9)
     anim += apparition(f"#{sid}-nom", 0.1) + apparition(f"#{sid}-latin", 0.2, 14)
     anim += apparition(f"#{sid}-sources", 0.3, 14, 0.4) + apparition(f"#{sid}-avis", 0.4, 10, 0.4)
@@ -368,7 +368,7 @@ def sous_titres() -> str:
                  f'    tl.set("#st-{k}", {{ opacity: 0, visibility: "hidden" }}, {fin});\n')
     styles = POLICES + """
 #root{position:absolute;inset:0}
-.groupe{position:absolute;left:0;right:0;top:1170px;padding:0 90px;text-align:center;opacity:0;overflow:visible}
+.groupe{position:absolute;inset-inline:0;top:1170px;padding:0 90px;text-align:center;opacity:0;overflow:visible}
 .bande{display:inline;font-family:"Alegreya","Noto Naskh Arabic",serif;font-weight:500;font-size:48px;line-height:1.45;color:#f3ead8;
 background:rgba(4,8,18,.62);padding:4px 18px;border-radius:12px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 """
@@ -438,7 +438,7 @@ def racine() -> str:
       * {{ margin: 0; padding: 0; box-sizing: border-box; }}
       html, body {{ width: 1080px; height: 1920px; overflow: hidden; background: #050a14; }}
       #fond {{ position: absolute; inset: 0; background: radial-gradient(120% 75% at 50% 32%, #16264a 0%, #0a1222 48%, #03060d 100%); }}
-      #ciel, #motif, #arcades, #vignette, #cadre {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }}
+      #ciel, #motif, #arcades, #vignette, #cadre {{ position: absolute; inset-inline-start: 0; top: 0; width: 1080px; height: 1920px; }}
       #vignette {{ background: radial-gradient(90% 70% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }}
     </style>
   </head>
