@@ -1,0 +1,53 @@
+<template>
+  <style>
+@font-face{font-family:"Aref Ruqaa";src:url("assets/fonts/aref-ruqaa-arabic-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Aref Ruqaa";src:url("assets/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Noto Naskh Arabic";src:url("assets/fonts/noto-naskh-arabic-arabic-400-normal.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Noto Naskh Arabic";src:url("assets/fonts/noto-naskh-arabic-arabic-700-normal.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-400-normal.woff2") format("woff2");font-weight:400;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-400-normal.woff2") format("woff2");font-weight:400;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-500-normal.woff2") format("woff2");font-weight:500;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-500-normal.woff2") format("woff2");font-weight:500;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:"Cinzel";src:url("assets/fonts/cinzel-latin-700-normal.woff2") format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden}
+.plein{position:absolute;inset:0}
+.ligne{position:absolute;left:60px;right:60px;text-align:center;direction:rtl}
+.ruqaa{font-family:"Aref Ruqaa",serif}
+.naskh{font-family:"Noto Naskh Arabic",serif}
+.or{background:linear-gradient(180deg,#fff1c7 0%,#f0c96f 42%,#b9852f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.creme{color:#f3ead8}
+.discret{color:#b8ae9a}
+.lueur{filter:drop-shadow(0 0 22px rgba(227,184,102,.45))}
+</style>
+  <div id="root" data-composition-id="fin" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="fin-scene" class="plein">
+
+      <svg id="fin-etoile" width="110" height="110" viewBox="0 0 110 110" style="position:absolute;left:485px;top:300px"><g fill="none" stroke="#e3b866" stroke-width="3" stroke-linejoin="round">
+<rect x="19.8" y="19.8" width="70.4" height="70.4" pathLength="1" stroke-dasharray="1" id="fin-c1"/>
+<rect x="19.8" y="19.8" width="70.4" height="70.4" transform="rotate(45 55.0 55.0)" pathLength="1" stroke-dasharray="1" id="fin-c2"/>
+</g></svg>
+      <div class="ligne lueur" style="top:420px"><div id="fin-nom" class="ruqaa or" style="font-size:150px;font-weight:700;line-height:1.4">ميلاغايبا</div></div>
+      <div id="fin-latin" style="position:absolute;left:60px;right:60px;top:650px;text-align:center;font-family:Cinzel,serif;font-weight:700;font-size:58px;letter-spacing:.12em;color:#e3b866">EL MILAGHAIBA</div>
+      <div id="fin-sources" style="position:absolute;left:90px;right:90px;top:790px;text-align:center;font-family:Alegreya,serif;font-size:36px;line-height:1.5;color:#f3ead8">
+        Source : fiche transmetteur n° 4945<br>Données hadith-kg (CC BY 4.0)<br>Taqrîb at-Tahdhîb · al-Jarh wa at-Ta‘dîl · Kashf an-Niqâb
+      </div>
+      <div id="fin-avis" style="position:absolute;left:90px;right:90px;top:1080px;text-align:center;font-family:Alegreya,serif;font-style:italic;font-size:34px;color:#b8ae9a">Contenu documentaire, pas un avis religieux.</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#fin-scene", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#fin-c1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 0);
+    tl.fromTo("#fin-c2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 0.1);
+    tl.fromTo("#fin-nom", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.1);
+    tl.fromTo("#fin-latin", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.2);
+    tl.fromTo("#fin-sources", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.3);
+    tl.fromTo("#fin-avis", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.4);
+
+    tl.to("#fin-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, 9.6);
+    window.__timelines["fin"] = tl;
+  </script>
+</template>

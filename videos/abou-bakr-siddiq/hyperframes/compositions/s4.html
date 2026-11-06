@@ -1,0 +1,65 @@
+<template>
+  <style>
+@font-face{font-family:"Aref Ruqaa";src:url("assets/fonts/aref-ruqaa-arabic-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Aref Ruqaa";src:url("assets/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Noto Naskh Arabic";src:url("assets/fonts/noto-naskh-arabic-arabic-400-normal.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Noto Naskh Arabic";src:url("assets/fonts/noto-naskh-arabic-arabic-700-normal.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-400-normal.woff2") format("woff2");font-weight:400;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-400-normal.woff2") format("woff2");font-weight:400;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-500-normal.woff2") format("woff2");font-weight:500;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-500-normal.woff2") format("woff2");font-weight:500;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:"Cinzel";src:url("assets/fonts/cinzel-latin-700-normal.woff2") format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden}
+.plein{position:absolute;inset:0}
+.ligne{position:absolute;left:60px;right:60px;text-align:center;direction:rtl}
+.ruqaa{font-family:"Aref Ruqaa",serif}
+.naskh{font-family:"Noto Naskh Arabic",serif}
+.or{background:linear-gradient(180deg,#fff1c7 0%,#f0c96f 42%,#b9852f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.creme{color:#f3ead8}
+.discret{color:#b8ae9a}
+.lueur{filter:drop-shadow(0 0 22px rgba(227,184,102,.45))}
+</style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="s4-scene" class="plein">
+
+      <svg width="940" height="700" viewBox="0 0 940 700" style="position:absolute;left:70px;top:330px;overflow:visible" data-layout-allow-overflow>
+        <rect id="s4-cadre1" x="6" y="6" width="928" height="688" rx="34" fill="rgba(10,18,34,.72)" stroke="#e3b866" stroke-width="3" pathLength="1" stroke-dasharray="1"/>
+        <rect id="s4-cadre2" x="22" y="22" width="896" height="656" rx="24" fill="none" stroke="#e3b866" stroke-width="1.2" opacity=".6" pathLength="1" stroke-dasharray="1"/>
+        <g transform="translate(450 -14)"><g fill="none" stroke="#e3b866" stroke-width="2.5" stroke-linejoin="round">
+<rect x="7.2" y="7.2" width="25.6" height="25.6" pathLength="1" stroke-dasharray="1" />
+<rect x="7.2" y="7.2" width="25.6" height="25.6" transform="rotate(45 20.0 20.0)" pathLength="1" stroke-dasharray="1" />
+</g></g>
+        <g transform="translate(450 674)"><g fill="none" stroke="#e3b866" stroke-width="2.5" stroke-linejoin="round">
+<rect x="7.2" y="7.2" width="25.6" height="25.6" pathLength="1" stroke-dasharray="1" />
+<rect x="7.2" y="7.2" width="25.6" height="25.6" transform="rotate(45 20.0 20.0)" pathLength="1" stroke-dasharray="1" />
+</g></g>
+      </svg>
+      <div id="s4-livre" class="ligne ruqaa or lueur" style="top:400px;font-size:84px;font-weight:700">«الجرح والتعديل»</div>
+      <div id="s4-auteur" class="ligne naskh discret" style="top:530px;font-size:48px">ابن أبي حاتم الرازي</div>
+      <svg id="s4-sep" width="500" height="40" viewBox="0 0 500 40" style="position:absolute;left:290px;top:625px">
+        <line x1="0" y1="20" x2="225" y2="20" stroke="#e3b866" stroke-width="1.5"/><line x1="275" y1="20" x2="500" y2="20" stroke="#e3b866" stroke-width="1.5"/>
+        <g transform="translate(232 2) scale(.9)"><g fill="none" stroke="#e3b866" stroke-width="2.5" stroke-linejoin="round">
+<rect x="7.2" y="7.2" width="25.6" height="25.6" pathLength="1" stroke-dasharray="1" />
+<rect x="7.2" y="7.2" width="25.6" height="25.6" transform="rotate(45 20.0 20.0)" pathLength="1" stroke-dasharray="1" />
+</g></g>
+      </svg>
+      <div id="s4-citation" class="ligne naskh creme" style="top:705px;font-size:80px;font-weight:700;line-height:1.5">«صاحب رسول الله ﷺ»</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s4-scene", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#s4-cadre1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.1, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s4-cadre2", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.1, ease: "power2.inOut" }, 0.15);
+    tl.fromTo("#s4-livre", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.188);
+    tl.fromTo("#s4-auteur", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.113);
+    tl.fromTo("#s4-sep", { opacity: 0, y: 0 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 4.362);
+    tl.fromTo("#s4-citation", { opacity: 0, scale: .92 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, 4.662);
+
+    tl.to("#s4-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, 7.982);
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

@@ -1,0 +1,12 @@
+audio/*.mp3
+sortie/
+outils/
+*.mp4
+apercus/
+check.json
+check.err
+__pycache__/
+hyperframes/.hyperframes/
+hyperframes/assets/audio/
+# Skills HyperFrames (tiers, ~3,5 Mo) : se réinstallent d'après hyperframes/skills-lock.json
+hyperframes/.claude/

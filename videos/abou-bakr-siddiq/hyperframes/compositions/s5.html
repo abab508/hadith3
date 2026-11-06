@@ -1,0 +1,55 @@
+<template>
+  <style>
+@font-face{font-family:"Aref Ruqaa";src:url("assets/fonts/aref-ruqaa-arabic-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Aref Ruqaa";src:url("assets/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Noto Naskh Arabic";src:url("assets/fonts/noto-naskh-arabic-arabic-400-normal.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Noto Naskh Arabic";src:url("assets/fonts/noto-naskh-arabic-arabic-700-normal.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-400-normal.woff2") format("woff2");font-weight:400;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-400-normal.woff2") format("woff2");font-weight:400;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-500-normal.woff2") format("woff2");font-weight:500;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-500-normal.woff2") format("woff2");font-weight:500;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F}
+@font-face{font-family:"Alegreya";src:url("assets/fonts/alegreya-latin-ext-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:"Cinzel";src:url("assets/fonts/cinzel-latin-700-normal.woff2") format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden}
+.plein{position:absolute;inset:0}
+.ligne{position:absolute;left:60px;right:60px;text-align:center;direction:rtl}
+.ruqaa{font-family:"Aref Ruqaa",serif}
+.naskh{font-family:"Noto Naskh Arabic",serif}
+.or{background:linear-gradient(180deg,#fff1c7 0%,#f0c96f 42%,#b9852f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.creme{color:#f3ead8}
+.discret{color:#b8ae9a}
+.lueur{filter:drop-shadow(0 0 22px rgba(227,184,102,.45))}
+</style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="s5-scene" class="plein">
+
+      <div id="s5-ref" class="ligne naskh discret" style="top:215px;font-size:44px">ابن حجر العسقلاني · «تقريب التهذيب»</div>
+      <div id="s5-p1" class="ligne naskh creme" style="top:300px;font-size:76px;font-weight:700">صحابيّ</div>
+      <div id="s5-p2" class="ligne naskh creme" style="top:405px;font-size:76px;font-weight:700">خليفةُ رسولِ الله ﷺ</div>
+      <div class="ligne lueur" style="top:520px"><div id="s5-p3" class="ruqaa or" style="font-size:108px;font-weight:700;line-height:1.4">وثاني اثنين في الغار</div></div>
+      <svg width="1080" height="910" viewBox="0 0 1080 910" style="position:absolute;left:0;top:700px" data-layout-allow-overflow>
+        <defs><radialGradient id="s5-gl" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#f6d995" stop-opacity=".95"/><stop offset="1" stop-color="#e3b866" stop-opacity="0"/></radialGradient></defs>
+        <g id="s5-lune" transform="translate(860 70)"><circle r="44" fill="#f3e2b4"/><circle cx="18" cy="-10" r="40" fill="#0b1426"/></g>
+        <path d="M0 910 L0 300 L140 230 L260 270 L380 170 L470 215 L560 120 L680 205 L790 160 L920 245 L1080 200 L1080 910 Z" fill="#0d1830" opacity=".9"/>
+        <path d="M0 910 L0 360 L120 320 L250 350 L360 280 L470 330 L540 250 L640 315 L760 290 L880 345 L1080 310 L1080 910 Z" fill="#060c18" stroke="#e3b866" stroke-width="2" stroke-opacity=".55"/>
+        <ellipse id="s5-feu" cx="540" cy="425" rx="78" ry="74" fill="url(#s5-gl)" opacity=".25"/>
+        <path d="M478 470 L478 415 Q478 345 540 345 Q602 345 602 415 L602 470 Z" fill="#02040a" stroke="#e3b866" stroke-width="2" stroke-opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s5-scene", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#s5-ref", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s5-p1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 3.513);
+    tl.fromTo("#s5-p2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 4.513);
+    tl.fromTo("#s5-p3", { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 7.7);
+    tl.fromTo("#s5-feu", { opacity: .25 }, { opacity: 1, duration: 0.9, ease: "sine.inOut" }, 8.875);
+    tl.fromTo("#s5-lune", { y: 10 }, { y: -6, duration: 9.638, ease: "none" }, 0);
+
+    tl.to("#s5-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, 9.308);
+    window.__timelines["s5"] = tl;
+  </script>
+</template>
