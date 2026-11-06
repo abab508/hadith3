@@ -9,6 +9,8 @@ import { ecritLatin, translitererLieux, translitererNom } from "@/donnees/transl
 import styles from "../../Biographies.module.css";
 import { CLES_SERIES } from "@/donnees/cles-interface";
 import { traduireJugement } from "@/donnees/jugements-traduits";
+import { videoDe } from "@/donnees/videos";
+import { entree } from "@/donnees/catalogue";
 
 type Parametres = { locale: string; id: string };
 const lireId = (id: string) => (/^\d{1,6}$/.test(id) ? Number(id) : NaN);
@@ -30,6 +32,7 @@ export default async function PagePersonne({ params }: { params: Promise<Paramet
   const t = await getTranslations("biographies");
   const tr = await getTranslations("rapportTexte");
   const serie = serieDe(n);
+  const video = videoDe(n);
   const latin = ecritLatin(locale);
   const usage = f.kunya ?? f.nom;
   const translit = latin ? translitererNom(usage) : undefined;
@@ -118,6 +121,29 @@ export default async function PagePersonne({ params }: { params: Promise<Paramet
           </section>
         </div>
         <div className={styles.colonne}>
+          {video && (
+            <section className={styles.cadre} aria-labelledby="titre-video" data-video={video.id}>
+              <h2 id="titre-video" className={styles.titreBloc}>{t("video.titre")}</h2>
+              {/* Jamais de lecture automatique ; « metadata » ne charge que la durée (quelques Ko). */}
+              <video className={styles.video} controls preload="metadata" playsInline poster={video.affiche}
+                width={video.largeur} height={video.hauteur} aria-labelledby="titre-video" aria-describedby="description-video">
+                <source src={video.fichier} type="video/mp4" />
+                {t.rich("video.repli", { lien: (morceau) => <a href={video.fichier}>{morceau}</a> })}
+              </video>
+              <p id="description-video" className={styles.mention}>{t("video.description")}</p>
+              <details className={styles.texteVideo}>
+                <summary>{t("video.texte")}</summary>
+                <ol className={styles.lignesVideo}>
+                  {video.texte.map((ligne, i) => (
+                    <li key={i}>
+                      <p lang="ar" dir={entree("ar")?.direction} className="texte-arabe">{ligne.ar}</p>
+                      <p lang={video.sousTitres} dir={entree(video.sousTitres)?.direction}>{ligne.sousTitre}</p>
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            </section>
+          )}
           {voisins(t("maitres"), "maitres", f.maitres)}
           {voisins(t("eleves"), "eleves", f.eleves)}
           {(f.maitres.length > 0 || f.eleves.length > 0) && <p className={styles.mention}>{t("voisinsAide")}</p>}

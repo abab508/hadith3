@@ -534,7 +534,13 @@
     "prophetesAide": "Capítulos del sitio cuyo título árabe nombra a este profeta; cada capítulo reúne hadices de la fuente.",
     "nbChapitres": "{n, plural, one {# capítulo} other {# capítulos}}",
     "aucunChapitre": "Aún no se ha encontrado ningún capítulo.",
-    "nbHadiths": "{n, plural, one {# hadiz} other {# hadices}}"
+    "nbHadiths": "{n, plural, one {# hadiz} other {# hadices}}",
+    "video": {
+      "titre": "Vídeo breve",
+      "description": "Voz en off en árabe, subtítulos en francés. Hecho solo a partir de esta ficha, sin mostrar ningún rostro.",
+      "texte": "Texto de la voz en off",
+      "repli": "Tu navegador no puede reproducir este vídeo: <lien>descárgalo (MP4)</lien>."
+    }
   },
   "actualites": {
     "surtitre": "Información y actualidad",

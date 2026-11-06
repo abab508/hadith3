@@ -75,3 +75,11 @@ a.personne:hover,a.personne:focus-visible{border-color:#f2c877;transform:transla
 @media(max-width:400px){.series,.personnes{grid-template-columns:minmax(0,1fr);}}
 @media(prefers-reduced-motion:reduce){.imageSerie img{transition:none;}.carteSerie:hover .imageSerie img{transform:none;}}
 :global(html[data-motion="off"]) .carteSerie:hover .imageSerie img{transform:none;}
+
+/* Courte vidéo de la fiche (verticale, jamais lancée automatiquement). */
+.video{display:block;inline-size:100%;max-inline-size:20rem;block-size:auto;aspect-ratio:9/16;margin-inline:auto;border:1px solid #e3b86688;border-radius:.8rem;background:#0a1222;}
+.texteVideo summary{cursor:pointer;color:var(--ocre);font-weight:700;}
+.lignesVideo{display:flex;flex-direction:column;gap:.6rem;margin:0;margin-block-start:.6rem;padding:0;list-style:none;}
+.lignesVideo li{padding-block:.4rem;padding-inline:.7rem;border-inline-start:3px solid var(--ocre);background:#0a132488;border-radius:.4rem;}
+.lignesVideo p{margin:0;line-height:1.8;}
+.lignesVideo p+p{color:#e8dcc2;font-size:.9rem;}

@@ -534,7 +534,13 @@
     "prophetesAide": "Bab laman yang tajuk Arabnya menyebut nabi ini; setiap bab menghimpunkan hadis daripada sumber.",
     "nbChapitres": "{n, plural, other {# bab}}",
     "aucunChapitre": "Belum ada bab ditemui.",
-    "nbHadiths": "{n, plural, other {# hadis}}"
+    "nbHadiths": "{n, plural, other {# hadis}}",
+    "video": {
+      "titre": "Video pendek",
+      "description": "Suara latar dalam bahasa Arab, sari kata bahasa Perancis. Dihasilkan hanya daripada biografi ini, tanpa memaparkan sebarang wajah.",
+      "texte": "Teks suara latar",
+      "repli": "Pelayar anda tidak dapat memainkan video ini: <lien>muat turun video (MP4)</lien>."
+    }
   },
   "actualites": {
     "surtitre": "Maklumat dan berita",
