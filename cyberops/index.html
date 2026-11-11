@@ -5,35 +5,105 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Accueil — CyberOps</title>
 <style>
-  html, body { height: 100%; margin: 0; background: #02060f; }
-  body { display: flex; align-items: center; justify-content: center; }
+  html, body { block-size: 100%; margin: 0; background: #02060f; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
   /* L'image EST l'interface : elle occupe tout l'écran, sans barre ajoutée. */
   #ecran {
     position: relative;
-    width: min(100vw, calc(100vh * 1672 / 941));
+    inline-size: min(100vw, calc(100vh * 1672 / 941));
     aspect-ratio: 1672 / 941;
     overflow: hidden;
+    cursor: zoom-in;
+    animation: ouverture 1.4s cubic-bezier(.2, .7, .2, 1) both;
   }
-  #ecran img {
-    position: absolute; inset: 0; width: 100%; height: 100%;
+  #ecran.zoome { cursor: zoom-out; }
+
+  /* La « caméra » : l'image et ses zones bougent ensemble (zoom au clic). */
+  #camera {
+    position: absolute; inset: 0;
+    transition: transform .85s cubic-bezier(.22, .8, .2, 1);
+    will-change: transform;
+  }
+
+  /* Deux calques d'image pour le fondu enchaîné entre deux écrans. */
+  .calque {
+    position: absolute; inset: 0; inline-size: 100%; block-size: 100%;
     user-select: none; -webkit-user-drag: none;
+    opacity: 0; transform: scale(1.05); filter: blur(8px) brightness(1.5);
+    transition: opacity .7s ease, transform .9s cubic-bezier(.2, .7, .2, 1), filter .7s ease;
   }
+  .calque.actif { opacity: 1; transform: none; filter: none; }
+
+  /* Zones cliquables posées sur les boutons dessinés. */
   #zones a {
-    position: absolute; display: block; border-radius: 8px;
+    position: absolute; display: block; border-radius: 8px; cursor: pointer;
     border: 1px solid transparent; outline: none;
-    transition: background .12s, border-color .12s, box-shadow .12s;
+    transition: background .15s, border-color .15s, box-shadow .15s, transform .15s;
   }
   #zones a:hover, #zones a:focus-visible, #ecran.montrer #zones a {
-    border-color: #6fd6ff; background: rgba(40, 170, 255, .14);
-    box-shadow: 0 0 14px rgba(40, 170, 255, .45);
+    border-color: #7fdcff;
+    background: linear-gradient(110deg, rgba(40,170,255,.10), rgba(255,60,110,.10));
+    box-shadow: 0 0 0 1px rgba(127,220,255,.25), 0 0 18px rgba(40,170,255,.55), inset 0 0 14px rgba(40,170,255,.25);
+    animation: pulsation 1.6s ease-in-out infinite;
   }
-  @media (prefers-reduced-motion: reduce) { #zones a { transition: none; } }
+  #zones a:active { transform: scale(.97); background: rgba(127,220,255,.28); }
+
+  /* Effets par-dessus l'image : ils ne bloquent jamais les clics. */
+  #lueur, #ambiance, #balayage { position: absolute; inset: 0; pointer-events: none; }
+
+  /* Halo lumineux qui suit la souris. */
+  #lueur {
+    background: radial-gradient(260px circle at var(--sx, 50%) var(--sy, 50%), rgba(110,200,255,.16), transparent 70%);
+    mix-blend-mode: screen; opacity: 0; transition: opacity .4s;
+  }
+  #ecran:hover #lueur { opacity: 1; }
+
+  /* Ambiance : fines lignes d'écran, reflet lent et bords assombris. */
+  #ambiance {
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at center, transparent 62%, rgba(0,4,14,.5) 100%);
+  }
+  #ambiance::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 42%, rgba(140,215,255,.07) 50%, transparent 58%);
+    background-size: 300% 100%;
+    animation: reflet 11s linear infinite;
+  }
+
+  /* Trait de lumière qui traverse l'écran à chaque changement de page. */
+  #balayage {
+    inline-size: 30%;
+    background: linear-gradient(100deg, transparent, rgba(120,220,255,.35) 45%, rgba(255,70,110,.25) 60%, transparent);
+    mix-blend-mode: screen; transform: translateX(-130%) skewX(-12deg); opacity: 0;
+  }
+  #balayage.passe { animation: balayage .9s cubic-bezier(.3, .6, .2, 1); }
+
+  @keyframes ouverture { from { opacity: 0; transform: scale(1.04); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+  @keyframes pulsation { 50% { box-shadow: 0 0 0 1px rgba(127,220,255,.35), 0 0 28px rgba(40,170,255,.8), inset 0 0 18px rgba(40,170,255,.35); } }
+  @keyframes reflet { from { background-position: 150% 0; } to { background-position: -150% 0; } }
+  @keyframes balayage { 0% { transform: translateX(-130%) skewX(-12deg); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateX(470%) skewX(-12deg); opacity: 0; } }
+
+  /* Respect du réglage « réduire les animations ». */
+  @media (prefers-reduced-motion: reduce) {
+    #ecran, #zones a, #ambiance::after, #balayage.passe { animation: none !important; }
+    #camera, .calque, #zones a, #lueur { transition: none !important; }
+    .calque { transform: none; filter: none; }
+    #lueur { display: none; }
+  }
 </style>
 </head>
 <body>
 <main id="ecran" dir="ltr">
-  <img id="image" alt="" draggable="false">
-  <nav id="zones" aria-label="Liens de l'écran"></nav>
+  <div id="camera">
+    <img class="calque" alt="" draggable="false">
+    <img class="calque" alt="" draggable="false">
+    <nav id="zones" aria-label="Liens de l'écran"></nav>
+  </div>
+  <div id="ambiance"></div>
+  <div id="lueur"></div>
+  <div id="balayage"></div>
 </main>
 
 <script>
@@ -43,6 +113,7 @@
    sont posées exactement sur les boutons dessinés dans l'image.
    Coordonnées en pixels sur l'image d'origine (1672 × 941).
    Touche H : montrer / cacher toutes les zones cliquables.
+   Clic ailleurs dans l'image : zoom « caméra » sur ce point (Échap pour revenir).
    ------------------------------------------------------------------ */
 const L = 1672, H = 941;
 
@@ -165,9 +236,14 @@ const PAGES = {
 };
 
 const ecran = document.getElementById('ecran');
-const image = document.getElementById('image');
+const camera = document.getElementById('camera');
+const calques = [...document.querySelectorAll('.calque')];
 const zones = document.getElementById('zones');
+const balayage = document.getElementById('balayage');
 const dejaChargees = new Set();
+let actif = 0;      // calque d'image actuellement visible
+let jeton = 0;      // évite qu'un chargement lent écrase une page plus récente
+let zoome = false;
 
 function precharger(slug) {
   const p = PAGES[slug];
@@ -193,11 +269,23 @@ function afficher() {
   const page = PAGES[slug];
   document.title = page.titre + ' — CyberOps';
   zones.textContent = '';
-  // On attend que la nouvelle image soit affichée avant de poser ses zones,
+  const monJeton = ++jeton;
+  const suivant = calques[1 - actif];
+  suivant.src = 'images/' + page.image;
+  // On attend que la nouvelle image soit prête avant le fondu et la pose des zones,
   // pour ne jamais cliquer sur les zones d'une page par-dessus l'image d'une autre.
-  image.onload = () => poserZones(slug, page);
-  image.alt = 'Écran CyberOps : ' + page.titre;
-  image.src = 'images/' + page.image;
+  const montrer = () => {
+    if (monJeton !== jeton) return;
+    const ancien = calques[actif];
+    ancien.classList.remove('actif'); ancien.alt = ''; ancien.setAttribute('aria-hidden', 'true');
+    suivant.alt = 'Écran CyberOps : ' + page.titre; suivant.removeAttribute('aria-hidden');
+    suivant.classList.add('actif');
+    actif = 1 - actif;
+    dezoomer();
+    poserZones(slug, page);
+    balayage.classList.remove('passe'); void balayage.offsetWidth; balayage.classList.add('passe');
+  };
+  suivant.decode().then(montrer, montrer);
 }
 
 function poserZones(slug, page) {
@@ -217,9 +305,41 @@ function poserZones(slug, page) {
   }
 }
 
+// Zoom « caméra » : un clic n'importe où (hors lien) rapproche l'image sur ce point ;
+// un nouveau clic ou la touche Échap revient à la vue d'ensemble.
+function dezoomer() {
+  camera.style.transform = '';
+  zoome = false;
+  ecran.classList.remove('zoome');
+}
+ecran.addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  if (zoome) { dezoomer(); return; }
+  const r = camera.getBoundingClientRect();
+  const x = (e.clientX - r.x) / r.width * 100, y = (e.clientY - r.y) / r.height * 100;
+  camera.style.transformOrigin = `${x}% ${y}%`;
+  camera.style.transform = 'scale(2.2)';
+  zoome = true;
+  ecran.classList.add('zoome');
+});
+
+// Halo lumineux qui suit la souris.
+let enAttente = false;
+ecran.addEventListener('pointermove', e => {
+  if (enAttente) return;
+  enAttente = true;
+  requestAnimationFrame(() => {
+    const r = ecran.getBoundingClientRect();
+    ecran.style.setProperty('--sx', (e.clientX - r.x) + 'px');
+    ecran.style.setProperty('--sy', (e.clientY - r.y) + 'px');
+    enAttente = false;
+  });
+});
+
 window.addEventListener('hashchange', afficher);
 document.addEventListener('keydown', e => {
   if (e.key === 'h' || e.key === 'H') ecran.classList.toggle('montrer');
+  if (e.key === 'Escape') dezoomer();
 });
 afficher();
 </script>
