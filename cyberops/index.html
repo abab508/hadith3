@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accueil — CyberOps</title>
+<style>
+  html, body { height: 100%; margin: 0; background: #02060f; }
+  body { display: flex; align-items: center; justify-content: center; }
+  /* L'image EST l'interface : elle occupe tout l'écran, sans barre ajoutée. */
+  #ecran {
+    position: relative;
+    width: min(100vw, calc(100vh * 1672 / 941));
+    aspect-ratio: 1672 / 941;
+    overflow: hidden;
+  }
+  #ecran img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    user-select: none; -webkit-user-drag: none;
+  }
+  #zones a {
+    position: absolute; display: block; border-radius: 8px;
+    border: 1px solid transparent; outline: none;
+    transition: background .12s, border-color .12s, box-shadow .12s;
+  }
+  #zones a:hover, #zones a:focus-visible, #ecran.montrer #zones a {
+    border-color: #6fd6ff; background: rgba(40, 170, 255, .14);
+    box-shadow: 0 0 14px rgba(40, 170, 255, .45);
+  }
+  @media (prefers-reduced-motion: reduce) { #zones a { transition: none; } }
+</style>
+</head>
+<body>
+<main id="ecran">
+  <img id="image" alt="" draggable="false">
+  <nav id="zones" aria-label="Liens de l'écran"></nav>
+</main>
+
+<script>
+/* ------------------------------------------------------------------
+   CyberOps — maquettes cliquables.
+   Chaque page est une image du dossier « images ». Les zones cliquables
+   sont posées exactement sur les boutons dessinés dans l'image.
+   Coordonnées en pixels sur l'image d'origine (1672 × 941).
+   Touche H : montrer / cacher toutes les zones cliquables.
+   ------------------------------------------------------------------ */
+const L = 1672, H = 941;
+
+// Ordre des liens du menu du haut, puis du menu de gauche (Académie, Red Team).
+const HAUT = ['parcours', 'competences', 'formations', 'examens', 'labs', 'scenarios', 'ctf', 'accueil'];
+const ACAD = ['parcours', 'competences', 'journal', 'formations', 'examens', 'badges'];
+const RED  = ['reconnaissance', 'enumeration', 'exploitation', 'post-exploitation', 'privileges', 'persistance', 'exfiltration'];
+
+/* Les images n'ont pas toutes le menu au même endroit : une « grille » par mise en page.
+   haut : y, hauteur, puis [x, largeur] pour chaque lien de HAUT.
+   cote : x, largeur, hauteur, puis le centre vertical de chaque lien (ACAD puis RED).
+   plus : liens de menu propres à cette mise en page [page, x, y, largeur, hauteur]. */
+const GRILLES = {
+  A: { haut: [10, 44, [[310,138],[468,140],[628,128],[772,108],[897,133],[1042,128],[1183,130],[1521,134]]],
+       cote: [20, 239, 44, [163,213,262,311,360,409, 510,560,609,659,708,757,807]] },
+  red: { haut: [8, 38, [[272,115],[405,117],[540,102],[658,88],[765,112],[887,90],[1228,98],[1533,125]]],
+       cote: [17, 225, 36, [145,186,227,268,310,352, 474,513,553,594,635,675,715]],
+       plus: [['red',992,8,108,38], ['soc',1115,8,95,38], ['red',17,415,225,36], ['soc',17,786,225,36]] },
+  soc: { haut: [6, 38, [[285,130],[455,132],[625,118],[780,98],[915,120],[1070,102],[1210,120],[1525,132]]],
+       cote: [25, 207, 30, [116,150,184,218,253,287, 354,388,423,457,491,526,560]],
+       plus: [['soc',25,622,207,30], ['siem',25,655,207,30], ['reponse',25,690,207,30], ['forensic',25,725,207,30]] },
+  siem: { haut: [8, 38, [[285,132],[445,134],[607,120],[755,100],[880,126],[1022,130],[1170,120],[1512,140]]],
+       cote: [18, 209, 32, [128,165,201,237,273,309, 380,416,452,487,523,559,595]],
+       plus: [['siem',18,652,209,32], ['reponse',18,688,209,32], ['forensic',18,724,209,32], ['soc',18,831,209,32]] },
+  missions: { haut: [6, 42, [[295,145],[470,138],[636,125],[790,103],[918,130],[1064,130],[1212,124],[1528,128]]],
+       cote: [21, 217, 34, [130,168,206,244,282,320, 393,430,467,504,541,578,615]],
+       plus: [['soc',21,682,217,34], ['siem',21,723,217,34], ['investigation',21,762,217,34], ['reponse',21,800,217,34], ['forensic',21,839,217,34]] },
+  citadel: { haut: [8, 38, [[288,130],[452,132],[610,116],[753,98],[878,126],[1020,132],[1178,118],[1518,136]]],
+       cote: [21, 215, 32, [127,163,199,236,272,309, 387,424,460,496,533,569,605]],
+       plus: [['soc',21,665,215,32], ['siem',21,701,215,32], ['reponse',21,738,215,32]] },
+  final: { haut: [4, 40, [[305,135],[470,128],[628,125],[778,100],[905,125],[1054,108],[1183,150],[1524,132]]],
+       cote: [20, 236, 32, [134,173,211,250,288,326, 403,436,470,502,535,568,600]],
+       plus: [['soc',20,663,236,32], ['reponse',20,696,236,32]] },
+  forensic: { haut: [6, 38, [[285,140],[460,138],[632,125],[795,105],[935,130],[1098,110],[1238,124],[1528,130]]],
+       cote: [20, 205, 30, [137,173,210,247,284,321, 391,423,455,487,518,549,581]],
+       plus: [['soc',20,645,205,30], ['siem',20,681,205,30], ['reponse',20,717,205,30], ['forensic',20,825,205,30]] },
+  reponse: { haut: [6, 38, [[282,130],[438,132],[600,120],[745,100],[870,126],[1022,105],[1155,122],[1507,140]]],
+       cote: [20, 205, 30, [124,159,194,229,264,299, 376,409,443,476,509,542,575]],
+       plus: [['soc',20,638,205,30], ['reponse',20,678,205,30], ['forensic',20,757,205,30]] },
+  analyse: { haut: [8, 42, [[300,135],[462,132],[620,118],[762,100],[878,155],[1048,110],[1182,124],[1522,138]]],
+       cote: [25, 214, 30, [121,153,185,218,250,283, 354,388,422,455,489,523,557]],
+       plus: [['soc',25,614,214,30], ['analyse',25,649,214,30], ['forensic',25,685,214,30], ['reponse',25,718,214,30],
+              ['labs',25,828,214,30], ['labs',25,866,214,30]] },
+  parcours: { haut: [8, 40, [[285,130],[443,146],[612,120],[770,102],[905,125],[1063,106],[1200,120],[1526,130]]],
+       cote: [23, 218, 34, [129,170,211,251,290,329, 406,442,478,513,549,585,621]],
+       plus: [['soc',23,683,218,34], ['siem',23,724,218,34], ['reponse',23,764,218,34]] },
+};
+
+/* Les pages. « image » = fichier du dossier images.
+   « liens » = boutons dessinés dans le contenu : [page, x, y, largeur, hauteur]. */
+const PAGES = {
+  accueil: { titre: 'Accueil', image: 'accueil.png', grille: 'A', liens: [
+    ['red',297,371,304,131], ['soc',297,517,304,124], ['labs',617,371,625,270], ['siem',1259,371,396,270],
+    ['scenarios',297,264,278,90], ['formations',591,264,248,90], ['ctf',855,264,231,90], ['parcours',1103,264,280,90], ['badges',1400,264,255,90],
+    ['scenarios',297,658,266,48], ['labs',579,658,250,48], ['ctf',844,658,247,48], ['formations',1107,658,278,48], ['parcours',1401,658,254,48],
+    ['missions',780,732,160,22], ['reconnaissance',315,768,620,40], ['soc',315,813,620,40], ['siem',315,858,620,40],
+    ['parcours',1505,732,140,22] ] },
+  parcours: { titre: 'Mon parcours', image: 'bilan.png', grille: 'parcours', liens: [
+    ['red',296,512,352,146], ['soc',664,512,342,146], ['formations',843,456,158,32], ['competences',1515,450,130,28],
+    ['examens',1426,242,216,30], ['examens',294,864,342,38], ['badges',999,698,103,26],
+    ['exploitation',1153,728,490,46], ['examens',1153,781,490,46], ['reponse',1153,834,490,52] ] },
+  competences: { titre: 'Compétences', image: 'competences.png', grille: 'A', liens: [
+    ['badges',928,826,728,100], ['forensic',1288,720,356,26], ['reponse',1288,784,356,26] ] },
+  journal: { titre: 'Journal étudiant', image: 'journal.png', grille: 'A', liens: [
+    ['soc',333,300,398,38], ['labs',333,388,398,38], ['reconnaissance',333,432,398,38], ['examens',1463,341,184,28],
+    ['exfiltration',311,798,560,46], ['analyse',311,851,560,46] ] },
+  formations: { titre: 'Formations', image: 'parcours.png', grille: 'A', liens: [
+    ['soc',649,512,131,30], ['red',990,512,137,30], ['forensic',990,736,142,30], ['reponse',1422,848,220,44] ] },
+  examens: { titre: 'Examens', image: 'examens.png', grille: 'A', liens: [
+    ['labs',321,700,294,38], ['ctf-final',661,700,294,38], ['citadel',1001,700,294,38],
+    ['parcours',1436,233,206,32], ['competences',1556,812,90,86] ] },
+  badges: { titre: 'Mes badges', image: 'badges.png', grille: 'A', liens: [
+    ['red',318,843,153,68], ['soc',481,843,140,68], ['soc',630,843,138,68], ['forensic',1069,843,140,68] ] },
+  scenarios: { titre: 'Scénarios', image: 'scenarios.png', grille: 'A', liens: [
+    ['reconnaissance',331,560,271,42], ['soc',1001,560,271,42], ['siem',331,840,271,42], ['reponse',1001,840,275,42] ] },
+  missions: { titre: 'Scénarios opérationnels', image: 'missions.png', grille: 'missions', liens: [
+    ['scenarios',287,238,277,48], ['red',580,238,233,48], ['soc',831,238,238,48],
+    ['reconnaissance',310,671,285,48], ['soc',652,671,283,48], ['exploitation',992,671,285,48], ['citadel',1336,671,289,48] ] },
+  citadel: { titre: 'Scénario CITADEL', image: 'citadel.png', grille: 'citadel', liens: [
+    ['pc-compromis',677,490,98,112], ['forensic',669,852,276,34], ['analyse',1297,837,342,46] ] },
+  ctf: { titre: 'CTF & Défis', image: 'ctf.png', grille: 'A', liens: [
+    ['ctf-final',1183,425,216,44], ['labs',889,663,146,40], ['forensic',526,385,196,96], ['badges',1572,752,70,18] ] },
+  'ctf-final': { titre: 'CTF — Mission finale', image: 'ctf-final.png', grille: 'final', liens: [
+    ['parcours',1347,846,307,64] ] },
+  red: { titre: 'Red Team', image: 'red.png', grille: 'red', liens: [
+    ['reconnaissance',280,268,316,236], ['enumeration',625,268,322,236], ['exploitation',975,268,324,236], ['post-exploitation',1327,268,330,236],
+    ['labs',374,852,236,44],
+    ['reconnaissance',735,660,512,52], ['exploitation',735,716,512,52], ['privileges',735,772,512,54], ['exfiltration',735,830,512,54] ] },
+  reconnaissance: { titre: 'Reconnaissance', image: 'reconnaissance.png', grille: 'A', liens: [
+    ['enumeration',1361,875,282,36] ] },
+  enumeration: { titre: 'Énumération', image: 'enumeration.png', grille: 'A', liens: [
+    ['journal',1529,238,125,34] ] },
+  exploitation: { titre: 'Exploitation simulée', image: 'exploitation.png', grille: 'A', liens: [
+    ['post-exploitation',1361,866,282,42] ] },
+  'post-exploitation': { titre: 'Post-exploitation', image: 'post-exploitation.png', grille: 'A', liens: [
+    ['privileges',537,297,93,76], ['persistance',642,297,92,76], ['exfiltration',849,297,92,76] ] },
+  privileges: { titre: 'Élévation de privilèges', image: 'privileges.png', grille: 'A', liens: [
+    ['enumeration',435,875,253,46], ['persistance',759,875,270,46], ['journal',1097,875,268,46] ] },
+  persistance: { titre: 'Persistance', image: 'persistance.png', grille: 'A', liens: [
+    ['exfiltration',974,313,254,38], ['labs',1417,313,218,38] ] },
+  exfiltration: { titre: 'Exfiltration', image: 'exfiltration.png', grille: 'A', liens: [
+    ['parcours',1379,827,268,58] ] },
+  soc: { titre: 'Surveillance SOC', image: 'soc.png', grille: 'soc', liens: [
+    ['siem',1570,312,76,20], ['analyse',1130,796,96,100], ['reponse',1235,796,96,100], ['reponse',1341,796,96,100] ] },
+  siem: { titre: 'Détection & Analyse SIEM', image: 'siem.png', grille: 'siem', liens: [
+    ['analyse',1561,408,84,24], ['analyse',1561,485,84,24], ['analyse',1561,563,84,24], ['pc-compromis',835,666,430,24] ] },
+  investigation: { titre: 'Centre SOC / Investigation', image: 'investigation.png', grille: 'A', liens: [
+    ['siem',680,315,70,20], ['siem',296,859,311,68], ['reponse',625,859,316,68], ['forensic',959,859,334,68], ['analyse',1311,859,346,68] ] },
+  forensic: { titre: 'Investigation Forensic', image: 'forensic.png', grille: 'forensic', liens: [
+    ['analyse',790,240,125,48], ['analyse',1286,720,360,40], ['labs',1487,858,160,42] ] },
+  reponse: { titre: 'Réponse à incident & Confinement', image: 'reponse.png', grille: 'reponse', liens: [
+    ['siem',775,215,100,70], ['analyse',950,215,95,70], ['pc-compromis',270,606,430,32], ['analyse',624,648,76,26], ['analyse',1445,856,202,40] ] },
+  analyse: { titre: 'Analyse d’incident', image: 'analyse.png', grille: 'analyse', liens: [
+    ['siem',1236,342,128,26], ['pc-compromis',450,649,190,24], ['reponse',1410,413,243,32], ['reponse',1414,595,238,32], ['forensic',1414,714,238,32] ] },
+  labs: { titre: 'Labs virtuels', image: 'labs.png', grille: 'A', liens: [
+    ['pc-compromis',366,413,163,32], ['enumeration',366,565,164,32], ['privileges',366,721,165,32],
+    ['exploitation',1335,413,171,32], ['soc',776,811,152,36], ['pc-compromis',1483,811,156,36] ] },
+  'pc-compromis': { titre: 'PC-USER-03 compromis', image: 'pc-compromis.png', grille: 'A', liens: [
+    ['scenarios',300,76,80,22], ['forensic',1264,342,380,54], ['reponse',1264,408,380,54], ['analyse',1362,475,87,72], ['reponse',1265,846,379,46] ] },
+};
+
+const ecran = document.getElementById('ecran');
+const image = document.getElementById('image');
+const zones = document.getElementById('zones');
+const dejaChargees = new Set();
+
+function precharger(slug) {
+  const p = PAGES[slug];
+  if (!p || dejaChargees.has(slug)) return;
+  dejaChargees.add(slug);
+  new Image().src = 'images/' + p.image;
+}
+
+// Toutes les zones d'une page : logo + menu du haut + menu de gauche + boutons du contenu.
+function zonesDe(page) {
+  const g = GRILLES[page.grille];
+  const liste = [['accueil', 20, 0, 235, 62]];
+  const [hy, hh, hx] = g.haut;
+  HAUT.forEach((slug, i) => liste.push([slug, hx[i][0], hy, hx[i][1], hh]));
+  const [cx, cl, ch, cy] = g.cote;
+  [...ACAD, ...RED].forEach((slug, i) => liste.push([slug, cx, cy[i] - ch / 2, cl, ch]));
+  return liste.concat(g.plus || [], page.liens || []);
+}
+
+function afficher() {
+  let slug = decodeURIComponent(location.hash.slice(1));
+  if (!PAGES[slug]) slug = 'accueil';
+  const page = PAGES[slug];
+  document.title = page.titre + ' — CyberOps';
+  zones.textContent = '';
+  // On attend que la nouvelle image soit affichée avant de poser ses zones,
+  // pour ne jamais cliquer sur les zones d'une page par-dessus l'image d'une autre.
+  image.onload = () => poserZones(slug, page);
+  image.alt = 'Écran CyberOps : ' + page.titre;
+  image.src = 'images/' + page.image;
+}
+
+function poserZones(slug, page) {
+  zones.textContent = '';
+  for (const [vers, x, y, l, h] of zonesDe(page)) {
+    if (vers === slug || !PAGES[vers]) continue; // pas de lien vers la page déjà affichée
+    const a = document.createElement('a');
+    a.href = '#' + vers;
+    a.title = PAGES[vers].titre;
+    a.setAttribute('aria-label', 'Aller à : ' + PAGES[vers].titre);
+    a.style.cssText = `left:${x / L * 100}%;top:${y / H * 100}%;width:${l / L * 100}%;height:${h / H * 100}%`;
+    a.addEventListener('pointerenter', () => precharger(vers));
+    a.addEventListener('focus', () => precharger(vers));
+    zones.appendChild(a);
+  }
+}
+
+window.addEventListener('hashchange', afficher);
+document.addEventListener('keydown', e => {
+  if (e.key === 'h' || e.key === 'H') ecran.classList.toggle('montrer');
+});
+afficher();
+</script>
+</body>
+</html>
