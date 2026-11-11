@@ -31,7 +31,7 @@
 </style>
 </head>
 <body>
-<main id="ecran">
+<main id="ecran" dir="ltr">
   <img id="image" alt="" draggable="false">
   <nav id="zones" aria-label="Liens de l'écran"></nav>
 </main>
@@ -208,7 +208,9 @@ function poserZones(slug, page) {
     a.href = '#' + vers;
     a.title = PAGES[vers].titre;
     a.setAttribute('aria-label', 'Aller à : ' + PAGES[vers].titre);
-    a.style.cssText = `left:${x / L * 100}%;top:${y / H * 100}%;width:${l / L * 100}%;height:${h / H * 100}%`;
+    // Propriétés logiques (convention du dépôt). Le cadre est fixé en dir="ltr" :
+    // les coordonnées de l'image se mesurent toujours depuis son bord gauche.
+    a.style.cssText = `inset-inline-start:${x / L * 100}%;inset-block-start:${y / H * 100}%;inline-size:${l / L * 100}%;block-size:${h / H * 100}%`;
     a.addEventListener('pointerenter', () => precharger(vers));
     a.addEventListener('focus', () => precharger(vers));
     zones.appendChild(a);
